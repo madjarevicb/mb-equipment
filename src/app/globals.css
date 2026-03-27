@@ -10,8 +10,8 @@
   --color-offwhite: #F8F9FA;
   --color-text-primary: #212529;
   --color-text-secondary: #595F66;
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
 }
 
 html {

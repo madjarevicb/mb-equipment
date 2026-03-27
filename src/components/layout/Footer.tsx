@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const solutions = [
-  { label: "Hotels & Restaurants", href: "/business/hotels-restaurants" },
+  { label: "Our Brands", href: "/business/hotels-restaurants" },
   { label: "Residential", href: "/business/residential" },
   { label: "Food Processing", href: "/business/food-processing" },
 ];

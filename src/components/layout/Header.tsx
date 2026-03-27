@@ -13,7 +13,7 @@ const navItems = [
   {
     label: "Business & Brands",
     children: [
-      { label: "Hotels & Restaurants", href: "/business/hotels-restaurants" },
+      { label: "Our Brands", href: "/business/hotels-restaurants" },
       { label: "Residential", href: "/business/residential" },
       { label: "Food Processing", href: "/business/food-processing" },
     ],

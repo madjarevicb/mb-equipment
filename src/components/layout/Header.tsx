@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import MobileMenu from "./MobileMenu";
 
 const navItems = [
@@ -37,15 +38,18 @@ export default function Header() {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <nav className="bg-[#0A1628]/95 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-[#0A1628]">MB</span>
-            <div className="hidden sm:block">
-              <span className="text-sm font-medium text-[#0A1628] leading-none block">Equipment Solutions</span>
-              <span className="text-[10px] text-[#C9A84C] uppercase tracking-wider">Endorsed by Middleby</span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/mb-logo.svg"
+              alt="MB Equipment Solutions"
+              width={160}
+              height={80}
+              className="h-12 lg:h-14 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -53,7 +57,7 @@ export default function Header() {
             {navItems.map((item) =>
               item.children ? (
                 <div key={item.label} className="relative group">
-                  <button className="text-sm font-medium text-[#212529] hover:text-[#D32F3D] transition-colors py-2 flex items-center gap-1">
+                  <button className="text-sm font-medium text-white/80 hover:text-[#C9A84C] transition-colors py-2 flex items-center gap-1">
                     {item.label}
                     <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                   </button>
@@ -68,7 +72,7 @@ export default function Header() {
                   </div>
                 </div>
               ) : (
-                <Link key={item.label} href={item.href!} className="text-sm font-medium text-[#212529] hover:text-[#D32F3D] transition-colors">
+                <Link key={item.label} href={item.href!} className="text-sm font-medium text-white/80 hover:text-[#C9A84C] transition-colors">
                   {item.label}
                 </Link>
               )
@@ -80,7 +84,7 @@ export default function Header() {
 
           {/* Mobile */}
           <div className="flex items-center gap-3 lg:hidden">
-            <a href="tel:+381111234567" className="text-[#0A1628] p-2" aria-label="Call us">
+            <a href="tel:+381111234567" className="text-white p-2" aria-label="Call us">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
             </a>
             <MobileMenu navItems={navItems} />

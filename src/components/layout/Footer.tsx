@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const solutions = [
   { label: "Hotels & Restaurants", href: "/business/hotels-restaurants" },
@@ -21,8 +22,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <span className="text-2xl font-bold">MB</span>
-              <span className="text-sm font-medium ml-2">Equipment Solutions</span>
+              <Image
+                src="/mb-logo.svg"
+                alt="MB Equipment Solutions"
+                width={160}
+                height={80}
+                className="h-14 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               The Balkans&apos; most complete foodservice equipment partner. Endorsed by Middleby Corporation.

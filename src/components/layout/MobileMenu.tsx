@@ -14,7 +14,7 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 text-[#0A1628]"
+        className="p-2 text-white"
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >

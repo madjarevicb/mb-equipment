@@ -293,33 +293,47 @@ export default function HotelsRestaurantsPage() {
       </section>
 
       {/* ============================================================ */}
-      {/*  PROCESS                                                      */}
+      {/*  PROCESS — editorial split with numbered list                 */}
       {/* ============================================================ */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#0A1628]">
         <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
-                How It Works
-              </span>
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-[#0A1628] mt-4">
-                How a Project Moves
-              </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            {/* Left column — sticky heading */}
+            <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
+              <AnimatedSection>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-[2px] bg-[#C9A84C]" />
+                  <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-widest">Process</span>
+                </div>
+                <h2 className="font-display text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  From First Call<br />to First Service
+                </h2>
+                <p className="text-white/50 mt-4 leading-relaxed text-sm">
+                  Every project follows the same discipline. No shortcuts, no gaps between what&apos;s specified and what&apos;s delivered.
+                </p>
+              </AnimatedSection>
             </div>
-          </AnimatedSection>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-7 gap-4">
-              {["Brief", "Design", "Specification", "Procurement", "Installation", "Training", "Support"].map((step, i) => (
-                <AnimatedSection key={step} delay={i * 0.08}>
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto bg-[#0A1628] text-[#C9A84C] font-display text-lg font-bold flex items-center justify-center mb-3">
+            {/* Right column — steps */}
+            <div className="lg:col-span-8">
+              {[
+                { step: "Brief", desc: "We collect what matters — menu, covers, service style, space constraints, utility availability, and budget." },
+                { step: "Design Support", desc: "CAD layouts, equipment schedules, utility requirement documents. Coordinated with the architect and GC." },
+                { step: "Specification", desc: "Brand and model selection based on actual operating needs. No filler, no upsell." },
+                { step: "Procurement", desc: "Direct factory orders. Consolidated shipping. Customs clearance handled. Accurate lead times." },
+                { step: "Installation", desc: "Our technicians on site. Gas, electric, plumbing coordination. Every connection tested." },
+                { step: "Training", desc: "Kitchen staff trained on operation, cleaning protocols, and troubleshooting before the first service." },
+                { step: "Ongoing Support", desc: "Genuine spare parts. Factory-trained technicians. Preventive maintenance. Emergency call-out." },
+              ].map((item, i) => (
+                <AnimatedSection key={item.step} delay={i * 0.06}>
+                  <div className={`flex gap-6 py-7 ${i < 6 ? "border-b border-white/10" : ""}`}>
+                    <span className="font-display text-2xl font-bold text-[#C9A84C]/30 w-8 shrink-0 text-right">
                       {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-white font-semibold text-lg">{item.step}</h3>
+                      <p className="text-white/45 text-sm mt-1 leading-relaxed">{item.desc}</p>
                     </div>
-                    <p className="text-sm font-semibold text-[#0A1628]">{step}</p>
-                    {i < 6 && (
-                      <div className="hidden md:block w-full h-[1px] bg-[#C9A84C]/30 mt-6" />
-                    )}
                   </div>
                 </AnimatedSection>
               ))}

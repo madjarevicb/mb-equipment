@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name='robots' content='noindex, follow' />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO plugin v26.4 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Pagina non trovata - Silko</title>
+	<meta property="og:locale" content="it_IT" />
+	<meta property="og:title" content="Pagina non trovata - Silko" />
+	<meta property="og:site_name" content="Silko" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://silko.it/#website","url":"https://silko.it/","name":"https://silko.it/","description":"Cucine professionali e arredi per la ristorazione","publisher":{"@id":"https://silko.it/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://silko.it/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"it-IT"},{"@type":"Organization","@id":"https://silko.it/#organization","name":"Silko - Cucine professionali e attrezzature per la ristorazione","url":"https://silko.it/","logo":{"@type":"ImageObject","inLanguage":"it-IT","@id":"https://silko.it/#/schema/logo/image/","url":"https://silko.it/wp-content/uploads/2023/08/silko-logo.webp","contentUrl":"https://silko.it/wp-content/uploads/2023/08/silko-logo.webp","width":186,"height":56,"caption":"Silko - Cucine professionali e attrezzature per la ristorazione"},"image":{"@id":"https://silko.it/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/SilkoAli/","https://www.instagram.com/silko_ali/","https://www.linkedin.com/company/silko-ali-s.p.a./","https://www.youtube.com/user/SilkoAli"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Silko &raquo; Feed" href="https://silko.it/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Silko &raquo; Feed dei commenti" href="https://silko.it/comments/feed/" />
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='elementor-frontend-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='elementor-post-37-css' href='https://silko.it/wp-content/uploads/elementor/css/post-37.css?ver=1774278130' media='all' />
+<link rel='stylesheet' id='hfe-widgets-style-css' href='https://silko.it/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=2.0.3' media='all' />
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link rel='stylesheet' id='wc-blocks-style-css' href='https://silko.it/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-9.4.5' media='all' />
+
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #000000;--wp--preset--color--secondary: #007cba;--wp--preset--color--foreground: #333333;--wp--preset--color--tertiary: #FAFAFA;--wp--preset--color--background: #FFFFFF;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--hard-diagonal: linear-gradient(to bottom right, #3C8067 49.9%, #FAFBF6 50%);--wp--preset--gradient--hard-diagonal-inverted: linear-gradient(to top left, #3C8067 49.9%, #FAFBF6 50%);--wp--preset--gradient--hard-horizontal: linear-gradient(to bottom, #3C8067 50%, #FAFBF6 50%);--wp--preset--gradient--hard-horizontal-inverted: linear-gradient(to top, #3C8067 50%, #FAFBF6 50%);--wp--preset--gradient--diagonal: linear-gradient(to bottom right, #3C8067, #FAFBF6);--wp--preset--gradient--diagonal-inverted: linear-gradient(to top left, #3C8067, #FAFBF6);--wp--preset--gradient--horizontal: linear-gradient(to bottom, #3C8067, #FAFBF6);--wp--preset--gradient--horizontal-inverted: linear-gradient(to top, #3C8067, #FAFBF6);--wp--preset--gradient--stripe: linear-gradient(to bottom, transparent 20%, #3C8067 20%, #3C8067 80%, transparent 80%);--wp--preset--font-size--small: 16px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--tiny: 14px;--wp--preset--font-size--normal: 18px;--wp--preset--font-size--huge: 28px;--wp--preset--font-family--inter: "Inter", sans-serif;--wp--preset--font-family--cardo: Cardo;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='woocommerce-layout-css' href='https://silko.it/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=9.4.5' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://silko.it/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=9.4.5' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='https://silko.it/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=9.4.5' media='all' />
+<style id='woocommerce-inline-inline-css'>
+.woocommerce form .form-row .required { visibility: visible; }
+/*# sourceURL=woocommerce-inline-inline-css */
+</style>
+<link rel='stylesheet' id='wpml-legacy-horizontal-list-0-css' href='https://silko.it/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-list-horizontal/style.min.css?ver=1' media='all' />
+<link rel='stylesheet' id='wpml-menu-item-0-css' href='https://silko.it/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.min.css?ver=1' media='all' />
+<style id='wpml-menu-item-0-inline-css'>
+.wpml-ls-slot-17, .wpml-ls-slot-17 a, .wpml-ls-slot-17 a:visited{background-color:#002940;color:#ffffff;}.wpml-ls-slot-17:hover, .wpml-ls-slot-17:hover a, .wpml-ls-slot-17 a:hover{color:#ffffff;background-color:#002940;}.wpml-ls-slot-17.wpml-ls-current-language, .wpml-ls-slot-17.wpml-ls-current-language a, .wpml-ls-slot-17.wpml-ls-current-language a:visited{color:#ffffff;background-color:#002940;}.wpml-ls-slot-17.wpml-ls-current-language:hover, .wpml-ls-slot-17.wpml-ls-current-language:hover a, .wpml-ls-slot-17.wpml-ls-current-language a:hover{color:#ffffff;background-color:#002940;}.wpml-ls-slot-17.wpml-ls-current-language .wpml-ls-slot-17, .wpml-ls-slot-17.wpml-ls-current-language .wpml-ls-slot-17 a, .wpml-ls-slot-17.wpml-ls-current-language .wpml-ls-slot-17 a:visited{background-color:#002940;color:#ffffff;}.wpml-ls-slot-17.wpml-ls-current-language .wpml-ls-slot-17:hover, .wpml-ls-slot-17.wpml-ls-current-language .wpml-ls-slot-17:hover a, .wpml-ls-slot-17.wpml-ls-current-language .wpml-ls-slot-17 a:hover {color:#ffffff;background-color:#002940;}
+#menu-item-wpml-ls-17-it .sub-menu{ text-align: left !important; width: 50px !important; background-color: #ffffff00 !important; } #menu-item-wpml-ls-17-it li{ border-bottom: none !important; width: 50px !important; } #menu-item-wpml-ls-17-it li a{ text-align: left !important; padding-left: 15px !important; padding-right: 15px !important; } #menu-item-wpml-ls-17-en .sub-menu{ text-align: left !important; width: 50px !important; background-color: #ffffff00 !important; } #menu-item-wpml-ls-17-en li{ border-bottom: none !important; width: 50px !important; } #menu-item-wpml-ls-17-en li a{ text-align: left !important; padding-left: 15px !important; padding-right: 15px !important; } #menu-item-wpml-ls-17-fr .sub-menu{ text-align: left !important; width: 50px !important; background-color: #ffffff00 !important; } #menu-item-wpml-ls-17-fr li{ border-bottom: none !important; width: 50px !important; } #menu-item-wpml-ls-17-fr li a{ text-align: left !important; padding-left: 15px !important; padding-right: 15px !important; } #menu-item-wpml-ls-17-de .sub-menu{ text-align: left !important; width: 50px !important; background-color: #ffffff00 !important; } #menu-item-wpml-ls-17-de li{ border-bottom: none !important; width: 50px !important; } #menu-item-wpml-ls-17-de li a{ text-align: left !important; padding-left: 15px !important; padding-right: 15px !important; }
+/*# sourceURL=wpml-menu-item-0-inline-css */
+</style>
+<link rel='stylesheet' id='hfe-style-css' href='https://silko.it/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=2.0.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-css' href='https://silko.it/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.34.0' media='all' />
+<link rel='stylesheet' id='elementor-post-18-css' href='https://silko.it/wp-content/uploads/elementor/css/post-18.css?ver=1774278131' media='all' />
+<link rel='stylesheet' id='e-popup-style-css' href='https://silko.it/wp-content/plugins/elementor-pro/assets/css/conditionals/popup.min.css?ver=3.25.4' media='all' />
+<link rel='stylesheet' id='font-awesome-5-all-css' href='https://silko.it/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css' href='https://silko.it/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='she-header-style-css' href='https://silko.it/wp-content/plugins/sticky-header-effects-for-elementor/assets/css/she-header-style.css?ver=1.7.3' media='all' />
+<link rel='stylesheet' id='elementor-post-5998-css' href='https://silko.it/wp-content/uploads/elementor/css/post-5998.css?ver=1774278131' media='all' />
+<link rel='stylesheet' id='seedlet-fonts-css' href='https://fonts.googleapis.com/css?family=Fira+Sans%3Aital%2Cwght%400%2C400%3B0%2C500%3B1%2C400%7CPlayfair+Display%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400&#038;subset=latin%2Clatin-ext' media='all' />
+<link rel='stylesheet' id='seedlet-style-css' href='https://silko.it/wp-content/themes/seedlet/style.css?ver=1.2.9' media='all' />
+<link rel='stylesheet' id='seedlet-print-style-css' href='https://silko.it/wp-content/themes/seedlet/assets/css/print.css?ver=1.2.9' media='print' />
+<link rel='stylesheet' id='seedlet-custom-color-overrides-css' href='https://silko.it/wp-content/themes/seedlet/assets/css/custom-color-overrides.css?ver=1.2.9' media='all' />
+<style id='seedlet-custom-color-overrides-inline-css'>
+:root {}::selection { background-color: #F2F2F2;}::-moz-selection { background-color: #F2F2F2;}
+/*# sourceURL=seedlet-custom-color-overrides-inline-css */
+</style>
+<link rel='stylesheet' id='seedlet-woocommerce-style-css' href='https://silko.it/wp-content/themes/seedlet/assets/css/style-woocommerce.css?ver=1.2.9' media='all' />
+<link rel='stylesheet' id='parent-style-css' href='https://silko.it/wp-content/themes/seedlet/style.css?ver=6.9.4' media='all' />
+<link rel='stylesheet' id='widget-spacer-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/widget-spacer.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='widget-text-editor-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/widget-text-editor.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='elementor-post-14225-css' href='https://silko.it/wp-content/uploads/elementor/css/post-14225.css?ver=1774279119' media='all' />
+<link rel='stylesheet' id='elementor-icons-ekiticons-css' href='https://silko.it/wp-content/plugins/elementskit-lite/modules/elementskit-icon-pack/assets/css/ekiticons.css?ver=3.3.3' media='all' />
+<link rel='stylesheet' id='blank-canvas-styles-css' href='https://silko.it/wp-content/themes/blank-canvas/style.css?ver=6.9.4' media='all' />
+<link rel='stylesheet' id='hfe-icons-list-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.24.3' media='all' />
+<link rel='stylesheet' id='hfe-social-icons-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.24.0' media='all' />
+<link rel='stylesheet' id='hfe-social-share-icons-brands-css' href='https://silko.it/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='hfe-social-share-icons-fontawesome-css' href='https://silko.it/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='hfe-nav-menu-icons-css' href='https://silko.it/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='hfe-widget-blockquote-css' href='https://silko.it/wp-content/plugins/elementor-pro/assets/css/widget-blockquote.min.css?ver=3.25.0' media='all' />
+<link rel='stylesheet' id='ekit-widget-styles-css' href='https://silko.it/wp-content/plugins/elementskit-lite/widgets/init/assets/css/widget-styles.css?ver=3.3.3' media='all' />
+<link rel='stylesheet' id='ekit-responsive-css' href='https://silko.it/wp-content/plugins/elementskit-lite/widgets/init/assets/css/responsive.css?ver=3.3.3' media='all' />
+<link rel='stylesheet' id='eael-general-css' href='https://silko.it/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=6.0.13' media='all' />
+<link rel='stylesheet' id='moove_gdpr_frontend-css' href='https://silko.it/wp-content/plugins/gdpr-cookie-compliance/dist/styles/gdpr-main-nf.css?ver=4.15.10' media='all' />
+<style id='moove_gdpr_frontend-inline-css'>
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+				#moove_gdpr_cookie_modal .cookie-switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .cookie-switch .slider:after, 
+				#moove_gdpr_cookie_modal .switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .switch .slider:after,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h1, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h2, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h3, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h4, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h5, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h6,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-modal-title .tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-branding-cnt a {
+				 	font-weight: inherit				}
+			#moove_gdpr_cookie_modal,#moove_gdpr_cookie_info_bar,.gdpr_cookie_settings_shortcode_content{font-family:'Open Sans'}#moove_gdpr_save_popup_settings_button{background-color:#373737;color:#fff}#moove_gdpr_save_popup_settings_button:hover{background-color:#000}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton{background-color:#002940}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green{background-color:#002940;border-color:#002940}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover{background-color:#fff;color:#002940}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon{background-color:#002940;border:1px solid #002940}#moove_gdpr_cookie_info_bar span.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar span.change-settings-button:focus,#moove_gdpr_cookie_info_bar button.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar button.change-settings-button:focus{-webkit-box-shadow:0 0 1px 3px #002940;-moz-box-shadow:0 0 1px 3px #002940;box-shadow:0 0 1px 3px #002940}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button{color:#002940}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .gdpr-acc-link{line-height:0;font-size:0;color:transparent;position:absolute}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,span.change-settings-button:focus,button.change-settings-button.focus-g,button.change-settings-button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:focus{color:#002940}#moove_gdpr_cookie_modal.gdpr_lightbox-hide{display:none}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr-shr-button,#moove_gdpr_cookie_info_bar .moove-gdpr-infobar-close-btn{border-radius:0}
+/*# sourceURL=moove_gdpr_frontend-inline-css */
+</style>
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Open+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap&#038;ver=6.9.4' media='all' />
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><!--n2css--><!--n2js--><script id="wpml-cookie-js-extra">
+var wpml_cookies = {"wp-wpml_current_language":{"value":"it","expires":1,"path":"/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"it","expires":1,"path":"/"}};
+//# sourceURL=wpml-cookie-js-extra
+</script>
+<script src="https://silko.it/wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?ver=473900" id="wpml-cookie-js" defer data-wp-strategy="defer"></script>
+<script src="https://silko.it/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="https://silko.it/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script id="jquery-js-after">
+!function($){"use strict";$(document).ready(function(){$(this).scrollTop()>100&&$(".hfe-scroll-to-top-wrap").removeClass("hfe-scroll-to-top-hide"),$(window).scroll(function(){$(this).scrollTop()<100?$(".hfe-scroll-to-top-wrap").fadeOut(300):$(".hfe-scroll-to-top-wrap").fadeIn(300)}),$(".hfe-scroll-to-top-wrap").on("click",function(){$("html, body").animate({scrollTop:0},300);return!1})})}(jQuery);
+//# sourceURL=jquery-js-after
+</script>
+<script src="https://silko.it/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.9.4.5" id="jquery-blockui-js" defer data-wp-strategy="defer"></script>
+<script id="wc-add-to-cart-js-extra">
+var wc_add_to_cart_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_view_cart":"Visualizza carrello","cart_url":"https://silko.it","is_cart":"","cart_redirect_after_add":"no"};
+//# sourceURL=wc-add-to-cart-js-extra
+</script>
+<script src="https://silko.it/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.4.5" id="wc-add-to-cart-js" defer data-wp-strategy="defer"></script>
+<script src="https://silko.it/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.9.4.5" id="js-cookie-js" defer data-wp-strategy="defer"></script>
+<script id="woocommerce-js-extra">
+var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%"};
+//# sourceURL=woocommerce-js-extra
+</script>
+<script src="https://silko.it/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.4.5" id="woocommerce-js" defer data-wp-strategy="defer"></script>
+<script src="https://silko.it/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.26.0" id="font-awesome-4-shim-js"></script>
+<script src="https://silko.it/wp-content/plugins/sticky-header-effects-for-elementor/assets/js/she-header.js?ver=1.7.3" id="she-header-js"></script>
+<script id="wpml-browser-redirect-js-extra">
+var wpml_browser_redirect_params = {"pageLanguage":"it","languageUrls":{"it_it":"https://silko.it/","it":"https://silko.it/","de_de":"https://silko.it/de/","de":"https://silko.it/de/","fr_fr":"https://silko.it/fr/","fr":"https://silko.it/fr/","en_us":"https://silko.it/en/","en":"https://silko.it/en/","us":"https://silko.it/en/","es_es":"https://silko.it/es/","es":"https://silko.it/es/"},"cookie":{"name":"_icl_visitor_lang_js","domain":"silko.it","path":"/","expiration":24}};
+//# sourceURL=wpml-browser-redirect-js-extra
+</script>
+<script src="https://silko.it/wp-content/plugins/sitepress-multilingual-cms/dist/js/browser-redirect/app.js?ver=473900" id="wpml-browser-redirect-js"></script>
+<link rel="https://api.w.org/" href="https://silko.it/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://silko.it/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.4" />
+<meta name="generator" content="WooCommerce 9.4.5" />
+<meta name="generator" content="WPML ver:4.7.3 stt:1,4,3,27,2;" />
+<!-- Google tag (gtag.js) -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JY1HC9VLPW"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+ 
+
+  gtag('config', 'G-JY1HC9VLPW');
+
+</script>
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var dataLayer_content = {"pagePostType":"404-error"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script data-cfasync="false" data-pagespeed-no-defer>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5RXNXZKJ');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<meta name="generator" content="Elementor 3.26.0; features: additional_custom_breakpoints, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<style class="wpcode-css-snippet">.catalogo-interattivo a{
+	border-bottom: 1px solid #002940;
+}
+
+.catalogo-interattivo:hover, .catalogo-interattivo a:hover, .catalogo-interattivo:focus, .catalogo-interattivo a:focus{
+	color: #002940!important;
+}</style><script>document.addEventListener('DOMContentLoaded', () => {
+  const btnFdlSupports = document.querySelectorAll('.btn-fdl-support');
+
+  btnFdlSupports.forEach(btnFdlSupport => {
+    const btnFdlBackground = btnFdlSupport.querySelector('div');
+    const btnFdlTitle = btnFdlSupport.querySelector('.btn-fdl-title');
+    const btnFdlTitleColor = btnFdlSupport.querySelector('.btn-fdl-title div div');
+    const img = btnFdlSupport.querySelector('img');
+    const btnFdlParagraph = btnFdlSupport.querySelector('.btn-fdl-paragraph');
+    const btnFdlParagraphColor = btnFdlSupport.querySelector('.btn-fdl-paragraph div div');
+
+    function centerVertically() {
+      const containerHeight = btnFdlSupport.offsetHeight;
+      const titleHeight = btnFdlTitle.offsetHeight;
+      const paragraphHeight = btnFdlParagraph ? btnFdlParagraph.offsetHeight : 0;
+
+      const totalHeight = titleHeight + paragraphHeight;
+      const topOffset = (containerHeight - totalHeight) / 2;
+
+      btnFdlTitle.style.top = `${topOffset}px`;
+      if (btnFdlParagraph) {
+        btnFdlParagraph.style.top = `${topOffset + titleHeight}px`;
+        btnFdlParagraph.style.visibility = 'visible';
+      }
+    }
+
+    btnFdlSupport.addEventListener('mouseover', () => {
+      img.style.display = 'none';
+      btnFdlBackground.style.backgroundColor = '#CE7E19';
+      btnFdlTitleColor.style.color = '#fff';
+      btnFdlParagraphColor.style.color = '#fff';
+
+      centerVertically();
+
+      if (btnFdlParagraph) {
+        btnFdlParagraph.classList.add('visible');
+      }
+    });
+
+    btnFdlSupport.addEventListener('mouseout', () => {
+      img.style.display = 'initial';
+      btnFdlTitle.style.top = '';
+      btnFdlTitle.style.transform = '';
+
+      btnFdlBackground.style.backgroundColor = ''; // Ripristina il colore di sfondo originale
+      btnFdlTitleColor.style.color = '#002940'; // Ripristina il colore del testo originale
+      if (btnFdlParagraph) {
+        btnFdlParagraph.classList.remove('visible');
+        btnFdlParagraph.style.top = '';
+        btnFdlParagraph.style.transform = '';
+        btnFdlParagraph.style.visibility = 'hidden';
+      }
+    });
+  });
+});
+</script><style class='wp-fonts-local'>
+@font-face{font-family:Inter;font-style:normal;font-weight:300 900;font-display:fallback;src:url('https://silko.it/wp-content/plugins/woocommerce/assets/fonts/Inter-VariableFont_slnt,wght.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Cardo;font-style:normal;font-weight:400;font-display:fallback;src:url('https://silko.it/wp-content/plugins/woocommerce/assets/fonts/cardo_normal_400.woff2') format('woff2');}
+</style>
+<link rel="icon" href="https://silko.it/wp-content/uploads/Silko-favicon.webp" sizes="32x32" />
+<link rel="icon" href="https://silko.it/wp-content/uploads/Silko-favicon.webp" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://silko.it/wp-content/uploads/Silko-favicon.webp" />
+<meta name="msapplication-TileImage" content="https://silko.it/wp-content/uploads/Silko-favicon.webp" />
+		<style id="wp-custom-css">
+			/*font generale*/
+/*{
+	font-family: "Open Sans", Sans-serif !important;
+}*/
+
+/*barra pre-menu | contenitore */
+
+.space-bt-realizzazione, .space-bt-prodotti{
+	width: 100%;
+	color: transparent!important;
+	display: inline-block;
+	border-bottom: none!important;
+}
+
+.space-bt-realizzazione{
+		height: 200px;
+}
+
+.space-bt-prodotti{
+	height: 600px;
+}
+
+.btn-cta-single-product{
+	margin: 0 4% 0 0;
+}
+
+.induktion-btn-de .elementor-button-text{
+	text-align: right!important; 
+}
+
+.MS-right, .MS-left{
+	font-size: 12.5px;
+}
+
+.download-single-product-btn{
+	font-weight:  300!important;
+}
+
+.cta-single-product{
+	font-weight: bold!important;
+}
+
+::selection {
+  background: #D6771D;
+  color: white;
+}
+
+::-moz-selection {
+  background: #D6771D;
+  color: white;
+}
+
+.elementor-element-41303254{
+	background-color: #002940 !important;
+}
+
+.hfe-nav-menu .sub-menu{
+	min-width: auto!important; 
+}
+
+.mouse-hover{
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+.mouse-hover:hover{
+	transform: scale(1.015);
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+.ikonico-collapse{
+	height: 750px;
+}
+
+
+
+
+.btn-fdl-title{
+  font-weight: 600 !important;
+}
+
+.btn-fdl-title, .btn-fdl-paragraph{
+  transition: all 0.25s;
+  position: absolute; /* Ensure elements are positioned absolutely */
+}
+
+.btn-fdl-paragraph {
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  transition: opacity 0.5s, transform 0.25s;
+}
+
+.btn-fdl-paragraph.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.send-btn-form-contact:hover{
+	background-color: #fff!important;
+	color: #002940!important;
+}
+
+
+@media only screen and (max-width: 1024px){
+	.btn-fdl-support{
+		min-height: 200px!important;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	.btn-fdl-support{
+		min-height: 190px!important;
+	}
+	
+	.mouse-hover:hover{
+		transform: scale(1);
+	}
+}
+
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.elementor-37 .elementor-element.elementor-element-6173fb7 img{
+		width: auto!important;
+	}
+}
+
+
+
+/*rimuove bordo logo header*/
+.elementor-element-6173fb7 a{
+	border: none;
+}
+
+/*barra menu principale | contenitore*/
+.elementor-element-4535ec49{
+	
+}
+
+/*rimozione margine destro sezione tecnologie induction tech home page*/
+.elementor-element-524be12 .elementor-container .elementor-column-gap-default{
+	margin-right: 0px !important;
+}
+
+/*rimuove padding */
+.site-main{
+	padding-bottom: 0px !important;
+	padding-top: 0px !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: "Playfair Display", Regular !important;
+}
+
+.titolo-sezione-introduttiva
+{
+	font-weight:400 !important;
+	line-height: 40px !important;
+}
+
+p{
+	font-family: "Open Sans";
+	line-height: 30px;
+	font-size: 16px;
+}
+
+h1{font-size: 70px !important;}
+h2{font-size: 55px !important;}
+h3{font-size: 43px !important;}
+h4{font-size: 30px !important;}
+h5{font-size: 18px !important;}
+h6{font-size: 6px !important;}
+
+#img-header a{
+	border-bottom: 0px !important;	
+}
+
+.elementor-button-text{
+	font-size: 15px;
+}
+
+.essence-block-list .elementor-accordion-item{
+	border-bottom: 1px solid #002940 !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.essence-block-list .elementor-accordion-item .elementor-tab-title{
+	padding: 30px 0px 30px 0px !important;
+}
+
+.essence-block-list .elementor-accordion-item .elementor-accordion-title{
+	border-bottom: 0px !important;
+}
+
+.essence-block-list .elementor-accordion-item .elementor-tab-content{
+	padding: 10px 0px 10px 0px !important;
+}
+
+.btn-bottom{
+	position: absolute;
+	right:    0;
+	bottom:   0;
+}
+
+.ekit-wid-con .ekit-single-piechart .piechart .ekit-chart-content {
+	font-family: 'Playfair Display' !important;
+    font-size: 76px !important;
+}
+
+.clickable{
+	cursor: pointer !important;
+}
+
+.elementskit-blog-block-post a{
+	border: none !important;
+}
+
+.menu-header a{
+	border: none;
+}
+
+.realizzazioni-title-button .active .elementor-button-text{
+	color:#002940 !important;
+	font-weight:700 !important;
+}
+
+.navigation-prev-realizzazioni a{
+	padding-left:0px !important;
+}
+
+.navigation-next-realizzazioni a{
+	padding-right:0px !important;
+}
+
+.scopri-text-white .elementor-button-text:hover{
+	border-bottom: 1px solid #FFFFFF !important;
+	
+	/*-ms-transform: scale(1.1);*/ 
+            /* IE 9 */ 
+            /*-webkit-transform: scale(1.1); */
+            /* Safari 3-8 */ 
+            /*transform: scale(1.1);*/
+}
+
+.info-text-blu .elementor-button-text:hover{
+	border-bottom: 1px solid #002940 !important;
+	/*-ms-transform: scale(1.1);*/ 
+            /* IE 9 */ 
+            /*-webkit-transform: scale(1.1); */ 
+            /* Safari 3-8 */ 
+            /*transform: scale(1.1); */
+}
+
+
+.scopri-btn-white a:hover{
+	color: #002940 !important;
+	background-color: #FFFFFF !important;
+	/*-ms-transform: scale(1.1);*/ 
+            /* IE 9 */ 
+            /*-webkit-transform: scale(1.1); */
+            /* Safari 3-8 */ 
+            /*transform: scale(1.1);*/
+}
+
+.scopri-btn-blue a:hover{
+	color: #FFFFFF !important;
+	background-color: #002940 !important;
+	/*-ms-transform: scale(1.1);*/ 
+            /* IE 9 */ 
+            /*-webkit-transform: scale(1.1); */
+            /* Safari 3-8 */ 
+            /*transform: scale(1.1);*/
+}
+
+.elementor-button-text{
+	font-family: "Open Sans" !important;
+}
+
+.elementor-element-b910ff1{
+	margin-bottom: 0px !important;
+}
+
+
+/*NEWSLETTER BLOCK*/
+.btn-newsletter{
+	color: #FFFFFF;
+  background-color: #002940;
+  font-family: Open Sans, Regular;
+  font-size: 14px;
+  padding: 5px 8px;
+	border: 1px solid #002940;
+  border-radius: 20px;
+}
+
+.btn-newsletter:hover{
+	background-color: #FFFFFF !important;
+	color: #002940 !important;
+}
+
+/*REALIZZAZIONI SINGLE ITEM */
+
+.realizzazione-desc{
+	font-family: 'Playfair Display' !important;
+	color: #FFFFFF !important;
+	border: none !important;
+	font-size: 20px !important;
+}
+
+/*UNDERLINE PARENT PAGE WHEN IN CHILD PAGE*/
+.header-menu .current-page-ancestor > a{
+border-bottom: 1px solid #FFFFFF !important; 
+}
+
+.header-menu .current-menu-item > a{
+border-bottom: 1px solid #FFFFFF !important; 
+}
+
+
+/*btn read blog news*/
+.post-read-button:hover{
+	color: #FFFFFF !important;
+	background-color: #002940 !important;
+}
+
+/*set padding button*/
+.elementor-button{
+	padding: 15px 21px !important;
+}
+
+/*Button VAI AI PRODOTTI WHITE*/
+.serie-products-btn-white{
+	font-family: 'Open Sans', Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    fill: var(--e-global-color-6fb0d78 );
+    color: var(--e-global-color-6fb0d78 );
+    background-color: #00000000;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: var(--e-global-color-6fb0d78 );
+    border-radius: 0px 0px 0px 0px;
+    float: right;
+}
+
+.serie-products-btn-white:hover{
+	color: #002940 !important;
+	background-color: #FFFFFF !important;
+	/*-ms-transform: scale(1.1);*/ 
+            /* IE 9 */ 
+            /*-webkit-transform: scale(1.1); */
+            /* Safari 3-8 */ 
+            /*transform: scale(1.1);*/
+	
+}
+
+.serie-products-btn-white:visited{
+	color: #FFFFFF;
+}
+
+@media only screen and (max-width: 768px){
+	.serie-products-btn-white{
+		float: left;
+	}
+}
+
+/*Button VAI AI PRODOTTI BLUE*/
+.serie-products-btn-blue{
+	font-family: 'Open Sans', Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    fill: var(--e-global-color-6fb0d78 );
+    color: #002940;
+    background-color: #00000000;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #002940;
+    border-radius: 0px 0px 0px 0px;
+    float: right;
+}
+
+.serie-products-btn-blue:hover{
+	color: #FFFFFF !important;
+	background-color: #002940 !important;
+	/*-ms-transform: scale(1.1);*/ 
+            /* IE 9 */ 
+            /*-webkit-transform: scale(1.1); */
+            /* Safari 3-8 */ 
+            /*transform: scale(1.1);*/
+	
+}
+
+.serie-products-btn-blue:visited{
+	color: #002940;
+}
+
+.essence-slider, .essence-slider img{
+	height: 750px;
+}
+
+.essence-slider .elementor-swiper-button-prev, .essence-slider .elementor-swiper-button-next{
+	margin: 0 15%;
+}
+
+.essence-slider img{
+	object-fit: cover;
+}
+
+/*.slider-essence .swiper-slide, .slider-essence figure, .slider-essence img{
+		min-width: 1200px;
+} */
+
+.exclusive-slider .swiper-slide-duplicate-prev,
+.exclusive-slider .swiper-slide-active,
+.essence-slider .swiper-slide-duplicate-prev,
+.essence-slider .swiper-slide-active,
+.ikonico-slider .swiper-slide-duplicate-prev,
+.ikonico-slider .swiper-slide-active{
+	background: rgba(0, 41, 64, 1) !important;
+}
+
+.exclusive-slider .swiper-slide-duplicate-prev img,
+.exclusive-slider .swiper-slide-active img,
+.essence-slider .swiper-slide-duplicate-prev img,
+.essence-slider .swiper-slide-active img,
+.ikonico-slider .swiper-slide-duplicate-prev img,
+.ikonico-slider .swiper-slide-active img{
+	opacity: 0.2 !important;
+}
+
+/*.exclusive-moduli*/
+.elementor-swiper-button .eicon-chevron-left:before, .essence-slider-small-dv .elementor-swiper-button > svg, .essence-slider .elementor-swiper-button > svg, .ikonico-slider .elementor-swiper-button > svg, .ikonico-slider-small-dv .elementor-swiper-button > svg, .exclusive-slider-lg .elementor-swiper-button > svg, .exclusive-slider-sm .elementor-swiper-button > svg{
+	border: 1px solid white;
+	padding: 6px 12px 5px 13px;
+	width: 1.4em!important;
+	height: 1.4em!important;
+}
+
+/*.exclusive-moduli*/
+.elementor-swiper-button .eicon-chevron-right:before{
+border: 1px solid white;
+padding: 6px 13px 5px 12px;
+}
+
+.induzione-progress-bar .eael-progressbar{
+	height: 250px !important;
+	width: 250px !important;
+}
+
+.realizzazioni{
+	left: auto !important;
+}
+
+/*Banner cookie*/
+#moove_gdpr_cookie_info_bar{
+	border-radius: 0 !important;
+}
+
+.moove-gdpr-info-bar-container{
+	background-color: #002940 !important;
+}
+
+.mgbutton{
+	border: 1px solid #FFFFFF !important;
+}
+
+#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a{
+	border: none !important;
+}
+
+#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover{
+	color: #FFFFFF !important;
+}
+
+/*MENU MOBILE*/
+.elementor-37 .elementor-element.elementor-element-a6b7d38 .elementskit-menu-close {
+	border-radius: 0 !important;
+}
+
+.elementor-37 .elementor-element .elementskit-navbar-nav > li > a .elementskit-submenu-indicator{
+	border: none !important;
+}
+
+.ekit_menu_responsive_tablet .elementskit-navbar-nav-default .elementskit-dropdown-has>a .elementskit-submenu-indicator{
+	border: none !important;
+}
+
+/*FOOTER COLOR Paragrafi*/
+
+#footer-middle p {
+	border: none !important;
+}
+
+#footer-middle a{
+	border: none;
+	color: #FFFFFF;
+}
+
+/*CONTACT PAGE 3 BLOCK COLOR Paragrafi*/
+#contact-info-block-section p {
+	border: none !important;
+}
+
+#contact-info-block-section a{
+	border: none;
+	color: #FFFFFF;
+}
+
+/*COLORE SPUNTA FORM CONTATTI*/
+.forminator-checkbox-box{
+	color: #002940;
+}
+
+/*HOVER NAVIGAZIONE REALIZZAZIONI*/
+.navigation-prev-realizzazioni .elementor-button-text:hover,
+.navigation-next-realizzazioni .elementor-button-text:hover{
+	border-bottom: 1px solid #002940 !important;
+}
+
+/*Link privacy policy & cookies*/
+.policy-link a{
+	border-color: #FFFFFF00 !important;
+	
+}
+
+.policy-link a:hover{
+	color: #002940 !important;
+	border-color: #002940 !important;
+}
+
+/*submenu */
+.elementskit-submenu-panel > li > a:hover{
+	border-bottom: 1px solid #FFFFFF !important;
+}
+
+/*Link essence e ikonico homepage*/
+.essence-link-home, .ikonico-link-home{
+	
+	font-family: 'Open Sans' !important;
+	font-weight: 400 !important;
+	font-size: 40px !important;
+	
+}
+
+/*colore icona form contatti*/
+.forminator-ui#forminator-module-4462.forminator-design--default .forminator-checkbox.forminator-consent .forminator-checkbox-box,
+.forminator-ui#forminator-module-7928.forminator-design--default .forminator-checkbox.forminator-consent .forminator-checkbox-box,
+.forminator-ui#forminator-module-7929.forminator-design--default .forminator-checkbox.forminator-consent .forminator-checkbox-box,.forminator-ui#forminator-module-7927.forminator-design--default .forminator-checkbox.forminator-consent .forminator-checkbox-box{
+	color: #002940 !important;
+}
+
+/*paddin sinistro sottomenu*/
+.elementor-37 .elementor-element .elementor-element-2d6123b6 .elementskit-submenu-panel,
+.elementor-37 .elementor-element .elementor-element-4de7d62e .elementskit-submenu-panel
+ {
+    padding: 15px 15px 15px 15px;
+}
+
+/*landing floating element raggio*/
+.ekit-wid-con .elementskit-info-image-box.floating-style .elementskit-box-body {
+    border-radius: 0
+}
+
+/*landing floating element colore testo*/
+.ekit-wid-con .elementskit-info-image-box:hover .elementskit-box-content .elementskit-info-box-title {
+    color: #002940;
+}
+
+/*radius box landing*/
+.elementor-11134 .elementor-element.elementor-element-cbf7565 
+.elementskit-info-image-box.style-modern .elementskit-box-body{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.elementor-11134 .elementor-element.elementor-element-ff9954e .elementskit-info-image-box.style-modern .elementskit-box-body{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.elementor-11134 .elementor-element.elementor-element-b133685 .elementskit-info-image-box.style-modern .elementskit-box-body{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.elementor-11755 .elementor-element.elementor-element-4e2c7e1c .elementskit-info-image-box.style-modern .elementskit-box-body{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.elementor-11755 .elementor-element.elementor-element-150c3a83 .elementskit-info-image-box.style-modern .elementskit-box-body {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.elementor-11755 .elementor-element.elementor-element-32f401b .elementskit-info-image-box.style-modern .elementskit-box-body {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+/*nascondere menù landing*/
+.page-id-11134 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-11712 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-11755 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-11930 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-11947 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-11968 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12045 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12333 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12344 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12343 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12347 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12408 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12409 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12412 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+.page-id-12415 .elementor-37 .elementor-element.elementor-element-a6b7d38{
+	display: none;
+}
+
+/*dimensione button contatti*/
+.page-id-11134 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-11712 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-11755 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-11930 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-11947 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-11968 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12045 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12333 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12344 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12343 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12347 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12408 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12409 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12412 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+.page-id-12415 .scopri-text-white .elementor-button-text {
+    font-size: 25px;
+}
+
+/*RIMUOVE SFONDO VIDEO HOMEPAGE*/
+.homepage-video{
+	background-color: transparent !important;
+}
+
+/*nascondere menù landing Ikonico*/
+.page-id-11930 .elementor-element-4de7d62e{
+	display: none;
+}
+
+.page-id-11947 .elementor-element-4de7d62e{
+	display: none;
+}
+
+.page-id-11968 .elementor-element-4de7d62e{
+	display: none;
+}
+
+.page-id-12045 .elementor-element-4de7d62e{
+	display: none;
+}		</style>
+		<link rel='stylesheet' id='widget-gallery-css' href='https://silko.it/wp-content/plugins/elementor-pro/assets/css/widget-gallery.min.css?ver=3.25.4' media='all' />
+<link rel='stylesheet' id='elementor-gallery-css' href='https://silko.it/wp-content/plugins/elementor/assets/lib/e-gallery/css/e-gallery.min.css?ver=1.2.0' media='all' />
+<link rel='stylesheet' id='e-transitions-css' href='https://silko.it/wp-content/plugins/elementor-pro/assets/css/conditionals/transitions.min.css?ver=3.25.4' media='all' />
+<link rel='stylesheet' id='widget-social-icons-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='e-apple-webkit-css' href='https://silko.it/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=3.26.0' media='all' />
+<link rel='stylesheet' id='joinchat-css' href='https://silko.it/wp-content/plugins/creame-whatsapp-me/public/css/joinchat.min.css?ver=6.0.3' media='all' />
+<style id='joinchat-inline-css'>
+.joinchat{--ch:202;--cs:100%;--cl:13%;--bw:1}
+/*# sourceURL=joinchat-inline-css */
+</style>
+
+</head>
+<body class="error404 wp-embed-responsive wp-theme-seedlet wp-child-theme-blank-canvas theme-seedlet woocommerce-no-js ehf-footer ehf-template-seedlet ehf-stylesheet-blank-canvas hide-post-and-page-titles hide-site-footer hide-comments hfeed has-main-navigation elementor-default elementor-template-full-width elementor-kit-18 elementor-page-14225">
+<div class="ekit-template-content-markup ekit-template-content-header ekit-template-content-theme-support">
+		<div data-elementor-type="wp-post" data-elementor-id="37" class="elementor elementor-37" data-elementor-post-type="elementskit_template">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-b792286 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="b792286" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2e336f7" data-id="2e336f7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-830ae16 hfe-nav-menu__align-right hfe-nav-menu__breakpoint-none hfe-submenu-icon-arrow hfe-submenu-animation-none hfe-link-redirect-child elementor-widget elementor-widget-navigation-menu" data-id="830ae16" data-element_type="widget" data-settings="{&quot;padding_vertical_menu_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;dropdown_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;width_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;220&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="navigation-menu.default">
+				<div class="elementor-widget-container">
+								<div class="hfe-nav-menu hfe-layout-horizontal hfe-nav-menu-layout horizontal hfe-pointer__none" data-layout="horizontal">
+				<div role="button" class="hfe-nav-menu__toggle elementor-clickable">
+					<span class="screen-reader-text">Menu</span>
+					<div class="hfe-nav-menu-icon">
+											</div>
+				</div>
+				<nav class="hfe-nav-menu__layout-horizontal hfe-nav-menu__submenu-arrow" data-toggle-icon="" data-close-icon="" data-full-width="">
+					<ul id="menu-1-830ae16" class="hfe-nav-menu"><li id="menu-item-679" class="menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu"><a href="https://silko.it/service/" class = "hfe-menu-item">SERVICE</a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-custom menu-item-object-custom parent hfe-creative-menu"><a target="_blank"rel="noopener" href="https://silko.aftersalestools.com/Login.aspx" class = "hfe-menu-item">AREA PERSONALE</a></li>
+<li id="menu-item-wpml-ls-17-it" class="menu-item wpml-ls-slot-17 wpml-ls-item wpml-ls-item-it wpml-ls-current-language wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children parent hfe-has-submenu hfe-creative-menu"><div class="hfe-has-submenu-container"><a title="Passa a IT" href="https://silko.it/" class = "hfe-menu-item"><span class="wpml-ls-native" lang="it">IT</span><span class='hfe-menu-toggle sub-arrow hfe-menu-child-0'><i class='fa'></i></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-wpml-ls-17-de" class="menu-item wpml-ls-slot-17 wpml-ls-item wpml-ls-item-de wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item hfe-creative-menu"><a title="Passa a DE" href="https://silko.it/de/" class = "hfe-sub-menu-item"><span class="wpml-ls-native" lang="de">DE</span></a></li>
+	<li id="menu-item-wpml-ls-17-fr" class="menu-item wpml-ls-slot-17 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item hfe-creative-menu"><a title="Passa a FR" href="https://silko.it/fr/" class = "hfe-sub-menu-item"><span class="wpml-ls-native" lang="fr">FR</span></a></li>
+	<li id="menu-item-wpml-ls-17-en" class="menu-item wpml-ls-slot-17 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item hfe-creative-menu"><a title="Passa a EN" href="https://silko.it/en/" class = "hfe-sub-menu-item"><span class="wpml-ls-native" lang="en">EN</span></a></li>
+	<li id="menu-item-wpml-ls-17-es" class="menu-item wpml-ls-slot-17 wpml-ls-item wpml-ls-item-es wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item hfe-creative-menu"><a title="Passa a ES" href="https://silko.it/es/" class = "hfe-sub-menu-item"><span class="wpml-ls-native" lang="es">ES</span></a></li>
+</ul>
+</li>
+</ul> 
+				</nav>
+			</div>
+							</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-281495c6 elementor-section-full_width elementor-section-height-min-height elementor-section-items-stretch elementor-section-content-middle elementor-section-stretched she-header-yes she-header-transparent-yes header-sticky elementor-section-height-default" data-id="281495c6" data-element_type="section" data-settings="{&quot;scroll_distance&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:50,&quot;sizes&quot;:[]},&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;transparent&quot;:&quot;yes&quot;,&quot;transparent_header_show&quot;:&quot;yes&quot;,&quot;background&quot;:&quot;#002940&quot;,&quot;custom_bottom_border_color&quot;:&quot;#FFFFFF&quot;,&quot;custom_bottom_border_width&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1,&quot;sizes&quot;:[]},&quot;background_show&quot;:&quot;yes&quot;,&quot;bottom_border&quot;:&quot;yes&quot;,&quot;transparent_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;scroll_distance_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;scroll_distance_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;custom_bottom_border_width_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;custom_bottom_border_width_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c878e15" data-id="c878e15" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-4535ec49 elementor-section-content-middle elementor-section-full_width header-menu elementor-section-height-default elementor-section-height-default" data-id="4535ec49" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-19b765ee" data-id="19b765ee" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6173fb7 elementor-widget elementor-widget-image" data-id="6173fb7" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://silko.it/">
+							<img fetchpriority="high" width="620" height="143" src="https://silko.it/wp-content/uploads/silko-logo-sito.webp" class="attachment-large size-large wp-image-7332" alt="" srcset="https://silko.it/wp-content/uploads/silko-logo-sito.webp 648w, https://silko.it/wp-content/uploads/silko-logo-sito-300x69.webp 300w, https://silko.it/wp-content/uploads/elementor/thumbs/silko-logo-sito-qi0nn8uuh4t7p4s6l775rtoe4htfzxxkpbv11jx5a6.webp 85w" sizes="(max-width: 620px) 100vw, 620px" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4de7d62e" data-id="4de7d62e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a6b7d38 elementor-widget__width-auto menu-mobile elementor-widget elementor-widget-ekit-nav-menu" data-id="a6b7d38" data-element_type="widget" data-widget_type="ekit-nav-menu.default">
+				<div class="elementor-widget-container">
+							<nav class="ekit-wid-con ekit_menu_responsive_tablet" 
+			data-hamburger-icon="icon icon-burger-menu" 
+			data-hamburger-icon-type="icon" 
+			data-responsive-breakpoint="1024">
+			            <button class="elementskit-menu-hamburger elementskit-menu-toggler"  type="button" aria-label="hamburger-icon">
+                <i aria-hidden="true" class="ekit-menu-icon icon icon-burger-menu"></i>            </button>
+            <div id="ekit-megamenu-primary" class="elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default ekit-nav-menu-one-page- ekit-nav-dropdown-hover"><ul id="menu-primary" class="elementskit-navbar-nav elementskit-menu-po-center submenu-click-on-icon"><li id="menu-item-806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-806 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/attrezzature-professionali-per-la-ristorazione/" class="ekit-menu-nav-link ekit-menu-dropdown-toggle" aria-haspopup="true" aria-expanded="false">AZIENDA<i aria-hidden="true" class="icon icon-arrow-point-to-down elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-2505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2505 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/sostenibilita/" class=" dropdown-item">SOSTENIBILITÀ</a>	<li id="menu-item-2633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2633 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/cataloghi/" class=" dropdown-item">CATALOGHI</a></ul>
+</li>
+<li id="menu-item-1063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1063 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/" class="ekit-menu-nav-link ekit-menu-dropdown-toggle" aria-haspopup="true" aria-expanded="false">PRODOTTI<i aria-hidden="true" class="icon icon-arrow-point-to-down elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-17592" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17592 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/pi/" class=" dropdown-item">Pi</a>	<li id="menu-item-1532" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1532 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/essence/" class=" dropdown-item" aria-haspopup="true" aria-expanded="false">ESSENCE<i aria-hidden="true" class="icon icon-arrow-point-to-down elementskit-submenu-indicator"></i></a>
+	<ul class="elementskit-dropdown elementskit-submenu-panel">
+		<li id="menu-item-1584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1584 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/essence/essence-900/" class=" dropdown-item">900</a>		<li id="menu-item-1583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1583 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/essence/essence-700/" class=" dropdown-item">700</a>		<li id="menu-item-1892" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1892 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/essence/essence-650/" class=" dropdown-item">650</a>		<li id="menu-item-1891" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1891 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/essence/essence-1100/" class=" dropdown-item">1100</a>		<li id="menu-item-15790" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15790 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/essence/drop-in/" class=" dropdown-item">DROP IN</a>		<li id="menu-item-16725" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16725 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/essence/refrigerazone/" class=" dropdown-item">REFRIGERAZONE</a>	</ul>
+	<li id="menu-item-1139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1139 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/ikonico/" class=" dropdown-item">IKONICO</a>	<li id="menu-item-1890" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1890 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/prodotti/exclusive/" class=" dropdown-item">EXCLUSIVE</a></ul>
+</li>
+<li id="menu-item-7041" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7041 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu=750px><a href="#" class="ekit-menu-nav-link ekit-menu-dropdown-toggle" aria-haspopup="true" aria-expanded="false">TECNOLOGIE<i aria-hidden="true" class="icon icon-arrow-point-to-down elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-17083" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17083 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/litebite/" class=" dropdown-item">LITEBITE</a>	<li id="menu-item-15455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15455 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/sonika/" class=" dropdown-item">SONIKA</a>	<li id="menu-item-2030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2030 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/induzione/" class=" dropdown-item">INDUZIONE</a>	<li id="menu-item-2094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2094 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/fryer-evo/" class=" dropdown-item">FRYER EVO</a></ul>
+</li>
+<li id="menu-item-13818" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13818 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/format-design-lab/" class="ekit-menu-nav-link">SOLUZIONI PER FORMAT</a></li>
+<li id="menu-item-944" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-944 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/realizzazioni/" class="ekit-menu-nav-link">REALIZZAZIONI</a></li>
+<li id="menu-item-14963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14963 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/news/" class="ekit-menu-nav-link">NEWS</a></li>
+<li id="menu-item-992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-992 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://silko.it/contatti/" class="ekit-menu-nav-link">CONTATTI</a></li>
+</ul><div class="elementskit-nav-identity-panel"><button class="elementskit-menu-close elementskit-menu-toggler" type="button">X</button></div></div>			
+			<div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler ekit-nav-menu--overlay"></div>        </nav>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		</div>
+		<div data-elementor-type="error-404" data-elementor-id="14225" class="elementor elementor-14225 elementor-location-single" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-6093bb4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6093bb4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-47eff62" data-id="47eff62" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-ce39f0e elementor-widget elementor-widget-spacer" data-id="ce39f0e" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-aae1930 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aae1930" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-55d5a64" data-id="55d5a64" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a7b93cb elementor-widget elementor-widget-spacer" data-id="a7b93cb" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ac446de elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ac446de" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1344775" data-id="1344775" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5d5fa1f elementor-widget__width-inherit elementor-widget elementor-widget-heading" data-id="5d5fa1f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Pagina non trovata</h2>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-0f5ce9f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0f5ce9f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5c07347" data-id="5c07347" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-9bef080 elementor-widget__width-inherit elementor-widget elementor-widget-image" data-id="9bef080" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="620" height="396" src="https://silko.it/wp-content/uploads/Silko_404-1024x654.webp" class="attachment-large size-large wp-image-14745" alt="" srcset="https://silko.it/wp-content/uploads/Silko_404-1024x654.webp 1024w, https://silko.it/wp-content/uploads/Silko_404-300x192.webp 300w, https://silko.it/wp-content/uploads/Silko_404-768x490.webp 768w, https://silko.it/wp-content/uploads/Silko_404-1536x981.webp 1536w, https://silko.it/wp-content/uploads/Silko_404-1568x1001.webp 1568w, https://silko.it/wp-content/uploads/Silko_404-750x479.webp 750w, https://silko.it/wp-content/uploads/Silko_404.webp 1920w" sizes="(max-width: 620px) 100vw, 620px" />															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-48caf55 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="48caf55" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b61dd20" data-id="b61dd20" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e0118e3 elementor-widget elementor-widget-spacer" data-id="e0118e3" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3f2b004 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="3f2b004" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-caba096" data-id="caba096" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a442a70 elementor-widget elementor-widget-text-editor" data-id="a442a70" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<h4 style="text-align: center;">OPS: Non è qui ciò che stavi cercando!</h4>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-273e406" data-id="273e406" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e46ade1 elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="e46ade1" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://silko.it/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">HOME ></span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-e1fb0ec elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e1fb0ec" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0745f5d" data-id="0745f5d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-b178dea elementor-widget elementor-widget-spacer" data-id="b178dea" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+		<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
+			<div class='footer-width-fixer'>		<div data-elementor-type="wp-post" data-elementor-id="5998" class="elementor elementor-5998" data-elementor-post-type="elementor-hf">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-1ebc569 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1ebc569" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-493f545" data-id="493f545" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d6bb5b0 elementor-widget elementor-widget-text-editor" data-id="d6bb5b0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><strong>Partner tecnici:<br /></strong></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-fe81f0a elementor-widget elementor-widget-gallery" data-id="fe81f0a" data-element_type="widget" data-settings="{&quot;columns&quot;:5,&quot;columns_mobile&quot;:3,&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:25,&quot;sizes&quot;:[]},&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;aspect_ratio&quot;:&quot;1:1&quot;,&quot;lazyload&quot;:&quot;yes&quot;,&quot;gallery_layout&quot;:&quot;grid&quot;,&quot;columns_tablet&quot;:2,&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]}}" data-widget_type="gallery.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-gallery__container">
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/repa.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/ali_parts.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+					</div>
+					</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-7a95d60" data-id="7a95d60" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-fbf058c elementor-widget elementor-widget-text-editor" data-id="fbf058c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><strong>Partner commerciali:<br /></strong></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-5535f00 elementor-widget elementor-widget-gallery" data-id="5535f00" data-element_type="widget" data-settings="{&quot;columns&quot;:5,&quot;columns_mobile&quot;:3,&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:25,&quot;sizes&quot;:[]},&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;aspect_ratio&quot;:&quot;1:1&quot;,&quot;lazyload&quot;:&quot;yes&quot;,&quot;gallery_layout&quot;:&quot;grid&quot;,&quot;columns_tablet&quot;:2,&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]}}" data-widget_type="gallery.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-gallery__container">
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/cooking_room.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/gif-3.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+					</div>
+					</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-f8813ac" data-id="f8813ac" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5156591 elementor-widget elementor-widget-text-editor" data-id="5156591" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<strong>Partner di cuore:
+</strong>								</div>
+				</div>
+				<div class="elementor-element elementor-element-4dbd15e elementor-widget elementor-widget-gallery" data-id="4dbd15e" data-element_type="widget" data-settings="{&quot;columns&quot;:6,&quot;columns_mobile&quot;:3,&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:25,&quot;sizes&quot;:[]},&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;aspect_ratio&quot;:&quot;1:1&quot;,&quot;lazyload&quot;:&quot;yes&quot;,&quot;gallery_layout&quot;:&quot;grid&quot;,&quot;columns_tablet&quot;:2,&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]}}" data-widget_type="gallery.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-gallery__container">
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/relais_chateau.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/venice_green.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/leucos.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/Oom.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/isa.jpg" data-width="310" data-height="310" aria-label="" role="img" ></div>
+														</div>
+							<div class="e-gallery-item elementor-gallery-item">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://silko.it/wp-content/uploads/villa_franceschi-1.jpg" data-width="250" data-height="250" aria-label="" role="img" ></div>
+														</div>
+					</div>
+					</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ac2dcfc elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ac2dcfc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0b609c1" data-id="0b609c1" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2a64d07 elementor-widget elementor-widget-image" data-id="2a64d07" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="186" height="56" src="https://silko.it/wp-content/uploads/2023/08/silko-logo.webp" class="attachment-2048x2048 size-2048x2048 wp-image-52" alt="" />															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-46b64de elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="46b64de" data-element_type="section" id="footer-middle" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-0bfb996" data-id="0bfb996" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2ad04ac elementor-widget elementor-widget-text-editor" data-id="2ad04ac" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><strong>Silko Ali Group Srl </strong></p><p>Via F. Marinotti 45</p><p>31029 Vittorio Veneto (TV) &#8211; Italia</p><p>T +39 0438 911930</p><p><a href="mailto:info@silko.it">info@silko.it</a></p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-74bec0a" data-id="74bec0a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-843f55b elementor-widget elementor-widget-text-editor" data-id="843f55b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Partita IVA: 13239980967</p><p>Cap.Soc.: Euro 20.000.000 I.V.</p><p>Società a Socio Unico</p><p>REA: MI n° 2507533</p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6b2deb3" data-id="6b2deb3" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-873d06d elementor-widget elementor-widget-text-editor" data-id="873d06d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>©Copyright Silko 2023</p><p><a style="border-bottom: none !important; color: #ffffff;" href="https://silko.it/legal-notices-and-gdpr-privacy-policy/">Privacy Policy e Cookie policy</a></p><p>Credits Kora Comunicazione</p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-7260c13" data-id="7260c13" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-0feee7f elementor-shape-square elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="0feee7f" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-social-icons-wrapper elementor-grid">
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-facebook elementor-repeater-item-25b240c" href="https://www.facebook.com/SilkoAli/" target="_blank">
+						<span class="elementor-screen-only">Icon-facebook</span>
+						<i class="icon icon-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-instagram-1 elementor-repeater-item-ea0785a" href="https://www.instagram.com/silko_ali/" target="_blank">
+						<span class="elementor-screen-only">Icon-instagram-1</span>
+						<i class="icon icon-instagram-1"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-linkedin elementor-repeater-item-bc02287" href="https://www.linkedin.com/company/silko-ali-s.p.a./" target="_blank">
+						<span class="elementor-screen-only">Icon-linkedin</span>
+						<i class="icon icon-linkedin"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-youtube-v elementor-repeater-item-d31ecd6" href="https://www.youtube.com/user/SilkoAli" target="_blank">
+						<span class="elementor-screen-only">Icon-youtube-v</span>
+						<i class="icon icon-youtube-v"></i>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-78c9276 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="78c9276" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-a7e2905" data-id="a7e2905" data-element_type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6c09916" data-id="6c09916" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6789055 elementor-widget elementor-widget-image" data-id="6789055" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" width="620" height="539" src="https://silko.it/wp-content/uploads/2023/08/logo-aligroup-footer.webp" class="attachment-large size-large wp-image-757" alt="" srcset="https://silko.it/wp-content/uploads/2023/08/logo-aligroup-footer.webp 762w, https://silko.it/wp-content/uploads/2023/08/logo-aligroup-footer-750x653.webp 750w, https://silko.it/wp-content/uploads/2023/08/logo-aligroup-footer-300x261.webp 300w" sizes="(max-width: 620px) 100vw, 620px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-792360e" data-id="792360e" data-element_type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		</div>		</footer>
+	</div><!-- #page -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/blank-canvas/*","/wp-content/themes/seedlet/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RXNXZKJ" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <!--copyscapeskip-->
+  <aside id="moove_gdpr_cookie_info_bar" class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom_right" aria-label="GDPR Cookie Banner" style="display: none;">
+    <div class="moove-gdpr-info-bar-container">
+      <div class="moove-gdpr-info-bar-content">
+        
+<div class="moove-gdpr-cookie-notice">
+  <p><span class="cc-message-text">To make your browsing experience better, to collect statistics on how our website is used and to enable you to interact with the most popular social networks, this website uses cookies also of third parties. To get more information please see our policy.</span>  <a class="cc-link cc-privacy" role="button" href="https://silko.it/legal-notices-and-gdpr-privacy-policy" target="_blank" rel="noopener noreferrer noindex nofollow" aria-label="privacy policy">Privacy policy</a></p>
+</div>
+<!--  .moove-gdpr-cookie-notice -->        
+<div class="moove-gdpr-button-holder">
+		  <button class="mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0" aria-label="Accetta" >Accetta</button>
+	  				<button class="mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 "  aria-label="Rifiuta">Rifiuta</button>
+			</div>
+<!--  .button-container -->      </div>
+      <!-- moove-gdpr-info-bar-content -->
+    </div>
+    <!-- moove-gdpr-info-bar-container -->
+  </aside>
+  <!-- #moove_gdpr_cookie_info_bar -->
+  <!--/copyscapeskip-->
+
+<div class="joinchat joinchat--right joinchat--dark-auto" data-settings='{"telephone":"393476736593","mobile_only":false,"button_delay":3,"whatsapp_web":false,"qr":false,"message_views":2,"message_delay":-10,"message_badge":false,"message_send":"","message_hash":"90f4da97"}' hidden aria-hidden="false">
+	<div class="joinchat__button" role="button" tabindex="0">
+									<div class="joinchat__tooltip"><div>💬 Need help?</div></div>
+			</div>
+					<div class="joinchat__chatbox" role="dialog" aria-labelledby="joinchat__label" aria-modal="true">
+			<div class="joinchat__header">
+				<div id="joinchat__label">
+											<span>Whatsapp Silko</span>
+									</div>
+				<div class="joinchat__close" role="button" tabindex="0" aria-label="Chiudi"></div>
+			</div>
+			<div class="joinchat__scroll">
+				<div class="joinchat__content">
+					<div class="joinchat__chat"><div class="joinchat__bubble">Grazie per aver contattato Silko! Facci sapere come possiamo aiutarti!</div></div>
+					<div class="joinchat__open" role="button" tabindex="0">
+													<div class="joinchat__open__text">Open chat</div>
+												<svg class="joinchat__open__icon" width="60" height="60" viewbox="0 0 400 400">
+							<path class="joinchat__pa" d="M168.83 200.504H79.218L33.04 44.284a1 1 0 0 1 1.386-1.188L365.083 199.04a1 1 0 0 1 .003 1.808L34.432 357.903a1 1 0 0 1-1.388-1.187l29.42-99.427"/>
+							<path class="joinchat__pb" d="M318.087 318.087c-52.982 52.982-132.708 62.922-195.725 29.82l-80.449 10.18 10.358-80.112C18.956 214.905 28.836 134.99 81.913 81.913c65.218-65.217 170.956-65.217 236.174 0 42.661 42.661 57.416 102.661 44.265 157.316"/>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+			<script type='text/javascript'>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+function resetFiltri(){
+    $('#realizzazioni-1').find('.elementor-button-text').css({"color":"#002940","font-weight":"400"});
+    $('#realizzazioni-2').find('.elementor-button-text').css({"color":"#002940","font-weight":"400"});
+    $('#realizzazioni-3').find('.elementor-button-text').css({"color":"#002940","font-weight":"400"});
+    $('#realizzazioni-4').find('.elementor-button-text').css({"color":"#002940","font-weight":"400"});
+    $('#realizzazioni-5').find('.elementor-button-text').css({"color":"#002940","font-weight":"400"});
+    $('#realizzazioni-6').find('.elementor-button-text').css({"color":"#002940","font-weight":"400"});
+    $('#realizzazioni-7').find('.elementor-button-text').css({"color":"#002940","font-weight":"400"});
+
+    $('.realizzazioni-1-images').hide();
+    $('.realizzazioni-2-images').hide();
+    $('.realizzazioni-3-images').hide();
+    $('.realizzazioni-4-images').hide();
+    $('.realizzazioni-5-images').hide();
+
+}
+$(document).ready(function(){
+
+    $('.realizzazioni-1-images').show();
+    $('.realizzazioni-2-images').hide();
+    $('.realizzazioni-3-images').hide();
+    $('.realizzazioni-4-images').hide();
+    $('.realizzazioni-5-images').hide();
+
+    //$('#realizzazioni-1').find('.elementor-button-text').css({"color":"#D7761E","font-weight":"700"});
+    //$('.realizzazioni-1-images').show();
+    
+	;
+	
+	var POST = [];
+        
+    if(POST != null){      
+        switch(POST["category"]){
+          case "fine-dining":
+            resetFiltri(); 
+            $('#realizzazioni-2').find('.elementor-button-text').css({"color":"#D7761E","font-weight":"700"});
+            $('.realizzazioni-2-images').show();
+            break;
+          case "hotel":
+            resetFiltri(); 
+            $('#realizzazioni-3').find('.elementor-button-text').css({"color":"#D7761E","font-weight":"700"});
+            $('.realizzazioni-3-images').show(); 
+            break;
+          case "colletivita":
+            resetFiltri();       
+            $('#realizzazioni-4').find('.elementor-button-text').css({"color":"#D7761E","font-weight":"700"});
+            $('#realizzazioni-6').find('.elementor-button-text').css({"color":"#D7761E","font-weight":"700"});
+            $('.realizzazioni-4-images').show(); 
+            break;
+          case "ristoranti":
+            resetFiltri(); 
+            $('#realizzazioni-5').find('.elementor-button-text').css({"color":"#D7761E","font-weight":"700"});
+            $('#realizzazioni-7').find('.elementor-button-text').css({"color":"#D7761E","font-weight":"700"});
+            $('.realizzazioni-5-images').show(); 
+            break;  
+        }
+    }
+
+    
+    $('.realizzazioni-title-button').on('click', function()
+    {
+        resetFiltri(); 
+        
+        var id = $(this).attr("id");
+        
+        //SET CSS REALIZZAZIONI TITLE SELECTED BUTTON
+        $(this).find('.elementor-button-text').css({"color":"#D7761E","font-weight":"700"});
+        
+        //SHOW SELECTED REALIZZAZIONE IMAGES
+        if(id == "realizzazioni-6"){
+            $('.realizzazioni-4-images').show(); 
+        }
+        else{
+            if(id == "realizzazioni-7"){
+                $('.realizzazioni-5-images').show(); 
+            }
+            else{
+                $('.' + id + '-images').show(); 
+            }
+        }
+           
+    });
+});
+</script>	<script>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+		<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<script src="https://silko.it/wp-content/plugins/elementskit-lite/libs/framework/assets/js/frontend-script.js?ver=3.3.3" id="elementskit-framework-js-frontend-js"></script>
+<script id="elementskit-framework-js-frontend-js-after">
+		var elementskit = {
+			resturl: 'https://silko.it/wp-json/elementskit/v1/',
+		}
+
+		
+//# sourceURL=elementskit-framework-js-frontend-js-after
+</script>
+<script src="https://silko.it/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widget-scripts.js?ver=3.3.3" id="ekit-widget-scripts-js"></script>
+<script src="https://silko.it/wp-content/plugins/creame-whatsapp-me/public/js/joinchat.min.js?ver=6.0.3" id="joinchat-js" defer data-wp-strategy="defer"></script>
+<script src="https://silko.it/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=9.4.5" id="sourcebuster-js-js"></script>
+<script id="wc-order-attribution-js-extra">
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"https://silko.it/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+//# sourceURL=wc-order-attribution-js-extra
+</script>
+<script src="https://silko.it/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=9.4.5" id="wc-order-attribution-js"></script>
+<script id="eael-general-js-extra">
+var localize = {"ajaxurl":"https://silko.it/wp-admin/admin-ajax.php","nonce":"2d7c3045d2","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"https://silko.it/fry-top-con-canalina/","cart_redirectition":"no","cart_page_url":"https://silko.it","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet verticale","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet orizzontale","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
+//# sourceURL=eael-general-js-extra
+</script>
+<script src="https://silko.it/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=6.0.13" id="eael-general-js"></script>
+<script id="moove_gdpr_frontend-js-extra">
+var moove_frontend_gdpr_scripts = {"ajaxurl":"https://silko.it/wp-admin/admin-ajax.php","post_id":"17739","plugin_dir":"https://silko.it/wp-content/plugins/gdpr-cookie-compliance","show_icons":"all","is_page":"","ajax_cookie_removal":"false","strict_init":"1","enabled_default":{"third_party":0,"advanced":0},"geo_location":"false","force_reload":"false","is_single":"","hide_save_btn":"false","current_user":"0","cookie_expiration":"365","script_delay":"2000","close_btn_action":"1","close_btn_rdr":"","scripts_defined":"{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"}}","gdpr_scor":"true","wp_lang":"_it","wp_consent_api":"false"};
+//# sourceURL=moove_gdpr_frontend-js-extra
+</script>
+<script src="https://silko.it/wp-content/plugins/gdpr-cookie-compliance/dist/scripts/main.js?ver=4.15.10" id="moove_gdpr_frontend-js"></script>
+<script id="moove_gdpr_frontend-js-after">
+var gdpr_consent__strict = "false"
+var gdpr_consent__thirdparty = "false"
+var gdpr_consent__advanced = "false"
+var gdpr_consent__cookies = ""
+//# sourceURL=moove_gdpr_frontend-js-after
+</script>
+<script src="https://silko.it/wp-content/plugins/header-footer-elementor/inc/js/frontend.js?ver=2.0.3" id="hfe-frontend-js-js"></script>
+<script src="https://silko.it/wp-content/plugins/elementor/assets/lib/e-gallery/js/e-gallery.min.js?ver=1.2.0" id="elementor-gallery-js"></script>
+<script src="https://silko.it/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.25.4" id="elementor-pro-webpack-runtime-js"></script>
+<script src="https://silko.it/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.26.0" id="elementor-webpack-runtime-js"></script>
+<script src="https://silko.it/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.26.0" id="elementor-frontend-modules-js"></script>
+<script src="https://silko.it/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
+<script src="https://silko.it/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/silko.it\/wp-admin\/admin-ajax.php","nonce":"041ebd5956","urls":{"assets":"https:\/\/silko.it\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/silko.it\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},
+"woocommerce":{"menu_cart":{"cart_page_url":"https:\/\/silko.it","checkout_page_url":"https:\/\/silko.it","fragments_nonce":"d92ece9509"}},
+"facebook_sdk":{"lang":"it_IT","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/silko.it\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+//# sourceURL=elementor-pro-frontend-js-before
+</script>
+<script src="https://silko.it/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.25.4" id="elementor-pro-frontend-js"></script>
+<script src="https://silko.it/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Condividi su Facebook","shareOnTwitter":"Condividi su Twitter","pinIt":"Pinterest","download":"Download","downloadImage":"Scarica immagine","fullscreen":"Schermo intero","zoom":"Zoom","share":"Condividi","playVideo":"Riproduci video","previous":"Precedente","next":"Successivo","close":"Chiudi","a11yCarouselPrevSlideMessage":"Diapositiva precedente","a11yCarouselNextSlideMessage":"Prossima diapositiva","a11yCarouselFirstSlideMessage":"Questa \u00e9 la prima diapositiva","a11yCarouselLastSlideMessage":"Questa \u00e8 l'ultima diapositiva","a11yCarouselPaginationBulletMessage":"Vai alla diapositiva"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet verticale","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet orizzontale","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},
+"hasCustomBreakpoints":false},"version":"3.26.0","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"e_swiper_latest":true,"e_nested_atomic_repeaters":true,"e_onboarding":true,"e_css_smooth_scroll":true,"theme_builder_v2":true,"home_screen":true,"landing-pages":true,"nested-elements":true,"editor_v2":true,"e_element_cache":true,"link-in-bio":true,"floating-buttons":true},"urls":{"assets":"https:\/\/silko.it\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/silko.it\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/silko.it\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"18a5ab9d6e"},"swiperClass":"swiper","settings":{"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","woocommerce_notices_elements":[]},"post":{"id":0,"title":"Pagina non trovata - Silko","excerpt":""}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script src="https://silko.it/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.26.0" id="elementor-frontend-js"></script>
+<script src="https://silko.it/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.25.4" id="pro-elements-handlers-js"></script>
+<script src="https://silko.it/wp-content/plugins/elementskit-lite/widgets/init/assets/js/animate-circle.min.js?ver=3.3.3" id="animate-circle-js"></script>
+<script id="elementskit-elementor-js-extra">
+var ekit_config = {"ajaxurl":"https://silko.it/wp-admin/admin-ajax.php","nonce":"7afb213798"};
+//# sourceURL=elementskit-elementor-js-extra
+</script>
+<script src="https://silko.it/wp-content/plugins/elementskit-lite/widgets/init/assets/js/elementor.js?ver=3.3.3" id="elementskit-elementor-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://silko.it/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://silko.it/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+    
+  <!--copyscapeskip-->
+  <!-- V1 -->
+  <div id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" role="complementary" aria-label="Schermata impostazioni GDPR">
+    <div class="moove-gdpr-modal-content moove-clearfix logo-position-left moove_gdpr_modal_theme_v1">
+          
+        <button class="moove-gdpr-modal-close" aria-label="Close GDPR Cookie Settings">
+          <span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
+          <span class="gdpr-icon moovegdpr-arrow-close"></span>
+        </button>
+            <div class="moove-gdpr-modal-left-content">
+        
+<div class="moove-gdpr-company-logo-holder">
+  <img loading="lazy" src="https://silko.it/wp-content/uploads/silko-logo-sito-300x69.webp" alt=""   width="300"  height="69"  class="img-responsive" />
+</div>
+<!--  .moove-gdpr-company-logo-holder -->        <ul id="moove-gdpr-menu">
+          
+<li class="menu-item-on menu-item-privacy_overview menu-item-selected">
+  <button data-href="#privacy_overview" class="moove-gdpr-tab-nav" aria-label="Panoramica privacy">
+    <span class="gdpr-nav-tab-title">Panoramica privacy</span>
+  </button>
+</li>
+
+  <li class="menu-item-strict-necessary-cookies menu-item-off">
+    <button data-href="#strict-necessary-cookies" class="moove-gdpr-tab-nav" aria-label="Cookie strettamente necessari">
+      <span class="gdpr-nav-tab-title">Cookie strettamente necessari</span>
+    </button>
+  </li>
+
+
+
+
+        </ul>
+        
+<div class="moove-gdpr-branding-cnt">
+  		<a href="https://wordpress.org/plugins/gdpr-cookie-compliance/" rel="noopener noreferrer" target="_blank" class='moove-gdpr-branding'>Powered by&nbsp; <span>GDPR Cookie Compliance</span></a>
+		</div>
+<!--  .moove-gdpr-branding -->      </div>
+      <!--  .moove-gdpr-modal-left-content -->
+      <div class="moove-gdpr-modal-right-content">
+        <div class="moove-gdpr-modal-title">
+           
+        </div>
+        <!-- .moove-gdpr-modal-ritle -->
+        <div class="main-modal-content">
+
+          <div class="moove-gdpr-tab-content">
+            
+<div id="privacy_overview" class="moove-gdpr-tab-main">
+      <span class="tab-title">Panoramica privacy</span>
+    <div class="moove-gdpr-tab-main-content">
+  	<p>This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognising you when you return to our website and helping our team to understand which sections of the website you find most interesting and useful.</p>
+  	  </div>
+  <!--  .moove-gdpr-tab-main-content -->
+
+</div>
+<!-- #privacy_overview -->            
+  <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">Cookie strettamente necessari</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>I cookie strettamente necessari dovrebbero essere sempre attivati per poter salvare le tue preferenze per le impostazioni dei cookie.</p>
+      <div class="moove-gdpr-status-bar ">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_strict_cookies">    
+              <span class="gdpr-sr-only">Abilita o Disabilita i Cookie</span>        
+              <input type="checkbox" aria-label="Cookie strettamente necessari"  value="check" name="moove_gdpr_strict_cookies" id="moove_gdpr_strict_cookies">
+              <span class="cookie-slider cookie-round" data-text-enable="Attivato" data-text-disabled="Disattivato"></span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+              <div class="moove-gdpr-strict-warning-message" style="margin-top: 10px;">
+          <p>Se disabiliti questo cookie, non saremo in grado di salvare le tue preferenze. Ciò significa che ogni volta che visiti questo sito web dovrai abilitare o disabilitare nuovamente i cookie.</p>
+        </div>
+        <!--  .moove-gdpr-tab-main-content -->
+                                              
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #strict-necesarry-cookies -->
+            
+            
+            
+          </div>
+          <!--  .moove-gdpr-tab-content -->
+        </div>
+        <!--  .main-modal-content -->
+        <div class="moove-gdpr-modal-footer-content">
+          <div class="moove-gdpr-button-holder">
+			  		<button class="mgbutton moove-gdpr-modal-allow-all button-visible" aria-label="Attiva tutti">Attiva tutti</button>
+		  					<button class="mgbutton moove-gdpr-modal-save-settings button-visible" aria-label="Salva impostazioni">Salva impostazioni</button>
+				</div>
+<!--  .moove-gdpr-button-holder -->        </div>
+        <!--  .moove-gdpr-modal-footer-content -->
+      </div>
+      <!--  .moove-gdpr-modal-right-content -->
+
+      <div class="moove-clearfix"></div>
+
+    </div>
+    <!--  .moove-gdpr-modal-content -->
+  </div>
+  <!-- #moove_gdpr_cookie_modal -->
+  <!--/copyscapeskip-->
+</body>
+</html> 

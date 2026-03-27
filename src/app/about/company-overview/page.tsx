@@ -17,11 +17,11 @@ const values = [
 ];
 
 const steps = [
-  "Consultation & Specification",
-  "Supply & Logistics",
-  "Installation & Commissioning",
-  "Staff Training",
-  "After-Sales & Service",
+  { title: "Consultation & Specification", desc: "We work with architects and F&B directors from the earliest planning stages — specifying equipment based on menu, volume, space, and budget." },
+  { title: "Supply & Logistics", desc: "Direct factory orders, competitive pricing, consolidated shipping, customs clearance, and last-mile delivery — all handled." },
+  { title: "Installation & Commissioning", desc: "Our technical team installs and commissions every piece. Gas, electric, ventilation hookups — tested before handover." },
+  { title: "Staff Training", desc: "Equipment without training is furniture. We train kitchen staff on operation, cleaning protocols, and troubleshooting." },
+  { title: "After-Sales & Service", desc: "Genuine spare parts, factory-trained technicians, preventive maintenance, and emergency service. The equipment runs." },
 ];
 
 const whatWeDo = [
@@ -50,27 +50,111 @@ export default function CompanyOverviewPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#0A1628] pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">About MB Equipment</span>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-4 mb-6">One Company. The Whole Kitchen.</h1>
-          <p className="text-white/70 text-lg max-w-2xl leading-relaxed">
-            MB Equipment Solutions has spent over two decades building the Balkans&apos; most comprehensive foodservice equipment operation. We are not a reseller with a catalog. We are engineers, project managers, and service technicians who happen to represent the best brands in the world.
-          </p>
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/whatwedo/chef-cooking.jpg"
+          alt="Professional kitchen equipment showroom"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/95 via-[#0A1628]/80 to-[#0A1628]/40" />
+
+        <div className="relative max-w-7xl mx-auto px-6 py-32 lg:py-40">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-[2px] bg-[#C9A84C]" />
+              <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-[0.3em]">Company Overview</span>
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
+              One Company.<br />
+              <span className="text-[#C9A84C] italic">The Whole Kitchen.</span>
+            </h1>
+
+            <p className="text-white/70 text-lg leading-relaxed mb-10">
+              MB Equipment Solutions has spent over two decades building the Balkans&apos; most comprehensive foodservice equipment operation. We are not a reseller with a catalog. We are engineers, project managers, and service technicians who happen to represent the best brands in the world.
+            </p>
+
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#D32F3D] text-white font-semibold px-8 py-4 rounded-md hover:bg-[#B82735] hover:-translate-y-px transition-all shadow-lg">
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Origin Story */}
-      <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-6">
+      {/* Origin Story — Timeline */}
+      <section className="py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
-            <SectionHeading overline="Our Story" heading="How We Got Here" align="left" />
-            <div className="mt-8 space-y-6 text-[#595F66] leading-relaxed">
-              <p>MB Equipment Solutions was founded in Belgrade with a clear premise: the region needed a professional-grade equipment partner, not just a distributor.</p>
-              <p>That hands-on approach attracted attention from Middleby Corporation, one of the world&apos;s largest foodservice equipment manufacturers. The endorsement meant direct access to factory engineering, priority parts supply, and terms that nobody else in the region could match.</p>
-              <p>Today, the company operates demo centers across the region, employs a full-time service team, and has delivered equipment to projects in over 40 countries. The premise has not changed. Only the scale.</p>
+            <div className="text-center mb-20">
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-[#212529] italic">How We Got Here</h2>
+              <div className="w-16 h-[2px] bg-[#C9A84C] mx-auto mt-6" />
             </div>
           </AnimatedSection>
+
+          {/* Timeline */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical gold line */}
+            <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-[#C9A84C]/20 lg:-translate-x-px" />
+
+            {/* Milestone 1 */}
+            <AnimatedSection>
+              <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 mb-20 pl-20 lg:pl-0">
+                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-[#C9A84C] border-4 border-white lg:-translate-x-1/2 z-10" />
+                <div className="lg:w-1/2 lg:text-right lg:pr-16">
+                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-[#C9A84C]/20 italic leading-none">01</span>
+                  <h3 className="text-xl font-bold text-[#212529] lg:mt-3">The Beginning</h3>
+                </div>
+                <div className="lg:w-1/2 lg:pl-16">
+                  <p className="text-[#595F66] leading-relaxed">MB Equipment Solutions was founded in Belgrade with a clear premise: the region needed a professional-grade equipment partner, not just a distributor. The work was hands-on — site surveys, equipment specs, installation, commissioning, and staying on call when something needed servicing.</p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Milestone 2 */}
+            <AnimatedSection delay={0.15}>
+              <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 mb-20 pl-20 lg:pl-0">
+                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-[#D32F3D] border-4 border-white lg:-translate-x-1/2 z-10" />
+                <div className="lg:w-1/2 lg:text-right lg:pr-16">
+                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-[#D32F3D]/20 italic leading-none">02</span>
+                  <h3 className="text-xl font-bold text-[#212529] lg:mt-3">Middleby Endorsement</h3>
+                </div>
+                <div className="lg:w-1/2 lg:pl-16">
+                  <p className="text-[#595F66] leading-relaxed">That hands-on approach attracted attention from Middleby Corporation, one of the world&apos;s largest foodservice equipment manufacturers with a portfolio of over 100 brands. The endorsement meant direct access to factory engineering, priority parts supply, and terms that nobody else in the region could match.</p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Milestone 3 */}
+            <AnimatedSection delay={0.25}>
+              <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 mb-20 pl-20 lg:pl-0">
+                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-[#C9A84C] border-4 border-white lg:-translate-x-1/2 z-10" />
+                <div className="lg:w-1/2 lg:text-right lg:pr-16">
+                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-[#C9A84C]/20 italic leading-none">03</span>
+                  <h3 className="text-xl font-bold text-[#212529] lg:mt-3">Expanding Scope</h3>
+                </div>
+                <div className="lg:w-1/2 lg:pl-16">
+                  <p className="text-[#595F66] leading-relaxed">From commercial kitchens, the scope expanded. Residential luxury — brands like Viking, La Cornue, and AGA for high-end home kitchens. Food processing — industrial lines for bakeries, meat plants, dairy facilities. Multi-unit rollouts for Starbucks, KFC, McDonald&apos;s, Burger King, and Subway.</p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Milestone 4 */}
+            <AnimatedSection delay={0.35}>
+              <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 pl-20 lg:pl-0">
+                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-[#D32F3D] border-4 border-white lg:-translate-x-1/2 z-10" />
+                <div className="lg:w-1/2 lg:text-right lg:pr-16">
+                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-[#D32F3D]/20 italic leading-none">04</span>
+                  <h3 className="text-xl font-bold text-[#212529] lg:mt-3">Today &amp; Beyond</h3>
+                </div>
+                <div className="lg:w-1/2 lg:pl-16">
+                  <p className="text-[#595F66] leading-relaxed">Today, the company operates demo centers across the region, employs a full-time service team, and has delivered equipment to projects in over 40 countries. The premise has not changed. Only the scale.</p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
@@ -111,17 +195,39 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* Full Cycle */}
-      <section className="py-24 bg-[#F8F9FA]">
+      <section className="relative py-28 bg-[#0A1628] overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
-            <SectionHeading overline="The Process" heading="The Full Cycle" subtext="Most equipment companies stop at delivery. We do not." />
+            <div className="text-center mb-20">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-12 h-px bg-[#C9A84C]" />
+                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C9A84C]">The Process</span>
+                <div className="w-12 h-px bg-[#C9A84C]" />
+              </div>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-white italic">The Full Cycle</h2>
+              <p className="text-white/50 mt-4 max-w-lg mx-auto">Most equipment companies stop at delivery. We do not.</p>
+            </div>
           </AnimatedSection>
-          <div className="mt-16 max-w-2xl mx-auto">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {steps.map((step, i) => (
-              <AnimatedSection key={step} delay={i * 0.1}>
-                <div className="flex items-start gap-6 py-6 border-b border-gray-200 last:border-0">
-                  <span className="text-3xl font-bold text-[#C9A84C]/30 font-display">{String(i + 1).padStart(2, "0")}</span>
-                  <p className="text-lg font-medium text-[#212529] pt-1">{step}</p>
+              <AnimatedSection key={step.title} delay={i * 0.1}>
+                <div className="relative bg-white/5 border border-white/10 rounded-lg p-6 h-full hover:bg-white/10 hover:border-[#C9A84C]/30 transition-all duration-500 group">
+                  {/* Number */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="font-display text-3xl font-bold text-[#C9A84C] italic">{String(i + 1).padStart(2, "0")}</span>
+                    {i < steps.length - 1 && (
+                      <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#C9A84C]/30">
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+                  {/* Bottom accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#C9A84C] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </AnimatedSection>
             ))}
@@ -130,16 +236,26 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-white">
+      <section className="py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
-            <SectionHeading overline="What Holds" heading="Our Values" align="left" />
+            <div className="text-center mb-20">
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-[#212529] italic">Our Values</h2>
+              <div className="w-16 h-[2px] bg-[#C9A84C] mx-auto mt-6" />
+            </div>
           </AnimatedSection>
-          <div className="mt-12 space-y-10 max-w-2xl">
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {values.map((v, i) => (
-              <AnimatedSection key={v.title} delay={i * 0.1}>
-                <div className="border-l-2 border-[#C9A84C] pl-6">
-                  <h3 className="text-xl font-bold text-[#212529] mb-2">{v.title}</h3>
+              <AnimatedSection key={v.title} delay={i * 0.12}>
+                <div className="relative bg-white rounded-lg p-8 lg:p-10 h-full group hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-lg">
+                  {/* Top accent border */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A84C] via-[#D32F3D] to-[#C9A84C] rounded-t-lg" />
+
+                  {/* Quote mark */}
+                  <span className="font-display text-7xl text-[#C9A84C]/15 leading-none select-none block -mb-6">&ldquo;</span>
+
+                  <h3 className="font-display text-2xl font-bold text-[#212529] mb-4 italic">{v.title}</h3>
                   <p className="text-[#595F66] leading-relaxed">{v.text}</p>
                 </div>
               </AnimatedSection>

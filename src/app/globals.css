@@ -49,3 +49,30 @@ body {
 .font-display {
   font-family: var(--font-display);
 }
+
+/* Residential brand logo carousel animation */
+@keyframes scroll-residential {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+.animate-scroll-residential {
+  animation: scroll-residential 12s linear infinite;
+}
+
+.animate-scroll-residential:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-residential-reverse {
+  0% { transform: translateX(-33.33%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-residential-reverse {
+  animation: scroll-residential-reverse 14s linear infinite;
+}
+
+.animate-scroll-residential-reverse:hover {
+  animation-play-state: paused;
+}

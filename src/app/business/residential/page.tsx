@@ -55,7 +55,7 @@ export default function ResidentialPage() {
           <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             MB Equipment Solutions
           </p>
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1]">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
             Residential
           </h1>
         </div>

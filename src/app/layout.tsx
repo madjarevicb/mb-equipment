@@ -105,6 +105,11 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${cormorant.variable} antialiased`}
     >
+      <head>
+        <noscript>
+          <style dangerouslySetInnerHTML={{ __html: ".stagger-children > * { opacity: 1 !important; transform: none !important; animation: none !important; }" }} />
+        </noscript>
+      </head>
       <body className="min-h-screen flex flex-col">
         <a
           href="#main-content"

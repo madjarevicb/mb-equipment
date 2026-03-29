@@ -11,7 +11,7 @@ interface AnimatedSectionProps {
   stagger?: boolean;
 }
 
-const transforms: Record<string, string> = {
+const transforms: Record<NonNullable<AnimatedSectionProps["animation"]>, string> = {
   "fade-up": "translateY(24px)",
   "fade-left": "translateX(-24px)",
   "fade-right": "translateX(24px)",
@@ -40,9 +40,9 @@ export default function AnimatedSection({
   }, [inView, state]);
 
   if (stagger) {
-    const staggerClass = `stagger-children ${state === "visible" ? "is-visible" : ""} ${state === "idle" ? "" : state === "hidden" ? "stagger-children" : ""}`;
+    const visibleClass = state === "visible" ? "stagger-children is-visible" : "stagger-children";
     return (
-      <div ref={ref} className={`${staggerClass} ${className}`} suppressHydrationWarning>
+      <div ref={ref} className={`${visibleClass} ${className}`} suppressHydrationWarning>
         {children}
       </div>
     );

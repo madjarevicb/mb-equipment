@@ -5,8 +5,8 @@ interface OverlineProps {
 }
 
 export default function Overline({ label, align = "left", muted = false }: OverlineProps) {
-  const textColor = muted ? "text-gold/70" : "text-gold";
-  const lineColor = muted ? "bg-gold/40" : "bg-gold";
+  const textColor = muted ? "text-gold/90" : "text-gold";
+  const lineColor = muted ? "bg-gold/60" : "bg-gold";
 
   return (
     <div className={`flex items-center gap-4 ${align === "center" ? "justify-center" : ""}`}>

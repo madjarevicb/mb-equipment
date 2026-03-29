@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 const observers = new Map<string, IntersectionObserver>();
 const callbacks = new Map<Element, (isIntersecting: boolean) => void>();
+const elementThresholds = new Map<Element, string>();
 
 function getSharedObserver(threshold: number): IntersectionObserver {
   const key = `${threshold}`;
@@ -25,8 +26,8 @@ function getSharedObserver(threshold: number): IntersectionObserver {
 
 function cleanupObserver(threshold: number) {
   const key = `${threshold}`;
-  const hasActiveCallbacks = Array.from(callbacks.keys()).length > 0;
-  if (!hasActiveCallbacks) {
+  const hasActive = Array.from(elementThresholds.values()).some((k) => k === key);
+  if (!hasActive) {
     const observer = observers.get(key);
     if (observer) {
       observer.disconnect();
@@ -43,6 +44,7 @@ export function useInView(threshold = 0.15) {
     const el = ref.current;
     if (!el) return;
 
+    const key = `${threshold}`;
     const observer = getSharedObserver(threshold);
 
     callbacks.set(el, (isIntersecting) => {
@@ -50,14 +52,17 @@ export function useInView(threshold = 0.15) {
         setInView(true);
         observer.unobserve(el);
         callbacks.delete(el);
+        elementThresholds.delete(el);
       }
     });
+    elementThresholds.set(el, key);
 
     observer.observe(el);
 
     return () => {
       observer.unobserve(el);
       callbacks.delete(el);
+      elementThresholds.delete(el);
       cleanupObserver(threshold);
     };
   }, [threshold]);

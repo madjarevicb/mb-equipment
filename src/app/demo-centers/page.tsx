@@ -69,9 +69,9 @@ export default function DemoCentersPage() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-[#0A1628]/70 to-[#0A1628]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/30" />
         <div className="relative z-10 h-full flex flex-col justify-end max-w-6xl mx-auto px-6 pb-28">
-          <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em] mb-4">
+          <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">
             Demo Centers & Showrooms
           </p>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-[1.1]">
@@ -83,7 +83,7 @@ export default function DemoCentersPage() {
           <div className="flex gap-4">
             <Link
               href="/contact"
-              className="bg-[#E63946] text-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-[#D32F3D] transition-all"
+              className="bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-red-hover transition-all"
             >
               Book a Visit
             </Link>
@@ -117,13 +117,13 @@ export default function DemoCentersPage() {
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-5">
-                <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em] mb-3">What to Expect</p>
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#0A1628] mb-2">
+                <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">What to Expect</p>
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-navy mb-2">
                   Not a Sales Pitch.<br />A Working Session.
                 </h2>
-                <div className="w-10 h-[2px] bg-[#C9A84C]" />
+                <div className="w-10 h-[2px] bg-gold" />
               </div>
-              <div className="lg:col-span-7 text-[#595F66] leading-relaxed space-y-3">
+              <div className="lg:col-span-7 text-text-secondary leading-relaxed space-y-3">
                 <p>A demo center visit is structured around your project, not our catalog. Tell us the menu, the volume, the constraints. We set up the relevant equipment, walk through the cook cycles, and let your team operate it.</p>
                 <p>Sessions run 90 minutes to half a day depending on scope. Factory application chefs are available for complex demonstrations. You leave with a clear picture of what works, what fits, and what the numbers look like.</p>
               </div>
@@ -135,11 +135,11 @@ export default function DemoCentersPage() {
       {/* ═══════════════════════════════════════════
           CENTERS — Alternating editorial cards
       ═══════════════════════════════════════════ */}
-      <section id="centers" className="py-16 bg-[#F8F9FA]">
+      <section id="centers" className="py-16 bg-offwhite">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
-            <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em] mb-3">Our Locations</p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#0A1628] mb-12">
+            <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">Our Locations</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy mb-12">
               Innovation Centers Worldwide
             </h2>
           </AnimatedSection>
@@ -159,12 +159,12 @@ export default function DemoCentersPage() {
                   </div>
                   {/* Content */}
                   <div className={`p-8 lg:p-10 flex flex-col justify-center ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <p className="text-[#C9A84C] text-xs font-semibold uppercase tracking-[0.2em] mb-2">{center.location}</p>
-                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[#0A1628] mb-4">{center.name}</h3>
-                    <p className="text-[#595F66] text-sm leading-relaxed mb-6">{center.description}</p>
+                    <p className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-2">{center.location}</p>
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-navy mb-4">{center.name}</h3>
+                    <p className="text-text-secondary text-sm leading-relaxed mb-6">{center.description}</p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {center.highlights.map((h) => (
-                        <span key={h} className="text-xs uppercase tracking-wider text-[#0A1628] border border-[#0A1628]/15 px-3 py-1.5">
+                        <span key={h} className="text-xs uppercase tracking-wider text-navy border border-navy/15 px-3 py-1.5">
                           {h}
                         </span>
                       ))}
@@ -180,10 +180,10 @@ export default function DemoCentersPage() {
       {/* ═══════════════════════════════════════════
           CTA — Book a Demo
       ═══════════════════════════════════════════ */}
-      <section className="py-16 bg-[#0A1628]">
+      <section className="py-16 bg-navy">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection>
-            <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em] mb-4">Ready?</p>
+            <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">Ready?</p>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
               Cook On It Before You Commit
             </h2>
@@ -192,7 +192,7 @@ export default function DemoCentersPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex bg-[#D32F3D] text-white font-semibold px-8 py-4 text-sm hover:bg-[#B82735] transition-all"
+              className="inline-flex bg-red text-white font-semibold px-8 py-4 text-sm hover:bg-red-hover transition-all"
             >
               Book a Demo Session
             </Link>

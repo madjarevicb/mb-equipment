@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { COMPANY } from "@/lib/constants";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/private/"],
       },
     ],
-    sitemap: "https://www.mbequipmentsolutions.com/sitemap.xml",
+    sitemap: `${COMPANY.url}/sitemap.xml`,
   };
 }

@@ -125,15 +125,15 @@ export default function HotelsRestaurantsPage() {
       {/* ============================================================ */}
       {/*  HERO                                                         */}
       {/* ============================================================ */}
-      <section className="relative min-h-[60vh] flex items-center bg-[#0A1628]">
+      <section className="relative min-h-[60vh] flex items-center bg-navy">
         <div className="absolute inset-0 bg-[url('/images/innovation/hero.jpg')] bg-cover bg-center opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
           <AnimatedSection>
-            <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+            <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
               Commercial Solutions
             </span>
-            <div className="w-12 h-[2px] bg-[#C9A84C] mt-4 mb-6" />
+            <div className="w-12 h-[2px] bg-gold mt-4 mb-6" />
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] max-w-3xl">
               Our Brands
             </h1>
@@ -144,13 +144,13 @@ export default function HotelsRestaurantsPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="/contact"
-                className="inline-flex bg-[#D32F3D] text-white font-semibold px-8 py-4 rounded-sm hover:bg-[#B82735] transition-all"
+                className="inline-flex bg-red text-white font-semibold px-8 py-4hover:bg-red-hover transition-all"
               >
                 Request a Quote
               </Link>
               <Link
                 href="/demo-centers"
-                className="inline-flex border border-white/30 text-white font-semibold px-8 py-4 rounded-sm hover:bg-white/10 transition-all"
+                className="inline-flex border border-white/30 text-white font-semibold px-8 py-4hover:bg-white/10 transition-all"
               >
                 Visit a Demo Center
               </Link>
@@ -167,8 +167,8 @@ export default function HotelsRestaurantsPage() {
           <AnimatedSection>
             <div className="flex flex-col md:flex-row md:items-center gap-5">
               <div className="flex items-center gap-3 shrink-0">
-                <div className="w-8 h-[2px] bg-[#C9A84C]" />
-                <span className="text-[#0A1628] text-sm font-semibold uppercase tracking-widest">
+                <div className="w-8 h-[2px] bg-gold" />
+                <span className="text-navy text-sm font-semibold uppercase tracking-widest">
                   We equip
                 </span>
               </div>
@@ -176,11 +176,11 @@ export default function HotelsRestaurantsPage() {
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
                 {segments.map((s, i) => (
                   <span key={s.title} className="flex items-center gap-x-6">
-                    <span className="text-[15px] text-[#595F66] hover:text-[#0A1628] transition-colors cursor-default">
+                    <span className="text-[15px] text-text-secondary hover:text-navy transition-colors cursor-default">
                       {s.title}
                     </span>
                     {i < segments.length - 1 && (
-                      <span className="hidden sm:inline text-[#C9A84C]/40 text-xs">●</span>
+                      <span className="hidden sm:inline text-gold/40 text-xs">●</span>
                     )}
                   </span>
                 ))}
@@ -193,25 +193,25 @@ export default function HotelsRestaurantsPage() {
       {/* ============================================================ */}
       {/*  BRANDS GRID — all brands                                     */}
       {/* ============================================================ */}
-      <section className="py-24 bg-[#F8F9FA]">
+      <section className="py-24 bg-offwhite">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <div className="mb-16">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
                 <div className="lg:col-span-7">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-[2px] bg-[#C9A84C]" />
-                    <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-widest">
+                    <div className="w-8 h-[2px] bg-gold" />
+                    <span className="text-gold text-xs font-semibold uppercase tracking-widest">
                       Brand Portfolio
                     </span>
                   </div>
-                  <h2 className="font-display text-3xl lg:text-5xl font-bold text-[#0A1628] leading-[1.1]">
+                  <h2 className="font-display text-3xl lg:text-5xl font-bold text-navy leading-[1.1]">
                     The Names Behind<br className="hidden lg:block" /> the Kitchens
                   </h2>
-                  <p className="text-[#595F66] text-sm mt-4">77 brands in our portfolio</p>
+                  <p className="text-text-secondary text-sm mt-4">77 brands in our portfolio</p>
                 </div>
                 <div className="lg:col-span-5">
-                  <p className="text-[#595F66] leading-relaxed lg:border-l-2 lg:border-[#C9A84C]/30 lg:pl-6">
+                  <p className="text-text-secondary leading-relaxed lg:border-l-2 lg:border-gold/30 lg:pl-6">
                     We represent over 25 brands from Middleby Corporation and beyond.
                     Each one selected for build quality, factory-direct service network,
                     and proven performance under pressure.
@@ -224,17 +224,19 @@ export default function HotelsRestaurantsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {brands.map((brand, i) => (
               <AnimatedSection key={brand.name} delay={Math.min(i * 0.04, 0.4)}>
-                <div className="group bg-white border border-gray-100 hover:border-[#0A1628]/20 h-full transition-all duration-300 hover:shadow-lg overflow-hidden">
+                <div className="group bg-white border border-gray-100 hover:border-navy/20 h-full transition-all duration-300 hover:shadow-lg overflow-hidden">
                   {/* Logo area */}
-                  <div className="h-32 bg-[#F8F9FA] border-b border-gray-100 flex items-center justify-center p-6 group-hover:bg-[#0A1628] transition-colors duration-500">
+                  <div className="h-32 bg-offwhite border-b border-gray-100 flex items-center justify-center p-6 group-hover:bg-navy transition-colors duration-500">
                     {brand.logo ? (
-                      <img
+                      <Image
                         src={brand.logo}
                         alt={`${brand.name} logo`}
+                        width={180}
+                        height={64}
                         className="max-h-16 max-w-[180px] w-auto object-contain group-hover:brightness-0 group-hover:invert transition-all duration-500"
                       />
                     ) : (
-                      <span className="font-display text-2xl font-bold text-[#0A1628] group-hover:text-white transition-colors duration-500">
+                      <span className="font-display text-2xl font-bold text-navy group-hover:text-white transition-colors duration-500">
                         {brand.name}
                       </span>
                     )}
@@ -243,14 +245,14 @@ export default function HotelsRestaurantsPage() {
                   {/* Content */}
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-display text-lg font-bold text-[#0A1628]">
+                      <h3 className="font-display text-lg font-bold text-navy">
                         {brand.name}
                       </h3>
-                      <span className="text-[9px] font-semibold uppercase tracking-widest text-[#C9A84C]">
+                      <span className="text-[9px] font-semibold uppercase tracking-widest text-gold">
                         {brand.category}
                       </span>
                     </div>
-                    <p className="text-[#595F66] text-sm leading-relaxed">
+                    <p className="text-text-secondary text-sm leading-relaxed">
                       {brand.text}
                     </p>
                   </div>
@@ -264,15 +266,15 @@ export default function HotelsRestaurantsPage() {
       {/* ============================================================ */}
       {/*  PROCESS — editorial split with numbered list                 */}
       {/* ============================================================ */}
-      <section className="py-24 bg-[#0A1628]">
+      <section className="py-24 bg-navy">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             {/* Left column — sticky heading */}
             <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
               <AnimatedSection>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-[2px] bg-[#C9A84C]" />
-                  <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-widest">Process</span>
+                  <div className="w-8 h-[2px] bg-gold" />
+                  <span className="text-gold text-xs font-semibold uppercase tracking-widest">Process</span>
                 </div>
                 <h2 className="font-display text-3xl lg:text-4xl font-bold text-white leading-tight">
                   From First Call<br />to First Service
@@ -296,7 +298,7 @@ export default function HotelsRestaurantsPage() {
               ].map((item, i) => (
                 <AnimatedSection key={item.step} delay={i * 0.06}>
                   <div className={`flex gap-6 py-7 ${i < 6 ? "border-b border-white/10" : ""}`}>
-                    <span className="font-display text-2xl font-bold text-[#C9A84C]/30 w-8 shrink-0 text-right">
+                    <span className="font-display text-2xl font-bold text-gold/30 w-8 shrink-0 text-right">
                       {i + 1}
                     </span>
                     <div>
@@ -314,25 +316,25 @@ export default function HotelsRestaurantsPage() {
       {/* ============================================================ */}
       {/*  CTA — clean, no stat cards                                   */}
       {/* ============================================================ */}
-      <section className="py-20 bg-[#F8F9FA] border-t border-gray-200">
+      <section className="py-20 bg-offwhite border-t border-gray-200">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection>
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-[#0A1628] mb-4">
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-navy mb-4">
               Let&apos;s Spec Your Kitchen.
             </h2>
-            <p className="text-[#595F66] leading-relaxed mb-8">
+            <p className="text-text-secondary leading-relaxed mb-8">
               Tell us the project scope. We&apos;ll come back with brands, models, drawings, and a number.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex bg-[#D32F3D] text-white font-semibold px-8 py-4 rounded-sm hover:bg-[#B82735] transition-all"
+                className="inline-flex bg-red text-white font-semibold px-8 py-4hover:bg-red-hover transition-all"
               >
                 Start a Project
               </Link>
               <Link
                 href="/references"
-                className="inline-flex border border-[#0A1628]/20 text-[#0A1628] font-semibold px-8 py-4 rounded-sm hover:bg-[#0A1628] hover:text-white transition-all"
+                className="inline-flex border border-navy/20 text-navy font-semibold px-8 py-4hover:bg-navy hover:text-white transition-all"
               >
                 See Our References
               </Link>

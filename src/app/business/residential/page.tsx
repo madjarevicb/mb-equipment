@@ -52,7 +52,7 @@ export default function ResidentialPage() {
         </video>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-6">
-          <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.3em] mb-4">
+          <p className="text-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             MB Equipment Solutions
           </p>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
@@ -79,35 +79,35 @@ export default function ResidentialPage() {
       {/* ─── AN ELITE PORTFOLIO ─── */}
       <section className="py-28 bg-white relative overflow-hidden">
         {/* Decorative gold line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-20 bg-gradient-to-b from-transparent to-[#C9A84C]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-20 bg-gradient-to-b from-transparent to-gold" />
 
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
               {/* Left — heading */}
               <div className="lg:col-span-2">
-                <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+                <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
                   Our Philosophy
                 </span>
-                <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#0A1628] leading-[1.15] mt-4">
+                <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy leading-[1.15] mt-4">
                   An Elite Portfolio
-                  <span className="block text-[#C9A84C] mt-1">of Global Epicurean Brands</span>
+                  <span className="block text-gold mt-1">of Global Epicurean Brands</span>
                 </h2>
-                <div className="w-16 h-[2px] bg-[#C9A84C] mt-6" />
+                <div className="w-16 h-[2px] bg-gold mt-6" />
               </div>
 
               {/* Right — text with left gold border */}
-              <div className="lg:col-span-3 border-l-2 border-[#C9A84C]/30 pl-8">
-                <p className="text-[#595F66] text-lg leading-relaxed">
+              <div className="lg:col-span-3 border-l-2 border-gold/30 pl-8">
+                <p className="text-text-secondary text-lg leading-relaxed">
                   At MB Equipment Solutions Residential, our passion is for taste. A taste for creative
                   ingenuity, innovation, and most of all, a taste for an authentic culinary story.
                 </p>
-                <p className="text-[#595F66] text-lg leading-relaxed mt-6">
+                <p className="text-text-secondary text-lg leading-relaxed mt-6">
                   Our growing portfolio of global indoor and outdoor brands is so much more than a collection
                   of legends. It is a gathering of people, their tastes, and their stories. Each chapter
                   written from a unique point of view. Each story, an inspiration.
                 </p>
-                <p className="text-[#595F66]/70 text-base leading-relaxed mt-6 italic">
+                <p className="text-text-secondary/70 text-base leading-relaxed mt-6 italic">
                   We&apos;ve brought them all to MB Equipment Solutions to write their next chapters together.
                   To see those stories unfold within the heart of your home.
                 </p>
@@ -118,7 +118,7 @@ export default function ResidentialPage() {
       </section>
 
       {/* ─── BRAND LOGO CAROUSEL ─── */}
-      <section className="py-20 bg-[#0A1628] border-t border-white/10">
+      <section className="py-20 bg-navy border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="relative overflow-hidden">
             {/* Row 1 — first half, scrolls left */}
@@ -160,16 +160,16 @@ export default function ResidentialPage() {
       </section>
 
       {/* ─── OUR WORLD AWAITS YOU ─── */}
-      <section className="py-28 bg-[#F8F9FA]">
+      <section className="py-28 bg-offwhite">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm">
               {/* Left — Text */}
-              <div className="bg-[#0A1628] p-12 lg:p-16 flex flex-col justify-center">
-                <div className="w-12 h-[2px] bg-[#C9A84C] mb-8" />
+              <div className="bg-navy p-12 lg:p-16 flex flex-col justify-center">
+                <div className="w-12 h-[2px] bg-gold mb-8" />
                 <h2 className="font-display text-3xl sm:text-4xl font-bold text-white leading-tight">
                   Our MB Equipment Solutions World
-                  <span className="block text-[#C9A84C] mt-2">Awaits You</span>
+                  <span className="block text-gold mt-2">Awaits You</span>
                 </h2>
                 <p className="mt-8 text-white/60 leading-relaxed">
                   MB Equipment Solutions Residential is a collection of twenty-one (and counting)
@@ -184,8 +184,8 @@ export default function ResidentialPage() {
               {/* Right — Logo */}
               <div className="bg-[#0D1520] flex items-center justify-center p-12 lg:p-16 relative">
                 {/* Subtle corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-[#C9A84C]/20" />
-                <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-[#C9A84C]/20" />
+                <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-gold/20" />
+                <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-gold/20" />
                 <div className="text-center">
                   <Image
                     src="/mb-logo.svg"
@@ -194,7 +194,7 @@ export default function ResidentialPage() {
                     height={90}
                     className="mx-auto"
                   />
-                  <div className="w-10 h-[1px] bg-[#C9A84C]/40 mx-auto mt-8 mb-4" />
+                  <div className="w-10 h-[1px] bg-gold/40 mx-auto mt-8 mb-4" />
                   <p className="text-white/40 text-lg tracking-[0.6em] uppercase">
                     Residential
                   </p>
@@ -206,19 +206,19 @@ export default function ResidentialPage() {
       </section>
 
       {/* ─── LEARN MORE — Brochures ─── */}
-      <section className="py-20 bg-[#0A1628]">
+      <section className="py-20 bg-navy">
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection>
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
               {/* Left — heading */}
               <div className="lg:max-w-xs flex-shrink-0">
-                <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+                <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
                   Brochures
                 </span>
                 <h3 className="font-display text-2xl font-bold text-white mt-2">
                   Learn More About Middleby Residential
                 </h3>
-                <div className="w-12 h-[2px] bg-[#C9A84C] mt-3" />
+                <div className="w-12 h-[2px] bg-gold mt-3" />
               </div>
 
               {/* Right — two brochure cards */}
@@ -228,19 +228,19 @@ export default function ResidentialPage() {
                   href="https://middlebyresidential.com/wp-content/uploads/2024/08/Middleby-Residential-Brand-Brochure-Update-7.24.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-5 bg-white/5 border border-white/10 rounded-sm px-5 py-4 hover:border-[#C9A84C]/40 hover:bg-white/10 transition-all duration-300"
+                  className="group flex items-center gap-5 bg-white/5 border border-white/10 px-5 py-4 hover:border-gold/40 hover:bg-white/10 transition-all duration-300"
                 >
                   <Image
                     src="/images/residential/brochure-indoor.png"
                     alt="Middleby Residential Brand Overview Brochure"
                     width={70}
                     height={80}
-                    className="rounded-sm shadow-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+                    className="shadow-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div>
                     <p className="text-white font-semibold text-sm">Brand Overview</p>
                     <p className="text-white/40 text-xs mt-1">Indoor Collection</p>
-                    <span className="mt-2 inline-flex items-center gap-1 text-[#C9A84C] font-semibold text-xs">
+                    <span className="mt-2 inline-flex items-center gap-1 text-gold font-semibold text-xs">
                       Download PDF <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
                     </span>
                   </div>
@@ -251,19 +251,19 @@ export default function ResidentialPage() {
                   href="https://middlebyresidential.com/wp-content/uploads/2024/08/Middleby-Residential-Outdoor-Brochure-Update-7.24.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-5 bg-white/5 border border-white/10 rounded-sm px-5 py-4 hover:border-[#C9A84C]/40 hover:bg-white/10 transition-all duration-300"
+                  className="group flex items-center gap-5 bg-white/5 border border-white/10 px-5 py-4 hover:border-gold/40 hover:bg-white/10 transition-all duration-300"
                 >
                   <Image
                     src="/images/residential/brochure-outdoor.png"
                     alt="Middleby Residential Outdoor Overview Brochure"
                     width={70}
                     height={80}
-                    className="rounded-sm shadow-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+                    className="shadow-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div>
                     <p className="text-white font-semibold text-sm">Outdoor Overview</p>
                     <p className="text-white/40 text-xs mt-1">Outdoor Collection</p>
-                    <span className="mt-2 inline-flex items-center gap-1 text-[#C9A84C] font-semibold text-xs">
+                    <span className="mt-2 inline-flex items-center gap-1 text-gold font-semibold text-xs">
                       Download PDF <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
                     </span>
                   </div>
@@ -275,10 +275,10 @@ export default function ResidentialPage() {
       </section>
 
       {/* ─── SHOWROOM CTA ─── */}
-      <section className="py-24 bg-[#0A1628]">
+      <section className="py-24 bg-navy">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection>
-            <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+            <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
               Experience
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mt-4 mb-6">
@@ -293,13 +293,13 @@ export default function ResidentialPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/demo-centers"
-                className="inline-flex items-center justify-center bg-[#D32F3D] text-white font-semibold px-8 py-4 rounded-md hover:bg-[#B82735] transition-all"
+                className="inline-flex items-center justify-center bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover transition-all"
               >
                 Book a Showroom Visit
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center border border-white/30 text-white font-semibold px-8 py-4 rounded-md hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center border border-white/30 text-white font-semibold px-8 py-4 hover:bg-white/10 transition-all"
               >
                 Contact Us
               </Link>

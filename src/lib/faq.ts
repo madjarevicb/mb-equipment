@@ -21,6 +21,14 @@ export const faqs: FaqItem[] = [
     answer: "Timelines vary by scope. A single-unit restaurant kitchen typically takes 4–8 weeks from specification to commissioning. Multi-unit rollouts and industrial projects are phased over several months. We provide detailed project schedules during the quotation stage so you can plan accordingly.",
   },
   {
+    question: "How does pricing work for commercial kitchen projects?",
+    answer: "Every project is quoted individually based on equipment selection, kitchen size, and installation complexity. We provide detailed, itemized proposals at no cost after an initial consultation. Logistics, installation, and commissioning costs are included in every proposal — no hidden fees.",
+  },
+  {
+    question: "What warranty and certification standards apply?",
+    answer: "All equipment carries the manufacturer's original warranty — typically 1–3 years depending on brand and product category. Equipment is CE-marked for the European market and meets relevant NSF and local regulatory standards. We handle all certification documentation as part of the project delivery.",
+  },
+  {
     question: "Do you offer after-sales service and spare parts?",
     answer: "Absolutely. We maintain a regional spare parts inventory and a trained service engineering team. We offer preventive maintenance programs, warranty support, and emergency repair services. Our goal is to minimize downtime and keep your kitchen running at full capacity.",
   },

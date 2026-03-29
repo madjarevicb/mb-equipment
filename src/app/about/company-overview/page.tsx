@@ -59,25 +59,25 @@ export default function CompanyOverviewPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/95 via-[#0A1628]/80 to-[#0A1628]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/40" />
 
         <div className="relative max-w-7xl mx-auto px-6 py-32 lg:py-40">
           <div className="max-w-2xl">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-[2px] bg-[#C9A84C]" />
-              <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-[0.3em]">Company Overview</span>
+              <div className="w-12 h-[2px] bg-gold" />
+              <span className="text-gold text-xs font-semibold uppercase tracking-[0.3em]">Company Overview</span>
             </div>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
               One Company.<br />
-              <span className="text-[#C9A84C] italic">The Whole Kitchen.</span>
+              <span className="text-gold italic">The Whole Kitchen.</span>
             </h1>
 
             <p className="text-white/70 text-lg leading-relaxed mb-10">
               MB Equipment Solutions has spent over two decades building the Balkans&apos; most comprehensive foodservice equipment operation. We are not a reseller with a catalog. We are engineers, project managers, and service technicians who happen to represent the best brands in the world.
             </p>
 
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#D32F3D] text-white font-semibold px-8 py-4 rounded-md hover:bg-[#B82735] hover:-translate-y-px transition-all shadow-lg">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover hover:-translate-y-px transition-all shadow-lg">
               Get in Touch
             </Link>
           </div>
@@ -89,26 +89,26 @@ export default function CompanyOverviewPage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <div className="text-center mb-20">
-              <h2 className="font-display text-4xl lg:text-5xl font-bold text-[#212529] italic">How We Got Here</h2>
-              <div className="w-16 h-[2px] bg-[#C9A84C] mx-auto mt-6" />
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-text-primary italic">How We Got Here</h2>
+              <div className="w-16 h-[2px] bg-gold mx-auto mt-6" />
             </div>
           </AnimatedSection>
 
           {/* Timeline */}
           <div className="relative max-w-4xl mx-auto">
             {/* Vertical gold line */}
-            <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-[#C9A84C]/20 lg:-translate-x-px" />
+            <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gold/20 lg:-translate-x-px" />
 
             {/* Milestone 1 */}
             <AnimatedSection>
               <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 mb-20 pl-20 lg:pl-0">
-                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-[#C9A84C] border-4 border-white lg:-translate-x-1/2 z-10" />
+                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-gold border-4 border-white lg:-translate-x-1/2 z-10" />
                 <div className="lg:w-1/2 lg:text-right lg:pr-16">
-                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-[#C9A84C]/20 italic leading-none">01</span>
-                  <h3 className="text-xl font-bold text-[#212529] lg:mt-3">The Beginning</h3>
+                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-gold/20 italic leading-none">01</span>
+                  <h3 className="text-xl font-bold text-text-primary lg:mt-3">The Beginning</h3>
                 </div>
                 <div className="lg:w-1/2 lg:pl-16">
-                  <p className="text-[#595F66] leading-relaxed">MB Equipment Solutions was founded in Belgrade with a clear premise: the region needed a professional-grade equipment partner, not just a distributor. The work was hands-on — site surveys, equipment specs, installation, commissioning, and staying on call when something needed servicing.</p>
+                  <p className="text-text-secondary leading-relaxed">MB Equipment Solutions was founded in Belgrade with a clear premise: the region needed a professional-grade equipment partner, not just a distributor. The work was hands-on — site surveys, equipment specs, installation, commissioning, and staying on call when something needed servicing.</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -116,13 +116,13 @@ export default function CompanyOverviewPage() {
             {/* Milestone 2 */}
             <AnimatedSection delay={0.15}>
               <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 mb-20 pl-20 lg:pl-0">
-                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-[#D32F3D] border-4 border-white lg:-translate-x-1/2 z-10" />
+                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-red border-4 border-white lg:-translate-x-1/2 z-10" />
                 <div className="lg:w-1/2 lg:text-right lg:pr-16">
-                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-[#D32F3D]/20 italic leading-none">02</span>
-                  <h3 className="text-xl font-bold text-[#212529] lg:mt-3">Middleby Endorsement</h3>
+                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-red/20 italic leading-none">02</span>
+                  <h3 className="text-xl font-bold text-text-primary lg:mt-3">Middleby Endorsement</h3>
                 </div>
                 <div className="lg:w-1/2 lg:pl-16">
-                  <p className="text-[#595F66] leading-relaxed">That hands-on approach attracted attention from Middleby Corporation, one of the world&apos;s largest foodservice equipment manufacturers with a portfolio of over 100 brands. The endorsement meant direct access to factory engineering, priority parts supply, and terms that nobody else in the region could match.</p>
+                  <p className="text-text-secondary leading-relaxed">That hands-on approach attracted attention from Middleby Corporation, one of the world&apos;s largest foodservice equipment manufacturers with a portfolio of over 100 brands. The endorsement meant direct access to factory engineering, priority parts supply, and terms that nobody else in the region could match.</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -130,13 +130,13 @@ export default function CompanyOverviewPage() {
             {/* Milestone 3 */}
             <AnimatedSection delay={0.25}>
               <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 mb-20 pl-20 lg:pl-0">
-                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-[#C9A84C] border-4 border-white lg:-translate-x-1/2 z-10" />
+                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-gold border-4 border-white lg:-translate-x-1/2 z-10" />
                 <div className="lg:w-1/2 lg:text-right lg:pr-16">
-                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-[#C9A84C]/20 italic leading-none">03</span>
-                  <h3 className="text-xl font-bold text-[#212529] lg:mt-3">Expanding Scope</h3>
+                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-gold/20 italic leading-none">03</span>
+                  <h3 className="text-xl font-bold text-text-primary lg:mt-3">Expanding Scope</h3>
                 </div>
                 <div className="lg:w-1/2 lg:pl-16">
-                  <p className="text-[#595F66] leading-relaxed">From commercial kitchens, the scope expanded. Residential luxury — brands like Viking, La Cornue, and AGA for high-end home kitchens. Food processing — industrial lines for bakeries, meat plants, dairy facilities. Multi-unit rollouts for Starbucks, KFC, McDonald&apos;s, Burger King, and Subway.</p>
+                  <p className="text-text-secondary leading-relaxed">From commercial kitchens, the scope expanded. Residential luxury — brands like Viking, La Cornue, and AGA for high-end home kitchens. Food processing — industrial lines for bakeries, meat plants, dairy facilities. Multi-unit rollouts for Starbucks, KFC, McDonald&apos;s, Burger King, and Subway.</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -144,13 +144,13 @@ export default function CompanyOverviewPage() {
             {/* Milestone 4 */}
             <AnimatedSection delay={0.35}>
               <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-16 pl-20 lg:pl-0">
-                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-[#D32F3D] border-4 border-white lg:-translate-x-1/2 z-10" />
+                <div className="absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full bg-red border-4 border-white lg:-translate-x-1/2 z-10" />
                 <div className="lg:w-1/2 lg:text-right lg:pr-16">
-                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-[#D32F3D]/20 italic leading-none">04</span>
-                  <h3 className="text-xl font-bold text-[#212529] lg:mt-3">Today &amp; Beyond</h3>
+                  <span className="hidden lg:block font-display text-6xl lg:text-7xl font-bold text-red/20 italic leading-none">04</span>
+                  <h3 className="text-xl font-bold text-text-primary lg:mt-3">Today &amp; Beyond</h3>
                 </div>
                 <div className="lg:w-1/2 lg:pl-16">
-                  <p className="text-[#595F66] leading-relaxed">Today, the company operates demo centers across the region, employs a full-time service team, and has delivered equipment to projects in over 40 countries. The premise has not changed. Only the scale.</p>
+                  <p className="text-text-secondary leading-relaxed">Today, the company operates demo centers across the region, employs a full-time service team, and has delivered equipment to projects in over 40 countries. The premise has not changed. Only the scale.</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -159,7 +159,7 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* What We Do — Cards Grid */}
-      <section className="py-24 bg-[#0A1628]">
+      <section className="py-24 bg-navy">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <SectionHeading heading="What We Do" theme="dark" subtext="From automation to brewing, we cover every aspect of the modern commercial kitchen." />
@@ -168,7 +168,7 @@ export default function CompanyOverviewPage() {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whatWeDo.map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 0.06}>
-                <div className="group relative bg-[#1A2B4A]/50 rounded-lg overflow-hidden h-full border border-white/5 hover:border-[#C9A84C]/30 transition-all duration-500">
+                <div className="group relative bg-[#1A2B4A]/50 rounded-lg overflow-hidden h-full border border-white/5 hover:border-gold/30 transition-all duration-500">
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden">
                     <Image
@@ -178,7 +178,7 @@ export default function CompanyOverviewPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent" />
                   </div>
                   {/* Content */}
                   <div className="p-6">
@@ -186,7 +186,7 @@ export default function CompanyOverviewPage() {
                     <p className="text-white/50 text-sm leading-relaxed">{item.text}</p>
                   </div>
                   {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#D32F3D] via-[#C9A84C] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-red via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </AnimatedSection>
             ))}
@@ -195,16 +195,16 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* Full Cycle */}
-      <section className="relative py-28 bg-[#0A1628] overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
+      <section className="relative py-28 bg-navy overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <div className="text-center mb-20">
               <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="w-12 h-px bg-[#C9A84C]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C9A84C]">The Process</span>
-                <div className="w-12 h-px bg-[#C9A84C]" />
+                <div className="w-12 h-px bg-gold" />
+                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">The Process</span>
+                <div className="w-12 h-px bg-gold" />
               </div>
               <h2 className="font-display text-4xl lg:text-5xl font-bold text-white italic">The Full Cycle</h2>
               <p className="text-white/50 mt-4 max-w-lg mx-auto">Most equipment companies stop at delivery. We do not.</p>
@@ -214,12 +214,12 @@ export default function CompanyOverviewPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {steps.map((step, i) => (
               <AnimatedSection key={step.title} delay={i * 0.1}>
-                <div className="relative bg-white/5 border border-white/10 rounded-lg p-6 h-full hover:bg-white/10 hover:border-[#C9A84C]/30 transition-all duration-500 group">
+                <div className="relative bg-white/5 border border-white/10 rounded-lg p-6 h-full hover:bg-white/10 hover:border-gold/30 transition-all duration-500 group">
                   {/* Number */}
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="font-display text-3xl font-bold text-[#C9A84C] italic">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-display text-3xl font-bold text-gold italic">{String(i + 1).padStart(2, "0")}</span>
                     {i < steps.length - 1 && (
-                      <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#C9A84C]/30">
+                      <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-gold/30">
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                       </div>
                     )}
@@ -227,7 +227,7 @@ export default function CompanyOverviewPage() {
                   <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
                   {/* Bottom accent */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#C9A84C] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </AnimatedSection>
             ))}
@@ -236,12 +236,12 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* Values */}
-      <section className="py-28 bg-[#F8F9FA]">
+      <section className="py-28 bg-offwhite">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <div className="text-center mb-20">
-              <h2 className="font-display text-4xl lg:text-5xl font-bold text-[#212529] italic">Our Values</h2>
-              <div className="w-16 h-[2px] bg-[#C9A84C] mx-auto mt-6" />
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-text-primary italic">Our Values</h2>
+              <div className="w-16 h-[2px] bg-gold mx-auto mt-6" />
             </div>
           </AnimatedSection>
 
@@ -250,13 +250,13 @@ export default function CompanyOverviewPage() {
               <AnimatedSection key={v.title} delay={i * 0.12}>
                 <div className="relative bg-white rounded-lg p-8 lg:p-10 h-full group hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-lg">
                   {/* Top accent border */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A84C] via-[#D32F3D] to-[#C9A84C] rounded-t-lg" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-red to-gold rounded-t-lg" />
 
                   {/* Quote mark */}
-                  <span className="font-display text-7xl text-[#C9A84C]/15 leading-none select-none block -mb-6">&ldquo;</span>
+                  <span className="font-display text-7xl text-gold/15 leading-none select-none block -mb-6">&ldquo;</span>
 
-                  <h3 className="font-display text-2xl font-bold text-[#212529] mb-4 italic">{v.title}</h3>
-                  <p className="text-[#595F66] leading-relaxed">{v.text}</p>
+                  <h3 className="font-display text-2xl font-bold text-text-primary mb-4 italic">{v.title}</h3>
+                  <p className="text-text-secondary leading-relaxed">{v.text}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -265,12 +265,12 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-[#0A1628]">
+      <section className="py-24 bg-navy">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-6">Partner With Us</h2>
             <p className="text-white/60 max-w-lg mx-auto mb-8">Whether you are a distributor, architect, or operator — we are always looking for strong partnerships.</p>
-            <Link href="/contact" className="inline-flex bg-[#D32F3D] text-white font-semibold px-8 py-4 rounded-md hover:bg-[#B82735] transition-all">Contact Us</Link>
+            <Link href="/contact" className="inline-flex bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover transition-all">Contact Us</Link>
           </AnimatedSection>
         </div>
       </section>

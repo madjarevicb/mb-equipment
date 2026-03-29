@@ -53,7 +53,7 @@ export default function FoodProcessingPage() {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.3em] mb-4">
+          <p className="text-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             Industrial Solutions
           </p>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
@@ -82,24 +82,24 @@ export default function FoodProcessingPage() {
       <section className="py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection>
-            <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+            <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
               Food Processing Group
             </span>
             <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#0A1628] leading-tight">
+                <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy leading-tight">
                   MB Equipment Solutions Food Processing Group partners with industrial protein
                   and bakery processors, providing the most advanced operations solutions.
                 </h2>
               </div>
-              <div className="border-l-2 border-[#C9A84C]/30 pl-8 flex flex-col justify-center">
-                <p className="text-[#595F66] leading-relaxed">
+              <div className="border-l-2 border-gold/30 pl-8 flex flex-col justify-center">
+                <p className="text-text-secondary leading-relaxed">
                   From raw material preparation through production to final packaging — we deliver
                   complete processing lines built for continuous operation.
                 </p>
                 <Link
                   href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 text-[#D32F3D] font-semibold text-sm hover:gap-3 transition-all"
+                  className="mt-6 inline-flex items-center gap-2 text-red font-semibold text-sm hover:gap-3 transition-all"
                 >
                   Discuss your project <span>&rarr;</span>
                 </Link>
@@ -110,7 +110,7 @@ export default function FoodProcessingPage() {
       </section>
 
       {/* ─── FOOD PROCESSING BRANDS ─── */}
-      <section className="relative py-28 bg-[#0A1628] overflow-hidden">
+      <section className="relative py-28 bg-navy overflow-hidden">
         {/* Background image with overlay */}
         <div className="absolute inset-0">
           <Image
@@ -124,13 +124,13 @@ export default function FoodProcessingPage() {
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+              <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
                 Our Expertise
               </span>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 leading-tight">
                 Food Processing Brands
               </h2>
-              <div className="w-16 h-[2px] bg-[#C9A84C] mt-6 mb-10" />
+              <div className="w-16 h-[2px] bg-gold mt-6 mb-10" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -146,11 +146,11 @@ export default function FoodProcessingPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4">
-                <div className="border-l-2 border-[#C9A84C] pl-6 py-2">
+                <div className="border-l-2 border-gold pl-6 py-2">
                   <p className="text-white font-semibold">Raw Material Preparation</p>
                   <p className="text-white/40 text-sm mt-1">Intake to processing</p>
                 </div>
-                <div className="border-l-2 border-[#D32F3D] pl-6 py-2">
+                <div className="border-l-2 border-red pl-6 py-2">
                   <p className="text-white font-semibold">Production & Processing</p>
                   <p className="text-white/40 text-sm mt-1">Thermal, baking, forming</p>
                 </div>
@@ -165,36 +165,36 @@ export default function FoodProcessingPage() {
       </section>
 
       {/* ─── EQUIPMENT SOLUTIONS ─── */}
-      <section className="py-20 bg-[#F8F9FA]">
+      <section className="py-20 bg-offwhite">
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection>
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
               <div>
-                <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+                <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
                   Capabilities
                 </span>
-                <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#0A1628] mt-2">
+                <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy mt-2">
                   Equipment Solutions
                 </h2>
               </div>
-              <p className="text-[#595F66] leading-relaxed max-w-md text-sm lg:text-right">
+              <p className="text-text-secondary leading-relaxed max-w-md text-sm lg:text-right">
                 Maximize performance and output with advice and support from our experts around the world.
               </p>
             </div>
-            <div className="w-full h-[1px] bg-[#0A1628]/10 mb-0" />
+            <div className="w-full h-[1px] bg-navy/10 mb-0" />
           </AnimatedSection>
 
           <div className="space-y-0">
             {equipmentSolutions.map((item, i) => (
               <AnimatedSection key={item.name} delay={i * 0.05}>
-                <div className="group flex items-center gap-5 py-5 border-b border-[#E5E7EB] hover:border-[#D32F3D]/50 cursor-pointer transition-all duration-300 hover:pl-2">
-                  <span className="text-[#C9A84C]/30 font-display text-xl font-bold w-10 flex-shrink-0 group-hover:text-[#D32F3D] transition-colors">
+                <div className="group flex items-center gap-5 py-5 border-b border-[#E5E7EB] hover:border-red/50 cursor-pointer transition-all duration-300 hover:pl-2">
+                  <span className="text-gold/30 font-display text-xl font-bold w-10 flex-shrink-0 group-hover:text-red transition-colors">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[#0A1628] font-semibold group-hover:text-[#D32F3D] transition-colors flex-1">
+                  <span className="text-navy font-semibold group-hover:text-red transition-colors flex-1">
                     {item.name}
                   </span>
-                  <span className="text-[#0A1628]/15 text-xl group-hover:text-[#D32F3D] group-hover:translate-x-1 transition-all duration-300">
+                  <span className="text-navy/15 text-xl group-hover:text-red group-hover:translate-x-1 transition-all duration-300">
                     &rarr;
                   </span>
                 </div>
@@ -205,10 +205,10 @@ export default function FoodProcessingPage() {
       </section>
 
       {/* ─── PRODUCT APPLICATION ─── */}
-      <section className="py-24 bg-[#0A1628]">
+      <section className="py-24 bg-navy">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
-            <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+            <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
               Applications
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-14">
@@ -221,8 +221,8 @@ export default function FoodProcessingPage() {
             <div className="lg:col-span-5">
               <AnimatedSection>
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-8 h-[2px] bg-[#C9A84C]" />
-                  <h3 className="font-display text-2xl font-bold text-[#C9A84C]">
+                  <div className="w-8 h-[2px] bg-gold" />
+                  <h3 className="font-display text-2xl font-bold text-gold">
                     Bakery
                   </h3>
                 </div>
@@ -230,9 +230,9 @@ export default function FoodProcessingPage() {
                   {bakeryProducts.map((product) => (
                     <div
                       key={product.name}
-                      className="group flex items-center gap-4 py-3.5 border-b border-white/5 hover:border-[#C9A84C]/30 cursor-pointer transition-all"
+                      className="group flex items-center gap-4 py-3.5 border-b border-white/5 hover:border-gold/30 cursor-pointer transition-all"
                     >
-                      <span className="w-1.5 h-1.5 bg-[#C9A84C]/40 rounded-full group-hover:bg-[#C9A84C] group-hover:scale-150 transition-all flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 bg-gold/40 rounded-full group-hover:bg-gold group-hover:scale-150 transition-all flex-shrink-0" />
                       <span className="text-white/60 group-hover:text-white text-sm font-medium transition-colors">
                         {product.name}
                       </span>
@@ -251,8 +251,8 @@ export default function FoodProcessingPage() {
             <div className="lg:col-span-5">
               <AnimatedSection delay={0.1}>
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-8 h-[2px] bg-[#D32F3D]" />
-                  <h3 className="font-display text-2xl font-bold text-[#D32F3D]">
+                  <div className="w-8 h-[2px] bg-red" />
+                  <h3 className="font-display text-2xl font-bold text-red">
                     Protein
                   </h3>
                 </div>
@@ -260,9 +260,9 @@ export default function FoodProcessingPage() {
                   {proteinProducts.map((product) => (
                     <div
                       key={product.name}
-                      className="group flex items-center gap-4 py-3.5 border-b border-white/5 hover:border-[#D32F3D]/30 cursor-pointer transition-all"
+                      className="group flex items-center gap-4 py-3.5 border-b border-white/5 hover:border-red/30 cursor-pointer transition-all"
                     >
-                      <span className="w-1.5 h-1.5 bg-[#D32F3D]/40 rounded-full group-hover:bg-[#D32F3D] group-hover:scale-150 transition-all flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 bg-red/40 rounded-full group-hover:bg-red group-hover:scale-150 transition-all flex-shrink-0" />
                       <span className="text-white/60 group-hover:text-white text-sm font-medium transition-colors">
                         {product.name}
                       </span>
@@ -279,17 +279,17 @@ export default function FoodProcessingPage() {
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection>
-            <div className="bg-[#F8F9FA] border border-[#E5E7EB] rounded-sm overflow-hidden">
+            <div className="bg-offwhite border border-[#E5E7EB] rounded-sm overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-5">
                 <div className="lg:col-span-3 p-10 lg:p-14 flex flex-col justify-center">
-                  <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+                  <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
                     Innovation Centers
                   </span>
-                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#0A1628] mt-3 leading-tight">
+                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy mt-3 leading-tight">
                     See It. Believe It.
                   </h2>
-                  <div className="w-12 h-[2px] bg-[#C9A84C] mt-4 mb-6" />
-                  <p className="text-[#595F66] leading-relaxed">
+                  <div className="w-12 h-[2px] bg-gold mt-4 mb-6" />
+                  <p className="text-text-secondary leading-relaxed">
                     Our Innovation Centers bring together the most advanced food processing
                     technologies. Schedule a visit to see equipment running at full production
                     capacity with your products.
@@ -297,21 +297,21 @@ export default function FoodProcessingPage() {
                   <div className="flex flex-col sm:flex-row gap-3 mt-8">
                     <Link
                       href="/demo-centers"
-                      className="inline-flex items-center justify-center bg-[#D32F3D] text-white font-semibold px-6 py-3 rounded-sm hover:bg-[#B82735] transition-all text-sm"
+                      className="inline-flex items-center justify-center bg-red text-white font-semibold px-6 py-3 hover:bg-red-hover transition-all text-sm"
                     >
                       Visit an Innovation Center
                     </Link>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center border border-[#0A1628]/20 text-[#0A1628] font-semibold px-6 py-3 rounded-sm hover:bg-[#0A1628] hover:text-white transition-all text-sm"
+                      className="inline-flex items-center justify-center border border-navy/20 text-navy font-semibold px-6 py-3 hover:bg-navy hover:text-white transition-all text-sm"
                     >
                       Discuss Your Production Line
                     </Link>
                   </div>
                 </div>
-                <div className="lg:col-span-2 bg-[#0A1628] p-10 lg:p-14 flex items-center justify-center">
+                <div className="lg:col-span-2 bg-navy p-10 lg:p-14 flex items-center justify-center">
                   <div className="text-center">
-                    <p className="font-display text-6xl font-bold text-[#C9A84C]">6</p>
+                    <p className="font-display text-6xl font-bold text-gold">6</p>
                     <p className="text-white/60 text-sm mt-3 uppercase tracking-wider">Innovation Centers</p>
                     <p className="text-white/30 text-xs mt-1">Across the region</p>
                   </div>

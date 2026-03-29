@@ -83,13 +83,13 @@ export default function InnovationPage() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/95 via-[#0A1628]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/70 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
           <AnimatedSection>
-            <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+            <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
               Technology & Innovation
             </span>
-            <div className="w-12 h-[2px] bg-[#C9A84C] mt-4 mb-6" />
+            <div className="w-12 h-[2px] bg-gold mt-4 mb-6" />
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] max-w-2xl">
               This is Innovation in Commercial Foodservice
             </h1>
@@ -101,13 +101,13 @@ export default function InnovationPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="/demo-centers"
-                className="inline-flex bg-[#D32F3D] text-white font-semibold px-8 py-4 rounded-sm hover:bg-[#B82735] transition-all"
+                className="inline-flex bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover transition-all"
               >
                 Visit Our Demo Center
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex border border-white/30 text-white font-semibold px-8 py-4 rounded-sm hover:bg-white/10 transition-all"
+                className="inline-flex border border-white/30 text-white font-semibold px-8 py-4 hover:bg-white/10 transition-all"
               >
                 Get a Consultation
               </Link>
@@ -119,7 +119,7 @@ export default function InnovationPage() {
       {/* ============================================================ */}
       {/*  FEATURED INNOVATION PRODUCTS                                 */}
       {/* ============================================================ */}
-      <section className="py-24 bg-[#D32F3D]">
+      <section className="py-24 bg-red">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -187,10 +187,10 @@ export default function InnovationPage() {
           {/* Section header — left aligned */}
           <AnimatedSection>
             <div className="max-w-xl mb-16">
-              <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+              <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
                 What&apos;s Moving the Industry
               </span>
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-[#0A1628] mt-4">
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-navy mt-4">
                 Four Technologies Shaping the Future
               </h2>
             </div>
@@ -200,33 +200,33 @@ export default function InnovationPage() {
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6">
               {/* Connected Kitchens — navy, takes 3 cols */}
-              <div className="lg:col-span-3 bg-[#0A1628] p-10 lg:p-14 relative overflow-hidden group">
+              <div className="lg:col-span-3 bg-navy p-10 lg:p-14 relative overflow-hidden group">
                                 <div className="relative">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-[2px] bg-[#C9A84C]" />
-                    <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-widest">{themes[0].subtitle}</span>
+                    <div className="w-8 h-[2px] bg-gold" />
+                    <span className="text-gold text-xs font-semibold uppercase tracking-widest">{themes[0].subtitle}</span>
                   </div>
                   <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-5">{themes[0].title}</h3>
                   <p className="text-white/55 leading-relaxed mb-10">{themes[0].text}</p>
                   <div className="flex items-baseline gap-2">
-                    <span className="font-display text-5xl font-bold text-[#C9A84C]">{themes[0].stat}</span>
+                    <span className="font-display text-5xl font-bold text-gold">{themes[0].stat}</span>
                     <span className="text-white/35 text-sm max-w-[180px]">{themes[0].statLabel}</span>
                   </div>
                 </div>
               </div>
 
               {/* Speed & Energy — white with left red border, takes 2 cols */}
-              <div className="lg:col-span-2 border-l-4 border-[#D32F3D] bg-[#F8F9FA] p-10 lg:p-12 relative overflow-hidden group">
+              <div className="lg:col-span-2 border-l-4 border-red bg-offwhite p-10 lg:p-12 relative overflow-hidden group">
                                 <div className="relative">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-[2px] bg-[#D32F3D]" />
-                    <span className="text-[#D32F3D] text-xs font-semibold uppercase tracking-widest">{themes[1].subtitle}</span>
+                    <div className="w-8 h-[2px] bg-red" />
+                    <span className="text-red text-xs font-semibold uppercase tracking-widest">{themes[1].subtitle}</span>
                   </div>
-                  <h3 className="font-display text-xl lg:text-2xl font-bold text-[#0A1628] mb-4">{themes[1].title}</h3>
-                  <p className="text-[#595F66] leading-relaxed text-[15px] mb-8">{themes[1].text}</p>
+                  <h3 className="font-display text-xl lg:text-2xl font-bold text-navy mb-4">{themes[1].title}</h3>
+                  <p className="text-text-secondary leading-relaxed text-[15px] mb-8">{themes[1].text}</p>
                   <div>
-                    <span className="font-display text-4xl font-bold text-[#0A1628]">{themes[1].stat}</span>
-                    <p className="text-[#595F66] text-xs mt-1">{themes[1].statLabel}</p>
+                    <span className="font-display text-4xl font-bold text-navy">{themes[1].stat}</span>
+                    <p className="text-text-secondary text-xs mt-1">{themes[1].statLabel}</p>
                   </div>
                 </div>
               </div>
@@ -237,33 +237,33 @@ export default function InnovationPage() {
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
               {/* Ventless — white with gold accent, takes 2 cols */}
-              <div className="lg:col-span-2 bg-[#0A1628] p-10 lg:p-12 relative overflow-hidden group">
+              <div className="lg:col-span-2 bg-navy p-10 lg:p-12 relative overflow-hidden group">
                                 <div className="relative">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-[2px] bg-[#C9A84C]" />
-                    <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-widest">{themes[2].subtitle}</span>
+                    <div className="w-8 h-[2px] bg-gold" />
+                    <span className="text-gold text-xs font-semibold uppercase tracking-widest">{themes[2].subtitle}</span>
                   </div>
                   <h3 className="font-display text-xl lg:text-2xl font-bold text-white mb-4">{themes[2].title}</h3>
                   <p className="text-white/55 leading-relaxed text-[15px] mb-8">{themes[2].text}</p>
                   <div className="pt-6 border-t border-white/10">
-                    <span className="font-display text-4xl font-bold text-[#C9A84C]">{themes[2].stat}</span>
+                    <span className="font-display text-4xl font-bold text-gold">{themes[2].stat}</span>
                     <p className="text-white/35 text-xs mt-1">{themes[2].statLabel}</p>
                   </div>
                 </div>
               </div>
 
               {/* Sustainability — gradient bg, takes 3 cols */}
-              <div className="lg:col-span-3 bg-gradient-to-br from-[#F8F9FA] to-[#EDF0F3] border-l-4 border-[#C9A84C] p-10 lg:p-14 relative overflow-hidden group">
+              <div className="lg:col-span-3 bg-gradient-to-br from-offwhite to-[#EDF0F3] border-l-4 border-gold p-10 lg:p-14 relative overflow-hidden group">
                                 <div className="relative">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-[2px] bg-[#C9A84C]" />
-                    <span className="text-[#C9A84C] text-xs font-semibold uppercase tracking-widest">{themes[3].subtitle}</span>
+                    <div className="w-8 h-[2px] bg-gold" />
+                    <span className="text-gold text-xs font-semibold uppercase tracking-widest">{themes[3].subtitle}</span>
                   </div>
-                  <h3 className="font-display text-2xl lg:text-3xl font-bold text-[#0A1628] mb-5">{themes[3].title}</h3>
-                  <p className="text-[#595F66] leading-relaxed mb-10">{themes[3].text}</p>
+                  <h3 className="font-display text-2xl lg:text-3xl font-bold text-navy mb-5">{themes[3].title}</h3>
+                  <p className="text-text-secondary leading-relaxed mb-10">{themes[3].text}</p>
                   <div className="flex items-baseline gap-2">
-                    <span className="font-display text-5xl font-bold text-[#D32F3D]">{themes[3].stat}</span>
-                    <span className="text-[#595F66] text-sm max-w-[200px]">{themes[3].statLabel}</span>
+                    <span className="font-display text-5xl font-bold text-red">{themes[3].stat}</span>
+                    <span className="text-text-secondary text-sm max-w-[200px]">{themes[3].statLabel}</span>
                   </div>
                 </div>
               </div>
@@ -276,14 +276,14 @@ export default function InnovationPage() {
       {/* ============================================================ */}
       {/*  CTA                                                          */}
       {/* ============================================================ */}
-      <section className="py-24 bg-[#0A1628] relative overflow-hidden">
+      <section className="py-24 bg-navy relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C9A84C]/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#D32F3D]/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-red/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <AnimatedSection>
-            <span className="text-[#C9A84C] text-sm font-semibold uppercase tracking-[0.2em]">
+            <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
               Experience It Live
             </span>
             <h2 className="font-display text-3xl lg:text-5xl font-bold text-white mt-4 mb-6">
@@ -297,13 +297,13 @@ export default function InnovationPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/demo-centers"
-                className="inline-flex bg-[#D32F3D] text-white font-semibold px-10 py-4 rounded-sm hover:bg-[#B82735] transition-all"
+                className="inline-flex bg-red text-white font-semibold px-10 py-4 hover:bg-red-hover transition-all"
               >
                 Book a Demo
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex border border-white/20 text-white font-semibold px-10 py-4 rounded-sm hover:bg-white/10 transition-all"
+                className="inline-flex border border-white/20 text-white font-semibold px-10 py-4 hover:bg-white/10 transition-all"
               >
                 Contact Us
               </Link>

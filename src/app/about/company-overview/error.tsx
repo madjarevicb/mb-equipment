@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 
-export default function CompanyOverviewError({ reset }: { error: Error; reset: () => void }) {
+export default function CompanyOverviewError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
-    <section className="min-h-[60vh] flex items-center justify-center">
+    <section className="min-h-[60vh] flex items-center justify-center" role="alert">
       <div className="text-center px-6">
         <h1 className="font-display text-4xl font-bold text-text-primary italic mb-4">Unable to Load Page</h1>
         <p className="text-text-secondary mb-8">Something went wrong. Please try again.</p>

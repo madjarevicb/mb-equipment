@@ -3,7 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import EquipmentCard from "@/components/ui/EquipmentCard";
 import { COMPANY } from "@/lib/constants";
+import type { Milestone } from "@/data/company-overview";
 import {
   milestones,
   equipmentCategories,
@@ -13,9 +15,9 @@ import {
 } from "@/data/company-overview";
 
 export const metadata: Metadata = {
-  title: "Company Overview — Middleby Endorsed Kitchen Equipment Partner",
+  title: "Company Overview — Middleby Partner",
   description:
-    "MB Equipment Solutions: Belgrade-based commercial kitchen equipment company endorsed by Middleby Corporation. Full-cycle service from design to after-sales across 40+ countries.",
+    "Middleby endorsed commercial kitchen equipment partner in Belgrade. 110+ brands, full-cycle service from design to after-sales across 40+ countries.",
   alternates: { canonical: "/about/company-overview" },
   openGraph: {
     title: "Company Overview — MB Equipment Solutions",
@@ -32,10 +34,11 @@ const aboutPageSchema = {
   "@id": `${COMPANY.url}/about/company-overview#webpage`,
   url: `${COMPANY.url}/about/company-overview`,
   name: "Company Overview — MB Equipment Solutions",
-  description: metadata.description,
+  description: "Middleby endorsed commercial kitchen equipment partner in Belgrade. 110+ brands, full-cycle service from design to after-sales across 40+ countries.",
+  inLanguage: "en",
   isPartOf: { "@id": `${COMPANY.url}/#website` },
   about: { "@id": `${COMPANY.url}/#organization` },
-};
+} as const;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -45,12 +48,12 @@ const breadcrumbSchema = {
     { "@type": "ListItem", position: 2, name: "About", item: `${COMPANY.url}/about` },
     { "@type": "ListItem", position: 3, name: "Company Overview", item: `${COMPANY.url}/about/company-overview` },
   ],
-};
+} as const;
 
-const colorMap = {
+const colorMap: Record<Milestone["color"], { dot: string; number: string }> = {
   gold: { dot: "bg-gold", number: "text-gold/20" },
   red: { dot: "bg-red", number: "text-red/20" },
-} as const;
+};
 
 export default function CompanyOverviewPage() {
   return (
@@ -59,11 +62,12 @@ export default function CompanyOverviewPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden" aria-labelledby="hero-heading">
         <Image
           src="/images/whatwedo/chef-cooking.jpg"
-          alt="Professional kitchen equipment showroom"
+          alt="Professional chef working in a commercial kitchen equipped by MB Equipment Solutions"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -76,13 +80,13 @@ export default function CompanyOverviewPage() {
               <span className="text-gold text-xs font-semibold uppercase tracking-[0.3em]">Company Overview</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
+            <h1 id="hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
               One Company.<br />
               <span className="text-gold italic">The Whole Kitchen.</span>
             </h1>
 
             <p className="text-white/70 text-lg leading-relaxed mb-10">
-              MB Equipment Solutions has spent over two decades building Southeast Europe&apos;s most comprehensive foodservice equipment operation. We are not a reseller with a catalog. We are engineers, project managers, and service technicians who happen to represent 110+ of the best brands in the world.
+              For over two decades, MB Equipment Solutions has designed, supplied, installed, and serviced commercial kitchens across Southeast Europe and beyond. Endorsed by Middleby Corporation, we represent 110+ of the world&apos;s leading foodservice brands — backed by a full-time engineering and service team that stays with your project long after delivery.
             </p>
 
             <Link href="/contact" className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover hover:-translate-y-px transition-all shadow-lg">
@@ -112,7 +116,7 @@ export default function CompanyOverviewPage() {
                     <div className={`relative flex flex-col lg:flex-row gap-8 lg:gap-16 pl-20 lg:pl-0 ${i < milestones.length - 1 ? "mb-20" : ""}`}>
                       <div className={`absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full ${colorMap[m.color].dot} border-4 border-white lg:-translate-x-1/2 z-10`} />
                       <div className="lg:w-1/2 lg:text-right lg:pr-16">
-                        <span className={`hidden lg:block font-display text-6xl lg:text-7xl font-bold ${colorMap[m.color].number} italic leading-none`}>{m.number}</span>
+                        <span className={`hidden lg:block font-display text-6xl lg:text-7xl font-bold ${colorMap[m.color].number} italic leading-none`} aria-hidden="true">{m.number}</span>
                         <span className="text-gold text-xs font-semibold uppercase tracking-[0.2em]">{m.year}</span>
                         <h3 className="text-xl font-bold text-text-primary mt-1">{m.title}</h3>
                       </div>
@@ -129,26 +133,16 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* What We Do — Equipment Categories */}
-      <section className="py-24 bg-navy" aria-labelledby="whatwedo-heading">
+      <section className="py-28 bg-navy" aria-labelledby="whatwedo-heading">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
-            <SectionHeading heading="What We Do" theme="dark" subtext="From automation to brewing, we cover every aspect of the modern commercial kitchen." />
+            <SectionHeading id="whatwedo-heading" heading="What We Do" theme="dark" subtext="Fifteen equipment categories. Four experience spaces. One partner who specs, installs, and services all of it." />
           </AnimatedSection>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {equipmentCategories.map((item, i) => (
               <AnimatedSection key={item.title} delay={Math.min(i * 0.04, 0.32)}>
-                <Link href={item.href ?? "#"} className="group relative bg-navy-light/50 overflow-hidden h-full border border-white/5 hover:border-gold/30 transition-all duration-500 block">
-                  <div className="relative h-52 overflow-hidden">
-                    <Image src={item.image} alt={item.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-red via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </Link>
+                <EquipmentCard {...item} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" gradient="red-gold" />
               </AnimatedSection>
             ))}
           </div>
@@ -163,17 +157,7 @@ export default function CompanyOverviewPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {experienceSpaces.map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 0.08}>
-                <Link href={item.href ?? "#"} className="group relative bg-navy-light/50 overflow-hidden h-full border border-white/5 hover:border-gold/30 transition-all duration-500 block">
-                  <div className="relative h-52 overflow-hidden">
-                    <Image src={item.image} alt={item.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </Link>
+                <EquipmentCard {...item} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" gradient="gold" />
               </AnimatedSection>
             ))}
           </div>
@@ -243,7 +227,7 @@ export default function CompanyOverviewPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-28 bg-navy">
+      <section className="py-28 bg-navy" aria-labelledby="cta-heading">
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
@@ -252,12 +236,12 @@ export default function CompanyOverviewPage() {
                 <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Let&apos;s Talk</span>
                 <div className="w-12 h-px bg-gold" />
               </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-bold text-white italic mb-6">
+              <h2 id="cta-heading" className="font-display text-4xl lg:text-5xl font-bold text-white italic mb-6">
                 The Right Equipment.<br />
                 <span className="text-gold">The Right Partner.</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed max-w-xl mx-auto mb-10">
-                Whether you are designing a new kitchen, upgrading an existing one, or expanding across the region — we should be in the conversation early.
+                Whether you are designing a new kitchen, upgrading an existing one, or expanding across the region — involve us from day one.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact" className="inline-flex bg-red text-white font-semibold px-10 py-4 hover:bg-red-hover hover:-translate-y-px transition-all shadow-lg">

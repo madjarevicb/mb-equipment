@@ -9,7 +9,7 @@ interface SectionHeadingProps {
 export default function SectionHeading({ overline, heading, subtext, align = "center", theme = "light" }: SectionHeadingProps) {
   const alignClass = align === "center" ? "text-center items-center" : "text-left items-start";
   const headingColor = theme === "dark" ? "text-white" : "text-text-primary";
-  const subtextColor = theme === "dark" ? "text-gray-300" : "text-text-secondary";
+  const subtextColor = theme === "dark" ? "text-white/70" : "text-text-secondary";
 
   return (
     <div className={`flex flex-col gap-4 ${alignClass}`}>

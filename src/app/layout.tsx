@@ -17,7 +17,7 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-cormorant",
-  weight: ["400", "500", "600", "700"],
+  weight: ["700"],
 });
 
 export const metadata: Metadata = {
@@ -40,9 +40,13 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["LocalBusiness", "Organization"],
+  "@id": "https://www.mbequipmentsolutions.com/#organization",
   name: "MB Equipment Solutions",
   url: "https://www.mbequipmentsolutions.com",
+  logo: "https://www.mbequipmentsolutions.com/mb-logo.svg",
+  image: "https://www.mbequipmentsolutions.com/mb-logo.svg",
+  telephone: "+381111234567",
   email: "info@mbequipmentsolutions.com",
   address: {
     "@type": "PostalAddress",
@@ -51,11 +55,40 @@ const organizationSchema = {
     postalCode: "11070",
     addressCountry: "RS",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 44.8176,
+    longitude: 20.4633,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+  priceRange: "$$$",
   parentOrganization: {
     "@type": "Corporation",
     name: "Middleby Corporation",
     url: "https://www.middleby.com",
   },
+  areaServed: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: 44.8176,
+      longitude: 20.4633,
+    },
+    geoRadius: "2000 km",
+  },
+  knowsAbout: [
+    "Commercial Kitchen Equipment",
+    "Restaurant Equipment",
+    "Food Processing Equipment",
+    "Hotel Kitchen Design",
+    "Middleby Equipment",
+    "Residential Kitchen Appliances",
+  ],
 };
 
 export default function RootLayout({
@@ -67,6 +100,12 @@ export default function RootLayout({
       className={`${dmSans.variable} ${cormorant.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-red focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-semibold"
+        >
+          Skip to content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -74,7 +113,7 @@ export default function RootLayout({
           }}
         />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <Analytics />
         <SpeedInsights />

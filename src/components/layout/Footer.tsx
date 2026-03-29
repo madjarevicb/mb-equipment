@@ -1,22 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-
-const solutions = [
-  { label: "Our Brands", href: "/business/hotels-restaurants" },
-  { label: "Residential", href: "/business/residential" },
-  { label: "Food Processing", href: "/business/food-processing" },
-];
-
-const company = [
-  { label: "Company Overview", href: "/about/company-overview" },
-  { label: "Innovation", href: "/about/innovation" },
-  { label: "References", href: "/references" },
-  { label: "Demo Centers", href: "/demo-centers" },
-];
+import { solutionLinks, companyLinks } from "@/lib/navigation";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A1628] text-white">
+    <footer className="bg-navy text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -33,8 +21,8 @@ export default function Footer() {
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               The Balkans&apos; most complete foodservice equipment partner. Endorsed by Middleby Corporation.
             </p>
-            <div className="flex items-center gap-2 text-[#C9A84C] text-xs font-medium uppercase tracking-wider">
-              <span className="w-8 h-px bg-[#C9A84C]" />
+            <div className="flex items-center gap-2 text-gold text-xs font-medium uppercase tracking-wider">
+              <span className="w-8 h-px bg-gold" />
               Endorsed by Middleby
             </div>
           </div>
@@ -43,7 +31,7 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">Solutions</h3>
             <ul className="space-y-3">
-              {solutions.map((item) => (
+              {solutionLinks.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm text-white/70 hover:text-white transition-colors">{item.label}</Link>
                 </li>
@@ -55,7 +43,7 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">Company</h3>
             <ul className="space-y-3">
-              {company.map((item) => (
+              {companyLinks.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm text-white/70 hover:text-white transition-colors">{item.label}</Link>
                 </li>

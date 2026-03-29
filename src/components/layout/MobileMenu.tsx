@@ -1,18 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-
-interface NavChild { label: string; href: string }
-interface NavItem { label: string; href?: string; children?: NavChild[] }
+import ChevronIcon from "@/components/ui/ChevronIcon";
+import type { NavItem } from "@/lib/navigation";
 
 export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
+
+  // Focus trap
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setIsOpen(false);
+      triggerRef.current?.focus();
+      return;
+    }
+    if (e.key !== "Tab" || !menuRef.current) return;
+
+    const focusable = menuRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button, [tabindex]:not([tabindex="-1"])'
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }, []);
 
   return (
     <>
       <button
+        ref={triggerRef}
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 text-white"
         aria-expanded={isOpen}
@@ -26,12 +62,19 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 top-16 bg-white z-40 overflow-y-auto">
+        <div
+          ref={menuRef}
+          className="fixed inset-0 top-16 bg-white z-40 overflow-y-auto"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+          onKeyDown={handleKeyDown}
+        >
           <div className="px-6 py-8">
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full bg-[#D32F3D] text-white text-center font-semibold py-3.5 rounded-md mb-8"
+              className="block w-full bg-red text-white text-center font-semibold py-3.5 mb-8"
             >
               Get a Quote
             </Link>
@@ -42,15 +85,16 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
                   <div key={item.label}>
                     <button
                       onClick={() => setOpenSection(openSection === item.label ? null : item.label)}
-                      className="w-full flex items-center justify-between py-3 text-lg font-medium text-[#212529] border-b border-gray-100"
+                      aria-expanded={openSection === item.label}
+                      className="w-full flex items-center justify-between py-3 text-lg font-medium text-text-primary border-b border-gray-100"
                     >
                       {item.label}
-                      <svg className={`w-4 h-4 transition-transform ${openSection === item.label ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                      <ChevronIcon className={`w-4 h-4 transition-transform ${openSection === item.label ? "rotate-180" : ""}`} />
                     </button>
                     {openSection === item.label && (
                       <div className="pl-4 py-2 space-y-1">
                         {item.children.map((child) => (
-                          <Link key={child.href} href={child.href} onClick={() => setIsOpen(false)} className="block py-2 text-[#595F66] hover:text-[#D32F3D]">
+                          <Link key={child.href} href={child.href} onClick={() => setIsOpen(false)} className="block py-2 text-text-secondary hover:text-red">
                             {child.label}
                           </Link>
                         ))}
@@ -58,17 +102,17 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
                     )}
                   </div>
                 ) : (
-                  <Link key={item.label} href={item.href!} onClick={() => setIsOpen(false)} className="block py-3 text-lg font-medium text-[#212529] border-b border-gray-100">
+                  <Link key={item.label} href={item.href} onClick={() => setIsOpen(false)} className="block py-3 text-lg font-medium text-text-primary border-b border-gray-100">
                     {item.label}
                   </Link>
                 )
               )}
-              <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-3 text-lg font-medium text-[#212529] border-b border-gray-100">
+              <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-3 text-lg font-medium text-text-primary border-b border-gray-100">
                 Contact
               </Link>
             </nav>
 
-            <div className="mt-8 pt-6 border-t border-gray-200 text-sm text-[#595F66]">
+            <div className="mt-8 pt-6 border-t border-gray-200 text-sm text-text-secondary">
               <a href="tel:+381111234567" className="block py-1">+381 11 123 4567</a>
               <a href="mailto:info@mbequipmentsolutions.com" className="block py-1">info@mbequipmentsolutions.com</a>
             </div>

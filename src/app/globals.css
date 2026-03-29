@@ -99,3 +99,19 @@ body {
   0% { transform: translateX(calc(-320px * 7 - 16px * 7)); }
   100% { transform: translateX(0); }
 }
+
+/* Homepage partner logo carousel */
+@keyframes scroll-partners {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-scroll-partners {
+  animation: scroll-partners 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-scroll-partners:hover {
+  animation-play-state: paused;
+}

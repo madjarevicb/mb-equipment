@@ -1,32 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import { navItems } from "@/lib/navigation";
 import MobileMenu from "./MobileMenu";
-
-const navItems = [
-  {
-    label: "About Us",
-    children: [
-      { label: "Company Overview", href: "/about/company-overview" },
-      { label: "Innovation", href: "/about/innovation" },
-    ],
-  },
-  {
-    label: "Business & Brands",
-    children: [
-      { label: "Our Brands", href: "/business/hotels-restaurants" },
-      { label: "Residential", href: "/business/residential" },
-      { label: "Food Processing", href: "/business/food-processing" },
-    ],
-  },
-  { label: "References", href: "/references" },
-  { label: "Demo Centers", href: "/demo-centers" },
-];
+import DesktopDropdown from "./DesktopDropdown";
 
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top bar */}
-      <div className="bg-[#0A1628] text-white/80 text-xs hidden lg:block">
+      <div className="bg-navy text-white/80 text-xs hidden lg:block">
         <div className="max-w-7xl mx-auto px-6 py-2 flex justify-between">
           <span>Mon-Fri: 08:00 - 17:00 CET</span>
           <div className="flex gap-4">
@@ -38,7 +20,7 @@ export default function Header() {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-[#0A1628]/95 backdrop-blur-md border-b border-white/10">
+      <nav className="bg-navy/95 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -56,28 +38,14 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item) =>
               item.children ? (
-                <div key={item.label} className="relative group">
-                  <button className="text-sm font-medium text-white/80 hover:text-[#C9A84C] transition-colors py-2 flex items-center gap-1">
-                    {item.label}
-                    <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                  </button>
-                  <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[220px]">
-                      {item.children.map((child) => (
-                        <Link key={child.href} href={child.href} className="block px-4 py-2.5 text-sm text-[#212529] hover:bg-[#F8F9FA] hover:text-[#D32F3D] transition-colors">
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <DesktopDropdown key={item.label} label={item.label} children={item.children} />
               ) : (
-                <Link key={item.label} href={item.href!} className="text-sm font-medium text-white/80 hover:text-[#C9A84C] transition-colors">
+                <Link key={item.label} href={item.href} className="text-sm font-medium text-white/80 hover:text-gold transition-colors">
                   {item.label}
                 </Link>
               )
             )}
-            <Link href="/contact" className="bg-[#D32F3D] text-white text-sm font-semibold px-5 py-2.5 rounded-md hover:bg-[#B82735] hover:-translate-y-px transition-all shadow-sm">
+            <Link href="/contact" className="bg-red text-white text-sm font-semibold px-5 py-2.5 hover:bg-red-hover hover:-translate-y-px transition-all shadow-sm">
               Get a Quote
             </Link>
           </div>

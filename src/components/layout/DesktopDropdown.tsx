@@ -6,10 +6,10 @@ import ChevronIcon from "@/components/ui/ChevronIcon";
 
 interface DropdownProps {
   label: string;
-  children: { label: string; href: string }[];
+  items: { label: string; href: string }[];
 }
 
-export default function DesktopDropdown({ label, children }: DropdownProps) {
+export default function DesktopDropdown({ label, items }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -48,13 +48,13 @@ export default function DesktopDropdown({ label, children }: DropdownProps) {
           setIsOpen(true);
           setFocusedIndex(0);
         } else {
-          setFocusedIndex((prev) => (prev + 1) % children.length);
+          setFocusedIndex((prev) => (prev + 1) % items.length);
         }
         break;
       case "ArrowUp":
         e.preventDefault();
         if (isOpen) {
-          setFocusedIndex((prev) => (prev - 1 + children.length) % children.length);
+          setFocusedIndex((prev) => (prev - 1 + items.length) % items.length);
         }
         break;
       case "Tab":
@@ -62,7 +62,7 @@ export default function DesktopDropdown({ label, children }: DropdownProps) {
         setFocusedIndex(-1);
         break;
     }
-  }, [isOpen, children.length]);
+  }, [isOpen, items.length]);
 
   const menuId = `dropdown-${label.replace(/\s+/g, "-").toLowerCase()}`;
 
@@ -91,7 +91,7 @@ export default function DesktopDropdown({ label, children }: DropdownProps) {
             aria-label={label}
             className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[220px]"
           >
-            {children.map((child, i) => (
+            {items.map((child, i) => (
               <Link
                 key={child.href}
                 href={child.href}

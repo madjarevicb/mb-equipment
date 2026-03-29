@@ -11,7 +11,7 @@ import { faqs } from "@/lib/faq";
 export const metadata: Metadata = {
   title: "Commercial Kitchen Equipment | MB Equipment Solutions",
   description:
-    "Leading commercial kitchen equipment supplier in Southeast Europe. Middleby endorsed. 110+ brands including Viking, La Cornue, AGA for hotels, restaurants, residential and food processing. Belgrade, Serbia.",
+    "Commercial kitchen equipment supplier in Southeast Europe. Middleby endorsed. 110+ brands for hotels, restaurants, residential and food processing.",
   alternates: { canonical: "https://www.mbequipmentsolutions.com" },
   openGraph: {
     title: "MB Equipment Solutions — Commercial Kitchen Equipment Partner",

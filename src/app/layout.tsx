@@ -89,6 +89,11 @@ const organizationSchema = {
     "Middleby Equipment",
     "Residential Kitchen Appliances",
   ],
+  sameAs: [
+    "https://www.linkedin.com/company/mb-equipment-solutions",
+    "https://www.instagram.com/mbequipmentsolutions",
+    "https://www.facebook.com/mbequipmentsolutions",
+  ],
 };
 
 export default function RootLayout({

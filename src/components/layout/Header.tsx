@@ -38,7 +38,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item) =>
               item.children ? (
-                <DesktopDropdown key={item.label} label={item.label} children={item.children} />
+                <DesktopDropdown key={item.label} label={item.label} items={item.children} />
               ) : (
                 <Link key={item.label} href={item.href} className="text-sm font-medium text-white/80 hover:text-gold transition-colors">
                   {item.label}

@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { useInView } from "@/hooks/useInView";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -22,29 +23,19 @@ export default function AnimatedSection({
   delay = 0,
   animation = "fade-up",
 }: AnimatedSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const { ref, inView } = useInView(0.15);
   const [state, setState] = useState<"idle" | "hidden" | "visible">("idle");
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const el = ref.current;
-    if (!el) return;
-
     setState("hidden");
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setState("visible");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (inView && state === "hidden") {
+      setState("visible");
+    }
+  }, [inView, state]);
 
   const style: React.CSSProperties =
     state === "hidden"

@@ -3,11 +3,13 @@
 import Link from "next/link";
 
 export default function Error({
+  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  console.error("Route error:", error);
   return (
     <section className="min-h-[60vh] flex items-center justify-center">
       <div className="text-center px-6">

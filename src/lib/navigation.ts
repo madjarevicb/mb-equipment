@@ -27,11 +27,8 @@ export const navItems: NavItem[] = [
   { label: "Demo Centers", href: "/demo-centers" },
 ];
 
-export const solutionLinks: NavChild[] = [
-  { label: "Our Brands", href: "/business/hotels-restaurants" },
-  { label: "Residential", href: "/business/residential" },
-  { label: "Food Processing", href: "/business/food-processing" },
-];
+export const solutionLinks: NavChild[] =
+  (navItems.find((item) => item.label === "Business & Brands") as { children: NavChild[] }).children;
 
 export const companyLinks: NavChild[] = [
   { label: "Company Overview", href: "/about/company-overview" },

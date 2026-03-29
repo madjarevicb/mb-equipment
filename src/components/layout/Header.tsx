@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { navItems } from "@/lib/navigation";
+import { COMPANY } from "@/lib/constants";
 import MobileMenu from "./MobileMenu";
 import DesktopDropdown from "./DesktopDropdown";
 
@@ -12,9 +13,9 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 py-2 flex justify-between">
           <span>Mon-Fri: 08:00 - 17:00 CET</span>
           <div className="flex gap-4">
-            <a href="tel:+381111234567" className="hover:text-white transition-colors">+381 11 123 4567</a>
+            <a href={`tel:${COMPANY.phone}`} className="hover:text-white transition-colors">{COMPANY.phoneDisplay}</a>
             <span className="text-white/30">|</span>
-            <a href="mailto:info@mbequipmentsolutions.com" className="hover:text-white transition-colors">info@mbequipmentsolutions.com</a>
+            <a href={`mailto:${COMPANY.email}`} className="hover:text-white transition-colors">{COMPANY.email}</a>
           </div>
         </div>
       </div>
@@ -52,7 +53,7 @@ export default function Header() {
 
           {/* Mobile */}
           <div className="flex items-center gap-3 lg:hidden">
-            <a href="tel:+381111234567" className="text-white p-2" aria-label="Call us">
+            <a href={`tel:${COMPANY.phone}`} className="text-white p-2" aria-label="Call us">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
             </a>
             <MobileMenu navItems={navItems} />

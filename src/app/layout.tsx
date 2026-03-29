@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { COMPANY } from "@/lib/constants";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -41,24 +42,24 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "Organization"],
-  "@id": "https://www.mbequipmentsolutions.com/#organization",
-  name: "MB Equipment Solutions",
-  url: "https://www.mbequipmentsolutions.com",
-  logo: "https://www.mbequipmentsolutions.com/mb-logo.svg",
-  image: "https://www.mbequipmentsolutions.com/mb-logo.svg",
-  telephone: "+381111234567",
-  email: "info@mbequipmentsolutions.com",
+  "@id": `${COMPANY.url}/#organization`,
+  name: COMPANY.name,
+  url: COMPANY.url,
+  logo: `${COMPANY.url}/mb-logo.svg`,
+  image: `${COMPANY.url}/mb-logo.svg`,
+  telephone: COMPANY.phone,
+  email: COMPANY.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Vladimira Popovića 6",
-    addressLocality: "Beograd",
-    postalCode: "11070",
-    addressCountry: "RS",
+    streetAddress: COMPANY.address.street,
+    addressLocality: COMPANY.address.city,
+    postalCode: COMPANY.address.zip,
+    addressCountry: COMPANY.address.country,
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 44.8176,
-    longitude: 20.4633,
+    latitude: COMPANY.geo.lat,
+    longitude: COMPANY.geo.lng,
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -76,8 +77,8 @@ const organizationSchema = {
     "@type": "GeoCircle",
     geoMidpoint: {
       "@type": "GeoCoordinates",
-      latitude: 44.8176,
-      longitude: 20.4633,
+      latitude: COMPANY.geo.lat,
+      longitude: COMPANY.geo.lng,
     },
     geoRadius: "2000 km",
   },

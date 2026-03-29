@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import ChevronIcon from "@/components/ui/ChevronIcon";
+import { COMPANY } from "@/lib/constants";
 import type { NavItem } from "@/lib/navigation";
 
 export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
@@ -113,8 +114,8 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
             </nav>
 
             <div className="mt-8 pt-6 border-t border-gray-200 text-sm text-text-secondary">
-              <a href="tel:+381111234567" className="block py-1">+381 11 123 4567</a>
-              <a href="mailto:info@mbequipmentsolutions.com" className="block py-1">info@mbequipmentsolutions.com</a>
+              <a href={`tel:${COMPANY.phone}`} className="block py-1">{COMPANY.phoneDisplay}</a>
+              <a href={`mailto:${COMPANY.email}`} className="block py-1">{COMPANY.email}</a>
             </div>
           </div>
         </div>

@@ -28,11 +28,13 @@ export const navItems: NavItem[] = [
 ];
 
 export const solutionLinks: NavChild[] =
-  (navItems.find((item) => item.label === "Business & Brands") as { children: NavChild[] }).children;
+  navItems.find((item): item is NavItem & { children: NavChild[] } => item.label === "Business & Brands" && !!item.children)?.children ?? [];
 
-export const companyLinks: NavChild[] = [
-  { label: "Company Overview", href: "/about/company-overview" },
-  { label: "Innovation", href: "/about/innovation" },
-  { label: "References", href: "/references" },
-  { label: "Demo Centers", href: "/demo-centers" },
-];
+const aboutChildren: NavChild[] =
+  navItems.find((item): item is NavItem & { children: NavChild[] } => item.label === "About Us" && !!item.children)?.children ?? [];
+
+const standaloneLinks: NavChild[] = navItems
+  .filter((item): item is NavItem & { href: string } => !!item.href)
+  .map(({ label, href }) => ({ label, href }));
+
+export const companyLinks: NavChild[] = [...aboutChildren, ...standaloneLinks];

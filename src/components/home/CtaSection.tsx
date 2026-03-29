@@ -18,6 +18,7 @@ export default function CtaSection() {
             <p className="text-text-secondary text-sm max-w-lg">
               No commitment required — start with a free consultation and site assessment. Our team will evaluate your space, recommend the right equipment, and deliver a detailed proposal within days.
             </p>
+            <div className="w-10 h-[2px] bg-gold mt-8" />
           </AnimatedSection>
 
           {/* Right — CTA block */}

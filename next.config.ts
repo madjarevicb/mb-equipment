@@ -50,7 +50,6 @@ const nextConfig: NextConfig = {
       { source: "/images/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       { source: "/hero-poster.jpg", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       { source: "/", headers: [{ key: "Link", value: "</hero-poster.jpg>; rel=preload; as=image; fetchpriority=high" }] },
-      { source: "/about/company-overview", headers: [{ key: "Link", value: "</images/whatwedo/chef-cooking.jpg>; rel=preload; as=image; fetchpriority=high" }] },
     ];
   },
 

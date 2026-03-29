@@ -26,6 +26,13 @@ export const metadata: Metadata = {
     url: "/about/company-overview",
     images: [{ url: "/images/whatwedo/chef-cooking.jpg", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Company Overview — MB Equipment Solutions",
+    description:
+      "Middleby endorsed kitchen equipment partner. 110+ brands, full-cycle service from design to after-sales.",
+    images: ["/images/whatwedo/chef-cooking.jpg"],
+  },
 };
 
 const aboutPageSchema = {
@@ -58,8 +65,7 @@ const colorMap: Record<Milestone["color"], { dot: string; number: string }> = {
 export default function CompanyOverviewPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([aboutPageSchema, breadcrumbSchema]) }} />
 
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden" aria-labelledby="hero-heading">
@@ -89,7 +95,7 @@ export default function CompanyOverviewPage() {
               For over two decades, MB Equipment Solutions has designed, supplied, installed, and serviced commercial kitchens across Southeast Europe and beyond. Endorsed by Middleby Corporation, we represent 110+ of the world&apos;s leading foodservice brands — backed by a full-time engineering and service team that stays with your project long after delivery.
             </p>
 
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover hover:-translate-y-px transition-all shadow-lg">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover hover:-translate-y-px transition-[color,background-color,transform] shadow-lg">
               Get in Touch
             </Link>
           </div>
@@ -182,7 +188,7 @@ export default function CompanyOverviewPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {processSteps.map((step, i) => (
               <AnimatedSection key={step.title} delay={i * 0.1}>
-                <div className="relative bg-navy border border-navy-light p-6 h-full hover:border-gold/40 transition-all duration-500 group">
+                <div className="relative bg-navy border border-navy-light p-6 h-full hover:border-gold/40 transition-colors duration-500 group">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="font-display text-3xl font-bold text-gold italic">{String(i + 1).padStart(2, "0")}</span>
                     {i < processSteps.length - 1 && (
@@ -214,7 +220,7 @@ export default function CompanyOverviewPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {companyValues.map((value, i) => (
               <AnimatedSection key={value.title} delay={i * 0.12}>
-                <div className="relative bg-white p-8 lg:p-10 h-full group hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-lg">
+                <div className="relative bg-white p-8 lg:p-10 h-full group hover:-translate-y-1 transition-[transform,box-shadow] duration-300 shadow-sm hover:shadow-lg">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-red to-gold" />
                   <span className="font-display text-7xl text-gold/15 leading-none select-none block -mb-6">&ldquo;</span>
                   <h3 className="font-display text-2xl font-bold text-text-primary mb-4 italic">{value.title}</h3>
@@ -244,10 +250,10 @@ export default function CompanyOverviewPage() {
                 Whether you are designing a new kitchen, upgrading an existing one, or expanding across the region — involve us from day one.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/contact" className="inline-flex bg-red text-white font-semibold px-10 py-4 hover:bg-red-hover hover:-translate-y-px transition-all shadow-lg">
+                <Link href="/contact" className="inline-flex bg-red text-white font-semibold px-10 py-4 hover:bg-red-hover hover:-translate-y-px transition-[color,background-color,transform] shadow-lg">
                   Request a Consultation
                 </Link>
-                <Link href="/references" className="inline-flex border border-white/20 text-white font-semibold px-8 py-4 hover:bg-white/10 transition-all">
+                <Link href="/references" className="inline-flex border border-white/20 text-white font-semibold px-8 py-4 hover:bg-white/10 transition-colors">
                   See Our References
                 </Link>
               </div>

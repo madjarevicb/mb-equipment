@@ -8,6 +8,7 @@ interface AnimatedSectionProps {
   className?: string;
   delay?: number;
   animation?: "fade-up" | "fade-left" | "fade-right" | "scale-in";
+  stagger?: boolean;
 }
 
 const transforms: Record<string, string> = {
@@ -22,6 +23,7 @@ export default function AnimatedSection({
   className = "",
   delay = 0,
   animation = "fade-up",
+  stagger = false,
 }: AnimatedSectionProps) {
   const { ref, inView } = useInView(0.15);
   const [state, setState] = useState<"idle" | "hidden" | "visible">("idle");
@@ -36,6 +38,15 @@ export default function AnimatedSection({
       setState("visible");
     }
   }, [inView, state]);
+
+  if (stagger) {
+    const staggerClass = `stagger-children ${state === "visible" ? "is-visible" : ""} ${state === "idle" ? "" : state === "hidden" ? "stagger-children" : ""}`;
+    return (
+      <div ref={ref} className={`${staggerClass} ${className}`} suppressHydrationWarning>
+        {children}
+      </div>
+    );
+  }
 
   const style: React.CSSProperties =
     state === "hidden"

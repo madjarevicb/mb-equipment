@@ -25,7 +25,7 @@ export default function EquipmentCard({ title, image, alt, description, href, si
       </div>
       <div className="p-6">
         <h3 className="font-display text-xl font-bold text-white mb-3">{title}</h3>
-        <p className="text-white/60 text-sm leading-relaxed">{description}</p>
+        <p className="text-white/70 text-sm leading-relaxed">{description}</p>
       </div>
       <div className={`absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r ${gradientMap[gradient]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
     </Link>

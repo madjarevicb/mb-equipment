@@ -17,34 +17,40 @@ import {
   companyValues,
 } from "@/data/company-overview";
 
+/* ---------- shared styles ---------- */
+const ctaPrimary = "inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover hover:-translate-y-px focus-visible:outline-gold transition-[color,background-color,transform] shadow-lg";
+const ctaSecondary = "inline-flex border border-white/20 text-white font-semibold px-8 py-4 hover:bg-white/10 focus-visible:outline-gold transition-colors";
+
+/* ---------- metadata ---------- */
+const PAGE_TITLE = "About Us — Commercial Kitchen Equipment Partner";
+const PAGE_DESC = "Middleby endorsed commercial kitchen equipment partner in Belgrade. 110+ brands, full-cycle service from design to after-sales across 40+ countries.";
+
 export const metadata: Metadata = {
-  title: "Commercial Kitchen Equipment Partner",
-  description:
-    "Middleby endorsed commercial kitchen equipment partner in Belgrade. 110+ brands, full-cycle service from design to after-sales across 40+ countries.",
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
   alternates: { canonical: "/about/company-overview" },
   openGraph: {
-    title: "Company Overview — MB Equipment Solutions",
-    description:
-      "Middleby endorsed commercial kitchen equipment partner in Belgrade. 110+ brands, full-cycle service from design to after-sales across 40+ countries.",
+    title: `${PAGE_TITLE} | MB Equipment Solutions`,
+    description: PAGE_DESC,
     url: "/about/company-overview",
     images: [{ url: "/images/whatwedo/chef-cooking.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Company Overview — MB Equipment Solutions",
-    description:
-      "Middleby endorsed commercial kitchen equipment partner in Belgrade. 110+ brands, full-cycle service from design to after-sales across 40+ countries.",
+    title: `${PAGE_TITLE} | MB Equipment Solutions`,
+    description: PAGE_DESC,
     images: ["/images/whatwedo/chef-cooking.jpg"],
   },
 };
 
+/* ---------- structured data ---------- */
 const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "@id": `${COMPANY.url}/about/company-overview#webpage`,
   url: `${COMPANY.url}/about/company-overview`,
-  name: "Company Overview — MB Equipment Solutions",
-  description: "Middleby endorsed commercial kitchen equipment partner in Belgrade. 110+ brands, full-cycle service from design to after-sales across 40+ countries.",
+  name: `${PAGE_TITLE} | MB Equipment Solutions`,
+  description: PAGE_DESC,
   inLanguage: "en",
   isPartOf: { "@id": `${COMPANY.url}/#website` },
   about: { "@id": `${COMPANY.url}/#organization` },
@@ -60,28 +66,43 @@ const breadcrumbSchema = {
   ],
 } as const;
 
-const howToSchema = {
+const serviceListSchema = {
   "@context": "https://schema.org",
-  "@type": "HowTo",
-  name: "The Full Cycle — How MB Equipment Solutions Delivers a Commercial Kitchen",
-  description: "Most equipment companies stop at delivery. We do not. Our five-step process covers the entire lifecycle of your commercial kitchen project.",
-  step: processSteps.map((step, i) => ({
-    "@type": "HowToStep",
+  "@type": "ItemList",
+  name: "The Full Cycle — MB Equipment Solutions Service Process",
+  description: "Our five-step process covers the entire lifecycle of your commercial kitchen project.",
+  itemListElement: processSteps.map((step, i) => ({
+    "@type": "ListItem",
     position: i + 1,
     name: step.title,
-    text: step.description,
+    description: step.description,
   })),
 } as const;
+
+/* ---------- helpers ---------- */
+const HERO_BLUR = "data:image/jpeg;base64,/9j/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAGAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAID/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIAAxESUv/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A1ehhaELAhjm5I6t9REg//9k=";
 
 const colorMap: Record<Milestone["color"], { dot: string; number: string }> = {
   gold: { dot: "bg-gold", number: "text-gold/20" },
   red: { dot: "bg-red", number: "text-red/20" },
 };
 
+const VISIBLE_EQUIPMENT = 6;
+
+/* ---------- chevron icon ---------- */
+function ChevronRight() {
+  return (
+    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+    </svg>
+  );
+}
+
+/* ---------- page ---------- */
 export default function CompanyOverviewPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([aboutPageSchema, breadcrumbSchema, howToSchema]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([aboutPageSchema, breadcrumbSchema, serviceListSchema]) }} />
 
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden" aria-labelledby="hero-heading">
@@ -92,6 +113,8 @@ export default function CompanyOverviewPage() {
           sizes="100vw"
           className="object-cover"
           priority
+          placeholder="blur"
+          blurDataURL={HERO_BLUR}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/40" />
 
@@ -106,12 +129,20 @@ export default function CompanyOverviewPage() {
               <span className="text-gold italic">The Whole Kitchen.</span>
             </h1>
 
-            <p className="text-white/70 text-lg leading-relaxed mb-10">
-              For over two decades, MB Equipment Solutions has designed, supplied, installed, and serviced commercial kitchen equipment across Southeast Europe and beyond. Based in Belgrade, Serbia, and endorsed by Middleby Corporation, we represent 110+ of the world&apos;s leading foodservice brands — backed by a full-time engineering and service team that stays with your project long after delivery.
+            <p className="text-white/70 text-lg leading-relaxed mb-8">
+              For over two decades, MB Equipment Solutions has designed, supplied, installed, and serviced commercial kitchen equipment across Southeast Europe and beyond. Based in <Link href="/demo-centers" className="text-white/90 underline underline-offset-2 hover:text-gold transition-colors">Belgrade, Serbia</Link>, and endorsed by <Link href="/about/innovation" className="text-white/90 underline underline-offset-2 hover:text-gold transition-colors">Middleby Corporation</Link>, we represent 110+ of the world&apos;s leading foodservice brands — backed by a full-time engineering and service team that stays with your project long after delivery.
             </p>
 
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover hover:-translate-y-px focus-visible:outline-gold transition-[color,background-color,transform] shadow-lg">
-              Schedule a Consultation
+            {/* Stat line */}
+            <div className="flex flex-wrap gap-x-8 gap-y-2 mb-10 text-sm font-semibold text-white/50 uppercase tracking-wider">
+              <span>2,000+ Projects</span>
+              <span>40+ Countries</span>
+              <span>110+ Brands</span>
+            </div>
+
+            <Link href="/contact" className={ctaPrimary}>
+              Get a Free Kitchen Assessment
+              <ChevronRight />
             </Link>
           </div>
         </div>
@@ -127,27 +158,25 @@ export default function CompanyOverviewPage() {
           </AnimatedSection>
 
           <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-px bg-gold/20 lg:-translate-x-px" />
+            <div className="absolute left-[0.9375rem] lg:left-1/2 top-0 bottom-0 w-px bg-gold/20 lg:-translate-x-px" />
 
-            <ol aria-label="Company timeline" className="list-none">
-              {milestones.map((m, i) => (
-                <li key={m.number}>
-                  <AnimatedSection delay={i * 0.1}>
-                    <div className={`relative flex flex-col lg:flex-row gap-8 lg:gap-16 pl-12 lg:pl-0 ${i < milestones.length - 1 ? "mb-20" : ""}`}>
-                      <div className={`absolute left-2 lg:left-1/2 top-2 w-4 h-4 rounded-full ${colorMap[m.color].dot} border-4 border-white lg:-translate-x-1/2 z-10`} />
-                      <div className="lg:w-1/2 lg:text-right lg:pr-16">
-                        <span className={`font-display text-4xl lg:text-7xl font-bold ${colorMap[m.color].number} italic leading-none`} aria-hidden="true">{m.number}</span>
-                        <span className="text-gold text-xs font-semibold uppercase tracking-[0.2em]">{m.year}</span>
-                        <h3 className="text-xl font-bold text-text-primary mt-1">{m.title}</h3>
-                      </div>
-                      <div className="lg:w-1/2 lg:pl-16">
-                        <p className="text-text-secondary leading-relaxed">{m.description}</p>
-                      </div>
+            <AnimatedSection stagger>
+              <ol aria-label="Company timeline" className="list-none">
+                {milestones.map((m, i) => (
+                  <li key={m.number} className={`relative flex flex-col lg:flex-row gap-8 lg:gap-16 pl-10 lg:pl-0 ${i < milestones.length - 1 ? "mb-20" : ""}`}>
+                    <div className={`absolute left-[0.4375rem] lg:left-1/2 top-2 w-4 h-4 rounded-full ${colorMap[m.color].dot} border-4 border-white lg:-translate-x-1/2 z-10`} />
+                    <div className="lg:w-1/2 lg:text-right lg:pr-16">
+                      <span className={`font-display text-4xl lg:text-7xl font-bold ${colorMap[m.color].number} italic leading-none`} aria-hidden="true">{m.number}</span>
+                      <span className="text-gold text-xs font-semibold uppercase tracking-[0.2em]">{m.year}</span>
+                      <h3 className="text-xl font-bold text-text-primary mt-1">{m.title}</h3>
                     </div>
-                  </AnimatedSection>
-                </li>
-              ))}
-            </ol>
+                    <div className="lg:w-1/2 lg:pl-16">
+                      <p className="text-text-secondary leading-relaxed">{m.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -159,27 +188,37 @@ export default function CompanyOverviewPage() {
             <SectionHeading id="whatwedo-heading" heading="What We Do" theme="dark" subtext="Fifteen equipment categories. Four experience spaces. One partner who specs, installs, and services all of it." />
           </AnimatedSection>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {equipmentCategories.map((item, i) => (
-              <AnimatedSection key={item.title} delay={Math.min(i * 0.04, 0.32)}>
-                <EquipmentCard {...item} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" gradient="red-gold" />
-              </AnimatedSection>
+          <AnimatedSection stagger className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {equipmentCategories.slice(0, VISIBLE_EQUIPMENT).map((item) => (
+              <EquipmentCard key={item.title} {...item} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" gradient="red-gold" />
             ))}
-          </div>
+          </AnimatedSection>
+
+          {/* Remaining cards — hidden by default, toggled via details/summary */}
+          <details className="mt-6 group">
+            <summary className="cursor-pointer list-none flex items-center justify-center gap-2 text-gold font-semibold text-sm uppercase tracking-wider hover:text-white transition-colors py-4 select-none">
+              <span className="group-open:hidden">View All 15 Categories</span>
+              <span className="hidden group-open:inline">Show Less</span>
+              <svg className="w-4 h-4 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <AnimatedSection stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-2">
+              {equipmentCategories.slice(VISIBLE_EQUIPMENT).map((item) => (
+                <EquipmentCard key={item.title} {...item} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" gradient="red-gold" />
+              ))}
+            </AnimatedSection>
+          </details>
 
           {/* Experience Spaces */}
           <AnimatedSection>
             <div className="mt-20 mb-8">
-              <Overline label="Experience Spaces" theme="muted" />
+              <Overline label="Experience Spaces" muted />
             </div>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {experienceSpaces.map((item, i) => (
-              <AnimatedSection key={item.title} delay={i * 0.08}>
-                <EquipmentCard {...item} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" gradient="gold" />
-              </AnimatedSection>
+          <AnimatedSection stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {experienceSpaces.map((item) => (
+              <EquipmentCard key={item.title} {...item} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" gradient="gold" />
             ))}
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -192,13 +231,11 @@ export default function CompanyOverviewPage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <AnimatedSection stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {processSteps.map((step, i) => (
-              <AnimatedSection key={step.title} delay={i * 0.1}>
-                <ProcessStepCard {...step} index={i} isLast={i === processSteps.length - 1} />
-              </AnimatedSection>
+              <ProcessStepCard key={step.title} {...step} index={i} isLast={i === processSteps.length - 1} />
             ))}
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -211,13 +248,11 @@ export default function CompanyOverviewPage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {companyValues.map((value, i) => (
-              <AnimatedSection key={value.title} delay={i * 0.12}>
-                <ValueCard {...value} />
-              </AnimatedSection>
+          <AnimatedSection stagger className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {companyValues.map((value) => (
+              <ValueCard key={value.title} {...value} />
             ))}
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -233,14 +268,15 @@ export default function CompanyOverviewPage() {
                 The Right Equipment.<br />
                 <span className="text-gold">The Right Partner.</span>
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed max-w-xl mx-auto mb-10">
+              <p className="text-white/70 text-lg leading-relaxed max-w-xl mx-auto mb-10">
                 Whether you are designing a new kitchen, upgrading an existing one, or expanding across the region — involve us from day one.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/contact" className="inline-flex bg-red text-white font-semibold px-10 py-4 hover:bg-red-hover hover:-translate-y-px focus-visible:outline-gold transition-[color,background-color,transform] shadow-lg">
-                  Request a Consultation
+                <Link href="/contact" className={ctaPrimary}>
+                  Get a Free Kitchen Assessment
+                  <ChevronRight />
                 </Link>
-                <Link href="/references" className="inline-flex border border-white/20 text-white font-semibold px-8 py-4 hover:bg-white/10 transition-colors">
+                <Link href="/references" className={ctaSecondary}>
                   See Our References
                 </Link>
               </div>

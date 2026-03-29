@@ -17,7 +17,7 @@ export default function ProcessStepCard({ title, description, index, isLast }: P
         )}
       </div>
       <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
-      <p className="text-white/60 text-sm leading-relaxed">{description}</p>
+      <p className="text-white/70 text-sm leading-relaxed">{description}</p>
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
   );

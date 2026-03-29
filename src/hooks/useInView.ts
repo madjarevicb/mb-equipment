@@ -23,6 +23,18 @@ function getSharedObserver(threshold: number): IntersectionObserver {
   return observer;
 }
 
+function cleanupObserver(threshold: number) {
+  const key = `${threshold}`;
+  const hasActiveCallbacks = Array.from(callbacks.keys()).length > 0;
+  if (!hasActiveCallbacks) {
+    const observer = observers.get(key);
+    if (observer) {
+      observer.disconnect();
+      observers.delete(key);
+    }
+  }
+}
+
 export function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -46,6 +58,7 @@ export function useInView(threshold = 0.15) {
     return () => {
       observer.unobserve(el);
       callbacks.delete(el);
+      cleanupObserver(threshold);
     };
   }, [threshold]);
 

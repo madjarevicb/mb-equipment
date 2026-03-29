@@ -22,7 +22,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.mbequipmentsolutions.com"),
+  metadataBase: new URL(COMPANY.url),
   title: {
     default: "MB Equipment Solutions | Professional Kitchen Equipment",
     template: "%s | MB Equipment Solutions",

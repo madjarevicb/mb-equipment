@@ -7,31 +7,32 @@ import AboutSection from "@/components/home/AboutSection";
 import FaqSection from "@/components/home/FaqSection";
 import CtaSection from "@/components/home/CtaSection";
 import { faqs } from "@/lib/faq";
+import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Commercial Kitchen Equipment | MB Equipment Solutions",
   description:
     "Commercial kitchen equipment supplier in Southeast Europe. Middleby endorsed. 110+ brands for hotels, restaurants, residential and food processing.",
-  alternates: { canonical: "https://www.mbequipmentsolutions.com" },
+  alternates: { canonical: COMPANY.url },
   openGraph: {
     title: "MB Equipment Solutions — Commercial Kitchen Equipment Partner",
     description:
       "110+ equipment brands for hotels, restaurants, residential kitchens and food processing. Endorsed by Middleby Corporation. Serving 30+ countries from Belgrade.",
-    url: "https://www.mbequipmentsolutions.com",
+    url: COMPANY.url,
   },
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "MB Equipment Solutions",
-  url: "https://www.mbequipmentsolutions.com",
+  name: COMPANY.name,
+  url: COMPANY.url,
   description:
     "Leading provider of commercial kitchen equipment in Southeast Europe. Endorsed by Middleby Corporation.",
   publisher: {
     "@type": "Organization",
-    name: "MB Equipment Solutions",
-    url: "https://www.mbequipmentsolutions.com",
+    name: COMPANY.name,
+    url: COMPANY.url,
   },
 };
 

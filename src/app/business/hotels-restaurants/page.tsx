@@ -144,13 +144,13 @@ export default function HotelsRestaurantsPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="/contact"
-                className="inline-flex bg-red text-white font-semibold px-8 py-4hover:bg-red-hover transition-all"
+                className="inline-flex bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover transition-all"
               >
                 Request a Quote
               </Link>
               <Link
                 href="/demo-centers"
-                className="inline-flex border border-white/30 text-white font-semibold px-8 py-4hover:bg-white/10 transition-all"
+                className="inline-flex border border-white/30 text-white font-semibold px-8 py-4 hover:bg-white/10 transition-all"
               >
                 Visit a Demo Center
               </Link>
@@ -328,13 +328,13 @@ export default function HotelsRestaurantsPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex bg-red text-white font-semibold px-8 py-4hover:bg-red-hover transition-all"
+                className="inline-flex bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover transition-all"
               >
                 Start a Project
               </Link>
               <Link
                 href="/references"
-                className="inline-flex border border-navy/20 text-navy font-semibold px-8 py-4hover:bg-navy hover:text-white transition-all"
+                className="inline-flex border border-navy/20 text-navy font-semibold px-8 py-4 hover:bg-navy hover:text-white transition-all"
               >
                 See Our References
               </Link>

@@ -57,7 +57,7 @@ body {
 }
 
 .animate-scroll-residential {
-  animation: scroll-residential 12s linear infinite;
+  animation: scroll-residential 8s linear infinite;
 }
 
 .animate-scroll-residential:hover {
@@ -75,4 +75,27 @@ body {
 
 .animate-scroll-residential-reverse:hover {
   animation-play-state: paused;
+}
+
+@keyframes scroll-references {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-400px * 8 - 16px * 8)); }
+}
+
+.animate-scroll-references {
+  animation: scroll-references 20s linear infinite;
+}
+
+.animate-scroll-references:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-320px * 7 - 16px * 7)); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(calc(-320px * 7 - 16px * 7)); }
+  100% { transform: translateX(0); }
 }

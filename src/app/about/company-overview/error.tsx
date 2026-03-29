@@ -1,8 +1,12 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 
 export default function CompanyOverviewError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
+  useEffect(() => {
+    console.error("CompanyOverview error:", error);
+  }, [error]);
   return (
     <section className="min-h-[60vh] flex items-center justify-center" role="alert">
       <div className="text-center px-6">

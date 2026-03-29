@@ -92,11 +92,11 @@ export default function CompanyOverviewPage() {
             </h1>
 
             <p className="text-white/70 text-lg leading-relaxed mb-10">
-              For over two decades, MB Equipment Solutions has designed, supplied, installed, and serviced commercial kitchens across Southeast Europe and beyond. Endorsed by Middleby Corporation, we represent 110+ of the world&apos;s leading foodservice brands — backed by a full-time engineering and service team that stays with your project long after delivery.
+              For over two decades, MB Equipment Solutions has designed, supplied, installed, and serviced commercial kitchen equipment across Southeast Europe and beyond. Based in Belgrade, Serbia, and endorsed by Middleby Corporation, we represent 110+ of the world&apos;s leading foodservice brands — backed by a full-time engineering and service team that stays with your project long after delivery.
             </p>
 
             <Link href="/contact" className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 hover:bg-red-hover hover:-translate-y-px transition-[color,background-color,transform] shadow-lg">
-              Get in Touch
+              Schedule a Consultation
             </Link>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function CompanyOverviewPage() {
                     <div className={`relative flex flex-col lg:flex-row gap-8 lg:gap-16 pl-20 lg:pl-0 ${i < milestones.length - 1 ? "mb-20" : ""}`}>
                       <div className={`absolute left-6 lg:left-1/2 top-2 w-4 h-4 rounded-full ${colorMap[m.color].dot} border-4 border-white lg:-translate-x-1/2 z-10`} />
                       <div className="lg:w-1/2 lg:text-right lg:pr-16">
-                        <span className={`hidden lg:block font-display text-6xl lg:text-7xl font-bold ${colorMap[m.color].number} italic leading-none`} aria-hidden="true">{m.number}</span>
+                        <span className={`font-display text-4xl lg:text-7xl font-bold ${colorMap[m.color].number} italic leading-none`} aria-hidden="true">{m.number}</span>
                         <span className="text-gold text-xs font-semibold uppercase tracking-[0.2em]">{m.year}</span>
                         <h3 className="text-xl font-bold text-text-primary mt-1">{m.title}</h3>
                       </div>
@@ -157,7 +157,7 @@ export default function CompanyOverviewPage() {
           <AnimatedSection>
             <div className="flex items-center gap-4 mt-20 mb-8">
               <div className="w-12 h-px bg-gold/40" />
-              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold/70">Experience Spaces</span>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-gold/70 m-0">Experience Spaces</h3>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -185,7 +185,7 @@ export default function CompanyOverviewPage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {processSteps.map((step, i) => (
               <AnimatedSection key={step.title} delay={i * 0.1}>
                 <div className="relative bg-navy border border-navy-light p-6 h-full hover:border-gold/40 transition-colors duration-500 group">

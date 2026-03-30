@@ -8,7 +8,7 @@ export default function SectorsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold mb-3">Sectors</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-text mb-3">Sectors</p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-tight mb-4">
               Equipment for Every Kitchen — From One Location to One Thousand
             </h2>

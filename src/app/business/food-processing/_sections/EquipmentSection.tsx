@@ -8,7 +8,7 @@ export default function EquipmentSection() {
         <AnimatedSection>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
             <div>
-              <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
+              <span className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em]">
                 Capabilities
               </span>
               <h2

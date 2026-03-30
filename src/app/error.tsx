@@ -13,7 +13,7 @@ export default function Error({
   return (
     <section className="min-h-[60vh] flex items-center justify-center">
       <div className="text-center px-6">
-        <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">
+        <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-4">
           Something went wrong
         </p>
         <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-4">

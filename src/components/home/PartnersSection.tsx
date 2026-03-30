@@ -24,7 +24,7 @@ export default function PartnersSection() {
     <section id="partners" aria-label="Partner logos" className="py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-10">
         <h2 className="sr-only">Our Global Partners and Clients</h2>
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-text text-center">
           Trusted by Global Foodservice Leaders
         </p>
       </div>

@@ -14,7 +14,7 @@ export default function FaqSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left column — heading + trust copy */}
           <AnimatedSection className="lg:col-span-4">
-            <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">FAQ</p>
+            <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-3">FAQ</p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Common Questions About Working With Us
             </h2>

@@ -19,7 +19,7 @@ export default function PortfolioSection() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
             {/* Left — heading */}
             <div className="lg:col-span-2">
-              <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
+              <span className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em]">
                 The Portfolio
               </span>
               <h2
@@ -27,7 +27,7 @@ export default function PortfolioSection() {
                 className="font-display text-4xl sm:text-5xl font-bold text-navy leading-[1.15] mt-4"
               >
                 Premium Residential
-                <span className="block text-gold mt-1">
+                <span className="block text-gold-text mt-1">
                   Kitchen Brands
                 </span>
               </h2>

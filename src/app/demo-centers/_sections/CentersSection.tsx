@@ -14,7 +14,7 @@ export default function CentersSection() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <AnimatedSection>
-          <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             Our Locations
           </p>
           <h2
@@ -52,7 +52,7 @@ export default function CentersSection() {
                     idx % 2 === 1 ? "lg:order-1" : ""
                   }`}
                 >
-                  <p className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+                  <p className="text-gold-text text-xs font-semibold uppercase tracking-[0.2em] mb-2">
                     {center.location}
                   </p>
                   <h3 className="font-display text-xl sm:text-2xl font-bold text-navy mb-4">

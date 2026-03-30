@@ -8,7 +8,7 @@ export default function AboutSection() {
         <AnimatedSection animation="fade-up">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-5">
-              <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">Who We Are</p>
+              <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-3">Who We Are</p>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-2">
                 Southeast Europe&apos;s Premier Kitchen Equipment Partner
               </h2>

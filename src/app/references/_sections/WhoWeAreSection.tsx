@@ -7,7 +7,7 @@ export default function WhoWeAreSection() {
         <AnimatedSection>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
-              <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">
+              <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-4">
                 Who We Are
               </p>
               <h2
@@ -47,7 +47,7 @@ export default function WhoWeAreSection() {
                       </span>
                       <span
                         className={`font-display text-xl font-bold ${
-                          item.highlight ? "text-gold" : "text-navy"
+                          item.highlight ? "text-gold-text" : "text-navy"
                         }`}
                       >
                         {item.value}

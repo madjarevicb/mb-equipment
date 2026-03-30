@@ -15,7 +15,7 @@ export default function LocalProjectsSection() {
     >
       <div className="max-w-6xl mx-auto px-6 mb-10">
         <AnimatedSection>
-          <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-3">
             Featured Projects
           </p>
           <h2

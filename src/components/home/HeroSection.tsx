@@ -45,7 +45,6 @@ export default function HeroSection() {
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all"
-            aria-label="Start a kitchen equipment project — get a free quote"
           >
             Start a Project
             <ChevronRightIcon className="w-4 h-4" />

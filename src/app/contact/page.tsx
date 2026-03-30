@@ -170,21 +170,21 @@ export default function ContactPage() {
               <h2 className="font-display text-2xl font-bold text-text-primary mb-8">Or Reach Us Directly</h2>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gold mb-3">Belgrade Office</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gold-text mb-3">Belgrade Office</h3>
                   <p className="text-text-primary font-medium">{COMPANY.name}</p>
                   <p className="text-text-secondary text-sm mt-1">{COMPANY.address.street}<br />{COMPANY.address.zip} {COMPANY.address.city}, Srbija</p>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gold mb-3">Contact</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gold-text mb-3">Contact</h3>
                   <a href={`tel:${COMPANY.phone}`} className="block text-text-primary hover:text-red transition-colors font-medium">{COMPANY.phoneDisplay}</a>
                   <a href={`mailto:${COMPANY.email}`} className="block text-text-primary hover:text-red transition-colors text-sm mt-1">{COMPANY.email}</a>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gold mb-3">Hours</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gold-text mb-3">Hours</h3>
                   <p className="text-text-secondary text-sm">Monday — Friday: 08:00 — 17:00<br />Saturday: By appointment<br />Sunday: Closed</p>
                 </div>
                 <div className="bg-gray-200 rounded-md aspect-[4/3] flex items-center justify-center">
-                  <span className="text-text-secondary/40 text-sm">[ Google Maps ]</span>
+                  <span className="text-text-secondary text-sm">[ Google Maps ]</span>
                 </div>
               </div>
             </div>

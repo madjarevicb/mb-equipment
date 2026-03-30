@@ -8,7 +8,7 @@ export default function BrandsPartnersSection() {
         <AnimatedSection>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-2">
-              <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-2">
+              <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-2">
                 Our Network
               </p>
               <h2

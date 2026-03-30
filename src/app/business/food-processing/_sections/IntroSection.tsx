@@ -7,7 +7,7 @@ export default function IntroSection() {
     <section className="py-28 bg-white" aria-labelledby="intro-heading">
       <div className="max-w-5xl mx-auto px-6">
         <AnimatedSection>
-          <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
+          <span className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em]">
             Food Processing Group
           </span>
           <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-12">

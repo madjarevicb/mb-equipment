@@ -10,7 +10,7 @@ export default function FeaturedSection() {
     <section className="py-24 bg-red" aria-labelledby="featured-heading">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
-          <span className="text-white/90 text-sm font-semibold uppercase tracking-[0.2em]">
+          <span className="text-white text-sm font-semibold uppercase tracking-[0.2em]">
             Featured Solutions
           </span>
           <h2
@@ -19,7 +19,7 @@ export default function FeaturedSection() {
           >
             Kitchen Concepts Built for What&apos;s Next
           </h2>
-          <p className="text-white/90 max-w-2xl mb-16">
+          <p className="text-white max-w-2xl mb-16">
             Three transformative solutions reshaping how commercial kitchens
             operate — from ventless cooking to cloud-connected management.
           </p>

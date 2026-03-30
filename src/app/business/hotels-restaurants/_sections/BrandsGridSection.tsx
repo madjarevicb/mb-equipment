@@ -15,7 +15,7 @@ export default function BrandsGridSection() {
               <div className="lg:col-span-7">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-[2px] bg-gold" />
-                  <span className="text-gold text-xs font-semibold uppercase tracking-widest">
+                  <span className="text-gold-text text-xs font-semibold uppercase tracking-widest">
                     Brand Portfolio
                   </span>
                 </div>
@@ -73,7 +73,7 @@ export default function BrandsGridSection() {
                   <h3 className="font-display text-lg font-bold text-navy">
                     {brand.name}
                   </h3>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                     {brand.category}
                   </span>
                 </div>

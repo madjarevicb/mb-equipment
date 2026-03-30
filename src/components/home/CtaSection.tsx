@@ -31,7 +31,6 @@ export default function CtaSection() {
                 <Link
                   href="/contact"
                   className="block w-full text-center bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all"
-                  aria-label="Request a free kitchen equipment consultation"
                 >
                   Request Free Consultation
                 </Link>

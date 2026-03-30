@@ -14,7 +14,7 @@ export const dynamic = "force-static";
 /* ---------- metadata ---------- */
 const PAGE_TITLE = "Innovation & Technology — Commercial Kitchen Solutions";
 const PAGE_DESC =
-  "Explore Middleby kitchen technology through MB Equipment Solutions — IoT-connected equipment, ventless cooking systems, and ghost kitchen solutions for commercial operators in Serbia and the Balkans.";
+  "Middleby kitchen technology via MB Equipment Solutions — IoT-connected equipment, ventless cooking, and ghost kitchen solutions for commercial operators.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     title: PAGE_TITLE,
     description: PAGE_DESC,
     url: `${COMPANY.url}/about/innovation`,
+    siteName: COMPANY.name,
+    locale: "en_US",
+    type: "website",
     images: [
       {
         url: `${COMPANY.url}/images/innovation/hero.jpg`,

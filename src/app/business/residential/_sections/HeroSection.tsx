@@ -38,9 +38,9 @@ export default function HeroSection() {
         </p>
       </div>
 
-      {/* Endorsed by Middleby badge */}
+      {/* Authorized partner badge */}
       <div className="absolute bottom-8 left-6 z-10 flex items-center gap-3 bg-black/50 backdrop-blur-sm rounded-lg px-5 py-3">
-        <span className="text-white/90 text-sm font-medium">Endorsed by</span>
+        <span className="text-white/90 text-sm font-medium">Authorized Partner of</span>
         <Image
           src="/logos/middleby-white.svg"
           alt="Middleby Corporation"

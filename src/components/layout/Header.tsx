@@ -21,7 +21,7 @@ export default function Header() {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-navy/95 backdrop-blur-md border-b border-white/10">
+      <nav aria-label="Main navigation" className="bg-navy/95 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -46,7 +46,7 @@ export default function Header() {
                 </Link>
               )
             )}
-            <Link href="/contact" className="bg-red text-white text-sm font-semibold px-5 py-2.5 hover:bg-red-hover hover:-translate-y-px transition-all shadow-sm">
+            <Link href="/contact" className="bg-red text-white text-sm font-semibold px-5 py-2.5 rounded-sm hover:bg-red-hover hover:-translate-y-px transition-all shadow-sm">
               Get a Quote
             </Link>
           </div>

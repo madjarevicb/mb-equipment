@@ -1,5 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import ChevronRightIcon from "@/components/ui/ChevronRightIcon";
+
+const HERO_BLUR =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwQTE2MjgiLz48L3N2Zz4=";
 
 export default function HeroSection() {
   return (
@@ -23,6 +27,8 @@ export default function HeroSection() {
         fill
         priority
         sizes="100vw"
+        placeholder="blur"
+        blurDataURL={HERO_BLUR}
         className="absolute inset-0 object-cover md:hidden"
       />
       <div className="absolute inset-0 bg-black/50" />
@@ -33,27 +39,29 @@ export default function HeroSection() {
           <span className="text-gold">for Every Scale</span>
         </h1>
         <p className="text-lg sm:text-xl lg:text-2xl text-white/80 font-light max-w-xl mb-8">
-          One Partner. Many Solutions. Endorsed by Middleby Corporation.
+          One Partner. Many Solutions. Authorized by Middleby Corporation.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
             href="/contact"
-            className="bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-red-hover transition-all"
+            className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all"
             aria-label="Start a kitchen equipment project — get a free quote"
           >
             Start a Project
+            <ChevronRightIcon className="w-4 h-4" />
           </Link>
-          <Link
+          <a
             href="#sectors"
-            className="border border-white/40 text-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-white/10 transition-all"
+            className="inline-flex items-center gap-2 border border-white/50 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm hover:bg-white/10 transition-all"
           >
             Explore Equipment
-          </Link>
+            <ChevronRightIcon className="w-4 h-4" />
+          </a>
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-6 z-10 flex items-center gap-3 bg-black/50 backdrop-blur-sm rounded-lg px-5 py-3">
-        <span className="text-white/70 text-sm font-medium">Endorsed by</span>
+      <div className="absolute bottom-12 left-6 z-10 flex items-center gap-3 bg-black/70 backdrop-blur-sm rounded-lg px-5 py-3">
+        <span className="text-white/90 text-sm font-medium">Authorized Partner of</span>
         <Image
           src="/logos/middleby-white.svg"
           alt="Middleby Corporation"

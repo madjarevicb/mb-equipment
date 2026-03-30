@@ -8,8 +8,8 @@ interface Stat {
 
 const stats: Stat[] = [
   { value: "110+", label: "Equipment Brands", description: "From commercial ovens to ventilation systems" },
-  { value: "500+", label: "Projects Delivered", description: "Across hotels, restaurants and processing facilities" },
-  { value: "30+", label: "Countries Served", description: "Throughout Southeast Europe and beyond" },
+  { value: "2,000+", label: "Projects Delivered", description: "Across hotels, restaurants and processing facilities" },
+  { value: "40+", label: "Countries Served", description: "Throughout Southeast Europe and beyond" },
   { value: "15+", label: "Years in the Industry", description: "Building kitchens that perform" },
 ];
 
@@ -27,7 +27,7 @@ export default function StatsSection() {
               {stats[1].value}
             </p>
             <p className="text-white/80 text-xl font-medium mb-2">{stats[1].label}</p>
-            <p className="text-white/50 text-sm leading-relaxed max-w-sm">{stats[1].description}</p>
+            <p className="text-white/80 text-sm leading-relaxed max-w-sm">{stats[1].description}</p>
             <div className="w-16 h-[2px] bg-gold mt-8" />
           </AnimatedSection>
 
@@ -40,7 +40,7 @@ export default function StatsSection() {
                     {stat.value}
                   </p>
                   <p className="text-sm text-white/80 font-semibold uppercase tracking-[0.12em] mb-2">{stat.label}</p>
-                  <p className="text-white/40 text-xs leading-relaxed">{stat.description}</p>
+                  <p className="text-white/80 text-xs leading-relaxed">{stat.description}</p>
                 </div>
               </AnimatedSection>
             ))}

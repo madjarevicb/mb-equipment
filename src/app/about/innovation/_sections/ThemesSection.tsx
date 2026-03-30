@@ -48,7 +48,7 @@ export default function ThemesSection() {
                     {connected.statLabel}
                   </span>
                 </div>
-                <p className="text-white/70 text-xs mt-2 italic">
+                <p className="text-white/80 text-xs mt-2 italic">
                   {connected.statSource}
                 </p>
               </div>
@@ -110,7 +110,7 @@ export default function ThemesSection() {
                   <p className="text-white/80 text-xs mt-1">
                     {ventless.statLabel}
                   </p>
-                  <p className="text-white/70 text-xs mt-1 italic">
+                  <p className="text-white/80 text-xs mt-1 italic">
                     {ventless.statSource}
                   </p>
                 </div>

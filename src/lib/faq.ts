@@ -6,11 +6,11 @@ export interface FaqItem {
 export const faqs: FaqItem[] = [
   {
     question: "What brands does MB Equipment Solutions carry?",
-    answer: "We represent over 110 equipment brands through our endorsement by Middleby Corporation — the world's largest foodservice equipment manufacturer. Our portfolio includes Viking, La Cornue, AGA, TurboChef, Pitco, Blodgett, Southbend, and many more. Each brand is selected for proven reliability in commercial and residential kitchen environments.",
+    answer: "We represent over 110 equipment brands as an authorized partner of Middleby Corporation — the world's largest foodservice equipment manufacturer. Our portfolio includes Viking, La Cornue, AGA, TurboChef, Pitco, Blodgett, Southbend, and many more. Each brand is selected for proven reliability in commercial and residential kitchen environments.",
   },
   {
     question: "Which countries do you serve?",
-    answer: "We serve 30+ countries across Southeast Europe and beyond from our headquarters in Belgrade, Serbia. Our coverage spans the Balkans, Central Europe, and select markets in the Middle East and North Africa. We handle equipment supply, installation, commissioning, and after-sales service in each market.",
+    answer: "We serve 40+ countries across Southeast Europe and beyond from our headquarters in Belgrade, Serbia. Our coverage spans the Balkans, Central Europe, and select markets in the Middle East and North Africa. We handle equipment supply, installation, commissioning, and after-sales service in each market.",
   },
   {
     question: "Do you provide kitchen design services?",

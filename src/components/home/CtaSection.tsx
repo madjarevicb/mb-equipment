@@ -24,25 +24,25 @@ export default function CtaSection() {
           {/* Right — CTA block */}
           <AnimatedSection className="lg:col-span-5" animation="fade-left">
             <div className="bg-navy p-8 lg:p-10">
-              <p className="text-white/60 text-sm mb-6">
+              <p className="text-white/80 text-sm mb-6">
                 Whether you are planning a new build, a renovation, or a multi-site rollout — we are ready.
               </p>
               <div className="space-y-3">
                 <Link
                   href="/contact"
-                  className="block w-full text-center bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-red-hover transition-all"
+                  className="block w-full text-center bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all"
                   aria-label="Request a free kitchen equipment consultation"
                 >
                   Request Free Consultation
                 </Link>
                 <Link
                   href="/references"
-                  className="block w-full text-center border border-white/30 text-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-white/10 transition-all"
+                  className="block w-full text-center border border-white/30 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm hover:bg-white/10 transition-all"
                 >
                   See Our Work
                 </Link>
               </div>
-              <p className="text-white/40 text-xs mt-6">
+              <p className="text-white/80 text-xs mt-6">
                 Average response time: under 24 hours
               </p>
             </div>

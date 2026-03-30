@@ -34,7 +34,7 @@ export default function SectorsSection() {
               <div className="relative h-full flex flex-col justify-end p-8 lg:p-10">
                 <span className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-3">Commercial</span>
                 <h3 className="font-display text-3xl lg:text-4xl font-bold text-white mb-4">Hotels &<br />Restaurants</h3>
-                <p className="text-white/70 leading-relaxed mb-6 max-w-md">Full kitchen design and equipment for hospitality — from fine dining to high-volume banquet operations. Proven across global chains and independent operators alike.</p>
+                <p className="text-white/80 leading-relaxed mb-6 max-w-md">Full kitchen design and equipment for hospitality — from fine dining to high-volume banquet operations. Proven across global chains and independent operators alike.</p>
                 <div className="flex items-center gap-2 text-red text-sm font-semibold group-hover:gap-4 transition-all">
                   See Commercial Solutions <span aria-hidden="true" className="text-lg">&rarr;</span>
                 </div>
@@ -59,7 +59,7 @@ export default function SectorsSection() {
                 <div className="relative h-full flex flex-col justify-end p-8">
                   <span className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-2">Luxury Home</span>
                   <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Residential</h3>
-                  <p className="text-white/70 leading-relaxed mb-4 max-w-sm">Viking. La Cornue. AGA. The brands that define the luxury home kitchen.</p>
+                  <p className="text-white/80 leading-relaxed mb-4 max-w-sm">Viking. La Cornue. AGA. The brands that define the luxury home kitchen.</p>
                   <div className="flex items-center gap-2 text-red text-sm font-semibold group-hover:gap-4 transition-all">
                     Explore Residential Collections <span aria-hidden="true" className="text-lg">&rarr;</span>
                   </div>
@@ -82,7 +82,7 @@ export default function SectorsSection() {
                 <div className="relative h-full flex flex-col justify-end p-8">
                   <span className="text-gold text-xs font-semibold uppercase tracking-[0.2em] mb-2">Industrial</span>
                   <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">Food Processing</h3>
-                  <p className="text-white/70 leading-relaxed mb-4 max-w-sm">Industrial ovens, mixers, slicers, packaging lines. Equipment rated for 24/7 production.</p>
+                  <p className="text-white/80 leading-relaxed mb-4 max-w-sm">Industrial ovens, mixers, slicers, packaging lines. Equipment rated for 24/7 production.</p>
                   <div className="flex items-center gap-2 text-red text-sm font-semibold group-hover:gap-4 transition-all">
                     See Industrial Solutions <span aria-hidden="true" className="text-lg">&rarr;</span>
                   </div>

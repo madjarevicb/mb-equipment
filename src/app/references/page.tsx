@@ -25,7 +25,7 @@ export const dynamic = "force-static";
 const PAGE_TITLE =
   "References & Partners — Commercial Kitchen Projects | MB Equipment Solutions";
 const PAGE_DESC =
-  "Trusted Middleby-authorized equipment partner for Marriott, Starbucks, McDonald's, KFC, and 500+ projects across 40+ countries in the Balkans, Central Europe, and Middle East.";
+  "Trusted Middleby-authorized equipment partner for Marriott, Starbucks, McDonald's, KFC, and 2,000+ projects across 40+ countries in the Balkans, Central Europe, and Middle East.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

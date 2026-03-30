@@ -18,7 +18,7 @@ export const dynamic = "force-static";
 
 /* ---------- metadata ---------- */
 const PAGE_TITLE = "Company Overview — Commercial Kitchen Equipment Partner";
-const PAGE_DESC = "Middleby-endorsed commercial kitchen equipment partner in Belgrade, Serbia. 110+ brands, full-cycle service across 40+ countries.";
+const PAGE_DESC = "Middleby-authorized commercial kitchen equipment partner in Belgrade, Serbia. 110+ brands, full-cycle service across 40+ countries.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     title: PAGE_TITLE,
     description: PAGE_DESC,
     url: `${COMPANY.url}/about/company-overview`,
+    siteName: COMPANY.name,
+    locale: "en_US",
+    type: "website",
     images: [{ url: `${COMPANY.url}/images/whatwedo/chef-cooking.jpg`, width: 1200, height: 630, alt: "Professional chef working in a commercial kitchen equipped by MB Equipment Solutions" }],
   },
   twitter: {

@@ -1,29 +1,125 @@
 import type { Metadata } from "next";
-import AnimatedSection from "@/components/ui/AnimatedSection";
+import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
+/* ------------------------------------------------------------------ */
+/*  Static rendering                                                   */
+/* ------------------------------------------------------------------ */
+export const dynamic = "force-static";
+
+/* ------------------------------------------------------------------ */
+/*  SEO metadata                                                       */
+/* ------------------------------------------------------------------ */
+const PAGE_TITLE =
+  "Contact Us — Commercial Kitchen Equipment Inquiry | MB Equipment Solutions";
+const PAGE_DESC =
+  "Contact MB Equipment Solutions in Belgrade. Free kitchen equipment consultation for commercial, residential & industrial projects. Response within one business day.";
+
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Contact MB Equipment Solutions in Belgrade. Free kitchen equipment consultation for commercial, residential & industrial projects. Response within one business day.",
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
+  keywords: [
+    "contact MB Equipment",
+    "commercial kitchen consultation",
+    "kitchen equipment inquiry",
+    "restaurant equipment quote",
+    "foodservice equipment Belgrade",
+    "commercial kitchen supplier contact",
+    "Middleby partner contact",
+    "kitchen equipment consultation free",
+  ],
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: PAGE_TITLE,
+    description: PAGE_DESC,
+    url: `${COMPANY.url}/contact`,
+    siteName: COMPANY.name,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESC,
+  },
 };
 
+/* ------------------------------------------------------------------ */
+/*  JSON-LD structured data                                            */
+/* ------------------------------------------------------------------ */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      name: PAGE_TITLE,
+      description: PAGE_DESC,
+      url: `${COMPANY.url}/contact`,
+      isPartOf: { "@type": "WebSite", url: COMPANY.url },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: COMPANY.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Contact",
+          item: `${COMPANY.url}/contact`,
+        },
+      ],
+    },
+  ],
+};
+
+/* ------------------------------------------------------------------ */
+/*  Page                                                               */
+/* ------------------------------------------------------------------ */
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-navy pt-32 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      {/* Breadcrumb */}
+      <nav className="max-w-7xl mx-auto px-6 pt-4" aria-label="Breadcrumb">
+        <ol className="flex items-center gap-2 text-sm text-text-secondary">
+          <li>
+            <Link href="/" className="hover:text-navy transition-colors">
+              Home
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="text-navy font-medium">
+            Contact
+          </li>
+        </ol>
+      </nav>
+
+      {/* Hero */}
+      <section className="bg-navy pt-32 pb-24" aria-labelledby="contact-heading">
         <div className="max-w-7xl mx-auto px-6">
           <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">Get In Touch</span>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-4 mb-6">Let&apos;s Talk Equipment.</h1>
-          <p className="text-white/70 text-lg max-w-2xl">Whether it is a single unit or a full project scope, start here. We respond within one business day.</p>
+          <h1 id="contact-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-4 mb-6">Let&apos;s Talk Equipment.</h1>
+          <p className="text-white/80 text-lg max-w-2xl">Whether it is a single unit or a full project scope, start here. We respond within one business day.</p>
         </div>
       </section>
 
+      {/* Form + Contact Info */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Form */}
-            <AnimatedSection className="lg:col-span-3">
+            <div className="lg:col-span-3">
               <h2 className="font-display text-2xl font-bold text-text-primary mb-8">Send Us a Message</h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -63,14 +159,14 @@ export default function ContactPage() {
                   <textarea id="message" name="message" required rows={5} className="w-full border border-gray-300 rounded-md px-4 py-3 text-sm focus:border-red focus:ring-1 focus:ring-red outline-none transition-colors resize-none" />
                 </div>
                 <p className="text-xs text-text-secondary">Fields marked with * are required. We respond within one business day.</p>
-                <button type="submit" className="w-full sm:w-auto bg-red text-white font-semibold px-8 py-3.5 rounded-md hover:bg-red-hover hover:-translate-y-px transition-all shadow-sm">
+                <button type="submit" className="w-full sm:w-auto bg-red text-white font-semibold px-8 py-4 rounded-sm hover:bg-red-hover hover:-translate-y-px transition-all shadow-lg tracking-wide">
                   Send Message
                 </button>
               </form>
-            </AnimatedSection>
+            </div>
 
             {/* Contact Info */}
-            <AnimatedSection className="lg:col-span-2" delay={0.2}>
+            <div className="lg:col-span-2">
               <h2 className="font-display text-2xl font-bold text-text-primary mb-8">Or Reach Us Directly</h2>
               <div className="space-y-8">
                 <div>
@@ -91,7 +187,7 @@ export default function ContactPage() {
                   <span className="text-text-secondary/40 text-sm">[ Google Maps ]</span>
                 </div>
               </div>
-            </AnimatedSection>
+            </div>
           </div>
         </div>
       </section>

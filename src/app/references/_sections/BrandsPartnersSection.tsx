@@ -19,7 +19,7 @@ export default function BrandsPartnersSection() {
               </h2>
               <div className="w-10 h-[2px] bg-gold mb-3" />
               <p className="text-text-secondary text-sm leading-relaxed">
-                Authorized distributor for 65+ commercial kitchen brands.
+                Authorized distributor for 110+ commercial kitchen brands.
               </p>
             </div>
             <div className="lg:col-span-10">

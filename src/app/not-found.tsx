@@ -6,14 +6,14 @@ export default function NotFound() {
       <div className="text-center px-6">
         <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">404</p>
         <h1 className="font-display text-5xl lg:text-6xl font-bold text-white mb-4 italic">Wrong Turn.</h1>
-        <p className="text-white/60 text-lg max-w-md mx-auto mb-10">
+        <p className="text-white/80 text-lg max-w-md mx-auto mb-10">
           This page doesn&apos;t exist — but the kitchen you&apos;re planning probably should. Head back to familiar ground.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/" className="bg-red text-white font-semibold px-8 py-3.5 hover:bg-red-hover transition-all">
+          <Link href="/" className="bg-red text-white font-semibold px-8 py-4 tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all">
             Back to Homepage
           </Link>
-          <Link href="/contact" className="border border-white/30 text-white font-semibold px-8 py-3.5 hover:bg-white/10 transition-all">
+          <Link href="/contact" className="border border-white/30 text-white font-semibold px-8 py-4 tracking-wide rounded-sm hover:bg-white/10 transition-all">
             Contact Us
           </Link>
         </div>

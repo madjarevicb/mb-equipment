@@ -29,8 +29,9 @@ export default function ShowcaseSection() {
                 professional-grade outdoor grills.
               </p>
               <p className="mt-4 text-white/80 leading-relaxed text-sm">
-                Middleby is setting the standard for the luxury home industry,
-                committed to serving excellence in everything we do.
+                From handcrafted French ranges to professional-grade outdoor
+                grills — every brand is backed by Middleby engineering and our
+                regional service team.
               </p>
             </div>
             {/* Right — Logo */}

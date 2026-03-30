@@ -26,9 +26,9 @@ export default function PortfolioSection() {
                 id="portfolio-heading"
                 className="font-display text-4xl sm:text-5xl font-bold text-navy leading-[1.15] mt-4"
               >
-                An Elite Portfolio
+                Premium Residential
                 <span className="block text-gold mt-1">
-                  of Global Epicurean Brands
+                  Kitchen Brands
                 </span>
               </h2>
               <div className="w-16 h-[2px] bg-gold mt-6" />

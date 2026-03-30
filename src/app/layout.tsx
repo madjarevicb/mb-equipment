@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | MB Equipment Solutions",
   },
   description:
-    "Leading provider of commercial kitchen equipment. Middleby endorsed. 110+ brands for hotels, restaurants, residential, and food processing. Belgrade, Serbia.",
+    "Leading provider of commercial kitchen equipment. Authorized Middleby partner. 110+ brands for hotels, restaurants, residential, and food processing. Belgrade, Serbia.",
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",

@@ -10,7 +10,7 @@ export default function GeographyStatsSection() {
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-center">
           <span className="text-white font-display text-lg font-bold">
-            500+ Projects
+            2,000+ Projects
           </span>
           <span className="text-gold mx-4 hidden sm:inline">·</span>
           <span className="text-white font-display text-lg font-bold">
@@ -18,7 +18,7 @@ export default function GeographyStatsSection() {
           </span>
           <span className="text-gold mx-4 hidden sm:inline">·</span>
           <span className="text-white font-display text-lg font-bold">
-            65+ Brands
+            110+ Brands
           </span>
           <span className="text-gold mx-4 hidden sm:inline">·</span>
           <span className="text-white/80 text-sm">

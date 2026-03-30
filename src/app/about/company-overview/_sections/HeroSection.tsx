@@ -38,7 +38,7 @@ export default function HeroSection() {
             For over two decades, MB Equipment Solutions has designed, supplied, installed, and serviced commercial kitchen equipment across Southeast Europe and beyond.
           </p>
           <p className="text-white/90 text-lg leading-relaxed mb-8">
-            Based in <Link href="/demo-centers" className="text-white underline underline-offset-2 hover:text-gold transition-colors">Belgrade, Serbia</Link>, and endorsed by <Link href="/about/innovation" className="text-white underline underline-offset-2 hover:text-gold transition-colors">Middleby Corporation</Link>, we represent 110+ of the world&apos;s leading foodservice brands — with factory-trained engineers who spec, install, commission, and service every piece of equipment we sell.
+            Based in <Link href="/demo-centers" className="text-white underline underline-offset-2 hover:text-gold transition-colors">Belgrade, Serbia</Link>, and authorized by <Link href="/about/innovation" className="text-white underline underline-offset-2 hover:text-gold transition-colors">Middleby Corporation</Link>, we represent 110+ of the world&apos;s leading foodservice brands — with factory-trained engineers who spec, install, commission, and service every piece of equipment we sell.
           </p>
 
           <ul role="list" aria-label="Company statistics" className="flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-2 mb-10 text-sm font-semibold text-white/80 uppercase tracking-widest list-none [&>li+li]:sm:border-l [&>li+li]:sm:border-white/20 [&>li+li]:sm:pl-8">

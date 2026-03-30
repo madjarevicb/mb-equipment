@@ -16,7 +16,7 @@ export default function AboutSection() {
             </div>
             <div className="lg:col-span-7 text-text-secondary leading-relaxed space-y-4">
               <p>
-                MB Equipment Solutions is the region&apos;s most comprehensive commercial kitchen equipment provider, endorsed by Middleby Corporation — the world&apos;s largest foodservice equipment manufacturer. From our headquarters in Belgrade, Serbia, we supply, install, and service professional kitchen equipment across 30+ countries.
+                MB Equipment Solutions is the region&apos;s most comprehensive commercial kitchen equipment provider, authorized by Middleby Corporation — the world&apos;s largest foodservice equipment manufacturer. From our headquarters in Belgrade, Serbia, we supply, install, and service professional kitchen equipment across 40+ countries.
               </p>
               <p>
                 Our portfolio spans 110+ leading equipment brands including commercial ovens, refrigeration systems, food preparation equipment, warewashing solutions, and ventilation systems. We serve hotels, restaurants, quick-service chains, catering operations, luxury residential kitchens, and industrial food processing facilities.

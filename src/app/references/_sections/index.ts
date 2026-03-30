@@ -1,0 +1,10 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as WhoWeAreSection } from "./WhoWeAreSection";
+export { default as ShowcaseSection } from "./ShowcaseSection";
+export { default as MarketLeadershipSection } from "./MarketLeadershipSection";
+export { default as GlobalChainsSection } from "./GlobalChainsSection";
+export { default as LocalProjectsSection } from "./LocalProjectsSection";
+export { default as DesignEngineeringSection } from "./DesignEngineeringSection";
+export { default as BrandsPartnersSection } from "./BrandsPartnersSection";
+export { default as GeographyStatsSection } from "./GeographyStatsSection";
+export { default as CtaSection } from "./CtaSection";

@@ -54,12 +54,14 @@ export default function AnimatedSection({
           opacity: 0,
           transform: transforms[animation],
           transition: "none",
+          willChange: "transform, opacity",
         }
       : state === "visible"
       ? {
           opacity: 1,
           transform: "none",
           transition: `opacity 0.6s cubic-bezier(0.25,0.1,0.25,1) ${delay}s, transform 0.6s cubic-bezier(0.25,0.1,0.25,1) ${delay}s`,
+          willChange: "auto",
         }
       : {}; // idle: no inline styles, content visible by default (SSR)
 

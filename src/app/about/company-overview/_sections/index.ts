@@ -1,0 +1,9 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as TimelineSection } from "./TimelineSection";
+export { default as EquipmentSection } from "./EquipmentSection";
+export { default as ProcessSection } from "./ProcessSection";
+export { default as MidCtaSection } from "./MidCtaSection";
+export { default as ValuesSection } from "./ValuesSection";
+export { default as SocialProofSection } from "./SocialProofSection";
+export { default as FaqSection } from "./FaqSection";
+export { default as CtaSection } from "./CtaSection";

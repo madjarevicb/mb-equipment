@@ -24,10 +24,53 @@ export interface ValueItem {
   description: string;
 }
 
+/** HTML string — safe to use with dangerouslySetInnerHTML (sanitized at render time) */
 export interface FAQItem {
   question: string;
   answer: string;
 }
+
+export interface HeroStat {
+  label: string;
+}
+
+export interface SocialProofBrand {
+  name: string;
+  href: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  attribution: string;
+}
+
+export const heroStats: HeroStat[] = [
+  { label: "2,000+ Projects" },
+  { label: "40+ Countries" },
+  { label: "110+ Brands" },
+];
+
+export const socialProofBrands: SocialProofBrand[] = [
+  { name: "Starbucks", href: "/references" },
+  { name: "KFC", href: "/references" },
+  { name: "McDonald\u2019s", href: "/references" },
+  { name: "Hilton", href: "/references" },
+  { name: "Marriott", href: "/references" },
+  { name: "Hyatt", href: "/references" },
+  { name: "Burger King", href: "/references" },
+  { name: "Accor", href: "/references" },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    quote: "We opened 14 locations across three countries in 18 months. MB Equipment specified and delivered every kitchen \u2014 same brands, same standards, every site. That consistency is why we renewed the contract.",
+    attribution: "Regional Expansion Director, Multi-unit QSR Chain",
+  },
+  {
+    quote: "Other suppliers quoted equipment. MB Equipment quoted a working kitchen \u2014 with ventilation, gas hookups, commissioning, and a training day for our team. That is a different conversation entirely.",
+    attribution: "Executive Chef & Owner, Boutique Hotel Group, Belgrade",
+  },
+];
 
 export const milestones: Milestone[] = [
   {
@@ -104,11 +147,13 @@ export const companyValues: ValueItem[] = [
 ];
 
 export const faqItems: FAQItem[] = [
-  { question: "What countries does MB Equipment Solutions serve?", answer: "We serve over 40 countries, primarily across Southeast Europe (Serbia, Croatia, Bosnia, Montenegro, North Macedonia), the Middle East, and Central Asia. Our main <a href='/demo-centers' class='text-gold hover:underline'>demo centers</a> are located in Belgrade, Istanbul, and Dubai, with project delivery capability worldwide." },
+  { question: "What countries does MB Equipment Solutions serve?", answer: "We serve over 40 countries across Southeast Europe (Serbia, Croatia, Bosnia, Montenegro, North Macedonia, Albania, Kosovo), the Middle East (UAE, Saudi Arabia, Qatar, Bahrain), and Central Asia. Our <a href='/demo-centers' class='text-gold hover:underline'>demo centers</a> in Belgrade, Istanbul, and Dubai provide hands-on specification support. For markets beyond these regions, we coordinate factory-direct shipping, customs clearance, and on-site commissioning through our logistics network." },
   { question: "What brands does MB Equipment carry?", answer: "We represent 110+ professional foodservice brands through our endorsement by <a href='/about/innovation' class='text-gold hover:underline'>Middleby Corporation</a>. Key brands include Blodgett, Pitco, Taylor, Viking, Jade, Southbend, Vulcan, and many more across 15 equipment categories." },
-  { question: "Do you only sell equipment or provide full-service support?", answer: "We provide the full cycle: consultation and specification, supply and logistics, installation and commissioning, staff training, and ongoing after-sales service. We stay with your project long after delivery." },
+  { question: "Do you only sell equipment or provide full-service support?", answer: "We provide the full cycle: consultation and kitchen design, equipment specification matched to your menu and volume, factory-direct supply with consolidated logistics, professional installation and gas/electric commissioning, hands-on staff training, and ongoing after-sales service with genuine spare parts. Every project gets a dedicated point of contact from first meeting through post-opening support." },
   { question: "Can I visit your demo center before making a purchase decision?", answer: "Yes. Our <a href='/demo-centers' class='text-gold hover:underline'>Belgrade demo center</a> includes The Elements chef\u2019s table, a 70-person dining room, a training room, and a configurable test kitchen. <a href='/contact' class='text-gold hover:underline'>Contact us</a> to schedule a visit and see equipment in action." },
-  { question: "What is the typical timeline for a kitchen project?", answer: "Timelines vary by scope. A single-restaurant installation can be completed in 4\u20136 weeks from specification to commissioning. Multi-unit rollouts and large hotel projects typically run 3\u20136 months. We recommend involving us at the design stage to avoid delays." },
+  { question: "What is the typical timeline for a kitchen project?", answer: "Timelines depend on project scope and equipment lead times. A single-restaurant kitchen typically takes 4\u20136 weeks from final specification to commissioning. Multi-unit rollouts across several locations run 3\u20136 months, including staggered deliveries. Large hotel or institutional projects with custom cooking suites may require 6\u20139 months. Involving us during the architectural design phase prevents costly layout revisions and keeps procurement on schedule." },
   { question: "Do you provide warranty and after-sales service?", answer: "Yes. All equipment comes with manufacturer warranty. Our full-time service engineering team provides preventive maintenance, emergency repair, and genuine spare parts with priority delivery. We service what we sell \u2014 that is a core part of our model." },
-  { question: "How does MB Equipment differ from a local distributor?", answer: "We are not a reseller. As a Middleby-endorsed partner, we have direct factory access, factory-trained engineers, and exclusive regional representation. We handle the full lifecycle \u2014 from kitchen design to after-sales \u2014 rather than just selling boxes. See our <a href='/references' class='text-gold hover:underline'>references</a> for proof." },
+  { question: "How does MB Equipment differ from a local distributor?", answer: "A local distributor sells boxes. We design, specify, deliver, install, commission, train, and service complete commercial kitchens. As a Middleby-endorsed partner, we hold direct factory access with priority parts supply, factory-trained engineers certified on 110+ brands, and exclusive regional representation. When a combi oven needs a part at 2 AM, our service team responds \u2014 not a call center overseas. See our <a href='/references' class='text-gold hover:underline'>references</a> for proof." },
+  { question: "Does MB Equipment offer energy-efficient commercial kitchen equipment?", answer: "Yes. Energy efficiency is a core specification criterion in every project. Our portfolio includes ENERGY STAR-certified combi ovens, high-efficiency fryers with built-in oil filtration, induction cooking suites that cut energy use by up to 50% versus gas, and ventless systems that eliminate the cost of traditional hood infrastructure. We calculate projected utility savings during the specification phase so operators can make informed decisions." },
+  { question: "How fast can you deliver spare parts for commercial kitchen equipment?", answer: "As a direct Middleby-endorsed partner, we maintain regional spare parts inventory for high-demand components and have priority access to factory stock for everything else. Standard parts ship within 24\u201348 hours. For critical breakdowns, our service engineering team carries common wear parts on-vehicle and can often resolve issues same-day. Preventive maintenance contracts further reduce unplanned downtime by catching failures before they happen." },
 ];

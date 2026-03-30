@@ -24,7 +24,7 @@ export default function SectionHeading({ id, overline, heading, subtext, align =
         </div>
       )}
       <h2 id={id} className={`font-display text-3xl font-bold leading-tight md:text-4xl lg:text-5xl ${headingColor} ${italic ? "italic" : ""}`}>{heading}</h2>
-      {divider && <div className="w-16 h-[2px] bg-gold mt-2" />}
+      {divider && <div className="w-16 h-[2px] bg-gold mt-4" />}
       {subtext && <p className={`max-w-2xl text-lg leading-relaxed ${subtextColor}`}>{subtext}</p>}
     </div>
   );

@@ -5,9 +5,9 @@ interface ValueCardProps {
 
 export default function ValueCard({ title, description }: ValueCardProps) {
   return (
-    <div className="relative bg-white p-8 lg:p-10 h-full group hover:-translate-y-1 transition-[transform,box-shadow] duration-300 shadow-sm hover:shadow-lg">
+    <div className="relative bg-white p-8 lg:p-10 h-full group will-change-transform hover:-translate-y-1 transition-[transform,box-shadow] duration-300 shadow-sm hover:shadow-lg">
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-red to-gold" />
-      <span className="font-display text-7xl text-gold/15 leading-none select-none block -mb-6">&ldquo;</span>
+      <span className="font-display text-7xl text-gold/10 leading-none select-none block -mb-6">&ldquo;</span>
       <h3 className="font-display text-2xl font-bold text-text-primary mb-4 italic">{title}</h3>
       <p className="text-text-secondary leading-relaxed">{description}</p>
     </div>

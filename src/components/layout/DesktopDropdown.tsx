@@ -67,23 +67,25 @@ export default function DesktopDropdown({ label, items }: DropdownProps) {
   const menuId = `dropdown-${label.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
-    <div ref={containerRef} className="relative" onKeyDown={handleKeyDown}>
+    <div
+      ref={containerRef}
+      className="relative"
+      onKeyDown={handleKeyDown}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => { setIsOpen(false); setFocusedIndex(-1); }}
+    >
       <button
         aria-haspopup="true"
         aria-expanded={isOpen}
         aria-controls={menuId}
         onClick={() => { setIsOpen(!isOpen); setFocusedIndex(-1); }}
-        onMouseEnter={() => setIsOpen(true)}
         className="text-sm font-medium text-white/60 hover:text-gold transition-colors py-2 flex items-center gap-1"
       >
         {label}
         <ChevronIcon className={`w-3.5 h-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
       {isOpen && (
-        <div
-          className="absolute top-full left-0 pt-2"
-          onMouseLeave={() => { setIsOpen(false); setFocusedIndex(-1); }}
-        >
+        <div className="absolute top-full left-0 pt-2">
           <div
             ref={menuRef}
             id={menuId}

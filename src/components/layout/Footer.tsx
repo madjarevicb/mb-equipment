@@ -78,9 +78,28 @@ export default function Footer() {
 
       {/* Bottom bar — minimal */}
       <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <span className="text-[11px] text-white/25 tracking-[0.2em]">&copy; {new Date().getFullYear()} {COMPANY.name}</span>
-          <Link href="/privacy" className="text-[11px] text-white/25 tracking-[0.2em] hover:text-white/50 transition-colors duration-300">Privacy Policy</Link>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="text-[11px] text-white/25 tracking-[0.2em] hover:text-white/50 transition-colors duration-300">Privacy Policy</Link>
+            <span className="text-white/10">|</span>
+            <a
+              href="https://ironbuild.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[11px] text-white/25 tracking-[0.2em] hover:text-white/50 transition-colors duration-300"
+            >
+              Built by
+              <Image
+                src="/images/ironbuild-logo.svg"
+                alt="IronBuild"
+                width={16}
+                height={16}
+                className="inline-block brightness-0 invert opacity-40"
+              />
+              <span className="font-medium">IronBuild</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

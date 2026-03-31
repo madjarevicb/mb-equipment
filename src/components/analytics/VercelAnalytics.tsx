@@ -7,8 +7,14 @@ export default function VercelAnalytics() {
 
   useEffect(() => {
     // Defer loading until after initial paint + idle time
-    const id = requestIdleCallback(() => setMounted(true), { timeout: 3000 });
-    return () => cancelIdleCallback(id);
+    // Safari/iOS doesn't support requestIdleCallback — fallback to setTimeout
+    if (typeof requestIdleCallback === "function") {
+      const id = requestIdleCallback(() => setMounted(true), { timeout: 3000 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const id = setTimeout(() => setMounted(true), 2000);
+      return () => clearTimeout(id);
+    }
   }, []);
 
   if (!mounted) return null;

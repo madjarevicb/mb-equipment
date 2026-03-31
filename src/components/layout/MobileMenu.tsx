@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import ChevronIcon from "@/components/ui/ChevronIcon";
 import { COMPANY } from "@/lib/constants";
@@ -46,6 +47,66 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
     }
   }, []);
 
+  const menuPanel = isOpen ? (
+    <div
+      ref={menuRef}
+      className="fixed bg-white overflow-y-auto"
+      style={{ top: "65px", left: 0, right: 0, bottom: 0, zIndex: 60 }}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation menu"
+      onKeyDown={handleKeyDown}
+    >
+      <div className="px-6 py-8">
+        <Link
+          href="/contact"
+          onClick={() => setIsOpen(false)}
+          className="block w-full bg-red text-white text-center font-medium py-3.5 mb-8 text-sm tracking-[0.08em] uppercase"
+        >
+          Get a Quote
+        </Link>
+
+        <nav className="space-y-1">
+          {navItems.map((item) =>
+            item.children ? (
+              <div key={item.label}>
+                <button
+                  onClick={() => setOpenSection(openSection === item.label ? null : item.label)}
+                  aria-expanded={openSection === item.label}
+                  className="w-full flex items-center justify-between py-3 text-lg font-medium text-text-primary border-b border-gray-100"
+                >
+                  {item.label}
+                  <ChevronIcon className={`w-4 h-4 transition-transform ${openSection === item.label ? "rotate-180" : ""}`} />
+                </button>
+                {openSection === item.label && (
+                  <div className="pl-4 py-2 space-y-1">
+                    {item.children.map((child) => (
+                      <Link key={child.href} href={child.href} onClick={() => setIsOpen(false)} className="block py-2 text-text-secondary hover:text-red">
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link key={item.label} href={item.href} onClick={() => setIsOpen(false)} className="block py-3 text-lg font-medium text-text-primary border-b border-gray-100">
+                {item.label}
+              </Link>
+            )
+          )}
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-3 text-lg font-medium text-text-primary border-b border-gray-100">
+            Contact
+          </Link>
+        </nav>
+
+        <div className="mt-8 pt-6 border-t border-gray-200 text-sm text-text-secondary">
+          <a href={`tel:${COMPANY.phone}`} className="block py-1">{COMPANY.phoneDisplay}</a>
+          <a href={`mailto:${COMPANY.email}`} className="block py-1">{COMPANY.email}</a>
+        </div>
+      </div>
+    </div>
+  ) : null;
+
   return (
     <>
       <button
@@ -62,64 +123,7 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
         </div>
       </button>
 
-      {isOpen && (
-        <div
-          ref={menuRef}
-          className="fixed inset-0 top-[65px] bg-white z-[60] overflow-y-auto"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Navigation menu"
-          onKeyDown={handleKeyDown}
-        >
-          <div className="px-6 py-8">
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="block w-full bg-red text-white text-center font-medium py-3.5 mb-8 text-sm tracking-[0.08em] uppercase"
-            >
-              Get a Quote
-            </Link>
-
-            <nav className="space-y-1">
-              {navItems.map((item) =>
-                item.children ? (
-                  <div key={item.label}>
-                    <button
-                      onClick={() => setOpenSection(openSection === item.label ? null : item.label)}
-                      aria-expanded={openSection === item.label}
-                      className="w-full flex items-center justify-between py-3 text-lg font-medium text-text-primary border-b border-gray-100"
-                    >
-                      {item.label}
-                      <ChevronIcon className={`w-4 h-4 transition-transform ${openSection === item.label ? "rotate-180" : ""}`} />
-                    </button>
-                    {openSection === item.label && (
-                      <div className="pl-4 py-2 space-y-1">
-                        {item.children.map((child) => (
-                          <Link key={child.href} href={child.href} onClick={() => setIsOpen(false)} className="block py-2 text-text-secondary hover:text-red">
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link key={item.label} href={item.href} onClick={() => setIsOpen(false)} className="block py-3 text-lg font-medium text-text-primary border-b border-gray-100">
-                    {item.label}
-                  </Link>
-                )
-              )}
-              <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-3 text-lg font-medium text-text-primary border-b border-gray-100">
-                Contact
-              </Link>
-            </nav>
-
-            <div className="mt-8 pt-6 border-t border-gray-200 text-sm text-text-secondary">
-              <a href={`tel:${COMPANY.phone}`} className="block py-1">{COMPANY.phoneDisplay}</a>
-              <a href={`mailto:${COMPANY.email}`} className="block py-1">{COMPANY.email}</a>
-            </div>
-          </div>
-        </div>
-      )}
+      {typeof document !== "undefined" && createPortal(menuPanel, document.body)}
     </>
   );
 }

@@ -54,7 +54,6 @@ body {
 .stagger-children > * {
   opacity: 0;
   transform: translateY(16px);
-  will-change: transform, opacity;
   animation: stagger-in 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
   animation-play-state: paused;
 }
@@ -111,7 +110,8 @@ details[open] > :not(summary) {
   animation: scroll-residential 8s linear infinite;
 }
 
-.animate-scroll-residential:hover {
+.animate-scroll-residential:hover,
+.animate-scroll-residential:focus-within {
   animation-play-state: paused;
 }
 
@@ -124,7 +124,8 @@ details[open] > :not(summary) {
   animation: scroll-residential-reverse 14s linear infinite;
 }
 
-.animate-scroll-residential-reverse:hover {
+.animate-scroll-residential-reverse:hover,
+.animate-scroll-residential-reverse:focus-within {
   animation-play-state: paused;
 }
 
@@ -137,7 +138,8 @@ details[open] > :not(summary) {
   animation: scroll-references 20s linear infinite;
 }
 
-.animate-scroll-references:hover {
+.animate-scroll-references:hover,
+.animate-scroll-references:focus-within {
   animation-play-state: paused;
 }
 
@@ -151,7 +153,8 @@ details[open] > :not(summary) {
   width: max-content;
 }
 
-.animate-scroll-left:hover {
+.animate-scroll-left:hover,
+.animate-scroll-left:focus-within {
   animation-play-state: paused;
 }
 
@@ -165,14 +168,18 @@ details[open] > :not(summary) {
   width: max-content;
 }
 
-.animate-scroll-right:hover {
+.animate-scroll-right:hover,
+.animate-scroll-right:focus-within {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-scroll-references,
   .animate-scroll-left,
-  .animate-scroll-right {
+  .animate-scroll-right,
+  .animate-scroll-residential,
+  .animate-scroll-residential-reverse,
+  .animate-scroll-partners {
     animation: none;
   }
 }
@@ -189,6 +196,7 @@ details[open] > :not(summary) {
   width: max-content;
 }
 
-.animate-scroll-partners:hover {
+.animate-scroll-partners:hover,
+.animate-scroll-partners:focus-within {
   animation-play-state: paused;
 }

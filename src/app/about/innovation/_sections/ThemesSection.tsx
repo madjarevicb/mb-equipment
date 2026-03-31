@@ -2,151 +2,70 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import { themes } from "@/data/innovation";
 
 export default function ThemesSection() {
-  const [connected, speed, ventless, sustainability] = themes;
-
   return (
-    <section className="py-28 bg-white overflow-hidden" aria-labelledby="themes-heading">
+    <section className="py-24 lg:py-32 bg-white overflow-hidden" aria-labelledby="themes-heading">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section header — left aligned */}
-        <AnimatedSection>
-          <div className="max-w-xl mb-16">
-            <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
-              What&apos;s Moving the Industry
-            </span>
+        {/* Asymmetric heading */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-20">
+          <AnimatedSection className="lg:col-span-5">
             <h2
               id="themes-heading"
-              className="font-display text-3xl lg:text-4xl font-bold text-navy mt-4"
+              className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-[1.1]"
             >
-              Four Technologies Shaping the Future
+              Four Technologies<br />
+              <span className="italic font-normal">Shaping the Future</span>
             </h2>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+          <AnimatedSection className="lg:col-span-7" delay={0.05}>
+            <p className="text-text-secondary leading-relaxed text-sm max-w-md">
+              The commercial kitchen is changing faster than at any point in
+              the last fifty years. These are the shifts we&apos;re investing in.
+            </p>
+            <div className="w-12 h-px bg-gold/50 mt-6" />
+          </AnimatedSection>
+        </div>
 
-        {/* Row 1 — Two cards, 3:2 ratio, navy + white */}
-        <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6">
-            {/* Connected Kitchens — navy, takes 3 cols */}
-            <article className="lg:col-span-3 bg-navy p-10 lg:p-14 relative overflow-hidden">
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-[2px] bg-gold" />
-                  <span className="text-gold text-xs font-semibold uppercase tracking-widest">
-                    {connected.subtitle}
+        {/* Themes as alternating rows */}
+        <div className="space-y-0">
+          {themes.map((theme, i) => (
+            <AnimatedSection key={theme.title} delay={i * 0.06}>
+              <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 py-12 ${i < themes.length - 1 ? "border-b border-gray-200" : ""}`}>
+                {/* Number + subtitle */}
+                <div className="lg:col-span-3">
+                  <span className="font-display text-6xl font-bold text-text-primary/8 italic leading-none">
+                    {theme.label}
                   </span>
-                </div>
-                <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-5">
-                  {connected.title}
-                </h3>
-                <p className="text-white/80 leading-relaxed mb-10">
-                  {connected.text}
-                </p>
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display text-5xl font-bold text-gold">
-                    {connected.stat}
-                  </span>
-                  <span className="text-white/80 text-sm max-w-[180px]">
-                    {connected.statLabel}
-                  </span>
-                </div>
-                <p className="text-white/80 text-xs mt-2 italic">
-                  {connected.statSource}
-                </p>
-              </div>
-            </article>
-
-            {/* Speed & Energy — white with left red border, takes 2 cols */}
-            <article className="lg:col-span-2 border-l-4 border-red bg-offwhite p-10 lg:p-12 relative overflow-hidden">
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-[2px] bg-red" />
-                  <span className="text-red text-xs font-semibold uppercase tracking-widest">
-                    {speed.subtitle}
-                  </span>
-                </div>
-                <h3 className="font-display text-xl lg:text-2xl font-bold text-navy mb-4">
-                  {speed.title}
-                </h3>
-                <p className="text-text-secondary leading-relaxed text-[15px] mb-8">
-                  {speed.text}
-                </p>
-                <div>
-                  <span className="font-display text-4xl font-bold text-navy">
-                    {speed.stat}
-                  </span>
-                  <p className="text-text-secondary text-xs mt-1">
-                    {speed.statLabel}
+                  <p className="text-gold/80 text-[11px] font-medium uppercase tracking-[0.2em] mt-3">
+                    {theme.subtitle}
                   </p>
-                  <p className="text-text-secondary text-xs mt-1 italic">
-                    {speed.statSource}
+                </div>
+
+                {/* Content */}
+                <div className="lg:col-span-5">
+                  <h3 className="font-display text-xl lg:text-2xl font-bold text-text-primary mb-4">
+                    {theme.title}
+                  </h3>
+                  <p className="text-text-secondary text-sm leading-[1.8]">
+                    {theme.text}
+                  </p>
+                </div>
+
+                {/* Stat */}
+                <div className="lg:col-span-4 flex flex-col justify-end">
+                  <span className="font-display text-4xl lg:text-5xl font-bold text-text-primary/20">
+                    {theme.stat}
+                  </span>
+                  <p className="text-text-secondary text-xs mt-2 leading-relaxed">
+                    {theme.statLabel}
+                  </p>
+                  <p className="text-text-secondary/60 text-[11px] mt-1 italic">
+                    {theme.statSource}
                   </p>
                 </div>
               </div>
-            </article>
-          </div>
-        </AnimatedSection>
-
-        {/* Row 2 — Two cards, 2:3 ratio (reversed), navy + gradient */}
-        <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-            {/* Ventless — navy, takes 2 cols */}
-            <article className="lg:col-span-2 bg-navy p-10 lg:p-12 relative overflow-hidden">
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-[2px] bg-gold" />
-                  <span className="text-gold text-xs font-semibold uppercase tracking-widest">
-                    {ventless.subtitle}
-                  </span>
-                </div>
-                <h3 className="font-display text-xl lg:text-2xl font-bold text-white mb-4">
-                  {ventless.title}
-                </h3>
-                <p className="text-white/80 leading-relaxed text-[15px] mb-8">
-                  {ventless.text}
-                </p>
-                <div className="pt-6 border-t border-white/10">
-                  <span className="font-display text-4xl font-bold text-gold">
-                    {ventless.stat}
-                  </span>
-                  <p className="text-white/80 text-xs mt-1">
-                    {ventless.statLabel}
-                  </p>
-                  <p className="text-white/80 text-xs mt-1 italic">
-                    {ventless.statSource}
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            {/* Sustainability — gradient bg, takes 3 cols */}
-            <article className="lg:col-span-3 bg-gradient-to-br from-offwhite to-[#EDF0F3] border-l-4 border-gold p-10 lg:p-14 relative overflow-hidden">
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-[2px] bg-gold" />
-                  <span className="text-gold text-xs font-semibold uppercase tracking-widest">
-                    {sustainability.subtitle}
-                  </span>
-                </div>
-                <h3 className="font-display text-2xl lg:text-3xl font-bold text-navy mb-5">
-                  {sustainability.title}
-                </h3>
-                <p className="text-text-secondary leading-relaxed mb-10">
-                  {sustainability.text}
-                </p>
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display text-5xl font-bold text-red">
-                    {sustainability.stat}
-                  </span>
-                  <span className="text-text-secondary text-sm max-w-[200px]">
-                    {sustainability.statLabel}
-                  </span>
-                </div>
-                <p className="text-text-secondary text-xs mt-2 italic">
-                  {sustainability.statSource}
-                </p>
-              </div>
-            </article>
-          </div>
-        </AnimatedSection>
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
     </section>
   );

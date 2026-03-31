@@ -3,26 +3,27 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function BrandsPartnersSection() {
   return (
-    <section className="py-14 bg-white" aria-labelledby="brands-partners-heading">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 lg:py-20 bg-white" aria-labelledby="brands-partners-heading">
+      <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-2">
-              <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-2">
+            <div className="lg:col-span-3">
+              <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-4">
                 Our Network
               </p>
               <h2
                 id="brands-partners-heading"
-                className="font-display text-2xl sm:text-3xl font-bold text-navy mb-3"
+                className="font-display text-2xl sm:text-3xl font-bold text-text-primary leading-[1.1] mb-3"
               >
-                Brands &<br />Partners
+                Brands &amp;<br />
+                <span className="italic font-normal">Partners</span>
               </h2>
-              <div className="w-10 h-[2px] bg-gold mb-3" />
+              <div className="w-10 h-px bg-gold/30 mb-3" />
               <p className="text-text-secondary text-sm leading-relaxed">
                 Authorized distributor for 110+ commercial kitchen brands.
               </p>
             </div>
-            <div className="lg:col-span-10">
+            <div className="lg:col-span-9">
               <Image
                 src="/images/references/ref-61.jpg"
                 alt="MB Equipment Solutions — Complete brand and partner logo grid"

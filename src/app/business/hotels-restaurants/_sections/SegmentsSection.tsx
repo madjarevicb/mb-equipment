@@ -4,32 +4,34 @@ import { segments } from "@/data/our-brands";
 export default function SegmentsSection() {
   return (
     <section
-      className="py-10 bg-white border-b border-gray-100"
+      className="py-16 lg:py-20 bg-white border-b border-gray-100"
       aria-label="Industry segments we serve"
     >
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
-          <div className="flex flex-col md:flex-row md:items-center gap-5">
-            <div className="flex items-center gap-3 shrink-0">
-              <div className="w-8 h-[2px] bg-gold" />
-              <span className="text-navy text-sm font-semibold uppercase tracking-widest">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            {/* Left — label */}
+            <div className="lg:col-span-3">
+              <p className="text-text-secondary text-[11px] font-medium uppercase tracking-[0.2em] mb-3">
                 We equip
-              </span>
+              </p>
+              <div className="w-10 h-px bg-gray-200" />
             </div>
-            <div className="hidden md:block w-[1px] h-6 bg-gray-200" />
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              {segments.map((s, i) => (
-                <span key={s.title} className="flex items-center gap-x-6">
-                  <span className="text-[15px] text-text-secondary">
-                    {s.title}
-                  </span>
-                  {i < segments.length - 1 && (
-                    <span className="hidden sm:inline text-gold/50 text-xs">
-                      ●
-                    </span>
-                  )}
-                </span>
-              ))}
+
+            {/* Right — segment list */}
+            <div className="lg:col-span-9">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-10">
+                {segments.map((s) => (
+                  <div key={s.title}>
+                    <h3 className="text-[13px] font-medium text-text-primary mb-1">
+                      {s.title}
+                    </h3>
+                    <p className="text-[12px] text-text-secondary/60 leading-relaxed">
+                      {s.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </AnimatedSection>

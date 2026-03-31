@@ -29,7 +29,7 @@ export default function FoodProcessingLoading() {
       </section>
 
       {/* Intro skeleton */}
-      <section className="py-28 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-5xl mx-auto px-6">
           <div className="h-4 w-40 bg-gray-200 rounded mb-6" />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -46,7 +46,7 @@ export default function FoodProcessingLoading() {
       </section>
 
       {/* Brands skeleton */}
-      <section className="py-28 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-6xl mx-auto px-6 space-y-6">
           <div className="h-4 w-28 bg-white/10 rounded" />
           <div className="h-12 w-72 bg-white/10 rounded" />
@@ -55,7 +55,7 @@ export default function FoodProcessingLoading() {
       </section>
 
       {/* Equipment skeleton */}
-      <section className="py-20 bg-offwhite animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-offwhite animate-pulse" aria-hidden="true">
         <div className="max-w-5xl mx-auto px-6 space-y-4">
           <div className="h-4 w-24 bg-gray-200 rounded" />
           <div className="h-10 w-56 bg-gray-200 rounded" />
@@ -70,7 +70,7 @@ export default function FoodProcessingLoading() {
       </section>
 
       {/* Application skeleton */}
-      <section className="py-24 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-6xl mx-auto px-6">
           <div className="h-4 w-24 bg-white/10 rounded mb-3" />
           <div className="h-10 w-48 bg-white/10 rounded mb-14" />
@@ -92,17 +92,17 @@ export default function FoodProcessingLoading() {
       </section>
 
       {/* Innovation centers skeleton */}
-      <section className="py-24 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-offwhite rounded-sm overflow-hidden">
+          <div className="bg-offwhite overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-5">
               <div className="lg:col-span-3 p-14 space-y-4">
                 <div className="h-4 w-32 bg-gray-200 rounded" />
                 <div className="h-10 w-64 bg-gray-200 rounded" />
                 <div className="h-16 w-full bg-gray-100 rounded" />
                 <div className="flex gap-3 mt-4">
-                  <div className="h-10 w-48 bg-gray-200 rounded-sm" />
-                  <div className="h-10 w-52 bg-gray-100 rounded-sm" />
+                  <div className="h-10 w-48 bg-gray-200" />
+                  <div className="h-10 w-52 bg-gray-100" />
                 </div>
               </div>
               <div className="lg:col-span-2 bg-navy/10 p-14 flex items-center justify-center">

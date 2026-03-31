@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
 import { themes } from "@/data/innovation";
 import {
   HeroSection,
   FeaturedSection,
   ThemesSection,
+  ImageBreakSection,
   CtaSection,
 } from "./_sections";
 
@@ -116,33 +117,15 @@ export default function InnovationPage() {
         }}
       />
 
-      {/* Breadcrumb nav */}
-      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-4">
-        <ol
-          role="list"
-          className="flex items-center gap-2 text-sm text-text-secondary"
-        >
-          <li>
-            <Link href="/" className="hover:text-gold transition-colors">
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <Link href="/about" className="hover:text-gold transition-colors">
-              About
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-text-primary font-medium">
-            Innovation
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb items={[
+        { label: "About", href: "/about" },
+        { label: "Innovation" },
+      ]} />
 
       <HeroSection />
       <FeaturedSection />
       <ThemesSection />
+      <ImageBreakSection />
       <CtaSection />
     </>
   );

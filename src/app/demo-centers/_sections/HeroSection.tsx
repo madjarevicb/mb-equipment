@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import ChevronRightIcon from "@/components/ui/ChevronRightIcon";
+import Button from "@/components/ui/Button";
 
 const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwQTE2MjgiLz48L3N2Zz4=";
@@ -8,7 +7,7 @@ const HERO_BLUR =
 export default function HeroSection() {
   return (
     <section
-      className="relative h-[70vh] min-h-[500px] overflow-hidden"
+      className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center overflow-hidden"
       aria-labelledby="hero-heading"
     >
       <Image
@@ -21,43 +20,47 @@ export default function HeroSection() {
         placeholder="blur"
         blurDataURL={HERO_BLUR}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-navy/20" />
 
-      <div className="relative z-10 h-full flex flex-col justify-end max-w-6xl mx-auto px-6 pb-28">
-        <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-          Demo Centers & Showrooms
-        </p>
-        <h1
-          id="hero-heading"
-          className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 max-w-2xl leading-[1.1]"
-        >
-          Test the Equipment Before You Buy
-        </h1>
-        <p className="text-white/80 text-lg max-w-xl mb-8">
-          Visit a demo kitchen. Run your menu on the equipment. Decide with
-          real data, not a brochure.
-        </p>
-        <div className="flex gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all"
+      <div className="relative max-w-7xl mx-auto px-6 py-28 lg:py-36">
+        <div className="max-w-2xl">
+          <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-6">
+            Demo Centers &amp; Showrooms
+          </p>
+
+          <h1
+            id="hero-heading"
+            className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6"
           >
-            Book a Visit
-            <ChevronRightIcon className="w-4 h-4" />
-          </Link>
-          <a
-            href="#centers"
-            className="inline-flex items-center gap-2 border border-white/50 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm hover:bg-white/10 transition-all"
-          >
-            Explore Centers
-            <ChevronRightIcon className="w-4 h-4" />
-          </a>
+            Test Before<br />
+            <span className="italic font-normal">You Buy</span>
+          </h1>
+
+          <div className="w-16 h-px bg-gold/60 mb-6" />
+
+          <p className="text-white/70 text-lg leading-relaxed max-w-lg font-light mb-10">
+            Visit a demo kitchen. Run your menu on the equipment. Decide with
+            real data, not a brochure.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Button variant="primary" href="/contact">
+              Book a Visit
+            </Button>
+            <Button variant="ghost-dark" href="#centers" arrow={false}>
+              Explore Centers
+            </Button>
+          </div>
         </div>
       </div>
 
       {/* Authorized partner badge */}
-      <div className="absolute bottom-8 left-6 z-10 flex items-center gap-3 bg-black/70 backdrop-blur-sm rounded-lg px-5 py-3">
-        <span className="text-white/90 text-sm font-medium">
+      <div
+        className="absolute bottom-8 left-6 z-10 flex items-center gap-3 backdrop-blur-sm px-5 py-3"
+        style={{ backgroundColor: "rgba(10,22,40,0.5)" }}
+      >
+        <span className="text-white/70 text-xs font-medium uppercase tracking-[0.1em]">
           Authorized Partner of
         </span>
         <Image

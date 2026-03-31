@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
 import { brands } from "@/data/our-brands";
 import {
   HeroSection,
   SegmentsSection,
   BrandsGridSection,
+  ImageBreakSection,
   ProcessSection,
   CtaSection,
 } from "./_sections";
@@ -20,10 +21,11 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Our Brands — Commercial Kitchen Equipment | MB Equipment Solutions";
-const PAGE_DESC = `Authorized Middleby partner with ${brands.length} professional foodservice brands including Josper, Pitco, Hobart, TurboChef, and Middleby Marshall. Commercial kitchen equipment for restaurants, hotels, and institutional kitchens.`;
+const TEMPLATE_TITLE = "Our Brands — Commercial Kitchen Equipment";
+const PAGE_DESC = `Authorized Middleby partner with ${brands.length}+ professional foodservice brands — Josper, Pitco, Hobart, TurboChef, and more for restaurants, hotels, and institutional kitchens.`;
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: TEMPLATE_TITLE,
   description: PAGE_DESC,
   keywords: [
     "commercial kitchen equipment brands",
@@ -43,11 +45,13 @@ export const metadata: Metadata = {
     siteName: COMPANY.name,
     locale: "en_US",
     type: "website",
+    images: [{ url: "/images/og/homepage.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESC,
+    images: ["/images/og/homepage.jpg"],
   },
 };
 
@@ -114,33 +118,15 @@ export default function OurBrandsPage() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <nav
-        className="max-w-7xl mx-auto px-6 pt-4"
-        aria-label="Breadcrumb"
-      >
-        <ol className="flex items-center gap-2 text-sm text-text-secondary">
-          <li>
-            <Link href="/" className="hover:text-navy transition-colors">
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <Link href="/business" className="hover:text-navy transition-colors">
-              Business
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-navy font-medium">
-            Our Brands
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb items={[
+        { label: "Business", href: "/business" },
+        { label: "Our Brands" },
+      ]} />
 
       <HeroSection />
       <SegmentsSection />
-      <BrandsGridSection />
+      <BrandsGridSection brands={brands} />
+      <ImageBreakSection />
       <ProcessSection />
       <CtaSection />
     </>

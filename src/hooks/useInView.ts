@@ -53,6 +53,7 @@ export function useInView(threshold = 0.15) {
         observer.unobserve(el);
         callbacks.delete(el);
         elementThresholds.delete(el);
+        cleanupObserver(threshold);
       }
     });
     elementThresholds.set(el, key);

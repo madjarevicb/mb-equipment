@@ -1,21 +1,25 @@
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-navy pt-20">
-      <div className="text-center px-6">
-        <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">404</p>
-        <h1 className="font-display text-5xl lg:text-6xl font-bold text-white mb-4 italic">Wrong Turn.</h1>
-        <p className="text-white/80 text-lg max-w-md mx-auto mb-10">
+    <div className="min-h-screen flex items-center bg-navy pt-20">
+      <div className="max-w-7xl mx-auto px-6 py-28">
+        <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-6">404</p>
+        <h1 className="font-display text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
+          Wrong<br />
+          <span className="italic font-normal">Turn.</span>
+        </h1>
+        <div className="w-16 h-px bg-gold/60 mb-6" />
+        <p className="text-white/60 text-lg max-w-md mb-12 font-light">
           This page doesn&apos;t exist — but the kitchen you&apos;re planning probably should. Head back to familiar ground.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/" className="bg-red text-white font-semibold px-8 py-4 tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all">
+        <div className="flex flex-wrap gap-4">
+          <Button variant="primary" href="/">
             Back to Homepage
-          </Link>
-          <Link href="/contact" className="border border-white/30 text-white font-semibold px-8 py-4 tracking-wide rounded-sm hover:bg-white/10 transition-all">
+          </Button>
+          <Button variant="ghost-dark" href="/contact" arrow={false}>
             Contact Us
-          </Link>
+          </Button>
         </div>
       </div>
     </div>

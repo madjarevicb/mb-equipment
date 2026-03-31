@@ -8,35 +8,30 @@ export default function PortfolioSection() {
 
   return (
     <section
-      className="py-28 bg-white relative overflow-hidden"
+      className="py-28 lg:py-36 bg-white"
       aria-labelledby="portfolio-heading"
     >
-      {/* Decorative gold line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-20 bg-gradient-to-b from-transparent to-gold" />
-
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Left — heading */}
-            <div className="lg:col-span-2">
-              <span className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em]">
+            <div className="lg:col-span-5">
+              <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-6">
                 The Portfolio
-              </span>
+              </p>
               <h2
                 id="portfolio-heading"
-                className="font-display text-4xl sm:text-5xl font-bold text-navy leading-[1.15] mt-4"
+                className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-[1.1]"
               >
-                Premium Residential
-                <span className="block text-gold-text mt-1">
-                  Kitchen Brands
-                </span>
+                Premium Residential<br />
+                <span className="italic font-normal">Kitchen Brands</span>
               </h2>
-              <div className="w-16 h-[2px] bg-gold mt-6" />
+              <div className="w-12 h-px bg-gold/30 mt-8" />
             </div>
 
-            {/* Right — text with left gold border */}
-            <div className="lg:col-span-3 border-l-2 border-gold/50 pl-8">
-              <p className="text-text-secondary text-lg leading-relaxed">
+            {/* Right — text */}
+            <div className="lg:col-span-7">
+              <p className="text-text-secondary leading-relaxed mb-6">
                 MB Equipment Solutions Residential is your authorized access
                 point to {residentialBrands.length} premium brands from the
                 Middleby Corporation portfolio — {indoorCount} indoor
@@ -44,7 +39,7 @@ export default function PortfolioSection() {
                 grilling brands, and {beverageCount} professional beverage
                 systems.
               </p>
-              <p className="text-text-secondary text-lg leading-relaxed mt-6">
+              <p className="text-text-secondary leading-relaxed text-sm">
                 As the exclusive regional dealer, we provide showroom
                 demonstrations, professional installation, and factory-backed
                 service for every brand we carry.

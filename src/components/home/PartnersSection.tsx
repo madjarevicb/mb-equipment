@@ -21,26 +21,26 @@ const partners: Partner[] = [
 
 export default function PartnersSection() {
   return (
-    <section id="partners" aria-label="Partner logos" className="py-16 bg-white overflow-hidden">
+    <section id="partners" aria-label="Partner logos" className="py-16 lg:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-10">
         <h2 className="sr-only">Our Global Partners and Clients</h2>
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-text text-center">
+        <p className="text-xs font-medium uppercase tracking-[0.3em] text-text-secondary">
           Trusted by Global Foodservice Leaders
         </p>
       </div>
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
-        <div className="flex items-center gap-20 animate-scroll-partners will-change-transform">
+        <div className="flex items-center gap-12 animate-scroll-partners will-change-transform">
           {[...partners, ...partners].map((partner, i) => (
-            <div key={`${partner.name}-${i}`} className="flex-shrink-0 flex items-center justify-center h-24 w-44 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <div key={`${partner.name}-${i}`} className="flex-shrink-0 flex items-center justify-center h-20 w-32 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
               <Image
                 src={partner.logo}
                 alt={`${partner.name} logo`}
                 width={160}
                 height={80}
                 sizes="160px"
-                className="object-contain max-h-20 w-auto"
+                className="object-contain max-h-14 w-auto"
                 loading="lazy"
                 quality={75}
               />

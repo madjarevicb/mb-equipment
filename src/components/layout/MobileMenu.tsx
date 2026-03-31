@@ -75,7 +75,7 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full bg-red text-white text-center font-semibold py-3.5 mb-8"
+              className="block w-full bg-red text-white text-center font-medium py-3.5 mb-8 text-sm tracking-[0.08em] uppercase"
             >
               Get a Quote
             </Link>

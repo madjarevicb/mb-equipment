@@ -1,51 +1,31 @@
-import Link from "next/link";
-import AnimatedSection from "@/components/ui/AnimatedSection";
+import Button from "@/components/ui/Button";
 
 export default function CtaSection() {
   return (
-    <section id="contact-cta" aria-label="Start a project" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left — headline */}
-          <AnimatedSection className="lg:col-span-7" animation="fade-right">
-            <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">Ready?</p>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-6">
-              Let&apos;s Spec Your Kitchen.
-            </h2>
-            <p className="text-text-secondary text-lg max-w-xl mb-4">
-              Tell us the project scope. We&apos;ll come back with brands, models, drawings, and a number.
-            </p>
-            <p className="text-text-secondary text-sm max-w-lg">
-              No commitment required — start with a free consultation and site assessment. Our team will evaluate your space, recommend the right equipment, and deliver a detailed proposal within days.
-            </p>
-            <div className="w-10 h-[2px] bg-gold mt-8" />
-          </AnimatedSection>
-
-          {/* Right — CTA block */}
-          <AnimatedSection className="lg:col-span-5" animation="fade-left">
-            <div className="bg-navy p-8 lg:p-10">
-              <p className="text-white/80 text-sm mb-6">
-                Whether you are planning a new build, a renovation, or a multi-site rollout — we are ready.
-              </p>
-              <div className="space-y-3">
-                <Link
-                  href="/contact"
-                  className="block w-full text-center bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all"
-                >
-                  Request Free Consultation
-                </Link>
-                <Link
-                  href="/references"
-                  className="block w-full text-center border border-white/30 text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm hover:bg-white/10 transition-all"
-                >
-                  See Our Work
-                </Link>
-              </div>
-              <p className="text-white/80 text-xs mt-6">
-                Average response time: under 24 hours
-              </p>
-            </div>
-          </AnimatedSection>
+    <section id="contact-cta" aria-label="Start a project" className="bg-navy">
+      <div className="max-w-7xl mx-auto px-6 py-32 lg:py-40">
+        <div className="max-w-3xl">
+          <p className="text-white/30 text-xs font-medium uppercase tracking-[0.3em] mb-8">
+            Ready to start?
+          </p>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
+            Let&apos;s Spec<br />
+            <span className="italic font-normal">Your Kitchen.</span>
+          </h2>
+          <p className="text-white/60 leading-relaxed mb-12 max-w-lg">
+            Tell us the project scope. We&apos;ll come back with brands, models, drawings, and a number. No commitment required.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Button variant="primary" href="/contact">
+              Request Consultation
+            </Button>
+            <Button variant="ghost-dark" href="/references" arrow={false}>
+              See Our Work
+            </Button>
+          </div>
+          <p className="text-white/25 text-xs tracking-[0.2em] mt-10">
+            Average response time: under 24 hours
+          </p>
         </div>
       </div>
     </section>

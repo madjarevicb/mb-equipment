@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
 import {
   HeroSection,
@@ -10,7 +10,6 @@ import {
   LocalProjectsSection,
   DesignEngineeringSection,
   BrandsPartnersSection,
-  GeographyStatsSection,
   CtaSection,
 } from "./_sections";
 
@@ -24,11 +23,12 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "References & Partners — Commercial Kitchen Projects | MB Equipment Solutions";
+const TEMPLATE_TITLE = "References & Partners — Commercial Kitchen Projects";
 const PAGE_DESC =
-  "Trusted Middleby-authorized equipment partner for Marriott, Starbucks, McDonald's, KFC, and 2,000+ projects across 40+ countries in the Balkans, Central Europe, and Middle East.";
+  "Middleby-authorized equipment partner for Marriott, Starbucks, McDonald's, KFC, and 2,000+ projects across 40+ countries in the Balkans and Central Europe.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: TEMPLATE_TITLE,
   description: PAGE_DESC,
   keywords: [
     "commercial kitchen references",
@@ -48,11 +48,13 @@ export const metadata: Metadata = {
     siteName: COMPANY.name,
     locale: "en_US",
     type: "website",
+    images: [{ url: "/images/og/homepage.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESC,
+    images: ["/images/og/homepage.jpg"],
   },
 };
 
@@ -102,20 +104,9 @@ export default function ReferencesPage() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <nav className="max-w-7xl mx-auto px-6 pt-4" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-text-secondary">
-          <li>
-            <Link href="/" className="hover:text-navy transition-colors">
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-navy font-medium">
-            References
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb items={[
+        { label: "References" },
+      ]} />
 
       <HeroSection />
       <WhoWeAreSection />
@@ -125,7 +116,6 @@ export default function ReferencesPage() {
       <LocalProjectsSection />
       <DesignEngineeringSection />
       <BrandsPartnersSection />
-      <GeographyStatsSection />
       <CtaSection />
     </>
   );

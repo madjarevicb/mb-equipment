@@ -1,32 +1,41 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import SectionHeading from "@/components/ui/SectionHeading";
-import ProcessStepCard from "@/components/ui/ProcessStepCard";
 import { processSteps } from "@/data/company-overview";
-
-const PROCESS_ROW_1 = 3;
 
 export default function ProcessSection() {
   return (
-    <section className="relative py-28 bg-white overflow-hidden" aria-labelledby="process-heading">
+    <section className="relative py-28 lg:py-36 bg-white overflow-hidden" aria-labelledby="process-heading">
       <div className="max-w-7xl mx-auto px-6">
-        <AnimatedSection>
-          <div className="mb-20">
-            <SectionHeading id="process-heading" overline="The Process" heading="The Full Cycle" subtext="Most equipment companies stop at delivery. We do not." />
-          </div>
-        </AnimatedSection>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          {/* Left — heading */}
+          <AnimatedSection className="lg:col-span-4" animation="fade-right">
+            <p className="text-gold/80 text-xs font-medium uppercase tracking-[0.2em] mb-4">The Process</p>
+            <h2 id="process-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-[1.1] mb-5">
+              The Full<br />
+              <span className="italic font-normal">Cycle</span>
+            </h2>
+            <p className="text-text-secondary leading-relaxed text-sm">
+              Most equipment companies stop at delivery. We do not.
+            </p>
+            <div className="w-12 h-px bg-gold/50 mt-8" />
+          </AnimatedSection>
 
-        <AnimatedSection stagger>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {processSteps.slice(0, PROCESS_ROW_1).map((step, i) => (
-              <ProcessStepCard key={step.title} {...step} index={i} isLast={false} />
+          {/* Right — steps as numbered list */}
+          <div className="lg:col-span-8">
+            {processSteps.map((step, i) => (
+              <AnimatedSection key={step.title} delay={i * 0.06}>
+                <div className={`grid grid-cols-[auto_1fr] gap-6 lg:gap-10 py-8 ${i < processSteps.length - 1 ? "border-b border-gray-200" : ""}`}>
+                  <span className="font-display text-3xl font-bold text-text-primary/10 italic leading-none w-10">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-medium text-text-primary mb-2">{step.title}</h3>
+                    <p className="text-text-secondary text-sm leading-[1.8] max-w-xl">{step.description}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto">
-            {processSteps.slice(PROCESS_ROW_1).map((step, i) => (
-              <ProcessStepCard key={step.title} {...step} index={i + PROCESS_ROW_1} isLast={i + PROCESS_ROW_1 === processSteps.length - 1} />
-            ))}
-          </div>
-        </AnimatedSection>
+        </div>
       </div>
     </section>
   );

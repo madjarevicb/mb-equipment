@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
 import {
   HeroSection,
@@ -7,6 +7,7 @@ import {
   BrandsSection,
   EquipmentSection,
   ApplicationSection,
+  ImageBreakSection,
   InnovationCentersSection,
 } from "./_sections";
 
@@ -20,11 +21,12 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Food Processing — Industrial Equipment Solutions | MB Equipment Solutions";
+const TEMPLATE_TITLE = "Food Processing — Industrial Equipment Solutions";
 const PAGE_DESC =
-  "Middleby-authorized partner for industrial food processing equipment. Thermal processing, baking, forming, and packaging lines for protein and bakery operations.";
+  "Middleby-authorized partner for industrial food processing equipment. Thermal processing, baking, forming, and packaging for protein and bakery operations.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: TEMPLATE_TITLE,
   description: PAGE_DESC,
   keywords: [
     "food processing equipment",
@@ -44,11 +46,13 @@ export const metadata: Metadata = {
     siteName: COMPANY.name,
     locale: "en_US",
     type: "website",
+    images: [{ url: "/images/og/homepage.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESC,
+    images: ["/images/og/homepage.jpg"],
   },
 };
 
@@ -104,35 +108,17 @@ export default function FoodProcessingPage() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <nav className="max-w-7xl mx-auto px-6 pt-4" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-text-secondary">
-          <li>
-            <Link href="/" className="hover:text-navy transition-colors">
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <Link
-              href="/business"
-              className="hover:text-navy transition-colors"
-            >
-              Business
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-navy font-medium">
-            Food Processing
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb items={[
+        { label: "Business", href: "/business" },
+        { label: "Food Processing" },
+      ]} />
 
       <HeroSection />
       <IntroSection />
       <BrandsSection />
       <EquipmentSection />
       <ApplicationSection />
+      <ImageBreakSection />
       <InnovationCentersSection />
     </>
   );

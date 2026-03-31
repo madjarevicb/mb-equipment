@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
 import {
   HeroSection,
@@ -18,11 +18,12 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Demo Centers & Showrooms — Hands-On Equipment Testing | MB Equipment Solutions";
+const TEMPLATE_TITLE = "Demo Centers & Showrooms — Hands-On Equipment Testing";
 const PAGE_DESC =
   "Visit Middleby Innovation Kitchens in Dallas, Madrid, Wigan, and Belgrade. Hands-on equipment testing with factory application chefs. Book your demo session.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: TEMPLATE_TITLE,
   description: PAGE_DESC,
   keywords: [
     "demo center",
@@ -42,11 +43,13 @@ export const metadata: Metadata = {
     siteName: COMPANY.name,
     locale: "en_US",
     type: "website",
+    images: [{ url: "/images/og/homepage.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESC,
+    images: ["/images/og/homepage.jpg"],
   },
 };
 
@@ -96,20 +99,9 @@ export default function DemoCentersPage() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <nav className="max-w-7xl mx-auto px-6 pt-4" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-text-secondary">
-          <li>
-            <Link href="/" className="hover:text-navy transition-colors">
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-navy font-medium">
-            Demo Centers
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb items={[
+        { label: "Demo Centers" },
+      ]} />
 
       <HeroSection />
       <IntroSection />

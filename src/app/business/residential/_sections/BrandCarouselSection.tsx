@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { residentialBrands } from "@/data/residential";
 
 export default function BrandCarouselSection() {
@@ -7,7 +8,7 @@ export default function BrandCarouselSection() {
 
   return (
     <section
-      className="py-20 bg-navy border-t border-white/10"
+      className="py-16 lg:py-20 bg-navy border-t border-white/10"
       aria-labelledby="brands-carousel-heading"
     >
       <h2 id="brands-carousel-heading" className="sr-only">
@@ -22,12 +23,12 @@ export default function BrandCarouselSection() {
                 key={`row1-${brand.name}-${i}`}
                 className="flex-shrink-0 w-[180px] h-[80px] flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={brand.logo}
                   alt={`${brand.name} logo`}
                   width={180}
                   height={65}
+                  sizes="180px"
                   loading="lazy"
                   className="max-h-[65px] w-auto object-contain brightness-0 invert"
                 />
@@ -41,12 +42,12 @@ export default function BrandCarouselSection() {
                 key={`row2-${brand.name}-${i}`}
                 className="flex-shrink-0 w-[180px] h-[80px] flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={brand.logo}
                   alt={`${brand.name} logo`}
                   width={180}
                   height={65}
+                  sizes="180px"
                   loading="lazy"
                   className="max-h-[65px] w-auto object-contain brightness-0 invert"
                 />

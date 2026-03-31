@@ -1,32 +1,30 @@
-import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import ChevronRightIcon from "@/components/ui/ChevronRightIcon";
+import Button from "@/components/ui/Button";
 
 export default function CtaSection() {
   return (
-    <section className="py-16 bg-navy" aria-labelledby="cta-heading">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+    <section className="py-28 lg:py-36 bg-navy" aria-labelledby="cta-heading">
+      <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
-          <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-            Next Step
-          </p>
-          <h2
-            id="cta-heading"
-            className="font-display text-3xl sm:text-4xl font-bold text-white mb-4"
-          >
-            Cook On It Before You Commit
-          </h2>
-          <p className="text-white/80 mb-8 max-w-lg mx-auto">
-            Bring your menu. Bring your team. Put the equipment through a real
-            service simulation before you sign.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-red text-white font-semibold px-8 py-4 text-sm tracking-wide rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all"
-          >
-            Book a Demo Session
-            <ChevronRightIcon className="w-4 h-4" />
-          </Link>
+          <div className="max-w-3xl">
+            <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-8">
+              Next Step
+            </p>
+            <h2
+              id="cta-heading"
+              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6"
+            >
+              Cook On It<br />
+              <span className="italic font-normal">Before You Commit.</span>
+            </h2>
+            <p className="text-white/60 leading-relaxed mb-12 max-w-lg">
+              Bring your menu. Bring your team. Put the equipment through a real
+              service simulation before you sign.
+            </p>
+            <Button variant="primary" href="/contact">
+              Book a Demo Session
+            </Button>
+          </div>
         </AnimatedSection>
       </div>
     </section>

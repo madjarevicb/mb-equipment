@@ -6,7 +6,7 @@ const HERO_BLUR =
 export default function HeroSection() {
   return (
     <section
-      className="relative h-[70vh] min-h-[500px] overflow-hidden flex items-center"
+      className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center overflow-hidden"
       aria-labelledby="hero-heading"
     >
       <Image
@@ -19,27 +19,38 @@ export default function HeroSection() {
         placeholder="blur"
         blurDataURL={HERO_BLUR}
       />
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-navy/20" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <p className="text-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">
-          References & Partners
-        </p>
-        <h1
-          id="hero-heading"
-          className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]"
-        >
-          The Work Speaks for Itself
-        </h1>
-        <p className="text-white/80 text-xl mt-4 max-w-2xl">
-          Trusted equipment partner for global chains, independent operators,
-          and hospitality groups across 40+ countries.
-        </p>
+      <div className="relative max-w-7xl mx-auto px-6 py-28 lg:py-36">
+        <div className="max-w-2xl">
+          <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-6">
+            References &amp; Partners
+          </p>
+
+          <h1
+            id="hero-heading"
+            className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6"
+          >
+            The Work Speaks<br />
+            <span className="italic font-normal">for Itself</span>
+          </h1>
+
+          <div className="w-16 h-px bg-gold/60 mb-6" />
+
+          <p className="text-white/70 text-lg leading-relaxed max-w-lg font-light">
+            Trusted equipment partner for global chains, independent operators,
+            and hospitality groups across 40+ countries.
+          </p>
+        </div>
       </div>
 
       {/* Authorized partner badge */}
-      <div className="absolute bottom-8 left-6 z-10 flex items-center gap-3 bg-black/70 backdrop-blur-sm rounded-lg px-5 py-3">
-        <span className="text-white/90 text-sm font-medium">
+      <div
+        className="absolute bottom-8 left-6 z-10 flex items-center gap-3 backdrop-blur-sm px-5 py-3"
+        style={{ backgroundColor: "rgba(10,22,40,0.5)" }}
+      >
+        <span className="text-white/70 text-xs font-medium uppercase tracking-[0.1em]">
           Authorized Partner of
         </span>
         <Image
@@ -50,8 +61,6 @@ export default function HeroSection() {
           className="h-5 w-auto"
         />
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }

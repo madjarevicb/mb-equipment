@@ -1,57 +1,49 @@
-import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import ChevronRightIcon from "@/components/ui/ChevronRightIcon";
+import Button from "@/components/ui/Button";
 
 export default function InnovationCentersSection() {
   return (
-    <section className="py-24 bg-white" aria-labelledby="innovation-heading">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-28 lg:py-36 bg-white" aria-labelledby="innovation-heading">
+      <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
-          <div className="bg-offwhite border border-[#E5E7EB] rounded-sm overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-5">
-              <div className="lg:col-span-3 p-10 lg:p-14 flex flex-col justify-center">
-                <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
-                  Innovation Centers
-                </span>
-                <h2
-                  id="innovation-heading"
-                  className="font-display text-3xl sm:text-4xl font-bold text-navy mt-3 leading-tight"
-                >
-                  Test Your Products on Full-Scale Equipment
-                </h2>
-                <div className="w-12 h-[2px] bg-gold mt-4 mb-6" />
-                <p className="text-text-secondary leading-relaxed">
-                  Our Innovation Centers bring together the most advanced food
-                  processing technologies. Schedule a visit to see equipment
-                  running at full production capacity with your products.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 mt-8">
-                  <Link
-                    href="/demo-centers"
-                    className="inline-flex items-center justify-center gap-2 bg-red text-white font-semibold px-6 py-3 rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all text-sm"
-                  >
-                    Visit an Innovation Center
-                    <ChevronRightIcon className="w-4 h-4" />
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2 border border-navy/20 text-navy font-semibold px-6 py-3 rounded-sm hover:bg-navy hover:text-white transition-all text-sm"
-                  >
-                    Discuss Your Production Line
-                    <ChevronRightIcon className="w-4 h-4" />
-                  </Link>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end">
+            {/* Left — heading & copy */}
+            <div className="lg:col-span-7">
+              <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-8">
+                Innovation Centers
+              </p>
+              <h2
+                id="innovation-heading"
+                className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] mb-6"
+              >
+                Test Your Products<br />
+                <span className="italic font-normal">on Full-Scale Equipment</span>
+              </h2>
+              <p className="text-text-secondary leading-relaxed mb-12 max-w-lg">
+                Our Innovation Centers bring together the most advanced food
+                processing technologies. Schedule a visit to see equipment
+                running at full production capacity with your products.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button variant="primary" href="/demo-centers">
+                  Visit an Innovation Center
+                </Button>
+                <Button variant="ghost-light" href="/contact" arrow={false}>
+                  Discuss Your Line
+                </Button>
               </div>
-              <div className="lg:col-span-2 bg-navy p-10 lg:p-14 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="font-display text-6xl font-bold text-gold">6</p>
-                  <p className="text-white/80 text-sm mt-3 uppercase tracking-wider">
-                    Innovation Centers
-                  </p>
-                  <p className="text-white/80 text-xs mt-1">
-                    Across the region
-                  </p>
-                </div>
+            </div>
+
+            {/* Right — stat */}
+            <div className="lg:col-span-5">
+              <div className="border-l-2 border-gold/30 pl-8">
+                <span className="font-display text-6xl font-bold text-text-primary">6</span>
+                <p className="text-text-secondary text-xs uppercase tracking-[0.15em] mt-2">
+                  Innovation Centers
+                </p>
+                <p className="text-text-secondary/60 text-xs mt-1">
+                  Across the region
+                </p>
               </div>
             </div>
           </div>

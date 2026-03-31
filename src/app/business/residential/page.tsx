@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
 import { residentialBrands } from "@/data/residential";
 import {
@@ -7,6 +7,7 @@ import {
   PortfolioSection,
   BrandCarouselSection,
   ShowcaseSection,
+
   BrochuresSection,
   CtaSection,
 } from "./_sections";
@@ -21,10 +22,11 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Residential — Luxury Home Kitchen Equipment | MB Equipment Solutions";
-const PAGE_DESC = `Authorized dealer for Viking, La Cornue, AGA, Lynx, and ${residentialBrands.length} premium residential kitchen brands. Showroom demonstrations, professional installation, and factory-backed service in Belgrade.`;
+const TEMPLATE_TITLE = "Residential — Luxury Home Kitchen Equipment";
+const PAGE_DESC = `Authorized dealer for Viking, La Cornue, AGA, Lynx, and ${residentialBrands.length}+ premium residential brands. Showroom demos, installation, and factory-backed service in Belgrade.`;
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: TEMPLATE_TITLE,
   description: PAGE_DESC,
   keywords: [
     "luxury home kitchen equipment",
@@ -44,11 +46,13 @@ export const metadata: Metadata = {
     siteName: COMPANY.name,
     locale: "en_US",
     type: "website",
+    images: [{ url: "/images/og/homepage.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESC,
+    images: ["/images/og/homepage.jpg"],
   },
 };
 
@@ -114,29 +118,10 @@ export default function ResidentialPage() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <nav className="max-w-7xl mx-auto px-6 pt-4" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-text-secondary">
-          <li>
-            <Link href="/" className="hover:text-navy transition-colors">
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <Link
-              href="/business"
-              className="hover:text-navy transition-colors"
-            >
-              Business
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-navy font-medium">
-            Residential
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb items={[
+        { label: "Business", href: "/business" },
+        { label: "Residential" },
+      ]} />
 
       <HeroSection />
       <PortfolioSection />

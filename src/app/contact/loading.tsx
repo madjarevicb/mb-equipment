@@ -17,7 +17,7 @@ export default function ContactLoading() {
       </section>
 
       {/* Form section skeleton */}
-      <section className="py-24 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Left column — form (3/5) */}
@@ -30,11 +30,11 @@ export default function ContactLoading() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <div className="h-4 w-20 bg-gray-200 rounded mb-1.5" />
-                    <div className="h-12 w-full bg-gray-200 rounded-md" />
+                    <div className="h-12 w-full bg-gray-200" />
                   </div>
                   <div>
                     <div className="h-4 w-14 bg-gray-200 rounded mb-1.5" />
-                    <div className="h-12 w-full bg-gray-200 rounded-md" />
+                    <div className="h-12 w-full bg-gray-200" />
                   </div>
                 </div>
 
@@ -42,31 +42,31 @@ export default function ContactLoading() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <div className="h-4 w-14 bg-gray-200 rounded mb-1.5" />
-                    <div className="h-12 w-full bg-gray-200 rounded-md" />
+                    <div className="h-12 w-full bg-gray-200" />
                   </div>
                   <div>
                     <div className="h-4 w-20 bg-gray-200 rounded mb-1.5" />
-                    <div className="h-12 w-full bg-gray-200 rounded-md" />
+                    <div className="h-12 w-full bg-gray-200" />
                   </div>
                 </div>
 
                 {/* Interest select */}
                 <div>
                   <div className="h-4 w-24 bg-gray-200 rounded mb-1.5" />
-                  <div className="h-12 w-full bg-gray-200 rounded-md" />
+                  <div className="h-12 w-full bg-gray-200" />
                 </div>
 
                 {/* Message textarea */}
                 <div>
                   <div className="h-4 w-18 bg-gray-200 rounded mb-1.5" />
-                  <div className="h-32 w-full bg-gray-200 rounded-md" />
+                  <div className="h-32 w-full bg-gray-200" />
                 </div>
 
                 {/* Helper text */}
                 <div className="h-3 w-72 bg-gray-200 rounded" />
 
                 {/* Submit button */}
-                <div className="h-12 w-full sm:w-40 bg-gray-200 rounded-md" />
+                <div className="h-12 w-full sm:w-40 bg-gray-200" />
               </div>
             </div>
 
@@ -104,7 +104,7 @@ export default function ContactLoading() {
                 </div>
 
                 {/* Map placeholder */}
-                <div className="bg-gray-200 rounded-md aspect-[4/3]" />
+                <div className="bg-gray-200 aspect-[4/3]" />
               </div>
             </div>
           </div>

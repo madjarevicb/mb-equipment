@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
 import { processSteps, faqItems, testimonials } from "@/data/company-overview";
 import {
@@ -10,6 +10,7 @@ import {
   MidCtaSection,
   ValuesSection,
   SocialProofSection,
+  ImageBreakSection,
   FaqSection,
   CtaSection,
 } from "./_sections";
@@ -123,16 +124,10 @@ export default function CompanyOverviewPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
 
-      {/* Breadcrumb nav */}
-      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 pt-4">
-        <ol role="list" className="flex items-center gap-2 text-sm text-text-secondary">
-          <li><Link href="/" className="hover:text-gold transition-colors">Home</Link></li>
-          <li aria-hidden="true">/</li>
-          <li><Link href="/about" className="hover:text-gold transition-colors">About</Link></li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-text-primary font-medium">Company Overview</li>
-        </ol>
-      </nav>
+      <Breadcrumb items={[
+        { label: "About", href: "/about" },
+        { label: "Company Overview" },
+      ]} />
 
       <HeroSection />
       <TimelineSection />
@@ -140,6 +135,7 @@ export default function CompanyOverviewPage() {
       <ProcessSection />
       <MidCtaSection />
       <ValuesSection />
+      <ImageBreakSection />
       <SocialProofSection />
       <FaqSection />
       <CtaSection />

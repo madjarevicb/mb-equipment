@@ -7,26 +7,27 @@ export default function GlobalChainsSection() {
 
   return (
     <section
-      className="py-20 bg-white overflow-hidden"
+      className="py-16 lg:py-20 bg-white overflow-hidden"
       aria-labelledby="global-chains-heading"
     >
-      <div className="max-w-6xl mx-auto px-6 mb-10">
+      <div className="max-w-7xl mx-auto px-6 mb-10">
         <AnimatedSection>
-          <p className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-4">
             Global Partnerships
           </p>
           <h2
             id="global-chains-heading"
-            className="font-display text-3xl sm:text-4xl font-bold text-navy mb-4"
+            className="font-display text-3xl sm:text-4xl font-bold text-text-primary leading-[1.1] mb-4"
           >
-            Multi-Unit Partners
+            Multi-Unit<br />
+            <span className="italic font-normal">Partners</span>
           </h2>
           <p className="text-text-secondary text-sm">
             {globalChains.map((chain, i) => (
               <span key={chain.name}>
                 {chain.name}
                 {i < globalChains.length - 1 && (
-                  <span className="text-gold mx-2">·</span>
+                  <span className="text-text-secondary/30 mx-2">—</span>
                 )}
               </span>
             ))}
@@ -40,7 +41,7 @@ export default function GlobalChainsSection() {
           {tripled.map((item, i) => (
             <div
               key={`gc-${i}`}
-              className="shrink-0 w-[400px] h-[220px] rounded-sm overflow-hidden relative"
+              className="shrink-0 w-[400px] h-[220px] overflow-hidden relative"
             >
               <Image
                 src={item.image}

@@ -11,18 +11,18 @@ export default function HomepageLoading() {
           <div className="h-10 sm:h-14 lg:h-16 max-w-xl w-full bg-white/10 rounded" />
           <div className="h-6 max-w-xl w-full bg-white/5 rounded" />
           <div className="flex gap-4 pt-4">
-            <div className="h-14 w-44 bg-white/10 rounded-sm" />
-            <div className="h-14 w-48 bg-white/5 rounded-sm" />
+            <div className="h-14 w-44 bg-white/10" />
+            <div className="h-14 w-48 bg-white/5" />
           </div>
         </div>
         {/* Middleby badge skeleton */}
-        <div className="absolute bottom-12 left-6 h-11 w-60 bg-white/5 rounded-lg" />
+        <div className="absolute bottom-12 left-6 h-11 w-60 bg-white/5" />
         {/* Bottom gradient */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Partners skeleton — thin logo carousel */}
-      <section className="py-16 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-16 lg:py-20 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6 mb-10">
           <div className="h-4 w-72 bg-gray-200 rounded mx-auto" />
         </div>
@@ -37,7 +37,7 @@ export default function HomepageLoading() {
       </section>
 
       {/* Sectors skeleton — bg-offwhite, heading + 3 cards */}
-      <section className="py-24 bg-offwhite animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-offwhite animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           {/* Heading block */}
           <div className="max-w-2xl space-y-3 mb-16">
@@ -48,17 +48,17 @@ export default function HomepageLoading() {
           </div>
           {/* Cards grid — 1 large left, 2 stacked right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="min-h-[420px] lg:min-h-[560px] bg-gray-200 rounded-sm" />
+            <div className="min-h-[420px] lg:min-h-[560px] bg-gray-200" />
             <div className="grid grid-rows-2 gap-6">
-              <div className="min-h-[260px] bg-gray-200 rounded-sm" />
-              <div className="min-h-[260px] bg-gray-200 rounded-sm" />
+              <div className="min-h-[260px] bg-gray-200" />
+              <div className="min-h-[260px] bg-gray-200" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats skeleton — bg-navy, large stat left + 3 right */}
-      <section className="py-24 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left — feature stat */}
@@ -67,7 +67,7 @@ export default function HomepageLoading() {
               <div className="h-24 sm:h-28 lg:h-32 w-64 bg-white/10 rounded" />
               <div className="h-6 w-44 bg-white/5 rounded" />
               <div className="h-4 w-56 bg-white/5 rounded" />
-              <div className="w-16 h-[2px] bg-white/10 mt-4" />
+              <div className="w-16 h-px bg-white/10 mt-4" />
             </div>
             {/* Right — 3 smaller stats */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-6 lg:pt-8">
@@ -84,7 +84,7 @@ export default function HomepageLoading() {
       </section>
 
       {/* About skeleton — bg-white, two-column grid */}
-      <section className="py-24 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left — heading */}
@@ -92,7 +92,7 @@ export default function HomepageLoading() {
               <div className="h-4 w-24 bg-gray-200 rounded" />
               <div className="h-10 w-full bg-gray-200 rounded" />
               <div className="h-8 w-3/4 bg-gray-200 rounded" />
-              <div className="w-10 h-[2px] bg-gray-200 mt-2" />
+              <div className="w-10 h-px bg-gray-200 mt-2" />
             </div>
             {/* Right — text paragraphs */}
             <div className="lg:col-span-7 space-y-4">
@@ -112,7 +112,7 @@ export default function HomepageLoading() {
       </section>
 
       {/* FAQ skeleton — bg-offwhite, heading left + accordion right */}
-      <section className="py-24 bg-offwhite animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-offwhite animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left — heading */}
@@ -122,7 +122,7 @@ export default function HomepageLoading() {
               <div className="h-8 w-4/5 bg-gray-200 rounded" />
               <div className="h-4 w-full bg-gray-100 rounded mt-2" />
               <div className="h-4 w-3/4 bg-gray-100 rounded" />
-              <div className="w-10 h-[2px] bg-gray-200 mt-4" />
+              <div className="w-10 h-px bg-gray-200 mt-4" />
             </div>
             {/* Right — accordion items */}
             <div className="lg:col-span-8 divide-y divide-gray-200">
@@ -141,7 +141,7 @@ export default function HomepageLoading() {
       </section>
 
       {/* CTA skeleton — bg-white, text left + navy box right */}
-      <section className="py-24 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-32 lg:py-40 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left — headline + text */}
@@ -151,15 +151,15 @@ export default function HomepageLoading() {
               <div className="h-5 max-w-xl w-full bg-gray-100 rounded" />
               <div className="h-4 max-w-lg w-full bg-gray-100 rounded" />
               <div className="h-4 max-w-md w-full bg-gray-100 rounded" />
-              <div className="w-10 h-[2px] bg-gray-200 mt-4" />
+              <div className="w-10 h-px bg-gray-200 mt-4" />
             </div>
             {/* Right — navy CTA box */}
             <div className="lg:col-span-5">
               <div className="bg-navy p-8 lg:p-10 space-y-4">
                 <div className="h-4 w-full bg-white/5 rounded" />
                 <div className="h-4 w-3/4 bg-white/5 rounded" />
-                <div className="h-14 w-full bg-white/10 rounded-sm mt-6" />
-                <div className="h-14 w-full bg-white/5 rounded-sm" />
+                <div className="h-14 w-full bg-white/10 mt-6" />
+                <div className="h-14 w-full bg-white/5" />
                 <div className="h-3 w-48 bg-white/5 rounded mt-4" />
               </div>
             </div>

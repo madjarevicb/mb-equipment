@@ -1,50 +1,40 @@
-import Link from "next/link";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import ChevronRightIcon from "@/components/ui/ChevronRightIcon";
+import Button from "@/components/ui/Button";
 
 export default function CtaSection() {
   return (
     <section
-      className="py-24 bg-navy relative overflow-hidden"
+      className="bg-navy"
       aria-labelledby="cta-heading"
     >
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-red/5 rounded-full translate-y-1/2 -translate-x-1/2" />
-
-      <div className="relative max-w-7xl mx-auto px-6 text-center">
-        <AnimatedSection>
-          <span className="text-gold text-sm font-semibold uppercase tracking-[0.2em]">
+      <div className="max-w-7xl mx-auto px-6 py-32 lg:py-40">
+        <div className="max-w-3xl">
+          <p className="text-white/30 text-xs font-medium uppercase tracking-[0.3em] mb-8">
             Experience It Live
-          </span>
+          </p>
           <h2
             id="cta-heading"
-            className="font-display text-3xl lg:text-5xl font-bold text-white mt-4 mb-6"
+            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6"
           >
-            Every Solution on This Page Is Running in Our Belgrade Demo Center
+            See It Running.<br />
+            <span className="italic font-normal">In Our Belgrade Demo Center.</span>
           </h2>
-          <p className="text-white/90 max-w-lg mx-auto mb-10 leading-relaxed">
+          <p className="text-white/60 leading-relaxed mb-12 max-w-lg">
             Our showroom features live cooking stations with TurboChef, Middleby
             Marshall, and Follett equipment — available for hands-on testing and
             recipe development with your team.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/demo-centers"
-              className="inline-flex items-center gap-2 bg-red text-white font-semibold px-10 py-4 rounded-sm shadow-lg hover:bg-red-hover hover:-translate-y-px transition-all"
-            >
+          <div className="flex flex-wrap gap-4">
+            <Button variant="primary" href="/demo-centers">
               Book a Live Demo
-              <ChevronRightIcon className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 border border-white/30 text-white font-semibold px-10 py-4 rounded-sm hover:bg-white/10 transition-all"
-            >
+            </Button>
+            <Button variant="ghost-dark" href="/contact" arrow={false}>
               Request a Consultation
-              <ChevronRightIcon className="w-4 h-4" />
-            </Link>
+            </Button>
           </div>
-        </AnimatedSection>
+          <p className="text-white/25 text-xs tracking-[0.2em] mt-10">
+            Walk-ins welcome · Belgrade showroom open weekdays 9–17h
+          </p>
+        </div>
       </div>
     </section>
   );

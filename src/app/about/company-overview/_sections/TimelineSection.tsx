@@ -1,43 +1,43 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import SectionHeading from "@/components/ui/SectionHeading";
-import type { Milestone } from "@/data/company-overview";
 import { milestones } from "@/data/company-overview";
-
-const colorMap: Record<Milestone["color"], { dot: string; number: string }> = {
-  gold: { dot: "bg-gold", number: "text-gold/20" },
-  red: { dot: "bg-red", number: "text-red/20" },
-};
 
 export default function TimelineSection() {
   return (
-    <section className="py-28 bg-white" aria-labelledby="timeline-heading">
+    <section className="py-24 lg:py-32 bg-white" aria-labelledby="timeline-heading">
       <div className="max-w-7xl mx-auto px-6">
-        <AnimatedSection>
-          <div className="mb-20">
-            <SectionHeading id="timeline-heading" heading="20 Years of Building Kitchens That Work" divider />
-          </div>
-        </AnimatedSection>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          {/* Left — heading */}
+          <AnimatedSection className="lg:col-span-4" animation="fade-right">
+            <h2 id="timeline-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-[1.1] mb-5">
+              Twenty Years<br />
+              <span className="italic font-normal">of Building</span>
+            </h2>
+            <p className="text-text-secondary leading-relaxed text-sm">
+              From a three-person team in Belgrade to 40+ countries. The premise has not changed — only the scale.
+            </p>
+            <div className="w-12 h-px bg-gold/50 mt-8" />
+          </AnimatedSection>
 
-        <AnimatedSection stagger>
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-[0.9375rem] lg:left-1/2 top-0 bottom-0 w-[2px] bg-gold/20 lg:-translate-x-px" />
-            <ol role="list" aria-label="Company timeline" className="list-none">
+          {/* Right — milestones as stacked blocks */}
+          <div className="lg:col-span-8">
+            <ol role="list" aria-label="Company timeline" className="list-none space-y-0">
               {milestones.map((m, i) => (
-                <li key={m.number} className={`relative flex flex-col lg:flex-row gap-8 lg:gap-16 pl-10 lg:pl-0 ${i < milestones.length - 1 ? "mb-20" : ""}`}>
-                  <div className={`absolute left-[0.4375rem] lg:left-1/2 top-2 w-4 h-4 rounded-full ${colorMap[m.color].dot} border-4 border-white lg:-translate-x-1/2 z-10`} />
-                  <div className="lg:w-1/2 lg:text-right lg:pr-16">
-                    <span className={`font-display text-5xl lg:text-7xl font-bold ${colorMap[m.color].number} italic leading-none`} aria-hidden="true">{m.number}</span>
-                    <span className="block text-gold text-sm font-semibold uppercase tracking-[0.2em] mt-2">{m.year}</span>
-                    <h3 className="font-display text-xl font-bold text-text-primary mt-2">{m.title}</h3>
-                  </div>
-                  <div className="lg:w-1/2 lg:pl-16">
-                    <p className="text-text-secondary leading-relaxed">{m.description}</p>
-                  </div>
-                </li>
+                <AnimatedSection key={m.number} delay={i * 0.06}>
+                  <li className={`grid grid-cols-[auto_1fr] gap-6 lg:gap-10 py-8 ${i < milestones.length - 1 ? "border-b border-gray-200" : ""}`}>
+                    <div className="w-16 lg:w-20 flex-shrink-0">
+                      <span className="font-display text-3xl lg:text-4xl font-bold text-text-primary/10 italic leading-none">{m.number}</span>
+                      <span className="block text-gold/80 text-[11px] font-medium uppercase tracking-[0.2em] mt-1">{m.year}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-medium text-text-primary mb-2">{m.title}</h3>
+                      <p className="text-text-secondary text-sm leading-[1.8]">{m.description}</p>
+                    </div>
+                  </li>
+                </AnimatedSection>
               ))}
             </ol>
           </div>
-        </AnimatedSection>
+        </div>
       </div>
     </section>
   );

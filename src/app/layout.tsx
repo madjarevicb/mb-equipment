@@ -18,7 +18,7 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-cormorant",
-  weight: ["700"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | MB Equipment Solutions",
   },
   description:
-    "Leading provider of commercial kitchen equipment. Authorized Middleby partner. 110+ brands for hotels, restaurants, residential, and food processing. Belgrade, Serbia.",
+    "Authorized Middleby partner providing 110+ commercial kitchen equipment brands for hotels, restaurants, residential, and food processing. Belgrade, Serbia.",
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
@@ -113,7 +113,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-red focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-semibold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-red focus:text-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium"
         >
           Skip to content
         </a>

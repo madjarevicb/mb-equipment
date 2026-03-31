@@ -3,38 +3,47 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function AboutSection() {
   return (
-    <section aria-label="About MB Equipment Solutions" className="py-24 bg-white">
+    <section aria-label="About MB Equipment Solutions" className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <AnimatedSection animation="fade-up">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            <div className="lg:col-span-5">
-              <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-3">Who We Are</p>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-2">
-                Southeast Europe&apos;s Premier Kitchen Equipment Partner
-              </h2>
-              <div className="w-10 h-[2px] bg-gold" />
-            </div>
-            <div className="lg:col-span-7 text-text-secondary leading-relaxed space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          {/* Left — heading block */}
+          <AnimatedSection className="lg:col-span-5" animation="fade-right">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-[1.1] mb-6">
+              The Region&apos;s Most Complete<br />
+              <span className="italic font-normal">Kitchen Partner</span>
+            </h2>
+            <div className="w-12 h-px bg-gold/50" />
+          </AnimatedSection>
+
+          {/* Right — editorial text with visual break */}
+          <AnimatedSection className="lg:col-span-7" animation="fade-left">
+            <div className="space-y-6 text-text-secondary leading-[1.8]">
               <p>
-                MB Equipment Solutions is the region&apos;s most comprehensive commercial kitchen equipment provider, authorized by Middleby Corporation — the world&apos;s largest foodservice equipment manufacturer. From our headquarters in Belgrade, Serbia, we supply, install, and service professional kitchen equipment across 40+ countries.
+                MB Equipment Solutions is authorized by Middleby Corporation — the world&apos;s largest foodservice equipment manufacturer. From Belgrade, we supply, install, and service professional kitchen equipment across 40+ countries.
               </p>
+
+              {/* Pull quote — visual break in the text wall */}
+              <blockquote className="border-l-2 border-gold/40 pl-6 py-2 my-8">
+                <p className="font-display text-xl lg:text-2xl text-text-primary italic leading-snug">
+                  We do not sell equipment — we build kitchens that perform.
+                </p>
+              </blockquote>
+
               <p>
-                Our portfolio spans 110+ leading equipment brands including commercial ovens, refrigeration systems, food preparation equipment, warewashing solutions, and ventilation systems. We serve hotels, restaurants, quick-service chains, catering operations, luxury residential kitchens, and industrial food processing facilities.
+                Our portfolio spans 110+ brands: commercial ovens, refrigeration, food preparation, warewashing, and ventilation. We consult on workflow, produce CAD layouts, coordinate logistics, and commission every unit on-site. After installation, our engineering team provides ongoing maintenance and spare parts from regional inventory.
               </p>
-              <p>
-                What sets us apart is end-to-end project capability. We do not just sell equipment — we consult on kitchen workflow, produce detailed CAD layouts, coordinate delivery logistics, and commission every unit on-site. After installation, our service engineering team provides ongoing maintenance, warranty support, and spare parts from our regional inventory.
-              </p>
-              <div className="pt-2">
+
+              <div className="pt-4">
                 <Link
                   href="/about/company-overview"
-                  className="inline-flex items-center gap-2 text-red text-sm font-semibold hover:gap-4 transition-all"
+                  className="inline-flex items-center gap-3 text-text-primary text-xs font-medium uppercase tracking-[0.15em] hover:gap-5 transition-all duration-500"
                 >
-                  Learn more about us <span aria-hidden="true" className="text-lg">&rarr;</span>
+                  About the company <span aria-hidden="true">&#8594;</span>
                 </Link>
               </div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
   );

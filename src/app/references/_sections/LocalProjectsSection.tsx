@@ -10,26 +10,27 @@ export default function LocalProjectsSection() {
 
   return (
     <section
-      className="py-20 bg-offwhite overflow-hidden"
+      className="py-16 lg:py-20 bg-offwhite overflow-hidden"
       aria-labelledby="local-projects-heading"
     >
-      <div className="max-w-6xl mx-auto px-6 mb-10">
+      <div className="max-w-7xl mx-auto px-6 mb-10">
         <AnimatedSection>
-          <p className="text-gold-text text-sm font-semibold uppercase tracking-[0.2em] mb-3">
+          <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-4">
             Featured Projects
           </p>
           <h2
             id="local-projects-heading"
-            className="font-display text-3xl sm:text-4xl font-bold text-navy mb-4"
+            className="font-display text-3xl sm:text-4xl font-bold text-text-primary leading-[1.1] mb-4"
           >
-            Featured Installations
+            Featured<br />
+            <span className="italic font-normal">Installations</span>
           </h2>
           <p className="text-text-secondary text-sm">
             {localProjects.map((project, i) => (
               <span key={project.name}>
                 {project.name}
                 {i < localProjects.length - 1 && (
-                  <span className="text-gold mx-2">·</span>
+                  <span className="text-text-secondary/30 mx-2">—</span>
                 )}
               </span>
             ))}
@@ -43,7 +44,7 @@ export default function LocalProjectsSection() {
           {row1.map((project, i) => (
             <div
               key={`r1-${i}`}
-              className="relative w-[320px] h-[220px] flex-shrink-0 rounded-sm overflow-hidden group"
+              className="relative w-[320px] h-[220px] flex-shrink-0 overflow-hidden group"
             >
               <Image
                 src={project.image}
@@ -55,10 +56,10 @@ export default function LocalProjectsSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
-                <h3 className="text-white font-display text-base font-bold drop-shadow-lg">
+                <h3 className="text-white font-display text-base font-bold">
                   {project.name}
                 </h3>
-                <p className="text-white/80 text-xs">{project.location}</p>
+                <p className="text-white/60 text-xs">{project.location}</p>
               </div>
             </div>
           ))}
@@ -71,7 +72,7 @@ export default function LocalProjectsSection() {
           {row2.map((project, i) => (
             <div
               key={`r2-${i}`}
-              className="relative w-[320px] h-[220px] flex-shrink-0 rounded-sm overflow-hidden group"
+              className="relative w-[320px] h-[220px] flex-shrink-0 overflow-hidden group"
             >
               <Image
                 src={project.image}
@@ -83,10 +84,10 @@ export default function LocalProjectsSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
-                <h3 className="text-white font-display text-base font-bold drop-shadow-lg">
+                <h3 className="text-white font-display text-base font-bold">
                   {project.name}
                 </h3>
-                <p className="text-white/80 text-xs">{project.location}</p>
+                <p className="text-white/60 text-xs">{project.location}</p>
               </div>
             </div>
           ))}

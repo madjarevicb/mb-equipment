@@ -74,7 +74,7 @@ export default function DesktopDropdown({ label, items }: DropdownProps) {
         aria-controls={menuId}
         onClick={() => { setIsOpen(!isOpen); setFocusedIndex(-1); }}
         onMouseEnter={() => setIsOpen(true)}
-        className="text-sm font-medium text-white/80 hover:text-gold transition-colors py-2 flex items-center gap-1"
+        className="text-sm font-medium text-white/60 hover:text-gold transition-colors py-2 flex items-center gap-1"
       >
         {label}
         <ChevronIcon className={`w-3.5 h-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
@@ -89,7 +89,7 @@ export default function DesktopDropdown({ label, items }: DropdownProps) {
             id={menuId}
             role="menu"
             aria-label={label}
-            className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 min-w-[220px]"
+            className="bg-white border border-gray-200 py-2 min-w-[220px]"
           >
             {items.map((child, i) => (
               <Link

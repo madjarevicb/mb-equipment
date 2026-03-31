@@ -24,14 +24,14 @@ export default function DemoCentersLoading() {
           <div className="h-14 max-w-lg w-full bg-white/10 rounded" />
           <div className="h-6 max-w-xl w-full bg-white/5 rounded" />
           <div className="flex gap-4 mt-4">
-            <div className="h-12 w-36 bg-white/10 rounded-sm" />
-            <div className="h-12 w-40 bg-white/5 rounded-sm" />
+            <div className="h-12 w-36 bg-white/10" />
+            <div className="h-12 w-40 bg-white/5" />
           </div>
         </div>
       </section>
 
       {/* Intro skeleton */}
-      <section className="py-16 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-16 lg:py-20 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-5 space-y-3">
@@ -48,7 +48,7 @@ export default function DemoCentersLoading() {
       </section>
 
       {/* Centers skeleton */}
-      <section className="py-16 bg-offwhite animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-offwhite animate-pulse" aria-hidden="true">
         <div className="max-w-6xl mx-auto px-6">
           <div className="h-4 w-24 bg-gray-200 rounded mb-3" />
           <div className="h-10 w-64 bg-gray-200 rounded mb-12" />
@@ -73,12 +73,12 @@ export default function DemoCentersLoading() {
       </section>
 
       {/* CTA skeleton */}
-      <section className="py-16 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-4xl mx-auto px-6 text-center space-y-4">
           <div className="h-4 w-20 bg-white/10 rounded mx-auto" />
           <div className="h-10 w-72 bg-white/10 rounded mx-auto" />
           <div className="h-12 w-full max-w-lg bg-white/5 rounded mx-auto" />
-          <div className="h-12 w-48 bg-white/10 rounded-sm mx-auto mt-4" />
+          <div className="h-12 w-48 bg-white/10 mx-auto mt-4" />
         </div>
       </section>
 

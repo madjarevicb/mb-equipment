@@ -20,13 +20,13 @@ export default function OurBrandsLoading() {
         <div className="max-w-7xl mx-auto px-6 py-32 w-full">
           <div className="max-w-2xl space-y-4">
             <div className="h-4 w-48 bg-white/10 rounded" />
-            <div className="h-[2px] w-12 bg-white/10" />
+            <div className="h-px w-12 bg-white/10" />
             <div className="h-14 max-w-lg w-full bg-white/10 rounded" />
             <div className="h-6 max-w-xl w-full bg-white/10 rounded" />
             <div className="h-20 max-w-xl w-full bg-white/5 rounded" />
             <div className="flex gap-4 pt-4">
-              <div className="h-12 w-44 bg-white/10 rounded-sm" />
-              <div className="h-12 w-48 bg-white/5 rounded-sm" />
+              <div className="h-12 w-44 bg-white/10" />
+              <div className="h-12 w-48 bg-white/5" />
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function OurBrandsLoading() {
 
       {/* Segments skeleton */}
       <section
-        className="py-10 bg-white border-b border-gray-100 animate-pulse"
+        className="py-16 lg:py-20 bg-white border-b border-gray-100 animate-pulse"
         aria-hidden="true"
       >
         <div className="max-w-7xl mx-auto px-6">
@@ -50,7 +50,7 @@ export default function OurBrandsLoading() {
       </section>
 
       {/* Brands grid skeleton */}
-      <section className="py-24 bg-offwhite animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-offwhite animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16 space-y-4">
             <div className="h-4 w-28 bg-gray-200 rounded" />
@@ -59,7 +59,7 @@ export default function OurBrandsLoading() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Array.from({ length: 9 }).map((_, i) => (
-              <div key={i} className="bg-white rounded-sm overflow-hidden">
+              <div key={i} className="bg-white overflow-hidden">
                 <div className="h-32 bg-gray-100" />
                 <div className="p-6 space-y-3">
                   <div className="flex justify-between">
@@ -75,7 +75,7 @@ export default function OurBrandsLoading() {
       </section>
 
       {/* Process skeleton */}
-      <section className="py-24 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4 space-y-4">
@@ -103,15 +103,15 @@ export default function OurBrandsLoading() {
 
       {/* CTA skeleton */}
       <section
-        className="py-20 bg-offwhite border-t border-gray-200 animate-pulse"
+        className="py-28 lg:py-36 bg-offwhite border-t border-gray-200 animate-pulse"
         aria-hidden="true"
       >
         <div className="max-w-3xl mx-auto px-6 flex flex-col items-center gap-4">
           <div className="h-10 max-w-sm w-full bg-gray-200 rounded" />
           <div className="h-5 max-w-md w-full bg-gray-100 rounded" />
           <div className="flex gap-4 mt-4">
-            <div className="h-12 w-40 bg-gray-200 rounded-sm" />
-            <div className="h-12 w-44 bg-gray-100 rounded-sm" />
+            <div className="h-12 w-40 bg-gray-200" />
+            <div className="h-12 w-44 bg-gray-100" />
           </div>
         </div>
       </section>

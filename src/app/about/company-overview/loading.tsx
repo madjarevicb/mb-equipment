@@ -31,11 +31,11 @@ export default function CompanyOverviewLoading() {
       </section>
 
       {/* Timeline skeleton */}
-      <section className="py-28 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center gap-6 mb-20">
             <div className="h-10 max-w-xs w-full bg-gray-200 rounded" />
-            <div className="w-16 h-[2px] bg-gray-200" />
+            <div className="w-16 h-px bg-gray-200" />
           </div>
           <div className="max-w-4xl mx-auto space-y-16">
             {[1, 2, 3, 4].map((n) => (
@@ -52,7 +52,7 @@ export default function CompanyOverviewLoading() {
       </section>
 
       {/* Equipment grid skeleton */}
-      <section className="py-28 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center gap-6 mb-16">
             <div className="h-10 max-w-sm w-full bg-white/10 rounded" />
@@ -74,7 +74,7 @@ export default function CompanyOverviewLoading() {
       </section>
 
       {/* Process skeleton */}
-      <section className="py-28 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center gap-6 mb-20">
             <div className="h-4 w-24 bg-gray-200 rounded" />
@@ -102,7 +102,7 @@ export default function CompanyOverviewLoading() {
       </section>
 
       {/* Mid-page CTA skeleton */}
-      <section className="py-20 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-16 lg:py-20 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2">
             <div className="h-8 max-w-sm w-full bg-white/10 rounded" />
@@ -113,11 +113,11 @@ export default function CompanyOverviewLoading() {
       </section>
 
       {/* Values skeleton */}
-      <section className="py-28 bg-offwhite animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-offwhite animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center gap-6 mb-20">
             <div className="h-10 max-w-xs w-full bg-gray-200 rounded" />
-            <div className="w-16 h-[2px] bg-gray-200" />
+            <div className="w-16 h-px bg-gray-200" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((n) => (
@@ -133,11 +133,11 @@ export default function CompanyOverviewLoading() {
       </section>
 
       {/* Social Proof skeleton */}
-      <section className="py-28 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center gap-6 mb-16">
             <div className="h-10 max-w-sm w-full bg-gray-200 rounded" />
-            <div className="w-16 h-[2px] bg-gray-200" />
+            <div className="w-16 h-px bg-gray-200" />
             <div className="h-5 max-w-lg w-full bg-gray-100 rounded" />
           </div>
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
@@ -158,7 +158,7 @@ export default function CompanyOverviewLoading() {
       </section>
 
       {/* FAQ skeleton */}
-      <section className="py-28 bg-offwhite animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-offwhite animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center gap-6 mb-20">
             <div className="h-10 max-w-xs w-full bg-gray-200 rounded" />
@@ -174,7 +174,7 @@ export default function CompanyOverviewLoading() {
       </section>
 
       {/* CTA skeleton */}
-      <section className="py-28 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-32 lg:py-40 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-3xl mx-auto px-6 flex flex-col items-center gap-6">
           <div className="h-10 max-w-md w-full bg-white/10 rounded" />
           <div className="h-5 max-w-sm w-full bg-white/5 rounded" />

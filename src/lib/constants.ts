@@ -25,6 +25,6 @@ export function sanitizeHTML(html: string): string {
     const safe = [href, cls].filter(Boolean).join(" ");
     return safe ? `<a ${safe}>` : "<a>";
   });
-  cleaned = cleaned.replace(/href=['"](?!\/)[^'"]*['"]/gi, 'href="#"');
+  cleaned = cleaned.replace(/href=['"](?!\/[^:'"]*['"])[^'"]*['"]/gi, 'href="#"');
   return cleaned;
 }

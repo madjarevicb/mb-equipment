@@ -20,20 +20,20 @@ export default function InnovationLoading() {
         <div className="max-w-7xl mx-auto px-6 py-32 w-full">
           <div className="max-w-2xl space-y-4">
             <div className="h-4 w-40 bg-white/10 rounded" />
-            <div className="h-[2px] w-12 bg-white/10" />
+            <div className="h-px w-12 bg-white/10" />
             <div className="h-14 max-w-lg w-full bg-white/10 rounded" />
             <div className="h-6 max-w-xl w-full bg-white/10 rounded" />
             <div className="h-20 max-w-xl w-full bg-white/5 rounded" />
             <div className="flex gap-4 pt-4">
-              <div className="h-12 w-48 bg-white/10 rounded-sm" />
-              <div className="h-12 w-56 bg-white/5 rounded-sm" />
+              <div className="h-12 w-48 bg-white/10" />
+              <div className="h-12 w-56 bg-white/5" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured products skeleton */}
-      <section className="py-24 bg-red animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-red animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="space-y-4 mb-16">
             <div className="h-4 w-36 bg-white/20 rounded" />
@@ -49,7 +49,7 @@ export default function InnovationLoading() {
       </section>
 
       {/* Technology themes skeleton */}
-      <section className="py-28 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-24 lg:py-32 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-xl mb-16 space-y-4">
             <div className="h-4 w-48 bg-gray-200 rounded" />
@@ -97,14 +97,14 @@ export default function InnovationLoading() {
       </section>
 
       {/* CTA skeleton */}
-      <section className="py-24 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-32 lg:py-40 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-3xl mx-auto px-6 flex flex-col items-center gap-6">
           <div className="h-4 w-32 bg-white/10 rounded" />
           <div className="h-12 max-w-lg w-full bg-white/10 rounded" />
           <div className="h-5 max-w-sm w-full bg-white/5 rounded" />
           <div className="flex gap-4 mt-4">
-            <div className="h-12 w-48 bg-white/10 rounded-sm" />
-            <div className="h-12 w-56 bg-white/5 rounded-sm" />
+            <div className="h-12 w-48 bg-white/10" />
+            <div className="h-12 w-56 bg-white/5" />
           </div>
         </div>
       </section>

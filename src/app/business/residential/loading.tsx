@@ -25,13 +25,13 @@ export default function ResidentialLoading() {
       </section>
 
       {/* Portfolio skeleton */}
-      <section className="py-28 bg-white animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-white animate-pulse" aria-hidden="true">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             <div className="lg:col-span-2 space-y-4">
               <div className="h-4 w-28 bg-gray-200 rounded" />
               <div className="h-12 w-64 bg-gray-200 rounded" />
-              <div className="h-[2px] w-16 bg-gray-200" />
+              <div className="h-px w-16 bg-gray-200" />
             </div>
             <div className="lg:col-span-3 space-y-4">
               <div className="h-20 w-full bg-gray-100 rounded" />
@@ -43,7 +43,7 @@ export default function ResidentialLoading() {
 
       {/* Brand carousel skeleton */}
       <section
-        className="py-20 bg-navy animate-pulse"
+        className="py-16 lg:py-20 bg-navy animate-pulse"
         aria-hidden="true"
       >
         <div className="max-w-7xl mx-auto px-6 space-y-12">
@@ -61,11 +61,11 @@ export default function ResidentialLoading() {
       </section>
 
       {/* Showcase skeleton */}
-      <section className="py-28 bg-offwhite animate-pulse" aria-hidden="true">
+      <section className="py-28 lg:py-36 bg-offwhite animate-pulse" aria-hidden="true">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-sm overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded overflow-hidden">
             <div className="bg-navy/10 p-16 min-h-[300px] space-y-4">
-              <div className="h-[2px] w-12 bg-gray-200" />
+              <div className="h-px w-12 bg-gray-200" />
               <div className="h-10 w-64 bg-gray-200 rounded" />
               <div className="h-20 w-full bg-gray-100 rounded" />
             </div>
@@ -75,7 +75,7 @@ export default function ResidentialLoading() {
       </section>
 
       {/* Brochures skeleton */}
-      <section className="py-20 bg-navy animate-pulse" aria-hidden="true">
+      <section className="py-16 lg:py-20 bg-navy animate-pulse" aria-hidden="true">
         <div className="max-w-5xl mx-auto px-6 flex flex-col lg:flex-row gap-8">
           <div className="space-y-3 lg:w-64">
             <div className="h-4 w-20 bg-white/10 rounded" />
@@ -91,7 +91,7 @@ export default function ResidentialLoading() {
 
       {/* CTA skeleton */}
       <section
-        className="py-24 bg-offwhite border-t border-gray-200 animate-pulse"
+        className="py-28 lg:py-36 bg-offwhite border-t border-gray-200 animate-pulse"
         aria-hidden="true"
       >
         <div className="max-w-4xl mx-auto px-6 flex flex-col items-center gap-4">
@@ -99,8 +99,8 @@ export default function ResidentialLoading() {
           <div className="h-10 max-w-sm w-full bg-gray-200 rounded" />
           <div className="h-16 max-w-lg w-full bg-gray-100 rounded" />
           <div className="flex gap-4 mt-4">
-            <div className="h-12 w-48 bg-gray-200 rounded-sm" />
-            <div className="h-12 w-36 bg-gray-100 rounded-sm" />
+            <div className="h-12 w-48 bg-gray-200 rounded" />
+            <div className="h-12 w-36 bg-gray-100 rounded" />
           </div>
         </div>
       </section>

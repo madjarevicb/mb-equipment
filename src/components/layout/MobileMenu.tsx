@@ -65,7 +65,7 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed inset-0 top-16 bg-white z-40 overflow-y-auto"
+          className="fixed inset-0 top-[65px] bg-white z-[60] overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"

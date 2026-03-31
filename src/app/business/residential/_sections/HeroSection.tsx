@@ -14,7 +14,7 @@ export default function HeroSection() {
         loop
         playsInline
         preload="metadata"
-        poster="/images/residential/hero-poster.jpg"
+        poster="/hero-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/residential-hero.mp4" type="video/mp4" />

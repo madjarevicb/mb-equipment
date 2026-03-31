@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 
-const HERO_BLUR =
-  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwQTE2MjgiLz48L3N2Zz4=";
 
 export default function HeroSection() {
   return (
     <section aria-label="Hero" className="relative min-h-screen flex items-center bg-navy pt-20 overflow-hidden">
-      {/* Video — desktop only, MP4 only (webm doesn't exist) */}
+      {/* Video background */}
       <video
         autoPlay
         muted
@@ -16,22 +14,10 @@ export default function HeroSection() {
         preload="metadata"
         poster="/hero-poster.jpg"
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/hero-web.mp4" type="video/mp4" />
       </video>
-
-      {/* Mobile poster — always visible on mobile */}
-      <Image
-        src="/hero-poster.jpg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        placeholder="blur"
-        blurDataURL={HERO_BLUR}
-        className="absolute inset-0 object-cover md:hidden"
-      />
 
       {/* Gradient overlays — lighter on mobile, content-aware on desktop */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/40 to-transparent md:from-navy/70 md:via-navy/30" />

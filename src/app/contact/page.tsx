@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
-import ContactForm from "@/components/contact/ContactForm";
+import dynamic_ from "next/dynamic";
+const ContactForm = dynamic_(() => import("@/components/contact/ContactForm"));
 
 /* ------------------------------------------------------------------ */
 /*  Static rendering                                                   */

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/layout/Header";
+import VercelAnalytics from "@/components/analytics/VercelAnalytics";
 import Footer from "@/components/layout/Footer";
 import { COMPANY } from "@/lib/constants";
 import "./globals.css";
@@ -126,8 +125,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
-        <Analytics />
-        <SpeedInsights />
+        <VercelAnalytics />
       </body>
     </html>
   );

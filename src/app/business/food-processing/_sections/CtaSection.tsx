@@ -36,8 +36,7 @@ export default function CtaSection() {
             <div className="lg:col-span-5">
               <div className="border-l-2 border-gold/30 pl-8 space-y-6">
                 {[
-                  { value: "2,000+", label: "Projects delivered" },
-                  { value: "40+", label: "Countries served" },
+                  { value: "50+", label: "Projects delivered" },
                   { value: "110+", label: "Brands represented" },
                 ].map((stat) => (
                   <div key={stat.label}>
@@ -51,7 +50,7 @@ export default function CtaSection() {
                 ))}
                 <div className="pt-2">
                   <p className="text-white/30 text-xs">
-                    Balkans — Central Europe — Middle East — North Africa — Central Asia
+                    Balkans — Central Europe — Southeast Europe
                   </p>
                 </div>
               </div>

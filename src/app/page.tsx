@@ -20,7 +20,7 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE = "Commercial Kitchen Equipment | MB Equipment Solutions";
 const PAGE_DESC =
-  "Authorized Middleby partner supplying 110+ commercial kitchen equipment brands across 40+ countries. Hotels, restaurants, residential, and food processing.";
+  "Authorized Middleby partner supplying 110+ commercial kitchen equipment brands across Southeast Europe. Hotels, restaurants, residential, and food processing.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

@@ -22,7 +22,7 @@ export default function Footer() {
               className="h-12 w-auto brightness-0 invert mb-8"
             />
             <p className="font-display text-xl lg:text-2xl text-white/60 italic leading-snug max-w-sm mb-8">
-              Building kitchens that perform — across 40+ countries.
+              Building kitchens that perform — across Southeast Europe and beyond.
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-px bg-gold/40" />

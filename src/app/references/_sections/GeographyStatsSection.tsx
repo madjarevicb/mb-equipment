@@ -10,11 +10,11 @@ export default function GeographyStatsSection() {
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-center">
           <span className="text-white font-display text-lg font-bold">
-            2,000+ Projects
+            50+ Projects
           </span>
           <span className="text-white/20 mx-4 hidden sm:inline">|</span>
           <span className="text-white font-display text-lg font-bold">
-            40+ Countries
+            Southeast Europe
           </span>
           <span className="text-white/20 mx-4 hidden sm:inline">|</span>
           <span className="text-white font-display text-lg font-bold">

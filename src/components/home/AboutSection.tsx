@@ -19,7 +19,7 @@ export default function AboutSection() {
           <AnimatedSection className="lg:col-span-7" animation="fade-left">
             <div className="space-y-6 text-text-secondary leading-[1.8]">
               <p>
-                MB Equipment Solutions is authorized by Middleby Corporation — the world&apos;s largest foodservice equipment manufacturer. From Belgrade, we supply, install, and service professional kitchen equipment across 40+ countries.
+                MB Equipment Solutions is authorized by Middleby Corporation — one of the world&apos;s largest foodservice equipment manufacturers. From Belgrade, we supply, install, and service professional kitchen equipment across Southeast Europe and beyond.
               </p>
 
               {/* Pull quote — visual break in the text wall */}

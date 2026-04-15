@@ -18,7 +18,7 @@ export const dynamic = "force-static";
 
 /* ---------- metadata ---------- */
 const PAGE_TITLE = "Company Overview — Commercial Kitchen Equipment Partner";
-const PAGE_DESC = "Middleby-authorized commercial kitchen equipment partner in Belgrade, Serbia. 110+ brands, full-cycle service from specification to commissioning.";
+const PAGE_DESC = "Middleby-authorized commercial kitchen equipment partner in Belgrade, Serbia. 110+ brands, full-cycle service from spec to commissioning. Request a consultation.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -60,7 +60,7 @@ const structuredData = {
       name: PAGE_TITLE,
       description: PAGE_DESC,
       inLanguage: "en",
-      datePublished: "2024-01-15",
+      datePublished: "2025-01-01",
       dateModified: new Date().toISOString().split("T")[0],
       isPartOf: { "@id": `${COMPANY.url}/#website` },
       about: { "@id": `${COMPANY.url}/#organization` },

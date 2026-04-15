@@ -10,7 +10,7 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "Which countries do you serve?",
-    answer: "We serve 40+ countries across Southeast Europe and beyond from our headquarters in Belgrade, Serbia. Our coverage spans the Balkans, Central Europe, and select markets in the Middle East and North Africa. We handle equipment supply, installation, commissioning, and after-sales service in each market.",
+    answer: "We primarily serve Southeast Europe from our headquarters in Belgrade, Serbia. Our coverage spans the Balkans, Central Europe, and select markets beyond the region. We handle equipment supply, installation, commissioning, and after-sales service in each market.",
   },
   {
     question: "Do you provide kitchen design services?",

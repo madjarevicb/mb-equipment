@@ -39,8 +39,8 @@ export default function HeroSection() {
           <div className="w-16 h-px bg-gold/60 mb-6" />
 
           <p className="text-white/70 text-lg leading-relaxed max-w-lg font-light">
-            Trusted equipment partner for global chains, independent operators,
-            and hospitality groups across 40+ countries.
+            Trusted equipment partner for convention centers, hotels,
+            restaurants, and hospitality groups across Southeast Europe.
           </p>
         </div>
       </div>

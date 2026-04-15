@@ -88,6 +88,9 @@ const organizationSchema = {
     "Hotel Kitchen Design",
     "Middleby Equipment",
     "Residential Kitchen Appliances",
+    "Thermal Processing Equipment",
+    "Commercial Refrigeration",
+    "Stainless Steel Kitchen Fabrication",
   ],
   sameAs: [
     "https://www.linkedin.com/company/mb-equipment-solutions",

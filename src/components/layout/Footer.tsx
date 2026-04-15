@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { solutionLinks, companyLinks } from "@/lib/navigation";
+import { solutionLinks, equipmentLinks, companyLinks } from "@/lib/navigation";
 import { COMPANY } from "@/lib/constants";
 
 export default function Footer() {
@@ -34,12 +34,24 @@ export default function Footer() {
 
           {/* Nav columns — compact, pushed right */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-8 lg:pl-12">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 lg:gap-6 lg:pl-12">
               {/* Solutions */}
               <div>
                 <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30 mb-5">Solutions</p>
                 <ul className="space-y-3">
                   {solutionLinks.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} className="text-[13px] text-white/60 hover:text-white transition-colors duration-300">{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Equipment */}
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30 mb-5">Equipment</p>
+                <ul className="space-y-3">
+                  {equipmentLinks.map((item) => (
                     <li key={item.href}>
                       <Link href={item.href} className="text-[13px] text-white/60 hover:text-white transition-colors duration-300">{item.label}</Link>
                     </li>

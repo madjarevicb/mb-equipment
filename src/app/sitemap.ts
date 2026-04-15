@@ -14,6 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/business/food-processing`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/references`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/demo-centers`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/equipment`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/equipment/thermal-processing`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/equipment/refrigeration`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/equipment/neutral-inox`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/contact`, lastModified, changeFrequency: "yearly", priority: 0.8 },
     { url: `${baseUrl}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
   ];

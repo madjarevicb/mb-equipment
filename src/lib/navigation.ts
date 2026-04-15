@@ -23,6 +23,14 @@ export const navItems: NavItem[] = [
       { label: "Food Processing", href: "/business/food-processing" },
     ],
   },
+  {
+    label: "Equipment",
+    children: [
+      { label: "Thermal Processing", href: "/equipment/thermal-processing" },
+      { label: "Refrigeration", href: "/equipment/refrigeration" },
+      { label: "Neutral INOX", href: "/equipment/neutral-inox" },
+    ],
+  },
   { label: "References", href: "/references" },
   { label: "Demo Centers", href: "/demo-centers" },
 ];
@@ -36,5 +44,8 @@ const aboutChildren: NavChild[] =
 const standaloneLinks: NavChild[] = navItems
   .filter((item): item is NavItem & { href: string } => !!item.href)
   .map(({ label, href }) => ({ label, href }));
+
+export const equipmentLinks: NavChild[] =
+  navItems.find((item): item is NavItem & { children: NavChild[] } => item.label === "Equipment" && !!item.children)?.children ?? [];
 
 export const companyLinks: NavChild[] = [...aboutChildren, ...standaloneLinks];

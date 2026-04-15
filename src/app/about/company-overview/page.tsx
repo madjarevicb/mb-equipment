@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
-import { processSteps, faqItems, testimonials } from "@/data/company-overview";
+import { processSteps, faqItems } from "@/data/company-overview";
 import {
   HeroSection,
-  TimelineSection,
+  PartnershipSection,
   EquipmentSection,
   ProcessSection,
   MidCtaSection,
   ValuesSection,
-  SocialProofSection,
-  ImageBreakSection,
+  ReferencesSection,
   FaqSection,
   CtaSection,
 } from "./_sections";
@@ -19,7 +18,7 @@ export const dynamic = "force-static";
 
 /* ---------- metadata ---------- */
 const PAGE_TITLE = "Company Overview — Commercial Kitchen Equipment Partner";
-const PAGE_DESC = "Middleby-authorized commercial kitchen equipment partner in Belgrade, Serbia. 110+ brands, full-cycle service across 40+ countries.";
+const PAGE_DESC = "Middleby-authorized commercial kitchen equipment partner in Belgrade, Serbia. 110+ brands, full-cycle service from specification to commissioning.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -62,7 +61,7 @@ const structuredData = {
       description: PAGE_DESC,
       inLanguage: "en",
       datePublished: "2024-01-15",
-      dateModified: "2026-03-30",
+      dateModified: new Date().toISOString().split("T")[0],
       isPartOf: { "@id": `${COMPANY.url}/#website` },
       about: { "@id": `${COMPANY.url}/#organization` },
       publisher: { "@id": `${COMPANY.url}/#organization` },
@@ -86,21 +85,6 @@ const structuredData = {
         name: step.title,
         description: step.description,
       })),
-    },
-    {
-      "@type": "Review",
-      "@id": `${COMPANY.url}/about/company-overview#review`,
-      reviewBody: testimonials[0].quote,
-      author: {
-        "@type": "Organization",
-        name: testimonials[0].attribution,
-      },
-      itemReviewed: { "@id": `${COMPANY.url}/#organization` },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5",
-      },
     },
     {
       "@type": "FAQPage",
@@ -130,13 +114,12 @@ export default function CompanyOverviewPage() {
       ]} />
 
       <HeroSection />
-      <TimelineSection />
+      <PartnershipSection />
       <EquipmentSection />
       <ProcessSection />
       <MidCtaSection />
       <ValuesSection />
-      <ImageBreakSection />
-      <SocialProofSection />
+      <ReferencesSection />
       <FaqSection />
       <CtaSection />
     </>

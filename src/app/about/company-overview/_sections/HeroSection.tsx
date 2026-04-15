@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { heroStats } from "@/data/company-overview";
 
 const HERO_BLUR = "data:image/jpeg;base64,/9j/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAGAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAID/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIAAxESUv/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A1ehhaELAhjm5I6t9REg//9k=";
 
@@ -35,21 +34,11 @@ export default function HeroSection() {
           <div className="w-16 h-px bg-gold/60 mb-6" />
 
           <p className="text-white/70 text-lg leading-relaxed mb-4 max-w-lg font-light">
-            For over two decades, MB Equipment Solutions has designed, supplied, installed, and serviced commercial kitchen equipment across Southeast Europe and beyond.
+            From a single floor plan to a fully commissioned kitchen — MB Equipment Solutions designs, supplies, installs, and services commercial kitchens across Southeast Europe and beyond.
           </p>
           <p className="text-white/60 leading-relaxed mb-10 max-w-lg">
             Based in <Link href="/demo-centers" className="text-white/70 hover:text-white transition-colors duration-300">Belgrade</Link>, authorized by <Link href="/about/innovation" className="text-white/70 hover:text-white transition-colors duration-300">Middleby Corporation</Link> — 110+ brands, factory-trained engineers.
           </p>
-
-          <ul role="list" aria-label="Company statistics" className="flex flex-wrap items-center gap-y-2 mb-10 list-none">
-            {heroStats.map((stat, i) => (
-              <li key={stat.label} className="flex items-center">
-                {i > 0 && <span aria-hidden="true" className="mx-5 text-white/15">|</span>}
-                <span className="text-white/60 text-xs font-medium uppercase tracking-[0.15em]">{stat.label}</span>
-              </li>
-            ))}
-          </ul>
-
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@ import {
   ApplicationSection,
   ImageBreakSection,
   InnovationCentersSection,
+  CtaSection,
 } from "./_sections";
 
 /* ------------------------------------------------------------------ */
@@ -120,6 +121,7 @@ export default function FoodProcessingPage() {
       <ApplicationSection />
       <ImageBreakSection />
       <InnovationCentersSection />
+      <CtaSection />
     </>
   );
 }

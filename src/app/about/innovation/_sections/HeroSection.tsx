@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 
 const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMEExNjI4Ii8+PC9zdmc+";
@@ -45,14 +44,6 @@ export default function HeroSection() {
             operators run faster, leaner, and more profitable kitchens.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <Button variant="primary" href="/demo-centers">
-              Book a Live Demo
-            </Button>
-            <Button variant="ghost-dark" href="/contact" arrow={false}>
-              Request a Consultation
-            </Button>
-          </div>
         </div>
       </div>
     </section>

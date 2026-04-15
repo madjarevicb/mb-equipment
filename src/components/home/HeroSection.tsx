@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 
 
 export default function HeroSection() {
@@ -35,14 +34,6 @@ export default function HeroSection() {
         <p className="text-lg sm:text-xl text-white/70 font-light max-w-lg mb-10 leading-relaxed">
           One partner for 110+ brands across hotels, restaurants, residential, and food processing — in 40+ countries.
         </p>
-        <div className="flex flex-wrap gap-4">
-          <Button variant="primary" href="/contact">
-            Start a Project
-          </Button>
-          <Button variant="ghost-dark" href="#sectors" arrow={false}>
-            Explore Equipment
-          </Button>
-        </div>
       </div>
 
       {/* Middleby badge — bottom-right, editorial */}

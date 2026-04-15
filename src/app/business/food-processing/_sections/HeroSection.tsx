@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 
 const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxMTEiLz48L3N2Zz4=";
@@ -44,14 +43,6 @@ export default function HeroSection() {
             raw preparation to final packaging.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <Button variant="primary" href="/contact">
-              Start a Project
-            </Button>
-            <Button variant="ghost-dark" href="#equipment" arrow={false}>
-              View Equipment
-            </Button>
-          </div>
         </div>
       </div>
 

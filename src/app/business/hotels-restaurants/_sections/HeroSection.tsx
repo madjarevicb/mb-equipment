@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 import { brands } from "@/data/our-brands";
 
 const HERO_BLUR =
@@ -46,14 +45,6 @@ export default function HeroSection() {
             ovens to ventless fryers and IoT platforms.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <Button variant="primary" href="/contact">
-              Request a Quote
-            </Button>
-            <Button variant="ghost-dark" href="/demo-centers" arrow={false}>
-              Visit a Demo Center
-            </Button>
-          </div>
         </div>
       </div>
     </section>

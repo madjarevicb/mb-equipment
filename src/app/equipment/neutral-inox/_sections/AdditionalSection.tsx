@@ -1,4 +1,20 @@
+import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+
+const items = [
+  {
+    slug: "warewashing",
+    name: "Commercial Warewashing",
+    description:
+      "Dishwashers, glasswashers, and rack conveyor systems for high-volume kitchen operations — sized for your throughput requirements.",
+  },
+  {
+    slug: "waste-management",
+    name: "IPC Waste Stations",
+    description:
+      "Professional waste management and separation stations — hygienic, space-efficient, and compliant with local waste codes.",
+  },
+];
 
 export default function AdditionalSection() {
   return (
@@ -29,38 +45,30 @@ export default function AdditionalSection() {
         </AnimatedSection>
 
         <AnimatedSection stagger>
-          <div className="group py-6 border-b border-gray-200 transition-all duration-300">
-            <div className="flex items-start gap-6">
-              <span className="font-display text-xl font-bold text-text-secondary/30 w-10 flex-shrink-0 italic">
-                01
-              </span>
-              <div className="flex-1">
-                <p className="text-text-primary font-medium group-hover:text-red transition-colors duration-300 mb-2">
-                  Commercial Warewashing
-                </p>
-                <p className="text-text-secondary text-sm leading-relaxed max-w-xl">
-                  Dishwashers, glasswashers, and rack conveyor systems for high-volume
-                  kitchen operations — sized for your throughput requirements.
-                </p>
+          {items.map((item, i) => (
+            <Link
+              key={item.slug}
+              href={`/equipment/neutral-inox/${item.slug}`}
+              className="group block py-6 border-b border-gray-200 transition-all duration-300"
+            >
+              <div className="flex items-start gap-6">
+                <span className="font-display text-xl font-bold text-text-secondary/30 w-10 flex-shrink-0 italic">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex-1">
+                  <p className="text-text-primary font-medium group-hover:text-red transition-colors duration-300 mb-2">
+                    {item.name}
+                  </p>
+                  <p className="text-text-secondary text-sm leading-relaxed max-w-xl">
+                    {item.description}
+                  </p>
+                </div>
+                <span className="text-text-secondary/30 group-hover:text-red group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 mt-1" aria-hidden="true">
+                  &#8594;
+                </span>
               </div>
-            </div>
-          </div>
-          <div className="group py-6 border-b border-gray-200 transition-all duration-300">
-            <div className="flex items-start gap-6">
-              <span className="font-display text-xl font-bold text-text-secondary/30 w-10 flex-shrink-0 italic">
-                02
-              </span>
-              <div className="flex-1">
-                <p className="text-text-primary font-medium group-hover:text-red transition-colors duration-300 mb-2">
-                  IPC Waste Stations
-                </p>
-                <p className="text-text-secondary text-sm leading-relaxed max-w-xl">
-                  Professional waste management and separation stations — hygienic,
-                  space-efficient, and compliant with local waste codes.
-                </p>
-              </div>
-            </div>
-          </div>
+            </Link>
+          ))}
         </AnimatedSection>
       </div>
     </section>

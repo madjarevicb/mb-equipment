@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { thermalSubcategories } from "@/data/thermal-processing";
 
@@ -31,9 +32,10 @@ export default function SubcategoriesSection() {
 
         <AnimatedSection stagger>
           {thermalSubcategories.map((item, i) => (
-            <div
+            <Link
               key={item.id}
-              className="group py-6 border-b border-gray-200 transition-all duration-300"
+              href={`/equipment/thermal-processing/${item.slug}`}
+              className="group block py-6 border-b border-gray-200 transition-all duration-300"
             >
               <div className="flex items-start gap-6">
                 <span className="font-display text-xl font-bold text-text-secondary/30 w-10 flex-shrink-0 italic">
@@ -59,8 +61,11 @@ export default function SubcategoriesSection() {
                     </div>
                   )}
                 </div>
+                <span className="text-text-secondary/30 group-hover:text-red group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 mt-1" aria-hidden="true">
+                  &#8594;
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </AnimatedSection>
       </div>

@@ -13,15 +13,6 @@ export interface DemoCenter {
 
 export const centers: DemoCenter[] = [
   {
-    id: "dallas",
-    name: "Middleby Innovation Kitchens",
-    location: "Dallas, Texas",
-    image: "/images/demo/dallas-lg.jpg",
-    description:
-      "The Middleby Innovation Kitchens (MIK) spans 40,000 square feet with 15 cooking vignettes and 150 live equipment stations. Bring your menu — factory application chefs run your recipes on the actual equipment.",
-    highlights: ["40,000 sq ft", "15 cooking vignettes", "150 live stations"],
-  },
-  {
     id: "madrid",
     name: "Middleby Innovation Kitchens",
     location: "Madrid, Spain",
@@ -49,19 +40,10 @@ export const centers: DemoCenter[] = [
     highlights: ["Viking, La Cornue, AGA", "Open to public", "Chef demonstrations"],
   },
   {
-    id: "wigan",
-    name: "Middleby Commercial Showroom",
-    location: "Wigan, England",
-    image: "/images/demo/wigan.jpg",
-    description:
-      "Chef-driven demonstrations of the full Middleby commercial line — beverage, cooking, frying, and ventless. Built for operators and channel partners who want hands-on time with the equipment.",
-    highlights: ["Chef-driven demos", "Channel partners", "Full Middleby line"],
-  },
-  {
     id: "belgrade",
     name: "MB Equipment Solutions HQ",
     location: "Belgrade, Serbia",
-    image: "/images/demo/dallas.jpg",
+    image: "/images/demo/belgrade.jpg",
     description:
       "Our Belgrade headquarters with a full commercial kitchen showroom, Viking and La Cornue residential displays, and an industrial equipment demonstration area. Open Monday–Friday, Saturday by appointment.",
     highlights: ["Full showroom", "Commercial & residential", "Mon–Fri 08:00–17:00"],

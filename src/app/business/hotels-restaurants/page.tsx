@@ -21,7 +21,7 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Our Brands — Commercial Kitchen Equipment | MB Equipment Solutions";
-const TEMPLATE_TITLE = "Our Brands — Commercial Kitchen Equipment";
+const TEMPLATE_TITLE = "Our Brands";
 const PAGE_DESC = `Authorized Middleby partner with ${brands.length}+ professional foodservice brands — Josper, Pitco, Hobart, TurboChef, and more for restaurants, hotels, and institutional kitchens.`;
 
 export const metadata: Metadata = {

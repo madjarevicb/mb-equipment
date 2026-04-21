@@ -13,7 +13,7 @@ const PAGE_TITLE = "Modular Cold Rooms — Walk-in Coolers & Freezers | MB Equip
 const PAGE_DESC = "Modular cold rooms and walk-in freezers — custom dimensions, professional compressor systems. Tehnodom authorized installation.";
 
 export const metadata: Metadata = {
-  title: "Modular Cold Rooms — Walk-in Coolers & Freezers",
+  title: "Modular Cold Rooms",
   description: PAGE_DESC,
   keywords: ["modular cold room", "walk-in cooler", "walk-in freezer", "cold room installation", "commercial cold storage"],
   alternates: { canonical: "/equipment/refrigeration/cold-rooms" },

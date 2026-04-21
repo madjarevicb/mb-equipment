@@ -13,7 +13,7 @@ import {
 export const dynamic = "force-static";
 
 const PAGE_TITLE = "Refrigeration Equipment — Commercial Cold Storage | MB Equipment Solutions";
-const TEMPLATE_TITLE = "Refrigeration Equipment — Commercial Cold Storage";
+const TEMPLATE_TITLE = "Refrigeration Equipment";
 const PAGE_DESC =
   "Commercial refrigeration equipment — display cases, vitrines, cold rooms, and food refrigeration. Desmon, Tefcold, Infrico, JBG-2, and Tehnodom authorized supply.";
 

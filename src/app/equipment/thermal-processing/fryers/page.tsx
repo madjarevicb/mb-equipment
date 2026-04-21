@@ -13,7 +13,7 @@ const PAGE_TITLE = "Commercial Fryers — High-Efficiency Deep Fryers | MB Equip
 const PAGE_DESC = "Commercial deep fryers with built-in oil filtration. High-efficiency fryers for restaurants, hotels, and QSR operations.";
 
 export const metadata: Metadata = {
-  title: "Commercial Fryers — High-Efficiency Deep Fryers",
+  title: "Commercial Fryers",
   description: PAGE_DESC,
   keywords: ["commercial deep fryer", "high-efficiency fryer", "oil filtration fryer", "restaurant fryer", "commercial frying equipment"],
   alternates: { canonical: "/equipment/thermal-processing/fryers" },

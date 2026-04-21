@@ -14,7 +14,7 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Contact Us — Commercial Kitchen Equipment Inquiry | MB Equipment Solutions";
-const TEMPLATE_TITLE = "Contact Us — Commercial Kitchen Equipment Inquiry";
+const TEMPLATE_TITLE = "Contact Us";
 const PAGE_DESC =
   "Contact MB Equipment Solutions in Belgrade. Free kitchen equipment consultation for commercial, residential & industrial projects. Response within one business day.";
 

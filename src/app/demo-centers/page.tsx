@@ -18,7 +18,7 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Demo Centers & Showrooms — Hands-On Equipment Testing | MB Equipment Solutions";
-const TEMPLATE_TITLE = "Demo Centers & Showrooms — Hands-On Equipment Testing";
+const TEMPLATE_TITLE = "Demo Centers & Showrooms";
 const PAGE_DESC =
   "Visit Middleby Innovation Kitchens in Dallas, Madrid, Wigan, and Belgrade. Hands-on equipment testing with factory application chefs. Book your demo session.";
 

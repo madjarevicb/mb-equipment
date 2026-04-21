@@ -11,7 +11,7 @@ const PAGE_DESC =
   "Commercial kitchen equipment guide — thermal processing, refrigeration, and custom stainless steel. Explore equipment categories, brands, and specifications.";
 
 export const metadata: Metadata = {
-  title: "Equipment Guide — Commercial Kitchen Equipment",
+  title: "Equipment Guide",
   description: PAGE_DESC,
   keywords: [
     "commercial kitchen equipment",

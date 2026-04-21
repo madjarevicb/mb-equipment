@@ -13,7 +13,7 @@ const PAGE_TITLE = "Charcoal & Solid Fuel Grills — Josper Authorized | MB Equi
 const PAGE_DESC = "Commercial charcoal grills and solid fuel cooking equipment. Josper, PGE, and UGNS — authorized supply, installation, and commissioning.";
 
 export const metadata: Metadata = {
-  title: "Charcoal & Solid Fuel Grills — Josper Authorized",
+  title: "Charcoal Grills & Josper",
   description: PAGE_DESC,
   keywords: ["Josper charcoal oven", "commercial charcoal grill", "solid fuel cooking", "wood-fired grill commercial", "Josper authorized dealer"],
   alternates: { canonical: "/equipment/thermal-processing/charcoal-grills" },

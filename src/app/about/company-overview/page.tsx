@@ -17,7 +17,7 @@ import {
 export const dynamic = "force-static";
 
 /* ---------- metadata ---------- */
-const PAGE_TITLE = "Company Overview — Commercial Kitchen Equipment Partner";
+const PAGE_TITLE = "Company Overview";
 const PAGE_DESC = "Middleby-authorized commercial kitchen equipment partner in Belgrade, Serbia. 110+ brands, full-cycle service from spec to commissioning. Request a consultation.";
 
 export const metadata: Metadata = {

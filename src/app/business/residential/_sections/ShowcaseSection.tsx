@@ -51,7 +51,7 @@ export default function ShowcaseSection() {
                   className="mx-auto"
                 />
                 <div className="w-10 h-px bg-gold/30 mx-auto mt-8 mb-4" />
-                <p className="text-white/40 text-sm tracking-[0.4em] uppercase">
+                <p className="text-white/40 text-sm tracking-[0.3em] uppercase">
                   Residential
                 </p>
               </div>

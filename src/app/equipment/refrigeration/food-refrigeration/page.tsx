@@ -13,7 +13,7 @@ const PAGE_TITLE = "Commercial Food Refrigeration — Reach-in & Undercounter | 
 const PAGE_DESC = "Commercial food refrigeration — reach-in refrigerators, blast chillers, undercounter units, and prep tables. Desmon and Infrico authorized supply.";
 
 export const metadata: Metadata = {
-  title: "Commercial Food Refrigeration — Reach-in & Undercounter",
+  title: "Food Refrigeration",
   description: PAGE_DESC,
   keywords: ["commercial refrigerator", "reach-in refrigerator", "undercounter fridge commercial", "blast chiller", "prep table refrigerated"],
   alternates: { canonical: "/equipment/refrigeration/food-refrigeration" },

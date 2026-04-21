@@ -22,7 +22,7 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Residential — Luxury Home Kitchen Equipment | MB Equipment Solutions";
-const TEMPLATE_TITLE = "Residential — Luxury Home Kitchen Equipment";
+const TEMPLATE_TITLE = "Residential Kitchen";
 const PAGE_DESC = `Authorized dealer for Viking, La Cornue, AGA, Lynx, and ${residentialBrands.length}+ premium residential brands. Showroom demos, installation, and factory-backed service in Belgrade.`;
 
 export const metadata: Metadata = {

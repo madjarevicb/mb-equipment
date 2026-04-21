@@ -23,7 +23,7 @@ const PAGE_DESC =
   "Authorized Middleby partner supplying 110+ commercial kitchen equipment brands across Southeast Europe. Hotels, restaurants, residential, and food processing.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESC,
   keywords: [
     "commercial kitchen equipment",
@@ -59,11 +59,13 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
+      "@id": `${COMPANY.url}/#website`,
       name: COMPANY.name,
       url: COMPANY.url,
       description: PAGE_DESC,
       publisher: {
         "@type": "Organization",
+        "@id": `${COMPANY.url}/#organization`,
         name: COMPANY.name,
         url: COMPANY.url,
       },

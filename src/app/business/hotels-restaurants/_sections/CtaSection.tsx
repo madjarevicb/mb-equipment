@@ -39,9 +39,8 @@ export default function CtaSection() {
           <div className="lg:col-span-5">
             <div className="border-l-2 border-gold/30 pl-8 space-y-6">
               {[
-                { value: "77", label: "Brands represented" },
-                { value: "15+", label: "Years of partnership" },
-                { value: "500+", label: "Projects delivered" },
+                { value: "110+", label: "Brands represented" },
+                { value: "50+", label: "Projects delivered" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <span className="font-display text-3xl font-bold text-text-primary">

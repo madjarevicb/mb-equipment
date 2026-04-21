@@ -22,7 +22,7 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "Food Processing — Industrial Equipment Solutions | MB Equipment Solutions";
-const TEMPLATE_TITLE = "Food Processing — Industrial Equipment Solutions";
+const TEMPLATE_TITLE = "Food Processing Equipment";
 const PAGE_DESC =
   "Middleby-authorized partner for industrial food processing equipment. Thermal processing, baking, forming, and packaging for protein and bakery operations.";
 

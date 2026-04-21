@@ -14,7 +14,7 @@ import {
 export const dynamic = "force-static";
 
 const PAGE_TITLE = "Neutral INOX Equipment — Custom Stainless Steel | MB Equipment Solutions";
-const TEMPLATE_TITLE = "Neutral INOX Equipment — Custom Stainless Steel Fabrication";
+const TEMPLATE_TITLE = "Neutral INOX & Steel Fabrication";
 const PAGE_DESC =
   "Custom stainless steel kitchen equipment — worktops, shelving, sinks, ventilation hoods, and service counters. Built to your exact layout and dimensions.";
 

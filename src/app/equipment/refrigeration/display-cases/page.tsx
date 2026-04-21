@@ -13,7 +13,7 @@ const PAGE_TITLE = "Commercial Display Cases & Vitrines — Refrigerated | MB Eq
 const PAGE_DESC = "Commercial refrigerated display cases and vitrines for patisserie, deli, and grab-and-go. JBG-2 and Tefcold authorized supply.";
 
 export const metadata: Metadata = {
-  title: "Commercial Display Cases & Vitrines — Refrigerated",
+  title: "Display Cases & Vitrines",
   description: PAGE_DESC,
   keywords: ["refrigerated display case", "commercial vitrine", "patisserie display case", "deli display counter", "grab-and-go refrigeration"],
   alternates: { canonical: "/equipment/refrigeration/display-cases" },

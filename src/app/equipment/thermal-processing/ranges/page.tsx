@@ -13,7 +13,7 @@ const PAGE_TITLE = "Commercial Ranges & Cooking Suites — Gas & Induction | MB 
 const PAGE_DESC = "Commercial cooking ranges and suites — gas, induction, and solid-top. Silko and Lincat authorized supply for professional kitchens.";
 
 export const metadata: Metadata = {
-  title: "Commercial Ranges & Cooking Suites — Gas & Induction",
+  title: "Ranges & Cooking Suites",
   description: PAGE_DESC,
   keywords: ["commercial cooking range", "induction cooking suite", "gas range commercial", "professional cooking suites", "Silko cooking equipment"],
   alternates: { canonical: "/equipment/thermal-processing/ranges" },

@@ -13,7 +13,7 @@ import {
 export const dynamic = "force-static";
 
 /* ---------- metadata ---------- */
-const PAGE_TITLE = "Innovation & Technology — Commercial Kitchen Solutions";
+const PAGE_TITLE = "Innovation & Technology";
 const PAGE_DESC =
   "Middleby kitchen technology via MB Equipment Solutions — IoT-connected equipment, ventless cooking, and ghost kitchen solutions for commercial operators.";
 

@@ -22,7 +22,7 @@ export default function GeographyStatsSection() {
           </span>
           <span className="text-white/20 mx-4 hidden sm:inline">|</span>
           <span className="text-white/60 text-sm">
-            Balkans — Central Europe — Middle East — North Africa — Central Asia
+            Balkans — Central Europe — Southeast Europe
           </span>
         </div>
       </div>

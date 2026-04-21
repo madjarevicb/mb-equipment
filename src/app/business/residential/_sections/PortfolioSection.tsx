@@ -40,7 +40,7 @@ export default function PortfolioSection() {
                 systems.
               </p>
               <p className="text-text-secondary leading-relaxed text-sm">
-                As the exclusive regional dealer, we provide showroom
+                As an authorized dealer, we provide showroom
                 demonstrations, professional installation, and factory-backed
                 service for every brand we carry.
               </p>

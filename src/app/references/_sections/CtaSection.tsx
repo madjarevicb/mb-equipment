@@ -52,7 +52,7 @@ export default function CtaSection() {
                 ))}
                 <div className="pt-2">
                   <p className="text-text-secondary/50 text-xs">
-                    Balkans — Central Europe — Middle East — North Africa — Central Asia
+                    Balkans — Central Europe — Southeast Europe
                   </p>
                 </div>
               </div>

@@ -23,7 +23,7 @@ export const dynamic = "force-static";
 /* ------------------------------------------------------------------ */
 const PAGE_TITLE =
   "References & Partners — Commercial Kitchen Projects | MB Equipment Solutions";
-const TEMPLATE_TITLE = "References & Partners — Commercial Kitchen Projects";
+const TEMPLATE_TITLE = "References & Projects";
 const PAGE_DESC =
   "Middleby-authorized equipment partner for convention centers, hotels, and restaurants. 50+ projects across Southeast Europe. Request a consultation.";
 

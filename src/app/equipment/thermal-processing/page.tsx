@@ -13,7 +13,7 @@ import {
 export const dynamic = "force-static";
 
 const PAGE_TITLE = "Thermal Processing Equipment — Commercial Cooking | MB Equipment Solutions";
-const TEMPLATE_TITLE = "Thermal Processing Equipment — Commercial Cooking";
+const TEMPLATE_TITLE = "Thermal Processing";
 const PAGE_DESC =
   "Commercial thermal processing equipment — ranges, fryers, combi ovens, pasta cookers, and charcoal grills. Josper, Silko, Lincat, FirEx, and Houno authorized supply.";
 

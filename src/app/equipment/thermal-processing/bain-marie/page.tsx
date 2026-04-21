@@ -13,7 +13,7 @@ const PAGE_TITLE = "Bain Marie & Food Holding Equipment — Commercial | MB Equi
 const PAGE_DESC = "Commercial bain marie and temperature-controlled holding equipment. Buffet service, banqueting, and plating stations.";
 
 export const metadata: Metadata = {
-  title: "Bain Marie & Food Holding Equipment — Commercial",
+  title: "Bain Marie & Food Holding",
   description: PAGE_DESC,
   keywords: ["commercial bain marie", "food holding equipment", "buffet equipment commercial", "temperature holding station"],
   alternates: { canonical: "/equipment/thermal-processing/bain-marie" },

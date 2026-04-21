@@ -13,7 +13,7 @@ const PAGE_TITLE = "Commercial Pasta Cookers — Professional Pasta Stations | M
 const PAGE_DESC = "Commercial pasta cookers for high-volume production. Dedicated pasta cooking stations for restaurants and hotel kitchens.";
 
 export const metadata: Metadata = {
-  title: "Commercial Pasta Cookers — Professional Pasta Stations",
+  title: "Commercial Pasta Cookers",
   description: PAGE_DESC,
   keywords: ["commercial pasta cooker", "pasta cooking station", "professional pasta equipment", "restaurant pasta cooker"],
   alternates: { canonical: "/equipment/thermal-processing/pasta-cookers" },

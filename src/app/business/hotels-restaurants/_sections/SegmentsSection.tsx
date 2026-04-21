@@ -23,9 +23,9 @@ export default function SegmentsSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-10">
                 {segments.map((s) => (
                   <div key={s.title}>
-                    <h3 className="text-[13px] font-medium text-text-primary mb-1">
+                    <h2 className="text-[13px] font-medium text-text-primary mb-1">
                       {s.title}
-                    </h3>
+                    </h2>
                     <p className="text-[12px] text-text-secondary/60 leading-relaxed">
                       {s.text}
                     </p>

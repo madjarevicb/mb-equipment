@@ -37,7 +37,7 @@ export default function Footer() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 lg:gap-6 lg:pl-12">
               {/* Solutions */}
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30 mb-5">Solutions</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">Solutions</p>
                 <ul className="space-y-3">
                   {solutionLinks.map((item) => (
                     <li key={item.href}>
@@ -49,7 +49,7 @@ export default function Footer() {
 
               {/* Equipment */}
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30 mb-5">Equipment</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">Equipment</p>
                 <ul className="space-y-3">
                   {equipmentLinks.map((item) => (
                     <li key={item.href}>
@@ -61,7 +61,7 @@ export default function Footer() {
 
               {/* Company */}
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30 mb-5">Company</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">Company</p>
                 <ul className="space-y-3">
                   {companyLinks.map((item) => (
                     <li key={item.href}>
@@ -73,11 +73,11 @@ export default function Footer() {
 
               {/* Contact */}
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/30 mb-5">Get in Touch</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">Get in Touch</p>
                 <div className="space-y-3">
                   <a href={`mailto:${COMPANY.email}`} className="block text-[13px] text-white/60 hover:text-white transition-colors duration-300">{COMPANY.email}</a>
                   <a href={`tel:${COMPANY.phone}`} className="block text-[13px] text-white/60 hover:text-white transition-colors duration-300">{COMPANY.phoneDisplay}</a>
-                  <p className="text-[13px] text-white/30 leading-relaxed pt-1">
+                  <p className="text-[13px] text-white/50 leading-relaxed pt-1">
                     {COMPANY.address.street}<br />
                     {COMPANY.address.zip} {COMPANY.address.city}
                   </p>
@@ -91,15 +91,15 @@ export default function Footer() {
       {/* Bottom bar — minimal */}
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <span className="text-[11px] text-white/25 tracking-[0.2em]">&copy; {new Date().getFullYear()} {COMPANY.name}</span>
+          <span className="text-[11px] text-white/50 tracking-[0.2em]">&copy; {new Date().getFullYear()} {COMPANY.name}</span>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-[11px] text-white/25 tracking-[0.2em] hover:text-white/50 transition-colors duration-300">Privacy Policy</Link>
+            <Link href="/privacy" className="text-[11px] text-white/50 tracking-[0.2em] hover:text-white/70 transition-colors duration-300">Privacy Policy</Link>
             <span className="text-white/10">|</span>
             <a
               href="https://ironbuild.xyz"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-[11px] text-white/25 tracking-[0.2em] hover:text-white/50 transition-colors duration-300"
+              className="flex items-center gap-2 text-[11px] text-white/50 tracking-[0.2em] hover:text-white/70 transition-colors duration-300"
             >
               Built by
               <Image

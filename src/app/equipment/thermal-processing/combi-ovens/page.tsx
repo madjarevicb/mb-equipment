@@ -13,7 +13,7 @@ const PAGE_TITLE = "Combi & Convection Ovens — Patisserie, Bake-off, Speed | M
 const PAGE_DESC = "Commercial combi ovens and convection ovens — patisserie, bake-off, and speed ovens. Houno and Lincat authorized supply.";
 
 export const metadata: Metadata = {
-  title: "Combi & Convection Ovens — Patisserie, Bake-off, Speed",
+  title: "Combi & Convection Ovens",
   description: PAGE_DESC,
   keywords: ["commercial combi oven", "convection oven commercial", "Houno combi oven", "patisserie oven", "speed oven commercial", "bake-off oven"],
   alternates: { canonical: "/equipment/thermal-processing/combi-ovens" },

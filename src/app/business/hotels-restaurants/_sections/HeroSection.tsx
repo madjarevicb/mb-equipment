@@ -40,8 +40,8 @@ export default function HeroSection() {
           <div className="w-16 h-px bg-gold/60 mb-6" />
 
           <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-lg font-light">
-            As an authorized Middleby Corporation partner, we provide
-            professional foodservice brands — from charcoal grills and combi
+            As an authorized Middleby Corporation partner, we supply
+            professional foodservice equipment — from charcoal grills and combi
             ovens to ventless fryers and IoT platforms.
           </p>
 

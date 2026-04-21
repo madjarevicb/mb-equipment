@@ -32,7 +32,7 @@ export default function HeroSection() {
         </h1>
         <div className="w-16 h-px bg-gold/60 mb-6" />
         <p className="text-lg sm:text-xl text-white/70 font-light max-w-lg mb-10 leading-relaxed">
-          One partner for 110+ brands across hotels, restaurants, residential, and food processing — across Southeast Europe and beyond.
+          One partner for 110+ brands — hotels, restaurants, residential, and food processing — across Southeast Europe and beyond.
         </p>
       </div>
 

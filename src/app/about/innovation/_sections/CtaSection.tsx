@@ -32,7 +32,7 @@ export default function CtaSection() {
             </Button>
           </div>
           <p className="text-white/25 text-xs tracking-[0.2em] mt-10">
-            Walk-ins welcome · Belgrade showroom open weekdays 9–17h
+            Walk-ins welcome · Belgrade showroom open weekdays 09:00–17:00
           </p>
         </div>
       </div>

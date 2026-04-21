@@ -19,8 +19,8 @@ export default function WhoWeAreSection() {
               </h2>
               <div className="w-12 h-px bg-gold/30 mt-8 mb-8" />
               <p className="text-text-secondary leading-relaxed text-sm">
-                Cooking and warming, refrigeration, freezing, and beverage
-                solutions for top restaurant and institutional customers.
+                Cooking, warming, refrigeration, freezing, and beverage
+                solutions for leading restaurant and institutional customers.
                 MB Equipment Solutions is your authorized regional partner
                 for the full Middleby portfolio.
               </p>

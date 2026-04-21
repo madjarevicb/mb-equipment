@@ -64,7 +64,7 @@ const categories = [
     subtitle: "Cooking & Baking Equipment",
     description:
       "Ranges, fryers, combi ovens, pasta cookers, and charcoal grills — every thermal cooking category for commercial kitchens.",
-    brands: "Josper, Silko, Lincat, FirEx, Houno, PGE, UGNS",
+    brands: "Josper, Silko, Lincat, Firex, Houno, PGE, UGNS",
     href: "/equipment/thermal-processing",
   },
   {

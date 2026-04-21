@@ -16,7 +16,7 @@ const partners: Partner[] = [
   { name: "Chick-fil-A", logo: "/logos/chick-fil-a.svg" },
   { name: "Subway", logo: "/logos/subway.svg" },
   { name: "Wendy's", logo: "/logos/wendys.svg" },
-  { name: "Dunkin' Donuts", logo: "/logos/dunkin-donuts.png" },
+  { name: "Dunkin'", logo: "/logos/dunkin-donuts.png" },
 ];
 
 export default function PartnersSection() {

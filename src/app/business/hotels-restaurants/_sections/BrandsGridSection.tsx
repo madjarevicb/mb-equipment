@@ -40,7 +40,7 @@ export default function BrandsGridSection({ brands }: { brands: Brand[] }) {
             <div className="lg:col-span-7">
               <p className="text-text-secondary leading-relaxed text-sm max-w-lg">
                 We represent {brands.length} brands from the Middleby Corporation
-                portfolio. Each one selected for build quality, factory-direct
+                portfolio — each selected for build quality, factory-direct
                 service network, and proven performance under pressure.
               </p>
               <div className="w-12 h-px bg-gold/30 mt-6" />

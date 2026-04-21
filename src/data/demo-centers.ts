@@ -45,7 +45,7 @@ export const centers: DemoCenter[] = [
     location: "Belgrade, Serbia",
     image: "/images/demo/belgrade.jpg",
     description:
-      "Our Belgrade headquarters with a full commercial kitchen showroom, Viking and La Cornue residential displays, and an industrial equipment demonstration area. Open Monday–Friday, Saturday by appointment.",
+      "Our Belgrade headquarters features a full commercial kitchen showroom, Viking and La Cornue residential displays, and an industrial equipment demonstration area. Open Monday–Friday; Saturday by appointment.",
     highlights: ["Full showroom", "Commercial & residential", "Mon–Fri 08:00–17:00"],
   },
 ];

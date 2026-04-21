@@ -22,7 +22,7 @@ export const neutralCapabilities: NeutralCapability[] = [
   {
     name: "Sinks & Wash Stations",
     description:
-      "Single, double, and triple-basin sinks with pre-rinse assemblies — configured for pot wash, food prep, and hand washing.",
+      "Single-, double-, and triple-basin sinks with pre-rinse assemblies — configured for pot wash, food prep, and handwashing.",
   },
   {
     name: "Pass-Through & Service Counters",

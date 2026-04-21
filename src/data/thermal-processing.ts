@@ -12,7 +12,7 @@ export const thermalSubcategories: EquipmentSubcategory[] = [
     brands: ["Josper", "PGE", "UGNS"],
     seoTitle: "Charcoal & Solid Fuel Grills — Josper Authorized",
     seoDesc:
-      "Commercial charcoal grills and solid fuel cooking equipment. Josper, PGE, and UGNS — authorized supply, installation, and commissioning.",
+      "Commercial charcoal grills and solid-fuel cooking equipment. Josper, PGE, and UGNS — authorized supply, installation, and commissioning.",
     keywords: [
       "Josper charcoal oven",
       "commercial charcoal grill",
@@ -147,7 +147,7 @@ export const thermalBrands: EquipmentBrand[] = [
     category: "Combi & Convection Ovens",
   },
   {
-    name: "FirEx",
+    name: "Firex",
     description:
       "Automated tilting braising pans, kettles, and pressurized cooking systems for large-scale production.",
     logo: "/images/brands/firex-logo.png",

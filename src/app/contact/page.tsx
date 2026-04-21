@@ -158,7 +158,7 @@ export default function ContactPage() {
                 <div className="w-10 h-px bg-gray-200" />
                 <div>
                   <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-text-secondary mb-3">Hours</h3>
-                  <p className="text-text-secondary text-sm">Monday — Friday: 08:00 — 17:00<br />Saturday: By appointment<br />Sunday: Closed</p>
+                  <p className="text-text-secondary text-sm">Monday–Friday: 08:00–17:00<br />Saturday: By appointment<br />Sunday: Closed</p>
                 </div>
                 <div className="bg-gray-100 aspect-[4/3] flex items-center justify-center border border-gray-200">
                   <span className="text-text-secondary text-sm">[ Google Maps ]</span>

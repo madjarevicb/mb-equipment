@@ -1,6 +1,7 @@
 export interface NavChild {
   label: string;
   href: string;
+  children?: NavChild[];
 }
 
 export type NavItem =
@@ -26,9 +27,35 @@ export const navItems: NavItem[] = [
   {
     label: "Equipment",
     children: [
-      { label: "Thermal Processing", href: "/equipment/thermal-processing" },
-      { label: "Refrigeration", href: "/equipment/refrigeration" },
-      { label: "Neutral INOX", href: "/equipment/neutral-inox" },
+      {
+        label: "Thermal Processing",
+        href: "/equipment/thermal-processing",
+        children: [
+          { label: "Charcoal Grills", href: "/equipment/thermal-processing/charcoal-grills" },
+          { label: "Ranges", href: "/equipment/thermal-processing/ranges" },
+          { label: "Fryers", href: "/equipment/thermal-processing/fryers" },
+          { label: "Pasta Cookers", href: "/equipment/thermal-processing/pasta-cookers" },
+          { label: "Bain Marie", href: "/equipment/thermal-processing/bain-marie" },
+          { label: "Combi Ovens", href: "/equipment/thermal-processing/combi-ovens" },
+        ],
+      },
+      {
+        label: "Refrigeration",
+        href: "/equipment/refrigeration",
+        children: [
+          { label: "Display Cases", href: "/equipment/refrigeration/display-cases" },
+          { label: "Food Refrigeration", href: "/equipment/refrigeration/food-refrigeration" },
+          { label: "Cold Rooms", href: "/equipment/refrigeration/cold-rooms" },
+        ],
+      },
+      {
+        label: "Neutral INOX",
+        href: "/equipment/neutral-inox",
+        children: [
+          { label: "Warewashing", href: "/equipment/neutral-inox/warewashing" },
+          { label: "Waste Management", href: "/equipment/neutral-inox/waste-management" },
+        ],
+      },
     ],
   },
   { label: "References", href: "/references" },

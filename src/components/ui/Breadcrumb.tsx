@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Fragment } from "react";
+import type { Locale } from "@/i18n/config";
 
 interface BreadcrumbItem {
   label: string;
@@ -8,10 +9,13 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  locale?: Locale;
+  homeLabel?: string;
 }
 
-export default function Breadcrumb({ items }: BreadcrumbProps) {
-  const allItems: BreadcrumbItem[] = [{ label: "Home", href: "/" }, ...items];
+export default function Breadcrumb({ items, locale, homeLabel = "Home" }: BreadcrumbProps) {
+  const homeHref = locale ? `/${locale}` : "/";
+  const allItems: BreadcrumbItem[] = [{ label: homeLabel, href: homeHref }, ...items];
 
   return (
     <nav className="max-w-7xl mx-auto px-6 pt-4" aria-label="Breadcrumb">

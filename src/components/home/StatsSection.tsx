@@ -1,16 +1,21 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import type { Dictionary } from "@/i18n/types";
 
 interface Stat {
   value: string;
   label: string;
 }
 
-const stats: Stat[] = [
-  { value: "110+", label: "Equipment Brands" },
-  { value: "50+", label: "Projects Delivered" },
-];
+export default function StatsSection({
+  dict,
+}: {
+  dict: Dictionary["home"]["stats"];
+}) {
+  const stats: Stat[] = [
+    { value: "110+", label: dict.equipmentBrands },
+    { value: "50+", label: dict.projectsDelivered },
+  ];
 
-export default function StatsSection() {
   return (
     <section id="stats" aria-label="Company statistics" className="relative py-24 lg:py-32 bg-navy overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6">
@@ -18,13 +23,13 @@ export default function StatsSection() {
           {/* Left — featured stat, large and confident */}
           <AnimatedSection className="lg:col-span-5" animation="fade-right">
             <p className="text-white/40 text-xs font-medium uppercase tracking-[0.3em] mb-8">
-              Middleby Authorized
+              {dict.middlebyAuthorized}
             </p>
             <p className="font-display text-8xl sm:text-9xl lg:text-[10rem] font-bold text-white italic leading-none tracking-tight">
               110+
             </p>
             <p className="text-white/60 text-sm uppercase tracking-[0.2em] mt-4">
-              Equipment Brands
+              {dict.equipmentBrands}
             </p>
           </AnimatedSection>
 

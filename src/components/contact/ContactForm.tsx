@@ -5,10 +5,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 import Button from "@/components/ui/Button";
+import type { Dictionary } from "@/i18n/types";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
-export default function ContactForm() {
+interface Props {
+  dict: Dictionary["contact"]["form"];
+}
+
+export default function ContactForm({ dict }: Props) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [serverError, setServerError] = useState("");
 
@@ -41,7 +46,7 @@ export default function ContactForm() {
       reset();
     } catch (err) {
       setStatus("error");
-      setServerError(err instanceof Error ? err.message : "Something went wrong");
+      setServerError(err instanceof Error ? err.message : dict.errorFallback);
     }
   }
 
@@ -49,22 +54,22 @@ export default function ContactForm() {
     return (
       <div className="border border-gray-200 p-10">
         <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-4">
-          Message Sent
+          {dict.successEyebrow}
         </p>
         <h3 className="font-display text-2xl font-bold text-text-primary leading-[1.1] mb-4">
-          Thank you for<br />
-          <span className="italic font-normal">reaching out.</span>
+          {dict.successHeading1}<br />
+          <span className="italic font-normal">{dict.successHeading2}</span>
         </h3>
         <div className="w-12 h-px bg-gold/50 mb-4" />
         <p className="text-text-secondary text-sm leading-relaxed mb-6">
-          We have received your message and will respond within one business day.
+          {dict.successBody}
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
           className="text-text-primary text-xs font-medium uppercase tracking-[0.15em] hover:text-red transition-colors duration-300"
         >
-          Send another message &#8594;
+          {dict.successReset} &#8594;
         </button>
       </div>
     );
@@ -81,7 +86,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-1.5">
-            Full Name <span className="text-red">*</span>
+            {dict.nameLabel} <span className="text-red">*</span>
           </label>
           <input
             type="text"
@@ -102,7 +107,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-1.5">
-            Email <span className="text-red">*</span>
+            {dict.emailLabel} <span className="text-red">*</span>
           </label>
           <input
             type="email"
@@ -126,7 +131,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-text-primary mb-1.5">
-            Phone
+            {dict.phoneLabel}
           </label>
           <input
             type="tel"
@@ -138,7 +143,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="company" className="block text-sm font-medium text-text-primary mb-1.5">
-            Company
+            {dict.companyLabel}
           </label>
           <input
             type="text"
@@ -152,26 +157,24 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="interest" className="block text-sm font-medium text-text-primary mb-1.5">
-          Interest Area
+          {dict.interestLabel}
         </label>
         <select
           id="interest"
           className="w-full border border-gray-200 px-4 py-3 text-sm transition-colors focus:border-gray-400 focus:ring-1 focus:ring-navy/20 bg-white"
           {...register("interest")}
         >
-          <option value="">Select one...</option>
-          <option value="hotels">Hotels &amp; Restaurants</option>
-          <option value="residential">Residential</option>
-          <option value="processing">Food Processing</option>
-          <option value="demo">Demo Request</option>
-          <option value="partnership">Partnership</option>
-          <option value="other">General Inquiry</option>
+          {dict.interestOptions.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
         </select>
       </div>
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-1.5">
-          Message <span className="text-red">*</span>
+          {dict.messageLabel} <span className="text-red">*</span>
         </label>
         <textarea
           id="message"
@@ -191,7 +194,7 @@ export default function ContactForm() {
       </div>
 
       <p className="text-xs text-text-secondary">
-        Fields marked with * are required. We respond within one business day.
+        {dict.requiredNote}
       </p>
 
       {serverError && (
@@ -205,7 +208,7 @@ export default function ContactForm() {
         type="submit"
         disabled={status === "submitting"}
       >
-        {status === "submitting" ? "Sending..." : "Send Message"}
+        {status === "submitting" ? dict.submitSending : dict.submitIdle}
       </Button>
     </form>
   );

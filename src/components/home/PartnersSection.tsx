@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Dictionary } from "@/i18n/types";
 
 interface Partner {
   name: string;
@@ -19,13 +20,17 @@ const partners: Partner[] = [
   { name: "Dunkin'", logo: "/logos/dunkin-donuts.png" },
 ];
 
-export default function PartnersSection() {
+export default function PartnersSection({
+  dict,
+}: {
+  dict: Dictionary["home"]["partners"];
+}) {
   return (
     <section id="partners" aria-label="Partner logos" className="py-16 lg:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-10">
         <h2 className="sr-only">Our Global Partners and Clients</h2>
         <p className="text-xs font-medium uppercase tracking-[0.3em] text-text-secondary">
-          Trusted by Global Foodservice Leaders
+          {dict.eyebrow}
         </p>
       </div>
       <div className="relative">

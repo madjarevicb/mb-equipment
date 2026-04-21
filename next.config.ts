@@ -55,14 +55,23 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      { source: "/", has: [{ type: "query", key: "page", value: "company-overview" }], destination: "/about/company-overview", permanent: true },
-      { source: "/", has: [{ type: "query", key: "page", value: "innovation" }], destination: "/about/innovation", permanent: true },
-      { source: "/", has: [{ type: "query", key: "page", value: "hotels-restaurants" }], destination: "/business/hotels-restaurants", permanent: true },
-      { source: "/", has: [{ type: "query", key: "page", value: "residential" }], destination: "/business/residential", permanent: true },
-      { source: "/", has: [{ type: "query", key: "page", value: "food-processing" }], destination: "/business/food-processing", permanent: true },
-      { source: "/", has: [{ type: "query", key: "page", value: "references" }], destination: "/references", permanent: true },
-      { source: "/", has: [{ type: "query", key: "page", value: "demo-centers" }], destination: "/demo-centers", permanent: true },
-      { source: "/", has: [{ type: "query", key: "page", value: "contact" }], destination: "/contact", permanent: true },
+      /* Legacy query-based routes → locale-prefixed */
+      { source: "/", has: [{ type: "query", key: "page", value: "company-overview" }], destination: "/en/about/company-overview", permanent: true },
+      { source: "/", has: [{ type: "query", key: "page", value: "innovation" }], destination: "/en/about/innovation", permanent: true },
+      { source: "/", has: [{ type: "query", key: "page", value: "hotels-restaurants" }], destination: "/en/business/hotels-restaurants", permanent: true },
+      { source: "/", has: [{ type: "query", key: "page", value: "residential" }], destination: "/en/business/residential", permanent: true },
+      { source: "/", has: [{ type: "query", key: "page", value: "food-processing" }], destination: "/en/business/food-processing", permanent: true },
+      { source: "/", has: [{ type: "query", key: "page", value: "references" }], destination: "/en/references", permanent: true },
+      { source: "/", has: [{ type: "query", key: "page", value: "demo-centers" }], destination: "/en/demo-centers", permanent: true },
+      { source: "/", has: [{ type: "query", key: "page", value: "contact" }], destination: "/en/contact", permanent: true },
+      /* Bare paths without locale → /en/path (handles old bookmarks, external links) */
+      { source: "/about/:path*", destination: "/en/about/:path*", permanent: true },
+      { source: "/business/:path*", destination: "/en/business/:path*", permanent: true },
+      { source: "/equipment/:path*", destination: "/en/equipment/:path*", permanent: true },
+      { source: "/references", destination: "/en/references", permanent: true },
+      { source: "/demo-centers", destination: "/en/demo-centers", permanent: true },
+      { source: "/contact", destination: "/en/contact", permanent: true },
+      { source: "/privacy", destination: "/en/privacy", permanent: true },
     ];
   },
 };

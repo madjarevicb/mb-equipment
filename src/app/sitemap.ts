@@ -1,35 +1,51 @@
 import type { MetadataRoute } from "next";
 import { COMPANY } from "@/lib/constants";
+import { locales } from "@/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = COMPANY.url;
   const lastModified = new Date();
 
-  return [
-    { url: baseUrl, lastModified, changeFrequency: "monthly", priority: 1.0 },
-    { url: `${baseUrl}/about/company-overview`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/about/innovation`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/business/hotels-restaurants`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/business/residential`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/business/food-processing`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/references`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/demo-centers`, lastModified, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/equipment`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/thermal-processing`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/equipment/thermal-processing/charcoal-grills`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/thermal-processing/ranges`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/thermal-processing/fryers`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/thermal-processing/pasta-cookers`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/thermal-processing/bain-marie`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/thermal-processing/combi-ovens`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/refrigeration`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/equipment/refrigeration/display-cases`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/refrigeration/food-refrigeration`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/refrigeration/cold-rooms`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/neutral-inox`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/equipment/neutral-inox/warewashing`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/equipment/neutral-inox/waste-management`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/contact`, lastModified, changeFrequency: "yearly", priority: 0.8 },
-    { url: `${baseUrl}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
+  const paths = [
+    { path: "", changeFrequency: "monthly" as const, priority: 1.0 },
+    { path: "/about/company-overview", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/about/innovation", changeFrequency: "monthly" as const, priority: 0.7 },
+    { path: "/business/hotels-restaurants", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/business/residential", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/business/food-processing", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/references", changeFrequency: "monthly" as const, priority: 0.7 },
+    { path: "/demo-centers", changeFrequency: "monthly" as const, priority: 0.6 },
+    { path: "/equipment", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/thermal-processing", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/equipment/thermal-processing/charcoal-grills", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/thermal-processing/ranges", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/thermal-processing/fryers", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/thermal-processing/pasta-cookers", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/thermal-processing/bain-marie", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/thermal-processing/combi-ovens", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/refrigeration", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/equipment/refrigeration/display-cases", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/refrigeration/food-refrigeration", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/refrigeration/cold-rooms", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/neutral-inox", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/equipment/neutral-inox/warewashing", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/neutral-inox/waste-management", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/contact", changeFrequency: "yearly" as const, priority: 0.8 },
+    { path: "/privacy", changeFrequency: "yearly" as const, priority: 0.3 },
   ];
+
+  /* Emit one entry per locale per path */
+  return locales.flatMap((locale) =>
+    paths.map(({ path, changeFrequency, priority }) => ({
+      url: `${baseUrl}/${locale}${path}`,
+      lastModified,
+      changeFrequency,
+      priority,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, `${baseUrl}/${l}${path}`]),
+        ),
+      },
+    })),
+  );
 }

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
-import Header from "@/components/layout/Header";
 import VercelAnalytics from "@/components/analytics/VercelAnalytics";
-import Footer from "@/components/layout/Footer";
 import { COMPANY } from "@/lib/constants";
 import "./globals.css";
 
@@ -31,7 +29,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    locale: "en_US",
     siteName: "MB Equipment Solutions",
     images: [{ url: "/images/og/homepage.jpg", width: 1200, height: 630 }],
   },
@@ -103,10 +100,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${dmSans.variable} ${cormorant.variable} antialiased`}
-    >
+    <html className={`${dmSans.variable} ${cormorant.variable} antialiased`}>
       <head>
         <noscript>
           <style dangerouslySetInnerHTML={{ __html: ".stagger-children > * { opacity: 1 !important; transform: none !important; animation: none !important; }" }} />
@@ -125,9 +119,7 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
           }}
         />
-        <Header />
-        <main id="main-content" className="flex-1">{children}</main>
-        <Footer />
+        {children}
         <VercelAnalytics />
       </body>
     </html>

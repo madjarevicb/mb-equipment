@@ -6,8 +6,9 @@ import Link from "next/link";
 import ChevronIcon from "@/components/ui/ChevronIcon";
 import { COMPANY } from "@/lib/constants";
 import type { NavItem } from "@/lib/navigation";
+import type { Locale } from "@/i18n/config";
 
-export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
+export default function MobileMenu({ navItems, locale }: { navItems: NavItem[]; locale: Locale }) {
   const [isOpen, setIsOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [openSubSection, setOpenSubSection] = useState<string | null>(null);
@@ -69,7 +70,7 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
     >
       <div className="px-6 py-8">
         <Link
-          href="/contact"
+          href={`/${locale}/contact`}
           onClick={close}
           className="block w-full bg-red text-white text-center font-medium py-3.5 mb-8 text-sm tracking-[0.08em] uppercase"
         >
@@ -162,7 +163,7 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
             ),
           )}
           <Link
-            href="/contact"
+            href={`/${locale}/contact`}
             onClick={close}
             className="block py-3 text-lg font-medium text-text-primary border-b border-gray-100"
           >

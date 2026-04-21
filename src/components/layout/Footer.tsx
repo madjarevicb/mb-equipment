@@ -1,9 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { solutionLinks, equipmentLinks, companyLinks } from "@/lib/navigation";
+import { getSolutionLinks, getEquipmentLinks, getCompanyLinks } from "@/lib/navigation";
 import { COMPANY } from "@/lib/constants";
+import type { Locale } from "@/i18n/config";
 
-export default function Footer() {
+export default function Footer({ locale }: { locale: Locale }) {
+  const solutionLinks = getSolutionLinks(locale);
+  const equipmentLinks = getEquipmentLinks(locale);
+  const companyLinks = getCompanyLinks(locale);
+
   return (
     <footer className="bg-navy text-white">
       {/* Top accent */}
@@ -93,7 +98,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <span className="text-[11px] text-white/50 tracking-[0.2em]">&copy; {new Date().getFullYear()} {COMPANY.name}</span>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-[11px] text-white/50 tracking-[0.2em] hover:text-white/70 transition-colors duration-300">Privacy Policy</Link>
+            <Link href={`/${locale}/privacy`} className="text-[11px] text-white/50 tracking-[0.2em] hover:text-white/70 transition-colors duration-300">Privacy Policy</Link>
             <span className="text-white/10">|</span>
             <a
               href="https://ironbuild.xyz"

@@ -7,8 +7,16 @@ import ChevronIcon from "@/components/ui/ChevronIcon";
 import { COMPANY } from "@/lib/constants";
 import type { NavItem } from "@/lib/navigation";
 import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
 
-export default function MobileMenu({ navItems, locale }: { navItems: NavItem[]; locale: Locale }) {
+interface MobileMenuProps {
+  navItems: NavItem[];
+  locale: Locale;
+  nav: Dictionary["nav"];
+  common: Dictionary["common"];
+}
+
+export default function MobileMenu({ navItems, locale, nav, common }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [openSubSection, setOpenSubSection] = useState<string | null>(null);
@@ -74,7 +82,7 @@ export default function MobileMenu({ navItems, locale }: { navItems: NavItem[]; 
           onClick={close}
           className="block w-full bg-red text-white text-center font-medium py-3.5 mb-8 text-sm tracking-[0.08em] uppercase"
         >
-          Get a Quote
+          {nav.getAQuote}
         </Link>
 
         <nav className="space-y-1">
@@ -121,7 +129,7 @@ export default function MobileMenu({ navItems, locale }: { navItems: NavItem[]; 
                                 onClick={close}
                                 className="block py-1.5 text-[13px] text-text-secondary/60 hover:text-red"
                               >
-                                All {child.label} &#8594;
+                                {nav.allCategory} {child.label} &#8594;
                               </Link>
                               {child.children.map((sub) => (
                                 <Link
@@ -167,7 +175,7 @@ export default function MobileMenu({ navItems, locale }: { navItems: NavItem[]; 
             onClick={close}
             className="block py-3 text-lg font-medium text-text-primary border-b border-gray-100"
           >
-            Contact
+            {nav.contact}
           </Link>
         </nav>
 
@@ -190,7 +198,7 @@ export default function MobileMenu({ navItems, locale }: { navItems: NavItem[]; 
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 text-white"
         aria-expanded={isOpen}
-        aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-label={isOpen ? common.closeMenu : common.openMenu}
       >
         <div className="w-6 h-5 relative flex flex-col justify-between">
           <span

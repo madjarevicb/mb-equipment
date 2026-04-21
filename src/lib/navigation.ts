@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
 
 export interface NavChild {
   label: string;
@@ -19,60 +20,60 @@ function prefixChild(locale: Locale, child: NavChild): NavChild {
   };
 }
 
-/** Build the nav items for a given locale, with locale-prefixed hrefs */
-export function getNavItems(locale: Locale): NavItem[] {
+/** Build the nav items for a given locale, with translated labels */
+export function getNavItems(locale: Locale, nav: Dictionary["nav"]): NavItem[] {
   const items: NavItem[] = [
     {
-      label: "About Us",
+      label: nav.aboutUs,
       children: [
-        { label: "Company Overview", href: "/about/company-overview" },
-        { label: "Innovation", href: "/about/innovation" },
+        { label: nav.companyOverview, href: "/about/company-overview" },
+        { label: nav.innovation, href: "/about/innovation" },
       ],
     },
     {
-      label: "Business & Brands",
+      label: nav.businessBrands,
       children: [
-        { label: "Our Brands", href: "/business/hotels-restaurants" },
-        { label: "Residential", href: "/business/residential" },
-        { label: "Food Processing", href: "/business/food-processing" },
+        { label: nav.ourBrands, href: "/business/hotels-restaurants" },
+        { label: nav.residential, href: "/business/residential" },
+        { label: nav.foodProcessing, href: "/business/food-processing" },
       ],
     },
     {
-      label: "Equipment",
+      label: nav.equipment,
       children: [
         {
-          label: "Thermal Processing",
+          label: nav.thermalProcessing,
           href: "/equipment/thermal-processing",
           children: [
-            { label: "Charcoal Grills", href: "/equipment/thermal-processing/charcoal-grills" },
-            { label: "Ranges", href: "/equipment/thermal-processing/ranges" },
-            { label: "Fryers", href: "/equipment/thermal-processing/fryers" },
-            { label: "Pasta Cookers", href: "/equipment/thermal-processing/pasta-cookers" },
-            { label: "Bain Marie", href: "/equipment/thermal-processing/bain-marie" },
-            { label: "Combi Ovens", href: "/equipment/thermal-processing/combi-ovens" },
+            { label: nav.charcoalGrills, href: "/equipment/thermal-processing/charcoal-grills" },
+            { label: nav.ranges, href: "/equipment/thermal-processing/ranges" },
+            { label: nav.fryers, href: "/equipment/thermal-processing/fryers" },
+            { label: nav.pastaCookers, href: "/equipment/thermal-processing/pasta-cookers" },
+            { label: nav.bainMarie, href: "/equipment/thermal-processing/bain-marie" },
+            { label: nav.combiOvens, href: "/equipment/thermal-processing/combi-ovens" },
           ],
         },
         {
-          label: "Refrigeration",
+          label: nav.refrigeration,
           href: "/equipment/refrigeration",
           children: [
-            { label: "Display Cases", href: "/equipment/refrigeration/display-cases" },
-            { label: "Food Refrigeration", href: "/equipment/refrigeration/food-refrigeration" },
-            { label: "Cold Rooms", href: "/equipment/refrigeration/cold-rooms" },
+            { label: nav.displayCases, href: "/equipment/refrigeration/display-cases" },
+            { label: nav.foodRefrigeration, href: "/equipment/refrigeration/food-refrigeration" },
+            { label: nav.coldRooms, href: "/equipment/refrigeration/cold-rooms" },
           ],
         },
         {
-          label: "Neutral INOX",
+          label: nav.neutralInox,
           href: "/equipment/neutral-inox",
           children: [
-            { label: "Warewashing", href: "/equipment/neutral-inox/warewashing" },
-            { label: "Waste Management", href: "/equipment/neutral-inox/waste-management" },
+            { label: nav.warewashing, href: "/equipment/neutral-inox/warewashing" },
+            { label: nav.wasteManagement, href: "/equipment/neutral-inox/waste-management" },
           ],
         },
       ],
     },
-    { label: "References", href: "/references" },
-    { label: "Demo Centers", href: "/demo-centers" },
+    { label: nav.references, href: "/references" },
+    { label: nav.demoCenters, href: "/demo-centers" },
   ];
 
   return items.map((item) => {
@@ -87,29 +88,29 @@ export function getNavItems(locale: Locale): NavItem[] {
 }
 
 /** Get flat equipment links for footer */
-export function getEquipmentLinks(locale: Locale): NavChild[] {
+export function getEquipmentLinks(locale: Locale, nav: Dictionary["nav"]): NavChild[] {
   return [
-    { label: "Thermal Processing", href: `/${locale}/equipment/thermal-processing` },
-    { label: "Refrigeration", href: `/${locale}/equipment/refrigeration` },
-    { label: "Neutral INOX", href: `/${locale}/equipment/neutral-inox` },
+    { label: nav.thermalProcessing, href: `/${locale}/equipment/thermal-processing` },
+    { label: nav.refrigeration, href: `/${locale}/equipment/refrigeration` },
+    { label: nav.neutralInox, href: `/${locale}/equipment/neutral-inox` },
   ];
 }
 
 /** Get solution links for footer */
-export function getSolutionLinks(locale: Locale): NavChild[] {
+export function getSolutionLinks(locale: Locale, nav: Dictionary["nav"]): NavChild[] {
   return [
-    { label: "Our Brands", href: `/${locale}/business/hotels-restaurants` },
-    { label: "Residential", href: `/${locale}/business/residential` },
-    { label: "Food Processing", href: `/${locale}/business/food-processing` },
+    { label: nav.ourBrands, href: `/${locale}/business/hotels-restaurants` },
+    { label: nav.residential, href: `/${locale}/business/residential` },
+    { label: nav.foodProcessing, href: `/${locale}/business/food-processing` },
   ];
 }
 
 /** Get company links for footer */
-export function getCompanyLinks(locale: Locale): NavChild[] {
+export function getCompanyLinks(locale: Locale, nav: Dictionary["nav"]): NavChild[] {
   return [
-    { label: "Company Overview", href: `/${locale}/about/company-overview` },
-    { label: "Innovation", href: `/${locale}/about/innovation` },
-    { label: "References", href: `/${locale}/references` },
-    { label: "Demo Centers", href: `/${locale}/demo-centers` },
+    { label: nav.companyOverview, href: `/${locale}/about/company-overview` },
+    { label: nav.innovation, href: `/${locale}/about/innovation` },
+    { label: nav.references, href: `/${locale}/references` },
+    { label: nav.demoCenters, href: `/${locale}/demo-centers` },
   ];
 }

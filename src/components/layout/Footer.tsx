@@ -3,11 +3,18 @@ import Image from "next/image";
 import { getSolutionLinks, getEquipmentLinks, getCompanyLinks } from "@/lib/navigation";
 import { COMPANY } from "@/lib/constants";
 import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
 
-export default function Footer({ locale }: { locale: Locale }) {
-  const solutionLinks = getSolutionLinks(locale);
-  const equipmentLinks = getEquipmentLinks(locale);
-  const companyLinks = getCompanyLinks(locale);
+interface FooterProps {
+  locale: Locale;
+  nav: Dictionary["nav"];
+  footer: Dictionary["footer"];
+}
+
+export default function Footer({ locale, nav, footer: f }: FooterProps) {
+  const solutionLinks = getSolutionLinks(locale, nav);
+  const equipmentLinks = getEquipmentLinks(locale, nav);
+  const companyLinks = getCompanyLinks(locale, nav);
 
   return (
     <footer className="bg-navy text-white">
@@ -27,12 +34,12 @@ export default function Footer({ locale }: { locale: Locale }) {
               className="h-12 w-auto brightness-0 invert mb-8"
             />
             <p className="font-display text-xl lg:text-2xl text-white/60 italic leading-snug max-w-sm mb-8">
-              Building kitchens that perform — across Southeast Europe and beyond.
+              {f.tagline}
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-px bg-gold/40" />
               <span className="text-gold/70 text-[11px] font-medium uppercase tracking-[0.2em]">
-                Authorized Middleby Partner
+                {f.authorizedPartner}
               </span>
             </div>
           </div>
@@ -42,7 +49,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 lg:gap-6 lg:pl-12">
               {/* Solutions */}
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">Solutions</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">{f.solutions}</p>
                 <ul className="space-y-3">
                   {solutionLinks.map((item) => (
                     <li key={item.href}>
@@ -54,7 +61,7 @@ export default function Footer({ locale }: { locale: Locale }) {
 
               {/* Equipment */}
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">Equipment</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">{f.equipment}</p>
                 <ul className="space-y-3">
                   {equipmentLinks.map((item) => (
                     <li key={item.href}>
@@ -66,7 +73,7 @@ export default function Footer({ locale }: { locale: Locale }) {
 
               {/* Company */}
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">Company</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">{f.company}</p>
                 <ul className="space-y-3">
                   {companyLinks.map((item) => (
                     <li key={item.href}>
@@ -78,7 +85,7 @@ export default function Footer({ locale }: { locale: Locale }) {
 
               {/* Contact */}
               <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">Get in Touch</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-5">{f.getInTouch}</p>
                 <div className="space-y-3">
                   <a href={`mailto:${COMPANY.email}`} className="block text-[13px] text-white/60 hover:text-white transition-colors duration-300">{COMPANY.email}</a>
                   <a href={`tel:${COMPANY.phone}`} className="block text-[13px] text-white/60 hover:text-white transition-colors duration-300">{COMPANY.phoneDisplay}</a>
@@ -98,7 +105,7 @@ export default function Footer({ locale }: { locale: Locale }) {
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <span className="text-[11px] text-white/50 tracking-[0.2em]">&copy; {new Date().getFullYear()} {COMPANY.name}</span>
           <div className="flex items-center gap-4">
-            <Link href={`/${locale}/privacy`} className="text-[11px] text-white/50 tracking-[0.2em] hover:text-white/70 transition-colors duration-300">Privacy Policy</Link>
+            <Link href={`/${locale}/privacy`} className="text-[11px] text-white/50 tracking-[0.2em] hover:text-white/70 transition-colors duration-300">{f.privacyPolicy}</Link>
             <span className="text-white/10">|</span>
             <a
               href="https://ironbuild.xyz"
@@ -106,7 +113,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-[11px] text-white/50 tracking-[0.2em] hover:text-white/70 transition-colors duration-300"
             >
-              Built by
+              {f.builtBy}
               <Image
                 src="/images/ironbuild-logo.svg"
                 alt="IronBuild"

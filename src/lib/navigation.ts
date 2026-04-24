@@ -42,14 +42,11 @@ export function getNavItems(locale: Locale, nav: Dictionary["nav"]): NavItem[] {
       label: nav.equipment,
       children: [
         {
-          label: nav.thermalProcessing,
+          label: nav.cooking,
           href: "/equipment/thermal-processing",
           children: [
-            { label: nav.charcoalGrills, href: "/equipment/thermal-processing/charcoal-grills" },
-            { label: nav.ranges, href: "/equipment/thermal-processing/ranges" },
-            { label: nav.fryers, href: "/equipment/thermal-processing/fryers" },
-            { label: nav.pastaCookers, href: "/equipment/thermal-processing/pasta-cookers" },
-            { label: nav.bainMarie, href: "/equipment/thermal-processing/bain-marie" },
+            { label: nav.josper, href: "/equipment/thermal-processing/charcoal-grills" },
+            { label: nav.cookingLine, href: "/equipment/cooking/cooking-line" },
             { label: nav.combiOvens, href: "/equipment/thermal-processing/combi-ovens" },
           ],
         },
@@ -57,17 +54,26 @@ export function getNavItems(locale: Locale, nav: Dictionary["nav"]): NavItem[] {
           label: nav.refrigeration,
           href: "/equipment/refrigeration",
           children: [
-            { label: nav.displayCases, href: "/equipment/refrigeration/display-cases" },
             { label: nav.foodRefrigeration, href: "/equipment/refrigeration/food-refrigeration" },
+            { label: nav.displayCases, href: "/equipment/refrigeration/display-cases" },
             { label: nav.coldRooms, href: "/equipment/refrigeration/cold-rooms" },
           ],
         },
         {
-          label: nav.neutralInox,
+          label: nav.neutralAndInox,
           href: "/equipment/neutral-inox",
           children: [
-            { label: nav.warewashing, href: "/equipment/neutral-inox/warewashing" },
-            { label: nav.wasteManagement, href: "/equipment/neutral-inox/waste-management" },
+            { label: nav.customFabrication, href: "/equipment/neutral-inox/custom-fabrication" },
+          ],
+        },
+        {
+          label: nav.wasteManagement,
+          href: "/equipment/neutral-inox/waste-management",
+          children: [
+            {
+              label: nav.wasteStationIhc,
+              href: "/equipment/neutral-inox/waste-management/waste-station-ihc",
+            },
           ],
         },
       ],

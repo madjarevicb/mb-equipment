@@ -5,12 +5,18 @@ import Link from "next/link";
 import ChevronIcon from "@/components/ui/ChevronIcon";
 import type { NavChild } from "@/lib/navigation";
 
+interface CtaLink {
+  label: string;
+  href: string;
+}
+
 interface DropdownProps {
   label: string;
   items: NavChild[];
+  cta?: CtaLink;
 }
 
-export default function DesktopDropdown({ label, items }: DropdownProps) {
+export default function DesktopDropdown({ label, items, cta }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -113,20 +119,31 @@ export default function DesktopDropdown({ label, items }: DropdownProps) {
             id={menuId}
             role="menu"
             aria-label={label}
+            style={
+              isMega
+                ? { minWidth: "900px", backgroundColor: "#FDFCF9" }
+                : undefined
+            }
             className={
               isMega
-                ? "bg-white border border-gray-200 py-5 px-6 grid grid-cols-3 gap-8 min-w-[560px]"
+                ? "border border-gray-200 shadow-lg flex flex-col"
                 : "bg-white border border-gray-200 py-2 min-w-[220px]"
             }
           >
-            {isMega
-              ? items.map((column) => {
+            {isMega ? (
+              <>
+                <div className="flex gap-0 pt-6 pb-7 px-5">
+            {items.map((column) => {
                   /* Category header link */
                   linkIndex++;
                   const headerIdx = linkIndex;
 
                   return (
-                    <div key={column.href} className="min-w-[150px]">
+                    <div
+                      key={column.href}
+                      style={{ flex: "1 1 0", minWidth: "210px" }}
+                      className="flex flex-col px-5 border-l border-gray-100 first:border-l-0"
+                    >
                       <Link
                         href={column.href}
                         role="menuitem"
@@ -135,11 +152,19 @@ export default function DesktopDropdown({ label, items }: DropdownProps) {
                           setIsOpen(false);
                           setFocusedIndex(-1);
                         }}
-                        className="block text-[11px] font-medium uppercase tracking-[0.2em] text-text-secondary hover:text-red transition-colors mb-3 pb-2 border-b border-gray-100"
+                        style={{
+                          letterSpacing: "0.16em",
+                          borderBottomColor: "var(--color-gold)",
+                          paddingBottom: "10px",
+                          marginBottom: "12px",
+                          minHeight: "34px",
+                        }}
+                        className="flex items-end justify-center text-center text-xs font-semibold uppercase text-navy hover:text-red transition-colors border-b"
                       >
                         {column.label}
                       </Link>
-                      <div className="space-y-0.5">
+
+                      <div className="flex flex-col">
                         {column.children?.map((sub) => {
                           linkIndex++;
                           const subIdx = linkIndex;
@@ -153,31 +178,66 @@ export default function DesktopDropdown({ label, items }: DropdownProps) {
                                 setIsOpen(false);
                                 setFocusedIndex(-1);
                               }}
-                              className="block py-1.5 text-[13px] text-text-primary hover:text-red transition-colors"
+                              className="group/sub relative flex items-center py-2 text-sm leading-snug text-text-secondary hover:text-navy transition-colors"
                             >
-                              {sub.label}
+                              {/* Sliding gold marker — replaces generic color hover */}
+                              <span
+                                aria-hidden="true"
+                                style={{
+                                  backgroundColor: "var(--color-gold)",
+                                  transition:
+                                    "width 220ms ease, opacity 220ms ease",
+                                }}
+                                className="inline-block h-px w-0 opacity-0 group-hover/sub:w-3 group-hover/sub:opacity-100 group-focus/sub:w-3 group-focus/sub:opacity-100 mr-0 group-hover/sub:mr-2 group-focus/sub:mr-2"
+                              />
+                              <span>{sub.label}</span>
                             </Link>
                           );
                         })}
                       </div>
                     </div>
                   );
-                })
-              : items.map((child, i) => (
+                })}
+                </div>
+                {cta && (
                   <Link
-                    key={child.href}
-                    href={child.href}
+                    href={cta.href}
                     role="menuitem"
-                    tabIndex={focusedIndex === i ? 0 : -1}
                     onClick={() => {
                       setIsOpen(false);
                       setFocusedIndex(-1);
                     }}
-                    className="block px-4 py-2.5 text-sm text-text-primary hover:bg-offwhite hover:text-red transition-colors"
+                    style={{ backgroundColor: "var(--color-navy)", letterSpacing: "0.22em" }}
+                    className="group/cta flex items-center justify-center gap-3 py-4 text-xs font-medium uppercase text-white hover:text-gold transition-colors border-t border-gold/30"
                   >
-                    {child.label}
+                    <span>{cta.label}</span>
+                    <span
+                      aria-hidden="true"
+                      style={{ color: "var(--color-gold)" }}
+                      className="transition-transform duration-200 group-hover/cta:translate-x-1"
+                    >
+                      &rarr;
+                    </span>
                   </Link>
-                ))}
+                )}
+              </>
+            ) : (
+              items.map((child, i) => (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  role="menuitem"
+                  tabIndex={focusedIndex === i ? 0 : -1}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setFocusedIndex(-1);
+                  }}
+                  className="block px-4 py-2.5 text-sm text-text-primary hover:bg-offwhite hover:text-red transition-colors"
+                >
+                  {child.label}
+                </Link>
+              ))
+            )}
           </div>
         </div>
       )}

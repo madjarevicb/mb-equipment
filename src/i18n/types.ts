@@ -13,10 +13,16 @@ export interface Dictionary {
     residential: string;
     foodProcessing: string;
     equipment: string;
+    cooking: string;
+    cookingLine: string;
+    josper: string;
     thermalProcessing: string;
     charcoalGrills: string;
     ranges: string;
+    heavyDutyRanges: string;
     fryers: string;
+    boilingPans: string;
+    tiltingPans: string;
     pastaCookers: string;
     bainMarie: string;
     combiOvens: string;
@@ -25,8 +31,11 @@ export interface Dictionary {
     foodRefrigeration: string;
     coldRooms: string;
     neutralInox: string;
+    neutralAndInox: string;
+    customFabrication: string;
     warewashing: string;
     wasteManagement: string;
+    wasteStationIhc: string;
     references: string;
     demoCenters: string;
     contact: string;

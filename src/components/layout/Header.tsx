@@ -40,15 +40,24 @@ export default function Header({ locale, nav, common }: HeaderProps) {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) =>
-              item.children ? (
-                <DesktopDropdown key={item.label} label={item.label} items={item.children} />
-              ) : (
-                <Link key={item.label} href={item.href} className="text-[13px] font-medium text-white/60 hover:text-white transition-colors duration-300">
-                  {item.label}
-                </Link>
-              )
-            )}
+            {navItems.map((item) => {
+              if (!item.children) {
+                return (
+                  <Link key={item.label} href={item.href} className="text-[13px] font-medium text-white/60 hover:text-white transition-colors duration-300">
+                    {item.label}
+                  </Link>
+                );
+              }
+              const isEquipment = item.label === nav.equipment;
+              return (
+                <DesktopDropdown
+                  key={item.label}
+                  label={item.label}
+                  items={item.children}
+                  cta={isEquipment ? { label: common.requestConsultation, href: `/${locale}/contact` } : undefined}
+                />
+              );
+            })}
             <div className="w-px h-5 bg-white/10 mx-1" />
             <LanguageSwitcher currentLocale={locale} />
             <a href={`tel:${COMPANY.phone}`} className="text-white/40 hover:text-white transition-colors duration-300" aria-label="Call us">

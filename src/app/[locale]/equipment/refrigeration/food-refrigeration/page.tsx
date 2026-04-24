@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const HERO_BLUR = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxMTEiLz48L3N2Zz4=";
 
-const pageBrands = refrigerationBrands.filter((b) => ["Desmon", "Infrico"].includes(b.name));
+const pageBrands = refrigerationBrands.filter((b) => ["Dalmec", "Desmon", "Tefcold", "Tehnodom"].includes(b.name));
 
 export default async function FoodRefrigerationPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

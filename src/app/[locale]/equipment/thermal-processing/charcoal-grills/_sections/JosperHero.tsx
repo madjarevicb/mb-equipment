@@ -2,10 +2,10 @@ import Image from "next/image";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
-import RunningMeta from "./RunningMeta";
-import ScrollReveal from "./ScrollReveal";
+import RunningMeta from "../../_sections/RunningMeta";
+import ScrollReveal from "../../_sections/ScrollReveal";
 
-interface HeroSectionProps {
+interface JosperHeroProps {
   locale: Locale;
   dict: Dictionary;
 }
@@ -13,13 +13,13 @@ interface HeroSectionProps {
 const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwYTE2MjgiLz48L3N2Zz4=";
 
-export default function HeroSection({ locale, dict }: HeroSectionProps) {
+export default function JosperHero({ locale, dict }: JosperHeroProps) {
   return (
     <section
-      aria-labelledby="cooking-hero"
+      aria-labelledby="josper-hero"
       className="relative bg-navy text-white overflow-hidden"
     >
-      {/* Folio top-right — editorial page mark */}
+      {/* Folio top-right */}
       <div
         aria-hidden="true"
         className="hidden lg:flex absolute top-6 right-8 z-20 items-center gap-3"
@@ -32,7 +32,7 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 04
+          folio 01 / 05
         </span>
         <span
           aria-hidden="true"
@@ -51,24 +51,27 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
         homeLabel={dict.breadcrumb.home}
         items={[
           { label: dict.nav.equipment, href: `/${locale}/equipment` },
-          { label: dict.nav.cooking },
+          {
+            label: dict.nav.cooking,
+            href: `/${locale}/equipment/thermal-processing`,
+          },
+          { label: dict.nav.josper },
         ]}
       />
 
-      {/* Running metadata — chapter head */}
       <RunningMeta
         variant="dark"
         folio="Ed. 2026"
         items={[
           "Vol. I",
-          "Ch. 01 — Cooking",
-          "Belgrade",
-          "Southeast Europe",
-          "Authorized Middleby Partner",
+          "Ch. 02 — Josper",
+          "Pineda de Mar, Est. 1969",
+          "Middleby Corporation",
+          "Authorized Partner — Belgrade",
         ]}
       />
 
-      {/* Vertical column rules on lg+ (grid ornament) */}
+      {/* Column rules on lg+ */}
       <div
         aria-hidden="true"
         className="hidden lg:block absolute inset-y-0 left-0 right-0 mx-auto max-w-7xl px-6 pointer-events-none"
@@ -91,8 +94,21 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
         }}
       >
         <div className="grid grid-cols-12 gap-6 lg:gap-10 items-start">
-          {/* Left — monumental headline with overlapping numeral behind */}
+          {/* Left — headline with overlapping numeral behind */}
           <div className="col-span-12 lg:col-span-8 relative z-10">
+            {/* Josper gold wordmark */}
+            <Image
+              src="/images/josper/josper-wordmark-gold.svg"
+              alt="Josper"
+              width={576}
+              height={104}
+              style={{
+                width: "auto",
+                height: "clamp(2.25rem, 4vw, 3.25rem)",
+                marginBottom: "clamp(1.25rem, 2vw, 1.75rem)",
+              }}
+            />
+
             <div className="flex items-center gap-4 mb-5 lg:mb-6">
               <span
                 aria-hidden="true"
@@ -118,7 +134,7 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
               />
             </div>
 
-            {/* Overlapping "01" numeral — sits behind H1 on lg+ */}
+            {/* Overlapping "02" numeral */}
             <div className="relative">
               <span
                 aria-hidden="true"
@@ -134,12 +150,11 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                   zIndex: 0,
                 }}
               >
-                01
+                02
               </span>
 
-              {/* H1 — monumental */}
               <h1
-                id="cooking-hero"
+                id="josper-hero"
                 className="font-display text-white relative"
                 style={{
                   fontSize: "clamp(2.5rem, 6.5vw, 5.25rem)",
@@ -155,7 +170,7 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                   delay={40}
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Commercial</span>
+                  <span style={{ display: "block" }}>Charcoal,</span>
                   <span
                     style={{
                       display: "block",
@@ -165,10 +180,10 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                       paddingLeft: "0.6em",
                     }}
                   >
-                    Cooking
+                    reinvented
                   </span>
                   <span style={{ display: "block" }}>
-                    Equipment
+                    since 1969
                     <span
                       aria-hidden="true"
                       style={{
@@ -185,7 +200,7 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* Right — single-line plate tag */}
+          {/* Right — plate tag */}
           <aside className="col-span-12 lg:col-span-4 relative lg:pt-12">
             <div
               style={{
@@ -201,18 +216,17 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                   letterSpacing: "0.1em",
                 }}
               >
-                Plate No. 01 —{" "}
+                Plate No. 02 —{" "}
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  The Line, Belgrade.
+                  Pineda de Mar &rarr; Belgrade.
                 </span>
               </p>
             </div>
           </aside>
         </div>
 
-        {/* Lower band — lede paragraph + hero image */}
+        {/* Lower band — lede + hero image */}
         <div className="grid grid-cols-12 gap-6 lg:gap-10 mt-6 lg:mt-8 items-start">
-          {/* Lede paragraph with drop cap */}
           <div className="col-span-12 lg:col-span-5 lg:pt-2 relative">
             <span
               aria-hidden="true"
@@ -223,14 +237,14 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
               }}
               className="block uppercase font-medium mb-4"
             >
-              § Editor&rsquo;s Note
+              &sect; Editor&rsquo;s Note
             </span>
             <p
               className="text-white/80 font-light"
               style={{
                 fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
                 lineHeight: 1.6,
-                maxWidth: "40ch",
+                maxWidth: "42ch",
               }}
             >
               <span
@@ -248,15 +262,15 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                   fontWeight: 400,
                 }}
               >
-                J
+                T
               </span>
-              osper charcoal grills, combi ovens, and full cooking lines —
-              specified, commissioned, and serviced by our engineering team
-              across Southeast Europe.
+              he Josper charcoal oven &mdash; patented in 1969 in Pineda de Mar
+              &mdash; is a closed-chamber, live-fire instrument. Spanish
+              engineering; Michelin-kitchen trust; now supplied, installed, and
+              serviced by MB Equipment across Southeast Europe.
             </p>
           </div>
 
-          {/* Image — bleeds right edge */}
           <div className="col-span-12 lg:col-span-7 relative">
             <figure className="relative">
               <div
@@ -268,8 +282,8 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                 }}
               >
                 <Image
-                  src="/images/whatwedo/chef-cooking.jpg"
-                  alt="Professional chef working a commercial cooking line with ranges and fryers"
+                  src="/images/josper/hero-ember.jpg"
+                  alt="Josper charcoal oven with the door open revealing glowing ember chamber"
                   fill
                   priority
                   fetchPriority="high"
@@ -278,7 +292,7 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                   blurDataURL={HERO_BLUR}
                   className="object-cover"
                   style={{
-                    filter: "grayscale(0.35) contrast(1.05) brightness(0.95)",
+                    filter: "grayscale(0.25) contrast(1.08) brightness(0.9)",
                   }}
                 />
                 <div
@@ -286,7 +300,7 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                   className="absolute inset-0 mix-blend-multiply"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0.75) 100%)",
+                      "linear-gradient(180deg, rgba(10,22,40,0.3) 0%, rgba(10,22,40,0.78) 100%)",
                   }}
                 />
                 <div
@@ -294,11 +308,10 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                   className="absolute inset-0 mix-blend-overlay"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(201,168,76,0.18) 0%, transparent 60%)",
+                      "linear-gradient(135deg, rgba(201,168,76,0.22) 0%, transparent 55%)",
                   }}
                 />
 
-                {/* Caption inside image, bottom-left — single line */}
                 <figcaption
                   className="absolute bottom-4 left-5 right-5 flex items-center justify-between"
                   style={{ zIndex: 2 }}
@@ -312,7 +325,7 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                       textTransform: "uppercase",
                     }}
                   >
-                    In-service, Belgrade
+                    HJX in service
                   </span>
                   <span
                     className="font-display italic"
@@ -322,7 +335,7 @@ export default function HeroSection({ locale, dict }: HeroSectionProps) {
                       letterSpacing: "0.2em",
                     }}
                   >
-                    — MB Eq.
+                    &mdash; Josper &times; MB Eq.
                   </span>
                 </figcaption>
               </div>

@@ -9,7 +9,7 @@ export const refrigerationSubcategories: EquipmentSubcategory[] = [
       "Refrigerated and heated display cases for patisserie, deli, and grab-and-go service — designed for visual merchandising and food safety.",
     heroImage: "/images/whatwedo/beverage.jpg",
     heroAlt: "Commercial refrigerated display cases and vitrines",
-    brands: ["JBG-2", "Tefcold"],
+    brands: ["JBG-2", "Infrico", "Tefcold", "Bartscher"],
     seoTitle: "Commercial Display Cases & Vitrines — Refrigerated",
     seoDesc:
       "Commercial refrigerated display cases and vitrines for patisserie, deli, and grab-and-go. JBG-2 and Tefcold authorized supply.",
@@ -29,10 +29,10 @@ export const refrigerationSubcategories: EquipmentSubcategory[] = [
       "Reach-in refrigerators, undercounter units, and prep tables for commercial kitchens — precise temperature control for ingredient storage.",
     heroImage: "/images/whatwedo/beverage.jpg",
     heroAlt: "Commercial food refrigeration equipment",
-    brands: ["Desmon", "Infrico"],
-    seoTitle: "Commercial Food Refrigeration — Reach-in & Undercounter",
+    brands: ["Dalmec", "Desmon", "Tefcold", "Tehnodom"],
+    seoTitle: "Commercial Upright & Undercounter Refrigeration",
     seoDesc:
-      "Commercial food refrigeration — reach-in refrigerators, blast chillers, undercounter units, and prep tables. Desmon and Infrico authorized supply.",
+      "Commercial upright and undercounter refrigeration — reach-in cabinets, blast chillers, and prep tables. Dalmec, Desmon, Tefcold, and Tehnodom authorized supply.",
     keywords: [
       "commercial refrigerator",
       "reach-in refrigerator",
@@ -64,6 +64,13 @@ export const refrigerationSubcategories: EquipmentSubcategory[] = [
 ];
 
 export const refrigerationBrands: EquipmentBrand[] = [
+  {
+    name: "Dalmec",
+    description:
+      "Complete refrigeration and storage solutions for hotels and foodservice — vertical and horizontal cabinets engineered for demanding kitchens.",
+    logo: "/images/brands/dalmec-logo.png",
+    category: "Food Refrigeration",
+  },
   {
     name: "Desmon",
     description:
@@ -97,6 +104,13 @@ export const refrigerationBrands: EquipmentBrand[] = [
     description:
       "Spanish-engineered refrigeration — back-bar coolers, prep counters, and display cases for hospitality and retail.",
     logo: "/images/brands/infrico-logo.png",
-    category: "Food Refrigeration",
+    category: "Display Cases & Vitrines",
+  },
+  {
+    name: "Bartscher",
+    description:
+      "German foodservice equipment — refrigerated display counters and patisserie showcases engineered for retail and hospitality.",
+    logo: null,
+    category: "Display Cases & Vitrines",
   },
 ];

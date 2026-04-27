@@ -50,6 +50,17 @@ const nextConfig: NextConfig = {
       { source: "/images/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       { source: "/hero-poster.jpg", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       { source: "/", headers: [{ key: "Link", value: "</hero-poster.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      /* Per-route hero preloads — saves ~200ms LCP each */
+      { source: "/:locale(en|sr)/equipment/thermal-processing", headers: [{ key: "Link", value: "</images/whatwedo/chef-cooking.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/thermal-processing/charcoal-grills", headers: [{ key: "Link", value: "</images/josper/hero-ember.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/thermal-processing/combi-ovens", headers: [{ key: "Link", value: "</images/houno-lincat/lincat-combislim-110.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/cooking/cooking-line", headers: [{ key: "Link", value: "</images/whatwedo/chef-cooking.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/refrigeration", headers: [{ key: "Link", value: "</images/whatwedo/beverage.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/refrigeration/food-refrigeration", headers: [{ key: "Link", value: "</images/upright/desmon-pgm14.png>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/refrigeration/display-cases", headers: [{ key: "Link", value: "</images/display-cases/jbg2-gerlach.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/refrigeration/cold-rooms", headers: [{ key: "Link", value: "</images/whatwedo/beverage.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/neutral-inox/custom-fabrication", headers: [{ key: "Link", value: "</images/whatwedo/elements.jpg>; rel=preload; as=image; fetchpriority=high" }] },
+      { source: "/:locale(en|sr)/equipment/neutral-inox/waste-management/waste-station-imc", headers: [{ key: "Link", value: "</images/imc/hero-straight.jpg>; rel=preload; as=image; fetchpriority=high" }] },
     ];
   },
 

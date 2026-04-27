@@ -15,8 +15,35 @@ interface ScrollRevealProps {
 
 /**
  * Refined scroll-triggered reveal. Line-by-line when requested.
- * Uses IntersectionObserver + CSS transition. Respects prefers-reduced-motion.
+ * Uses a single shared IntersectionObserver (module-level singleton)
+ * to avoid the per-instance observer cost when many ScrollReveal
+ * instances live on the same page. Respects prefers-reduced-motion.
  */
+
+type RevealCallback = () => void;
+const subscribers = new Map<Element, RevealCallback>();
+let sharedObserver: IntersectionObserver | null = null;
+
+function getObserver(): IntersectionObserver {
+  if (sharedObserver) return sharedObserver;
+  sharedObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const cb = subscribers.get(entry.target);
+          if (cb) {
+            cb();
+            sharedObserver?.unobserve(entry.target);
+            subscribers.delete(entry.target);
+          }
+        }
+      }
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -10% 0px" },
+  );
+  return sharedObserver;
+}
+
 export default function ScrollReveal({
   children,
   as = "div",
@@ -41,19 +68,13 @@ export default function ScrollReveal({
     }
     const el = ref.current;
     if (!el) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setVisible(true);
-            obs.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
-    );
+    const obs = getObserver();
+    subscribers.set(el, () => setVisible(true));
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      subscribers.delete(el);
+      obs.unobserve(el);
+    };
   }, [reduced]);
 
   const Tag = as as React.ElementType;

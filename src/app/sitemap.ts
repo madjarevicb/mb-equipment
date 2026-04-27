@@ -30,6 +30,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/equipment/neutral-inox", changeFrequency: "monthly" as const, priority: 0.9 },
     { path: "/equipment/neutral-inox/warewashing", changeFrequency: "monthly" as const, priority: 0.8 },
     { path: "/equipment/neutral-inox/waste-management", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/neutral-inox/custom-fabrication", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/equipment/neutral-inox/waste-management/waste-station-imc", changeFrequency: "monthly" as const, priority: 0.7 },
+    { path: "/equipment/cooking/cooking-line", changeFrequency: "monthly" as const, priority: 0.8 },
     { path: "/contact", changeFrequency: "yearly" as const, priority: 0.8 },
     { path: "/privacy", changeFrequency: "yearly" as const, priority: 0.3 },
   ];

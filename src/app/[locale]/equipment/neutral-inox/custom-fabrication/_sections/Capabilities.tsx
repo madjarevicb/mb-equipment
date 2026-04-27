@@ -139,7 +139,7 @@ export default function Capabilities() {
                   letterSpacing: "0.3em",
                 }}
               >
-                Folio 02 / 05
+                Folio 02 / 06
               </span>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { COMPANY } from "@/lib/constants";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import ChapterMark from "../../thermal-processing/_sections/ChapterMark";
+import { AwardStrip, FaqChapter, CtaTriad } from "@/components/equipment";
 import { Hero, Capabilities, MaterialsProcess, WhyCustom, Cta } from "./_sections";
 
 export const dynamic = "force-static";
@@ -218,6 +219,33 @@ export default async function CustomFabricationPage({
       {/* Chapter I — Hero */}
       <Hero locale={locale as Locale} dict={dict} />
 
+      {/* Heritage & certifications strip */}
+      <AwardStrip
+        variant="light"
+        items={[
+          {
+            type: "heritage",
+            label: "Belgrade workshop",
+            detail: "MB Equipment in-house",
+          },
+          {
+            type: "certification",
+            label: "AISI 304 / 316",
+            detail: "Food-grade stainless",
+          },
+          {
+            type: "certification",
+            label: "CE materials",
+            detail: "EU-compliant",
+          },
+          {
+            type: "award",
+            label: "Made-to-measure",
+            detail: "20-day typical lead",
+          },
+        ]}
+      />
+
       {/* Chapter II — What we fabricate */}
       <div className="bg-white">
         <ChapterMark
@@ -251,15 +279,70 @@ export default async function CustomFabricationPage({
       </div>
       <WhyCustom />
 
-      {/* Chapter V — CTA */}
+      {/* Chapter V — Questions */}
+      <ChapterMark
+        numeral="V"
+        label="Questions"
+        caption="What buyers ask before drawings start."
+        variant="dark"
+      />
+      <FaqChapter
+        variant="dark"
+        heading={
+          <>
+            Before{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold)" }}
+            >
+              we cut.
+            </span>
+          </>
+        }
+        items={[
+          {
+            q: "What stainless grade do you use?",
+            a: "AISI 304 standard for all hospitality work — food-safe, corrosion-resistant. AISI 316 for marine environments, chemical kitchens, or where chloride exposure is high. Both grades available; we recommend per project.",
+          },
+          {
+            q: "What gauges are typical?",
+            a: "1.0 mm for shelving and light splashbacks. 1.2–1.5 mm for work tables and standard counters. 2.0 mm for high-load surfaces (heavy prep stations, butcher tables, pass-through windows). Reinforced with under-frame on every piece.",
+          },
+          {
+            q: "What's the lead time from approved drawings?",
+            a: "2 weeks for simple rooms (3–5 pieces). 3–4 weeks for full kitchens. Custom geometries with bespoke welding may run 5–6 weeks. We confirm at quote stage with a written schedule.",
+          },
+          {
+            q: "Do you install?",
+            a: "Yes. Our workshop team handles measurement on-site, fabrication in Belgrade, and install across Southeast Europe. Single contact, single timeline, no subcontracted handoff.",
+          },
+          {
+            q: "Can you replace damaged pieces in existing kitchens?",
+            a: "Yes. We measure on-site, match the existing material and finish, and fabricate replacements. Common scenarios: forklift-damaged splashbacks, broken shelving, retrofit hand-wash stations.",
+          },
+          {
+            q: "What does it cost vs. catalogue equipment?",
+            a: "Bespoke fabrication is generally 15–35% above catalogue equivalents — but fits the room exactly, lasts 10–15+ years, and avoids dead space. We quote against your floor plan, not a generic catalogue.",
+          },
+        ]}
+        pageUrl={pageUrl}
+      />
+
+      {/* Chapter VI — CTA */}
       <div className="bg-offwhite">
         <ChapterMark
-          numeral="V"
+          numeral="VI"
           label="The Next Step"
           caption="Send the floor plan. We measure, draw, fabricate, install."
           variant="light"
         />
       </div>
+      <CtaTriad
+        locale={locale as Locale}
+        productSlug="custom-fabrication"
+        catalogHref="#"
+        variant="light"
+      />
       <Cta locale={locale as Locale} dict={dict} />
     </>
   );

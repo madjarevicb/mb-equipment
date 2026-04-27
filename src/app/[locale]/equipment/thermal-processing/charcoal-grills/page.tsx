@@ -3,6 +3,7 @@ import { COMPANY } from "@/lib/constants";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import ChapterMark from "../_sections/ChapterMark";
+import { FaqChapter, CtaTriad, AwardStrip } from "@/components/equipment";
 import {
   JosperHero,
   OriginTech,
@@ -192,6 +193,45 @@ export default async function JosperCharcoalGrillsPage({
       {/* Chapter I — Hero */}
       <JosperHero locale={locale as Locale} dict={dict} />
 
+      {/* Heritage & Certifications strip */}
+      <div className="bg-offwhite">
+        <AwardStrip
+          variant="light"
+          items={[
+            {
+              type: "heritage",
+              label: "Josper · Since 1969",
+              detail: "Pineda de Mar, Barcelona",
+            },
+            {
+              type: "heritage",
+              label: "Middleby brand",
+              detail: "Acquired April 2018",
+            },
+            {
+              type: "award",
+              label: "World's first patent",
+              detail: "Charcoal oven (1969)",
+            },
+            {
+              type: "certification",
+              label: "CE · NSF · UL · GOST",
+              detail: "International compliance",
+            },
+            {
+              type: "certification",
+              label: "4-year warranty",
+              detail: "Materials & components",
+            },
+            {
+              type: "award",
+              label: "40,000+ kitchens",
+              detail: "Josper's stated install base",
+            },
+          ]}
+        />
+      </div>
+
       {/* Chapter II — Origin + Technology */}
       <div className="bg-offwhite">
         <ChapterMark
@@ -225,7 +265,7 @@ export default async function JosperCharcoalGrillsPage({
       </div>
       <CulinaryQuote />
 
-      {/* Chapter V — Authorized partner + CTA */}
+      {/* Chapter V — Authorized partner */}
       <div className="bg-navy">
         <ChapterMark
           numeral="V"
@@ -234,6 +274,74 @@ export default async function JosperCharcoalGrillsPage({
           variant="dark"
         />
       </div>
+
+      {/* Chapter VI — Frequently asked */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VI"
+          label="Questions"
+          caption="Eight things chefs and consultants ask before specifying Josper."
+          variant="dark"
+        />
+      </div>
+      <FaqChapter
+        variant="dark"
+        heading={
+          <>
+            Frequently{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold)" }}
+            >
+              asked.
+            </span>
+          </>
+        }
+        items={[
+          {
+            q: "What charcoal does Josper recommend?",
+            a: "High-quality lump charcoal — quebracho blanco for red meats and red-fleshed fish; marabu for white-fleshed fish and vegetables. Josper sells its own branded eco-friendly wood charcoal. Avoid briquettes — too smoky for the enclosed chamber.",
+          },
+          {
+            q: "What's the difference between HJX and HJX-PRO?",
+            a: "HJX is the classic charcoal oven line (HJX-15 through HJX-50). HJX-PRO is the upgraded professional tier — same chamber design, refined finishes, premium-grade alloys. HJA Class A is the further-upgraded line. PRO is the standard recommendation for new restaurants.",
+          },
+          {
+            q: "How long does it take to fire up?",
+            a: "25–40 minutes depending on size. HJX-15: ~25 min. HJX-50 Large: ~40 min. Once at temperature, the chamber holds heat for 6–9 hours per charcoal load — single fill covers most service windows.",
+          },
+          {
+            q: "Charcoal consumption per service?",
+            a: "1.5–2.5 kg/day for HJX-15, scaling to 16–20 kg/day for HJX-50 Large. Josper claims up to 40% less charcoal vs open grills (manufacturer figure, not independently audited).",
+          },
+          {
+            q: "Power and ventilation requirements?",
+            a: "Single-phase 230V for the integrated electric ignition (HJX models) — most installations work on a standard 16A socket. Ventilation: a Type 1 hood sized to ~2x the manufacturer's recommended airflow rate, with grease filtration. Flue is cooled and shielded.",
+          },
+          {
+            q: "Warranty and service?",
+            a: "4 years against defects in materials and components, 1 year on internal combustion-chamber parts and door-retaining springs (Middleby UK terms). MB Equipment honours warranty locally — Belgrade-based service engineers, factory-trained.",
+          },
+          {
+            q: "What dishes work best?",
+            a: "Steaks, large protein cuts, whole fish, shellfish, vegetables, roasts, whole poultry, pizza, bread. The sealed chamber + high heat seals the outside while imparting charcoal aroma. Versatile across savoury and sweet — Berasategui notes pizza and dessert work too.",
+          },
+          {
+            q: "What about smoke management?",
+            a: "Cooled flue with damper-controlled airflow + antispark system + combustion shield + firebreak hat. Fully enclosed combustion chamber means significantly less smoke than open grills, but still requires Type 1 hood with grease filtration per local code.",
+          },
+        ]}
+        pageUrl={pageUrl}
+      />
+
+      {/* CTA Triad — quote / showroom / spec sheet */}
+      <CtaTriad
+        locale={locale as Locale}
+        productSlug="josper-charcoal-grills"
+        catalogHref="#"
+        variant="dark"
+      />
+
       <PartnerCta locale={locale as Locale} dict={dict} />
     </>
   );

@@ -11,6 +11,13 @@ import {
   SpecsThatMatter,
   CombiCta,
 } from "./_sections";
+import {
+  FaqChapter,
+  CtaTriad,
+  ModelsMatrix,
+  AwardStrip,
+  ROICalculator,
+} from "@/components/equipment";
 
 export const dynamic = "force-static";
 
@@ -216,6 +223,39 @@ export default async function CombiOvensPage({
       {/* Chapter I — Hero */}
       <CombiHero locale={locale as Locale} dict={dict} />
 
+      {/* Heritage & certifications strip — sits below hero */}
+      <AwardStrip
+        variant="light"
+        eyebrow="Pedigree"
+        items={[
+          {
+            type: "heritage",
+            label: "Houno · Since 1977",
+            detail: "Randers, Denmark",
+          },
+          {
+            type: "heritage",
+            label: "Lincat · Since 1971",
+            detail: "Lincoln, UK",
+          },
+          {
+            type: "certification",
+            label: "ISO 9001 + ISO 14001",
+            detail: "Quality + Environment",
+          },
+          {
+            type: "certification",
+            label: "ENERGY STAR",
+            detail: "Selected Invoq models",
+          },
+          {
+            type: "award",
+            label: "Middleby Group",
+            detail: "Authorized partner",
+          },
+        ]}
+      />
+
       {/* Chapter II — The two houses */}
       <div className="bg-offwhite">
         <ChapterMark
@@ -249,10 +289,222 @@ export default async function CombiOvensPage({
       </div>
       <SpecsThatMatter />
 
-      {/* Chapter V — CTA / colophon */}
+      {/* Chapter V — Specs scoreboard placeholder marker (existing structure) */}
+
+      {/* Chapter VI — Model matrix */}
       <div className="bg-navy">
         <ChapterMark
-          numeral="V"
+          numeral="VI"
+          label="Model Matrix"
+          caption="Compare across the Invoq + CombiSlim range."
+          variant="dark"
+        />
+      </div>
+      <ModelsMatrix
+        variant="dark"
+        eyebrow="Side by side"
+        heading={
+          <>
+            Four flagship{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold)" }}
+            >
+              configurations
+            </span>
+          </>
+        }
+        models={[
+          {
+            serial: "No. 01",
+            name: "Invoq Combi 6-1/1 GN",
+            brand: "Houno",
+            imageSrc: "/images/houno-lincat/invoq-10-1gn-main.png",
+            specSheetHref: "#",
+          },
+          {
+            serial: "No. 02",
+            name: "Invoq Combi 10-1/1 GN",
+            brand: "Houno",
+            imageSrc: "/images/houno-lincat/invoq-10-1gn-angle2.png",
+            specSheetHref: "#",
+          },
+          {
+            serial: "No. 03",
+            name: "Invoq Combi 20-2/1 GN",
+            brand: "Houno",
+            imageSrc: "/images/houno-lincat/invoq-10-1gn-angle3.png",
+            specSheetHref: "#",
+          },
+          {
+            serial: "No. 04",
+            name: "CombiSlim 1.10",
+            brand: "Lincat",
+            imageSrc: "/images/houno-lincat/lincat-combislim-110.jpg",
+            specSheetHref: "#",
+          },
+        ]}
+        specs={[
+          {
+            label: "Capacity",
+            values: ["6× 1/1 GN", "10× 1/1 GN", "20× 2/1 GN", "10× 1/1 GN"],
+          },
+          {
+            label: "Power",
+            values: ["10.3 kW", "19.3 kW", "62.2 kW", "12.7 kW"],
+          },
+          {
+            label: "Width",
+            values: ["~870 mm", "~870 mm", "~880 mm", "513 mm (narrow)"],
+          },
+          {
+            label: "Phase",
+            values: [
+              "1-phase / 3-phase",
+              "3-phase",
+              "3-phase 400V",
+              "3-phase 400V",
+            ],
+          },
+          {
+            label: "Food load",
+            values: ["~30 kg", "45 kg", "Industrial", "~30 kg"],
+          },
+          {
+            label: "ENERGY STAR",
+            values: ["—", "—", "Yes (US)", "Yes"],
+          },
+        ]}
+        footnote="Verified against manufacturer datasheets. Phase, voltage and food-load specs site-dependent — confirm with MB Equipment during specification."
+      />
+
+      {/* Chapter VII — Cost & savings */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="VII"
+          label="Cost & Savings"
+          caption="Five cooking modes. Lower energy than legacy combis."
+          variant="light"
+        />
+      </div>
+      <ROICalculator
+        variant="light"
+        eyebrow="Operating economics"
+        heading={
+          <>
+            What an Invoq{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold-text)" }}
+            >
+              actually saves
+            </span>
+          </>
+        }
+        intro="A worked example, not a quote. Manufacturer-stated reductions framed against a realistic mid-volume site so you can sanity-check the order of magnitude before specifying."
+        example={{
+          label: "Example: 200-cover restaurant",
+          inputs: [
+            { label: "Service volume", value: "200 covers/day, 6 days/week" },
+            { label: "Operating window", value: "12 hours/day" },
+            { label: "Current combi", value: "Legacy electric, 30 kW" },
+          ],
+          output: [
+            {
+              label: "Energy reduction (Houno claim)",
+              value: "Up to 70% in steam mode",
+            },
+            {
+              label: "Convection savings (Houno claim)",
+              value: "19% less",
+            },
+            { label: "Water savings", value: "27% less" },
+            { label: "Cleaning cost reduction", value: "70.7% less" },
+          ],
+          math: "All percentages stated by Houno vs previous-generation Invoq baseline. Site-specific savings vary with menu, water hardness, and operator behaviour.",
+        }}
+      />
+
+      {/* Chapter VIII — FAQ */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VIII"
+          label="Questions"
+          caption="Eight things buyers ask before specifying."
+          variant="dark"
+        />
+      </div>
+      <FaqChapter
+        variant="dark"
+        eyebrow="Before you specify"
+        heading={
+          <>
+            Frequently{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold)" }}
+            >
+              asked
+            </span>
+          </>
+        }
+        pageUrl={pageUrl}
+        items={[
+          {
+            q: "What is the difference between Invoq Combi and Invoq Hybrid?",
+            a: "Invoq Combi uses injection steam — a steam jet hits the hot chamber. Invoq Hybrid adds a dedicated boiler that holds steam reserves, giving faster recovery and more precise humidity control. Hybrid is the choice for high-volume gastronomy and bakery.",
+          },
+          {
+            q: "What three-phase power do I need?",
+            a: "Invoq 6×1/1 runs single-phase or three-phase; the 10×1/1 needs 3-phase 400V at ~30A; the 20×2/1 GN needs 3-phase 400V at ~90A. CombiSlim 1.10 needs 3-phase 400V at ~21A per phase.",
+          },
+          {
+            q: "Does descaling come included?",
+            a: "All Invoq and CombiSlim models include CombiWash automatic cleaning with seven cycles. Descaling is on-screen guided. Hard water (above 3°dH) requires periodic descale per Houno's water-quality guidance.",
+          },
+          {
+            q: "Can I monitor combi ovens remotely?",
+            a: "Yes. Open Kitchen cloud connectivity is built in — fleet management, recipe distribution, predictive maintenance, HACCP logging. Free for the first 12 months on every Invoq.",
+          },
+          {
+            q: "What's the warranty?",
+            a: "Two years parts & labour through Middleby UK and authorized European dealers, plus extended service contracts available. MB Equipment honours warranty locally with Middleby-trained engineers.",
+          },
+          {
+            q: "Why a narrow CombiSlim instead of full Invoq?",
+            a: "CombiSlim is 513 mm wide — designed to slot into existing tight kitchen lines or pair as a satellite oven beside a full Invoq for à-la-carte / banquet split workflows.",
+          },
+          {
+            q: "Are these ENERGY STAR certified?",
+            a: "Selected models — Invoq Combi 20-2/1 GN is ENERGY STAR certified at 81% convection efficiency / 78% steam efficiency. CombiSlim 1.10 is ENERGY STAR + IPX4 + CE.",
+          },
+          {
+            q: "How fast is installation?",
+            a: "Two days typical for a single Invoq plus commissioning, plumbing, and chef walkthrough. Multi-site rollouts coordinated centrally — we've installed across Belgrade, Niš, and regional Southeast Europe.",
+          },
+        ]}
+      />
+
+      {/* Chapter IX — Three paths to specifying */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="IX"
+          label="Three Paths"
+          caption="Quote, demo, or spec sheet — pick the one that fits where you are."
+          variant="dark"
+        />
+      </div>
+      <CtaTriad
+        locale={locale as Locale}
+        productSlug="combi-ovens"
+        catalogHref="#"
+        variant="dark"
+      />
+
+      {/* Chapter X — CTA / colophon */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="X"
           label="The Next Step"
           caption="Send your menu volume, voltage and water hardness — we'll spec the Invoq or CombiSlim configuration."
           variant="dark"

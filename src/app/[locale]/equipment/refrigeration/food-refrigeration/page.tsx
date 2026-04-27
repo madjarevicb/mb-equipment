@@ -8,6 +8,7 @@ import type { Locale } from "@/i18n/config";
 import ChapterMark from "../../thermal-processing/_sections/ChapterMark";
 import RunningMeta from "../../thermal-processing/_sections/RunningMeta";
 import ScrollReveal from "../../thermal-processing/_sections/ScrollReveal";
+import { AwardStrip, FaqChapter, CtaTriad } from "@/components/equipment";
 
 export const dynamic = "force-static";
 
@@ -367,7 +368,7 @@ export default async function UprightUndercounterPage({
               letterSpacing: "0.18em",
             }}
           >
-            folio 01 / 05
+            folio 01 / 08
           </span>
           <span
             aria-hidden="true"
@@ -666,11 +667,58 @@ export default async function UprightUndercounterPage({
       </section>
 
       {/* ===========================================================
-          CHAPTER II — THE FOUR HOUSES
+          CHAPTER II — HERITAGE & STANDARDS
          =========================================================== */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
+          label="Heritage & Standards"
+          caption="Three Italian houses, one Danish — and the standards behind them."
+          variant="light"
+        />
+        <AwardStrip
+          variant="light"
+          items={[
+            {
+              type: "heritage",
+              label: "Tefcold · Since 1987",
+              detail: "Viborg, Denmark",
+            },
+            {
+              type: "heritage",
+              label: "Desmon · Since 1994",
+              detail: "Nusco, Italy",
+            },
+            {
+              type: "heritage",
+              label: "Tecnodom · Since 1996",
+              detail: "Vigodarzere, Italy",
+            },
+            {
+              type: "heritage",
+              label: "Dalmec · Since 2012",
+              detail: "Istrana, Italy",
+            },
+            {
+              type: "certification",
+              label: "Middleby (Desmon)",
+              detail: "Acquired Dec 2014",
+            },
+            {
+              type: "certification",
+              label: "R290 leadership",
+              detail: "Tefcold natural refrigerant",
+            },
+          ]}
+        />
+      </div>
+
+      {/* ===========================================================
+          CHAPTER III — THE FOUR HOUSES
+         =========================================================== */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="III"
           label="The Four Houses"
           caption="Three Italian, one Danish — every cold form factor under one authorized partnership."
           variant="light"
@@ -897,11 +945,11 @@ export default async function UprightUndercounterPage({
       </section>
 
       {/* ===========================================================
-          CHAPTER III — THE FORMAT LEDGER
+          CHAPTER IV — THE FORMAT LEDGER
          =========================================================== */}
       <div className="bg-navy">
         <ChapterMark
-          numeral="III"
+          numeral="IV"
           label="The Format Ledger"
           caption="Nine refrigeration form factors — every box, well, drawer and chamber the line needs."
           variant="dark"
@@ -1086,7 +1134,7 @@ export default async function UprightUndercounterPage({
                   letterSpacing: "0.32em",
                 }}
               >
-                Folio 03 / 05
+                Folio 05 / 08
               </span>
             </div>
           </div>
@@ -1094,11 +1142,11 @@ export default async function UprightUndercounterPage({
       </section>
 
       {/* ===========================================================
-          CHAPTER IV — NUMBERS + PULL QUOTE
+          CHAPTER V — NUMBERS + PULL QUOTE
          =========================================================== */}
       <div className="bg-offwhite">
         <ChapterMark
-          numeral="IV"
+          numeral="V"
           label="House Note"
           caption="On scale, sustainability, and the climate the line has to live in."
           variant="light"
@@ -1356,11 +1404,81 @@ export default async function UprightUndercounterPage({
       </section>
 
       {/* ===========================================================
-          CHAPTER V — CTA + COLOPHON
+          CHAPTER VI — FAQ
          =========================================================== */}
       <div className="bg-navy">
         <ChapterMark
-          numeral="V"
+          numeral="VI"
+          label="Before You Specify"
+          caption="Six engineering questions, settled before quote."
+          variant="dark"
+        />
+      </div>
+      <FaqChapter
+        variant="dark"
+        heading={
+          <>
+            Before{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold)" }}
+            >
+              specifying.
+            </span>
+          </>
+        }
+        items={[
+          {
+            q: "Reach-in vs undercounter — when?",
+            a: "Reach-in upright (1/2/3-door, 400–1400 L) for back-of-house bulk storage. Undercounter (Desmon PTGM, Tefcold UD) for line-side prep where chefs need cold ingredients within arm's reach.",
+          },
+          {
+            q: "When do I need a blast chiller?",
+            a: "Any HACCP-driven kitchen processing more than ~50 covers/day benefits — chilling cooked food from +90°C to +3°C in <90 min preserves quality and meets food-safety law. Desmon GBF-15 is the workhorse.",
+          },
+          {
+            q: "Saladette vs prep counter?",
+            a: "Saladette has 1/1 or 1/3 GN wells in the worktop for ingredient access (pizza, sandwich, salad lines). Prep counter has solid worktop. Both are refrigerated underneath. Dalmec and Tecnodom specialize in saladettes.",
+          },
+          {
+            q: "AISI 304 or AISI 316?",
+            a: "AISI 304 standard across all four brands — food-grade, corrosion-resistant. AISI 316 only when chemical exposure or marine air applies. None of the four brands offer 316 as standard for upright; specify if needed.",
+          },
+          {
+            q: "What about energy class?",
+            a: "Tefcold publishes EU energy labels per SKU; current generations are typically Class B–C. Desmon is upgrading to lower-GWP refrigerants for EU. Tecnodom mixed (R452A on some SKUs). Per-SKU confirmation at quote.",
+          },
+          {
+            q: "Lead times and warranty?",
+            a: "Stock 2–4 weeks (Tefcold UR/UF, common Desmon SKUs). Custom configurations 6–10 weeks. Warranty 2 years parts and labour standard; compressor often extends to 5.",
+          },
+        ]}
+        pageUrl={pageUrl}
+      />
+
+      {/* ===========================================================
+          CHAPTER VII — CONVERSION TRIAD
+         =========================================================== */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VII"
+          label="Three Routes In"
+          caption="Quote, showroom, or spec sheet — pick your path."
+          variant="dark"
+        />
+      </div>
+      <CtaTriad
+        locale={locale as Locale}
+        productSlug="upright-undercounter"
+        variant="dark"
+      />
+
+      {/* ===========================================================
+          CHAPTER VIII — CTA + COLOPHON
+         =========================================================== */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VIII"
           label="The Next Step"
           caption="Send volume, format mix and ambient — we&rsquo;ll spec across the four houses."
           variant="dark"
@@ -1516,7 +1634,7 @@ export default async function UprightUndercounterPage({
         <div className="mt-12 lg:mt-16">
           <RunningMeta
             variant="dark"
-            folio="Folio 05 / 05"
+            folio="Folio 08 / 08"
             items={[
               "End of Ch. 01",
               "Refrigeration",

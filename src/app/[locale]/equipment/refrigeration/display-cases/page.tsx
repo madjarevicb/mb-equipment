@@ -8,6 +8,7 @@ import type { Locale } from "@/i18n/config";
 import ChapterMark from "../../thermal-processing/_sections/ChapterMark";
 import RunningMeta from "../../thermal-processing/_sections/RunningMeta";
 import ScrollReveal from "../../thermal-processing/_sections/ScrollReveal";
+import { AwardStrip, FaqChapter, CtaTriad } from "@/components/equipment";
 
 export const dynamic = "force-static";
 
@@ -381,7 +382,7 @@ export default async function DisplayCasesPage({
               letterSpacing: "0.18em",
             }}
           >
-            folio 01 / 05
+            folio 01 / 08
           </span>
           <span
             aria-hidden="true"
@@ -686,11 +687,58 @@ export default async function DisplayCasesPage({
       </section>
 
       {/* ─────────────────────────────────────────────
-          CHAPTER II — THE FOUR HOUSES
+          CHAPTER II — HERITAGE & STANDARDS
          ───────────────────────────────────────────── */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
+          label="Heritage & Standards"
+          caption="Four houses across four traditions — and the standards they keep."
+          variant="light"
+        />
+        <AwardStrip
+          variant="light"
+          items={[
+            {
+              type: "heritage",
+              label: "Bartscher · Since 1876",
+              detail: "Geseke, Germany — 150 years",
+            },
+            {
+              type: "heritage",
+              label: "Tefcold · Since 1987",
+              detail: "Viborg, Denmark",
+            },
+            {
+              type: "heritage",
+              label: "JBG-2 · Since 1989",
+              detail: "Warszowice, Poland",
+            },
+            {
+              type: "heritage",
+              label: "Infrico · Since 1986",
+              detail: "Lucena, Spain",
+            },
+            {
+              type: "certification",
+              label: "ISO 23953-2",
+              detail: "Display refrigeration std",
+            },
+            {
+              type: "certification",
+              label: "R290 / R600a",
+              detail: "Natural refrigerants",
+            },
+          ]}
+        />
+      </div>
+
+      {/* ─────────────────────────────────────────────
+          CHAPTER III — THE FOUR HOUSES
+         ───────────────────────────────────────────── */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="III"
           label="The Four Houses"
           caption="Poland, Spain, Denmark, Germany — each chosen for what it does best."
           variant="light"
@@ -906,11 +954,11 @@ export default async function DisplayCasesPage({
       </section>
 
       {/* ─────────────────────────────────────────────
-          CHAPTER III — THE FORMAT LEDGER
+          CHAPTER IV — THE FORMAT LEDGER
          ───────────────────────────────────────────── */}
       <div className="bg-navy">
         <ChapterMark
-          numeral="III"
+          numeral="IV"
           label="The Format Ledger"
           caption="Eight display formats — refrigerated, heated, and frozen."
           variant="dark"
@@ -1154,11 +1202,11 @@ export default async function DisplayCasesPage({
       </section>
 
       {/* ─────────────────────────────────────────────
-          CHAPTER IV — APPLICATION MATRIX + PULL QUOTE
+          CHAPTER V — APPLICATION MATRIX + PULL QUOTE
          ───────────────────────────────────────────── */}
       <div className="bg-offwhite">
         <ChapterMark
-          numeral="IV"
+          numeral="V"
           label="The Application Ledger"
           caption="Six venues — each with its proper combination."
           variant="light"
@@ -1388,7 +1436,7 @@ export default async function DisplayCasesPage({
                 className="uppercase text-navy/55"
                 style={{ fontSize: "10px", letterSpacing: "0.32em" }}
               >
-                Folio 04 / 05
+                Folio 05 / 08
               </span>
             </div>
           </div>
@@ -1396,11 +1444,81 @@ export default async function DisplayCasesPage({
       </section>
 
       {/* ─────────────────────────────────────────────
-          CHAPTER V — CTA + COLOPHON
+          CHAPTER VI — FAQ
          ───────────────────────────────────────────── */}
       <div className="bg-navy">
         <ChapterMark
-          numeral="V"
+          numeral="VI"
+          label="Before You Display"
+          caption="Six questions, settled before specification."
+          variant="dark"
+        />
+      </div>
+      <FaqChapter
+        variant="dark"
+        heading={
+          <>
+            Before{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold)" }}
+            >
+              you display.
+            </span>
+          </>
+        }
+        items={[
+          {
+            q: "Plug-in or remote refrigeration?",
+            a: "Plug-in (built-in compressor) for single-unit installs — simplest, plug into a 16A socket. Remote (external compressor) for supermarkets and bakery walls — quieter front-of-house, but requires a refrigeration plant room.",
+          },
+          {
+            q: "What about glass quality?",
+            a: "Curved tempered thermopane double-glazing on all premium patisserie units (Infrico Niza/Lyon, Bartscher 400L). Standard frameless tempered on Tefcold beverage merchandisers. Anti-condensation ventilation on Bartscher Deli-Cool.",
+          },
+          {
+            q: "LED lighting included?",
+            a: "Yes — all current generation units. 2-tier LED on Deli-Cool series, warm 2700K + cold 6000K combinations on Infrico (per shelf, configurable). Reduces consumption 80–90% vs legacy lighting per Infrico.",
+          },
+          {
+            q: "Refrigerant choice?",
+            a: "JBG-2 plug-ins use R290 / R600a. Tefcold ranges shifted to R290 across new generations. Bartscher patisserie commonly uses R600a. All are natural hydrocarbons — F-Gas compliant for new equipment from 2025.",
+          },
+          {
+            q: "What's the warranty?",
+            a: "2 years on most units (parts + labour) honoured locally through MB Equipment service. Compressor warranty often extends to 5 years on selected models — confirmed at quote.",
+          },
+          {
+            q: "Lead times?",
+            a: "Stock units (Tefcold standard, Bartscher countertop) 1–2 weeks. Custom Infrico configurations 4–8 weeks. JBG-2 remote-system multidecks specified per project, 6–10 weeks.",
+          },
+        ]}
+        pageUrl={pageUrl}
+      />
+
+      {/* ─────────────────────────────────────────────
+          CHAPTER VII — CONVERSION TRIAD
+         ───────────────────────────────────────────── */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VII"
+          label="Three Routes In"
+          caption="Quote, showroom, or spec sheet — the path is yours."
+          variant="dark"
+        />
+      </div>
+      <CtaTriad
+        locale={locale as Locale}
+        productSlug="display-cases"
+        variant="dark"
+      />
+
+      {/* ─────────────────────────────────────────────
+          CHAPTER VIII — CTA + COLOPHON
+         ───────────────────────────────────────────── */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VIII"
           label="The Next Step"
           caption="Send your space, your products, and your refrigeration mode."
           variant="dark"
@@ -1445,7 +1563,7 @@ export default async function DisplayCasesPage({
               letterSpacing: "-0.03em",
             }}
           >
-            V
+            VIII
           </div>
 
           <div className="grid grid-cols-12 gap-6 lg:gap-10">
@@ -1588,7 +1706,7 @@ export default async function DisplayCasesPage({
       {/* Closing running-meta */}
       <RunningMeta
         variant="light"
-        folio="folio 05 / 05"
+        folio="folio 08 / 08"
         items={[
           "Vol. IV",
           "End of Ch. 02",

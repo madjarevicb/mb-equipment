@@ -102,6 +102,8 @@ export default function RootLayout({
   return (
     <html className={`${dmSans.variable} ${cormorant.variable} antialiased`}>
       <head>
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <noscript>
           <style dangerouslySetInnerHTML={{ __html: ".stagger-children > * { opacity: 1 !important; transform: none !important; animation: none !important; }" }} />
         </noscript>

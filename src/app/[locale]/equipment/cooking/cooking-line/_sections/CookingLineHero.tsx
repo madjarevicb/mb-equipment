@@ -32,7 +32,7 @@ export default function CookingLineHero({ locale, dict }: Props) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 05
+          folio 01 / 07
         </span>
         <span
           aria-hidden="true"

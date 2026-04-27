@@ -32,7 +32,7 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 05
+          folio 01 / 08
         </span>
         <span
           aria-hidden="true"

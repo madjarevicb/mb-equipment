@@ -32,7 +32,7 @@ export default function Hero({ locale, dict }: HeroProps) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 05
+          folio 01 / 06
         </span>
         <span
           aria-hidden="true"

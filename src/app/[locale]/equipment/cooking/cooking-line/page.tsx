@@ -4,6 +4,12 @@ import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import ChapterMark from "../../thermal-processing/_sections/ChapterMark";
 import {
+  FaqChapter,
+  CtaTriad,
+  ModelsMatrix,
+  AwardStrip,
+} from "@/components/equipment";
+import {
   CookingLineHero,
   TwoHouses,
   InstrumentLedger,
@@ -223,6 +229,45 @@ export default async function CookingLinePage({
       {/* Chapter I — Hero */}
       <CookingLineHero locale={locale as Locale} dict={dict} />
 
+      {/* Heritage and certifications strip */}
+      <div className="bg-offwhite">
+        <AwardStrip
+          variant="light"
+          items={[
+            {
+              type: "heritage",
+              label: "Silko · Since 1980",
+              detail: "Vittorio Veneto, Italy",
+            },
+            {
+              type: "heritage",
+              label: "Lincat · Since 1971",
+              detail: "Lincoln, UK",
+            },
+            {
+              type: "award",
+              label: "Ali Group",
+              detail: "Silko parent",
+            },
+            {
+              type: "award",
+              label: "Middleby Group",
+              detail: "Lincat parent (since 2011)",
+            },
+            {
+              type: "certification",
+              label: "ISO 9001 + ISO 14001",
+              detail: "Lincat",
+            },
+            {
+              type: "certification",
+              label: "AISI 304",
+              detail: "Stainless across both",
+            },
+          ]}
+        />
+      </div>
+
       {/* Chapter II — The two houses */}
       <div className="bg-offwhite">
         <ChapterMark
@@ -245,10 +290,86 @@ export default async function CookingLinePage({
       </div>
       <InstrumentLedger locale={locale as Locale} />
 
-      {/* Chapter IV — Engineering pull-quote */}
-      <div className="bg-offwhite">
+      {/* Chapter IV — Capacity matrix */}
+      <div className="bg-navy">
         <ChapterMark
           numeral="IV"
+          label="Capacity Matrix"
+          caption="Choose by line depth and burner power."
+          variant="dark"
+        />
+      </div>
+      <ModelsMatrix
+        variant="dark"
+        heading={
+          <>
+            Capacity{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold)" }}
+            >
+              matrix.
+            </span>
+          </>
+        }
+        models={[
+          { serial: "No. 01", name: "Silko Essence 700", brand: "Silko" },
+          { serial: "No. 02", name: "Silko Essence 900", brand: "Silko" },
+          { serial: "No. 03", name: "Lincat Opus 800", brand: "Lincat" },
+          {
+            serial: "No. 04",
+            name: "Lincat Silverlink 600",
+            brand: "Lincat",
+          },
+        ]}
+        specs={[
+          {
+            label: "Depth",
+            values: ["700 mm", "900 mm", "800 mm", "600 mm"],
+          },
+          {
+            label: "Burner power",
+            values: [
+              "Up to 6 kW (sealed)",
+              "Up to 10 kW (open)",
+              "Up to 7.5 kW (concentric)",
+              "Mid-duty",
+            ],
+          },
+          {
+            label: "Worktop",
+            values: [
+              "AISI 304 / 15-10",
+              "AISI 304 / 20-10",
+              "Cast-iron supports",
+              "Stainless / cast",
+            ],
+          },
+          {
+            label: "Modules",
+            values: [
+              "Open burners, fryers, pasta, bain-marie",
+              "Open burners, induction, solid-top, brattpan",
+              "Range, fryer, brattpan, induction",
+              "Counter-top + free-standing",
+            ],
+          },
+          {
+            label: "Best fit",
+            values: [
+              "Mid-volume HoReCa",
+              "High-volume restaurant / hotel",
+              "Heavy-duty restaurants",
+              "Pubs, cafés, education",
+            ],
+          },
+        ]}
+      />
+
+      {/* Chapter V — Engineering pull-quote */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="V"
           label="House Note"
           caption="On the relationship between line, menu, and engineering."
           variant="light"
@@ -256,15 +377,72 @@ export default async function CookingLinePage({
       </div>
       <EngineeringQuote />
 
-      {/* Chapter V — CTA / authorized partner */}
+      {/* Chapter VI — Questions */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="VI"
+          label="Questions"
+          caption="Five things buyers ask before specifying a line."
+          variant="light"
+        />
+      </div>
+      <FaqChapter
+        variant="light"
+        pageUrl={pageUrl}
+        heading={
+          <>
+            Before{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold-text)" }}
+            >
+              you specify.
+            </span>
+          </>
+        }
+        items={[
+          {
+            q: "Should I pick Silko Essence 700 or 900?",
+            a: "Essence 700 is 700 mm deep with sealed high-efficiency 6 kW burners — best for mid-volume HoReCa where space is constrained. Essence 900 goes 900 mm deep with open burners up to 10 kW — built for high-volume restaurants and hotels with heavy-duty cooking lines.",
+          },
+          {
+            q: "Where does Lincat fit alongside Silko?",
+            a: "Lincat Opus 800 (800 mm depth) is the heavy-duty British counterpart to Essence 900. Silverlink 600 covers mid-duty and counter-top use. Lincat is generally specified where Middleby ecosystem service and parts continuity matter most.",
+          },
+          {
+            q: "Can I mix gas and induction in one line?",
+            a: "Yes. Both Silko Essence and Lincat Opus 800 support modular config — open gas burners, induction zones, solid-top, fryer, brattpan, pasta cooker, bain-marie all share the same chassis depth.",
+          },
+          {
+            q: "What about ventilation?",
+            a: "Hood and make-up air are sized to the cumulative kW load of the line. We coordinate with Britannia (Middleby UK ventilation) when specifying Lincat-heavy projects.",
+          },
+          {
+            q: "Lead time and install?",
+            a: "Stock items 3–6 weeks; bespoke configurations 8–12 weeks. Install is 2–4 days for a complete line, plus commissioning and chef walkthrough.",
+          },
+          {
+            q: "What's the warranty?",
+            a: "Lincat Opus 800: 2 years parts and labour. Silko: per project, typically 24 months. MB Equipment honours both locally with trained service engineers in Belgrade.",
+          },
+        ]}
+      />
+
+      {/* Chapter VII — CTA / authorized partner */}
       <div className="bg-navy">
         <ChapterMark
-          numeral="V"
+          numeral="VII"
           label="The Next Step"
           caption="Floor plan or menu concept in — CAD layout and budget ranges out."
           variant="dark"
         />
       </div>
+      <CtaTriad
+        locale={locale as Locale}
+        productSlug="cooking-line"
+        catalogHref="#"
+        variant="dark"
+      />
       <CookingLineCta locale={locale as Locale} dict={dict} />
     </>
   );

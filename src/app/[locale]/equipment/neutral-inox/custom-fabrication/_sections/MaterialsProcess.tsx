@@ -99,7 +99,7 @@ export default function MaterialsProcess() {
                 letterSpacing: "0.3em",
               }}
             >
-              Folio 03 / 05
+              Folio 03 / 06
             </span>
           </div>
         </div>

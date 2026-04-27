@@ -197,7 +197,7 @@ export default function CookingLineCta({ locale, dict }: Props) {
       {/* Closing running-meta */}
       <RunningMeta
         variant="light"
-        folio="folio 05 / 05"
+        folio="folio 07 / 07"
         items={[
           "Vol. II",
           "End of Ch. 02",

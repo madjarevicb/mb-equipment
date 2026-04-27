@@ -214,7 +214,7 @@ export default function PanelLedger() {
               className="uppercase text-white/50"
               style={{ fontSize: "10px", letterSpacing: "0.32em" }}
             >
-              Folio 03 / 05
+              Folio 04 / 08
             </span>
           </div>
         </div>

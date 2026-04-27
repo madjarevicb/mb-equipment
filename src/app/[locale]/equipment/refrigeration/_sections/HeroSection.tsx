@@ -20,6 +20,7 @@ export default function HeroSection({ dict, common }: Props) {
         alt="Commercial refrigeration equipment and cold storage systems"
         fill
         priority
+        fetchPriority="high"
         sizes="100vw"
         className="object-cover"
         placeholder="blur"

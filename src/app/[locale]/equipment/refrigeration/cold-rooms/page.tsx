@@ -3,6 +3,7 @@ import { COMPANY } from "@/lib/constants";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import ChapterMark from "../../thermal-processing/_sections/ChapterMark";
+import { AwardStrip, FaqChapter, CtaTriad } from "@/components/equipment";
 import {
   ColdRoomsHero,
   BrandSpotlight,
@@ -197,10 +198,55 @@ export default async function ColdRoomsPage({
       {/* Chapter I — Hero */}
       <ColdRoomsHero locale={locale as Locale} dict={dict} />
 
-      {/* Chapter II — Brand spotlight */}
+      {/* Chapter II — Heritage & Standards */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
+          label="Heritage & Standards"
+          caption="Two manufacturers, F-Gas-ready refrigerants, fire-rated insulated panels."
+          variant="light"
+        />
+        <AwardStrip
+          variant="light"
+          items={[
+            {
+              type: "heritage",
+              label: "Tecnodom · Since 1996",
+              detail: "Padova, Italy",
+            },
+            {
+              type: "heritage",
+              label: "JKS Refrigeration · Since 2006",
+              detail: "Cadoneghe, Padova",
+            },
+            {
+              type: "certification",
+              label: "F-Gas 2024/573",
+              detail: "EU compliant",
+            },
+            {
+              type: "certification",
+              label: "R290 / R744",
+              detail: "Natural refrigerants",
+            },
+            {
+              type: "certification",
+              label: "PUR / PIR panels",
+              detail: "B-s2,d0 fire-rated option",
+            },
+            {
+              type: "award",
+              label: "20 cm modular grid",
+              detail: "JKS MAXI bespoke sizing",
+            },
+          ]}
+        />
+      </div>
+
+      {/* Chapter III — Brand spotlight */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="III"
           label="Tecnodom — JKS Refrigeration"
           caption="Vigodarzere, Padova — five facilities, 200+ employees, exports to 40+ countries."
           variant="light"
@@ -208,10 +254,10 @@ export default async function ColdRoomsPage({
       </div>
       <BrandSpotlight />
 
-      {/* Chapter III — Panel ledger */}
+      {/* Chapter IV — Panel ledger */}
       <div className="bg-navy">
         <ChapterMark
-          numeral="III"
+          numeral="IV"
           label="The Panel Ledger"
           caption="Six panel thicknesses — from 60 mm beverage chiller to 200 mm industrial blast freezer."
           variant="dark"
@@ -219,10 +265,10 @@ export default async function ColdRoomsPage({
       </div>
       <PanelLedger />
 
-      {/* Chapter IV — Compliance + pull quote */}
+      {/* Chapter V — Compliance + pull quote */}
       <div className="bg-offwhite">
         <ChapterMark
-          numeral="IV"
+          numeral="V"
           label="Compliance &amp; Sustainability"
           caption="CE-marked, F-Gas 2024/573 compliant, R290 future-proof."
           variant="light"
@@ -230,10 +276,76 @@ export default async function ColdRoomsPage({
       </div>
       <ComplianceQuote />
 
-      {/* Chapter V — CTA + colophon */}
+      {/* Chapter VI — FAQ */}
       <div className="bg-navy">
         <ChapterMark
-          numeral="V"
+          numeral="VI"
+          label="Before You Install"
+          caption="Six engineering questions, settled before the floor plan goes out."
+          variant="dark"
+        />
+      </div>
+      <FaqChapter
+        variant="dark"
+        heading={
+          <>
+            Before{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold)" }}
+            >
+              install.
+            </span>
+          </>
+        }
+        items={[
+          {
+            q: "What panel thickness for my room?",
+            a: "+0/+8°C cooler: 60–80 mm. -18/-22°C freezer: 100 mm. -22/-25°C freezer in warm climate: 120–130 mm. Blast freezer at -30°C+: 150–200 mm. Always factor ambient + duty cycle.",
+          },
+          {
+            q: "Do I need a floor panel?",
+            a: "Yes for freezers (prevents ground frost). Optional for chillers if existing slab is insulated. Floorless chillers + ramp work for pallet-jack access; insulated floor with stainless or anti-slip checker for hygiene-critical.",
+          },
+          {
+            q: "Mono-block or split refrigeration?",
+            a: "Mono-block (wall-saddle or ceiling) for rooms up to ~25 m³ — plug-and-play. Split (separate evaporator inside, condensing unit outside) for 25–100 m³ — quieter inside, better for medium rooms. Central rack for supermarkets / multi-room sites.",
+          },
+          {
+            q: "What's the install timeline?",
+            a: "Small-medium rooms (≤200 m³) — panel assembly 2–5 days plus 1–2 days commissioning. Add a few days for floor prep and electrical/plumbing. Modular = dramatically faster than fixed/built-in cold rooms.",
+          },
+          {
+            q: "Refrigerant choice now that F-Gas hit?",
+            a: "R290 (propane, GWP 3) is dominant for new self-contained equipment in EU — fully F-Gas 2024/573 compliant. R744 (CO₂) for supermarket transcritical racks. R448A still permitted for some retrofits but not future-proof under the new regulation.",
+          },
+          {
+            q: "Can I disassemble and relocate?",
+            a: "Yes. Cam-lock panels are designed for disassembly and reuse — invaluable for tenants, food trucks expanding to commissaries, or pop-up kitchens migrating venues.",
+          },
+        ]}
+        pageUrl={pageUrl}
+      />
+
+      {/* Chapter VII — Conversion triad */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VII"
+          label="Three Routes In"
+          caption="Quote, showroom, or spec sheet — pick your path."
+          variant="dark"
+        />
+      </div>
+      <CtaTriad
+        locale={locale as Locale}
+        productSlug="cold-rooms"
+        variant="dark"
+      />
+
+      {/* Chapter VIII — CTA + colophon */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VIII"
           label="Send the Floor Plan"
           caption="2–5 day install for ≤ 200 m³ — single-source from Belgrade for Southeast Europe."
           variant="dark"

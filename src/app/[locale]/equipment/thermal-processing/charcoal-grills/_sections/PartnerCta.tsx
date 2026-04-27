@@ -304,7 +304,7 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                 className="uppercase text-white/50"
                 style={{ fontSize: "10px", letterSpacing: "0.32em" }}
               >
-                Folio 05 / 05 &middot; End of Ch. 02
+                Folio 08 / 08 &middot; End of Ch. 02
               </span>
             </div>
           </div>

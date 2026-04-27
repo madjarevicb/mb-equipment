@@ -4,6 +4,12 @@ import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import ChapterMark from "../../../thermal-processing/_sections/ChapterMark";
 import {
+  AwardStrip,
+  FaqChapter,
+  CtaTriad,
+} from "@/components/equipment";
+import WasteROIWrapper from "@/components/equipment/WasteROIWrapper";
+import {
   Hero,
   Mechanism,
   ModelLedger,
@@ -17,7 +23,7 @@ export const dynamic = "force-static";
 const PAGE_TITLE_EN = "IMC WasteStation — Food Waste Management | MB";
 const PAGE_TITLE_SR = "IMC WasteStation — upravljanje otpadom | MB";
 const PAGE_DESC_EN =
-  "IMC WasteStation by Imperial Machine Company (Middleby) — food waste macerator and dewaterer reducing kitchen waste volume by up to 80%. Authorized supply, Belgrade.";
+  "IMC WasteStation by Imperial Machine Company (Middleby) — food waste macerator reducing kitchen waste volume by 80%. Authorized supply, Belgrade.";
 const PAGE_DESC_SR =
   "IMC WasteStation (Imperial Machine Company, Middleby) — usitnjavač i dehidrator otpada koji smanjuje zapreminu kuhinjskog otpada do 80%. Ovlašćena isporuka, Beograd.";
 
@@ -287,6 +293,34 @@ export default async function WasteStationImcPage({
       {/* Chapter I — Hero */}
       <Hero locale={locale as Locale} dict={dict} />
 
+      {/* Heritage / certifications strip */}
+      <AwardStrip
+        variant="light"
+        items={[
+          { type: "heritage", label: "IMC · Since 1906", detail: "Lincoln, UK" },
+          {
+            type: "heritage",
+            label: "Middleby brand",
+            detail: "Foodservice Equipment Group",
+          },
+          {
+            type: "certification",
+            label: "UKCA + IP55",
+            detail: "Made in UK",
+          },
+          {
+            type: "award",
+            label: "First in Europe",
+            detail: "1956 — food waste disposers",
+          },
+          {
+            type: "award",
+            label: "Middleby Group",
+            detail: "Authorized partner",
+          },
+        ]}
+      />
+
       {/* Chapter II — Mechanism */}
       <div className="bg-offwhite">
         <ChapterMark
@@ -320,13 +354,109 @@ export default async function WasteStationImcPage({
       </div>
       <Numbers />
 
-      {/* House quote */}
-      <HouseQuote />
-
-      {/* Chapter V — CTA */}
+      {/* Chapter V — The Math (ROI) */}
       <div className="bg-navy">
         <ChapterMark
           numeral="V"
+          label="The Math"
+          caption="What 80% volume reduction means in your kitchen."
+          variant="dark"
+        />
+      </div>
+      <WasteROIWrapper
+        variant="dark"
+        heading="What it saves you."
+        example={{
+          label: "Example: mid-size hotel kitchen",
+          inputs: [
+            { label: "Daily covers", value: "300 (lunch + dinner)" },
+            { label: "Daily food waste", value: "~120 kg" },
+            { label: "Current pickups", value: "4 per week" },
+          ],
+          output: [
+            { label: "Volume after dewatering", value: "~24 kg/day (-80%, IMC stated)" },
+            { label: "Pickup frequency", value: "Down to 1–2 per week" },
+            { label: "Annual labor saved", value: "~150 hours (manual hauling)" },
+            { label: "Bin storage freed", value: "~60% of original space" },
+          ],
+          math: "All figures are typical for a 300-cover hotel using F79/703 Compact (400 kg/hr). 80% volume reduction is IMC's stated figure vs uncompacted waste, not independently audited. Pickup-frequency reductions of 50–75% are typical depending on volume; payback periods are site-specific.",
+        }}
+      />
+
+      {/* Chapter VI — House quote */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="VI"
+          label="The House Voice"
+          caption="One brand, one provenance, one supply chain."
+          variant="light"
+        />
+      </div>
+      <HouseQuote />
+
+      {/* Chapter VII — Frequently asked */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="VII"
+          label="Questions"
+          caption="Six things buyers ask about food waste management."
+          variant="light"
+        />
+      </div>
+      <FaqChapter
+        variant="light"
+        heading={
+          <>
+            Frequently{" "}
+            <span
+              className="italic font-normal"
+              style={{ color: "var(--color-gold-text)" }}
+            >
+              asked.
+            </span>
+          </>
+        }
+        pageUrl={pageUrl}
+        items={[
+          {
+            q: "What waste can the WasteStation handle?",
+            a: "Food prep waste, plate scrapings, vegetable peelings, fish skins, soft bones (chicken, fish), pasta, breads. Documented by IMC to handle red-meat bones, cauliflower stalks, and fish skins. NOT for: hard ribs, large beef bones, hard avocado pits.",
+          },
+          {
+            q: "What's the difference between F79/010 and F79/703 Compact?",
+            a: "F79/010 (full size) processes 700 kg/hr at 4.1 kW three-phase, 192 kg machine. F79/703 Compact processes 400 kg/hr at 2.95 kW three-phase, 165 kg, 600 mm wide — fits in tighter sculleries.",
+          },
+          {
+            q: "Do I need three-phase electrical?",
+            a: "F79/010 and F79/703 require 3-phase 400V. F79/701 Compact is the single-phase variant for sites without 3-phase availability. We confirm at survey.",
+          },
+          {
+            q: "What about smell and hygiene?",
+            a: "Fully enclosed body, self-cleaning rinse cycle, self-emptying auger, sensor for bin-full state, lidded output bins. Significant reduction in pest risk and cross-contamination vs traditional wet bins.",
+          },
+          {
+            q: "Water consumption?",
+            a: "10 L/min during processing only — runs in cycles, not continuously. Inlet 3/4\", drain 2\". Site requires 0.18 bar minimum inlet pressure.",
+          },
+          {
+            q: "Warranty and service?",
+            a: "Manufacturer warranty per Middleby Europe contract. MB Equipment provides factory-trained service engineers in Belgrade for installation, commissioning, and ongoing maintenance across Southeast Europe.",
+          },
+        ]}
+      />
+
+      {/* CTA Triad */}
+      <CtaTriad
+        locale={locale as Locale}
+        productSlug="waste-station-imc"
+        catalogHref="#"
+        variant="dark"
+      />
+
+      {/* Chapter VIII — CTA */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="VIII"
           label="The Next Step"
           caption="Send volume, layout, and supply — we spec the model."
           variant="dark"

@@ -231,7 +231,7 @@ export default function Cta({ locale, dict }: CtaProps) {
       {/* Closing running meta */}
       <RunningMeta
         variant="light"
-        folio="folio 05 / 05"
+        folio="folio 08 / 08"
         items={[
           "Vol. III",
           "End of Ch. 01",

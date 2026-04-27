@@ -1,102 +1,177 @@
-import Link from "next/link";
-import Breadcrumb from "@/components/ui/Breadcrumb";
-import AnimatedSection from "@/components/ui/AnimatedSection";
+import { CtaTriad } from "@/components/equipment";
 import { COMPANY } from "@/lib/constants";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
+import ChapterMark from "./thermal-processing/_sections/ChapterMark";
+import {
+  HeroChapter,
+  CategoriesChapter,
+  BrandIndexChapter,
+  getIndexedBrands,
+  SUPER_CATEGORIES,
+} from "./_sections";
 
 export const dynamic = "force-static";
 
-/* ---------- metadata ---------- */
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+const PAGE_TITLE_EN = "Commercial Kitchen Equipment — 110+ Brands | MB";
+const PAGE_TITLE_SR = "Profesionalna kuhinjska oprema — 110+ brendova";
+const PAGE_DESC_EN =
+  "Browse 110+ commercial kitchen equipment brands by category. Cooking, refrigeration, custom inox, waste handling. Authorized Middleby partner in Belgrade.";
+const PAGE_DESC_SR =
+  "Pregledajte preko 110 brendova profesionalne kuhinjske opreme — kuvanje, hlađenje, inox, otpad. Ovlašćeni Middleby partner u Beogradu.";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
-  const dict = await getDictionary(locale as Locale);
-  const PAGE_TITLE = dict.metadata.equipmentGuide.title;
-  const PAGE_DESC = dict.metadata.equipmentGuide.description;
+  const isSr = locale === "sr";
+  const PAGE_TITLE = isSr ? PAGE_TITLE_SR : PAGE_TITLE_EN;
+  const PAGE_DESC = isSr ? PAGE_DESC_SR : PAGE_DESC_EN;
 
   return {
-    title: PAGE_TITLE,
+    title: { absolute: PAGE_TITLE },
     description: PAGE_DESC,
     keywords: [
       "commercial kitchen equipment",
-      "thermal processing equipment",
-      "commercial refrigeration",
-      "stainless steel kitchen",
-      "equipment guide",
-      "kitchen equipment categories",
+      "kitchen equipment brands",
+      "Middleby brands",
+      "Josper",
+      "Houno",
+      "Lincat",
+      "Hobart",
+      "IMC",
+      "authorized Middleby partner",
+      "Belgrade kitchen equipment",
+      "Southeast Europe kitchen equipment",
+      "profesionalna kuhinjska oprema",
+      "Middleby Beograd",
     ],
     alternates: {
       canonical: `/${locale}/equipment`,
-      languages: { en: "/en/equipment", sr: "/sr/equipment" },
+      languages: {
+        en: "/en/equipment",
+        sr: "/sr/equipment",
+        "x-default": "/en/equipment",
+      },
     },
     openGraph: {
       title: PAGE_TITLE,
       description: PAGE_DESC,
-      url: `${COMPANY.url}/equipment`,
+      url: `${COMPANY.url}/${locale}/equipment`,
       siteName: COMPANY.name,
-      locale: locale === "sr" ? "sr_RS" : "en_US",
+      locale: isSr ? "sr_RS" : "en_US",
       type: "website",
+      images: [
+        {
+          url: `${COMPANY.url}/images/whatwedo/elements.jpg`,
+          width: 1200,
+          height: 630,
+          alt: "MB Equipment Solutions — full commercial kitchen equipment portfolio",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image" as const,
       title: PAGE_TITLE,
       description: PAGE_DESC,
+      images: [`${COMPANY.url}/images/whatwedo/elements.jpg`],
     },
   };
 }
 
-/* ---------- page ---------- */
-export default async function EquipmentPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function EquipmentHubPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
+  const isSr = locale === "sr";
+  const PAGE_TITLE = isSr ? PAGE_TITLE_SR : PAGE_TITLE_EN;
+  const PAGE_DESC = isSr ? PAGE_DESC_SR : PAGE_DESC_EN;
+  const pageUrl = `${COMPANY.url}/${locale}/equipment`;
 
-  const categories = [
-    {
-      number: "01",
-      title: "Thermal Processing",
-      subtitle: "Cooking & Baking Equipment",
-      description:
-        "Ranges, fryers, combi ovens, pasta cookers, and charcoal grills — every thermal cooking category for commercial kitchens.",
-      brands: "Josper, Silko, Lincat, Firex, Houno, PGE, UGNS",
-      href: `/${locale}/equipment/thermal-processing`,
-    },
-    {
-      number: "02",
-      title: "Refrigeration",
-      subtitle: "Cold Storage & Display",
-      description:
-        "Display cases, vitrines, food refrigeration, and modular cold rooms — specified for your operation and climate conditions.",
-      brands: "Desmon, Tefcold, Tehnodom, JBG-2, Infrico",
-      href: `/${locale}/equipment/refrigeration`,
-    },
-    {
-      number: "03",
-      title: "Neutral INOX",
-      subtitle: "Custom Stainless Steel",
-      description:
-        "Worktops, shelving, sinks, ventilation hoods, and service counters — manufactured to your exact layout and dimensions.",
-      brands: "Custom fabrication — AISI 304 stainless steel",
-      href: `/${locale}/equipment/neutral-inox`,
-    },
-  ];
+  const indexedBrands = getIndexedBrands();
+  const totalBrands = indexedBrands.length;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CollectionPage",
-        name: dict.metadata.equipmentGuide.title,
-        description: dict.metadata.equipmentGuide.description,
-        url: `${COMPANY.url}/equipment`,
-        inLanguage: locale,
-        isPartOf: { "@type": "WebSite", url: COMPANY.url },
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: PAGE_TITLE,
+        description: PAGE_DESC,
+        inLanguage: isSr ? "sr-RS" : "en",
+        isPartOf: { "@id": `${COMPANY.url}/#website` },
+        about: { "@id": `${COMPANY.url}/#organization` },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${COMPANY.url}/images/whatwedo/elements.jpg`,
+          width: 1200,
+          height: 630,
+        },
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+        mainEntity: { "@id": `${pageUrl}#brand-index` },
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: dict.breadcrumb.home, item: COMPANY.url },
-          { "@type": "ListItem", position: 2, name: dict.nav.equipment, item: `${COMPANY.url}/equipment` },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: dict.breadcrumb.home,
+            item: `${COMPANY.url}/${locale}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: dict.nav.equipment,
+            item: pageUrl,
+          },
         ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${pageUrl}#brand-index`,
+        name: isSr
+          ? "Indeks brendova kuhinjske opreme"
+          : "Commercial Kitchen Equipment Brand Index",
+        numberOfItems: indexedBrands.length,
+        itemListElement: indexedBrands.map((brand, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Brand",
+            name: brand.name,
+            description: brand.text,
+            url: `${COMPANY.url}/${locale}/equipment/${brand.hrefSlug}`,
+            ...(brand.logo
+              ? {
+                  logo: `${COMPANY.url}${brand.logo}`,
+                }
+              : {}),
+          },
+        })),
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${pageUrl}#disciplines`,
+        name: isSr ? "Discipline opreme" : "Equipment Disciplines",
+        numberOfItems: SUPER_CATEGORIES.length,
+        itemListElement: SUPER_CATEGORIES.map((c, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "CollectionPage",
+            url: `${COMPANY.url}${c.href(locale)}`,
+            name: c.label,
+          },
+        })),
       },
     ],
   };
@@ -106,82 +181,47 @@ export default async function EquipmentPage({ params }: { params: Promise<{ loca
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(jsonLd)
+            .replace(/</g, "\\u003c")
+            .replace(/>/g, "\\u003e"),
         }}
       />
 
-      <Breadcrumb
+      {/* Chapter I — Hero */}
+      <HeroChapter
         locale={locale as Locale}
-        homeLabel={dict.breadcrumb.home}
-        items={[{ label: dict.nav.equipment }]}
+        dict={dict}
+        totalBrands={totalBrands}
       />
 
-      {/* Hero */}
-      <section className="py-28 lg:py-36 bg-navy" aria-labelledby="equipment-heading">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection>
-            <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-6">
-              {dict.metadata.equipmentGuide.title}
-            </p>
-            <h1
-              id="equipment-heading"
-              className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6"
-            >
-              {dict.equipmentIndex.heading1}<br />
-              <span className="italic font-normal">{dict.equipmentIndex.heading2}</span>
-            </h1>
-            <div className="w-16 h-px bg-gold/60 mb-6" />
-            <p className="text-white/70 text-lg leading-relaxed max-w-xl font-light">
-              {dict.equipmentIndex.body}
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Chapter II mark */}
+      <div className="bg-white">
+        <ChapterMark
+          numeral="II"
+          label="Index of Disciplines"
+          caption="Four categories. Each one specified around how a kitchen actually works."
+          variant="light"
+        />
+      </div>
+      <CategoriesChapter locale={locale as Locale} />
 
-      {/* Categories */}
-      <section className="py-24 lg:py-32 bg-white" aria-label="Equipment categories">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection stagger>
-            {categories.map((cat) => (
-              <Link
-                key={cat.number}
-                href={cat.href}
-                className="group block py-10 border-b border-gray-200 transition-all duration-300"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start">
-                  <div className="lg:col-span-1">
-                    <span className="font-display text-2xl font-bold text-text-secondary/20 italic">
-                      {cat.number}
-                    </span>
-                  </div>
-                  <div className="lg:col-span-4">
-                    <h2 className="font-display text-2xl lg:text-3xl font-bold text-text-primary group-hover:text-red transition-colors duration-300 leading-[1.1]">
-                      {cat.title}
-                    </h2>
-                    <p className="text-text-secondary text-xs uppercase tracking-[0.15em] mt-2">
-                      {cat.subtitle}
-                    </p>
-                  </div>
-                  <div className="lg:col-span-5">
-                    <p className="text-text-secondary leading-relaxed text-sm mb-3">
-                      {cat.description}
-                    </p>
-                    <p className="text-text-secondary/50 text-xs">
-                      {cat.brands}
-                    </p>
-                  </div>
-                  <div className="lg:col-span-2 flex items-center justify-end">
-                    <span className="text-text-primary text-sm font-medium group-hover:text-red transition-colors duration-300 inline-flex items-center gap-2">
-                      {dict.common.explore}
-                      <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform duration-300">&#8594;</span>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Chapter III mark */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="III"
+          label="The Brand Index"
+          caption="The full house — filterable by discipline, searchable by name."
+          variant="dark"
+        />
+      </div>
+      <BrandIndexChapter locale={locale} brands={indexedBrands} />
+
+      {/* Chapter IV — CTA */}
+      <CtaTriad
+        locale={locale as "en" | "sr"}
+        productSlug="equipment"
+        variant="dark"
+      />
     </>
   );
 }

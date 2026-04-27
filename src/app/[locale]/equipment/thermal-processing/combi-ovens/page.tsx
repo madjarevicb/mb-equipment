@@ -320,28 +320,28 @@ export default async function CombiOvensPage({
             name: "Invoq Combi 6-1/1 GN",
             brand: "Houno",
             imageSrc: "/images/houno-lincat/invoq-10-1gn-main.png",
-            specSheetHref: "#",
+            specSheetHref: "https://houno.com/en/products/invoq-combi-1011-gn/",
           },
           {
             serial: "No. 02",
             name: "Invoq Combi 10-1/1 GN",
             brand: "Houno",
             imageSrc: "/images/houno-lincat/invoq-10-1gn-angle2.png",
-            specSheetHref: "#",
+            specSheetHref: "https://houno.com/en/products/invoq-combi-1011-gn/",
           },
           {
             serial: "No. 03",
             name: "Invoq Combi 20-2/1 GN",
             brand: "Houno",
             imageSrc: "/images/houno-lincat/invoq-10-1gn-angle3.png",
-            specSheetHref: "#",
+            specSheetHref: "https://houno.com/en/houno-ovens/invoq-combi-hybrid-oven/",
           },
           {
             serial: "No. 04",
             name: "CombiSlim 1.10",
             brand: "Lincat",
             imageSrc: "/images/houno-lincat/lincat-combislim-110.jpg",
-            specSheetHref: "#",
+            specSheetHref: "https://middleby-cdn.com/specsheets/Lincat_LCS110_CombiSlim_SpecSheet_1.pdf",
           },
         ]}
         specs={[

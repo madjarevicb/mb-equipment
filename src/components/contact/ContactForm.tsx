@@ -11,9 +11,11 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 
 interface Props {
   dict: Dictionary["contact"]["form"];
+  initialMessage?: string;
+  productLabel?: string | null;
 }
 
-export default function ContactForm({ dict }: Props) {
+export default function ContactForm({ dict, initialMessage, productLabel }: Props) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [serverError, setServerError] = useState("");
 
@@ -24,6 +26,9 @@ export default function ContactForm({ dict }: Props) {
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      message: initialMessage ?? "",
+    },
   });
 
   async function onSubmit(data: ContactFormData) {
@@ -77,6 +82,21 @@ export default function ContactForm({ dict }: Props) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
+      {productLabel && (
+        <div className="border-l border-gold/60 pl-5 py-1 mb-2">
+          <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-2">
+            &sect; {dict.askingAboutEyebrow}
+          </p>
+          <p className="font-display italic text-text-primary text-xl sm:text-2xl leading-tight">
+            {productLabel}
+          </p>
+          <div className="w-10 h-px bg-gold/50 mt-3 mb-3" />
+          <p className="text-text-secondary text-xs leading-relaxed">
+            {dict.askingAboutHint}
+          </p>
+        </div>
+      )}
+
       {/* Honeypot — hidden from users, bots fill it */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <label htmlFor="website">Website</label>

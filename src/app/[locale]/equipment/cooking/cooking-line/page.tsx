@@ -313,14 +313,10 @@ export default async function CookingLinePage({
           </>
         }
         models={[
-          { serial: "No. 01", name: "Silko Essence 700", brand: "Silko" },
-          { serial: "No. 02", name: "Silko Essence 900", brand: "Silko" },
-          { serial: "No. 03", name: "Lincat Opus 800", brand: "Lincat" },
-          {
-            serial: "No. 04",
-            name: "Lincat Silverlink 600",
-            brand: "Lincat",
-          },
+          { serial: "No. 01", name: "Silko Essence 700", brand: "Silko", specSheetHref: "https://silko.it/en/products/essence/essence-700/" },
+          { serial: "No. 02", name: "Silko Essence 900", brand: "Silko", specSheetHref: "https://silko.it/en/prodotto/900/" },
+          { serial: "No. 03", name: "Lincat Opus 800", brand: "Lincat", specSheetHref: "https://www.lincat.co.uk/brand/opus-800" },
+          { serial: "No. 04", name: "Lincat Silverlink 600", brand: "Lincat", specSheetHref: "https://www.lincat.co.uk/brand/silverlink-600" },
         ]}
         specs={[
           {

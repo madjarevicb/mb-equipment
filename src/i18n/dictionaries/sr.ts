@@ -433,6 +433,8 @@ const sr: Dictionary = {
       eyebrow: "Pošaljite nam poruku",
       heading1: "Započnite",
       heading2: "razgovor.",
+      askingAboutEyebrow: "Pitate o",
+      askingAboutHint: "Vaša poruka je već pripremljena. Slobodno je dopunite pre slanja.",
       nameLabel: "Ime i prezime",
       emailLabel: "E-pošta",
       phoneLabel: "Telefon",

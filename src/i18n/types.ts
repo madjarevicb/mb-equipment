@@ -435,6 +435,8 @@ export interface Dictionary {
       eyebrow: string;
       heading1: string;
       heading2: string;
+      askingAboutEyebrow: string;
+      askingAboutHint: string;
       nameLabel: string;
       emailLabel: string;
       phoneLabel: string;

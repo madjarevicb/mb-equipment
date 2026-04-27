@@ -433,6 +433,8 @@ const en: Dictionary = {
       eyebrow: "Send Us a Message",
       heading1: "Start the",
       heading2: "Conversation.",
+      askingAboutEyebrow: "Asking about",
+      askingAboutHint: "We have pre-filled your message. Edit it freely before sending.",
       nameLabel: "Full Name",
       emailLabel: "Email",
       phoneLabel: "Phone",

@@ -2,13 +2,9 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
+import { getProductLabel } from "@/lib/productLabels";
 import dynamic_ from "next/dynamic";
 const ContactForm = dynamic_(() => import("@/components/contact/ContactForm"));
-
-/* ------------------------------------------------------------------ */
-/*  Static rendering                                                   */
-/* ------------------------------------------------------------------ */
-export const dynamic = "force-static";
 
 /* ------------------------------------------------------------------ */
 /*  SEO metadata                                                       */
@@ -57,9 +53,24 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
-export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function ContactPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ product?: string }>;
+}) {
   const { locale } = await params;
+  const sp = await searchParams;
   const dict = await getDictionary(locale as Locale);
+
+  /* Resolve product context from `?product=` query string */
+  const productLabel = getProductLabel(sp.product, locale as Locale);
+  const initialMessage = productLabel
+    ? locale === "sr"
+      ? `Poštovani, zainteresovan/a sam za: ${productLabel}.\n\n`
+      : `Hello — I'm interested in ${productLabel}.\n\n`
+    : undefined;
 
   /* ------------------------------------------------------------------ */
   /*  JSON-LD structured data                                            */
@@ -149,7 +160,11 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 {formDict.heading1}<br />
                 <span className="italic font-normal">{formDict.heading2}</span>
               </h2>
-              <ContactForm dict={formDict} />
+              <ContactForm
+                dict={formDict}
+                initialMessage={initialMessage}
+                productLabel={productLabel}
+              />
             </div>
 
             {/* Contact Info */}

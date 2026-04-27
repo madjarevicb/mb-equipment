@@ -33,7 +33,7 @@ const en: Dictionary = {
     customFabrication: "Custom Fabrication",
     warewashing: "Warewashing",
     wasteManagement: "Waste Management",
-    wasteStationIhc: "Waste Station IHC",
+    wasteStationImc: "IMC WasteStation",
     references: "References",
     demoCenters: "Demo Centers",
     contact: "Contact",

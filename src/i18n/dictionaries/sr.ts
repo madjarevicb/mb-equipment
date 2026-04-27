@@ -33,7 +33,7 @@ const sr: Dictionary = {
     customFabrication: "Izrada po meri",
     warewashing: "Pranje posuđa",
     wasteManagement: "Upravljanje otpadom",
-    wasteStationIhc: "Waste Station IHC",
+    wasteStationImc: "IMC WasteStation",
     references: "Reference",
     demoCenters: "Demo centri",
     contact: "Kontakt",

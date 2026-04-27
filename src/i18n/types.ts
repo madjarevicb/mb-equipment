@@ -35,7 +35,7 @@ export interface Dictionary {
     customFabrication: string;
     warewashing: string;
     wasteManagement: string;
-    wasteStationIhc: string;
+    wasteStationImc: string;
     references: string;
     demoCenters: string;
     contact: string;

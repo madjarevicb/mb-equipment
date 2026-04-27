@@ -1,182 +1,264 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import Breadcrumb from "@/components/ui/Breadcrumb";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import Button from "@/components/ui/Button";
 import { COMPANY } from "@/lib/constants";
-import { thermalBrands } from "@/data/thermal-processing";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
+import ChapterMark from "../_sections/ChapterMark";
+import {
+  CombiHero,
+  TwoHouses,
+  InvoqLedger,
+  INVOQ_SERIES,
+  SpecsThatMatter,
+  CombiCta,
+} from "./_sections";
 
 export const dynamic = "force-static";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+const PAGE_TITLE_EN = "Houno & Lincat Combi Ovens — Invoq Platform | MB";
+const PAGE_TITLE_SR = "Houno i Lincat parno-konvekcijske peći | MB";
+const PAGE_DESC_EN =
+  "Houno & Lincat combi ovens on the Invoq platform — six families, 5–40 trays, 5 cooking modes, ENERGY STAR. Authorized Middleby partner, Belgrade.";
+const PAGE_DESC_SR =
+  "Houno i Lincat parno-konvekcijske peći na Invoq platformi — šest serija, 5–40 nivoa, ENERGY STAR. Ovlašćeni Middleby partner, Beograd.";
+
+const HERO_OG_IMAGE = "/images/houno-lincat/lincat-combislim-110.jpg";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
-  const dict = await getDictionary(locale as Locale);
+  const isSr = locale === "sr";
+  const PAGE_TITLE = isSr ? PAGE_TITLE_SR : PAGE_TITLE_EN;
+  const PAGE_DESC = isSr ? PAGE_DESC_SR : PAGE_DESC_EN;
+
   return {
-    title: dict.metadata.combiOvens.title,
-    description: dict.metadata.combiOvens.description,
-    keywords: ["commercial combi oven", "convection oven commercial", "Houno combi oven", "patisserie oven", "speed oven commercial", "bake-off oven"],
+    title: { absolute: PAGE_TITLE },
+    description: PAGE_DESC,
+    keywords: [
+      "Houno combi oven",
+      "Lincat combi oven",
+      "Invoq combi oven",
+      "Lincat CombiSlim",
+      "Houno Invoq Combi",
+      "Houno Invoq Hybrid",
+      "Houno Invoq Bake",
+      "Houno miniCombi",
+      "Houno PassThrough",
+      "commercial combi steam oven",
+      "ENERGY STAR combi oven",
+      "Middleby authorized partner",
+      "professional combi oven Serbia",
+      "parno-konvekcijska peć",
+      "Houno peć",
+      "Lincat peć",
+      "Invoq platforma",
+      "profesionalna paro-konvekcijska peć",
+      "Middleby ovlašćeni distributer Srbija",
+    ],
     alternates: {
       canonical: `/${locale}/equipment/thermal-processing/combi-ovens`,
-      languages: { en: "/en/equipment/thermal-processing/combi-ovens", sr: "/sr/equipment/thermal-processing/combi-ovens" },
+      languages: {
+        en: "/en/equipment/thermal-processing/combi-ovens",
+        sr: "/sr/equipment/thermal-processing/combi-ovens",
+        "x-default": "/en/equipment/thermal-processing/combi-ovens",
+      },
     },
     openGraph: {
-      title: dict.metadata.combiOvens.title,
-      description: dict.metadata.combiOvens.description,
+      title: PAGE_TITLE,
+      description: PAGE_DESC,
       url: `${COMPANY.url}/${locale}/equipment/thermal-processing/combi-ovens`,
       siteName: COMPANY.name,
-      locale: locale === "sr" ? "sr_RS" : "en_US",
+      locale: isSr ? "sr_RS" : "en_US",
       type: "website",
+      images: [
+        {
+          url: `${COMPANY.url}${HERO_OG_IMAGE}`,
+          width: 1200,
+          height: 800,
+          alt: "Lincat CombiSlim combi steam oven on the Invoq platform",
+        },
+      ],
     },
-    twitter: { card: "summary_large_image", title: dict.metadata.combiOvens.title, description: dict.metadata.combiOvens.description },
+    twitter: {
+      card: "summary_large_image",
+      title: PAGE_TITLE,
+      description: PAGE_DESC,
+      images: [`${COMPANY.url}${HERO_OG_IMAGE}`],
+    },
   };
 }
 
-const HERO_BLUR = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxMTEiLz48L3N2Zz4=";
-
-const pageBrands = thermalBrands.filter((b) => ["Houno", "Lincat"].includes(b.name));
-
-export default async function CombiOvensPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function CombiOvensPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
+  const isSr = locale === "sr";
+  const PAGE_TITLE = isSr ? PAGE_TITLE_SR : PAGE_TITLE_EN;
+  const PAGE_DESC = isSr ? PAGE_DESC_SR : PAGE_DESC_EN;
+  const pageUrl = `${COMPANY.url}/${locale}/equipment/thermal-processing/combi-ovens`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebPage",
-        name: dict.metadata.combiOvens.title,
-        description: dict.metadata.combiOvens.description,
-        url: `${COMPANY.url}/${locale}/equipment/thermal-processing/combi-ovens`,
-        isPartOf: { "@type": "WebSite", url: COMPANY.url },
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: PAGE_TITLE,
+        description: PAGE_DESC,
+        inLanguage: isSr ? "sr-RS" : "en",
+        isPartOf: { "@id": `${COMPANY.url}/#website` },
+        about: [
+          { "@id": `${COMPANY.url}/#organization` },
+          { "@id": `${pageUrl}#houno` },
+          { "@id": `${pageUrl}#lincat` },
+        ],
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${COMPANY.url}${HERO_OG_IMAGE}`,
+          width: 1200,
+          height: 800,
+        },
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+        mainEntity: { "@id": `${pageUrl}#invoq` },
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: dict.breadcrumb.home, item: COMPANY.url },
-          { "@type": "ListItem", position: 2, name: dict.nav.equipment, item: `${COMPANY.url}/${locale}/equipment` },
-          { "@type": "ListItem", position: 3, name: dict.nav.thermalProcessing, item: `${COMPANY.url}/${locale}/equipment/thermal-processing` },
-          { "@type": "ListItem", position: 4, name: dict.nav.combiOvens, item: `${COMPANY.url}/${locale}/equipment/thermal-processing/combi-ovens` },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: dict.breadcrumb.home,
+            item: `${COMPANY.url}/${locale}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: dict.nav.equipment,
+            item: `${COMPANY.url}/${locale}/equipment`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: dict.nav.cooking,
+            item: `${COMPANY.url}/${locale}/equipment/thermal-processing`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: dict.nav.combiOvens,
+          },
         ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${pageUrl}#invoq`,
+        name: "Invoq Combi Oven Platform — Houno & Lincat",
+        numberOfItems: INVOQ_SERIES.length,
+        itemListElement: INVOQ_SERIES.map((row, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Product",
+            name: row.series,
+            brand: { "@type": "Brand", name: row.brand },
+            category: "Commercial Combi Steam Oven",
+            description: `${row.series} — ${row.steam}, sizes ${row.sizes}. ${row.positioning}`,
+          },
+        })),
+      },
+      {
+        "@type": "Brand",
+        "@id": `${pageUrl}#houno`,
+        name: "Houno",
+        url: "https://www.houno.com/",
+        description:
+          "Danish manufacturer of premium combi steam ovens, founded 1977 in Randers; Middleby Corporation brand since 31 August 2006.",
+        manufacturer: {
+          "@type": "Corporation",
+          name: "Middleby Corporation",
+          url: "https://www.middleby.com",
+        },
+      },
+      {
+        "@type": "Brand",
+        "@id": `${pageUrl}#lincat`,
+        name: "Lincat",
+        url: "https://www.lincat.co.uk/",
+        description:
+          "British manufacturer of commercial cooking equipment, founded 1971 in Lincoln; Middleby Corporation brand since 31 May 2011.",
+        manufacturer: {
+          "@type": "Corporation",
+          name: "Middleby Corporation",
+          url: "https://www.middleby.com",
+        },
       },
     ],
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-
-      <Breadcrumb
-        locale={locale as Locale}
-        homeLabel={dict.breadcrumb.home}
-        items={[
-          { label: dict.nav.equipment, href: `/${locale}/equipment` },
-          { label: dict.nav.thermalProcessing, href: `/${locale}/equipment/thermal-processing` },
-          { label: dict.nav.combiOvens },
-        ]}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd)
+            .replace(/</g, "\\u003c")
+            .replace(/>/g, "\\u003e"),
+        }}
       />
 
-      {/* Hero */}
-      <section className="relative min-h-[50vh] lg:min-h-[60vh] flex items-center overflow-hidden" aria-labelledby="hero-heading">
-        <Image src="/images/whatwedo/combi.jpg" alt="Commercial combi and convection ovens" fill priority sizes="100vw" className="object-cover" placeholder="blur" blurDataURL={HERO_BLUR} />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-navy/20" />
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <div className="max-w-2xl">
-            <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-6">{dict.nav.thermalProcessing}</p>
-            <h1 id="hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6">
-              Combi &<br />
-              <span className="italic font-normal">Convection Ovens</span>
-            </h1>
-            <div className="w-16 h-px bg-gold/60 mb-6" />
-            <p className="text-white/70 text-lg leading-relaxed max-w-lg font-light">Steaming, baking, roasting, and regeneration in a single footprint — from 6-tray countertop to 40-tray roll-in patisserie, bake-off, and speed oven models.</p>
-          </div>
-        </div>
-      </section>
+      {/* Chapter I — Hero */}
+      <CombiHero locale={locale as Locale} dict={dict} />
 
-      {/* Content */}
-      <section className="py-28 lg:py-36 bg-white" aria-labelledby="content-heading">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-              <div className="lg:col-span-7">
-                <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-6">{dict.nav.combiOvens}</p>
-                <h2 id="content-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-[1.1]">
-                  One Oven,<br />
-                  <span className="italic font-normal">Every Method</span>
-                </h2>
-              </div>
-              <div className="lg:col-span-5 flex flex-col justify-end">
-                <p className="text-text-secondary leading-relaxed mb-6">Combi ovens replace multiple pieces of equipment — steam, convection, and combination modes in a single unit. We supply Houno and Lincat models from countertop 6-tray to roll-in 40-tray, including patisserie, bake-off, and speed oven configurations.</p>
-                <Link href={`/${locale}/contact`} className="inline-flex items-center gap-3 text-text-primary text-sm font-medium hover:gap-4 transition-all duration-300">
-                  {dict.common.startYourProject} <span aria-hidden="true">&#8594;</span>
-                </Link>
-                <div className="w-12 h-px bg-gold/30 mt-8" />
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Chapter II — The two houses */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="II"
+          label="The Two Houses"
+          caption="Houno of Denmark and Lincat of England — two Middleby brands sharing the Invoq platform."
+          variant="light"
+        />
+      </div>
+      <TwoHouses />
 
-      {/* Brands */}
-      {pageBrands.length > 0 && (
-        <section className="py-24 lg:py-32 bg-navy" aria-labelledby="brands-heading">
-          <div className="max-w-7xl mx-auto px-6">
-            <AnimatedSection>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                <div className="lg:col-span-5">
-                  <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-6">Brands</p>
-                  <h2 id="brands-heading" className="font-display text-3xl sm:text-4xl font-bold text-white leading-[1.1] mb-8">
-                    Authorized<br /><span className="italic font-normal">Supply</span>
-                  </h2>
-                  <div className="w-12 h-px bg-gold/30" />
-                </div>
-                <div className="lg:col-span-7 flex flex-col gap-6 lg:justify-center">
-                  {pageBrands.map((brand) => (
-                    <div key={brand.name} className="border-l-2 border-gold/40 pl-6 py-2">
-                      <p className="text-white font-medium text-sm">{brand.name}</p>
-                      <p className="text-white/40 text-xs mt-1">{brand.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-      )}
+      {/* Chapter III — The Invoq family ledger */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="III"
+          label="The Invoq Ledger"
+          caption="Five Houno series and the Lincat CombiSlim — every combi family, one shared platform."
+          variant="dark"
+        />
+      </div>
+      <InvoqLedger />
 
-      {/* CTA */}
-      <section className="py-28 lg:py-36 bg-offwhite" aria-labelledby="cta-heading">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end">
-              <div className="lg:col-span-7">
-                <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-8">Work With Us</p>
-                <h2 id="cta-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] mb-6">
-                  Specify Your<br /><span className="italic font-normal">Oven.</span>
-                </h2>
-                <p className="text-text-secondary leading-relaxed mb-12 max-w-lg">From a single countertop combi to a full bakery oven bank — we specify and commission combi ovens matched to your production.</p>
-                <div className="flex flex-wrap gap-4">
-                  <Button variant="primary" href={`/${locale}/contact`}>{dict.common.startYourProject}</Button>
-                  <Button variant="ghost-light" href={`/${locale}/equipment/thermal-processing`} arrow={false}>{dict.nav.thermalProcessing}</Button>
-                </div>
-              </div>
-              <div className="lg:col-span-5">
-                <div className="border-l-2 border-gold/30 pl-8 space-y-6">
-                  {[{ value: "50+", label: dict.common.projectsDelivered }, { value: "110+", label: dict.common.brandsRepresented }].map((stat) => (
-                    <div key={stat.label}>
-                      <span className="font-display text-3xl font-bold text-text-primary">{stat.value}</span>
-                      <p className="text-text-secondary/50 text-xs uppercase tracking-[0.15em] mt-1">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Chapter IV — Specs that matter */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="IV"
+          label="Specs That Matter"
+          caption="Verified Invoq numerics — temperature range, food load, top-of-range power, modes and wash cycles."
+          variant="light"
+        />
+      </div>
+      <SpecsThatMatter />
+
+      {/* Chapter V — CTA / colophon */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="V"
+          label="The Next Step"
+          caption="Send your menu volume, voltage and water hardness — we'll spec the Invoq or CombiSlim configuration."
+          variant="dark"
+        />
+      </div>
+      <CombiCta locale={locale as Locale} dict={dict} />
     </>
   );
 }

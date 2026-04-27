@@ -1,182 +1,245 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import Breadcrumb from "@/components/ui/Breadcrumb";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import Button from "@/components/ui/Button";
 import { COMPANY } from "@/lib/constants";
-import { refrigerationBrands } from "@/data/refrigeration";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
+import ChapterMark from "../../thermal-processing/_sections/ChapterMark";
+import {
+  ColdRoomsHero,
+  BrandSpotlight,
+  PanelLedger,
+  PANEL_ROWS,
+  ComplianceQuote,
+  SpecCta,
+} from "./_sections";
 
 export const dynamic = "force-static";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+const PAGE_TITLE_EN = "Modular Cold Rooms — Walk-in Cooler & Freezer | MB";
+const PAGE_TITLE_SR = "Montažne rashladne komore — walk-in komora | MB";
+const PAGE_DESC_EN =
+  "Modular cold rooms in Serbia — walk-in coolers, walk-in freezers, blast freezers. Tecnodom / JKS Refrigeration, R290 future-proof. 2–5 day install.";
+const PAGE_DESC_SR =
+  "Montažne rashladne komore — walk-in plusne, minusne i šok komore. Tecnodom / JKS Refrigeration, R290 hladan agens. Montaža za 2–5 dana.";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
-  const dict = await getDictionary(locale as Locale);
+  const isSr = locale === "sr";
+  const PAGE_TITLE = isSr ? PAGE_TITLE_SR : PAGE_TITLE_EN;
+  const PAGE_DESC = isSr ? PAGE_DESC_SR : PAGE_DESC_EN;
+
   return {
-    title: dict.metadata.coldRooms.title,
-    description: dict.metadata.coldRooms.description,
-    keywords: ["modular cold room", "walk-in cooler", "walk-in freezer", "cold room installation", "commercial cold storage"],
+    title: { absolute: PAGE_TITLE },
+    description: PAGE_DESC,
+    keywords: [
+      "modular cold room",
+      "walk-in cooler",
+      "walk-in freezer",
+      "blast freezer",
+      "Tecnodom cold room",
+      "JKS Refrigeration",
+      "PUR insulated panel cold room",
+      "R290 cold room",
+      "F-Gas compliant cold room",
+      "cold room Belgrade",
+      "cold room Serbia",
+      "modular cold storage Southeast Europe",
+      "montažne rashladne komore",
+      "walk-in komora",
+      "šok komora",
+      "rashladna komora Beograd",
+    ],
     alternates: {
       canonical: `/${locale}/equipment/refrigeration/cold-rooms`,
-      languages: { en: "/en/equipment/refrigeration/cold-rooms", sr: "/sr/equipment/refrigeration/cold-rooms" },
+      languages: {
+        en: "/en/equipment/refrigeration/cold-rooms",
+        sr: "/sr/equipment/refrigeration/cold-rooms",
+        "x-default": "/en/equipment/refrigeration/cold-rooms",
+      },
     },
     openGraph: {
-      title: dict.metadata.coldRooms.title,
-      description: dict.metadata.coldRooms.description,
+      title: PAGE_TITLE,
+      description: PAGE_DESC,
       url: `${COMPANY.url}/${locale}/equipment/refrigeration/cold-rooms`,
       siteName: COMPANY.name,
-      locale: locale === "sr" ? "sr_RS" : "en_US",
+      locale: isSr ? "sr_RS" : "en_US",
       type: "website",
+      images: [
+        {
+          url: `${COMPANY.url}/images/whatwedo/beverage.jpg`,
+          width: 1200,
+          height: 630,
+          alt: "Modular walk-in cold room interior",
+        },
+      ],
     },
-    twitter: { card: "summary_large_image", title: dict.metadata.coldRooms.title, description: dict.metadata.coldRooms.description },
+    twitter: {
+      card: "summary_large_image",
+      title: PAGE_TITLE,
+      description: PAGE_DESC,
+      images: [`${COMPANY.url}/images/whatwedo/beverage.jpg`],
+    },
   };
 }
 
-const HERO_BLUR = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxMTEiLz48L3N2Zz4=";
-
-const pageBrands = refrigerationBrands.filter((b) => ["Tehnodom"].includes(b.name));
-
-export default async function ColdRoomsPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function ColdRoomsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
+  const isSr = locale === "sr";
+  const PAGE_TITLE = isSr ? PAGE_TITLE_SR : PAGE_TITLE_EN;
+  const PAGE_DESC = isSr ? PAGE_DESC_SR : PAGE_DESC_EN;
+  const pageUrl = `${COMPANY.url}/${locale}/equipment/refrigeration/cold-rooms`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebPage",
-        name: dict.metadata.coldRooms.title,
-        description: dict.metadata.coldRooms.description,
-        url: `${COMPANY.url}/${locale}/equipment/refrigeration/cold-rooms`,
-        isPartOf: { "@type": "WebSite", url: COMPANY.url },
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: PAGE_TITLE,
+        description: PAGE_DESC,
+        inLanguage: isSr ? "sr-RS" : "en",
+        isPartOf: { "@id": `${COMPANY.url}/#website` },
+        about: [
+          { "@id": `${COMPANY.url}/#organization` },
+          {
+            "@type": "Brand",
+            name: "Tecnodom",
+            url: "https://www.tecnodom.it/",
+          },
+          {
+            "@type": "Brand",
+            name: "JKS Refrigeration",
+            parentOrganization: {
+              "@type": "Corporation",
+              name: "Tecnodom S.p.A.",
+              url: "https://www.tecnodom.it/",
+            },
+          },
+        ],
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${COMPANY.url}/images/whatwedo/beverage.jpg`,
+          width: 1200,
+          height: 630,
+        },
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+        mainEntity: { "@id": `${pageUrl}#panels` },
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: dict.breadcrumb.home, item: COMPANY.url },
-          { "@type": "ListItem", position: 2, name: dict.nav.equipment, item: `${COMPANY.url}/${locale}/equipment` },
-          { "@type": "ListItem", position: 3, name: dict.nav.refrigeration, item: `${COMPANY.url}/${locale}/equipment/refrigeration` },
-          { "@type": "ListItem", position: 4, name: dict.nav.coldRooms, item: `${COMPANY.url}/${locale}/equipment/refrigeration/cold-rooms` },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: dict.breadcrumb.home,
+            item: `${COMPANY.url}/${locale}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: dict.nav.equipment,
+            item: `${COMPANY.url}/${locale}/equipment`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: dict.nav.refrigeration,
+            item: `${COMPANY.url}/${locale}/equipment/refrigeration`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: dict.nav.coldRooms,
+          },
         ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${pageUrl}#panels`,
+        name: "Modular Cold Room Panel Specifications",
+        numberOfItems: PANEL_ROWS.length,
+        itemListElement: PANEL_ROWS.map((row, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Product",
+            name: `Modular cold room — ${row.thickness} panel`,
+            category: "Modular Cold Room Panel",
+            description: `Insulated panel ${row.thickness}, operating range ${row.temp}, application: ${row.application}.`,
+            brand: { "@type": "Brand", name: "Tecnodom / JKS Refrigeration" },
+          },
+        })),
       },
     ],
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-
-      <Breadcrumb
-        locale={locale as Locale}
-        homeLabel={dict.breadcrumb.home}
-        items={[
-          { label: dict.nav.equipment, href: `/${locale}/equipment` },
-          { label: dict.nav.refrigeration, href: `/${locale}/equipment/refrigeration` },
-          { label: dict.nav.coldRooms },
-        ]}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd)
+            .replace(/</g, "\\u003c")
+            .replace(/>/g, "\\u003e"),
+        }}
       />
 
-      {/* Hero */}
-      <section className="relative min-h-[50vh] lg:min-h-[60vh] flex items-center overflow-hidden" aria-labelledby="hero-heading">
-        <Image src="/images/whatwedo/beverage.jpg" alt="Modular walk-in cold rooms and freezer rooms" fill priority sizes="100vw" className="object-cover" placeholder="blur" blurDataURL={HERO_BLUR} />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-navy/20" />
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <div className="max-w-2xl">
-            <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-6">{dict.nav.refrigeration}</p>
-            <h1 id="hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6">
-              Modular<br />
-              <span className="italic font-normal">Cold Rooms</span>
-            </h1>
-            <div className="w-16 h-px bg-gold/60 mb-6" />
-            <p className="text-white/70 text-lg leading-relaxed max-w-lg font-light">Walk-in cold rooms and freezer rooms — modular panel construction, custom dimensions, and professional-grade compressor systems.</p>
-          </div>
-        </div>
-      </section>
+      {/* Chapter I — Hero */}
+      <ColdRoomsHero locale={locale as Locale} dict={dict} />
 
-      {/* Content */}
-      <section className="py-28 lg:py-36 bg-white" aria-labelledby="content-heading">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-              <div className="lg:col-span-7">
-                <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-6">{dict.nav.coldRooms}</p>
-                <h2 id="content-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-[1.1]">
-                  Walk-in Storage,<br />
-                  <span className="italic font-normal">Custom Built</span>
-                </h2>
-              </div>
-              <div className="lg:col-span-5 flex flex-col justify-end">
-                <p className="text-text-secondary leading-relaxed mb-6">Modular cold rooms adapt to any space and requirement. We supply Tehnodom cold room systems — modular panel construction, custom dimensions, professional compressor units, and full installation including insulation, flooring, and drainage.</p>
-                <Link href={`/${locale}/contact`} className="inline-flex items-center gap-3 text-text-primary text-sm font-medium hover:gap-4 transition-all duration-300">
-                  {dict.common.startYourProject} <span aria-hidden="true">&#8594;</span>
-                </Link>
-                <div className="w-12 h-px bg-gold/30 mt-8" />
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Chapter II — Brand spotlight */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="II"
+          label="Tecnodom — JKS Refrigeration"
+          caption="Vigodarzere, Padova — five facilities, 200+ employees, exports to 40+ countries."
+          variant="light"
+        />
+      </div>
+      <BrandSpotlight />
 
-      {/* Brands */}
-      {pageBrands.length > 0 && (
-        <section className="py-24 lg:py-32 bg-navy" aria-labelledby="brands-heading">
-          <div className="max-w-7xl mx-auto px-6">
-            <AnimatedSection>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                <div className="lg:col-span-5">
-                  <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-6">Brands</p>
-                  <h2 id="brands-heading" className="font-display text-3xl sm:text-4xl font-bold text-white leading-[1.1] mb-8">
-                    Authorized<br /><span className="italic font-normal">Supply</span>
-                  </h2>
-                  <div className="w-12 h-px bg-gold/30" />
-                </div>
-                <div className="lg:col-span-7 flex flex-col gap-6 lg:justify-center">
-                  {pageBrands.map((brand) => (
-                    <div key={brand.name} className="border-l-2 border-gold/40 pl-6 py-2">
-                      <p className="text-white font-medium text-sm">{brand.name}</p>
-                      <p className="text-white/40 text-xs mt-1">{brand.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-      )}
+      {/* Chapter III — Panel ledger */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="III"
+          label="The Panel Ledger"
+          caption="Six panel thicknesses — from 60 mm beverage chiller to 200 mm industrial blast freezer."
+          variant="dark"
+        />
+      </div>
+      <PanelLedger />
 
-      {/* CTA */}
-      <section className="py-28 lg:py-36 bg-offwhite" aria-labelledby="cta-heading">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end">
-              <div className="lg:col-span-7">
-                <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.3em] mb-8">Work With Us</p>
-                <h2 id="cta-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] mb-6">
-                  Build Your<br /><span className="italic font-normal">Cold Room.</span>
-                </h2>
-                <p className="text-text-secondary leading-relaxed mb-12 max-w-lg">Custom-dimension walk-in coolers and freezers — modular construction, professional compressors, and full installation service.</p>
-                <div className="flex flex-wrap gap-4">
-                  <Button variant="primary" href={`/${locale}/contact`}>{dict.common.startYourProject}</Button>
-                  <Button variant="ghost-light" href={`/${locale}/equipment/refrigeration`} arrow={false}>{dict.nav.refrigeration}</Button>
-                </div>
-              </div>
-              <div className="lg:col-span-5">
-                <div className="border-l-2 border-gold/30 pl-8 space-y-6">
-                  {[{ value: "50+", label: dict.common.projectsDelivered }, { value: "110+", label: dict.common.brandsRepresented }].map((stat) => (
-                    <div key={stat.label}>
-                      <span className="font-display text-3xl font-bold text-text-primary">{stat.value}</span>
-                      <p className="text-text-secondary/50 text-xs uppercase tracking-[0.15em] mt-1">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Chapter IV — Compliance + pull quote */}
+      <div className="bg-offwhite">
+        <ChapterMark
+          numeral="IV"
+          label="Compliance &amp; Sustainability"
+          caption="CE-marked, F-Gas 2024/573 compliant, R290 future-proof."
+          variant="light"
+        />
+      </div>
+      <ComplianceQuote />
+
+      {/* Chapter V — CTA + colophon */}
+      <div className="bg-navy">
+        <ChapterMark
+          numeral="V"
+          label="Send the Floor Plan"
+          caption="2–5 day install for ≤ 200 m³ — single-source from Belgrade for Southeast Europe."
+          variant="dark"
+        />
+      </div>
+      <SpecCta locale={locale as Locale} dict={dict} />
     </>
   );
 }

@@ -71,8 +71,8 @@ export function getNavItems(locale: Locale, nav: Dictionary["nav"]): NavItem[] {
           href: "/equipment/neutral-inox/waste-management",
           children: [
             {
-              label: nav.wasteStationIhc,
-              href: "/equipment/neutral-inox/waste-management/waste-station-ihc",
+              label: nav.wasteStationImc,
+              href: "/equipment/neutral-inox/waste-management/waste-station-imc",
             },
           ],
         },

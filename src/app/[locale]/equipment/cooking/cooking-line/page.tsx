@@ -66,7 +66,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment/cooking/cooking-line",
         sr: "/sr/equipment/cooking/cooking-line",
-        "x-default": "/en/equipment/cooking/cooking-line",
+        "x-default": "/sr/equipment/cooking/cooking-line",
       },
     },
     openGraph: {

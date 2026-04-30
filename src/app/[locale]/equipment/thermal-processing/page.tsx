@@ -54,7 +54,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment/thermal-processing",
         sr: "/sr/equipment/thermal-processing",
-        "x-default": "/en/equipment/thermal-processing",
+        "x-default": "/sr/equipment/thermal-processing",
       },
     },
     openGraph: {

@@ -54,7 +54,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment",
         sr: "/sr/equipment",
-        "x-default": "/en/equipment",
+        "x-default": "/sr/equipment",
       },
     },
     openGraph: {

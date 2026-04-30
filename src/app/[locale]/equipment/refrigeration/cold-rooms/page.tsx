@@ -58,7 +58,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment/refrigeration/cold-rooms",
         sr: "/sr/equipment/refrigeration/cold-rooms",
-        "x-default": "/en/equipment/refrigeration/cold-rooms",
+        "x-default": "/sr/equipment/refrigeration/cold-rooms",
       },
     },
     openGraph: {

@@ -290,7 +290,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment/refrigeration/food-refrigeration",
         sr: "/sr/equipment/refrigeration/food-refrigeration",
-        "x-default": "/en/equipment/refrigeration/food-refrigeration",
+        "x-default": "/sr/equipment/refrigeration/food-refrigeration",
       },
     },
     openGraph: {

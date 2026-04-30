@@ -65,7 +65,7 @@ export async function generateMetadata({
         en: "/en/equipment/neutral-inox/waste-management/waste-station-imc",
         sr: "/sr/equipment/neutral-inox/waste-management/waste-station-imc",
         "x-default":
-          "/en/equipment/neutral-inox/waste-management/waste-station-imc",
+          "/sr/equipment/neutral-inox/waste-management/waste-station-imc",
       },
     },
     openGraph: {

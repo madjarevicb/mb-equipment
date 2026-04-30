@@ -57,7 +57,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment/refrigeration/display-cases",
         sr: "/sr/equipment/refrigeration/display-cases",
-        "x-default": "/en/equipment/refrigeration/display-cases",
+        "x-default": "/sr/equipment/refrigeration/display-cases",
       },
     },
     openGraph: {

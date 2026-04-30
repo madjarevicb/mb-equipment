@@ -69,7 +69,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment/thermal-processing/combi-ovens",
         sr: "/sr/equipment/thermal-processing/combi-ovens",
-        "x-default": "/en/equipment/thermal-processing/combi-ovens",
+        "x-default": "/sr/equipment/thermal-processing/combi-ovens",
       },
     },
     openGraph: {

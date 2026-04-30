@@ -50,7 +50,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment/neutral-inox/custom-fabrication",
         sr: "/sr/equipment/neutral-inox/custom-fabrication",
-        "x-default": "/en/equipment/neutral-inox/custom-fabrication",
+        "x-default": "/sr/equipment/neutral-inox/custom-fabrication",
       },
     },
     openGraph: {

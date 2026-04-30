@@ -57,7 +57,7 @@ export async function generateMetadata({
       languages: {
         en: "/en/equipment/thermal-processing/charcoal-grills",
         sr: "/sr/equipment/thermal-processing/charcoal-grills",
-        "x-default": "/en/equipment/thermal-processing/charcoal-grills",
+        "x-default": "/sr/equipment/thermal-processing/charcoal-grills",
       },
     },
     openGraph: {

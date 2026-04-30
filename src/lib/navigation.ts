@@ -45,7 +45,6 @@ export function getNavItems(locale: Locale, nav: Dictionary["nav"]): NavItem[] {
           label: nav.cooking,
           href: "/equipment/thermal-processing",
           children: [
-            { label: nav.josper, href: "/equipment/thermal-processing/charcoal-grills" },
             { label: nav.cookingLine, href: "/equipment/cooking/cooking-line" },
             { label: nav.combiOvens, href: "/equipment/thermal-processing/combi-ovens" },
           ],

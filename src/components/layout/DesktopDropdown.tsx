@@ -113,7 +113,10 @@ export default function DesktopDropdown({ label, items, cta }: DropdownProps) {
       </button>
 
       {isOpen && (
-        <div className={`absolute top-full pt-2 ${isMega ? "right-0" : "left-0"}`}>
+        <div
+          className={`absolute top-full pt-2 ${isMega ? "left-1/2" : "left-0"}`}
+          style={isMega ? { transform: "translateX(-50%)" } : undefined}
+        >
           <div
             ref={menuRef}
             id={menuId}
@@ -121,7 +124,7 @@ export default function DesktopDropdown({ label, items, cta }: DropdownProps) {
             aria-label={label}
             style={
               isMega
-                ? { minWidth: "900px", backgroundColor: "#FDFCF9" }
+                ? { width: "min(900px, calc(100vw - 48px))", backgroundColor: "#FDFCF9" }
                 : undefined
             }
             className={

@@ -42,14 +42,14 @@ export default function PartnersSection({
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
         <div className="flex items-center gap-12 animate-scroll-partners will-change-transform">
           {[...partners, ...partners].map((partner, i) => (
-            <div key={`${partner.name}-${i}`} className="flex-shrink-0 flex items-center justify-center h-20 w-32">
+            <div key={`${partner.name}-${i}`} className="flex-shrink-0 flex items-center justify-center h-24 w-40">
               <Image
                 src={partner.logo}
                 alt={`${partner.name} logo`}
-                width={160}
-                height={80}
-                sizes="160px"
-                className="object-contain max-h-14 w-auto"
+                width={200}
+                height={100}
+                sizes="200px"
+                className="object-contain max-h-16 w-auto"
                 loading="lazy"
                 quality={75}
               />

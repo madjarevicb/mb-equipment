@@ -78,6 +78,7 @@ export function getNavItems(locale: Locale, nav: Dictionary["nav"]): NavItem[] {
         },
       ],
     },
+    { label: nav.josper, href: "/equipment/thermal-processing/charcoal-grills" },
     { label: nav.references, href: "/references" },
     { label: nav.demoCenters, href: "/demo-centers" },
   ];

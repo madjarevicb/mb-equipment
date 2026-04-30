@@ -1,12 +1,18 @@
 import Image from "next/image";
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../_sections/ScrollReveal";
+
+interface OriginTechProps {
+  locale?: Locale;
+}
 
 /**
  * Chapter II — Origin + Technology (one combined editorial section).
  * 1969 Pineda de Mar narrative on the left, tech ledger on the right.
  * Certifications + safety as a lower ledger band.
  */
-export default function OriginTech() {
+export default function OriginTech({ locale }: OriginTechProps = {}) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="josper-origin"
@@ -48,7 +54,7 @@ export default function OriginTech() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                &sect; Origin &amp; Mechanism
+                {isSr ? "§ Poreklo i mehanizam" : <>&sect; Origin &amp; Mechanism</>}
               </span>
             </div>
             <ScrollReveal>
@@ -61,13 +67,13 @@ export default function OriginTech() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                A closed oven,
+                {isSr ? "Zatvorena peć," : "A closed oven,"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  a living fire.
+                  {isSr ? "živa vatra." : "a living fire."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -81,8 +87,13 @@ export default function OriginTech() {
                 maxWidth: "32ch",
               }}
             >
-              Patented 1969 in Pineda de Mar by Pere Juli and Josep Armangu&eacute;
-              &mdash; restaurateurs of Mas Pi. The name fuses theirs:{" "}
+              {isSr ? (
+                <>Patentirana 1969. u Pineda de Mar od strane Pere Juli i Josep Armangu&eacute;
+                &mdash; restoraterа iz Mas Pi. Ime spaja njihova:{" "}</>
+              ) : (
+                <>Patented 1969 in Pineda de Mar by Pere Juli and Josep Armangu&eacute;
+              &mdash; restaurateurs of Mas Pi. The name fuses theirs:{" "}</>
+              )}
               <span
                 className="font-display italic"
                 style={{ color: "var(--color-gold-text)" }}
@@ -116,7 +127,7 @@ export default function OriginTech() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Timeline &mdash; No. 01
+              {isSr ? <>Hronologija &mdash; br. 01</> : <>Timeline &mdash; No. 01</>}
             </span>
             <p
               className="text-navy/85 font-light"
@@ -143,12 +154,21 @@ export default function OriginTech() {
               >
                 J
               </span>
-              osper builds the world&rsquo;s first{" "}
+              {isSr ? (
+                <>osper gradi prvu{" "}
+                <span className="font-display italic">patentiranu</span> peć
+                na drveni ugalj &mdash; hibrid zatvorenog ognjišta i živog
+                otvorenog roštilja. Komora za sagorevanje je zatvorena; protok
+                vazduha regulisan dimperom; dimnjak hlađen i zaštićen. Drveni
+                ugalj gori unutar, a ne ispod, hrane.</>
+              ) : (
+                <>osper builds the world&rsquo;s first{" "}
               <span className="font-display italic">patented</span> charcoal
               oven &mdash; a hybrid of the enclosed hearth and the live
               open-fire grill. The combustion chamber is sealed; the airflow
               regulated by damper; the flue cooled and shielded. Charcoal burns
-              inside, not beneath, the food.
+              inside, not beneath, the food.</>
+              )}
             </p>
 
             <p
@@ -159,7 +179,23 @@ export default function OriginTech() {
                 maxWidth: "52ch",
               }}
             >
-              Half a century later, on{" "}
+              {isSr ? (
+                <>Pola veka kasnije, dana{" "}
+                <span
+                  className="font-display italic"
+                  style={{ color: "var(--color-gold-text)" }}
+                >
+                  20. aprila 2018.
+                </span>
+                , Josper se pridružuje{" "}
+                <span className="font-display italic">
+                  The Middleby Corporation
+                </span>{" "}
+                &mdash; američkoj kući za ugostiteljsku opremu. Sedište ostaje u
+                Pineda de Mar; peći ostaju španski proizvod. Kontinuitet
+                inženjeringa, globalna podrška.</>
+              ) : (
+                <>Half a century later, on{" "}
               <span
                 className="font-display italic"
                 style={{ color: "var(--color-gold-text)" }}
@@ -172,7 +208,8 @@ export default function OriginTech() {
               </span>{" "}
               &mdash; the American foodservice house. Headquarters remain in
               Pineda de Mar; ovens remain Spanish-manufactured. Engineering
-              continuity, global support.
+              continuity, global support.</>
+              )}
             </p>
 
             <div
@@ -195,8 +232,8 @@ export default function OriginTech() {
                 className="text-navy/65 font-light italic font-display"
                 style={{ fontSize: "13px" }}
               >
-                &ldquo;Grilling over charcoal as a way of life.&rdquo; &mdash;
-                Josper house motto.
+                {isSr ? <>&ldquo;Roštiljanje na ugalj kao način života.&rdquo; &mdash; Josper moto kuće.</> : <>&ldquo;Grilling over charcoal as a way of life.&rdquo; &mdash;
+                Josper house motto.</>}
               </span>
             </div>
           </div>
@@ -226,51 +263,51 @@ export default function OriginTech() {
                   fontWeight: 500,
                 }}
               >
-                Tech Ledger
+                {isSr ? "Tehnički pregled" : "Tech Ledger"}
               </span>
 
               <TechRow
                 index="i"
-                label="Mechanism"
+                label={isSr ? "Mehanizam" : "Mechanism"}
                 value={
                   <>
-                    Closed oven{" "}
-                    <span className="font-display italic">&times;</span> live
-                    charcoal fire
+                    {isSr ? "Zatvorena peć " : "Closed oven "}
+                    <span className="font-display italic">&times;</span>{" "}
+                    {isSr ? "živa vatra od uglja" : "live charcoal fire"}
                   </>
                 }
               />
               <TechRow
                 index="ii"
-                label="Operating range"
+                label={isSr ? "Radni opseg" : "Operating range"}
                 value={
                   <span className="font-display italic">250 &ndash; 350 &deg;C</span>
                 }
               />
               <TechRow
                 index="iii"
-                label="Fuel savings"
+                label={isSr ? "Ušteda goriva" : "Fuel savings"}
                 value={
                   <>
-                    Up to <span className="font-display italic">~40%</span>{" "}
-                    less charcoal*
+                    {isSr ? "Do " : "Up to "}<span className="font-display italic">~40%</span>{" "}
+                    {isSr ? "manje uglja*" : "less charcoal*"}
                   </>
                 }
               />
               <TechRow
                 index="iv"
-                label="Regulation"
-                value="Single damper, chef-controlled airflow"
+                label={isSr ? "Regulacija" : "Regulation"}
+                value={isSr ? "Jedan dimper, šef kontroliše protok vazduha" : "Single damper, chef-controlled airflow"}
               />
               <TechRow
                 index="v"
-                label="Construction"
-                value="Cast iron chamber, stainless steel body"
+                label={isSr ? "Konstrukcija" : "Construction"}
+                value={isSr ? "Komora od livenog gvožđa, telo od inoxa" : "Cast iron chamber, stainless steel body"}
               />
               <TechRow
                 index="vi"
-                label="Safety"
-                value="Antispark, combustion shield, cooled flue, firebreak"
+                label={isSr ? "Bezbednost" : "Safety"}
+                value={isSr ? "Antiiskreni sistem, zaštita od plamena, hlađen dimnjak, protivpožarni štitnik" : "Antispark, combustion shield, cooled flue, firebreak"}
                 last
               />
 
@@ -282,8 +319,8 @@ export default function OriginTech() {
                   lineHeight: 1.55,
                 }}
               >
-                * Josper&rsquo;s own claim vs. open-grill cooking &mdash; not
-                independently audited.
+                {isSr ? <>* Josper-ova tvrdnja u odnosu na kuvanje na otvorenom roštilju &mdash; nije nezavisno proverena.</> : <>* Josper&rsquo;s own claim vs. open-grill cooking &mdash; not
+                independently audited.</>}
               </p>
             </div>
           </div>
@@ -320,7 +357,7 @@ export default function OriginTech() {
                   textShadow: "0 1px 4px rgba(0,0,0,0.6)",
                 }}
               >
-                Plate 02 / In the kitchen
+                {isSr ? "Tabla 02 / U kuhinji" : "Plate 02 / In the kitchen"}
               </span>
               <span
                 className="uppercase text-white/80"
@@ -330,7 +367,7 @@ export default function OriginTech() {
                   textShadow: "0 1px 4px rgba(0,0,0,0.6)",
                 }}
               >
-                Photo: Josper
+                {isSr ? "Foto: Josper" : "Photo: Josper"}
               </span>
             </figcaption>
           </figure>
@@ -355,7 +392,7 @@ export default function OriginTech() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Certifications
+              {isSr ? "Sertifikati" : "Certifications"}
             </span>
             <p
               className="font-display italic"
@@ -379,7 +416,7 @@ export default function OriginTech() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Warranty
+              {isSr ? "Garancija" : "Warranty"}
             </span>
             <p
               className="font-display italic text-navy"
@@ -388,13 +425,13 @@ export default function OriginTech() {
                 lineHeight: 1.2,
               }}
             >
-              4 years, materials &amp; components
+              {isSr ? <>4 godine, materijali i komponente</> : <>4 years, materials &amp; components</>}
             </p>
             <p
               className="text-navy/65 font-light mt-1"
               style={{ fontSize: "12px", lineHeight: 1.55 }}
             >
-              1-year coverage on internal chamber parts.
+              {isSr ? "1 godina pokrića na delove unutrašnje komore." : "1-year coverage on internal chamber parts."}
             </p>
           </div>
           <div className="col-span-12 lg:col-span-4">
@@ -407,7 +444,7 @@ export default function OriginTech() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Origin
+              {isSr ? "Poreklo" : "Origin"}
             </span>
             <p
               className="font-display italic text-navy"
@@ -416,13 +453,13 @@ export default function OriginTech() {
                 lineHeight: 1.2,
               }}
             >
-              Pineda de Mar, Spain
+              {isSr ? "Pineda de Mar, Španija" : "Pineda de Mar, Spain"}
             </p>
             <p
               className="text-navy/65 font-light mt-1"
               style={{ fontSize: "12px", lineHeight: 1.55 }}
             >
-              Manufactured in Catalonia &mdash; a Middleby company since 2018.
+              {isSr ? <>Proizvedeno u Kataloniji &mdash; Middleby kompanija od 2018.</> : <>Manufactured in Catalonia &mdash; a Middleby company since 2018.</>}
             </p>
           </div>
         </div>

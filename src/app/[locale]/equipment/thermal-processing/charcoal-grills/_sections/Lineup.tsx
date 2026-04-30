@@ -1,7 +1,12 @@
 import Image from "next/image";
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../_sections/ScrollReveal";
 
-const PRODUCT_STRIP = [
+interface LineupProps {
+  locale?: Locale;
+}
+
+const PRODUCT_STRIP_EN = [
   {
     model: "HJX Pro S80",
     caption: "Small — up to ~80 covers",
@@ -15,6 +20,24 @@ const PRODUCT_STRIP = [
   {
     model: "HJX Pro L175",
     caption: "Large — up to ~175 covers",
+    src: "/images/josper/hjx-pro-L175.jpg",
+  },
+];
+
+const PRODUCT_STRIP_SR = [
+  {
+    model: "HJX Pro S80",
+    caption: "Mali — do ~80 gostiju",
+    src: "/images/josper/hjx-pro-S80.jpg",
+  },
+  {
+    model: "HJX Pro M120",
+    caption: "Srednji — do ~120 gostiju",
+    src: "/images/josper/hjx-pro-M120.jpg",
+  },
+  {
+    model: "HJX Pro L175",
+    caption: "Veliki — do ~175 gostiju",
     src: "/images/josper/hjx-pro-L175.jpg",
   },
 ];
@@ -65,7 +88,7 @@ export const HJX_MODELS: HjxRow[] = [
   },
 ];
 
-const OTHER_FAMILIES = [
+const OTHER_FAMILIES_EN = [
   { name: "HJX-PRO", note: "Upgraded tier" },
   { name: "HJA Class A", note: "Premium line" },
   { name: "CVJ Combos", note: "Oven + Basque grill" },
@@ -74,7 +97,19 @@ const OTHER_FAMILIES = [
   { name: "MGJ", note: "Mangal" },
 ];
 
-export default function Lineup() {
+const OTHER_FAMILIES_SR = [
+  { name: "HJX-PRO", note: "Unapređeni nivo" },
+  { name: "HJA Class A", note: "Premium linija" },
+  { name: "CVJ Combos", note: "Peć + Baskijski roštilj" },
+  { name: "PVJ", note: "Baskijski roštilji" },
+  { name: "ASJ", note: "Ražnjevi" },
+  { name: "MGJ", note: "Mangal" },
+];
+
+export default function Lineup({ locale }: LineupProps = {}) {
+  const isSr = locale === "sr";
+  const PRODUCT_STRIP = isSr ? PRODUCT_STRIP_SR : PRODUCT_STRIP_EN;
+  const OTHER_FAMILIES = isSr ? OTHER_FAMILIES_SR : OTHER_FAMILIES_EN;
   return (
     <section
       aria-labelledby="josper-lineup"
@@ -101,7 +136,7 @@ export default function Lineup() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                HJX Ledger &mdash; Charcoal Ovens
+                {isSr ? <>HJX Pregled &mdash; Peći na drveni ugalj</> : <>HJX Ledger &mdash; Charcoal Ovens</>}
               </span>
             </div>
             <ScrollReveal>
@@ -114,13 +149,13 @@ export default function Lineup() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Five sizes,
+                {isSr ? "Pet veličina," : "Five sizes,"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold)" }}
                 >
-                  one mechanism.
+                  {isSr ? "jedan mehanizam." : "one mechanism."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -134,9 +169,11 @@ export default function Lineup() {
                 maxWidth: "32ch",
               }}
             >
-              From café service to 175-cover steakhouses &mdash; each HJX unit
+              {isSr ? <>Od kafe servisa do steakhouse-a sa 175 gostiju &mdash; svaka HJX
+              jedinica deli istu zatvorenu komoru za sagorevanje. Dimenzionisana prema
+              vašem dnevnom broju gostiju i budžetu za ugalj.</> : <>From café service to 175-cover steakhouses &mdash; each HJX unit
               shares the same sealed combustion chamber. Sized to your daily
-              cover count and charcoal budget.
+              cover count and charcoal budget.</>}
             </p>
           </div>
         </div>
@@ -158,12 +195,12 @@ export default function Lineup() {
             borderBottom: "1px solid rgba(201,168,76,0.2)",
           }}
         >
-          <ColHead cols="col-span-1" label="No." />
+          <ColHead cols="col-span-1" label={isSr ? "Br." : "No."} />
           <ColHead cols="col-span-3" label="Model" />
-          <ColHead cols="col-span-2" label="Diners / day" />
-          <ColHead cols="col-span-2" label="Fire-up" />
-          <ColHead cols="col-span-2" label="Daily charcoal" />
-          <ColHead cols="col-span-2" label="Autonomy" />
+          <ColHead cols="col-span-2" label={isSr ? "Gosti / dan" : "Diners / day"} />
+          <ColHead cols="col-span-2" label={isSr ? "Zagrevanje" : "Fire-up"} />
+          <ColHead cols="col-span-2" label={isSr ? "Dnevno uglja" : "Daily charcoal"} />
+          <ColHead cols="col-span-2" label={isSr ? "Autonomija" : "Autonomy"} />
         </div>
 
         {/* Rows */}
@@ -192,7 +229,7 @@ export default function Lineup() {
                       letterSpacing: "0.04em",
                     }}
                   >
-                    No. {String(i + 1).padStart(2, "0")}
+                    {isSr ? "Br." : "No."} {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 
@@ -215,25 +252,25 @@ export default function Lineup() {
                 {/* Stats — stack on mobile, grid on lg */}
                 <div className="col-span-12 lg:col-span-2">
                   <Stat
-                    mobileLabel="Diners"
+                    mobileLabel={isSr ? "Gosti" : "Diners"}
                     value={row.diners}
                   />
                 </div>
                 <div className="col-span-12 lg:col-span-2">
                   <Stat
-                    mobileLabel="Fire-up"
+                    mobileLabel={isSr ? "Zagrevanje" : "Fire-up"}
                     value={row.fireUp}
                   />
                 </div>
                 <div className="col-span-12 lg:col-span-2">
                   <Stat
-                    mobileLabel="Charcoal / day"
+                    mobileLabel={isSr ? "Ugalj / dan" : "Charcoal / day"}
                     value={row.fuel}
                   />
                 </div>
                 <div className="col-span-12 lg:col-span-2">
                   <Stat
-                    mobileLabel="Autonomy"
+                    mobileLabel={isSr ? "Autonomija" : "Autonomy"}
                     value={row.autonomy}
                   />
                 </div>
@@ -312,7 +349,7 @@ export default function Lineup() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Also in the catalog
+              {isSr ? "Takođe u katalogu" : "Also in the catalog"}
             </span>
             <p
               className="font-display italic text-white/80 mb-5"
@@ -321,7 +358,7 @@ export default function Lineup() {
                 lineHeight: 1.3,
               }}
             >
-              Beyond the HJX &mdash; six further families.
+              {isSr ? <>Pored HJX &mdash; još šest porodica.</> : <>Beyond the HJX &mdash; six further families.</>}
             </p>
             <figure
               className="relative overflow-hidden"
@@ -348,7 +385,7 @@ export default function Lineup() {
                     textShadow: "0 1px 4px rgba(0,0,0,0.7)",
                   }}
                 >
-                  PVJ Basque Grill — Basuki, Bilbao
+                  {isSr ? "PVJ Baskijski roštilj — Basuki, Bilbao" : "PVJ Basque Grill — Basuki, Bilbao"}
                 </span>
                 <span
                   className="uppercase"
@@ -359,7 +396,7 @@ export default function Lineup() {
                     textShadow: "0 1px 4px rgba(0,0,0,0.7)",
                   }}
                 >
-                  Photo: Josper
+                  {isSr ? "Foto: Josper" : "Photo: Josper"}
                 </span>
               </figcaption>
             </figure>
@@ -426,8 +463,9 @@ export default function Lineup() {
               className="text-white/60 font-light"
               style={{ fontSize: "13px" }}
             >
-              Specifications published by Josper &mdash; confirmed per unit at
-              quotation.
+              {isSr ? <>Specifikacije objavljene od strane Josper-a &mdash; potvrđuju se po
+              jedinici prilikom ponude.</> : <>Specifications published by Josper &mdash; confirmed per unit at
+              quotation.</>}
             </span>
           </div>
           <div className="col-span-12 lg:col-span-6 lg:text-right">
@@ -435,7 +473,7 @@ export default function Lineup() {
               className="uppercase text-white/50"
               style={{ fontSize: "10px", letterSpacing: "0.32em" }}
             >
-              Folio 03 / 08
+              {isSr ? "Tabak 03 / 08" : "Folio 03 / 08"}
             </span>
           </div>
         </div>

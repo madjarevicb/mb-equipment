@@ -14,6 +14,7 @@ const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwYTE2MjgiLz48L3N2Zz4=";
 
 export default function JosperHero({ locale, dict }: JosperHeroProps) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="josper-hero"
@@ -32,7 +33,7 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 08
+          {isSr ? "tabak 01 / 08" : "folio 01 / 08"}
         </span>
         <span
           aria-hidden="true"
@@ -61,13 +62,13 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
 
       <RunningMeta
         variant="dark"
-        folio="Ed. 2026"
+        folio={isSr ? "Izd. 2026" : "Ed. 2026"}
         items={[
-          "Vol. I",
-          "Ch. 02 — Josper",
-          "Pineda de Mar, Est. 1969",
+          isSr ? "Tom I" : "Vol. I",
+          isSr ? "Pogl. 02 — Josper" : "Ch. 02 — Josper",
+          isSr ? "Pineda de Mar, Osn. 1969." : "Pineda de Mar, Est. 1969",
           "Middleby Corporation",
-          "Authorized Partner — Belgrade",
+          isSr ? "Ovlašćeni partner — Beograd" : "Authorized Partner — Belgrade",
         ]}
       />
 
@@ -170,7 +171,7 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
                   delay={40}
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Charcoal,</span>
+                  <span style={{ display: "block" }}>{isSr ? "Drveni ugalj," : "Charcoal,"}</span>
                   <span
                     style={{
                       display: "block",
@@ -180,10 +181,10 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
                       paddingLeft: "0.6em",
                     }}
                   >
-                    reinvented
+                    {isSr ? "reinventovan" : "reinvented"}
                   </span>
                   <span style={{ display: "block" }}>
-                    since 1969
+                    {isSr ? "od 1969." : "since 1969"}
                     <span
                       aria-hidden="true"
                       style={{
@@ -216,9 +217,9 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
                   letterSpacing: "0.1em",
                 }}
               >
-                Plate No. 02 —{" "}
+                {isSr ? "Tabla br. 02 —" : "Plate No. 02 —"}{" "}
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Pineda de Mar &rarr; Belgrade.
+                  {isSr ? "Pineda de Mar → Beograd." : <>Pineda de Mar &rarr; Belgrade.</>}
                 </span>
               </p>
             </div>
@@ -237,7 +238,7 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
               }}
               className="block uppercase font-medium mb-4"
             >
-              &sect; Editor&rsquo;s Note
+              {isSr ? "§ Beleška urednika" : <>&sect; Editor&rsquo;s Note</>}
             </span>
             <p
               className="text-white/80 font-light"
@@ -262,12 +263,19 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
                   fontWeight: 400,
                 }}
               >
-                T
+                {isSr ? "J" : "T"}
               </span>
-              he Josper charcoal oven &mdash; patented in 1969 in Pineda de Mar
+              {isSr ? (
+                <>osper peć na drveni ugalj &mdash; patentirana 1969. u Pineda de Mar &mdash; je
+                instrument sa zatvorenom komorom i živom vatrom. Špansko inženjerstvo;
+                poverenje Mišlen kuhinja; sada isporučujemo, instaliramo i servisiramo u
+                MB Equipment-u širom Jugoistočne Evrope.</>
+              ) : (
+                <>he Josper charcoal oven &mdash; patented in 1969 in Pineda de Mar
               &mdash; is a closed-chamber, live-fire instrument. Spanish
               engineering; Michelin-kitchen trust; now supplied, installed, and
-              serviced by MB Equipment across Southeast Europe.
+              serviced by MB Equipment across Southeast Europe.</>
+              )}
             </p>
           </div>
 
@@ -325,7 +333,7 @@ export default function JosperHero({ locale, dict }: JosperHeroProps) {
                       textTransform: "uppercase",
                     }}
                   >
-                    HJX in service
+                    {isSr ? "HJX u radu" : "HJX in service"}
                   </span>
                   <span
                     className="font-display italic"

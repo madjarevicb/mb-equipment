@@ -14,6 +14,7 @@ const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwYTE2MjgiLz48L3N2Zz4=";
 
 export default function CombiHero({ locale, dict }: CombiHeroProps) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="combi-hero"
@@ -32,7 +33,7 @@ export default function CombiHero({ locale, dict }: CombiHeroProps) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 05
+          {isSr ? "tabak 01 / 05" : "folio 01 / 05"}
         </span>
         <span
           aria-hidden="true"
@@ -61,13 +62,13 @@ export default function CombiHero({ locale, dict }: CombiHeroProps) {
 
       <RunningMeta
         variant="dark"
-        folio="Ed. 2026"
+        folio={isSr ? "Izd. 2026" : "Ed. 2026"}
         items={[
-          "Vol. I",
-          "Ch. 03 — Combi Ovens",
-          "Houno · Randers, Est. 1977",
-          "Lincat · Lincoln, Est. 1971",
-          "Invoq Platform — 2023",
+          isSr ? "Tom I" : "Vol. I",
+          isSr ? "Pogl. 03 — Parno-konvekcijske peći" : "Ch. 03 — Combi Ovens",
+          isSr ? "Houno · Randers, Osn. 1977." : "Houno · Randers, Est. 1977",
+          isSr ? "Lincat · Linkoln, Osn. 1971." : "Lincat · Lincoln, Est. 1971",
+          isSr ? "Invoq platforma — 2023." : "Invoq Platform — 2023",
         ]}
       />
 
@@ -157,9 +158,9 @@ export default function CombiHero({ locale, dict }: CombiHeroProps) {
                   delay={40}
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Steam, convection</span>
+                  <span style={{ display: "block" }}>{isSr ? "Para, konvekcija" : "Steam, convection"}</span>
                   <span style={{ display: "block" }}>
-                    &mdash; and{" "}
+                    {isSr ? <>&mdash; i{" "}</> : <>&mdash; and{" "}</>}
                     <span
                       style={{
                         fontStyle: "italic",
@@ -167,11 +168,11 @@ export default function CombiHero({ locale, dict }: CombiHeroProps) {
                         color: "var(--color-gold)",
                       }}
                     >
-                      everything
+                      {isSr ? "sve" : "everything"}
                     </span>
                   </span>
                   <span style={{ display: "block" }}>
-                    in{" "}
+                    {isSr ? "" : "in "}
                     <span
                       style={{
                         fontStyle: "italic",
@@ -179,7 +180,7 @@ export default function CombiHero({ locale, dict }: CombiHeroProps) {
                         color: "var(--color-gold)",
                       }}
                     >
-                      between
+                      {isSr ? "između" : "between"}
                     </span>
                     <span
                       aria-hidden="true"
@@ -213,9 +214,9 @@ export default function CombiHero({ locale, dict }: CombiHeroProps) {
                   letterSpacing: "0.1em",
                 }}
               >
-                Plate No. 03 —{" "}
+                {isSr ? "Tabla br. 03 —" : "Plate No. 03 —"}{" "}
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Randers &times; Lincoln &rarr; Belgrade.
+                  {isSr ? "Randers × Linkoln → Beograd." : <>Randers &times; Lincoln &rarr; Belgrade.</>}
                 </span>
               </p>
             </div>
@@ -234,7 +235,7 @@ export default function CombiHero({ locale, dict }: CombiHeroProps) {
               }}
               className="block uppercase font-medium mb-4"
             >
-              &sect; Editor&rsquo;s Note
+              {isSr ? "§ Beleška urednika" : <>&sect; Editor&rsquo;s Note</>}
             </span>
             <p
               className="text-white/80 font-light"
@@ -259,12 +260,19 @@ export default function CombiHero({ locale, dict }: CombiHeroProps) {
                   fontWeight: 400,
                 }}
               >
-                T
+                {isSr ? "D" : "T"}
               </span>
-              wo Middleby brands, one Invoq platform &mdash; Danish engineering
+              {isSr ? (
+                <>va Middleby brenda, jedna Invoq platforma &mdash; dansko inženjerstvo
+                susreće britansku proizvodnju kroz šest serija parno-konvekcijskih peći,
+                od stonih modela sa 5 nivoa do roll-in modela sa 40 nivoa. Specificira, isporučuje i
+                pušta u rad MB Equipment širom Jugoistočne Evrope.</>
+              ) : (
+                <>wo Middleby brands, one Invoq platform &mdash; Danish engineering
               meets British manufacturing across six combi families, from
               5-tray countertop to 40-pan roll-in. Specified, supplied, and
-              commissioned by MB Equipment across Southeast Europe.
+              commissioned by MB Equipment across Southeast Europe.</>
+              )}
             </p>
           </div>
 

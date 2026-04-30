@@ -5,6 +5,7 @@ interface ChapterMarkProps {
   label: string; // "Opening" | "Index of Categories" etc.
   caption?: string;
   variant?: "light" | "dark";
+  locale?: string;
 }
 
 /**
@@ -17,8 +18,11 @@ export default function ChapterMark({
   label,
   caption,
   variant = "light",
+  locale,
 }: ChapterMarkProps) {
   const isDark = variant === "dark";
+  const isSr = locale === "sr";
+  const chapterWord = isSr ? "Poglavlje" : "Chapter";
   const goldColor = isDark ? "var(--color-gold)" : "var(--color-gold-text)";
   const bodyColor = isDark ? "rgba(255,255,255,0.7)" : "var(--color-navy)";
   const ruleColor = isDark
@@ -78,7 +82,7 @@ export default function ChapterMark({
                   opacity: 0.8,
                 }}
               >
-                Chapter {numeral}
+                {chapterWord} {numeral}
               </span>
               <span style={{ color: goldColor, opacity: 0.7 }}>—</span>
               <span

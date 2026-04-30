@@ -1,9 +1,14 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../thermal-processing/_sections/ScrollReveal";
 
 export interface PanelRow {
   thickness: string;
   temp: string;
   application: string;
+}
+
+interface PanelLedgerProps {
+  locale?: Locale;
 }
 
 export const PANEL_ROWS: PanelRow[] = [
@@ -39,7 +44,42 @@ export const PANEL_ROWS: PanelRow[] = [
   },
 ];
 
-export default function PanelLedger() {
+const PANEL_ROWS_SR: PanelRow[] = [
+  {
+    thickness: "60 mm",
+    temp: "0 do +8 °C",
+    application: "Lake plusne komore, prostorije za pića",
+  },
+  {
+    thickness: "70–80 mm",
+    temp: "0 do +8 °C",
+    application: "Standardne plusne komore — HoReCa default",
+  },
+  {
+    thickness: "100 mm",
+    temp: "−18 do −22 °C",
+    application: "Standardne minusne komore",
+  },
+  {
+    thickness: "120–130 mm",
+    temp: "−22 do −25 °C",
+    application: "Minusne komore u toplim klimama / visokom radu",
+  },
+  {
+    thickness: "150 mm",
+    temp: "−30 do −35 °C",
+    application: "Šok zamrzivači — industrijski",
+  },
+  {
+    thickness: "200 mm",
+    temp: "Ispod −30 °C",
+    application: "Ultra-low / šok / industrijski lanci",
+  },
+];
+
+export default function PanelLedger({ locale }: PanelLedgerProps = {}) {
+  const isSr = locale === "sr";
+  const ROWS = isSr ? PANEL_ROWS_SR : PANEL_ROWS;
   return (
     <section
       aria-labelledby="panel-ledger"
@@ -66,7 +106,7 @@ export default function PanelLedger() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                The Panel Ledger &mdash; Six Form Factors
+                {isSr ? <>Pregled panela &mdash; šest formata</> : <>The Panel Ledger &mdash; Six Form Factors</>}
               </span>
             </div>
             <ScrollReveal>
@@ -79,13 +119,13 @@ export default function PanelLedger() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Panel thickness
+                {isSr ? "Debljina panela" : "Panel thickness"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold)" }}
                 >
-                  decides the duty.
+                  {isSr ? "određuje rad." : "decides the duty."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -99,10 +139,12 @@ export default function PanelLedger() {
                 maxWidth: "32ch",
               }}
             >
-              Insulation thickness is the first specification &mdash; it sets
+              {isSr ? <>Debljina izolacije je prva specifikacija &mdash; određuje
+              postižnu temperaturu, energetski otisak i cenu panela. Šest formata
+              pokriva opseg od rashladnika za pića do industrijskog šok zamrzivača.</> : <>Insulation thickness is the first specification &mdash; it sets
               the achievable temperature, the energy footprint, and the panel
               cost. Six form factors cover the range from beverage chiller to
-              industrial blast freezer.
+              industrial blast freezer.</>}
             </p>
           </div>
         </div>
@@ -124,15 +166,15 @@ export default function PanelLedger() {
             borderBottom: "1px solid rgba(201,168,76,0.2)",
           }}
         >
-          <ColHead cols="col-span-1" label="No." />
-          <ColHead cols="col-span-3" label="Thickness" />
-          <ColHead cols="col-span-3" label="Temperature" />
-          <ColHead cols="col-span-5" label="Application" />
+          <ColHead cols="col-span-1" label={isSr ? "Br." : "No."} />
+          <ColHead cols="col-span-3" label={isSr ? "Debljina" : "Thickness"} />
+          <ColHead cols="col-span-3" label={isSr ? "Temperatura" : "Temperature"} />
+          <ColHead cols="col-span-5" label={isSr ? "Primena" : "Application"} />
         </div>
 
         {/* Rows */}
         <ol className="relative">
-          {PANEL_ROWS.map((row, i) => (
+          {ROWS.map((row, i) => (
             <li
               key={row.thickness + row.application}
               style={{
@@ -156,7 +198,7 @@ export default function PanelLedger() {
                       letterSpacing: "0.04em",
                     }}
                   >
-                    No. {String(i + 1).padStart(2, "0")}
+                    {isSr ? "Br." : "No."} {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 
@@ -178,12 +220,12 @@ export default function PanelLedger() {
 
                 {/* Temperature */}
                 <div className="col-span-12 lg:col-span-3">
-                  <Stat mobileLabel="Temperature" value={row.temp} />
+                  <Stat mobileLabel={isSr ? "Temperatura" : "Temperature"} value={row.temp} />
                 </div>
 
                 {/* Application */}
                 <div className="col-span-12 lg:col-span-5">
-                  <Stat mobileLabel="Application" value={row.application} />
+                  <Stat mobileLabel={isSr ? "Primena" : "Application"} value={row.application} />
                 </div>
               </div>
             </li>
@@ -204,9 +246,11 @@ export default function PanelLedger() {
               className="text-white/60 font-light"
               style={{ fontSize: "13px" }}
             >
-              JKS modular grid &mdash;{" "}
+              {isSr ? <>JKS modularna mreža &mdash;{" "}
+              <span className="text-white/85">20 cm</span> inkrementi. Širine panela
+              400/600/800/1000/1200 mm; slobodno kombinabilni.</> : <>JKS modular grid &mdash;{" "}
               <span className="text-white/85">20 cm</span> increments. Panel
-              widths 400/600/800/1000/1200 mm; freely combinable.
+              widths 400/600/800/1000/1200 mm; freely combinable.</>}
             </span>
           </div>
           <div className="col-span-12 lg:col-span-4 lg:text-right">
@@ -214,7 +258,7 @@ export default function PanelLedger() {
               className="uppercase text-white/50"
               style={{ fontSize: "10px", letterSpacing: "0.32em" }}
             >
-              Folio 04 / 08
+              {isSr ? "Tabak 04 / 08" : "Folio 04 / 08"}
             </span>
           </div>
         </div>

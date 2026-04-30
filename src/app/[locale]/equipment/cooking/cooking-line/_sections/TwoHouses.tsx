@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../thermal-processing/_sections/ScrollReveal";
 
 interface House {
@@ -13,7 +14,11 @@ interface House {
   parentLine: string;
 }
 
-const HOUSES: House[] = [
+interface TwoHousesProps {
+  locale?: Locale;
+}
+
+const HOUSES_EN: House[] = [
   {
     brand: "Silko",
     founded: "Founded 1980",
@@ -37,13 +42,13 @@ const HOUSES: House[] = [
     founded: "Founded 1971",
     origin: "Lincoln, United Kingdom",
     positioning:
-      "British engineering, the broadest counter-top to free-standing range in the cooking ledger — and direct synergy with our Middleby partnership.",
+      "British engineering, the broadest countertop-to-freestanding range in the cooking ledger — and direct synergy with our Middleby partnership.",
     facts: [
       "Lincoln, UK — 12,000 m² factory on Whisby Road since 1997",
       "Middleby Corporation brand since 31 May 2011",
       "ISO 9001 + ISO 14001 + UKAS-accredited · ~450 SKUs · exports to 85+ countries",
-      "Opus 800 (heavy-duty) · Silverlink 600 · Phoenix dual-fuel · Lynx 400 counter-top",
-      "Opus 800 ships with a 2-year parts & labour warranty",
+      "Opus 800 (heavy-duty) · Silverlink 600 · Phoenix dual-fuel · Lynx 400 countertop",
+      "Opus 800 ships with a 2-year parts and labor warranty",
     ],
     logo: "/images/brands/lincat-logo.svg",
     logoInvert: true,
@@ -52,7 +57,48 @@ const HOUSES: House[] = [
   },
 ];
 
-export default function TwoHouses() {
+const HOUSES_SR: House[] = [
+  {
+    brand: "Silko",
+    founded: "Osnovan 1980.",
+    origin: "Vittorio Veneto, Italija",
+    positioning:
+      "Italijansko nasleđe dizajna i modularna blok arhitektura — projektovano za šefa koji želi liniju izgrađenu oko menija.",
+    facts: [
+      "Vittorio Veneto (Treviso), Italija — proizvodnja od 1980.",
+      "Deo Ali Group-a — jedne od dve najveće svetske grupacije za ugostiteljsku opremu",
+      "Essence serije 650 / 700 / 900 / 1100 — modularne širine 400–1600 mm",
+      "Essence 900: 460+ kombinacija modula · 20/10 AISI 304 radna ploča · otvoreni gorionici do 10 kW",
+      "Ikonico namenski jednodelni blokovi za radnu ploču · Format Design Lab usluga",
+    ],
+    logo: "/images/brands/silko-logo.png",
+    logoInvert: false,
+    url: "https://www.silko.it/",
+    parentLine: "Ali Group · Italija",
+  },
+  {
+    brand: "Lincat",
+    founded: "Osnovan 1971.",
+    origin: "Linkoln, Velika Britanija",
+    positioning:
+      "Britansko inženjerstvo, najširi asortiman od stonih do samostojećih jedinica u kuhinjskom asortimanu — i direktna sinergija sa našim Middleby partnerstvom.",
+    facts: [
+      "Linkoln, V. Britanija — fabrika od 12.000 m² na Whisby Road-u od 1997.",
+      "Middleby Corporation brend od 31. maja 2011.",
+      "ISO 9001 + ISO 14001 + UKAS akreditacija · ~450 SKU-ova · izvoz u 85+ zemalja",
+      "Opus 800 (heavy-duty) · Silverlink 600 · Phoenix dual-fuel · Lynx 400 stoni",
+      "Opus 800 isporučuje se sa 2-godišnjom garancijom na delove i rad",
+    ],
+    logo: "/images/brands/lincat-logo.svg",
+    logoInvert: true,
+    url: "https://www.lincat.co.uk/",
+    parentLine: "Middleby Corporation · V. Britanija",
+  },
+];
+
+export default function TwoHouses({ locale }: TwoHousesProps = {}) {
+  const isSr = locale === "sr";
+  const HOUSES = isSr ? HOUSES_SR : HOUSES_EN;
   return (
     <section
       aria-labelledby="cooking-line-houses"
@@ -91,7 +137,7 @@ export default function TwoHouses() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                The Two Houses
+                {isSr ? "Dve kuće" : "The Two Houses"}
               </span>
             </div>
             <ScrollReveal>
@@ -104,13 +150,13 @@ export default function TwoHouses() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Italy &amp; England,
+                {isSr ? <>Italija i Engleska,</> : <>Italy &amp; England,</>}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  on the same line.
+                  {isSr ? "na istoj liniji." : "on the same line."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -125,9 +171,7 @@ export default function TwoHouses() {
                 maxWidth: "32ch",
               }}
             >
-              Two manufacturers chosen for what each does best — modular Italian
-              suites and British heavy-duty engineering — supplied, installed,
-              and serviced under one authorized partnership.
+              {isSr ? "Dva proizvođača izabrana po onome u čemu su najbolji — modularni italijanski sklopovi i britansko heavy-duty inženjerstvo — isporučujemo, instaliramo i servisiramo kroz jedno ovlašćeno partnerstvo." : "Two manufacturers chosen for what each does best — modular Italian suites and British heavy-duty engineering — supplied, installed, and serviced under one authorized partnership."}
             </p>
           </div>
         </div>
@@ -315,7 +359,7 @@ export default function TwoHouses() {
                         fontWeight: 500,
                       }}
                     >
-                      Manufacturer
+                      {isSr ? "Proizvođač" : "Manufacturer"}
                     </span>
                     <span
                       aria-hidden="true"
@@ -355,9 +399,9 @@ export default function TwoHouses() {
                 maxWidth: "62ch",
               }}
             >
-              Both supplied, installed, and serviced under MB Equipment&rsquo;s
+              {isSr ? <>Oba se isporučuju, instaliraju i servisiraju kroz MB Equipment-ovo ovlašćeno partnerstvo — jedna tačka odgovornosti, fabrički obučeni inženjeri, originalni delovi.</> : <>Both supplied, installed, and serviced under MB Equipment&rsquo;s
               authorized partnership — single point of accountability,
-              factory-trained engineers, genuine parts.
+              factory-trained engineers, genuine parts.</>}
             </p>
           </div>
         </div>

@@ -65,6 +65,41 @@ export interface Dictionary {
     brandsRepresented: string;
     regionLabel: string;
     responseTime: string;
+    callUs: string;
+    mainNavigation: string;
+    navigationMenu: string;
+    languageGroup: string;
+    breadcrumbAria: string;
+    business: string;
+    serbiaCountry: string;
+    southeastEurope: string;
+    fullPortfolio: string;
+    additionalBrands: string;
+    filteredBy: string;
+    filterAll: string;
+    googleMapsLabel: string;
+    fiftyPercentOutsideUs: string;
+    residentialEyebrow: string;
+    ourResidentialBrands: string;
+    onePartner: string;
+    brandsLabel: string;
+    centersHeading: string;
+    introHeading: string;
+    globalReachHeading: string;
+    formFailedToSend: string;
+    websiteHoneypot: string;
+    languageEnglish: string;
+    languageSerbian: string;
+    industrySegmentsAria: string;
+    luxuryShowcaseAria: string;
+    partnerLogosAria: string;
+    ourGlobalPartners: string;
+    heroAria: string;
+    aboutAria: string;
+    startProjectAria: string;
+    sectorsAria: string;
+    statsAria: string;
+    faqAria: string;
   };
 
   /* ── Footer ── */
@@ -135,6 +170,7 @@ export interface Dictionary {
       heading1: string;
       heading2: string;
       body: string;
+      items: { question: string; answer: string }[];
     };
   };
 

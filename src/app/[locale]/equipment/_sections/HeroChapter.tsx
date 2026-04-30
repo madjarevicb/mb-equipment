@@ -19,6 +19,7 @@ export default function HeroChapter({
   dict,
   totalBrands,
 }: HeroChapterProps) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="equipment-hero"
@@ -59,12 +60,12 @@ export default function HeroChapter({
 
       <RunningMeta
         variant="dark"
-        folio="Ed. 2026"
+        folio={isSr ? "Izd. 2026" : "Ed. 2026"}
         items={[
-          "Vol. 0",
-          "The Index",
-          `${totalBrands}+ Brands`,
-          "4 Categories",
+          isSr ? "Tom 0" : "Vol. 0",
+          isSr ? "Indeks" : "The Index",
+          `${totalBrands}+ ${isSr ? "Brendova" : "Brands"}`,
+          isSr ? "4 Kategorije" : "4 Categories",
           "Belgrade",
         ]}
       />
@@ -160,7 +161,7 @@ export default function HeroChapter({
                   style={{ display: "block" }}
                 >
                   <span style={{ display: "block" }}>
-                    {totalBrands}+ brands.
+                    {totalBrands}+ {isSr ? "brendova." : "brands."}
                   </span>
                   <span style={{ display: "block" }}>
                     <span
@@ -170,9 +171,9 @@ export default function HeroChapter({
                         color: "var(--color-gold)",
                       }}
                     >
-                      One
+                      {isSr ? "Jedan" : "One"}
                     </span>{" "}
-                    partner.
+                    {isSr ? "partner." : "partner."}
                   </span>
                   <span
                     style={{
@@ -184,7 +185,9 @@ export default function HeroChapter({
                       marginTop: "0.4em",
                     }}
                   >
-                    Commercial Kitchen Equipment.
+                    {isSr
+                      ? "Profesionalna kuhinjska oprema."
+                      : "Commercial Kitchen Equipment."}
                   </span>
                 </ScrollReveal>
               </h1>
@@ -207,9 +210,11 @@ export default function HeroChapter({
                   letterSpacing: "0.1em",
                 }}
               >
-                Plate No. 00 —{" "}
+                {isSr ? "Tabla br. 00 — " : "Plate No. 00 — "}
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  The House Index, Belgrade.
+                  {isSr
+                    ? "Indeks kuće, Beograd."
+                    : "The House Index, Belgrade."}
                 </span>
               </p>
             </div>
@@ -228,7 +233,7 @@ export default function HeroChapter({
               }}
               className="block uppercase font-medium mb-4"
             >
-              § Editor&rsquo;s Note
+              {isSr ? "§ Reč urednika" : "§ Editor\u2019s Note"}
             </span>
             <p
               className="text-white/80 font-light"
@@ -253,12 +258,11 @@ export default function HeroChapter({
                   fontWeight: 400,
                 }}
               >
-                A
+                {isSr ? "K" : "A"}
               </span>
-              s an authorized Middleby Corporation partner, MB Equipment
-              Solutions represents the full house — cooking, refrigeration,
-              fabrication, and waste handling — under one specification desk in
-              Belgrade. Browse by brand or by discipline.
+              {isSr
+                ? "ao ovlašćeni partner kompanije Middleby Corporation, MB Equipment Solutions zastupa kompletan portfolio — termičku obradu, hlađenje, izradu inox opreme i upravljanje otpadom — sa jednog specifikacionog mesta u Beogradu. Pretražujte po brendu ili po disciplini."
+                : "s an authorized Middleby Corporation partner, MB Equipment Solutions represents the full house — cooking, refrigeration, fabrication, and waste handling — under one specification desk in Belgrade. Browse by brand or by discipline."}
             </p>
           </div>
 
@@ -275,7 +279,11 @@ export default function HeroChapter({
               >
                 <Image
                   src="/images/whatwedo/elements.jpg"
-                  alt="Editorial composition of commercial kitchen equipment elements representing the MB Equipment portfolio"
+                  alt={
+                    isSr
+                      ? "Uređivačka kompozicija elemenata profesionalne kuhinjske opreme koja predstavlja MB Equipment portfolio"
+                      : "Editorial composition of commercial kitchen equipment elements representing the MB Equipment portfolio"
+                  }
                   fill
                   priority
                   fetchPriority="high"
@@ -316,7 +324,9 @@ export default function HeroChapter({
                       textTransform: "uppercase",
                     }}
                   >
-                    The portfolio at a glance
+                    {isSr
+                      ? "Portfolio na prvi pogled"
+                      : "The portfolio at a glance"}
                   </span>
                   <span
                     className="font-display italic"

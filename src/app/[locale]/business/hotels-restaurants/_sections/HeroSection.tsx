@@ -9,9 +9,11 @@ const HERO_BLUR =
 interface Props {
   dict: Dictionary["hotelsRestaurants"]["hero"];
   locale: Locale;
+  brandsLabel?: string;
+  onePartnerLabel?: string;
 }
 
-export default function HeroSection({ dict }: Props) {
+export default function HeroSection({ dict, brandsLabel, onePartnerLabel }: Props) {
   return (
     <section
       className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center overflow-hidden"
@@ -40,8 +42,8 @@ export default function HeroSection({ dict }: Props) {
             id="hero-heading"
             className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6"
           >
-            {brands.length} Brands.<br />
-            <span className="italic font-normal">One Partner.</span>
+            {brands.length} {brandsLabel ?? "Brands."}<br />
+            <span className="italic font-normal">{onePartnerLabel ?? "One Partner."}</span>
           </h1>
 
           <div className="w-16 h-px bg-gold/60 mb-6" />

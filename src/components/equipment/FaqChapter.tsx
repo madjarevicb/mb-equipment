@@ -12,6 +12,7 @@ export interface FaqChapterProps {
   heading: React.ReactNode;
   items: FaqItem[];
   pageUrl: string;
+  locale?: "en" | "sr";
 }
 
 /**
@@ -25,7 +26,11 @@ export default function FaqChapter({
   heading,
   items,
   pageUrl,
+  locale: _locale = "en",
 }: FaqChapterProps) {
+  // locale reserved for future internal label translations; aria-labelledby
+  // already points to the caller-provided heading, so no internal text needs translating today.
+  void _locale;
   const isDark = variant === "dark";
   const bg = isDark ? "var(--color-navy)" : "var(--color-offwhite)";
   const goldColor = isDark ? "var(--color-gold)" : "var(--color-gold-text)";

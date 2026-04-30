@@ -12,6 +12,7 @@ interface Props {
 }
 
 export default function SpecCta({ locale, dict }: Props) {
+  const isSr = locale === "sr";
   return (
     <>
       <section
@@ -72,7 +73,7 @@ export default function SpecCta({ locale, dict }: Props) {
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  &sect; Send the Floor Plan
+                  {isSr ? "§ Pošaljite plan" : <>&sect; Send the Floor Plan</>}
                 </span>
               </div>
 
@@ -86,7 +87,7 @@ export default function SpecCta({ locale, dict }: Props) {
                 }}
               >
                 <ScrollReveal as="span" staggerLines style={{ display: "block" }}>
-                  <span style={{ display: "block" }}>Specify your</span>
+                  <span style={{ display: "block" }}>{isSr ? "Specifikujte Vašu" : "Specify your"}</span>
                   <span
                     style={{
                       display: "block",
@@ -96,7 +97,7 @@ export default function SpecCta({ locale, dict }: Props) {
                       paddingLeft: "0.4em",
                     }}
                   >
-                    cold room.
+                    {isSr ? "rashladnu komoru." : "cold room."}
                   </span>
                 </ScrollReveal>
               </h2>
@@ -109,43 +110,46 @@ export default function SpecCta({ locale, dict }: Props) {
                   maxWidth: "54ch",
                 }}
               >
-                Send your floor plan, target temperature, and ambient
+                {isSr ? <>Pošaljite plan, ciljnu temperaturu i ambijentalne uslove
+                &mdash; vraćamo raspored panela, specifikaciju rashlađivanja i
+                raspored instalacije od 2&ndash;5 dana. Jedan izvor iz
+                Beograda za Jugoistočnu Evropu.</> : <>Send your floor plan, target temperature, and ambient
                 conditions &mdash; we return a panel layout, refrigeration
                 spec, and a 2&ndash;5 day install schedule. Single-source from
-                Belgrade for Southeast Europe.
+                Belgrade for Southeast Europe.</>}
               </p>
 
               {/* Use cases ledger */}
               <ul className="mt-7 lg:mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                 <UseCase
                   index="01"
-                  label="Restaurants &amp; hotels"
-                  detail="4–15 m³ chiller + 4–8 m³ freezer."
+                  label={isSr ? "Restorani i hoteli" : "Restaurants &amp; hotels"}
+                  detail={isSr ? "4–15 m³ plusna + 4–8 m³ minusna komora." : "4–15 m³ chiller + 4–8 m³ freezer."}
                 />
                 <UseCase
                   index="02"
-                  label="Butchers"
-                  detail="8–20 m³ at +2 °C; 8–12 m³ at −22 °C; hanging rails."
+                  label={isSr ? "Mesare" : "Butchers"}
+                  detail={isSr ? "8–20 m³ na +2 °C; 8–12 m³ na −22 °C; tračnice za vešanje." : "8–20 m³ at +2 °C; 8–12 m³ at −22 °C; hanging rails."}
                 />
                 <UseCase
                   index="03"
-                  label="Fishmongers"
-                  detail="6–15 m³ at 0 °C; ice-melt drainage; stainless floor."
+                  label={isSr ? "Ribarnice" : "Fishmongers"}
+                  detail={isSr ? "6–15 m³ na 0 °C; odvod za topljenje leda; inox pod." : "6–15 m³ at 0 °C; ice-melt drainage; stainless floor."}
                 />
                 <UseCase
                   index="04"
-                  label="Ice cream &amp; gelato"
-                  detail="6–10 m³ at −22 °C — gelato storage spec."
+                  label={isSr ? "Sladoled i gelato" : "Ice cream &amp; gelato"}
+                  detail={isSr ? "6–10 m³ na −22 °C — specifikacija za skladištenje gelata." : "6–10 m³ at −22 °C — gelato storage spec."}
                 />
                 <UseCase
                   index="05"
-                  label="Central kitchens"
-                  detail="Multiple rooms on a remote condensing rack."
+                  label={isSr ? "Centralne kuhinje" : "Central kitchens"}
+                  detail={isSr ? "Više komora na zajedničkom remote rack-u." : "Multiple rooms on a remote condensing rack."}
                 />
                 <UseCase
                   index="06"
-                  label="Food processing"
-                  detail="Blast freezer −35 °C + storage; 150–200 mm panels."
+                  label={isSr ? "Prerada hrane" : "Food processing"}
+                  detail={isSr ? "Šok zamrzivač −35 °C + skladište; paneli 150–200 mm." : "Blast freezer −35 °C + storage; 150–200 mm panels."}
                 />
               </ul>
 
@@ -183,7 +187,7 @@ export default function SpecCta({ locale, dict }: Props) {
                       fontWeight: 500,
                     }}
                   >
-                    Colophon
+                    {isSr ? "Kolofon" : "Colophon"}
                   </span>
                   <p
                     className="font-display italic text-white"
@@ -193,14 +197,14 @@ export default function SpecCta({ locale, dict }: Props) {
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    Padova,
+                    {isSr ? "Padova," : "Padova,"}
                     <br />
-                    set in Belgrade.
+                    {isSr ? "ugnežden u Beogradu." : "set in Belgrade."}
                   </p>
                 </div>
 
                 <ColophonEntry
-                  label="Showroom"
+                  label={isSr ? "Salon" : "Showroom"}
                   value={
                     <>
                       {COMPANY.address.street}
@@ -209,9 +213,9 @@ export default function SpecCta({ locale, dict }: Props) {
                     </>
                   }
                 />
-                <ColophonEntry label="Coverage" value="Southeast Europe" />
+                <ColophonEntry label={isSr ? "Pokriće" : "Coverage"} value={isSr ? "Jugoistočna Evropa" : "Southeast Europe"} />
                 <ColophonEntry
-                  label="Brand"
+                  label={isSr ? "Brend" : "Brand"}
                   value={
                     <>
                       Tecnodom &middot;{" "}
@@ -225,12 +229,12 @@ export default function SpecCta({ locale, dict }: Props) {
                   }
                 />
                 <ColophonEntry
-                  label="Lead time"
-                  value="2–5 days install ≤ 200 m³"
+                  label={isSr ? "Rok isporuke" : "Lead time"}
+                  value={isSr ? "Instalacija 2–5 dana ≤ 200 m³" : "2–5 days install ≤ 200 m³"}
                 />
                 <ColophonEntry
-                  label="Refrigerants"
-                  value="R290 future-proof"
+                  label={isSr ? "Rashladna sredstva" : "Refrigerants"}
+                  value={isSr ? "R290 spreman za budućnost" : "R290 future-proof"}
                 />
               </div>
             </aside>
@@ -256,7 +260,7 @@ export default function SpecCta({ locale, dict }: Props) {
                 className="text-white/60 font-light italic font-display"
                 style={{ fontSize: "13px" }}
               >
-                &ldquo;Dry assembly, no curing time.&rdquo;
+                {isSr ? <>&ldquo;Suva montaža, bez vremena sušenja.&rdquo;</> : <>&ldquo;Dry assembly, no curing time.&rdquo;</>}
               </span>
             </div>
             <div className="col-span-12 lg:col-span-6 lg:text-right">
@@ -264,7 +268,7 @@ export default function SpecCta({ locale, dict }: Props) {
                 className="uppercase text-white/50"
                 style={{ fontSize: "10px", letterSpacing: "0.32em" }}
               >
-                Folio 08 / 08 &middot; End of Ch. 03
+                {isSr ? <>Tabak 08 / 08 &middot; Kraj pogl. 03</> : <>Folio 08 / 08 &middot; End of Ch. 03</>}
               </span>
             </div>
           </div>
@@ -273,13 +277,13 @@ export default function SpecCta({ locale, dict }: Props) {
 
       <RunningMeta
         variant="dark"
-        folio="End of Ch. 03"
+        folio={isSr ? "Kraj pogl. 03" : "End of Ch. 03"}
         items={[
-          "Vol. IV",
-          "Modular Cold Rooms",
+          isSr ? "Tom IV" : "Vol. IV",
+          isSr ? "Montažne rashladne komore" : "Modular Cold Rooms",
           "Tecnodom / JKS",
-          "Authorized Partner",
-          "Est. MB Equipment",
+          isSr ? "Ovlašćeni partner" : "Authorized Partner",
+          isSr ? "Osn. MB Equipment" : "Est. MB Equipment",
         ]}
       />
     </>

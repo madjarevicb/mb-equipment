@@ -202,8 +202,8 @@ export default async function ColdRoomsPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
-          label="Heritage & Standards"
-          caption="Two manufacturers, F-Gas-ready refrigerants, fire-rated insulated panels."
+          label={isSr ? "Nasleđe i standardi" : "Heritage & Standards"}
+          caption={isSr ? "Dva proizvođača, F-Gas spremna rashladna sredstva, izolovani paneli sa protivpožarnim rangom." : "Two manufacturers, F-Gas-ready refrigerants, fire-rated insulated panels."}
           variant="light"
         />
         <AwardStrip
@@ -211,33 +211,33 @@ export default async function ColdRoomsPage({
           items={[
             {
               type: "heritage",
-              label: "Tecnodom · Since 1996",
-              detail: "Padova, Italy",
+              label: isSr ? "Tecnodom · Od 1996." : "Tecnodom · Since 1996",
+              detail: isSr ? "Padova, Italija" : "Padova, Italy",
             },
             {
               type: "heritage",
-              label: "JKS Refrigeration · Since 2006",
+              label: isSr ? "JKS Refrigeration · Od 2006." : "JKS Refrigeration · Since 2006",
               detail: "Cadoneghe, Padova",
             },
             {
               type: "certification",
               label: "F-Gas 2024/573",
-              detail: "EU compliant",
+              detail: isSr ? "EU usaglašeno" : "EU compliant",
             },
             {
               type: "certification",
               label: "R290 / R744",
-              detail: "Natural refrigerants",
+              detail: isSr ? "Prirodna rashladna sredstva" : "Natural refrigerants",
             },
             {
               type: "certification",
-              label: "PUR / PIR panels",
-              detail: "B-s2,d0 fire-rated option",
+              label: isSr ? "PUR / PIR paneli" : "PUR / PIR panels",
+              detail: isSr ? "B-s2,d0 protivpožarna opcija" : "B-s2,d0 fire-rated option",
             },
             {
               type: "award",
-              label: "20 cm modular grid",
-              detail: "JKS MAXI bespoke sizing",
+              label: isSr ? "20 cm modularna mreža" : "20 cm modular grid",
+              detail: isSr ? "JKS MAXI dimenzije po meri" : "JKS MAXI bespoke sizing",
             },
           ]}
         />
@@ -248,40 +248,40 @@ export default async function ColdRoomsPage({
         <ChapterMark
           numeral="III"
           label="Tecnodom — JKS Refrigeration"
-          caption="Vigodarzere, Padova — five facilities, 200+ employees, exports to 40+ countries."
+          caption={isSr ? "Vigodarzere, Padova — pet pogona, 200+ zaposlenih, izvoz u 40+ zemalja." : "Vigodarzere, Padova — five facilities, 200+ employees, exports to 40+ countries."}
           variant="light"
         />
       </div>
-      <BrandSpotlight />
+      <BrandSpotlight locale={locale as Locale} />
 
       {/* Chapter IV — Panel ledger */}
       <div className="bg-navy">
         <ChapterMark
           numeral="IV"
-          label="The Panel Ledger"
-          caption="Six panel thicknesses — from 60 mm beverage chiller to 200 mm industrial blast freezer."
+          label={isSr ? "Pregled panela" : "The Panel Ledger"}
+          caption={isSr ? "Šest debljina panela — od 60 mm za rashladnik za pića do 200 mm za industrijski šok zamrzivač." : "Six panel thicknesses — from 60 mm beverage chiller to 200 mm industrial blast freezer."}
           variant="dark"
         />
       </div>
-      <PanelLedger />
+      <PanelLedger locale={locale as Locale} />
 
       {/* Chapter V — Compliance + pull quote */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="V"
-          label="Compliance &amp; Sustainability"
-          caption="CE-marked, F-Gas 2024/573 compliant, R290 future-proof."
+          label={isSr ? "Usaglašenost i održivost" : "Compliance & Sustainability"}
+          caption={isSr ? "CE oznaka, usaglašeno sa F-Gas 2024/573, R290 spreman za budućnost." : "CE-marked, F-Gas 2024/573 compliant, R290 future-proof."}
           variant="light"
         />
       </div>
-      <ComplianceQuote />
+      <ComplianceQuote locale={locale as Locale} />
 
       {/* Chapter VI — FAQ */}
       <div className="bg-navy">
         <ChapterMark
           numeral="VI"
-          label="Before You Install"
-          caption="Six engineering questions, settled before the floor plan goes out."
+          label={isSr ? "Pre instalacije" : "Before You Install"}
+          caption={isSr ? "Šest inženjerskih pitanja, rešenih pre nego što plan izađe." : "Six engineering questions, settled before the floor plan goes out."}
           variant="dark"
         />
       </div>
@@ -289,16 +289,41 @@ export default async function ColdRoomsPage({
         variant="dark"
         heading={
           <>
-            Before{" "}
+            {isSr ? "Pre " : "Before "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold)" }}
             >
-              install.
+              {isSr ? "instalacije." : "install."}
             </span>
           </>
         }
-        items={[
+        items={isSr ? [
+          {
+            q: "Koja debljina panela za moju komoru?",
+            a: "+0/+8°C plusna komora: 60–80 mm. -18/-22°C minusna komora: 100 mm. -22/-25°C u toploj klimi: 120–130 mm. Šok zamrzivač na -30°C+: 150–200 mm. Uvek uračunajte ambijent + radni ciklus.",
+          },
+          {
+            q: "Da li mi je potreban podni panel?",
+            a: "Da za zamrzivače (sprečava mraz iz tla). Opciono za plusne ako je postojeća ploča izolovana. Plusne komore bez poda + rampa rade za pristup paletnim kolicima; izolovani pod sa inox ili anti-slip pločom za higijenski kritične zone.",
+          },
+          {
+            q: "Mono-block ili split rashlađivanje?",
+            a: "Mono-block (zidno-sedlasti ili plafonski) za prostorije do ~25 m³ — plug-and-play. Split (zaseban isparivač unutra, kondenzator napolju) za 25–100 m³ — tiše unutra, bolje za srednje prostorije. Centralni rack za supermarkete / objekte sa više komora.",
+          },
+          {
+            q: "Koliko traje instalacija?",
+            a: "Male i srednje komore (≤200 m³) — montaža panela 2–5 dana plus 1–2 dana puštanja u rad. Dodajte nekoliko dana za pripremu poda i električne/vodovodne instalacije. Montažno = znatno brže od fiksnih/ugrađenih komora.",
+          },
+          {
+            q: "Izbor rashladnog sredstva sada kada je F-Gas stupio na snagu?",
+            a: "R290 (propan, GWP 3) je dominantan za novu samostalnu opremu u EU — potpuno usaglašen sa F-Gas 2024/573. R744 (CO₂) za transkritične rack sisteme u supermarketima. R448A je još uvek dozvoljen za neke retrofite, ali nije održiv na duži rok po novoj uredbi.",
+          },
+          {
+            q: "Mogu li da rasklopim i preselim?",
+            a: "Da. Cam-lock paneli su projektovani za rasklapanje i ponovnu upotrebu — neprocenjivi za zakupce, food truck-ove koji prelaze u komisarijate ili pop-up kuhinje koje menjaju lokacije.",
+          },
+        ] : [
           {
             q: "What panel thickness for my room?",
             a: "+0/+8°C cooler: 60–80 mm. -18/-22°C freezer: 100 mm. -22/-25°C freezer in warm climate: 120–130 mm. Blast freezer at -30°C+: 150–200 mm. Always factor ambient + duty cycle.",
@@ -331,8 +356,8 @@ export default async function ColdRoomsPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VII"
-          label="Three Routes In"
-          caption="Quote, showroom, or spec sheet — pick your path."
+          label={isSr ? "Tri puta" : "Three Routes In"}
+          caption={isSr ? "Ponuda, salon ili specifikacija — odaberite put." : "Quote, showroom, or spec sheet — pick your path."}
           variant="dark"
         />
       </div>
@@ -346,8 +371,8 @@ export default async function ColdRoomsPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VIII"
-          label="Send the Floor Plan"
-          caption="2–5 day install for ≤ 200 m³ — single-source from Belgrade for Southeast Europe."
+          label={isSr ? "Pošaljite plan" : "Send the Floor Plan"}
+          caption={isSr ? "Instalacija 2–5 dana za ≤ 200 m³ — jedan izvor iz Beograda za Jugoistočnu Evropu." : "2–5 day install for ≤ 200 m³ — single-source from Belgrade for Southeast Europe."}
           variant="dark"
         />
       </div>

@@ -61,7 +61,7 @@ export async function generateMetadata({
       "Houno peć",
       "Lincat peć",
       "Invoq platforma",
-      "profesionalna paro-konvekcijska peć",
+      "profesionalna parno-konvekcijska peć",
       "Middleby ovlašćeni distributer Srbija",
     ],
     alternates: {
@@ -226,32 +226,32 @@ export default async function CombiOvensPage({
       {/* Heritage & certifications strip — sits below hero */}
       <AwardStrip
         variant="light"
-        eyebrow="Pedigree"
+        eyebrow={isSr ? "Poreklo" : "Pedigree"}
         items={[
           {
             type: "heritage",
-            label: "Houno · Since 1977",
-            detail: "Randers, Denmark",
+            label: isSr ? "Houno · Od 1977." : "Houno · Since 1977",
+            detail: isSr ? "Randers, Danska" : "Randers, Denmark",
           },
           {
             type: "heritage",
-            label: "Lincat · Since 1971",
-            detail: "Lincoln, UK",
+            label: isSr ? "Lincat · Od 1971." : "Lincat · Since 1971",
+            detail: isSr ? "Linkoln, V. Britanija" : "Lincoln, UK",
           },
           {
             type: "certification",
             label: "ISO 9001 + ISO 14001",
-            detail: "Quality + Environment",
+            detail: isSr ? "Kvalitet + Okruženje" : "Quality + Environment",
           },
           {
             type: "certification",
             label: "ENERGY STAR",
-            detail: "Selected Invoq models",
+            detail: isSr ? "Odabrani Invoq modeli" : "Selected Invoq models",
           },
           {
             type: "award",
-            label: "Middleby Group",
-            detail: "Authorized partner",
+            label: isSr ? "Middleby grupa" : "Middleby Group",
+            detail: isSr ? "Ovlašćeni partner" : "Authorized partner",
           },
         ]}
       />
@@ -260,34 +260,34 @@ export default async function CombiOvensPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
-          label="The Two Houses"
-          caption="Houno of Denmark and Lincat of England — two Middleby brands sharing the Invoq platform."
+          label={isSr ? "Dve kuće" : "The Two Houses"}
+          caption={isSr ? "Houno iz Danske i Lincat iz Engleske — dva Middleby brenda koji dele Invoq platformu." : "Houno of Denmark and Lincat of England — two Middleby brands sharing the Invoq platform."}
           variant="light"
         />
       </div>
-      <TwoHouses />
+      <TwoHouses locale={locale as Locale} />
 
       {/* Chapter III — The Invoq family ledger */}
       <div className="bg-navy">
         <ChapterMark
           numeral="III"
-          label="The Invoq Ledger"
-          caption="Five Houno series and the Lincat CombiSlim — every combi family, one shared platform."
+          label={isSr ? "Invoq pregled" : "The Invoq Ledger"}
+          caption={isSr ? "Pet Houno serija i Lincat CombiSlim — svaka familija parno-konvekcijskih peći, jedna zajednička platforma." : "Five Houno series and the Lincat CombiSlim — every combi family, one shared platform."}
           variant="dark"
         />
       </div>
-      <InvoqLedger />
+      <InvoqLedger locale={locale as Locale} />
 
       {/* Chapter IV — Specs that matter */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="IV"
-          label="Specs That Matter"
-          caption="Verified Invoq numerics — temperature range, food load, top-of-range power, modes and wash cycles."
+          label={isSr ? "Bitne specifikacije" : "Specs That Matter"}
+          caption={isSr ? "Provereni Invoq podaci — temperaturni opseg, opterećenje hrane, vrhunska snaga, režimi i ciklusi pranja." : "Verified Invoq numerics — temperature range, food load, top-of-range power, modes and wash cycles."}
           variant="light"
         />
       </div>
-      <SpecsThatMatter />
+      <SpecsThatMatter locale={locale as Locale} />
 
       {/* Chapter V — Specs scoreboard placeholder marker (existing structure) */}
 
@@ -295,22 +295,22 @@ export default async function CombiOvensPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VI"
-          label="Model Matrix"
-          caption="Compare across the Invoq + CombiSlim range."
+          label={isSr ? "Matrica modela" : "Model Matrix"}
+          caption={isSr ? "Uporedite kroz Invoq + CombiSlim asortiman." : "Compare across the Invoq + CombiSlim range."}
           variant="dark"
         />
       </div>
       <ModelsMatrix
         variant="dark"
-        eyebrow="Side by side"
+        eyebrow={isSr ? "Jedan pored drugog" : "Side by side"}
         heading={
           <>
-            Four flagship{" "}
+            {isSr ? "Četiri vrhunske " : "Four flagship "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold)" }}
             >
-              configurations
+              {isSr ? "konfiguracije" : "configurations"}
             </span>
           </>
         }
@@ -346,20 +346,25 @@ export default async function CombiOvensPage({
         ]}
         specs={[
           {
-            label: "Capacity",
+            label: isSr ? "Kapacitet" : "Capacity",
             values: ["6× 1/1 GN", "10× 1/1 GN", "20× 2/1 GN", "10× 1/1 GN"],
           },
           {
-            label: "Power",
+            label: isSr ? "Snaga" : "Power",
             values: ["10.3 kW", "19.3 kW", "62.2 kW", "12.7 kW"],
           },
           {
-            label: "Width",
-            values: ["~870 mm", "~870 mm", "~880 mm", "513 mm (narrow)"],
+            label: isSr ? "Širina" : "Width",
+            values: ["~870 mm", "~870 mm", "~880 mm", isSr ? "513 mm (uska)" : "513 mm (narrow)"],
           },
           {
-            label: "Phase",
-            values: [
+            label: isSr ? "Faza" : "Phase",
+            values: isSr ? [
+              "1-fazna / 3-fazna",
+              "3-fazna",
+              "3-fazna 400V",
+              "3-fazna 400V",
+            ] : [
               "1-phase / 3-phase",
               "3-phase",
               "3-phase 400V",
@@ -367,49 +372,64 @@ export default async function CombiOvensPage({
             ],
           },
           {
-            label: "Food load",
-            values: ["~30 kg", "45 kg", "Industrial", "~30 kg"],
+            label: isSr ? "Opterećenje hrane" : "Food load",
+            values: isSr ? ["~30 kg", "45 kg", "Industrijski", "~30 kg"] : ["~30 kg", "45 kg", "Industrial", "~30 kg"],
           },
           {
             label: "ENERGY STAR",
-            values: ["—", "—", "Yes (US)", "Yes"],
+            values: isSr ? ["—", "—", "Da (US)", "Da"] : ["—", "—", "Yes (US)", "Yes"],
           },
         ]}
-        footnote="Verified against manufacturer datasheets. Phase, voltage and food-load specs site-dependent — confirm with MB Equipment during specification."
+        footnote={isSr ? "Provereno prema proizvođačkim listovima sa specifikacijama. Faza, napon i opterećenje hrane zavise od lokacije — potvrdite sa MB Equipment-om tokom specifikacije." : "Verified against manufacturer datasheets. Phase, voltage and food-load specs site-dependent — confirm with MB Equipment during specification."}
       />
 
       {/* Chapter VII — Cost & savings */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="VII"
-          label="Cost & Savings"
-          caption="Five cooking modes. Lower energy than legacy combis."
+          label={isSr ? "Trošak i ušteda" : "Cost & Savings"}
+          caption={isSr ? "Pet režima kuvanja. Manja potrošnja od starijih parno-konvekcijskih peći." : "Five cooking modes. Lower energy than legacy combis."}
           variant="light"
         />
       </div>
       <ROICalculator
         variant="light"
-        eyebrow="Operating economics"
+        eyebrow={isSr ? "Operativna ekonomija" : "Operating economics"}
         heading={
           <>
-            What an Invoq{" "}
+            {isSr ? "Šta Invoq " : "What an Invoq "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold-text)" }}
             >
-              actually saves
+              {isSr ? "zaista štedi" : "actually saves"}
             </span>
           </>
         }
-        intro="A worked example, not a quote. Manufacturer-stated reductions framed against a realistic mid-volume site so you can sanity-check the order of magnitude before specifying."
+        intro={isSr ? "Razrađeni primer, ne ponuda. Smanjenja koja navodi proizvođač kontekstualizovana na realan objekat srednjeg obima, kako biste mogli da proverite red veličine pre specifikacije." : "A worked example, not a quote. Manufacturer-stated reductions framed against a realistic mid-volume site so you can sanity-check the order of magnitude before specifying."}
         example={{
-          label: "Example: 200-cover restaurant",
-          inputs: [
+          label: isSr ? "Primer: restoran sa 200 gostiju" : "Example: 200-cover restaurant",
+          inputs: isSr ? [
+            { label: "Obim servisa", value: "200 gostiju/dan, 6 dana/nedeljno" },
+            { label: "Radno vreme", value: "12 sati/dan" },
+            { label: "Trenutna parno-konvekcijska peć", value: "Stara električna, 30 kW" },
+          ] : [
             { label: "Service volume", value: "200 covers/day, 6 days/week" },
             { label: "Operating window", value: "12 hours/day" },
             { label: "Current combi", value: "Legacy electric, 30 kW" },
           ],
-          output: [
+          output: isSr ? [
+            {
+              label: "Smanjenje potrošnje energije (Houno tvrdnja)",
+              value: "Do 70% u režimu pare",
+            },
+            {
+              label: "Ušteda konvekcijom (Houno tvrdnja)",
+              value: "19% manje",
+            },
+            { label: "Ušteda vode", value: "27% manje" },
+            { label: "Smanjenje troškova čišćenja", value: "70,7% manje" },
+          ] : [
             {
               label: "Energy reduction (Houno claim)",
               value: "Up to 70% in steam mode",
@@ -421,7 +441,7 @@ export default async function CombiOvensPage({
             { label: "Water savings", value: "27% less" },
             { label: "Cleaning cost reduction", value: "70.7% less" },
           ],
-          math: "All percentages stated by Houno vs previous-generation Invoq baseline. Site-specific savings vary with menu, water hardness, and operator behaviour.",
+          math: isSr ? "Svi procenti navedeni od strane Houno-a u poređenju sa prethodnom generacijom Invoq-a. Uštede zavise od lokacije, menija, tvrdoće vode i navika operatera." : "All percentages stated by Houno vs. previous-generation Invoq baseline. Site-specific savings vary with menu, water hardness, and operator behavior.",
         }}
       />
 
@@ -429,27 +449,60 @@ export default async function CombiOvensPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VIII"
-          label="Questions"
-          caption="Eight things buyers ask before specifying."
+          label={isSr ? "Pitanja" : "Questions"}
+          caption={isSr ? "Osam stvari koje kupci pitaju pre specifikacije." : "Eight things buyers ask before specifying."}
           variant="dark"
         />
       </div>
       <FaqChapter
         variant="dark"
-        eyebrow="Before you specify"
+        eyebrow={isSr ? "Pre specifikacije" : "Before you specify"}
         heading={
           <>
-            Frequently{" "}
+            {isSr ? "Često postavljana " : "Frequently "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold)" }}
             >
-              asked
+              {isSr ? "pitanja" : "asked"}
             </span>
           </>
         }
         pageUrl={pageUrl}
-        items={[
+        items={isSr ? [
+          {
+            q: "Koja je razlika između Invoq Combi i Invoq Hybrid?",
+            a: "Invoq Combi koristi injekcionu paru — mlaz pare pogađa zagrejanu komoru. Invoq Hybrid dodaje namenski bojler koji drži rezerve pare, omogućavajući brži oporavak i precizniju kontrolu vlažnosti. Hybrid je izbor za gastronomiju i pekare visokog obima.",
+          },
+          {
+            q: "Koja trofazna snaga mi je potrebna?",
+            a: "Invoq 6×1/1 radi na jednofaznom ili trofaznom; 10×1/1 zahteva trofazno 400V pri ~30A; 20×2/1 GN zahteva trofazno 400V pri ~90A. CombiSlim 1.10 zahteva trofazno 400V pri ~21A po fazi.",
+          },
+          {
+            q: "Da li je uklanjanje kamenca uključeno?",
+            a: "Svi Invoq i CombiSlim modeli uključuju CombiWash automatsko čišćenje sa sedam ciklusa. Uklanjanje kamenca vodjeno je preko ekrana. Tvrda voda (preko 3°dH) zahteva periodično uklanjanje kamenca prema Houno preporukama o kvalitetu vode.",
+          },
+          {
+            q: "Mogu li da nadgledam parno-konvekcijske peći daljinski?",
+            a: "Da. Open Kitchen cloud povezivost je ugrađena — upravljanje flotom, distribucija recepata, prediktivno održavanje, HACCP logovanje. Besplatno prvih 12 meseci na svakom Invoq-u.",
+          },
+          {
+            q: "Koja je garancija?",
+            a: "Dve godine na delove i rad kroz Middleby UK i ovlašćene evropske distributere, plus dostupni produženi servisni ugovori. MB Equipment ostvaruje garanciju lokalno sa Middleby-obučenim inženjerima.",
+          },
+          {
+            q: "Zašto uska CombiSlim umesto pune Invoq?",
+            a: "CombiSlim je široka 513 mm — dizajnirana da se uklopi u postojeće uske kuhinjske linije ili da se uspori kao satelitska peć pored pune Invoq za à-la-carte / banket podele rada.",
+          },
+          {
+            q: "Da li su ovi modeli ENERGY STAR sertifikovani?",
+            a: "Odabrani modeli — Invoq Combi 20-2/1 GN je ENERGY STAR sertifikovan sa 81% konvekcione efikasnosti / 78% efikasnosti pare. CombiSlim 1.10 je ENERGY STAR + IPX4 + CE.",
+          },
+          {
+            q: "Koliko brzo se instalira?",
+            a: "Dva dana je tipično za jednu Invoq plus puštanje u rad, vodovodni priključak i obuku šefa. Višelokacijska instalacija se centralno koordinira — instalirali smo širom Beograda, Niša i regiona Jugoistočne Evrope.",
+          },
+        ] : [
           {
             q: "What is the difference between Invoq Combi and Invoq Hybrid?",
             a: "Invoq Combi uses injection steam — a steam jet hits the hot chamber. Invoq Hybrid adds a dedicated boiler that holds steam reserves, giving faster recovery and more precise humidity control. Hybrid is the choice for high-volume gastronomy and bakery.",
@@ -468,7 +521,7 @@ export default async function CombiOvensPage({
           },
           {
             q: "What's the warranty?",
-            a: "Two years parts & labour through Middleby UK and authorized European dealers, plus extended service contracts available. MB Equipment honours warranty locally with Middleby-trained engineers.",
+            a: "Two years parts and labor through Middleby UK and authorized European dealers, plus extended service contracts available. MB Equipment honors warranty locally with Middleby-trained engineers.",
           },
           {
             q: "Why a narrow CombiSlim instead of full Invoq?",
@@ -489,8 +542,8 @@ export default async function CombiOvensPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="IX"
-          label="Three Paths"
-          caption="Quote, demo, or spec sheet — pick the one that fits where you are."
+          label={isSr ? "Tri puta" : "Three Paths"}
+          caption={isSr ? "Ponuda, demonstracija ili specifikacija — odaberite ono što vam odgovara." : "Quote, demo, or spec sheet — pick the one that fits where you are."}
           variant="dark"
         />
       </div>
@@ -505,8 +558,8 @@ export default async function CombiOvensPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="X"
-          label="The Next Step"
-          caption="Send your menu volume, voltage and water hardness — we'll spec the Invoq or CombiSlim configuration."
+          label={isSr ? "Sledeći korak" : "The Next Step"}
+          caption={isSr ? "Pošaljite obim menija, napon i tvrdoću vode — specifikovaćemo Invoq ili CombiSlim konfiguraciju." : "Send your menu volume, voltage and water hardness — we'll spec the Invoq or CombiSlim configuration."}
           variant="dark"
         />
       </div>

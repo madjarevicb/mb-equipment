@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../../thermal-processing/_sections/ScrollReveal";
 
 interface Step {
@@ -7,7 +8,11 @@ interface Step {
   body: string;
 }
 
-const STEPS: Step[] = [
+interface MechanismProps {
+  locale?: Locale;
+}
+
+const STEPS_EN: Step[] = [
   {
     numeral: "No. 01",
     name: "Scrape",
@@ -30,7 +35,32 @@ const STEPS: Step[] = [
   },
 ];
 
-export default function Mechanism() {
+const STEPS_SR: Step[] = [
+  {
+    numeral: "Br. 01",
+    name: "Struganje",
+    body: "Operater ubacuje ostatke sa tanjira, otpatke od pripreme, kosti i ljušture u ulazni levak na tački povratka tanjira.",
+  },
+  {
+    numeral: "Br. 02",
+    name: "Usitnjavanje",
+    body: "Unutrašnji usitnjavač razlaže tok otpada u sitne čestice — kosti crvenog mesa, drške karfiola i kožu ribe uključujući.",
+  },
+  {
+    numeral: "Br. 03",
+    name: "Ceđenje",
+    body: "Centrifuga vrti masu, terajući sivu vodu u odvod — ostavljajući gotovo suvu čvrstu materiju.",
+  },
+  {
+    numeral: "Br. 04",
+    name: "Sabijanje",
+    body: "Čvrsta materija puž-uvodno ulazi u male kante sa poklopcem, spremne za odnošenje, anaerobnu digestiju ili kompostiranje.",
+  },
+];
+
+export default function Mechanism({ locale }: MechanismProps = {}) {
+  const isSr = locale === "sr";
+  const STEPS = isSr ? STEPS_SR : STEPS_EN;
   return (
     <section
       aria-labelledby="imc-mechanism"
@@ -72,7 +102,7 @@ export default function Mechanism() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                The Mechanism — Four Movements
+                {isSr ? "Mehanizam — četiri pokreta" : "The Mechanism — Four Movements"}
               </span>
             </div>
             <ScrollReveal>
@@ -85,13 +115,13 @@ export default function Mechanism() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                From plate to bin,
+                {isSr ? "Od tanjira do kante," : "From plate to bin,"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  in four motions.
+                  {isSr ? "u četiri pokreta." : "in four motions."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -105,8 +135,7 @@ export default function Mechanism() {
                 maxWidth: "32ch",
               }}
             >
-              The WasteStation sits inline with dish return — fully enclosed,
-              auto-rinsing, intelligent bin-fill sensing.
+              {isSr ? "WasteStation se nalazi u liniji povratka tanjira — potpuno zatvoren, sa automatskim ispiranjem, pametnim senzorom za napunjenost." : "The WasteStation sits inline with dish return — fully enclosed, auto-rinsing, intelligent bin-fill sensing."}
             </p>
           </div>
         </div>
@@ -206,9 +235,9 @@ export default function Mechanism() {
                 }}
               >
                 <span className="font-display italic uppercase">
-                  Plate II — Internal grinder
+                  {isSr ? "Tabla II — Unutrašnji usitnjavač" : "Plate II — Internal grinder"}
                 </span>
-                <span className="font-display italic">— Detail.</span>
+                <span className="font-display italic">{isSr ? "— Detalj." : "— Detail."}</span>
               </figcaption>
             </figure>
           </div>

@@ -1,11 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
+import {
+  buildContactFormSchema,
+  contactFormSchema,
+  type ContactFormData,
+} from "@/lib/validations/contact";
 import Button from "@/components/ui/Button";
 import type { Dictionary } from "@/i18n/types";
+import type { Locale } from "@/i18n/config";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -13,11 +18,19 @@ interface Props {
   dict: Dictionary["contact"]["form"];
   initialMessage?: string;
   productLabel?: string | null;
+  failedToSendLabel?: string;
+  websiteHoneypotLabel?: string;
+  locale?: Locale;
 }
 
-export default function ContactForm({ dict, initialMessage, productLabel }: Props) {
+export default function ContactForm({ dict, initialMessage, productLabel, failedToSendLabel, websiteHoneypotLabel, locale }: Props) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [serverError, setServerError] = useState("");
+
+  const schema = useMemo(
+    () => (locale ? buildContactFormSchema(locale) : contactFormSchema),
+    [locale],
+  );
 
   const {
     register,
@@ -25,7 +38,7 @@ export default function ContactForm({ dict, initialMessage, productLabel }: Prop
     reset,
     formState: { errors },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(schema),
     defaultValues: {
       message: initialMessage ?? "",
     },
@@ -44,7 +57,7 @@ export default function ContactForm({ dict, initialMessage, productLabel }: Prop
 
       if (!res.ok) {
         const json = await res.json().catch(() => null);
-        throw new Error(json?.error || "Failed to send message");
+        throw new Error(json?.error || failedToSendLabel || "Failed to send message");
       }
 
       setStatus("success");
@@ -99,7 +112,7 @@ export default function ContactForm({ dict, initialMessage, productLabel }: Prop
 
       {/* Honeypot — hidden from users, bots fill it */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website">{websiteHoneypotLabel ?? "Website"}</label>
         <input type="text" id="website" tabIndex={-1} autoComplete="off" {...register("website")} />
       </div>
 

@@ -125,7 +125,7 @@ export default function CtaTriad({
 
   return (
     <section
-      aria-label="Calls to action"
+      aria-label={locale === "sr" ? "Pozivi na akciju" : "Calls to action"}
       style={{
         backgroundColor: bg,
         paddingTop: "clamp(2.5rem, 5vw, 5rem)",

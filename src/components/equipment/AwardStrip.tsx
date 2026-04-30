@@ -10,6 +10,7 @@ export interface AwardStripProps {
   variant?: "light" | "dark";
   items: AwardItem[];
   eyebrow?: string;
+  locale?: "en" | "sr";
 }
 
 /**
@@ -20,7 +21,12 @@ export default function AwardStrip({
   variant = "light",
   items,
   eyebrow,
+  locale = "en",
 }: AwardStripProps) {
+  const isSr = locale === "sr";
+  const sectionAriaLabel = isSr
+    ? "Nasleđe i sertifikati"
+    : "Heritage and certifications";
   const isDark = variant === "dark";
   const goldColor = isDark ? "var(--color-gold)" : "var(--color-gold-text)";
   const headingColor = isDark ? "#FFFFFF" : "var(--color-navy)";
@@ -32,17 +38,17 @@ export default function AwardStrip({
   const typeLabel = (t: AwardItem["type"]): string => {
     switch (t) {
       case "heritage":
-        return "Heritage";
+        return isSr ? "Nasleđe" : "Heritage";
       case "award":
-        return "Award";
+        return isSr ? "Priznanje" : "Award";
       case "certification":
-        return "Certified";
+        return isSr ? "Sertifikat" : "Certified";
     }
   };
 
   return (
     <section
-      aria-label="Heritage and certifications"
+      aria-label={sectionAriaLabel}
       style={{
         paddingTop: "clamp(1.5rem, 3vw, 2.25rem)",
         paddingBottom: "clamp(1.5rem, 3vw, 2.25rem)",

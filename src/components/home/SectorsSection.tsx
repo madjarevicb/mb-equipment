@@ -7,12 +7,20 @@ import type { Dictionary } from "@/i18n/types";
 export default function SectorsSection({
   dict,
   locale,
+  ariaLabel,
+  viewSolutionsLabel,
+  exploreLabel,
 }: {
   dict: Dictionary["home"]["sectors"];
   locale: Locale;
+  ariaLabel?: string;
+  viewSolutionsLabel?: string;
+  exploreLabel?: string;
 }) {
+  const viewSolutions = viewSolutionsLabel ?? "View Solutions";
+  const explore = exploreLabel ?? "Explore";
   return (
-    <section id="sectors" aria-label="Business sectors" className="py-28 lg:py-36 bg-offwhite">
+    <section id="sectors" aria-label={ariaLabel ?? "Business sectors"} className="py-28 lg:py-36 bg-offwhite">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
           <div className="max-w-xl mb-20">
@@ -50,7 +58,7 @@ export default function SectorsSection({
                   {dict.commercialDesc}
                 </p>
                 <div className="flex items-center gap-3 text-white/60 text-xs font-medium uppercase tracking-[0.15em] group-hover:text-white group-hover:gap-5 transition-all duration-500">
-                  View Solutions <span aria-hidden="true" className="inline-block group-hover:translate-x-1 transition-transform duration-500">&#8594;</span>
+                  {viewSolutions} <span aria-hidden="true" className="inline-block group-hover:translate-x-1 transition-transform duration-500">&#8594;</span>
                 </div>
               </div>
             </Link>
@@ -79,7 +87,7 @@ export default function SectorsSection({
                     {dict.residentialDesc}
                   </p>
                   <div className="flex items-center gap-3 text-white/60 text-xs font-medium uppercase tracking-[0.15em] group-hover:text-white group-hover:gap-5 transition-all duration-500">
-                    Explore <span aria-hidden="true" className="inline-block group-hover:translate-x-1 transition-transform duration-500">&#8594;</span>
+                    {explore} <span aria-hidden="true" className="inline-block group-hover:translate-x-1 transition-transform duration-500">&#8594;</span>
                   </div>
                 </div>
               </Link>
@@ -106,7 +114,7 @@ export default function SectorsSection({
                     {dict.foodProcessingDesc}
                   </p>
                   <div className="flex items-center gap-3 text-white/60 text-xs font-medium uppercase tracking-[0.15em] group-hover:text-white group-hover:gap-5 transition-all duration-500">
-                    Explore <span aria-hidden="true" className="inline-block group-hover:translate-x-1 transition-transform duration-500">&#8594;</span>
+                    {explore} <span aria-hidden="true" className="inline-block group-hover:translate-x-1 transition-transform duration-500">&#8594;</span>
                   </div>
                 </div>
               </Link>

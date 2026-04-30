@@ -225,23 +225,23 @@ export default async function CustomFabricationPage({
         items={[
           {
             type: "heritage",
-            label: "Belgrade workshop",
-            detail: "MB Equipment in-house",
+            label: isSr ? "Beogradska radionica" : "Belgrade workshop",
+            detail: isSr ? "MB Equipment u sopstvenom pogonu" : "MB Equipment in-house",
           },
           {
             type: "certification",
             label: "AISI 304 / 316",
-            detail: "Food-grade stainless",
+            detail: isSr ? "Inox za hranu" : "Food-grade stainless",
           },
           {
             type: "certification",
-            label: "CE materials",
-            detail: "EU-compliant",
+            label: isSr ? "CE materijali" : "CE materials",
+            detail: isSr ? "U skladu sa EU" : "EU-compliant",
           },
           {
             type: "award",
-            label: "Made-to-measure",
-            detail: "20-day typical lead",
+            label: isSr ? "Po meri" : "Made-to-measure",
+            detail: isSr ? "Tipičan rok 20 dana" : "20-day typical lead",
           },
         ]}
       />
@@ -250,56 +250,81 @@ export default async function CustomFabricationPage({
       <div className="bg-white">
         <ChapterMark
           numeral="II"
-          label="What we fabricate"
-          caption="Six disciplines drawn, cut, welded, and finished — each entry made to the room."
+          label={isSr ? "Šta izrađujemo" : "What we fabricate"}
+          caption={isSr ? "Šest disciplina nacrtanih, sečenih, zavarivanih i finalno obrađenih — svaka izrađena prema prostoru." : "Six disciplines drawn, cut, welded, and finished — each entry made to the room."}
           variant="light"
         />
       </div>
-      <Capabilities />
+      <Capabilities locale={locale as Locale} />
 
       {/* Chapter III — Materials & Process */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="III"
-          label="Materials & Process"
-          caption="From AISI 304 sheet to commissioned unit — five steps, one team."
+          label={isSr ? "Materijali i proces" : "Materials & Process"}
+          caption={isSr ? "Od AISI 304 lima do puštene u rad jedinice — pet koraka, jedan tim." : "From AISI 304 sheet to commissioned unit — five steps, one team."}
           variant="light"
         />
       </div>
-      <MaterialsProcess />
+      <MaterialsProcess locale={locale as Locale} />
 
       {/* Chapter IV — Why custom */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="IV"
-          label="Why custom"
-          caption="A pull-quote argument — followed by three short principles."
+          label={isSr ? "Zašto po meri" : "Why custom"}
+          caption={isSr ? "Citat-argument — praćen sa tri kratka principa." : "A pull-quote argument — followed by three short principles."}
           variant="light"
         />
       </div>
-      <WhyCustom />
+      <WhyCustom locale={locale as Locale} />
 
       {/* Chapter V — Questions */}
       <ChapterMark
         numeral="V"
-        label="Questions"
-        caption="What buyers ask before drawings start."
+        label={isSr ? "Pitanja" : "Questions"}
+        caption={isSr ? "Šta kupci pitaju pre nego što počnu crteži." : "What buyers ask before drawings start."}
         variant="dark"
       />
       <FaqChapter
         variant="dark"
         heading={
           <>
-            Before{" "}
+            {isSr ? "Pre " : "Before "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold)" }}
             >
-              we cut.
+              {isSr ? "sečenja." : "we cut."}
             </span>
           </>
         }
-        items={[
+        items={isSr ? [
+          {
+            q: "Koji kvalitet inoxa koristite?",
+            a: "AISI 304 standardno za sve ugostiteljske radove — bezbedan za hranu, otporan na koroziju. AISI 316 za pomorske sredine, hemijske kuhinje ili gde je izloženost hloridima visoka. Oba kvaliteta su dostupna; preporučujemo prema projektu.",
+          },
+          {
+            q: "Koje su tipične debljine?",
+            a: "1,0 mm za police i lake zaštite zida. 1,2–1,5 mm za radne stolove i standardne pultove. 2,0 mm za površine velikog opterećenja (teški pripremni stolovi, mesarske ploče, prozori za prosleđivanje). Pojačano podramnom konstrukcijom na svakom komadu.",
+          },
+          {
+            q: "Koji je rok od odobrenih crteža?",
+            a: "2 nedelje za jednostavne prostorije (3–5 komada). 3–4 nedelje za kompletne kuhinje. Specifične geometrije sa složenim zavarivanjem mogu trajati 5–6 nedelja. Potvrđujemo u fazi ponude pisanim rasporedom.",
+          },
+          {
+            q: "Da li instalirate?",
+            a: "Da. Naš radionički tim obavlja merenje na licu mesta, izradu u Beogradu i instalaciju širom Jugoistočne Evrope. Jedan kontakt, jedna vremenska linija, bez podizvođača.",
+          },
+          {
+            q: "Da li možete da zamenite oštećene komade u postojećim kuhinjama?",
+            a: "Da. Merimo na licu mesta, usklađujemo postojeći materijal i obradu, i izrađujemo zamene. Tipični slučajevi: zaštite zida oštećene viljuškarom, polomljene police, naknadne stanice za pranje ruku.",
+          },
+          {
+            q: "Koliko košta u poređenju sa katalogom?",
+            a: "Izrada po meri obično je 15–35% iznad ekvivalenata iz kataloga — ali se savršeno uklapa u prostoriju, traje 10–15+ godina i izbegava mrtvi prostor. Cenu dajemo prema vašem planu, a ne prema generičkom katalogu.",
+          },
+        ] : [
           {
             q: "What stainless grade do you use?",
             a: "AISI 304 standard for all hospitality work — food-safe, corrosion-resistant. AISI 316 for marine environments, chemical kitchens, or where chloride exposure is high. Both grades available; we recommend per project.",
@@ -321,8 +346,8 @@ export default async function CustomFabricationPage({
             a: "Yes. We measure on-site, match the existing material and finish, and fabricate replacements. Common scenarios: forklift-damaged splashbacks, broken shelving, retrofit hand-wash stations.",
           },
           {
-            q: "What does it cost vs. catalogue equipment?",
-            a: "Bespoke fabrication is generally 15–35% above catalogue equivalents — but fits the room exactly, lasts 10–15+ years, and avoids dead space. We quote against your floor plan, not a generic catalogue.",
+            q: "What does it cost vs. catalog equipment?",
+            a: "Custom fabrication is generally 15–35% above catalog equivalents — but it fits the room exactly, lasts 10–15+ years, and avoids dead space. We quote against your floor plan, not a generic catalog.",
           },
         ]}
         pageUrl={pageUrl}
@@ -332,8 +357,8 @@ export default async function CustomFabricationPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="VI"
-          label="The Next Step"
-          caption="Send the floor plan. We measure, draw, fabricate, install."
+          label={isSr ? "Sledeći korak" : "The Next Step"}
+          caption={isSr ? "Pošaljite plan. Merimo, crtamo, izrađujemo, instaliramo." : "Send the floor plan. We measure, draw, fabricate, install."}
           variant="light"
         />
       </div>

@@ -8,9 +8,10 @@ const CARD_BLUR =
 
 interface Props {
   data: Dictionary["data"]["demoCenters"];
+  srHeading?: string;
 }
 
-export default function CentersSection({ data }: Props) {
+export default function CentersSection({ data, srHeading }: Props) {
   return (
     <section
       id="centers"
@@ -23,7 +24,7 @@ export default function CentersSection({ data }: Props) {
             id="centers-heading"
             className="sr-only"
           >
-            Centers
+            {srHeading ?? "Centers"}
           </h2>
         </AnimatedSection>
 

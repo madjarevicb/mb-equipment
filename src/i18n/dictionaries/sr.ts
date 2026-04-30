@@ -23,7 +23,7 @@ const sr: Dictionary = {
     tiltingPans: "Kiperi",
     pastaCookers: "Kuvala za pastu",
     bainMarie: "Ben mari",
-    combiOvens: "Paro-konvekcijske peći",
+    combiOvens: "Parno-konvekcijske peći",
     refrigeration: "Rashladno",
     displayCases: "Vitrine",
     foodRefrigeration: "Vertikalna i horizontalna rashladna oprema",
@@ -61,8 +61,43 @@ const sr: Dictionary = {
     closeMenu: "Zatvori meni",
     projectsDelivered: "Isporučenih projekata",
     brandsRepresented: "Zastupljenih brendova",
-    regionLabel: "Balkan — Centralna Evropa — jugoistočna Evropa",
+    regionLabel: "Balkan — Centralna Evropa — Jugoistočna Evropa",
     responseTime: "Prosečno vreme odgovora: do 24 sata",
+    callUs: "Pozovite nas",
+    mainNavigation: "Glavna navigacija",
+    navigationMenu: "Navigacioni meni",
+    languageGroup: "Jezik",
+    breadcrumbAria: "Navigaciona putanja",
+    business: "Poslovanje",
+    serbiaCountry: "Srbija",
+    southeastEurope: "Jugoistočna Evropa",
+    fullPortfolio: "Kompletan portfolio",
+    additionalBrands: "dodatnih brendova",
+    filteredBy: "filtrirano po",
+    filterAll: "Svi",
+    googleMapsLabel: "[ Google mape ]",
+    fiftyPercentOutsideUs: "50% van SAD",
+    residentialEyebrow: "Rezidencijalno",
+    ourResidentialBrands: "Naši rezidencijalni brendovi",
+    onePartner: "jedan partner.",
+    brandsLabel: "brendova.",
+    centersHeading: "Centri",
+    introHeading: "Uvod",
+    globalReachHeading: "Globalni domet",
+    formFailedToSend: "Slanje poruke nije uspelo",
+    websiteHoneypot: "Veb-sajt",
+    languageEnglish: "English",
+    languageSerbian: "Srpski",
+    industrySegmentsAria: "Industrijski segmenti koje opslužujemo",
+    luxuryShowcaseAria: "Prikaz luksuznih rezidencijalnih kuhinja",
+    partnerLogosAria: "Logotipi partnera",
+    ourGlobalPartners: "Naši globalni partneri i klijenti",
+    heroAria: "Naslovna",
+    aboutAria: "O kompaniji MB Equipment Solutions",
+    startProjectAria: "Započnite projekat",
+    sectorsAria: "Poslovni sektori",
+    statsAria: "Statistika kompanije",
+    faqAria: "Često postavljana pitanja",
   },
 
   /* ── Podnožje stranice ── */
@@ -71,7 +106,7 @@ const sr: Dictionary = {
     equipment: "Oprema",
     company: "Kompanija",
     getInTouch: "Kontakt",
-    tagline: "Gradimo kuhinje koje funkcionišu — širom jugoistočne Evrope i šire.",
+    tagline: "Gradimo kuhinje koje funkcionišu — širom Jugoistočne Evrope i šire.",
     authorizedPartner: "Ovlašćeni Middleby partner",
     privacyPolicy: "Politika privatnosti",
     builtBy: "Izradio",
@@ -88,7 +123,7 @@ const sr: Dictionary = {
       eyebrow: "Ovlašćeni Middleby Corporation partner",
       heading1: "Profesionalna kuhinjska",
       heading2: "oprema",
-      body: "Jedan partner za 110+ brendova — hoteli, restorani, rezidencijalni i industrijski sektor — širom jugoistočne Evrope i šire.",
+      body: "Jedan partner za 110+ brendova — hoteli, restorani, rezidencijalni i industrijski sektor — širom Jugoistočne Evrope i šire.",
       partnerOf: "Partner kompanije",
     },
     partners: {
@@ -97,7 +132,7 @@ const sr: Dictionary = {
     sectors: {
       heading1: "Tri sektora,",
       heading2: "jedan standard",
-      body: "Bilo da opremite kuhinju hotela sa pet zvezdica, lanac brze hrane koji se širi po jugoistočnoj Evropi, ili pogon za preradu mesa — oprema mora da funkcioniše. Pobrinućemo se da tako i bude.",
+      body: "Bilo da opremite kuhinju hotela sa pet zvezdica, lanac brze hrane koji se širi po Jugoistočnoj Evropi, ili pogon za preradu mesa — oprema mora da funkcioniše. Pobrinućemo se da tako i bude.",
       commercial: "Komercijalno",
       hotelsRestaurants: "Hoteli i restorani",
       commercialDesc: "Kompletno projektovanje i oprema kuhinja za ugostiteljstvo — od fine dining restorana do banketnih operacija velikog kapaciteta.",
@@ -116,16 +151,16 @@ const sr: Dictionary = {
     about: {
       heading1: "Najkompletniji regionalni",
       heading2: "kuhinjski partner",
-      body1: "MB Equipment Solutions je ovlašćen od strane Middleby Corporation — jednog od najvećih svetskih proizvođača profesionalne kuhinjske opreme. Iz Beograda isporučujemo, instaliramo i servisiramo profesionalnu kuhinjsku opremu širom jugoistočne Evrope i šire.",
+      body1: "MB Equipment Solutions je ovlašćen od strane Middleby Corporation — jednog od najvećih svetskih proizvođača profesionalne kuhinjske opreme. Iz Beograda isporučujemo, instaliramo i servisiramo profesionalnu kuhinjsku opremu širom Jugoistočne Evrope i šire.",
       pullQuote: "Ne prodajemo opremu — gradimo kuhinje koje funkcionišu.",
       body2: "Naš portfolio obuhvata 110+ brendova: komercijalne peći, rashladnu opremu, opremu za pripremu hrane, pranje posuđa i ventilaciju. Konsultujemo o radnom toku, izrađujemo CAD crteže, koordiniramo logistiku i puštamo u rad svaki uređaj na licu mesta. Nakon instalacije, naš inženjerski tim obezbeđuje redovno održavanje i rezervne delove iz regionalne zalihe.",
       cta: "O kompaniji",
     },
     cta: {
       eyebrow: "Spremni za početak?",
-      heading1: "Hajde da specificiramo",
-      heading2: "Vašu kuhinju.",
-      body: "Opišite nam obim projekta. Vratićemo se sa brendovima, modelima, crtežima i cenom. Bez obaveza.",
+      heading1: "Definišimo Vašu",
+      heading2: "kuhinju zajedno.",
+      body: "Opišite nam obim projekta. Vraćamo se sa brendovima, modelima, crtežima i cenom. Bez obaveza.",
       ctaPrimary: "Zatražite konsultaciju",
       ctaSecondary: "Pogledajte naše projekte",
     },
@@ -133,6 +168,43 @@ const sr: Dictionary = {
       heading1: "Pitanja",
       heading2: "koja često čujemo",
       body: "Od izbora opreme do rokova instalacije i tekućeg održavanja — evo šta naši klijenti najčešće pitaju pre početka projekta.",
+      items: [
+        {
+          question: "Koje brendove zastupa MB Equipment Solutions?",
+          answer:
+            "Zastupamo više od 110 brendova opreme kao ovlašćeni partner kompanije Middleby Corporation — najvećeg svetskog proizvođača opreme za ugostiteljstvo. Naš portfolio uključuje Viking, La Cornue, AGA, TurboChef, Pitco, Blodgett, Southbend i mnoge druge. Svaki brend biramo na osnovu dokazane pouzdanosti u profesionalnim i rezidencijalnim kuhinjskim uslovima.",
+        },
+        {
+          question: "Koje zemlje opslužujete?",
+          answer:
+            "Pre svega opslužujemo Jugoistočnu Evropu iz našeg sedišta u Beogradu, Srbija. Pokrivenost obuhvata Balkan, Centralnu Evropu i odabrana tržišta van regiona. U svakom tržištu vršimo isporuku opreme, instalaciju, puštanje u rad i postprodajnu podršku.",
+        },
+        {
+          question: "Da li nudite usluge projektovanja kuhinja?",
+          answer:
+            "Da. Naš tim sarađuje sa arhitektima, operaterima i konsultantima na izradi kompletnih kuhinjskih rešenja — od inicijalnog koncepta, preko specifikacije opreme i CAD crteža, do konačne instalacije. Projektujemo kuhinje za hotele, restoranske lance, ketering objekte i pogone za industrijsku preradu hrane.",
+        },
+        {
+          question: "Koliki je tipičan rok realizacije projekta?",
+          answer:
+            "Rokovi zavise od obima projekta. Pojedinačna restoranska kuhinja obično traje 4–8 nedelja od specifikacije do puštanja u rad. Višeobjektne implementacije i industrijski projekti se realizuju u fazama tokom nekoliko meseci. Detaljan plan dostavljamo u fazi izrade ponude kako biste mogli pravilno da planirate.",
+        },
+        {
+          question: "Kako se formira cena za projekte profesionalnih kuhinja?",
+          answer:
+            "Svaki projekat se posebno kotira na osnovu izbora opreme, veličine kuhinje i kompleksnosti instalacije. Nakon početne konsultacije, besplatno dostavljamo detaljnu, stavku-po-stavku ponudu. Troškovi logistike, instalacije i puštanja u rad uključeni su u svaku ponudu — bez skrivenih troškova.",
+        },
+        {
+          question: "Koji standardi garancije i sertifikacije se primenjuju?",
+          answer:
+            "Sva oprema dolazi sa originalnom proizvođačkom garancijom — obično 1–3 godine, u zavisnosti od brenda i kategorije proizvoda. Oprema poseduje CE oznaku za evropsko tržište i zadovoljava relevantne NSF i lokalne regulatorne standarde. Kompletnu sertifikacionu dokumentaciju dostavljamo kao deo isporuke projekta.",
+        },
+        {
+          question: "Da li nudite postprodajni servis i rezervne delove?",
+          answer:
+            "Apsolutno. Održavamo regionalni magacin rezervnih delova i obučen servisno-inženjerski tim. Nudimo programe preventivnog održavanja, podršku u garantnom roku i hitne popravke. Naš cilj je da minimizujemo zastoje i da Vaša kuhinja radi punim kapacitetom.",
+        },
+      ],
     },
   },
 
@@ -143,7 +215,7 @@ const sr: Dictionary = {
       heading1: "Jedna kompanija.",
       heading2: "Cela kuhinja.",
       srOnly: " — Profesionalna kuhinjska oprema u Beogradu, Srbija",
-      body: "Od jednog tlocrta do potpuno puštene kuhinje — MB Equipment Solutions projektuje, isporučuje, instalira i servisira profesionalne kuhinje širom jugoistočne Evrope i šire.",
+      body: "Od jednog tlocrta do potpuno puštene kuhinje — MB Equipment Solutions projektuje, isporučuje, instalira i servisira profesionalne kuhinje širom Jugoistočne Evrope i šire.",
       subtitle: "Sa sedištem u Beogradu, ovlašćeni od strane Middleby Corporation — 110+ brendova, fabričko obučeni inženjeri.",
     },
     partnership: {
@@ -191,7 +263,7 @@ const sr: Dictionary = {
       eyebrow: "Razgovarajmo",
       heading1: "Prava oprema.",
       heading2: "Pravi partner.",
-      body: "Bilo da projektujete novu kuhinju u Beogradu, nadograđujete postojeću ili se širite po jugoistočnoj Evropi — uključite nas od prvog dana.",
+      body: "Bilo da projektujete novu kuhinju u Beogradu, nadograđujete postojeću ili se širite po Jugoistočnoj Evropi — uključite nas od prvog dana.",
     },
   },
 
@@ -226,7 +298,7 @@ const sr: Dictionary = {
   hotelsRestaurants: {
     hero: {
       eyebrow: "Ovlašćeni Middleby partner",
-      body: "Kao ovlašćeni partner Middleby Corporation, isporučujemo profesionalnu opremu za ugostiteljstvo — od roštillja na ugalj i kombi peći do ventless friteza i IoT platformi.",
+      body: "Kao ovlašćeni partner kompanije Middleby Corporation, isporučujemo profesionalnu opremu za ugostiteljstvo — od roštilja na drveni ugalj i parno-konvekcijskih peći do ventless friteza i IoT platformi.",
     },
     segments: {
       eyebrow: "Opremamo",
@@ -244,9 +316,9 @@ const sr: Dictionary = {
     },
     cta: {
       eyebrow: "Sledeći korak",
-      heading1: "Hajde da specificiramo",
-      heading2: "Vašu kuhinju.",
-      body: "Opišite nam obim projekta — koncept menija, kapacitet, prostorna ograničenja. Vratićemo se sa brendovima, modelima, CAD crtežima i cenom.",
+      heading1: "Definišimo Vašu",
+      heading2: "kuhinju zajedno.",
+      body: "Opišite nam obim projekta — koncept menija, kapacitet, prostorna ograničenja. Vraćamo se sa brendovima, modelima, CAD crtežima i cenom.",
     },
   },
 
@@ -266,7 +338,7 @@ const sr: Dictionary = {
       eyebrow: "Kolekcija",
       heading1: "Middleby Residential",
       heading2: "kolekcija",
-      body: "MB Equipment Solutions Residential objedinjuje međunarodne brendove premium kućnih aparata i opreme za kuvanje na otvorenom — od ručno izrađenih francuskih šporeta do profesionalnih roštillja.",
+      body: "MB Equipment Solutions Residential objedinjuje međunarodne brendove premium kućnih aparata i opreme za kuvanje na otvorenom — od ručno izrađenih francuskih šporeta do profesionalnih roštilja.",
       brandNote: "Svaki brend je podržan Middleby inženjeringom i našim regionalnim servisnim timom.",
     },
     brochures: {
@@ -354,7 +426,7 @@ const sr: Dictionary = {
       eyebrow: "Reference i partneri",
       heading1: "Rad govori",
       heading2: "sam za sebe",
-      body: "Pouzdani partner za opremu kongresnih centara, hotela, restorana i ugostiteljskih grupa širom jugoistočne Evrope.",
+      body: "Pouzdani partner za opremu kongresnih centara, hotela, restorana i ugostiteljskih grupa širom Jugoistočne Evrope.",
     },
     whoWeAre: {
       eyebrow: "Ko smo mi",
@@ -396,8 +468,8 @@ const sr: Dictionary = {
     },
     cta: {
       eyebrow: "Radite sa nama",
-      heading1: "Hajde da isplaniramo",
-      heading2: "Vašu kuhinju.",
+      heading1: "Isplanirajmo Vašu",
+      heading2: "kuhinju zajedno.",
       body: "Bilo da planirate novu kuhinju, nadograđujete opremu ili se širite na više lokacija — isporučujemo prema specifikaciji, na vreme i u okviru budžeta.",
     },
   },
@@ -482,13 +554,13 @@ const sr: Dictionary = {
     hero: {
       heading1: "Oprema za termičku",
       heading2: "obradu",
-      body: "Šporeti, friteze, kombi peći i roštilji na ugalj — svaka kategorija termičke opreme specificirana i puštena u rad od strane našeg inženjerskog tima.",
+      body: "Šporeti, friteze, parno-konvekcijske peći i roštilji na drveni ugalj — svaka kategorija termičke opreme specificirana i puštena u rad od strane našeg inženjerskog tima.",
     },
     overview: {
       eyebrow: "Termička obrada",
       heading1: "Svaki način kuvanja,",
       heading2: "jedan partner za opremu",
-      body: "Od gasnih šporeta i indukcionih linija do roštillja na ugalj i kombi peći — specificiramo, isporučujemo i puštamo u rad opremu za termičku obradu prilagođenu Vašem meniju, obimu i rasporedu kuhinje.",
+      body: "Od gasnih šporeta i indukcionih linija do roštilja na drveni ugalj i parno-konvekcijskih peći — specificiramo, isporučujemo i puštamo u rad opremu za termičku obradu prilagođenu Vašem meniju, obimu i rasporedu kuhinje.",
     },
     subcategories: {
       eyebrow: "Kategorije",
@@ -619,11 +691,11 @@ const sr: Dictionary = {
   metadata: {
     home: {
       title: "Profesionalna kuhinjska oprema | MB Equipment Solutions",
-      description: "Ovlašćeni Middleby partner za profesionalnu kuhinjsku opremu u jugoistočnoj Evropi. 110+ brendova za hotele, restorane, rezidencijalni sektor i preradu hrane.",
+      description: "Ovlašćeni Middleby partner za profesionalnu kuhinjsku opremu u Jugoistočnoj Evropi. 110+ brendova za hotele, restorane, rezidencijalni sektor i preradu hrane.",
     },
     companyOverview: {
       title: "O kompaniji | MB Equipment Solutions",
-      description: "MB Equipment Solutions — ovlašćeni Middleby partner sa sedištem u Beogradu. Projektujemo, isporučujemo i servisiramo profesionalne kuhinje širom jugoistočne Evrope.",
+      description: "MB Equipment Solutions — ovlašćeni Middleby partner sa sedištem u Beogradu. Projektujemo, isporučujemo i servisiramo profesionalne kuhinje širom Jugoistočne Evrope.",
     },
     innovation: {
       title: "Tehnologija i inovacije | MB Equipment Solutions",
@@ -631,7 +703,7 @@ const sr: Dictionary = {
     },
     hotelsRestaurants: {
       title: "Hoteli i restorani — Naši brendovi | MB Equipment Solutions",
-      description: "Profesionalna kuhinjska oprema za hotele i restorane. 110+ brendova Middleby Corporation — od Josper roštillja do kombi peći i IoT platformi.",
+      description: "Profesionalna kuhinjska oprema za hotele i restorane. 110+ brendova Middleby Corporation — od Josper roštilja do parno-konvekcijskih peći i IoT platformi.",
     },
     residential: {
       title: "Rezidencijalna oprema — Viking, La Cornue, AGA | MB Equipment Solutions",
@@ -643,7 +715,7 @@ const sr: Dictionary = {
     },
     references: {
       title: "Reference i partneri | MB Equipment Solutions",
-      description: "Pogledajte naše projekte — kongresni centri, hoteli, restorani i lanci širom jugoistočne Evrope. 50+ isporučenih projekata.",
+      description: "Pogledajte naše projekte — kongresni centri, hoteli, restorani i lanci širom Jugoistočne Evrope. 50+ isporučenih projekata.",
     },
     demoCenters: {
       title: "Demo centri i izložbeni prostori | MB Equipment Solutions",
@@ -663,7 +735,7 @@ const sr: Dictionary = {
     },
     thermalProcessing: {
       title: "Oprema za termičku obradu | MB Equipment Solutions",
-      description: "Šporeti, friteze, kombi peći i roštilji na ugalj — profesionalna oprema za termičku obradu. Josper, Silko, Lincat, Houno ovlašćena isporuka.",
+      description: "Šporeti, friteze, parno-konvekcijske peći i roštilji na drveni ugalj — profesionalna oprema za termičku obradu. Josper, Silko, Lincat, Houno ovlašćena isporuka.",
     },
     refrigeration: {
       title: "Rashladna oprema | MB Equipment Solutions",
@@ -694,8 +766,8 @@ const sr: Dictionary = {
       description: "Profesionalni ben mari i oprema za temperaturno kontrolisano držanje. Bife, banketi i stanice za serviranje.",
     },
     combiOvens: {
-      title: "Kombi i konvekcione peći | MB Equipment Solutions",
-      description: "Profesionalne kombi peći i konvekcione peći — patiserija, bake-off i speed peći. Houno i Lincat ovlašćena isporuka.",
+      title: "Parno-konvekcijske peći | MB Equipment Solutions",
+      description: "Profesionalne parno-konvekcijske i konvekcione peći — patiserija, bake-off i speed peći. Houno i Lincat ovlašćena isporuka.",
     },
     displayCases: {
       title: "Vitrine i displeji | MB Equipment Solutions",
@@ -778,7 +850,7 @@ const sr: Dictionary = {
       },
       {
         question: "Koje zemlje pokrivate?",
-        answer: "Prvenstveno pokrivamo jugoistočnu Evropu iz našeg sedišta u Beogradu, Srbija. Naša pokrivenost obuhvata Balkan, Centralnu Evropu i odabrana tržišta šire od regiona. U svakom tržištu obavljamo nabavku, instalaciju, puštanje u rad i postprodajni servis opreme.",
+        answer: "Prvenstveno pokrivamo Jugoistočnu Evropu iz našeg sedišta u Beogradu, Srbija. Naša pokrivenost obuhvata Balkan, Centralnu Evropu i odabrana tržišta šire od regiona. U svakom tržištu obavljamo nabavku, instalaciju, puštanje u rad i postprodajni servis opreme.",
       },
       {
         question: "Da li pružate usluge projektovanja kuhinja?",
@@ -802,7 +874,7 @@ const sr: Dictionary = {
       },
       {
         question: "Koje regione pokriva MB Equipment Solutions?",
-        answer: "Prvenstveno pokrivamo jugoistočnu Evropu — Srbiju, Hrvatsku, Bosnu, Crnu Goru, Severnu Makedoniju, Albaniju i Kosovo. Preko naših Middleby ovlašćenja i logističke mreže podržavamo i projekte na širem evropskom tržištu. Naši <a href='/demo-centers' class='text-gold hover:underline'>demo centri</a> u Srbiji, Španiji i Nemačkoj pružaju praktičnu podršku pri specifikaciji.",
+        answer: "Prvenstveno pokrivamo Jugoistočnu Evropu — Srbiju, Hrvatsku, Bosnu, Crnu Goru, Severnu Makedoniju, Albaniju i Kosovo. Preko naših Middleby ovlašćenja i logističke mreže podržavamo i projekte na širem evropskom tržištu. Naši <a href='/demo-centers' class='text-gold hover:underline'>demo centri</a> u Srbiji, Španiji i Nemačkoj pružaju praktičnu podršku pri specifikaciji.",
       },
       {
         question: "Koje brendove zastupa MB Equipment?",
@@ -830,7 +902,7 @@ const sr: Dictionary = {
       },
       {
         question: "Da li MB Equipment nudi energetski efikasnu opremu za profesionalne kuhinje?",
-        answer: "Da. Energetska efikasnost je ključni kriterijum specifikacije u svakom projektu. Naš portfolio uključuje ENERGY STAR sertifikovane kombi peći, visokoefikasne friteze sa ugrađenom filtracijom ulja, indukcione kuhinjske linije koje smanjuju potrošnju energije do 50% u poređenju sa gasom i ventless sisteme koji eliminišu troškove tradicionalne infrastrukture za napu. Izračunavamo projektovane uštede u fazi specifikacije kako bi operateri mogli da donose informisane odluke.",
+        answer: "Da. Energetska efikasnost je ključni kriterijum specifikacije u svakom projektu. Naš portfolio uključuje ENERGY STAR sertifikovane parno-konvekcijske peći, visokoefikasne friteze sa ugrađenom filtracijom ulja, indukcione kuhinjske linije koje smanjuju potrošnju energije do 50% u poređenju sa gasom i ventless sisteme koji eliminišu troškove tradicionalne infrastrukture za napu. Izračunavamo projektovane uštede u fazi specifikacije kako bi operateri mogli da donose informisane odluke.",
       },
     ],
     segments: [
@@ -886,7 +958,7 @@ const sr: Dictionary = {
         description: "Oprema za temperaturno kontrolisano držanje za bife servis, bankete i stanice za serviranje a la carte.",
       },
       {
-        name: "Kombi i konvekcione peći",
+        name: "Parno-konvekcijske peći",
         description: "Parno kuvanje, pečenje, prženje i regeneracija u jednom uređaju — od 6 modela na postolju do 40 modela na kolicima.",
       },
     ],
@@ -1017,13 +1089,13 @@ const sr: Dictionary = {
     equipmentCategories: [
       { title: "Komercijalna automatizacija", description: "Picnic, Flippy i Middleby platforme za automatizaciju — robotika koja operaterima štedi vreme i rad uz konzistentan proizvod sa svakom narudžbom." },
       { title: "Komercijalno pekarstvo", description: "Petnaest brendova posvećenih izvrsnosti u pekarstvu, na čelu sa Blodgett XR8 — referentni standard za rotacione rack peći." },
-      { title: "Komercijalno roštiljanje na uglju", description: "Konzistentan kvalitet roštilj za roštiljem — uz NIECO flame broilere i CTX infracrvene konvejere za operacije velikog obima." },
-      { title: "Komercijalne kombi peći", description: "Parno kuvanje, pečenje, prženje i regeneracija u jednom uređaju. Od 6 modela na postolju do 40 modela na kolicima." },
+      { title: "Komercijalno roštiljanje na uglju", description: "Konzistentan kvalitet od jednog do drugog roštilja — uz NIECO flame broilere i CTX infracrvene konvejere za operacije velikog obima." },
+      { title: "Parno-konvekcijske peći", description: "Parno kuvanje, pečenje, prženje i regeneracija u jednom uređaju. Od 6 modela na postolju do 40 modela na kolicima." },
       { title: "Profesionalne kuhinjske linije", description: "Teške linije za kuvanje projektovane oko Vašeg menija. Jade, Southbend i Vulcan — konfigurisane i puštene u rad od strane našeg inženjerskog tima." },
       { title: "Komercijalno piće", description: "Svaki format pića koji Vašoj operaciji treba — od espressa i nitro kafe do zamrznutih napitaka i soft-serve. Pokreće ih Taylor, Synesso i Follett." },
       { title: "Komercijalno pivarstvo", description: "Craft pivarstvo u objektu od pilot sistema od 1 barela do proizvodnih od 3,5 barela. Sistemi kompanije Ss Brewtech i Deutsche Beverage Technology." },
       { title: "Komercijalno prženje", description: "Pitco, Ultrafryer, BKI, PerfectFry — friteza za svaki proizvod i obim, od prodavnice do pune proizvodnje." },
-      { title: "Komercijalno griddling", description: "Taylor clamshell roštilji, Star flat-top ploče i Toastmaster stolni uređaji — od visokoserijskeQSR automatizacije do a la carte preciznosti." },
+      { title: "Komercijalno griddling", description: "Taylor clamshell roštilji, Star flat-top ploče i Toastmaster stolni uređaji — od visokoserijske QSR automatizacije do a la carte preciznosti." },
       { title: "IoT i povezana kuhinja", description: "Open Kitchen IoT — moduli za automatizaciju, bezbednost hrane i povezivanje opreme. Saznajte kako povezana kuhinja štedi vreme i rad." },
       { title: "Komercijalna pizza oprema", description: "Tradicionalna, deep dish, na drva ili njujorški stil. Petnaest brendova koji pokrivaju rezanje, mešenje, deljenje, fermentaciju i pečenje." },
       { title: "Komercijalni šporeti i indukcija", description: "Od gasa do indukcije — najviši kvalitet i najefikasniji šporeti. Southbend sa patentiranom TruVapor tehnologijom." },

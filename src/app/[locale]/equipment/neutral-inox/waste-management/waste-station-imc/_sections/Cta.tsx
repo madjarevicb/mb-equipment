@@ -11,6 +11,7 @@ interface CtaProps {
 }
 
 export default function Cta({ locale, dict }: CtaProps) {
+  const isSr = locale === "sr";
   return (
     <>
       <section
@@ -71,7 +72,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  § Specify a Waste Workflow
+                  {isSr ? "§ Specifikujte tok rada za otpad" : "§ Specify a Waste Workflow"}
                 </span>
               </div>
 
@@ -89,7 +90,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                   staggerLines
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Specify a</span>
+                  <span style={{ display: "block" }}>{isSr ? "Specifikujte" : "Specify a"}</span>
                   <span
                     style={{
                       display: "block",
@@ -99,7 +100,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                       paddingLeft: "0.4em",
                     }}
                   >
-                    waste workflow.
+                    {isSr ? "tok rada za otpad." : "waste workflow."}
                   </span>
                 </ScrollReveal>
               </h2>
@@ -112,7 +113,13 @@ export default function Cta({ locale, dict }: CtaProps) {
                   maxWidth: "54ch",
                 }}
               >
-                Send your kitchen volume, dish-return layout, and three-phase
+                {isSr ? <>Pošaljite obim kuhinje, raspored povratka tanjira i dostupnost
+                trofaznog napajanja. Specifikujemo pravi model i veličinu —
+                <span
+                  className="font-display italic"
+                  style={{ color: "var(--color-gold)" }}
+                >
+                  {" "}bez obaveze</span>.</> : <>Send your kitchen volume, dish-return layout, and three-phase
                 availability. We spec the right model and size —
                 <span
                   className="font-display italic"
@@ -121,7 +128,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                   {" "}
                   no obligation
                 </span>
-                .
+                .</>}
               </p>
 
               <div className="flex flex-wrap gap-4 mt-6 lg:mt-8">
@@ -158,7 +165,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                       fontWeight: 500,
                     }}
                   >
-                    Colophon
+                    {isSr ? "Kolofon" : "Colophon"}
                   </span>
                   <p
                     className="font-display italic text-white"
@@ -168,12 +175,12 @@ export default function Cta({ locale, dict }: CtaProps) {
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    Engineered in Lincoln.
+                    {isSr ? "Inženjerirano u Linkolnu." : "Engineered in Lincoln."}
                   </p>
                 </div>
 
                 <Entry
-                  label="Showroom"
+                  label={isSr ? "Salon" : "Showroom"}
                   value={
                     <>
                       {COMPANY.address.street}
@@ -182,14 +189,14 @@ export default function Cta({ locale, dict }: CtaProps) {
                     </>
                   }
                 />
-                <Entry label="Coverage" value="Southeast Europe." />
+                <Entry label={isSr ? "Pokriće" : "Coverage"} value={isSr ? "Jugoistočna Evropa." : "Southeast Europe."} />
                 <Entry
-                  label="Brand"
-                  value="IMC by Middleby — Lincoln, UK."
+                  label={isSr ? "Brend" : "Brand"}
+                  value={isSr ? "IMC od Middleby-a — Linkoln, V. Britanija." : "IMC by Middleby — Lincoln, UK."}
                 />
                 <Entry
-                  label="Lead time"
-                  value="Specification within 1 business day."
+                  label={isSr ? "Rok isporuke" : "Lead time"}
+                  value={isSr ? "Specifikacija u roku od 1 radnog dana." : "Specification within 1 business day."}
                 />
               </div>
             </aside>
@@ -219,9 +226,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                   fontFamily: "var(--font-display), serif",
                 }}
               >
-                UKCA marked, IP55, Made in Lincoln. EU CE marking confirmed
-                per shipment via Middleby Europe at order — Brexit conformity
-                handled at supply.
+                {isSr ? "UKCA označen, IP55, proizvedeno u Linkolnu. EU CE oznaka potvrđuje se po pošiljci preko Middleby Europe pri narudžbini — Brexit usaglašenost rešava se pri isporuci." : "UKCA marked, IP55, Made in Lincoln. EU CE marking confirmed per shipment via Middleby Europe at order — Brexit conformity handled at supply."}
               </span>
             </div>
           </div>
@@ -231,13 +236,13 @@ export default function Cta({ locale, dict }: CtaProps) {
       {/* Closing running meta */}
       <RunningMeta
         variant="light"
-        folio="folio 08 / 08"
+        folio={isSr ? "tabak 08 / 08" : "folio 08 / 08"}
         items={[
-          "Vol. III",
-          "End of Ch. 01",
-          "Waste Management",
-          "IMC by Middleby",
-          "Est. MB Equipment",
+          isSr ? "Tom III" : "Vol. III",
+          isSr ? "Kraj pogl. 01" : "End of Ch. 01",
+          isSr ? "Upravljanje otpadom" : "Waste Management",
+          isSr ? "IMC od Middleby-a" : "IMC by Middleby",
+          isSr ? "Osn. MB Equipment" : "Est. MB Equipment",
         ]}
       />
     </>

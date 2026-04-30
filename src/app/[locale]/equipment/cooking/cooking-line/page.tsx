@@ -236,23 +236,23 @@ export default async function CookingLinePage({
           items={[
             {
               type: "heritage",
-              label: "Silko · Since 1980",
-              detail: "Vittorio Veneto, Italy",
+              label: isSr ? "Silko · Od 1980." : "Silko · Since 1980",
+              detail: isSr ? "Vittorio Veneto, Italija" : "Vittorio Veneto, Italy",
             },
             {
               type: "heritage",
-              label: "Lincat · Since 1971",
-              detail: "Lincoln, UK",
+              label: isSr ? "Lincat · Od 1971." : "Lincat · Since 1971",
+              detail: isSr ? "Linkoln, V. Britanija" : "Lincoln, UK",
             },
             {
               type: "award",
               label: "Ali Group",
-              detail: "Silko parent",
+              detail: isSr ? "Silko matica" : "Silko parent",
             },
             {
               type: "award",
-              label: "Middleby Group",
-              detail: "Lincat parent (since 2011)",
+              label: isSr ? "Middleby grupa" : "Middleby Group",
+              detail: isSr ? "Lincat matica (od 2011.)" : "Lincat parent (since 2011)",
             },
             {
               type: "certification",
@@ -262,7 +262,7 @@ export default async function CookingLinePage({
             {
               type: "certification",
               label: "AISI 304",
-              detail: "Stainless across both",
+              detail: isSr ? "Inox kroz oba brenda" : "Stainless across both",
             },
           ]}
         />
@@ -272,19 +272,19 @@ export default async function CookingLinePage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
-          label="The Two Houses"
-          caption="Silko of Italy and Lincat of England — chosen for what each does best."
+          label={isSr ? "Dve kuće" : "The Two Houses"}
+          caption={isSr ? "Silko iz Italije i Lincat iz Engleske — izabrani po onome u čemu su najbolji." : "Silko of Italy and Lincat of England — chosen for what each does best."}
           variant="light"
         />
       </div>
-      <TwoHouses />
+      <TwoHouses locale={locale as Locale} />
 
       {/* Chapter III — Seven instruments */}
       <div className="bg-navy">
         <ChapterMark
           numeral="III"
-          label="The Equipment Ledger"
-          caption="Seven cooking disciplines — each opens to a per-equipment page."
+          label={isSr ? "Pregled opreme" : "The Equipment Ledger"}
+          caption={isSr ? "Sedam disciplina kuvanja — svaka otvara stranicu sa konkretnom opremom." : "Seven cooking disciplines — each opens to a per-equipment page."}
           variant="dark"
         />
       </div>
@@ -294,8 +294,8 @@ export default async function CookingLinePage({
       <div className="bg-navy">
         <ChapterMark
           numeral="IV"
-          label="Capacity Matrix"
-          caption="Choose by line depth and burner power."
+          label={isSr ? "Matrica kapaciteta" : "Capacity Matrix"}
+          caption={isSr ? "Birajte prema dubini linije i snazi gorionika." : "Choose by line depth and burner power."}
           variant="dark"
         />
       </div>
@@ -303,12 +303,12 @@ export default async function CookingLinePage({
         variant="dark"
         heading={
           <>
-            Capacity{" "}
+            {isSr ? "Matrica " : "Capacity "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold)" }}
             >
-              matrix.
+              {isSr ? "kapaciteta." : "matrix."}
             </span>
           </>
         }
@@ -320,12 +320,17 @@ export default async function CookingLinePage({
         ]}
         specs={[
           {
-            label: "Depth",
+            label: isSr ? "Dubina" : "Depth",
             values: ["700 mm", "900 mm", "800 mm", "600 mm"],
           },
           {
-            label: "Burner power",
-            values: [
+            label: isSr ? "Snaga gorionika" : "Burner power",
+            values: isSr ? [
+              "Do 6 kW (zatvoreni)",
+              "Do 10 kW (otvoreni)",
+              "Do 7,5 kW (koncentrični)",
+              "Srednja klasa",
+            ] : [
               "Up to 6 kW (sealed)",
               "Up to 10 kW (open)",
               "Up to 7.5 kW (concentric)",
@@ -333,8 +338,13 @@ export default async function CookingLinePage({
             ],
           },
           {
-            label: "Worktop",
-            values: [
+            label: isSr ? "Radna ploča" : "Worktop",
+            values: isSr ? [
+              "AISI 304 / 15-10",
+              "AISI 304 / 20-10",
+              "Postolja od livenog gvožđa",
+              "Inox / liveno",
+            ] : [
               "AISI 304 / 15-10",
               "AISI 304 / 20-10",
               "Cast-iron supports",
@@ -342,17 +352,27 @@ export default async function CookingLinePage({
             ],
           },
           {
-            label: "Modules",
-            values: [
-              "Open burners, fryers, pasta, bain-marie",
+            label: isSr ? "Moduli" : "Modules",
+            values: isSr ? [
+              "Otvoreni gorionici, friteze, kuvalo za pastu, ben mari",
+              "Otvoreni gorionici, indukcija, solid-top, kiper",
+              "Šporet, friteza, kiper, indukcija",
+              "Stoni + samostojeći",
+            ] : [
+              "Open burners, fryers, pasta, bain marie",
               "Open burners, induction, solid-top, brattpan",
               "Range, fryer, brattpan, induction",
-              "Counter-top + free-standing",
+              "Countertop + freestanding",
             ],
           },
           {
-            label: "Best fit",
-            values: [
+            label: isSr ? "Najbolje za" : "Best fit",
+            values: isSr ? [
+              "HoReCa srednjeg obima",
+              "Restoran / hotel velikog obima",
+              "Heavy-duty restorani",
+              "Pubovi, kafići, obrazovanje",
+            ] : [
               "Mid-volume HoReCa",
               "High-volume restaurant / hotel",
               "Heavy-duty restaurants",
@@ -366,19 +386,19 @@ export default async function CookingLinePage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="V"
-          label="House Note"
-          caption="On the relationship between line, menu, and engineering."
+          label={isSr ? "Reč kuće" : "House Note"}
+          caption={isSr ? "O odnosu između linije, menija i inženjeringa." : "On the relationship between line, menu, and engineering."}
           variant="light"
         />
       </div>
-      <EngineeringQuote />
+      <EngineeringQuote locale={locale as Locale} />
 
       {/* Chapter VI — Questions */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="VI"
-          label="Questions"
-          caption="Five things buyers ask before specifying a line."
+          label={isSr ? "Pitanja" : "Questions"}
+          caption={isSr ? "Pet stvari koje kupci pitaju pre specifikacije linije." : "Five things buyers ask before specifying a line."}
           variant="light"
         />
       </div>
@@ -387,27 +407,52 @@ export default async function CookingLinePage({
         pageUrl={pageUrl}
         heading={
           <>
-            Before{" "}
+            {isSr ? "Pre " : "Before "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold-text)" }}
             >
-              you specify.
+              {isSr ? "specifikacije." : "you specify."}
             </span>
           </>
         }
-        items={[
+        items={isSr ? [
+          {
+            q: "Da li da izaberem Silko Essence 700 ili 900?",
+            a: "Essence 700 je dubok 700 mm sa zatvorenim visoko-efikasnim gorionicima od 6 kW — najbolji za HoReCa srednjeg obima gde je prostor ograničen. Essence 900 ide 900 mm u dubinu sa otvorenim gorionicima do 10 kW — napravljen za restorane i hotele velikog obima sa heavy-duty linijama.",
+          },
+          {
+            q: "Gde Lincat staje pored Silka?",
+            a: "Lincat Opus 800 (dubina 800 mm) je heavy-duty britanski parnjak Essence-u 900. Silverlink 600 pokriva srednju klasu i stonu upotrebu. Lincat se obično specifikuje tamo gde je važan Middleby ekosistem servisa i kontinuitet delova.",
+          },
+          {
+            q: "Mogu li da kombinujem gas i indukciju u jednoj liniji?",
+            a: "Da. I Silko Essence i Lincat Opus 800 podržavaju modularnu konfiguraciju — otvoreni gasni gorionici, indukcione zone, solid-top, friteza, kiper, kuvalo za pastu, ben mari, sve dele istu dubinu šasije.",
+          },
+          {
+            q: "Šta je sa ventilacijom?",
+            a: "Napa i dovod vazduha dimenzionišu se prema kumulativnom kW opterećenju linije. Koordiniramo sa Britannia-om (Middleby UK ventilacija) kada specifikujemo Lincat-heavy projekte.",
+          },
+          {
+            q: "Rok isporuke i instalacija?",
+            a: "Stock artikli 3–6 nedelja; konfiguracije po meri 8–12 nedelja. Instalacija je 2–4 dana za kompletnu liniju, plus puštanje u rad i obuka šefa.",
+          },
+          {
+            q: "Koja je garancija?",
+            a: "Lincat Opus 800: 2 godine na delove i rad. Silko: po projektu, tipično 24 meseca. MB Equipment ostvaruje oba lokalno sa obučenim servisnim inženjerima u Beogradu.",
+          },
+        ] : [
           {
             q: "Should I pick Silko Essence 700 or 900?",
             a: "Essence 700 is 700 mm deep with sealed high-efficiency 6 kW burners — best for mid-volume HoReCa where space is constrained. Essence 900 goes 900 mm deep with open burners up to 10 kW — built for high-volume restaurants and hotels with heavy-duty cooking lines.",
           },
           {
             q: "Where does Lincat fit alongside Silko?",
-            a: "Lincat Opus 800 (800 mm depth) is the heavy-duty British counterpart to Essence 900. Silverlink 600 covers mid-duty and counter-top use. Lincat is generally specified where Middleby ecosystem service and parts continuity matter most.",
+            a: "Lincat Opus 800 (800 mm depth) is the heavy-duty British counterpart to Essence 900. Silverlink 600 covers mid-duty and countertop use. Lincat is generally specified where Middleby ecosystem service and parts continuity matter most.",
           },
           {
             q: "Can I mix gas and induction in one line?",
-            a: "Yes. Both Silko Essence and Lincat Opus 800 support modular config — open gas burners, induction zones, solid-top, fryer, brattpan, pasta cooker, bain-marie all share the same chassis depth.",
+            a: "Yes. Both Silko Essence and Lincat Opus 800 support modular configuration — open gas burners, induction zones, solid-top, fryer, brattpan, pasta cooker, and bain marie all share the same chassis depth.",
           },
           {
             q: "What about ventilation?",
@@ -419,7 +464,7 @@ export default async function CookingLinePage({
           },
           {
             q: "What's the warranty?",
-            a: "Lincat Opus 800: 2 years parts and labour. Silko: per project, typically 24 months. MB Equipment honours both locally with trained service engineers in Belgrade.",
+            a: "Lincat Opus 800: 2 years parts and labor. Silko: per project, typically 24 months. MB Equipment honors both locally with trained service engineers in Belgrade.",
           },
         ]}
       />
@@ -428,8 +473,8 @@ export default async function CookingLinePage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VII"
-          label="The Next Step"
-          caption="Floor plan or menu concept in — CAD layout and budget ranges out."
+          label={isSr ? "Sledeći korak" : "The Next Step"}
+          caption={isSr ? "Pošaljite plan ili koncept menija — vraćamo CAD raspored i okvirni budžet." : "Floor plan or menu concept in — CAD layout and budget ranges out."}
           variant="dark"
         />
       </div>

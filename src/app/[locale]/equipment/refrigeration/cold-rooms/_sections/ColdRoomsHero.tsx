@@ -14,6 +14,7 @@ const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwYTE2MjgiLz48L3N2Zz4=";
 
 export default function ColdRoomsHero({ locale, dict }: Props) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="cold-rooms-hero"
@@ -32,7 +33,7 @@ export default function ColdRoomsHero({ locale, dict }: Props) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 08
+          {isSr ? "tabak 01 / 08" : "folio 01 / 08"}
         </span>
         <span
           aria-hidden="true"
@@ -61,13 +62,13 @@ export default function ColdRoomsHero({ locale, dict }: Props) {
 
       <RunningMeta
         variant="dark"
-        folio="Ed. 2026"
+        folio={isSr ? "Izd. 2026" : "Ed. 2026"}
         items={[
-          "Vol. IV",
-          "Ch. 03 — Modular Cold Rooms",
+          isSr ? "Tom IV" : "Vol. IV",
+          isSr ? "Pogl. 03 — Montažne komore" : "Ch. 03 — Modular Cold Rooms",
           "Tecnodom / JKS",
-          "Made in Padua",
-          "Authorized Partner — Belgrade",
+          isSr ? "Proizvedeno u Padovi" : "Made in Padua",
+          isSr ? "Ovlašćeni partner — Beograd" : "Authorized Partner — Belgrade",
         ]}
       />
 
@@ -157,7 +158,7 @@ export default function ColdRoomsHero({ locale, dict }: Props) {
                   delay={40}
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Walk-in coolers,</span>
+                  <span style={{ display: "block" }}>{isSr ? "Plusne komore," : "Walk-in coolers,"}</span>
                   <span
                     style={{
                       display: "block",
@@ -167,10 +168,10 @@ export default function ColdRoomsHero({ locale, dict }: Props) {
                       paddingLeft: "0.6em",
                     }}
                   >
-                    walk-in freezers
+                    {isSr ? "minusne komore" : "walk-in freezers"}
                   </span>
                   <span style={{ display: "block" }}>
-                    &mdash; modular
+                    {isSr ? <>&mdash; montažne</> : <>&mdash; modular</>}
                     <span
                       aria-hidden="true"
                       style={{
@@ -203,9 +204,9 @@ export default function ColdRoomsHero({ locale, dict }: Props) {
                   letterSpacing: "0.1em",
                 }}
               >
-                Plate No. 03 —{" "}
+                {isSr ? "Tabla br. 03 —" : "Plate No. 03 —"}{" "}
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Padova &rarr; Belgrade.
+                  {isSr ? "Padova → Beograd." : <>Padova &rarr; Belgrade.</>}
                 </span>
               </p>
             </div>
@@ -224,7 +225,7 @@ export default function ColdRoomsHero({ locale, dict }: Props) {
               }}
               className="block uppercase font-medium mb-4"
             >
-              &sect; Editor&rsquo;s Note
+              {isSr ? "§ Beleška urednika" : <>&sect; Editor&rsquo;s Note</>}
             </span>
             <p
               className="text-white/80 font-light"
@@ -249,12 +250,19 @@ export default function ColdRoomsHero({ locale, dict }: Props) {
                   fontWeight: 400,
                 }}
               >
-                F
+                {isSr ? "O" : "F"}
               </span>
-              rom a 4&nbsp;m&sup3; chiller for a single restaurant to a
+              {isSr ? (
+                <>d 4&nbsp;m&sup3; rashladne komore za pojedinačni restoran do
+                200&nbsp;m&sup3; industrijskog šok zamrzivača &mdash; montažne
+                rashladne komore instaliraju se u danima, ne nedeljama.
+                Isporučujemo, projektujemo i puštamo u rad širom Jugoistočne Evrope.</>
+              ) : (
+                <>rom a 4&nbsp;m&sup3; chiller for a single restaurant to a
               200&nbsp;m&sup3; industrial blast freezer &mdash; modular cold
               rooms install in days, not weeks. We supply, design, and
-              commission across Southeast Europe.
+              commission across Southeast Europe.</>
+              )}
             </p>
           </div>
 
@@ -312,7 +320,7 @@ export default function ColdRoomsHero({ locale, dict }: Props) {
                       textTransform: "uppercase",
                     }}
                   >
-                    Modular cold room — in service
+                    {isSr ? "Montažna komora — u radu" : "Modular cold room — in service"}
                   </span>
                   <span
                     className="font-display italic"

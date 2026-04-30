@@ -121,7 +121,7 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
       />
 
       <HeroSection dict={dict.references.hero} authorizedPartnerOf={dict.common.authorizedPartnerOf} />
-      <WhoWeAreSection dict={dict.references.whoWeAre} />
+      <WhoWeAreSection dict={dict.references.whoWeAre} globalPresenceValue={dict.common.fiftyPercentOutsideUs} />
       <ShowcaseSection dict={dict.references.showcase} />
       <MarketLeadershipSection dict={dict.references.marketLeadership} />
       <GlobalChainsSection dict={dict.references.globalChains} />

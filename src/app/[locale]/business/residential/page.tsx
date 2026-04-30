@@ -71,55 +71,6 @@ export async function generateMetadata({
 }
 
 /* ------------------------------------------------------------------ */
-/*  JSON-LD structured data                                            */
-/* ------------------------------------------------------------------ */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      name: "Residential — Luxury Home Kitchen Equipment | MB Equipment Solutions",
-      description: `Authorized dealer for Viking, La Cornue, AGA, Lynx, and ${residentialBrands.length}+ premium residential brands.`,
-      url: `${COMPANY.url}/business/residential`,
-      isPartOf: { "@type": "WebSite", url: COMPANY.url },
-    },
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: COMPANY.url,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Business",
-          item: `${COMPANY.url}/business`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Residential",
-          item: `${COMPANY.url}/business/residential`,
-        },
-      ],
-    },
-    {
-      "@type": "ItemList",
-      name: "Premium Residential Kitchen Brands",
-      numberOfItems: residentialBrands.length,
-      itemListElement: residentialBrands.map((b, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: b.name,
-      })),
-    },
-  ],
-};
-
-/* ------------------------------------------------------------------ */
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 export default async function ResidentialPage({
@@ -129,6 +80,53 @@ export default async function ResidentialPage({
 }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
+
+  /* JSON-LD structured data */
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: dict.metadata.residential.title,
+        description: dict.metadata.residential.description,
+        url: `${COMPANY.url}/business/residential`,
+        isPartOf: { "@type": "WebSite", url: COMPANY.url },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: dict.breadcrumb.home,
+            item: COMPANY.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: dict.common.business,
+            item: `${COMPANY.url}/business`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: dict.nav.residential,
+            item: `${COMPANY.url}/business/residential`,
+          },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        name: dict.metadata.residential.title,
+        numberOfItems: residentialBrands.length,
+        itemListElement: residentialBrands.map((b, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: b.name,
+        })),
+      },
+    ],
+  };
 
   return (
     <>
@@ -141,7 +139,7 @@ export default async function ResidentialPage({
 
       <Breadcrumb
         items={[
-          { label: "Business", href: `/${locale}/business` },
+          { label: dict.common.business, href: `/${locale}/business` },
           { label: dict.metadata.residential.title },
         ]}
         locale={locale as Locale}
@@ -150,8 +148,8 @@ export default async function ResidentialPage({
 
       <HeroSection dict={dict.residential.hero} common={dict.common} />
       <PortfolioSection dict={dict.residential.portfolio} />
-      <BrandCarouselSection />
-      <ShowcaseSection dict={dict.residential.showcase} />
+      <BrandCarouselSection srHeading={dict.common.ourResidentialBrands} />
+      <ShowcaseSection dict={dict.residential.showcase} residentialLabel={dict.common.residentialEyebrow} />
       <BrochuresSection dict={dict.residential.brochures} common={dict.common} />
       <CtaSection dict={dict.residential.cta} locale={locale as Locale} />
     </>

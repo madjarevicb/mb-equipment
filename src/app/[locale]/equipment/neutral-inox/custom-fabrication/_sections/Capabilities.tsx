@@ -1,3 +1,4 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../thermal-processing/_sections/ScrollReveal";
 
 interface Capability {
@@ -7,7 +8,11 @@ interface Capability {
   spec: string;
 }
 
-const CAPABILITIES: Capability[] = [
+interface CapabilitiesProps {
+  locale?: Locale;
+}
+
+const CAPABILITIES_EN: Capability[] = [
   {
     serial: "No. 01",
     name: "Work tables & prep stations",
@@ -46,7 +51,48 @@ const CAPABILITIES: Capability[] = [
   },
 ];
 
-export default function Capabilities() {
+const CAPABILITIES_SR: Capability[] = [
+  {
+    serial: "Br. 01",
+    name: "Radni stolovi i pripremne stanice",
+    italic: "kičma svake kuhinje.",
+    spec: "Pojačan AISI 304, opcione donje police, držači posuda, zaštite zida.",
+  },
+  {
+    serial: "Br. 02",
+    name: "Sudopere i stanice za pranje",
+    italic: "sa jednim, dva ili tri korita.",
+    spec: "Pre-rinse stanice, lavaboi za pranje ruku, integrisane oceđivačke ploče.",
+  },
+  {
+    serial: "Br. 03",
+    name: "Nape i kanali za ventilaciju",
+    italic: "zidne, ostrvske, izduvne.",
+    spec: "Filteri za masnoću, integrisano osvetljenje, dimenzionisano prema opterećenju ekstrakcije.",
+  },
+  {
+    serial: "Br. 04",
+    name: "Police i regali za skladištenje",
+    italic: "zidne, mobilne, dunnage.",
+    spec: "Police za rashladne komore, regali za suvi skladišni prostor, modularne žičane i pune.",
+  },
+  {
+    serial: "Br. 05",
+    name: "Pultovi po meri i stanice za servis",
+    italic: "front of house, završen.",
+    spec: "Prozori za prosleđivanje, plating stanice, pultovi za pića i baristu.",
+  },
+  {
+    serial: "Br. 06",
+    name: "Zaštite zida i oblaganje",
+    italic: "od pune visine do polovine, sa zaobljenjima.",
+    spec: "Higijenske obrade, integrisana zaobljenja, namenski izrezi i otvori.",
+  },
+];
+
+export default function Capabilities({ locale }: CapabilitiesProps = {}) {
+  const isSr = locale === "sr";
+  const CAPABILITIES = isSr ? CAPABILITIES_SR : CAPABILITIES_EN;
   return (
     <section
       aria-labelledby="custom-fab-capabilities"
@@ -73,7 +119,7 @@ export default function Capabilities() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                The Fabrication Ledger
+                {isSr ? "Pregled izrade" : "The Fabrication Ledger"}
               </span>
             </div>
             <ScrollReveal>
@@ -86,13 +132,13 @@ export default function Capabilities() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                What we
+                {isSr ? "Šta " : "What we"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  fabricate.
+                  {isSr ? "izrađujemo." : "fabricate."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -106,8 +152,7 @@ export default function Capabilities() {
                 maxWidth: "32ch",
               }}
             >
-              Six disciplines drawn, cut, welded, and finished in the Belgrade
-              workshop — each entry made to your floor plan, not a catalog.
+              {isSr ? "Šest disciplina nacrtanih, sečenih, zavarivanih i završenih u beogradskoj radionici — svaka stavka izrađena prema Vašem planu, a ne katalogu." : "Six disciplines drawn, cut, welded, and finished in the Belgrade workshop — each entry made to your floor plan, not a catalog."}
             </p>
             <div
               style={{
@@ -124,7 +169,7 @@ export default function Capabilities() {
                   fontSize: "13px",
                 }}
               >
-                vi entries
+                {isSr ? "vi stavki" : "vi entries"}
               </span>
               <span
                 aria-hidden="true"
@@ -139,7 +184,7 @@ export default function Capabilities() {
                   letterSpacing: "0.3em",
                 }}
               >
-                Folio 02 / 06
+                {isSr ? "Tabak 02 / 06" : "Folio 02 / 06"}
               </span>
             </div>
           </div>
@@ -184,8 +229,7 @@ export default function Capabilities() {
               className="text-navy/60 font-light"
               style={{ fontSize: "13px" }}
             >
-              Drawings, materials, and finishes are confirmed before any cut is
-              made.
+              {isSr ? "Crteži, materijali i obrade potvrđuju se pre bilo kakvog sečenja." : "Drawings, materials, and finishes are confirmed before any cut is made."}
             </span>
           </div>
         </div>

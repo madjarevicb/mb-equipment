@@ -32,6 +32,7 @@ export interface ROICalculatorProps {
   intro?: React.ReactNode;
   example: ROIExample;
   interactive?: ROIInteractive;
+  locale?: "en" | "sr";
 }
 
 /**
@@ -46,7 +47,12 @@ export default function ROICalculator({
   intro,
   example,
   interactive,
+  locale = "en",
 }: ROICalculatorProps) {
+  const isSr = locale === "sr";
+  const sectionAriaLabel = isSr ? "Procena uštede" : "Savings estimate";
+  const adjustInputsLabel = isSr ? "Podesite parametre" : "Adjust inputs";
+  const estimateLabel = isSr ? "Procena" : "Estimate";
   const isDark = variant === "dark";
   const bg = isDark ? "var(--color-navy)" : "var(--color-offwhite)";
   const goldColor = isDark ? "var(--color-gold)" : "var(--color-gold-text)";
@@ -83,7 +89,7 @@ export default function ROICalculator({
 
   return (
     <section
-      aria-label="Savings estimate"
+      aria-label={sectionAriaLabel}
       style={{
         backgroundColor: bg,
         paddingTop: "clamp(2.5rem, 5vw, 5rem)",
@@ -158,7 +164,7 @@ export default function ROICalculator({
                 fontWeight: 500,
               }}
             >
-              {interactive ? "Adjust inputs" : example.label}
+              {interactive ? adjustInputsLabel : example.label}
             </span>
 
             {inputsToShow && (
@@ -279,7 +285,7 @@ export default function ROICalculator({
                 fontWeight: 500,
               }}
             >
-              Estimate
+              {estimateLabel}
             </span>
 
             <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">

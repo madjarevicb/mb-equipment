@@ -14,6 +14,7 @@ const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwYTE2MjgiLz48L3N2Zz4=";
 
 export default function Hero({ locale, dict }: HeroProps) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="imc-hero"
@@ -32,7 +33,7 @@ export default function Hero({ locale, dict }: HeroProps) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 08
+          {isSr ? "tabak 01 / 08" : "folio 01 / 08"}
         </span>
         <span
           aria-hidden="true"
@@ -65,13 +66,13 @@ export default function Hero({ locale, dict }: HeroProps) {
 
       <RunningMeta
         variant="dark"
-        folio="Ed. 2026"
+        folio={isSr ? "Izd. 2026" : "Ed. 2026"}
         items={[
-          "Vol. III",
-          "Ch. 01 — Waste Management",
-          "IMC by Middleby",
-          "Made in Lincoln",
-          "Est. 1906",
+          isSr ? "Tom III" : "Vol. III",
+          isSr ? "Pogl. 01 — Upravljanje otpadom" : "Ch. 01 — Waste Management",
+          isSr ? "IMC od Middleby-a" : "IMC by Middleby",
+          isSr ? "Proizvedeno u Linkolnu" : "Made in Lincoln",
+          isSr ? "Osn. 1906." : "Est. 1906",
         ]}
       />
 
@@ -161,9 +162,9 @@ export default function Hero({ locale, dict }: HeroProps) {
                   delay={40}
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Cut your kitchen</span>
+                  <span style={{ display: "block" }}>{isSr ? "Smanjite otpad" : "Cut your kitchen"}</span>
                   <span style={{ display: "block" }}>
-                    waste by{" "}
+                    {isSr ? "kuhinje za " : "waste by "}
                     <span
                       style={{
                         fontStyle: "italic",
@@ -171,11 +172,11 @@ export default function Hero({ locale, dict }: HeroProps) {
                         color: "var(--color-gold)",
                       }}
                     >
-                      eighty
+                      {isSr ? "osamdeset" : "eighty"}
                     </span>
                   </span>
                   <span style={{ display: "block" }}>
-                    per cent
+                    {isSr ? "odsto" : "per cent"}
                     <span
                       aria-hidden="true"
                       style={{
@@ -205,8 +206,8 @@ export default function Hero({ locale, dict }: HeroProps) {
                 <span aria-hidden="true" style={{ color: "var(--color-gold)" }}>
                   ☞
                 </span>{" "}
-                IMC&rsquo;s stated figure: up to 80% volume reduction versus
-                uncompacted waste. Site results vary by stream.
+                {isSr ? "IMC navod: do 80% smanjenja zapremine u odnosu na nesabijani otpad. Rezultati zavise od toka otpada na lokaciji." : <>IMC&rsquo;s stated figure: up to 80% volume reduction versus
+                uncompacted waste. Site results vary by stream.</>}
               </p>
             </div>
           </div>
@@ -227,9 +228,9 @@ export default function Hero({ locale, dict }: HeroProps) {
                   letterSpacing: "0.1em",
                 }}
               >
-                Plate No. 01 —{" "}
+                {isSr ? "Tabla br. 01 —" : "Plate No. 01 —"}{" "}
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  WasteStation, Lincoln.
+                  {isSr ? "WasteStation, Linkoln." : "WasteStation, Lincoln."}
                 </span>
               </p>
             </div>
@@ -248,7 +249,7 @@ export default function Hero({ locale, dict }: HeroProps) {
               }}
               className="block uppercase font-medium mb-4"
             >
-              § Editor&rsquo;s Note
+              {isSr ? "§ Beleška urednika" : <>§ Editor&rsquo;s Note</>}
             </span>
             <p
               className="text-white/80 font-light"
@@ -273,11 +274,17 @@ export default function Hero({ locale, dict }: HeroProps) {
                   fontWeight: 400,
                 }}
               >
-                T
+                {isSr ? "I" : "T"}
               </span>
-              he IMC WasteStation grinds, dewaters, and compacts food waste at
+              {isSr ? (
+                <>MC WasteStation usitnjava, cedi i sabija otpad od hrane na
+                tački povratka tanjira — smanjuje zapreminu do 80% i smanjuje
+                učestalost odnošenja.</>
+              ) : (
+                <>he IMC WasteStation grinds, dewaters, and compacts food waste at
               the dish-return point — reducing volume by up to 80% and cutting
-              collection frequency.
+              collection frequency.</>
+              )}
             </p>
 
             <div
@@ -295,7 +302,7 @@ export default function Hero({ locale, dict }: HeroProps) {
                 }}
                 className="uppercase font-medium"
               >
-                IMC by Middleby
+                {isSr ? "IMC od Middleby-a" : "IMC by Middleby"}
               </span>
               <span
                 aria-hidden="true"
@@ -376,7 +383,7 @@ export default function Hero({ locale, dict }: HeroProps) {
                       textTransform: "uppercase",
                     }}
                   >
-                    F79/010 — WasteStation, Lincoln
+                    {isSr ? "F79/010 — WasteStation, Linkoln" : "F79/010 — WasteStation, Lincoln"}
                   </span>
                   <span
                     className="font-display italic"
@@ -386,7 +393,7 @@ export default function Hero({ locale, dict }: HeroProps) {
                       letterSpacing: "0.2em",
                     }}
                   >
-                    — Plate I.
+                    {isSr ? "— Tabla I." : "— Plate I."}
                   </span>
                 </figcaption>
               </div>

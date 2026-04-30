@@ -200,33 +200,33 @@ export default async function JosperCharcoalGrillsPage({
           items={[
             {
               type: "heritage",
-              label: "Josper · Since 1969",
+              label: isSr ? "Josper · Od 1969." : "Josper · Since 1969",
               detail: "Pineda de Mar, Barcelona",
             },
             {
               type: "heritage",
-              label: "Middleby brand",
-              detail: "Acquired April 2018",
+              label: isSr ? "Middleby brend" : "Middleby brand",
+              detail: isSr ? "Pripojen aprila 2018." : "Acquired April 2018",
             },
             {
               type: "award",
-              label: "World's first patent",
-              detail: "Charcoal oven (1969)",
+              label: isSr ? "Prvi svetski patent" : "World's first patent",
+              detail: isSr ? "Peć na drveni ugalj (1969)" : "Charcoal oven (1969)",
             },
             {
               type: "certification",
               label: "CE · NSF · UL · GOST",
-              detail: "International compliance",
+              detail: isSr ? "Međunarodna usaglašenost" : "International compliance",
             },
             {
               type: "certification",
-              label: "4-year warranty",
-              detail: "Materials & components",
+              label: isSr ? "4-godišnja garancija" : "4-year warranty",
+              detail: isSr ? "Materijali i komponente" : "Materials & components",
             },
             {
               type: "award",
-              label: "40,000+ kitchens",
-              detail: "Josper's stated install base",
+              label: isSr ? "40.000+ kuhinja" : "40,000+ kitchens",
+              detail: isSr ? "Josperova procena instalacija" : "Josper's stated install base",
             },
           ]}
         />
@@ -236,41 +236,41 @@ export default async function JosperCharcoalGrillsPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
-          label="Origin & Mechanism"
-          caption="Pineda de Mar, 1969 — the first patented charcoal oven. A Middleby company since 2018."
+          label={isSr ? "Poreklo i mehanizam" : "Origin & Mechanism"}
+          caption={isSr ? "Pineda de Mar, 1969 — prva patentirana peć na drveni ugalj. Middleby kompanija od 2018." : "Pineda de Mar, 1969 — the first patented charcoal oven. A Middleby company since 2018."}
           variant="light"
         />
       </div>
-      <OriginTech />
+      <OriginTech locale={locale as Locale} />
 
       {/* Chapter III — HJX Lineup */}
       <div className="bg-navy">
         <ChapterMark
           numeral="III"
-          label="HJX Ledger"
-          caption="Five sizes of the flagship HJX charcoal oven — specified by cover count and autonomy."
+          label={isSr ? "HJX glavni katalog" : "HJX Ledger"}
+          caption={isSr ? "Pet veličina vodeće HJX peći na drveni ugalj — specifikovane prema broju gostiju i autonomiji." : "Five sizes of the flagship HJX charcoal oven — specified by cover count and autonomy."}
           variant="dark"
         />
       </div>
-      <Lineup />
+      <Lineup locale={locale as Locale} />
 
       {/* Chapter IV — Culinary positioning + pull quote */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="IV"
-          label="The Plate"
-          caption="What the sealed chamber does best — and what Michelin kitchens say about it."
+          label={isSr ? "Tanjir" : "The Plate"}
+          caption={isSr ? "Šta zatvorena komora najbolje radi — i šta o tome kažu Mišlen kuhinje." : "What the sealed chamber does best — and what Michelin kitchens say about it."}
           variant="light"
         />
       </div>
-      <CulinaryQuote />
+      <CulinaryQuote locale={locale as Locale} />
 
       {/* Chapter V — Authorized partner */}
       <div className="bg-navy">
         <ChapterMark
           numeral="V"
-          label="The Authorized Route"
-          caption="Genuine Josper / Middleby parts, 4-year warranty, Belgrade service engineers."
+          label={isSr ? "Ovlašćeni put" : "The Authorized Route"}
+          caption={isSr ? "Originalni Josper / Middleby delovi, 4-godišnja garancija, beogradski servisni inženjeri." : "Genuine Josper / Middleby parts, 4-year warranty, Belgrade service engineers."}
           variant="dark"
         />
       </div>
@@ -279,8 +279,8 @@ export default async function JosperCharcoalGrillsPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VI"
-          label="Questions"
-          caption="Eight things chefs and consultants ask before specifying Josper."
+          label={isSr ? "Pitanja" : "Questions"}
+          caption={isSr ? "Osam stvari koje šefovi i konsultanti pitaju pre specifikacije Josper-a." : "Eight things chefs and consultants ask before specifying Josper."}
           variant="dark"
         />
       </div>
@@ -288,16 +288,49 @@ export default async function JosperCharcoalGrillsPage({
         variant="dark"
         heading={
           <>
-            Frequently{" "}
+            {isSr ? "Često postavljana " : "Frequently "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold)" }}
             >
-              asked.
+              {isSr ? "pitanja." : "asked."}
             </span>
           </>
         }
-        items={[
+        items={isSr ? [
+          {
+            q: "Koji ugalj Josper preporučuje?",
+            a: "Visokokvalitetni komadni drveni ugalj — quebracho blanco za crveno meso i ribe crvenog mesa; marabu za belo meso ribe i povrće. Josper prodaje sopstveni eko ugalj. Izbegavajte brikete — proizvode previše dima za zatvorenu komoru.",
+          },
+          {
+            q: "Koja je razlika između HJX i HJX-PRO?",
+            a: "HJX je klasična linija peći na drveni ugalj (HJX-15 do HJX-50). HJX-PRO je unapređeni profesionalni nivo — isti dizajn komore, profinjena obrada, premium legure. HJA Class A je dodatno unapređena linija. PRO je standardna preporuka za nove restorane.",
+          },
+          {
+            q: "Koliko traje zagrevanje?",
+            a: "25–40 minuta u zavisnosti od veličine. HJX-15: ~25 min. HJX-50 Large: ~40 min. Kada dostigne temperaturu, komora drži toplotu 6–9 sati po punjenju ugljem — jedno punjenje pokriva većinu servisa.",
+          },
+          {
+            q: "Potrošnja uglja po servisu?",
+            a: "1,5–2,5 kg/dan za HJX-15, do 16–20 kg/dan za HJX-50 Large. Josper navodi do 40% manje uglja u poređenju sa otvorenim roštiljima (proizvođački podatak, nije nezavisno proveren).",
+          },
+          {
+            q: "Zahtevi za napajanje i ventilaciju?",
+            a: "Jednofazno 230V za integrisano električno paljenje (HJX modeli) — većina instalacija radi na standardnoj 16A utičnici. Ventilacija: napa tipa 1 dimenzionisana na ~2x preporučen protok proizvođača, sa filterima za masnoću. Dimnjak je hlađen i zaštićen.",
+          },
+          {
+            q: "Garancija i servis?",
+            a: "4 godine na nedostatke u materijalima i komponentama, 1 godina na unutrašnje delove komore i opruge vrata (Middleby UK uslovi). MB Equipment garanciju ostvaruje lokalno — beogradski servisni inženjeri, fabrički obučeni.",
+          },
+          {
+            q: "Koja jela najbolje uspevaju?",
+            a: "Bifteci, veliki komadi mesa, cele ribe, školjke, povrće, pečenja, cela živina, pica, hleb. Zatvorena komora + visoka temperatura zatvaraju spoljnost i daju aromu drvenog uglja. Svestrana za slane i slatke namirnice — Berasategui napominje da i pica i deserti uspevaju.",
+          },
+          {
+            q: "Šta je sa upravljanjem dimom?",
+            a: "Hlađen dimnjak sa dimperom za kontrolu vazduha + antiiskreni sistem + zaštita od plamena + protivpožarni štitnik. Potpuno zatvorena komora znači znatno manje dima nego otvoreni roštilji, ali i dalje zahteva napu tipa 1 sa filterima za masnoću prema lokalnim propisima.",
+          },
+        ] : [
           {
             q: "What charcoal does Josper recommend?",
             a: "High-quality lump charcoal — quebracho blanco for red meats and red-fleshed fish; marabu for white-fleshed fish and vegetables. Josper sells its own branded eco-friendly wood charcoal. Avoid briquettes — too smoky for the enclosed chamber.",
@@ -320,11 +353,11 @@ export default async function JosperCharcoalGrillsPage({
           },
           {
             q: "Warranty and service?",
-            a: "4 years against defects in materials and components, 1 year on internal combustion-chamber parts and door-retaining springs (Middleby UK terms). MB Equipment honours warranty locally — Belgrade-based service engineers, factory-trained.",
+            a: "4 years against defects in materials and components, 1 year on internal combustion-chamber parts and door-retaining springs (Middleby UK terms). MB Equipment honors warranty locally — Belgrade-based service engineers, factory-trained.",
           },
           {
             q: "What dishes work best?",
-            a: "Steaks, large protein cuts, whole fish, shellfish, vegetables, roasts, whole poultry, pizza, bread. The sealed chamber + high heat seals the outside while imparting charcoal aroma. Versatile across savoury and sweet — Berasategui notes pizza and dessert work too.",
+            a: "Steaks, large protein cuts, whole fish, shellfish, vegetables, roasts, whole poultry, pizza, bread. The sealed chamber and high heat seals the outside while imparting charcoal aroma. Versatile across savory and sweet — Berasategui notes pizza and dessert work too.",
           },
           {
             q: "What about smoke management?",

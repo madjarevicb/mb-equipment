@@ -1,6 +1,11 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../thermal-processing/_sections/ScrollReveal";
 
-const MATERIAL_ROWS: { label: string; value: string }[] = [
+interface MaterialsProcessProps {
+  locale?: Locale;
+}
+
+const MATERIAL_ROWS_EN: { label: string; value: string }[] = [
   { label: "Standard grade", value: "AISI 304 — food-grade stainless" },
   {
     label: "Marine / chemical",
@@ -12,7 +17,19 @@ const MATERIAL_ROWS: { label: string; value: string }[] = [
   { label: "Compliance", value: "CE-marked sheet stock from EU mills" },
 ];
 
-const PROCESS_STEPS: { numeral: string; name: string; body: string }[] = [
+const MATERIAL_ROWS_SR: { label: string; value: string }[] = [
+  { label: "Standardni kvalitet", value: "AISI 304 — inox za hranu" },
+  {
+    label: "Marine / hemija",
+    value: "AISI 316 — za hlorisana i korozivna okruženja",
+  },
+  { label: "Debljine", value: "1,0 / 1,2 / 1,5 / 2,0 mm — bira se prema opterećenju i rasponu" },
+  { label: "Obrada", value: "Brušeno, satinirano ili scotch-brite — prema specifikaciji" },
+  { label: "Ivice", value: "Zarolane, opšivene ili marine profili" },
+  { label: "Usaglašenost", value: "CE-označen lim iz EU livnica" },
+];
+
+const PROCESS_STEPS_EN: { numeral: string; name: string; body: string }[] = [
   {
     numeral: "i",
     name: "Consult",
@@ -40,7 +57,38 @@ const PROCESS_STEPS: { numeral: string; name: string; body: string }[] = [
   },
 ];
 
-export default function MaterialsProcess() {
+const PROCESS_STEPS_SR: { numeral: string; name: string; body: string }[] = [
+  {
+    numeral: "i",
+    name: "Konsultacija",
+    body: "Brif, meni, tok rada. Mapiramo kuhinju prema operaciji, a ne obrnuto.",
+  },
+  {
+    numeral: "ii",
+    name: "Merenje na licu mesta",
+    body: "Naš tim uzima prostoriju — zidove, instalacije, zazore, odvode — lično.",
+  },
+  {
+    numeral: "iii",
+    name: "CAD raspored",
+    body: "Crteži za odobrenje: dimenzije, debljine, obrade, instalacije.",
+  },
+  {
+    numeral: "iv",
+    name: "Izrada",
+    body: "Sečeno, formirano, zavarivano, polirano — u našoj beogradskoj radionici, našim rukama.",
+  },
+  {
+    numeral: "v",
+    name: "Instalacija i puštanje u rad",
+    body: "Isporučeno, postavljeno, nivelisano i potpisano na licu mesta od strane istog tima koji je izgradio.",
+  },
+];
+
+export default function MaterialsProcess({ locale }: MaterialsProcessProps = {}) {
+  const isSr = locale === "sr";
+  const MATERIAL_ROWS = isSr ? MATERIAL_ROWS_SR : MATERIAL_ROWS_EN;
+  const PROCESS_STEPS = isSr ? PROCESS_STEPS_SR : PROCESS_STEPS_EN;
   return (
     <section
       aria-labelledby="custom-fab-process"
@@ -67,7 +115,7 @@ export default function MaterialsProcess() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                Materials & Process
+                {isSr ? "Materijali i proces" : "Materials & Process"}
               </span>
             </div>
             <ScrollReveal>
@@ -80,13 +128,13 @@ export default function MaterialsProcess() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Drawn, cut,
+                {isSr ? "Nacrtano, sečeno," : "Drawn, cut,"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  welded, finished.
+                  {isSr ? "zavarivano, završeno." : "welded, finished."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -99,7 +147,7 @@ export default function MaterialsProcess() {
                 letterSpacing: "0.3em",
               }}
             >
-              Folio 03 / 06
+              {isSr ? "Tabak 03 / 06" : "Folio 03 / 06"}
             </span>
           </div>
         </div>
@@ -133,7 +181,7 @@ export default function MaterialsProcess() {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  Materials
+                  {isSr ? "Materijali" : "Materials"}
                 </h3>
               </div>
               <dl>
@@ -198,7 +246,7 @@ export default function MaterialsProcess() {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  Process
+                  {isSr ? "Proces" : "Process"}
                 </h3>
               </div>
               <ol>
@@ -273,8 +321,7 @@ export default function MaterialsProcess() {
                 lineHeight: 1.55,
               }}
             >
-              Lead times vary by complexity — typically 2–4 weeks from approved
-              drawings.
+              {isSr ? "Rokovi isporuke variraju prema složenosti — tipično 2–4 nedelje od odobrenih crteža." : "Lead times vary by complexity — typically 2–4 weeks from approved drawings."}
             </span>
           </div>
         </div>

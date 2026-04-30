@@ -1,3 +1,4 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../thermal-processing/_sections/ScrollReveal";
 
 interface Scoreline {
@@ -6,7 +7,11 @@ interface Scoreline {
   note: string;
 }
 
-const SCORELINES: Scoreline[] = [
+interface ComplianceQuoteProps {
+  locale?: Locale;
+}
+
+const SCORELINES_EN: Scoreline[] = [
   {
     metric: "CE",
     label: "Marking",
@@ -34,7 +39,37 @@ const SCORELINES: Scoreline[] = [
   },
 ];
 
-export default function ComplianceQuote() {
+const SCORELINES_SR: Scoreline[] = [
+  {
+    metric: "CE",
+    label: "Označavanje",
+    note: "Machinery 2006/42/EC · LVD 2014/35/EU · EMC 2014/30/EU · PED 2014/68/EU.",
+  },
+  {
+    metric: "F-Gas 2024/573",
+    label: "Na snazi od 11. marta 2024.",
+    note: "GWP 150 ograničenje za novu samostalnu opremu od 2025; postepeno ukidanje HFC servisa.",
+  },
+  {
+    metric: "GWP 3",
+    label: "R290 — propan",
+    note: "Prirodno rashladno sredstvo. Budućnost-spreman uprkos zabrani servisa od 2032 (GWP > 750).",
+  },
+  {
+    metric: "2–5 dana",
+    label: "Tipična instalacija",
+    note: "Za komore ≤ 200 m³ — plus 1–2 dana puštanja u rad.",
+  },
+  {
+    metric: "20 cm",
+    label: "JKS modularna mreža",
+    note: "Širine panela 400/600/800/1000/1200 mm — slobodno kombinabilni na licu mesta.",
+  },
+];
+
+export default function ComplianceQuote({ locale }: ComplianceQuoteProps = {}) {
+  const isSr = locale === "sr";
+  const SCORELINES = isSr ? SCORELINES_SR : SCORELINES_EN;
   return (
     <section
       aria-labelledby="cold-rooms-compliance"
@@ -76,7 +111,7 @@ export default function ComplianceQuote() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                &sect; Compliance &amp; Sustainability
+                {isSr ? <>§ Usaglašenost i održivost</> : <>&sect; Compliance &amp; Sustainability</>}
               </span>
             </div>
             <ScrollReveal>
@@ -89,16 +124,16 @@ export default function ComplianceQuote() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Specified for
+                {isSr ? "Specifikovano za" : "Specified for"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  the next regulation,
+                  {isSr ? "sledeću uredbu," : "the next regulation,"}
                 </span>
                 <br />
-                not the last.
+                {isSr ? "ne za poslednju." : "not the last."}
               </h2>
             </ScrollReveal>
 
@@ -110,9 +145,11 @@ export default function ComplianceQuote() {
                 maxWidth: "48ch",
               }}
             >
-              The EU F-Gas Regulation rewrote the rulebook on 11 March 2024.
+              {isSr ? <>EU F-Gas Uredba je 11. marta 2024. ponovo napisala pravilnik.
+              Nove rashladne komore koje se danas specifikuju radiće petnaest godina &mdash;
+              inženjeriramo za rashladna sredstva koja preživljavaju postepeno ukidanje.</> : <>The EU F-Gas Regulation rewrote the rulebook on 11 March 2024.
               New cold rooms specified today will run for fifteen years &mdash;
-              we engineer for refrigerants that survive the phase-down.
+              we engineer for refrigerants that survive the phase-down.</>}
             </p>
 
             {/* Scoreboard */}
@@ -204,7 +241,7 @@ export default function ComplianceQuote() {
                     fontWeight: 400,
                   }}
                 >
-                  Cold storage that
+                  {isSr ? "Hladno skladište koje" : "Cold storage that"}
                 </span>
                 <span
                   className="font-display italic block"
@@ -216,7 +253,7 @@ export default function ComplianceQuote() {
                     color: "var(--color-gold-text)",
                   }}
                 >
-                  walks in,
+                  {isSr ? "se ulazi," : "walks in,"}
                 </span>
                 <span
                   className="font-display italic text-navy block"
@@ -227,7 +264,7 @@ export default function ComplianceQuote() {
                     fontWeight: 400,
                   }}
                 >
-                  and walks out.
+                  {isSr ? "i izlazi." : "and walks out."}
                 </span>
               </ScrollReveal>
 
@@ -253,7 +290,7 @@ export default function ComplianceQuote() {
                       lineHeight: 1.2,
                     }}
                   >
-                    MB Equipment &middot; House Note
+                    {isSr ? <>MB Equipment &middot; Reč kuće</> : <>MB Equipment &middot; House Note</>}
                   </span>
                   <span
                     className="block uppercase text-navy/55 mt-1"
@@ -263,7 +300,7 @@ export default function ComplianceQuote() {
                       fontWeight: 500,
                     }}
                   >
-                    On the Tecnodom / JKS modular case
+                    {isSr ? "O Tecnodom / JKS montažnom slučaju" : "On the Tecnodom / JKS modular case"}
                   </span>
                 </div>
               </div>
@@ -277,13 +314,19 @@ export default function ComplianceQuote() {
                   maxWidth: "44ch",
                 }}
               >
-                Three refrigerants survive the long phase-down:{" "}
+                {isSr ? <>Tri rashladna sredstva preživljavaju dugo postepeno ukidanje:{" "}
+                <span style={{ color: "var(--color-gold-text)" }}>
+                  R290 (propan, GWP 3)
+                </span>
+                , R744 (CO&sub2;, GWP 1) i R717 (amonijak). Za nove
+                komercijalne rashladne komore, R290 monoblok-ovi su dominantna
+                specifikacija u EU.</> : <>Three refrigerants survive the long phase-down:{" "}
                 <span style={{ color: "var(--color-gold-text)" }}>
                   R290 (propane, GWP 3)
                 </span>
                 , R744 (CO&sub2;, GWP 1), and R717 (ammonia). For new
                 commercial cold rooms, R290 monoblocks are the dominant
-                specification across the EU.
+                specification across the EU.</>}
               </p>
             </div>
           </div>

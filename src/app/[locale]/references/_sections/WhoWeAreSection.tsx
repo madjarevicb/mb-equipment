@@ -3,9 +3,10 @@ import type { Dictionary } from "@/i18n/types";
 
 interface Props {
   dict: Dictionary["references"]["whoWeAre"];
+  globalPresenceValue?: string;
 }
 
-export default function WhoWeAreSection({ dict }: Props) {
+export default function WhoWeAreSection({ dict, globalPresenceValue }: Props) {
   return (
     <section className="py-16 lg:py-20 bg-white" aria-labelledby="who-we-are-heading">
       <div className="max-w-7xl mx-auto px-6">
@@ -37,7 +38,7 @@ export default function WhoWeAreSection({ dict }: Props) {
                     { label: dict.founded, value: "1888" },
                     { label: dict.headquarters, value: "Chicago, IL" },
                     { label: dict.employees, value: "8,400+" },
-                    { label: dict.globalPresence, value: "50% outside US" },
+                    { label: dict.globalPresence, value: globalPresenceValue ?? "50% outside US" },
                   ].map((item, i) => (
                     <div
                       key={item.label}

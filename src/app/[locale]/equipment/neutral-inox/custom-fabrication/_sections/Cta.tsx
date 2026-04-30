@@ -11,6 +11,7 @@ interface CtaProps {
 }
 
 export default function Cta({ locale, dict }: CtaProps) {
+  const isSr = locale === "sr";
   return (
     <>
       <section
@@ -71,7 +72,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  § The Next Step
+                  {isSr ? "§ Sledeći korak" : "§ The Next Step"}
                 </span>
               </div>
 
@@ -89,7 +90,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                   staggerLines
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Send a</span>
+                  <span style={{ display: "block" }}>{isSr ? "Pošaljite" : "Send a"}</span>
                   <span
                     style={{
                       display: "block",
@@ -99,7 +100,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                       paddingLeft: "0.4em",
                     }}
                   >
-                    floor plan.
+                    {isSr ? "plan prostora." : "floor plan."}
                   </span>
                 </ScrollReveal>
               </h2>
@@ -112,14 +113,19 @@ export default function Cta({ locale, dict }: CtaProps) {
                   maxWidth: "52ch",
                 }}
               >
-                We measure, draw, fabricate, and install.
+                {isSr ? <>Merimo, crtamo, izrađujemo i instaliramo.
+                <span
+                  className="font-display italic"
+                  style={{ color: "var(--color-gold-text)" }}
+                >
+                  {" "}Jedan tim, jedna vremenska linija.</span></> : <>We measure, draw, fabricate, and install.
                 <span
                   className="font-display italic"
                   style={{ color: "var(--color-gold-text)" }}
                 >
                   {" "}
                   One team, one timeline.
-                </span>
+                </span></>}
               </p>
 
               <div className="flex flex-wrap gap-4 mt-6 lg:mt-8">
@@ -156,7 +162,7 @@ export default function Cta({ locale, dict }: CtaProps) {
                       fontWeight: 500,
                     }}
                   >
-                    Colophon
+                    {isSr ? "Kolofon" : "Colophon"}
                   </span>
                   <p
                     className="font-display italic text-navy"
@@ -166,12 +172,12 @@ export default function Cta({ locale, dict }: CtaProps) {
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    Built in Belgrade.
+                    {isSr ? "Napravljeno u Beogradu." : "Built in Belgrade."}
                   </p>
                 </div>
 
                 <ColophonEntry
-                  label="Workshop"
+                  label={isSr ? "Radionica" : "Workshop"}
                   value={
                     <>
                       {COMPANY.address.street}
@@ -181,16 +187,16 @@ export default function Cta({ locale, dict }: CtaProps) {
                   }
                 />
                 <ColophonEntry
-                  label="Lead times"
-                  value="2–4 weeks typical, from approved drawings."
+                  label={isSr ? "Rok isporuke" : "Lead times"}
+                  value={isSr ? "Tipično 2–4 nedelje, od odobrenih crteža." : "2–4 weeks typical, from approved drawings."}
                 />
                 <ColophonEntry
-                  label="Coverage"
-                  value="Southeast Europe."
+                  label={isSr ? "Pokriće" : "Coverage"}
+                  value={isSr ? "Jugoistočna Evropa." : "Southeast Europe."}
                 />
                 <ColophonEntry
-                  label="Materials"
-                  value="AISI 304 / 316 — CE-marked stock."
+                  label={isSr ? "Materijali" : "Materials"}
+                  value={isSr ? "AISI 304 / 316 — CE-označena zaliha." : "AISI 304 / 316 — CE-marked stock."}
                 />
               </div>
             </aside>
@@ -201,13 +207,13 @@ export default function Cta({ locale, dict }: CtaProps) {
       {/* Closing running meta */}
       <RunningMeta
         variant="light"
-        folio="folio 06 / 06"
+        folio={isSr ? "tabak 06 / 06" : "folio 06 / 06"}
         items={[
-          "Vol. II",
-          "End of Ch. 01",
-          "Custom Fabrication",
-          "Belgrade workshop",
-          "Est. MB Equipment",
+          isSr ? "Tom II" : "Vol. II",
+          isSr ? "Kraj pogl. 01" : "End of Ch. 01",
+          isSr ? "Izrada po meri" : "Custom Fabrication",
+          isSr ? "Beogradska radionica" : "Belgrade workshop",
+          isSr ? "Osn. MB Equipment" : "Est. MB Equipment",
         ]}
       />
     </>

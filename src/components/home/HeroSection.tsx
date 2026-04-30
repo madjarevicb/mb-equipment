@@ -6,12 +6,14 @@ import type { Dictionary } from "@/i18n/types";
 export default function HeroSection({
   dict,
   locale,
+  ariaLabel,
 }: {
   dict: Dictionary["home"]["hero"];
   locale: Locale;
+  ariaLabel?: string;
 }) {
   return (
-    <section aria-label="Hero" className="relative min-h-screen flex items-center bg-navy pt-20 overflow-hidden">
+    <section aria-label={ariaLabel ?? "Hero"} className="relative min-h-screen flex items-center bg-navy pt-20 overflow-hidden">
       {/* Video background */}
       <video
         autoPlay

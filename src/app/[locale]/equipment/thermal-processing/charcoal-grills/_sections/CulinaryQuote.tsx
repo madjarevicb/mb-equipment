@@ -1,10 +1,16 @@
 import Image from "next/image";
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../_sections/ScrollReveal";
+
+interface CulinaryQuoteProps {
+  locale?: Locale;
+}
 
 /**
  * Chapter IV — Culinary positioning + Berasategui pull quote spread.
  */
-export default function CulinaryQuote() {
+export default function CulinaryQuote({ locale }: CulinaryQuoteProps = {}) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="josper-culinary"
@@ -46,7 +52,7 @@ export default function CulinaryQuote() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                &sect; The Plate
+                {isSr ? "§ Tanjir" : <>&sect; The Plate</>}
               </span>
             </div>
             <ScrollReveal>
@@ -59,16 +65,16 @@ export default function CulinaryQuote() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                What the
+                {isSr ? "Šta " : "What the"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  sealed chamber
+                  {isSr ? "zatvorena komora" : "sealed chamber"}
                 </span>
                 <br />
-                does best.
+                {isSr ? "najbolje radi." : "does best."}
               </h2>
             </ScrollReveal>
 
@@ -80,13 +86,24 @@ export default function CulinaryQuote() {
                 maxWidth: "44ch",
               }}
             >
-              Sealed chamber, 250&ndash;350&nbsp;&deg;C, charcoal at the floor.
+              {isSr ? <>Zatvorena komora, 250&ndash;350&nbsp;&deg;C, ugalj na dnu.
+              Rezultat je Maillard kora i aroma drvenog uglja koju gasne i
+              električne linije ne mogu da proizvedu.</> : <>Sealed chamber, 250&ndash;350&nbsp;&deg;C, charcoal at the floor.
               The result is a Maillard crust and charcoal aroma that gas and
-              electric lines cannot produce.
+              electric lines cannot produce.</>}
             </p>
 
             <ul className="mt-6 grid grid-cols-2 gap-x-5 gap-y-2">
-              {[
+              {(isSr ? [
+                "Bifteci",
+                "Cele ribe",
+                "Školjke",
+                "Plodovi mora",
+                "Povrće",
+                "Pečenja",
+                "Cela živina",
+                "Pica i hleb",
+              ] : [
                 "Steaks",
                 "Whole fish",
                 "Shellfish",
@@ -95,7 +112,7 @@ export default function CulinaryQuote() {
                 "Roasts",
                 "Whole poultry",
                 "Pizza & bread",
-              ].map((item) => (
+              ]).map((item) => (
                 <li
                   key={item}
                   className="flex items-baseline gap-2"
@@ -164,7 +181,7 @@ export default function CulinaryQuote() {
                     fontWeight: 400,
                   }}
                 >
-                  I owe part of Berasategui&rsquo;s
+                  {isSr ? "Deo Berasategui-jevih" : <>I owe part of Berasategui&rsquo;s</>}
                 </span>
                 <span
                   className="font-display italic block"
@@ -176,7 +193,7 @@ export default function CulinaryQuote() {
                     color: "var(--color-gold-text)",
                   }}
                 >
-                  Michelin stars to Josper.
+                  {isSr ? "Mišlen zvezdica dugujem Josper-u." : "Michelin stars to Josper."}
                 </span>
               </ScrollReveal>
 
@@ -212,8 +229,8 @@ export default function CulinaryQuote() {
                       fontWeight: 500,
                     }}
                   >
-                    Restaurant Mart&iacute;n Berasategui &middot; 3 Michelin stars
-                    &middot; Lasarte-Oria
+                    {isSr ? <>Restoran Mart&iacute;n Berasategui &middot; 3 Mišlen zvezdice &middot; Lasarte-Oria</> : <>Restaurant Mart&iacute;n Berasategui &middot; 3 Michelin stars
+                    &middot; Lasarte-Oria</>}
                   </span>
                 </div>
               </div>
@@ -240,7 +257,7 @@ export default function CulinaryQuote() {
                     textShadow: "0 1px 4px rgba(0,0,0,0.7)",
                   }}
                 >
-                  Photo: Josper
+                  {isSr ? "Foto: Josper" : "Photo: Josper"}
                 </figcaption>
               </figure>
 
@@ -253,13 +270,22 @@ export default function CulinaryQuote() {
                   maxWidth: "52ch",
                 }}
               >
-                Further collaboration: V&iacute;ctor Arguinzoniz of{" "}
+                {isSr ? (
+                  <>Dalja saradnja: V&iacute;ctor Arguinzoniz iz{" "}
+                  <span style={{ color: "var(--color-gold-text)" }}>
+                    Asador Etxebarri
+                  </span>{" "}
+                  (Atxondo, Vizcaya) razvijao je Josper Baskijski roštilj. Josper
+                  oprema je specifikovana u Mišlen kuhinjama širom Evrope.</>
+                ) : (
+                  <>Further collaboration: V&iacute;ctor Arguinzoniz of{" "}
                 <span style={{ color: "var(--color-gold-text)" }}>
                   Asador Etxebarri
                 </span>{" "}
                 (Atxondo, Vizcaya) co-developed the Josper Basque Grill. Josper
                 equipment is specified in Michelin-starred kitchens across
-                Europe.
+                Europe.</>
+                )}
               </p>
             </div>
           </div>

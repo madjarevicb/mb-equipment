@@ -116,8 +116,8 @@ export default async function DemoCentersPage({ params }: { params: Promise<{ lo
       />
 
       <HeroSection dict={dict.demoCenters.hero} authorizedPartnerOf={dict.common.authorizedPartnerOf} />
-      <IntroSection dict={dict.demoCenters.intro} />
-      <CentersSection data={dict.data.demoCenters} />
+      <IntroSection dict={dict.demoCenters.intro} srHeading={dict.common.introHeading} />
+      <CentersSection data={dict.data.demoCenters} srHeading={dict.common.centersHeading} />
       <CtaSection dict={dict.demoCenters.cta} commonDict={dict.common} locale={locale as Locale} />
     </>
   );

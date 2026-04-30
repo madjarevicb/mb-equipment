@@ -164,6 +164,9 @@ export default async function ContactPage({
                 dict={formDict}
                 initialMessage={initialMessage}
                 productLabel={productLabel}
+                failedToSendLabel={dict.common.formFailedToSend}
+                websiteHoneypotLabel={dict.common.websiteHoneypot}
+                locale={locale as Locale}
               />
             </div>
 
@@ -180,7 +183,7 @@ export default async function ContactPage({
                 <div>
                   <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-text-secondary mb-3">{directDict.officeLabel}</h3>
                   <p className="text-text-primary font-medium">{COMPANY.name}</p>
-                  <p className="text-text-secondary text-sm mt-1">{COMPANY.address.street}<br />{COMPANY.address.zip} {COMPANY.address.city}, Srbija</p>
+                  <p className="text-text-secondary text-sm mt-1">{COMPANY.address.street}<br />{COMPANY.address.zip} {COMPANY.address.city}, {dict.common.serbiaCountry}</p>
                 </div>
                 <div className="w-10 h-px bg-gray-200" />
                 <div>
@@ -201,7 +204,7 @@ export default async function ContactPage({
                   </p>
                 </div>
                 <div className="bg-gray-100 aspect-[4/3] flex items-center justify-center border border-gray-200">
-                  <span className="text-text-secondary text-sm">[ Google Maps ]</span>
+                  <span className="text-text-secondary text-sm">{dict.common.googleMapsLabel}</span>
                 </div>
               </div>
             </div>

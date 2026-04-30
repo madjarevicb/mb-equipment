@@ -1,3 +1,4 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../_sections/ScrollReveal";
 
 interface House {
@@ -11,7 +12,11 @@ interface House {
   parentLine: string;
 }
 
-const HOUSES: House[] = [
+interface TwoHousesProps {
+  locale?: Locale;
+}
+
+const HOUSES_EN: House[] = [
   {
     brand: "Houno",
     founded: "Founded 1977",
@@ -38,7 +43,7 @@ const HOUSES: House[] = [
       "British engineering breadth — and the narrow 513 mm CombiSlim that no other Middleby plant builds.",
     facts: [
       "Lincoln, UK — 12,000 m² ISO 9001 + ISO 14001 + UKAS-accredited factory",
-      "~450 SKUs across the British counter-top to free-standing range",
+      "~450 SKUs across the British countertop-to-freestanding range",
       "CombiSlim 1.06 + 1.10 — 513 mm wide, optional Hoodini ventless hood",
       "Lincat Invoq UK range carries the full Houno platform under British branding",
       "ENERGY STAR certified models · CE · IPX4",
@@ -48,7 +53,46 @@ const HOUSES: House[] = [
   },
 ];
 
-export default function TwoHouses() {
+const HOUSES_SR: House[] = [
+  {
+    brand: "Houno",
+    founded: "Osnovan 1977.",
+    origin: "Randers, Danska",
+    joined: "Middleby brend od 31. avgusta 2006.",
+    positioning:
+      "Premium skandinavski specijalista za parno-konvekcijske peći — precizno inženjerirane peći sa fokusom na održivost i zanatstvo.",
+    facts: [
+      "Osnovan 1977. od strane braće Svend i Hans Jørgen Houmøller — prvi prototip napravljen u njihovoj garaži",
+      "Sedište na Alsvej 1, 8940 Randers — proizvodni kapacitet ~3.200 m²",
+      "ISO 9001:2015 + ISO 14001:2015 — Kiwa-testirano prema DIN 18873-1",
+      "Kompletna Invoq porodica: Combi · Hybrid · Bake · miniCombi · PassThrough",
+      "Slogan: čineći servis jednostavnim, pametnim i efikasnim",
+    ],
+    url: "https://www.houno.com/",
+    parentLine: "Middleby Corporation · Danska",
+  },
+  {
+    brand: "Lincat",
+    founded: "Osnovan 1971.",
+    origin: "Linkoln, Velika Britanija",
+    joined: "Middleby brend od 31. maja 2011.",
+    positioning:
+      "Britanska inženjerska širina — i uska 513 mm CombiSlim koju ne pravi nijedna druga Middleby fabrika.",
+    facts: [
+      "Linkoln, V. Britanija — 12.000 m² ISO 9001 + ISO 14001 + UKAS akreditovana fabrika",
+      "~450 SKU-ova u britanskoj ponudi od stonih do samostojećih jedinica",
+      "CombiSlim 1.06 + 1.10 — širina 513 mm, opciona Hoodini napa bez ventilacije",
+      "Lincat Invoq UK serija nosi kompletnu Houno platformu pod britanskim brendom",
+      "ENERGY STAR sertifikovani modeli · CE · IPX4",
+    ],
+    url: "https://www.lincat.co.uk/",
+    parentLine: "Middleby Corporation · V. Britanija",
+  },
+];
+
+export default function TwoHouses({ locale }: TwoHousesProps = {}) {
+  const isSr = locale === "sr";
+  const HOUSES = isSr ? HOUSES_SR : HOUSES_EN;
   return (
     <section
       aria-labelledby="combi-houses"
@@ -87,7 +131,7 @@ export default function TwoHouses() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                The Two Houses
+                {isSr ? "Dve kuće" : "The Two Houses"}
               </span>
             </div>
             <ScrollReveal>
@@ -100,13 +144,13 @@ export default function TwoHouses() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Denmark &amp; England,
+                {isSr ? <>Danska i Engleska,</> : <>Denmark &amp; England,</>}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  one Invoq platform.
+                  {isSr ? "jedna Invoq platforma." : "one Invoq platform."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -121,9 +165,11 @@ export default function TwoHouses() {
                 maxWidth: "32ch",
               }}
             >
-              Both brands share the Invoq platform &mdash; same controls, same
+              {isSr ? <>Oba brenda dele Invoq platformu &mdash; iste kontrole, isti
+              cloud, ista obuka. Dva proizvodna pogona, jedno iskustvo za
+              šefove u višelokacijskim flotama.</> : <>Both brands share the Invoq platform &mdash; same controls, same
               cloud, same training. Two manufacturing footprints, one chef
-              experience across multi-site fleets.
+              experience across multi-site fleets.</>}
             </p>
           </div>
         </div>
@@ -308,7 +354,7 @@ export default function TwoHouses() {
                         fontWeight: 500,
                       }}
                     >
-                      Manufacturer
+                      {isSr ? "Proizvođač" : "Manufacturer"}
                     </span>
                     <span
                       aria-hidden="true"
@@ -348,10 +394,13 @@ export default function TwoHouses() {
                 maxWidth: "62ch",
               }}
             >
-              Both brands share the Invoq platform &mdash; same SmartTouch
+              {isSr ? <>Oba brenda dele Invoq platformu &mdash; iste SmartTouch
+              kontrole, isti Open Kitchen cloud, ista obuka šefova u
+              višelokacijskim operacijama. Šestogodišnja R&amp;D saradnja sa pet
+              Middleby kuća.</> : <>Both brands share the Invoq platform &mdash; same SmartTouch
               controls, same Open Kitchen cloud, same chef training across
               multi-site operations. A 6-year R&amp;D collaboration with five
-              Middleby houses.
+              Middleby houses.</>}
             </p>
           </div>
         </div>

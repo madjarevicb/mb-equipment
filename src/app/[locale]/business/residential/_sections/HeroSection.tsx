@@ -10,7 +10,7 @@ export default function HeroSection({ dict, common }: Props) {
   return (
     <section
       className="relative h-[85vh] min-h-[600px] overflow-hidden"
-      aria-label="Luxury residential kitchen showcase"
+      aria-label={common.luxuryShowcaseAria}
     >
       <h1 className="sr-only">{dict.srOnly}</h1>
 

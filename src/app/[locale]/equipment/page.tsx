@@ -10,6 +10,7 @@ import {
   getIndexedBrands,
   SUPER_CATEGORIES,
 } from "./_sections";
+import { getSuperCategoryLabels } from "./_sections/brandTaxonomy";
 
 export const dynamic = "force-static";
 
@@ -169,7 +170,7 @@ export default async function EquipmentHubPage({
           item: {
             "@type": "CollectionPage",
             url: `${COMPANY.url}${c.href(locale)}`,
-            name: c.label,
+            name: getSuperCategoryLabels(c.id, isSr).label,
           },
         })),
       },
@@ -198,9 +199,14 @@ export default async function EquipmentHubPage({
       <div className="bg-white">
         <ChapterMark
           numeral="II"
-          label="Index of Disciplines"
-          caption="Four categories. Each one specified around how a kitchen actually works."
+          label={isSr ? "Indeks disciplina" : "Index of Disciplines"}
+          caption={
+            isSr
+              ? "Četiri kategorije. Svaka specificirana prema načinu na koji kuhinja zaista funkcioniše."
+              : "Four categories. Each one specified around how a kitchen actually works."
+          }
           variant="light"
+          locale={locale as Locale}
         />
       </div>
       <CategoriesChapter locale={locale as Locale} />
@@ -209,9 +215,14 @@ export default async function EquipmentHubPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="III"
-          label="The Brand Index"
-          caption="The full house — filterable by discipline, searchable by name."
+          label={isSr ? "Indeks brendova" : "The Brand Index"}
+          caption={
+            isSr
+              ? "Kompletan portfolio \u2014 filtrirajte po disciplini, pretražujte po nazivu."
+              : "The full house \u2014 filterable by discipline, searchable by name."
+          }
           variant="dark"
+          locale={locale as Locale}
         />
       </div>
       <BrandIndexChapter locale={locale} brands={indexedBrands} />

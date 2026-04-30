@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../_sections/ScrollReveal";
 
 export interface InvoqRow {
@@ -7,6 +8,10 @@ export interface InvoqRow {
   steam: string;
   sizes: string;
   positioning: string;
+}
+
+interface InvoqLedgerProps {
+  locale?: Locale;
 }
 
 export const INVOQ_SERIES: InvoqRow[] = [
@@ -36,7 +41,7 @@ export const INVOQ_SERIES: InvoqRow[] = [
     brand: "Houno",
     steam: "51.3 cm wide",
     sizes: "5 · 6 · 10 trays — 1/1 GN",
-    positioning: "QSR, cafés, ghost kitchens — counter-top footprint.",
+    positioning: "QSR, cafés, ghost kitchens — countertop footprint.",
   },
   {
     series: "Invoq PassThrough",
@@ -54,7 +59,52 @@ export const INVOQ_SERIES: InvoqRow[] = [
   },
 ];
 
-const LEDGER_IMAGES = [
+const INVOQ_SERIES_SR: InvoqRow[] = [
+  {
+    series: "Invoq Combi",
+    brand: "Houno",
+    steam: "Injekciona para",
+    sizes: "6 · 10 · 20 nivoa — 1/1 + 2/1 GN",
+    positioning: "Vodeći model — sve metode kuvanja, sve veličine kuhinja.",
+  },
+  {
+    series: "Invoq Hybrid",
+    brand: "Houno",
+    steam: "Bojler + injekcija",
+    sizes: "6 · 10 · 20 nivoa — 1/1 + 2/1 GN",
+    positioning: "Vrhunska gastronomija — zasićena para na niskim temperaturama.",
+  },
+  {
+    series: "Invoq Bake",
+    brand: "Houno",
+    steam: "Format za poslastice",
+    sizes: "6 · 9 nivoa — EN 400 × 600",
+    positioning: "Pekara i poslastičarstvo — viennoiserie, kiselo testo, peciva.",
+  },
+  {
+    series: "Invoq miniCombi",
+    brand: "Houno",
+    steam: "Širina 51,3 cm",
+    sizes: "5 · 6 · 10 nivoa — 1/1 GN",
+    positioning: "QSR, kafići, ghost kuhinje — stoni gabarit.",
+  },
+  {
+    series: "Invoq PassThrough",
+    brand: "Houno",
+    steam: "Dvostruka staklena vrata",
+    sizes: "6-1/1 · 10-1/1",
+    positioning: "Cook-chill tokovi rada — čisto razdvajanje kuhinja.",
+  },
+  {
+    series: "Lincat CombiSlim",
+    brand: "Lincat",
+    steam: "513 mm uska · slagana",
+    sizes: "6 · 10 nivoa — 1/1 GN",
+    positioning: "Uske kuhinje — opciona Hoodini napa bez ventilacije.",
+  },
+];
+
+const LEDGER_IMAGES_EN = [
   {
     src: "/images/houno-lincat/invoq-10-1gn-main.png",
     caption: "Invoq Combi 10-1/1 GN",
@@ -72,7 +122,28 @@ const LEDGER_IMAGES = [
   },
 ];
 
-export default function InvoqLedger() {
+const LEDGER_IMAGES_SR = [
+  {
+    src: "/images/houno-lincat/invoq-10-1gn-main.png",
+    caption: "Invoq Combi 10-1/1 GN",
+    note: "19,3 kW · 45 kg opterećenje hrane",
+  },
+  {
+    src: "/images/houno-lincat/invoq-10-1gn-angle2.png",
+    caption: "Invoq — pogled na komoru",
+    note: "Ventilisana dvostruka staklena vrata",
+  },
+  {
+    src: "/images/houno-lincat/invoq-10-1gn-angle3.png",
+    caption: "Invoq — strana sa kontrolama",
+    note: "SmartTouch® · Open Kitchen cloud",
+  },
+];
+
+export default function InvoqLedger({ locale }: InvoqLedgerProps = {}) {
+  const isSr = locale === "sr";
+  const SERIES = isSr ? INVOQ_SERIES_SR : INVOQ_SERIES;
+  const LEDGER_IMAGES = isSr ? LEDGER_IMAGES_SR : LEDGER_IMAGES_EN;
   return (
     <section
       aria-labelledby="combi-ledger"
@@ -99,7 +170,7 @@ export default function InvoqLedger() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                The Invoq Family Ledger
+                {isSr ? "Invoq pregled porodice" : "The Invoq Family Ledger"}
               </span>
             </div>
             <ScrollReveal>
@@ -112,13 +183,13 @@ export default function InvoqLedger() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Six families,
+                {isSr ? "Šest porodica," : "Six families,"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold)" }}
                 >
-                  one platform.
+                  {isSr ? "jedna platforma." : "one platform."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -132,9 +203,7 @@ export default function InvoqLedger() {
                 maxWidth: "32ch",
               }}
             >
-              Five Houno series and the Lincat CombiSlim — all driven by the
-              same Invoq engine, controls and cloud. From 5-tray countertop to
-              20 × 2/1 GN roll-in.
+              {isSr ? "Pet Houno serija i Lincat CombiSlim — sve pokreće isti Invoq motor, kontrole i cloud. Od stone od 5 nivoa do 20 × 2/1 GN ulazne." : "Five Houno series and the Lincat CombiSlim — all driven by the same Invoq engine, controls and cloud. From 5-tray countertop to 20 × 2/1 GN roll-in."}
             </p>
           </div>
         </div>
@@ -156,16 +225,16 @@ export default function InvoqLedger() {
             borderBottom: "1px solid rgba(201,168,76,0.2)",
           }}
         >
-          <ColHead cols="col-span-1" label="No." />
-          <ColHead cols="col-span-3" label="Series" />
-          <ColHead cols="col-span-2" label="Brand" />
-          <ColHead cols="col-span-3" label="Format" />
-          <ColHead cols="col-span-3" label="Sizes" />
+          <ColHead cols="col-span-1" label={isSr ? "Br." : "No."} />
+          <ColHead cols="col-span-3" label={isSr ? "Serija" : "Series"} />
+          <ColHead cols="col-span-2" label={isSr ? "Brend" : "Brand"} />
+          <ColHead cols="col-span-3" label={isSr ? "Format" : "Format"} />
+          <ColHead cols="col-span-3" label={isSr ? "Veličine" : "Sizes"} />
         </div>
 
         {/* Rows */}
         <ol className="relative">
-          {INVOQ_SERIES.map((row, i) => (
+          {SERIES.map((row, i) => (
             <li
               key={row.series}
               style={{
@@ -189,7 +258,7 @@ export default function InvoqLedger() {
                       letterSpacing: "0.04em",
                     }}
                   >
-                    No. {String(i + 1).padStart(2, "0")}
+                    {isSr ? "Br." : "No."} {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
 
@@ -216,13 +285,13 @@ export default function InvoqLedger() {
                 </div>
 
                 <div className="col-span-12 lg:col-span-2">
-                  <Stat mobileLabel="Brand" value={row.brand} />
+                  <Stat mobileLabel={isSr ? "Brend" : "Brand"} value={row.brand} />
                 </div>
                 <div className="col-span-12 lg:col-span-3">
-                  <Stat mobileLabel="Format" value={row.steam} />
+                  <Stat mobileLabel={isSr ? "Format" : "Format"} value={row.steam} />
                 </div>
                 <div className="col-span-12 lg:col-span-3">
-                  <Stat mobileLabel="Sizes" value={row.sizes} />
+                  <Stat mobileLabel={isSr ? "Veličine" : "Sizes"} value={row.sizes} />
                 </div>
 
                 {/* Desktop positioning row */}
@@ -310,9 +379,9 @@ export default function InvoqLedger() {
               className="text-white/60 font-light"
               style={{ fontSize: "13px" }}
             >
-              Invoq is a 6-year R&amp;D collaboration across five Middleby
+              {isSr ? <>Invoq je šestogodišnja R&amp;D saradnja između pet Middleby kuća &mdash; Blodgett, BKI, Dieta, Leventi i Lincat. Specifikacije se potvrđuju po jedinici prilikom ponude.</> : <>Invoq is a 6-year R&amp;D collaboration across five Middleby
               houses &mdash; Blodgett, BKI, Dieta, Leventi and Lincat.
-              Specifications confirmed per unit at quotation.
+              Specifications confirmed per unit at quotation.</>}
             </span>
           </div>
           <div className="col-span-12 lg:col-span-5 lg:text-right">
@@ -320,7 +389,7 @@ export default function InvoqLedger() {
               className="uppercase text-white/50"
               style={{ fontSize: "10px", letterSpacing: "0.32em" }}
             >
-              Folio 03 / 05
+              {isSr ? "Tabak 03 / 05" : "Folio 03 / 05"}
             </span>
           </div>
         </div>

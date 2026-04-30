@@ -6,12 +6,14 @@ import type { Dictionary } from "@/i18n/types";
 export default function AboutSection({
   dict,
   locale,
+  ariaLabel,
 }: {
   dict: Dictionary["home"]["about"];
   locale: Locale;
+  ariaLabel?: string;
 }) {
   return (
-    <section aria-label="About MB Equipment Solutions" className="py-24 lg:py-32 bg-white">
+    <section aria-label={ariaLabel ?? "About MB Equipment Solutions"} className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           {/* Left — heading block */}

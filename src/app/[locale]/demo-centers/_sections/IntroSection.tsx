@@ -3,9 +3,10 @@ import type { Dictionary } from "@/i18n/types";
 
 interface Props {
   dict: Dictionary["demoCenters"]["intro"];
+  srHeading?: string;
 }
 
-export default function IntroSection({ dict }: Props) {
+export default function IntroSection({ dict, srHeading }: Props) {
   /* The dict.body contains two paragraphs separated by \n\n */
   const paragraphs = dict.body.split("\n\n");
 
@@ -19,7 +20,7 @@ export default function IntroSection({ dict }: Props) {
                 id="intro-heading"
                 className="sr-only"
               >
-                Intro
+                {srHeading ?? "Introduction"}
               </h2>
               <div className="w-10 h-px bg-gold/30 mt-8" />
             </div>

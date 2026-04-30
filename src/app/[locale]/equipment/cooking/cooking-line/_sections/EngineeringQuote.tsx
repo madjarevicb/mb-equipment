@@ -1,6 +1,12 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../thermal-processing/_sections/ScrollReveal";
 
-export default function EngineeringQuote() {
+interface EngineeringQuoteProps {
+  locale?: Locale;
+}
+
+export default function EngineeringQuote({ locale }: EngineeringQuoteProps = {}) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-hidden="true"
@@ -52,7 +58,7 @@ export default function EngineeringQuote() {
                 fontWeight: 400,
               }}
             >
-              Italian design and English engineering —
+              {isSr ? "Italijanski dizajn i englesko inženjerstvo —" : "Italian design and English engineering —"}
             </span>
             <span
               className="font-display italic block"
@@ -64,7 +70,7 @@ export default function EngineeringQuote() {
                 color: "var(--color-gold-text)",
               }}
             >
-              specified to your menu, not the other way around.
+              {isSr ? "specifikovano prema Vašem meniju, a ne obrnuto." : "specified to your menu, not the other way around."}
             </span>
           </ScrollReveal>
         </div>
@@ -85,7 +91,7 @@ export default function EngineeringQuote() {
                 fontWeight: 500,
               }}
             >
-              MB Equipment — Engineering Note
+              {isSr ? "MB Equipment — Inženjerska beleška" : "MB Equipment — Engineering Note"}
             </span>
             <span
               aria-hidden="true"
@@ -96,7 +102,7 @@ export default function EngineeringQuote() {
               className="uppercase text-navy/55"
               style={{ fontSize: "10px", letterSpacing: "0.32em" }}
             >
-              Folio 04 / 05
+              {isSr ? "Tabak 04 / 05" : "Folio 04 / 05"}
             </span>
           </div>
         </div>

@@ -11,7 +11,7 @@ interface CombiCtaProps {
   dict: Dictionary;
 }
 
-const VALUE_PROPS = [
+const VALUE_PROPS_EN = [
   {
     label: "Specification",
     value: "Menu × volume × voltage",
@@ -34,7 +34,32 @@ const VALUE_PROPS = [
   },
 ];
 
+const VALUE_PROPS_SR = [
+  {
+    label: "Specifikacija",
+    value: "Meni × obim × napon",
+    note: "Prava Invoq ili CombiSlim konfiguracija za vašu kuhinju.",
+  },
+  {
+    label: "Servis",
+    value: "Middleby-obučeni inženjeri",
+    note: "Lokalni tehničari, odgovor u zemlji.",
+  },
+  {
+    label: "Delovi",
+    value: "Originalni OEM — Houno / Lincat",
+    note: "Ovlašćeni Middleby lanac snabdevanja, bez zamena.",
+  },
+  {
+    label: "Puštanje u rad",
+    value: "Instalirano i podešeno po specifikaciji",
+    note: "Tvrdoća vode, napon, napa bez ventilacije ili Hoodini.",
+  },
+];
+
 export default function CombiCta({ locale, dict }: CombiCtaProps) {
+  const isSr = locale === "sr";
+  const VALUE_PROPS = isSr ? VALUE_PROPS_SR : VALUE_PROPS_EN;
   return (
     <>
       <section
@@ -95,7 +120,7 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  &sect; The Next Step
+                  {isSr ? "§ Sledeći korak" : <>&sect; The Next Step</>}
                 </span>
               </div>
 
@@ -113,7 +138,7 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                   staggerLines
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Specify</span>
+                  <span style={{ display: "block" }}>{isSr ? "Specifikujte" : "Specify"}</span>
                   <span
                     style={{
                       display: "block",
@@ -123,7 +148,7 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                       paddingLeft: "0.4em",
                     }}
                   >
-                    your combi.
+                    {isSr ? "Vašu peć." : "your combi."}
                   </span>
                 </ScrollReveal>
               </h2>
@@ -136,11 +161,15 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                   maxWidth: "54ch",
                 }}
               >
-                Send your menu volume, kitchen voltage, and water hardness
+                {isSr ? <>Pošaljite obim menija, napon kuhinje i tvrdoću vode
+                &mdash; specifikovaćemo pravu Invoq ili CombiSlim
+                konfiguraciju. Kao ovlašćeni partner Middleby Corporation-a,
+                MB Equipment isporučuje, instalira i servisira Houno i Lincat
+                širom Jugoistočne Evrope.</> : <>Send your menu volume, kitchen voltage, and water hardness
                 &mdash; we&rsquo;ll spec the right Invoq or CombiSlim
                 configuration. As an authorized Middleby Corporation partner,
                 MB Equipment supplies, installs, and services Houno and Lincat
-                across Southeast Europe.
+                across Southeast Europe.</>}
               </p>
 
               {/* Value props ledger */}
@@ -227,7 +256,7 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                       fontWeight: 500,
                     }}
                   >
-                    Colophon
+                    {isSr ? "Kolofon" : "Colophon"}
                   </span>
                   <p
                     className="font-display italic text-white"
@@ -237,14 +266,14 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    Randers &amp; Lincoln,
+                    {isSr ? <>Randers i Linkoln,</> : <>Randers &amp; Lincoln,</>}
                     <br />
-                    set in Belgrade.
+                    {isSr ? "ugnežden u Beogradu." : "set in Belgrade."}
                   </p>
                 </div>
 
                 <ColophonEntry
-                  label="Showroom"
+                  label={isSr ? "Salon" : "Showroom"}
                   value={
                     <>
                       {COMPANY.address.street}
@@ -254,11 +283,11 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                   }
                 />
                 <ColophonEntry
-                  label="Coverage"
-                  value="Southeast Europe — Balkans · Central Europe"
+                  label={isSr ? "Pokriće" : "Coverage"}
+                  value={isSr ? "Jugoistočna Evropa — Balkan · Centralna Evropa" : "Southeast Europe — Balkans · Central Europe"}
                 />
                 <ColophonEntry
-                  label="Brands"
+                  label={isSr ? "Brendovi" : "Brands"}
                   value={
                     <>
                       Houno + Lincat &mdash;{" "}
@@ -266,13 +295,13 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                         className="font-display italic"
                         style={{ color: "var(--color-gold)" }}
                       >
-                        by Middleby.
+                        {isSr ? "od Middleby-a." : "by Middleby."}
                       </span>
                     </>
                   }
                 />
                 <ColophonEntry
-                  label="Cloud"
+                  label={isSr ? "Cloud" : "Cloud"}
                   value={
                     <span
                       className="font-display italic"
@@ -283,8 +312,8 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                   }
                 />
                 <ColophonEntry
-                  label="Response"
-                  value="Within one business day."
+                  label={isSr ? "Odgovor" : "Response"}
+                  value={isSr ? "U roku od jednog radnog dana." : "Within one business day."}
                 />
               </div>
             </aside>
@@ -310,7 +339,7 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                 className="text-white/60 font-light italic font-display"
                 style={{ fontSize: "13px" }}
               >
-                &ldquo;Making service simple, smart and efficient.&rdquo;
+                {isSr ? <>&ldquo;Čineći servis jednostavnim, pametnim i efikasnim.&rdquo;</> : <>&ldquo;Making service simple, smart and efficient.&rdquo;</>}
               </span>
             </div>
             <div className="col-span-12 lg:col-span-6 lg:text-right">
@@ -318,7 +347,7 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
                 className="uppercase text-white/50"
                 style={{ fontSize: "10px", letterSpacing: "0.32em" }}
               >
-                Folio 05 / 05 &middot; End of Ch. 03
+                {isSr ? <>Tabak 05 / 05 &middot; Kraj pogl. 03</> : <>Folio 05 / 05 &middot; End of Ch. 03</>}
               </span>
             </div>
           </div>
@@ -327,13 +356,13 @@ export default function CombiCta({ locale, dict }: CombiCtaProps) {
 
       <RunningMeta
         variant="dark"
-        folio="End of Ch. 03"
+        folio={isSr ? "Kraj pogl. 03" : "End of Ch. 03"}
         items={[
-          "Vol. I",
-          "Combi Ovens",
+          isSr ? "Tom I" : "Vol. I",
+          isSr ? "Parno-konvekcijske peći" : "Combi Ovens",
           "Houno + Lincat",
-          "Invoq Platform",
-          "Authorized Middleby Partner",
+          isSr ? "Invoq platforma" : "Invoq Platform",
+          isSr ? "Ovlašćeni Middleby partner" : "Authorized Middleby Partner",
         ]}
       />
     </>

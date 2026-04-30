@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../../thermal-processing/_sections/ScrollReveal";
 
 interface ModelRow {
@@ -12,7 +13,11 @@ interface ModelRow {
   bestFit: string;
 }
 
-const MODELS: ModelRow[] = [
+interface ModelLedgerProps {
+  locale?: Locale;
+}
+
+const MODELS_EN: ModelRow[] = [
   {
     serial: "No. 01",
     code: "F79/010",
@@ -51,7 +56,48 @@ const MODELS: ModelRow[] = [
   },
 ];
 
-export default function ModelLedger() {
+const MODELS_SR: ModelRow[] = [
+  {
+    serial: "Br. 01",
+    code: "F79/010",
+    name: "WasteStation",
+    descriptor:
+      "Model punog kapaciteta — za lokacije sa vršnim obimom servisa i trofaznim napajanjem.",
+    image: "/images/imc/front-left.jpg",
+    imageAlt:
+      "IMC WasteStation F79/010 — proizvod, trostruki prednji levi pogled",
+    stats: [
+      { label: "Kapacitet", value: "700 kg / h" },
+      { label: "Snaga", value: "4,1 kW · 380–415 V trofazno" },
+      { label: "Gabariti", value: "900 × 700 × 1000 mm" },
+      { label: "Masa", value: "192 kg" },
+    ],
+    bestFit:
+      "Veliki hoteli, stadioni, bolnice — približno 1.450 gostiju po servisu.",
+  },
+  {
+    serial: "Br. 02",
+    code: "F79/703",
+    name: "WasteStation Compact",
+    descriptor:
+      "Varijanta širine 600 mm — uklapa se u redove perionica koji ne mogu da prime punu liniju.",
+    image: "/images/imc/front-right.jpg",
+    imageAlt:
+      "IMC WasteStation Compact F79/703 — proizvod, trostruki prednji desni pogled",
+    stats: [
+      { label: "Kapacitet", value: "400 kg / h" },
+      { label: "Snaga", value: "2,95 kW · 400 V trofazno" },
+      { label: "Gabariti", value: "600 × 700 × 1044 mm" },
+      { label: "Masa", value: "165 kg" },
+    ],
+    bestFit:
+      "Restorani srednje veličine, škole, hoteli srednje klase — približno 850 gostiju po servisu.",
+  },
+];
+
+export default function ModelLedger({ locale }: ModelLedgerProps = {}) {
+  const isSr = locale === "sr";
+  const MODELS = isSr ? MODELS_SR : MODELS_EN;
   return (
     <section
       aria-labelledby="imc-models"
@@ -93,7 +139,7 @@ export default function ModelLedger() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                Two Sizes — One Engineering
+                {isSr ? "Dve veličine — jedno inženjerstvo" : "Two Sizes — One Engineering"}
               </span>
             </div>
             <ScrollReveal>
@@ -106,13 +152,13 @@ export default function ModelLedger() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                The model ledger,
+                {isSr ? "Pregled modela," : "The model ledger,"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold)" }}
                 >
-                  sized to the room.
+                  {isSr ? "dimenzionisan prema prostoriji." : "sized to the room."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -126,8 +172,7 @@ export default function ModelLedger() {
                 maxWidth: "32ch",
               }}
             >
-              Two main families. Both stainless, both UKCA-marked, both built
-              in Lincoln. Specification follows volume and power supply.
+              {isSr ? "Dve glavne familije. Obe od inoxa, obe sa UKCA oznakom, obe izrađene u Linkolnu. Specifikacija prati obim i napajanje." : "Two main families. Both stainless, both UKCA-marked, both built in Lincoln. Specification follows volume and power supply."}
             </p>
           </div>
         </div>
@@ -274,7 +319,7 @@ export default function ModelLedger() {
                       paddingTop: "0.2em",
                     }}
                   >
-                    Best fit
+                    {isSr ? "Najbolje za" : "Best fit"}
                   </span>
                   <p
                     className="text-white/75 font-light"
@@ -317,11 +362,15 @@ export default function ModelLedger() {
                 fontFamily: "var(--font-display), serif",
               }}
             >
-              Single-phase Compact (
+              {isSr ? <>Jednofazni Compact (
+              <span style={{ fontStyle: "normal" }}>F79/701</span>) i
+              full-size bez prekida vazduha (
+              <span style={{ fontStyle: "normal" }}>F79/100</span>) varijante
+              dostupne na zahtev — specifikujte napajanje i instalaciju prilikom upita.</> : <>Single-phase Compact (
               <span style={{ fontStyle: "normal" }}>F79/701</span>) and
               no-airbreak full-size (
               <span style={{ fontStyle: "normal" }}>F79/100</span>) variants
-              available on request — specify supply and plumbing at enquiry.
+              available on request — specify supply and plumbing at enquiry.</>}
             </span>
           </div>
         </div>

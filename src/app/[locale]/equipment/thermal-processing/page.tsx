@@ -13,11 +13,11 @@ import {
 export const dynamic = "force-static";
 
 const PAGE_TITLE_EN = "Commercial Cooking Equipment | Josper, Combi Ovens | MB";
-const PAGE_TITLE_SR = "Profesionalna oprema za kuhanje — Josper, kombi peći";
+const PAGE_TITLE_SR = "Profesionalna oprema za kuvanje — Josper, parno-konvekcijske peći";
 const PAGE_DESC_EN =
   "Commercial cooking equipment in Serbia: Josper charcoal grills, combi ovens, full cooking lines. Authorized Middleby partner serving Southeast Europe.";
 const PAGE_DESC_SR =
-  "Profesionalna oprema za kuhanje: Josper roštilji, parno-konvekcijske peći, linije za kuvanje. Ovlašćeni Middleby partner za Jugoistočnu Evropu.";
+  "Profesionalna oprema za kuvanje: Josper roštilji, parno-konvekcijske peći, linije za kuvanje. Ovlašćeni Middleby partner za Jugoistočnu Evropu.";
 
 export async function generateMetadata({
   params,
@@ -45,7 +45,7 @@ export async function generateMetadata({
       "Silko cooking line",
       "authorized Josper dealer Serbia",
       "Middleby authorized partner Balkans",
-      "profesionalna oprema za kuhanje",
+      "profesionalna oprema za kuvanje",
       "parno-konvekcijske peći",
       "Josper roštilj na drveni ugalj",
     ],
@@ -181,7 +181,7 @@ export default async function CookingHubPage({
       {
         "@type": "ItemList",
         "@id": `${pageUrl}#subcategories`,
-        name: isSr ? "Kategorije opreme za kuhanje" : "Cooking Equipment Categories",
+        name: isSr ? "Kategorije opreme za kuvanje" : "Cooking Equipment Categories",
         numberOfItems: subcategories.length,
         itemListElement: subcategories.map((sc, i) => ({
           "@type": "ListItem",
@@ -197,7 +197,7 @@ export default async function CookingHubPage({
       {
         "@type": "ItemList",
         "@id": `${pageUrl}#brands`,
-        name: isSr ? "Brendovi opreme za kuhanje" : "Cooking Equipment Brands",
+        name: isSr ? "Brendovi opreme za kuvanje" : "Cooking Equipment Brands",
         itemListElement: brands.map((brand, i) => ({
           "@type": "ListItem",
           position: i + 1,

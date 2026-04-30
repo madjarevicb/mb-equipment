@@ -1,3 +1,4 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../thermal-processing/_sections/ScrollReveal";
 
 interface FamilyRow {
@@ -6,7 +7,11 @@ interface FamilyRow {
   note: string;
 }
 
-const FAMILIES: FamilyRow[] = [
+interface BrandSpotlightProps {
+  locale?: Locale;
+}
+
+const FAMILIES_EN: FamilyRow[] = [
   {
     name: "MAXI",
     spec: "Panels 400/600/800/1000/1200 mm wide × 60/80/100 mm thick",
@@ -29,7 +34,32 @@ const FAMILIES: FamilyRow[] = [
   },
 ];
 
-export default function BrandSpotlight() {
+const FAMILIES_SR: FamilyRow[] = [
+  {
+    name: "MAXI",
+    spec: "Paneli 400/600/800/1000/1200 mm širine × 60/80/100 mm debljine",
+    note: "20 cm modularna mreža — radni konj za HoReCa.",
+  },
+  {
+    name: "SUPEREKO",
+    spec: "Paneli 400–1200 mm × 70/100/130 mm — sa podom ili bez, opcija sa rampom",
+    note: "Tariji nivo izolacije — zamrzivači i topla klima.",
+  },
+  {
+    name: "SUPER10",
+    spec: "Kit za rashladnu komoru ulaznog nivoa",
+    note: "Manji rashladnici gde diktira budžet.",
+  },
+  {
+    name: "Tecnodom Minicella",
+    spec: "Predmontirana 1×1 m, 60 mm izolacija, +0/+8 °C, 1315 L, 230 V",
+    note: "Plug-in mini komora — ne zahteva instalacioni tim.",
+  },
+];
+
+export default function BrandSpotlight({ locale }: BrandSpotlightProps = {}) {
+  const isSr = locale === "sr";
+  const FAMILIES = isSr ? FAMILIES_SR : FAMILIES_EN;
   return (
     <section
       aria-labelledby="brand-spotlight"
@@ -71,7 +101,7 @@ export default function BrandSpotlight() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                &sect; Tecnodom &mdash; JKS Refrigeration
+                {isSr ? <>§ Tecnodom &mdash; JKS Refrigeration</> : <>&sect; Tecnodom &mdash; JKS Refrigeration</>}
               </span>
             </div>
             <ScrollReveal>
@@ -84,13 +114,13 @@ export default function BrandSpotlight() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                100% Italian,
+                {isSr ? "100% italijansko," : "100% Italian,"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  modular in 20 cm.
+                  {isSr ? "modularno u 20 cm." : "modular in 20 cm."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -104,7 +134,15 @@ export default function BrandSpotlight() {
                 maxWidth: "32ch",
               }}
             >
-              Tecnodom S.p.A. &mdash; founded{" "}
+              {isSr ? <>Tecnodom S.p.A. &mdash; osnovan{" "}
+              <span
+                className="font-display italic"
+                style={{ color: "var(--color-gold-text)" }}
+              >
+                2000., Vigodarzere (Padova).
+              </span>{" "}
+              JKS Refrigeration, podbrend za montažne komore, osnovan je
+              23. maja 2006. u Cadoneghe.</> : <>Tecnodom S.p.A. &mdash; founded{" "}
               <span
                 className="font-display italic"
                 style={{ color: "var(--color-gold-text)" }}
@@ -112,7 +150,7 @@ export default function BrandSpotlight() {
                 2000, Vigodarzere (Padova).
               </span>{" "}
               JKS Refrigeration, the modular cold-room sub-brand, was founded
-              23 May 2006 in Cadoneghe.
+              23 May 2006 in Cadoneghe.</>}
             </p>
           </div>
         </div>
@@ -140,7 +178,7 @@ export default function BrandSpotlight() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              House profile &mdash; No. 02
+              {isSr ? <>Profil kuće &mdash; br. 02</> : <>House profile &mdash; No. 02</>}
             </span>
             <p
               className="text-navy/85 font-light"
@@ -167,11 +205,19 @@ export default function BrandSpotlight() {
               >
                 T
               </span>
-              ecnodom builds professional cold storage in the Veneto industrial
+              {isSr ? (
+                <>ecnodom gradi profesionalno hladno skladištenje u Veneto industrijskom
+                koridoru &mdash;{" "}
+                <span className="font-display italic">pet</span> proizvodnih
+                pogona, 200+ zaposlenih, izvoz u 40+ zemalja. Proizvodnja
+                je integrisana i italijanska; ništa se ne podizvodi u inostranstvu.</>
+              ) : (
+                <>ecnodom builds professional cold storage in the Veneto industrial
               corridor &mdash;{" "}
               <span className="font-display italic">five</span> production
               facilities, 200+ employees, exports to 40+ countries. Production
-              is integrated and Italian; nothing is sub-let abroad.
+              is integrated and Italian; nothing is sub-let abroad.</>
+              )}
             </p>
 
             <p
@@ -182,7 +228,21 @@ export default function BrandSpotlight() {
                 maxWidth: "52ch",
               }}
             >
-              <span className="font-display italic">JKS Refrigeration</span>{" "}
+              {isSr ? (
+                <><span className="font-display italic">JKS Refrigeration</span>{" "}
+                &mdash; podbrend za montažne komore &mdash; ime nosi po tri sina
+                osnivača Domiziana Giacon-a:{" "}
+                <span
+                  className="font-display italic"
+                  style={{ color: "var(--color-gold-text)" }}
+                >
+                  Jonathan &middot; Kevin &middot; Steven.
+                </span>{" "}
+                Paneli su PUR injektirani pod visokim pritiskom, gustina 40&ndash;42
+                kg/m&sup3;, udeo zatvorenih ćelija &ge; 95%. Predfarbano food-safe
+                limeno oblaganje; cam-hook brave; bez CFC.</>
+              ) : (
+                <><span className="font-display italic">JKS Refrigeration</span>{" "}
               &mdash; the modular cold-room sub-brand &mdash; takes its name
               from founder Domiziano Giacon&rsquo;s three sons:{" "}
               <span
@@ -193,7 +253,8 @@ export default function BrandSpotlight() {
               </span>{" "}
               Panels are PUR-injected at high pressure, density 40&ndash;42
               kg/m&sup3;, closed-cell ratio &ge; 95%. Pre-painted food-safe
-              sheet metal cladding; cam-hook locks; CFC-free.
+              sheet metal cladding; cam-hook locks; CFC-free.</>
+              )}
             </p>
 
             <div
@@ -216,8 +277,8 @@ export default function BrandSpotlight() {
                 className="text-navy/65 font-light italic font-display"
                 style={{ fontSize: "13px" }}
               >
-                Single-source service across Italy &mdash; monoblock or split,
-                hinged or sliding, floor or floorless.
+                {isSr ? <>Jedan izvor servisa širom Italije &mdash; monoblock ili split, klapna ili klizna vrata, sa podom ili bez.</> : <>Single-source service across Italy &mdash; monoblock or split,
+                hinged or sliding, floor or floorless.</>}
               </span>
             </div>
           </div>
@@ -247,7 +308,7 @@ export default function BrandSpotlight() {
                   fontWeight: 500,
                 }}
               >
-                Product Families
+                {isSr ? "Familije proizvoda" : "Product Families"}
               </span>
 
               {FAMILIES.map((row, i) => (
@@ -269,8 +330,9 @@ export default function BrandSpotlight() {
                   lineHeight: 1.55,
                 }}
               >
-                Specifications confirmed per project. Tecnodom catalog &mdash;
-                full panel/door/floor matrix on request.
+                {isSr ? <>Specifikacije se potvrđuju po projektu. Tecnodom katalog &mdash;
+                pun matrica panela/vrata/podova na zahtev.</> : <>Specifications confirmed per project. Tecnodom catalog &mdash;
+                full panel/door/floor matrix on request.</>}
               </p>
             </div>
           </div>
@@ -295,7 +357,7 @@ export default function BrandSpotlight() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Origin
+              {isSr ? "Poreklo" : "Origin"}
             </span>
             <p
               className="font-display italic text-navy"
@@ -310,7 +372,7 @@ export default function BrandSpotlight() {
               className="text-navy/65 font-light mt-1"
               style={{ fontSize: "12px", lineHeight: 1.55 }}
             >
-              Tecnodom est. 2000 &middot; JKS est. 2006, Cadoneghe.
+              {isSr ? <>Tecnodom osn. 2000. &middot; JKS osn. 2006., Cadoneghe.</> : <>Tecnodom est. 2000 &middot; JKS est. 2006, Cadoneghe.</>}
             </p>
           </div>
           <div className="col-span-12 md:col-span-6 lg:col-span-4">
@@ -323,7 +385,7 @@ export default function BrandSpotlight() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Insulation
+              {isSr ? "Izolacija" : "Insulation"}
             </span>
             <p
               className="font-display italic text-navy"
@@ -338,8 +400,8 @@ export default function BrandSpotlight() {
               className="text-navy/65 font-light mt-1"
               style={{ fontSize: "12px", lineHeight: 1.55 }}
             >
-              Closed-cell &ge; 95% &middot; CFC-free &middot; PIR option for
-              fire-rated panels (B-s2,d0).
+              {isSr ? <>Zatvorene ćelije &ge; 95% &middot; bez CFC &middot; PIR opcija za panele sa protivpožarnim rangom (B-s2,d0).</> : <>Closed-cell &ge; 95% &middot; CFC-free &middot; PIR option for
+              fire-rated panels (B-s2,d0).</>}
             </p>
           </div>
           <div className="col-span-12 lg:col-span-4">
@@ -352,7 +414,7 @@ export default function BrandSpotlight() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Configuration
+              {isSr ? "Konfiguracija" : "Configuration"}
             </span>
             <p
               className="font-display italic text-navy"
@@ -361,13 +423,13 @@ export default function BrandSpotlight() {
                 lineHeight: 1.2,
               }}
             >
-              Monoblock &middot; Split &middot; Remote
+              {isSr ? <>Monoblock &middot; Split &middot; Remote</> : <>Monoblock &middot; Split &middot; Remote</>}
             </p>
             <p
               className="text-navy/65 font-light mt-1"
               style={{ fontSize: "12px", lineHeight: 1.55 }}
             >
-              Hinged or sliding doors &middot; floor, floorless or ramp.
+              {isSr ? <>Klap ili klizna vrata &middot; sa podom, bez poda ili sa rampom.</> : <>Hinged or sliding doors &middot; floor, floorless or ramp.</>}
             </p>
           </div>
         </div>

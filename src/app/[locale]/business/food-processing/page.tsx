@@ -72,46 +72,6 @@ export async function generateMetadata({
 }
 
 /* ------------------------------------------------------------------ */
-/*  JSON-LD structured data                                            */
-/* ------------------------------------------------------------------ */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      name: "Food Processing — Industrial Equipment Solutions | MB Equipment Solutions",
-      description:
-        "Middleby-authorized partner for industrial food processing equipment. Thermal processing, baking, forming, and packaging for protein and bakery operations.",
-      url: `${COMPANY.url}/business/food-processing`,
-      isPartOf: { "@type": "WebSite", url: COMPANY.url },
-    },
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: COMPANY.url,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Business",
-          item: `${COMPANY.url}/business`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Food Processing",
-          item: `${COMPANY.url}/business/food-processing`,
-        },
-      ],
-    },
-  ],
-};
-
-/* ------------------------------------------------------------------ */
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 export default async function FoodProcessingPage({
@@ -121,6 +81,43 @@ export default async function FoodProcessingPage({
 }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
+
+  /* JSON-LD structured data */
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: dict.metadata.foodProcessing.title,
+        description: dict.metadata.foodProcessing.description,
+        url: `${COMPANY.url}/business/food-processing`,
+        isPartOf: { "@type": "WebSite", url: COMPANY.url },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: dict.breadcrumb.home,
+            item: COMPANY.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: dict.common.business,
+            item: `${COMPANY.url}/business`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: dict.nav.foodProcessing,
+            item: `${COMPANY.url}/business/food-processing`,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <>
@@ -133,7 +130,7 @@ export default async function FoodProcessingPage({
 
       <Breadcrumb
         items={[
-          { label: "Business", href: `/${locale}/business` },
+          { label: dict.common.business, href: `/${locale}/business` },
           { label: dict.metadata.foodProcessing.title },
         ]}
         locale={locale as Locale}

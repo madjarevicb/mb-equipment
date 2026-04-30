@@ -4,13 +4,14 @@ import type { Dictionary } from "@/i18n/types";
 interface Props {
   dict: Dictionary["hotelsRestaurants"]["segments"];
   data: Dictionary["data"]["segments"];
+  ariaLabel?: string;
 }
 
-export default function SegmentsSection({ dict, data }: Props) {
+export default function SegmentsSection({ dict, data, ariaLabel }: Props) {
   return (
     <section
       className="py-16 lg:py-20 bg-white border-b border-gray-100"
-      aria-label="Industry segments we serve"
+      aria-label={ariaLabel ?? "Industry segments we serve"}
     >
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>

@@ -8,8 +8,10 @@ interface Stat {
 
 export default function StatsSection({
   dict,
+  ariaLabel,
 }: {
   dict: Dictionary["home"]["stats"];
+  ariaLabel?: string;
 }) {
   const stats: Stat[] = [
     { value: "110+", label: dict.equipmentBrands },
@@ -17,7 +19,7 @@ export default function StatsSection({
   ];
 
   return (
-    <section id="stats" aria-label="Company statistics" className="relative py-24 lg:py-32 bg-navy overflow-hidden">
+    <section id="stats" aria-label={ariaLabel ?? "Company statistics"} className="relative py-24 lg:py-32 bg-navy overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-end">
           {/* Left — featured stat, large and confident */}

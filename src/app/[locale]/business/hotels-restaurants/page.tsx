@@ -71,56 +71,6 @@ export async function generateMetadata({
 }
 
 /* ------------------------------------------------------------------ */
-/*  JSON-LD structured data                                            */
-/* ------------------------------------------------------------------ */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      name: "Our Brands — Commercial Kitchen Equipment | MB Equipment Solutions",
-      description: `Authorized Middleby partner with ${brands.length}+ professional foodservice brands.`,
-      url: `${COMPANY.url}/business/hotels-restaurants`,
-      isPartOf: { "@type": "WebSite", url: COMPANY.url },
-    },
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: COMPANY.url,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Business",
-          item: `${COMPANY.url}/business`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Our Brands",
-          item: `${COMPANY.url}/business/hotels-restaurants`,
-        },
-      ],
-    },
-    {
-      "@type": "ItemList",
-      name: "Commercial Kitchen Equipment Brands",
-      numberOfItems: brands.length,
-      itemListElement: brands.slice(0, 20).map((b, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: b.name,
-        description: b.text,
-      })),
-    },
-  ],
-};
-
-/* ------------------------------------------------------------------ */
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 export default async function OurBrandsPage({
@@ -130,6 +80,54 @@ export default async function OurBrandsPage({
 }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
+
+  /* JSON-LD structured data */
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: dict.metadata.hotelsRestaurants.title,
+        description: dict.metadata.hotelsRestaurants.description,
+        url: `${COMPANY.url}/business/hotels-restaurants`,
+        isPartOf: { "@type": "WebSite", url: COMPANY.url },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: dict.breadcrumb.home,
+            item: COMPANY.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: dict.common.business,
+            item: `${COMPANY.url}/business`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: dict.nav.ourBrands,
+            item: `${COMPANY.url}/business/hotels-restaurants`,
+          },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        name: dict.metadata.hotelsRestaurants.title,
+        numberOfItems: brands.length,
+        itemListElement: brands.slice(0, 20).map((b, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: b.name,
+          description: b.text,
+        })),
+      },
+    ],
+  };
 
   return (
     <>
@@ -142,16 +140,32 @@ export default async function OurBrandsPage({
 
       <Breadcrumb
         items={[
-          { label: "Business", href: `/${locale}/business` },
+          { label: dict.common.business, href: `/${locale}/business` },
           { label: dict.metadata.hotelsRestaurants.title },
         ]}
         locale={locale as Locale}
         homeLabel={dict.breadcrumb.home}
       />
 
-      <HeroSection dict={dict.hotelsRestaurants.hero} locale={locale as Locale} />
-      <SegmentsSection dict={dict.hotelsRestaurants.segments} data={dict.data.segments} />
-      <BrandsGridSection brands={brands} dict={dict.hotelsRestaurants.brandsGrid} />
+      <HeroSection
+        dict={dict.hotelsRestaurants.hero}
+        locale={locale as Locale}
+        brandsLabel={dict.common.brandsLabel}
+        onePartnerLabel={dict.common.onePartner}
+      />
+      <SegmentsSection
+        dict={dict.hotelsRestaurants.segments}
+        data={dict.data.segments}
+        ariaLabel={dict.common.industrySegmentsAria}
+      />
+      <BrandsGridSection
+        brands={brands}
+        dict={dict.hotelsRestaurants.brandsGrid}
+        fullPortfolioLabel={dict.common.fullPortfolio}
+        additionalBrandsLabel={dict.common.additionalBrands}
+        filteredByLabel={dict.common.filteredBy}
+        filterAllLabel={dict.common.filterAll}
+      />
       <ImageBreakSection />
       <ProcessSection dict={dict.hotelsRestaurants.process} data={dict.data.brandProcessSteps} />
       <CtaSection dict={dict.hotelsRestaurants.cta} common={dict.common} locale={locale as Locale} />

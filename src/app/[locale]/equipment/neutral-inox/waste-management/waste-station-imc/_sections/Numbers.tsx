@@ -1,3 +1,4 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../../thermal-processing/_sections/ScrollReveal";
 
 interface Stat {
@@ -7,7 +8,11 @@ interface Stat {
   caveat?: string;
 }
 
-const STATS: Stat[] = [
+interface NumbersProps {
+  locale?: Locale;
+}
+
+const STATS_EN: Stat[] = [
   {
     figure: "80",
     unit: "%",
@@ -34,7 +39,36 @@ const STATS: Stat[] = [
   },
 ];
 
-export default function Numbers() {
+const STATS_SR: Stat[] = [
+  {
+    figure: "80",
+    unit: "%",
+    label: "Smanjenje zapremine",
+    caveat: "IMC navod u odnosu na nesabijani otpad.",
+  },
+  {
+    figure: "60",
+    unit: "%",
+    label: "Smanjenje mase",
+    caveat: "Izlaz nakon ceđenja na centrifugi.",
+  },
+  {
+    figure: "10",
+    unit: "l / min",
+    label: "Voda tokom obrade",
+    caveat: "Minimalni ulazni pritisak 0,18 bar.",
+  },
+  {
+    figure: "83",
+    unit: "dB",
+    label: "Buka u radu",
+    caveat: "Specifikacija proizvođača.",
+  },
+];
+
+export default function Numbers({ locale }: NumbersProps = {}) {
+  const isSr = locale === "sr";
+  const STATS = isSr ? STATS_SR : STATS_EN;
   return (
     <section
       aria-labelledby="imc-numbers"
@@ -61,7 +95,7 @@ export default function Numbers() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                The Scoreboard — Four Numbers
+                {isSr ? "Pregled — četiri brojke" : "The Scoreboard — Four Numbers"}
               </span>
             </div>
             <ScrollReveal>
@@ -74,13 +108,13 @@ export default function Numbers() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Numbers that
+                {isSr ? "Brojevi koji" : "Numbers that"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  earn the floor space.
+                  {isSr ? "zaslužuju prostor." : "earn the floor space."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -94,8 +128,9 @@ export default function Numbers() {
                 maxWidth: "32ch",
               }}
             >
-              Operational figures from IMC&rsquo;s WasteStation specification.
-              Site outcomes vary with menu and waste mix.
+              {isSr ? <>Operativne cifre iz IMC-ove WasteStation specifikacije.
+              Rezultati na lokaciji zavise od menija i strukture otpada.</> : <>Operational figures from IMC&rsquo;s WasteStation specification.
+              Site outcomes vary with menu and waste mix.</>}
             </p>
           </div>
         </div>
@@ -132,7 +167,7 @@ export default function Numbers() {
                   fontWeight: 500,
                 }}
               >
-                Fig. {String(i + 1).padStart(2, "0")}
+                {isSr ? "Sl." : "Fig."} {String(i + 1).padStart(2, "0")}
               </span>
               <div className="flex items-baseline gap-1">
                 <span
@@ -210,9 +245,7 @@ export default function Numbers() {
                 fontFamily: "var(--font-display), serif",
               }}
             >
-              Pickup-frequency reductions of 50–75% are typical, depending on
-              volume; payback periods are site-specific. We size the model to
-              measured covers, not aspiration.
+              {isSr ? "Smanjenja učestalosti preuzimanja od 50–75% su tipična, u zavisnosti od obima; period otplate zavisi od lokacije. Model dimenzionišemo prema izmerenim gostima, a ne prema ambicijama." : "Pickup-frequency reductions of 50–75% are typical, depending on volume; payback periods are site-specific. We size the model to measured covers, not aspiration."}
             </span>
           </div>
         </div>

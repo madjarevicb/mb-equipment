@@ -93,7 +93,7 @@ interface House {
   positioning: string;
 }
 
-const HOUSES: House[] = [
+const HOUSES_EN: House[] = [
   {
     brand: "JBG-2",
     founded: "1989",
@@ -128,6 +128,41 @@ const HOUSES: House[] = [
   },
 ];
 
+const HOUSES_SR: House[] = [
+  {
+    brand: "JBG-2",
+    founded: "1989.",
+    origin: "Warszowice, Poljska",
+    speciality: "Multideck i remote sistemi",
+    positioning:
+      "Poljska porodična firma koja inženjerira multidekove sa daljinskim kondenzatorom za supermarkete, pekare i convenience prodavnice. R290 / R600a rashladna sredstva.",
+  },
+  {
+    brand: "Infrico",
+    founded: "1986.",
+    origin: "Lucena, Španija",
+    speciality: "Poslastice i sladoled",
+    positioning:
+      "Španska poslastičarska show-zvezda — savijeno termopan staklo, AISI 304 unutrašnjost, anodirani aluminijumski okviri. Topla/hladna varijanta na Ambar-u.",
+  },
+  {
+    brand: "Tefcold",
+    founded: "1987.",
+    origin: "Viborg, Danska",
+    speciality: "Pića i sladoled",
+    positioning:
+      "Danski merchandiser — vitrine za pića sa staklenim vratima, rashladnici za flaše, sanduci za sladoled za kafiće, kioske, c-stores i gelaterije.",
+  },
+  {
+    brand: "Bartscher",
+    founded: "1876.",
+    origin: "Geseke / Salzkotten, Nemačka",
+    speciality: "Stoni i Deli-Cool",
+    positioning:
+      "150 godina nemačkog inženjerstva — vitrine za poslastice 72L do 400L, mini-vitrine i Deli-Cool gornje jedinice tamo gde je prostor ograničen.",
+  },
+];
+
 interface Format {
   serial: string;
   name: string;
@@ -135,7 +170,7 @@ interface Format {
   descriptor: string;
 }
 
-const FORMATS: Format[] = [
+const FORMATS_EN: Format[] = [
   {
     serial: "No. 01",
     name: "Refrigerated patisserie display",
@@ -194,13 +229,72 @@ const FORMATS: Format[] = [
   },
 ];
 
+const FORMATS_SR: Format[] = [
+  {
+    serial: "Br. 01",
+    name: "Vitrina za poslastice",
+    brands: "JBG-2 Pastry Line · Infrico Niza / Lyon / Glace · Bartscher 72/100/400L",
+    descriptor:
+      "Savijeno termopan staklo, LED nadstrešnica i osvetljenje po polici — projektovano da torte, ekleri i entremesi budu u visini očiju.",
+  },
+  {
+    serial: "Br. 02",
+    name: "Vitrina za delikatese / serve-over",
+    brands: "JBG-2 Lhotse · Bartscher Deli-Cool I / II / III",
+    descriptor:
+      "Inox radna strana, staklo prema kupcu — za suhomesnate proizvode, sireve, gotove salate i hladnu mise-en-place.",
+  },
+  {
+    serial: "Br. 03",
+    name: "Vertikalni multideck (grab-and-go)",
+    brands: "JBG-2 Glacier / Gerlach 2.0 / Garmo · Tefcold uprights",
+    descriptor:
+      "Multidekovi sa otvorenim pristupom za impulsnu rashladnu maloprodaju — od jednog dekova do zidova od 2,5 metra, plug-in i remote konfiguracije.",
+  },
+  {
+    serial: "Br. 04",
+    name: "Rashladnik za flaše / back-bar",
+    brands: "Infrico VBR · Tefcold BA / FS / DB",
+    descriptor:
+      "Jedinice sa kliznim ili klap vratima dimenzionisane za bar — merchandising flaša na servisnoj temperaturi.",
+  },
+  {
+    serial: "Br. 05",
+    name: "Vitrine za pića sa staklenim vratima",
+    brands: "Tefcold LGC2500 · SCU1425 · SGD-300GE",
+    descriptor:
+      "Bezokvirne i okvirne vitrine, 387L do 496L — za benzinske stanice, c-stores, hotelski back-of-house i impulsne zone.",
+  },
+  {
+    serial: "Br. 06",
+    name: "Topla / grejana vitrina",
+    brands: "JBG-2 Hot Cases · Infrico Ambar HT · Bartscher Deli-Plus II",
+    descriptor:
+      "Grejane vitrine za pite, viennoiserie, tople delikatese. Specifikuju se uz rashladne pultove za kombinovane servisne zone.",
+  },
+  {
+    serial: "Br. 07",
+    name: "Vitrina za sladoled",
+    brands: "Infrico Coral / Aries / Ibiza · Tefcold IC / NIC / ICSC · JBG-2 Fiji",
+    descriptor:
+      "Zamrzivači za scoop i posude, savijeno-staklene parlour vitrine i sanduci za zamrzavanje — za gelaterije, kioske i supermarket ostrva.",
+  },
+  {
+    serial: "Br. 08",
+    name: "Vinska vitrina",
+    brands: "Tefcold TFW375 · Infrico vinski podrumi",
+    descriptor:
+      "Jednozonske i dvozonske vinske vitrine — servisna temperatura za bela i crna vina, prezentaciono staklo za front of house.",
+  },
+];
+
 interface Application {
   venue: string;
   combination: string;
   note: string;
 }
 
-const APPLICATIONS: Application[] = [
+const APPLICATIONS_EN: Application[] = [
   {
     venue: "Bakeries & patisseries",
     combination: "Infrico Niza / Lyon front · JBG-2 Pastry Line · Bartscher 72 / 100L",
@@ -233,6 +327,39 @@ const APPLICATIONS: Application[] = [
   },
 ];
 
+const APPLICATIONS_SR: Application[] = [
+  {
+    venue: "Pekare i poslastičarstva",
+    combination: "Infrico Niza / Lyon front · JBG-2 Pastry Line · Bartscher 72 / 100L",
+    note: "Vitrina sa savijenim staklom prema kupcu, plug-in vitrina za poslastice iza, stoni format za parčad.",
+  },
+  {
+    venue: "Mesare i delikatesi",
+    combination: "JBG-2 Lhotse serve-over · Bartscher Deli-Cool I / II / III",
+    note: "Dugi serve-over pultovi sparani sa stonim suhomesnatim — jedna vizualna linija.",
+  },
+  {
+    venue: "Kafići i kafe barovi",
+    combination: "Bartscher mini-vitrine · Tefcold rashladnici za flaše · Infrico VBR",
+    note: "86 / 98L vitrine za poslastice plus back-bar rashladnik za flaše — svaki centimetar zarađuje.",
+  },
+  {
+    venue: "Hoteli",
+    combination: "Bartscher stoni · Tefcold TFW375 vinska · Infrico Combo",
+    note: "Poslastice u lobiju, vino u salonu, doručak hot/cold combo — tri formata, jedan dobavljač.",
+  },
+  {
+    venue: "Supermarketi",
+    combination: "JBG-2 Gerlach 2.0 / Garmo multidekovi · Tefcold vertikalne za pića",
+    note: "Zidovi sa remote kondenzatorom za rashladni red, plug-in pića na ulazu.",
+  },
+  {
+    venue: "Gelaterije",
+    combination: "Infrico Coral / Aries / Ibiza · Tefcold IC scoop / tub",
+    note: "Parlour vitrine sa savijenim staklom na liniji, sanduci za zamrzavanje za posude u back-of-house-u.",
+  },
+];
+
 export default async function DisplayCasesPage({
   params,
 }: {
@@ -244,6 +371,9 @@ export default async function DisplayCasesPage({
   const PAGE_TITLE = isSr ? PAGE_TITLE_SR : PAGE_TITLE_EN;
   const PAGE_DESC = isSr ? PAGE_DESC_SR : PAGE_DESC_EN;
   const pageUrl = `${COMPANY.url}/${locale}/equipment/refrigeration/display-cases`;
+  const HOUSES = isSr ? HOUSES_SR : HOUSES_EN;
+  const FORMATS = isSr ? FORMATS_SR : FORMATS_EN;
+  const APPLICATIONS = isSr ? APPLICATIONS_SR : APPLICATIONS_EN;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -382,7 +512,7 @@ export default async function DisplayCasesPage({
               letterSpacing: "0.18em",
             }}
           >
-            folio 01 / 08
+            {isSr ? "tabak 01 / 08" : "folio 01 / 08"}
           </span>
           <span
             aria-hidden="true"
@@ -411,10 +541,10 @@ export default async function DisplayCasesPage({
 
         <RunningMeta
           variant="dark"
-          folio="Ed. 2026"
+          folio={isSr ? "Izd. 2026" : "Ed. 2026"}
           items={[
-            "Vol. IV",
-            "Ch. 02 — Display Cases",
+            isSr ? "Tom IV" : "Vol. IV",
+            isSr ? "Pogl. 02 — Vitrine" : "Ch. 02 — Display Cases",
             "JBG-2",
             "Infrico",
             "Tefcold",
@@ -510,7 +640,7 @@ export default async function DisplayCasesPage({
                     delay={40}
                     style={{ display: "block" }}
                   >
-                    <span style={{ display: "block" }}>Display,</span>
+                    <span style={{ display: "block" }}>{isSr ? "Vitrine," : "Display,"}</span>
                     <span
                       style={{
                         display: "block",
@@ -520,10 +650,10 @@ export default async function DisplayCasesPage({
                         paddingLeft: "0.6em",
                       }}
                     >
-                      in cold
+                      {isSr ? "u hladnom" : "in cold"}
                     </span>
                     <span style={{ display: "block" }}>
-                      and warm
+                      {isSr ? "i toplom" : "and warm"}
                       <span
                         aria-hidden="true"
                         style={{
@@ -556,9 +686,9 @@ export default async function DisplayCasesPage({
                     letterSpacing: "0.1em",
                   }}
                 >
-                  Plate No. 02 —{" "}
+                  {isSr ? "Tabla br. 02 —" : "Plate No. 02 —"}{" "}
                   <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                    Vitrines, Belgrade.
+                    {isSr ? "Vitrine, Beograd." : "Vitrines, Belgrade."}
                   </span>
                 </p>
               </div>
@@ -577,7 +707,7 @@ export default async function DisplayCasesPage({
                 }}
                 className="block uppercase font-medium mb-4"
               >
-                § Editor&rsquo;s Note
+                {isSr ? "§ Beleška urednika" : <>§ Editor&rsquo;s Note</>}
               </span>
               <p
                 className="text-white/80 font-light"
@@ -602,12 +732,19 @@ export default async function DisplayCasesPage({
                     fontWeight: 400,
                   }}
                 >
-                  F
+                  {isSr ? "Č" : "F"}
                 </span>
-                our manufacturers across four traditions — Polish remote
+                {isSr ? (
+                  <>etiri proizvođača kroz četiri tradicije — poljski remote
+                  multidekovi, španske vitrine za poslastice, danski merchandiseri,
+                  nemački stoni. Od Bartscher vitrine za poslastice od 72 litra do
+                  Gerlach zida od 2,5 metra.</>
+                ) : (
+                  <>our manufacturers across four traditions — Polish remote
                 multidecks, Spanish patisserie vitrines, Danish merchandisers,
                 German countertop. From a 72-litre Bartscher pastry case to a
-                2.5-metre Gerlach wall.
+                2.5-metre Gerlach wall.</>
+                )}
               </p>
             </div>
 
@@ -692,8 +829,8 @@ export default async function DisplayCasesPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
-          label="Heritage & Standards"
-          caption="Four houses across four traditions — and the standards they keep."
+          label={isSr ? "Nasleđe i standardi" : "Heritage & Standards"}
+          caption={isSr ? "Četiri kuće kroz četiri tradicije — i standardi koje održavaju." : "Four houses across four traditions — and the standards they keep."}
           variant="light"
         />
         <AwardStrip
@@ -701,33 +838,33 @@ export default async function DisplayCasesPage({
           items={[
             {
               type: "heritage",
-              label: "Bartscher · Since 1876",
-              detail: "Geseke, Germany — 150 years",
+              label: isSr ? "Bartscher · Od 1876." : "Bartscher · Since 1876",
+              detail: isSr ? "Geseke, Nemačka — 150 godina" : "Geseke, Germany — 150 years",
             },
             {
               type: "heritage",
-              label: "Tefcold · Since 1987",
-              detail: "Viborg, Denmark",
+              label: isSr ? "Tefcold · Od 1987." : "Tefcold · Since 1987",
+              detail: isSr ? "Viborg, Danska" : "Viborg, Denmark",
             },
             {
               type: "heritage",
-              label: "JBG-2 · Since 1989",
-              detail: "Warszowice, Poland",
+              label: isSr ? "JBG-2 · Od 1989." : "JBG-2 · Since 1989",
+              detail: isSr ? "Warszowice, Poljska" : "Warszowice, Poland",
             },
             {
               type: "heritage",
-              label: "Infrico · Since 1986",
-              detail: "Lucena, Spain",
+              label: isSr ? "Infrico · Od 1986." : "Infrico · Since 1986",
+              detail: isSr ? "Lucena, Španija" : "Lucena, Spain",
             },
             {
               type: "certification",
               label: "ISO 23953-2",
-              detail: "Display refrigeration std",
+              detail: isSr ? "Standard za rashladne vitrine" : "Display refrigeration std",
             },
             {
               type: "certification",
               label: "R290 / R600a",
-              detail: "Natural refrigerants",
+              detail: isSr ? "Prirodna rashladna sredstva" : "Natural refrigerants",
             },
           ]}
         />
@@ -739,8 +876,8 @@ export default async function DisplayCasesPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="III"
-          label="The Four Houses"
-          caption="Poland, Spain, Denmark, Germany — each chosen for what it does best."
+          label={isSr ? "Četiri kuće" : "The Four Houses"}
+          caption={isSr ? "Poljska, Španija, Danska, Nemačka — svaka izabrana po onome u čemu je najbolja." : "Poland, Spain, Denmark, Germany — each chosen for what it does best."}
           variant="light"
         />
       </div>
@@ -781,7 +918,7 @@ export default async function DisplayCasesPage({
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  Four Houses, Four Traditions
+                  {isSr ? "Četiri kuće, četiri tradicije" : "Four Houses, Four Traditions"}
                 </span>
               </div>
               <ScrollReveal>
@@ -794,13 +931,13 @@ export default async function DisplayCasesPage({
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  Four manufacturers,
+                  {isSr ? "Četiri proizvođača," : "Four manufacturers,"}
                   <br />
                   <span
                     className="italic font-normal"
                     style={{ color: "var(--color-gold-text)" }}
                   >
-                    one display ledger.
+                    {isSr ? "jedan pregled vitrina." : "one display ledger."}
                   </span>
                 </h2>
               </ScrollReveal>
@@ -815,9 +952,7 @@ export default async function DisplayCasesPage({
                   maxWidth: "32ch",
                 }}
               >
-                From 72-litre countertop pastry cases to 2.5-metre remote
-                multidecks — supplied, installed, serviced under one
-                authorized partnership.
+                {isSr ? "Od stonih vitrina za poslastice od 72 litra do remote multidekova od 2,5 metra — isporučujemo, instaliramo i servisiramo kroz jedno ovlašćeno partnerstvo." : "From 72-litre countertop pastry cases to 2.5-metre remote multidecks — supplied, installed, serviced under one authorized partnership."}
               </p>
             </div>
           </div>
@@ -850,7 +985,7 @@ export default async function DisplayCasesPage({
                         letterSpacing: "0.04em",
                       }}
                     >
-                      No. 0{idx + 1}
+                      {isSr ? "Br." : "No."} 0{idx + 1}
                     </span>
                     <span
                       aria-hidden="true"
@@ -865,7 +1000,7 @@ export default async function DisplayCasesPage({
                         fontWeight: 500,
                       }}
                     >
-                      Founded {house.founded}
+                      {isSr ? "Osn." : "Founded"} {house.founded}
                     </span>
                   </div>
 
@@ -959,8 +1094,8 @@ export default async function DisplayCasesPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="IV"
-          label="The Format Ledger"
-          caption="Eight display formats — refrigerated, heated, and frozen."
+          label={isSr ? "Pregled formata" : "The Format Ledger"}
+          caption={isSr ? "Osam formata vitrina — rashladne, grejane i zamrznute." : "Eight display formats — refrigerated, heated, and frozen."}
           variant="dark"
         />
       </div>
@@ -990,7 +1125,7 @@ export default async function DisplayCasesPage({
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  The Format Ledger — Eight Formats
+                  {isSr ? "Pregled formata — osam formata" : "The Format Ledger — Eight Formats"}
                 </span>
               </div>
               <ScrollReveal>
@@ -1003,13 +1138,13 @@ export default async function DisplayCasesPage({
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  Every product,
+                  {isSr ? "Svaki proizvod," : "Every product,"}
                   <br />
                   <span
                     className="italic font-normal"
                     style={{ color: "var(--color-gold)" }}
                   >
-                    its proper temperature.
+                    {isSr ? "njegova prava temperatura." : "its proper temperature."}
                   </span>
                 </h2>
               </ScrollReveal>
@@ -1023,9 +1158,7 @@ export default async function DisplayCasesPage({
                   maxWidth: "30ch",
                 }}
               >
-                Eight display formats across the four houses — refrigerated,
-                heated, frozen, and wine-service. Specified to the product on
-                the shelf.
+                {isSr ? "Osam formata vitrina kroz četiri kuće — rashladne, grejane, zamrznute i za servis vina. Specifikuju se prema proizvodu na polici." : "Eight display formats across the four houses — refrigerated, heated, frozen, and wine-service. Specified to the product on the shelf."}
               </p>
             </div>
           </div>
@@ -1128,7 +1261,7 @@ export default async function DisplayCasesPage({
                 }}
                 className="uppercase"
               >
-                § Plates from the catalogue
+                {isSr ? "§ Tabele iz kataloga" : "§ Plates from the catalog"}
               </span>
             </div>
 
@@ -1207,8 +1340,8 @@ export default async function DisplayCasesPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="V"
-          label="The Application Ledger"
-          caption="Six venues — each with its proper combination."
+          label={isSr ? "Pregled primene" : "The Application Ledger"}
+          caption={isSr ? "Šest objekata — svaki sa svojom kombinacijom." : "Six venues — each with its proper combination."}
           variant="light"
         />
       </div>
@@ -1237,7 +1370,7 @@ export default async function DisplayCasesPage({
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  By Venue — Specified Combinations
+                  {isSr ? "Po objektu — specifične kombinacije" : "By Venue — Specified Combinations"}
                 </span>
               </div>
               <ScrollReveal>
@@ -1250,13 +1383,13 @@ export default async function DisplayCasesPage({
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  From bakery to gelateria,
+                  {isSr ? "Od pekare do gelaterije," : "From bakery to gelateria,"}
                   <br />
                   <span
                     className="italic font-normal"
                     style={{ color: "var(--color-gold-text)" }}
                   >
-                    a combination for each.
+                    {isSr ? "kombinacija za svakog." : "a combination for each."}
                   </span>
                 </h2>
               </ScrollReveal>
@@ -1392,7 +1525,7 @@ export default async function DisplayCasesPage({
                   fontWeight: 400,
                 }}
               >
-                From countertop to wall —
+                {isSr ? "Od pulta do zida —" : "From countertop to wall —"}
               </span>
               <span
                 className="font-display italic block"
@@ -1404,7 +1537,7 @@ export default async function DisplayCasesPage({
                   color: "var(--color-gold-text)",
                 }}
               >
-                every display, in every temperature.
+                {isSr ? "svaka vitrina, na svakoj temperaturi." : "every display, in every temperature."}
               </span>
             </ScrollReveal>
           </div>
@@ -1425,7 +1558,7 @@ export default async function DisplayCasesPage({
                   fontWeight: 500,
                 }}
               >
-                MB Equipment — House Note
+                {isSr ? "MB Equipment — Reč kuće" : "MB Equipment — House Note"}
               </span>
               <span
                 aria-hidden="true"
@@ -1436,7 +1569,7 @@ export default async function DisplayCasesPage({
                 className="uppercase text-navy/55"
                 style={{ fontSize: "10px", letterSpacing: "0.32em" }}
               >
-                Folio 05 / 08
+                {isSr ? "Tabak 05 / 08" : "Folio 05 / 08"}
               </span>
             </div>
           </div>
@@ -1449,8 +1582,8 @@ export default async function DisplayCasesPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VI"
-          label="Before You Display"
-          caption="Six questions, settled before specification."
+          label={isSr ? "Pre izlaganja" : "Before You Display"}
+          caption={isSr ? "Šest pitanja, rešenih pre specifikacije." : "Six questions, settled before specification."}
           variant="dark"
         />
       </div>
@@ -1458,16 +1591,41 @@ export default async function DisplayCasesPage({
         variant="dark"
         heading={
           <>
-            Before{" "}
+            {isSr ? "Pre " : "Before "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold)" }}
             >
-              you display.
+              {isSr ? "izlaganja." : "you display."}
             </span>
           </>
         }
-        items={[
+        items={isSr ? [
+          {
+            q: "Plug-in ili remote rashlađivanje?",
+            a: "Plug-in (ugrađeni kompresor) za pojedinačne instalacije — najjednostavnije, uključuje se u 16A utičnicu. Remote (spoljni kompresor) za supermarkete i pekarske zidove — tiše u front-of-house-u, ali zahteva mašinski deo za rashlađivanje.",
+          },
+          {
+            q: "Šta je sa kvalitetom stakla?",
+            a: "Savijeno termopan dvostruko staklo na svim premium vitrinama za poslastice (Infrico Niza/Lyon, Bartscher 400L). Standardno bezokvirno termopan na Tefcold vitrinama za pića. Antikondenzaciona ventilacija na Bartscher Deli-Cool.",
+          },
+          {
+            q: "Da li je LED osvetljenje uključeno?",
+            a: "Da — sve trenutne generacije. Dvonivovsko LED na Deli-Cool seriji, kombinacije toplog 2700K + hladnog 6000K na Infrico (po polici, konfigurabilno). Smanjuje potrošnju 80–90% u odnosu na staro osvetljenje, prema Infrico-u.",
+          },
+          {
+            q: "Izbor rashladnog sredstva?",
+            a: "JBG-2 plug-in jedinice koriste R290 / R600a. Tefcold serije prešle su na R290 u novim generacijama. Bartscher poslastičarske vitrine obično koriste R600a. Sve su prirodni ugljovodonici — F-Gas usaglašene za novu opremu od 2025.",
+          },
+          {
+            q: "Koja je garancija?",
+            a: "2 godine na većini jedinica (delovi + rad) ostvariva lokalno preko MB Equipment servisa. Garancija na kompresor često se produžava na 5 godina na odabranim modelima — potvrđuje se prilikom ponude.",
+          },
+          {
+            q: "Rok isporuke?",
+            a: "Stock jedinice (Tefcold standardno, Bartscher stoni) 1–2 nedelje. Custom Infrico konfiguracije 4–8 nedelja. JBG-2 remote multidekovi specifikovani po projektu, 6–10 nedelja.",
+          },
+        ] : [
           {
             q: "Plug-in or remote refrigeration?",
             a: "Plug-in (built-in compressor) for single-unit installs — simplest, plug into a 16A socket. Remote (external compressor) for supermarkets and bakery walls — quieter front-of-house, but requires a refrigeration plant room.",
@@ -1486,7 +1644,7 @@ export default async function DisplayCasesPage({
           },
           {
             q: "What's the warranty?",
-            a: "2 years on most units (parts + labour) honoured locally through MB Equipment service. Compressor warranty often extends to 5 years on selected models — confirmed at quote.",
+            a: "2 years on most units (parts and labor) honored locally through MB Equipment service. Compressor warranty often extends to 5 years on selected models — confirmed at quote.",
           },
           {
             q: "Lead times?",
@@ -1502,8 +1660,8 @@ export default async function DisplayCasesPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VII"
-          label="Three Routes In"
-          caption="Quote, showroom, or spec sheet — the path is yours."
+          label={isSr ? "Tri puta" : "Three Routes In"}
+          caption={isSr ? "Ponuda, salon ili specifikacija — Vaš izbor." : "Quote, showroom, or spec sheet — the path is yours."}
           variant="dark"
         />
       </div>
@@ -1519,8 +1677,8 @@ export default async function DisplayCasesPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VIII"
-          label="The Next Step"
-          caption="Send your space, your products, and your refrigeration mode."
+          label={isSr ? "Sledeći korak" : "The Next Step"}
+          caption={isSr ? "Pošaljite prostor, Vaše proizvode i režim rashlađivanja." : "Send your space, your products, and your refrigeration mode."}
           variant="dark"
         />
       </div>
@@ -1581,7 +1739,7 @@ export default async function DisplayCasesPage({
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  § Specify Your Display
+                  {isSr ? "§ Specifikujte Vašu vitrinu" : "§ Specify Your Display"}
                 </span>
               </div>
 
@@ -1595,7 +1753,7 @@ export default async function DisplayCasesPage({
                 }}
               >
                 <ScrollReveal as="span" staggerLines style={{ display: "block" }}>
-                  <span style={{ display: "block" }}>Specify</span>
+                  <span style={{ display: "block" }}>{isSr ? "Specifikujte" : "Specify"}</span>
                   <span
                     style={{
                       display: "block",
@@ -1605,7 +1763,7 @@ export default async function DisplayCasesPage({
                       paddingLeft: "0.4em",
                     }}
                   >
-                    your display.
+                    {isSr ? "Vašu vitrinu." : "your display."}
                   </span>
                 </ScrollReveal>
               </h2>
@@ -1618,7 +1776,14 @@ export default async function DisplayCasesPage({
                   maxWidth: "54ch",
                 }}
               >
-                Send us your space, your products, and your refrigeration mode
+                {isSr ? <>Pošaljite Vaš prostor, proizvode i režim rashlađivanja
+                — plug-in ili remote kondenzator — i specifikovaćemo pravu
+                kombinaciju kroz četiri kuće.
+                <span
+                  className="font-display italic"
+                  style={{ color: "var(--color-gold)" }}
+                >
+                  {" "}Ponuda se vraća u roku od jednog radnog dana.</span></> : <>Send us your space, your products, and your refrigeration mode
                 — plug-in or remote condenser — and we&rsquo;ll spec the right
                 combination across the four houses.
                 <span
@@ -1627,7 +1792,7 @@ export default async function DisplayCasesPage({
                 >
                   {" "}
                   Quote returned within one business day.
-                </span>
+                </span></>}
               </p>
 
               <div className="flex flex-wrap gap-4 mt-6 lg:mt-8">
@@ -1664,7 +1829,7 @@ export default async function DisplayCasesPage({
                       fontWeight: 500,
                     }}
                   >
-                    Colophon
+                    {isSr ? "Kolofon" : "Colophon"}
                   </span>
                   <p
                     className="font-display italic text-white"
@@ -1674,12 +1839,12 @@ export default async function DisplayCasesPage({
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    Set in Belgrade.
+                    {isSr ? "Ugnežden u Beogradu." : "Set in Belgrade."}
                   </p>
                 </div>
 
                 <Entry
-                  label="Showroom"
+                  label={isSr ? "Salon" : "Showroom"}
                   value={
                     <>
                       {COMPANY.address.street}
@@ -1688,14 +1853,14 @@ export default async function DisplayCasesPage({
                     </>
                   }
                 />
-                <Entry label="Coverage" value="Southeast Europe & beyond." />
+                <Entry label={isSr ? "Pokriće" : "Coverage"} value={isSr ? "Jugoistočna Evropa i šire." : "Southeast Europe & beyond."} />
                 <Entry
-                  label="Brands"
+                  label={isSr ? "Brendovi" : "Brands"}
                   value="JBG-2 · Infrico · Tefcold · Bartscher"
                 />
                 <Entry
-                  label="Refrigerants"
-                  value="R290 / R600a (natural)."
+                  label={isSr ? "Rashladna sredstva" : "Refrigerants"}
+                  value={isSr ? "R290 / R600a (prirodna)." : "R290 / R600a (natural)."}
                 />
               </div>
             </aside>
@@ -1706,13 +1871,13 @@ export default async function DisplayCasesPage({
       {/* Closing running-meta */}
       <RunningMeta
         variant="light"
-        folio="folio 08 / 08"
+        folio={isSr ? "tabak 08 / 08" : "folio 08 / 08"}
         items={[
-          "Vol. IV",
-          "End of Ch. 02",
-          "Display Cases",
+          isSr ? "Tom IV" : "Vol. IV",
+          isSr ? "Kraj pogl. 02" : "End of Ch. 02",
+          isSr ? "Vitrine" : "Display Cases",
           "JBG-2 · Infrico · Tefcold · Bartscher",
-          "Est. MB Equipment",
+          isSr ? "Osn. MB Equipment" : "Est. MB Equipment",
         ]}
       />
     </>

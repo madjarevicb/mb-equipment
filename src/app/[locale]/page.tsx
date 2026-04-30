@@ -7,7 +7,7 @@ import AboutSection from "@/components/home/AboutSection";
 import dynamic_ from "next/dynamic";
 const FaqSection = dynamic_(() => import("@/components/home/FaqSection"));
 import CtaSection from "@/components/home/CtaSection";
-import { faqs } from "@/lib/faq";
+import { faqs as fallbackFaqs } from "@/lib/faq";
 import { COMPANY } from "@/lib/constants";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
@@ -67,38 +67,10 @@ export async function generateMetadata({
 /* ------------------------------------------------------------------ */
 /*  JSON-LD structured data                                            */
 /* ------------------------------------------------------------------ */
-const PAGE_DESC =
+const PAGE_DESC_EN =
   "Authorized Middleby partner supplying 110+ commercial kitchen equipment brands across Southeast Europe. Hotels, restaurants, residential, and food processing.";
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${COMPANY.url}/#website`,
-      name: COMPANY.name,
-      url: COMPANY.url,
-      description: PAGE_DESC,
-      publisher: {
-        "@type": "Organization",
-        "@id": `${COMPANY.url}/#organization`,
-        name: COMPANY.name,
-        url: COMPANY.url,
-      },
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question" as const,
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer" as const,
-          text: faq.answer,
-        },
-      })),
-    },
-  ],
-};
+const PAGE_DESC_SR =
+  "Ovlašćeni Middleby partner sa preko 110 brendova profesionalne kuhinjske opreme širom Jugoistočne Evrope. Hoteli, restorani, rezidencijalni i industrijski sektor.";
 
 export default async function HomePage({
   params,
@@ -107,6 +79,37 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
+  const faqItems = dict.home.faq.items && dict.home.faq.items.length > 0 ? dict.home.faq.items : fallbackFaqs;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${COMPANY.url}/#website`,
+        name: COMPANY.name,
+        url: COMPANY.url,
+        description: locale === "sr" ? PAGE_DESC_SR : PAGE_DESC_EN,
+        publisher: {
+          "@type": "Organization",
+          "@id": `${COMPANY.url}/#organization`,
+          name: COMPANY.name,
+          url: COMPANY.url,
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((faq) => ({
+          "@type": "Question" as const,
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer" as const,
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
+  };
 
   return (
     <>
@@ -117,13 +120,36 @@ export default async function HomePage({
         }}
       />
 
-      <HeroSection dict={dict.home.hero} locale={locale as Locale} />
-      <PartnersSection dict={dict.home.partners} />
-      <SectorsSection dict={dict.home.sectors} locale={locale as Locale} />
-      <StatsSection dict={dict.home.stats} />
-      <AboutSection dict={dict.home.about} locale={locale as Locale} />
-      <FaqSection dict={dict.home.faq} />
-      <CtaSection dict={dict.home.cta} locale={locale as Locale} />
+      <HeroSection
+        dict={dict.home.hero}
+        locale={locale as Locale}
+        ariaLabel={dict.common.heroAria}
+      />
+      <PartnersSection
+        dict={dict.home.partners}
+        ariaLabel={dict.common.partnerLogosAria}
+        srOnlyHeading={dict.common.ourGlobalPartners}
+      />
+      <SectorsSection
+        dict={dict.home.sectors}
+        locale={locale as Locale}
+        ariaLabel={dict.common.sectorsAria}
+        viewSolutionsLabel={dict.common.viewSolutions}
+        exploreLabel={dict.common.explore}
+      />
+      <StatsSection dict={dict.home.stats} ariaLabel={dict.common.statsAria} />
+      <AboutSection
+        dict={dict.home.about}
+        locale={locale as Locale}
+        ariaLabel={dict.common.aboutAria}
+      />
+      <FaqSection dict={dict.home.faq} ariaLabel={dict.common.faqAria} />
+      <CtaSection
+        dict={dict.home.cta}
+        locale={locale as Locale}
+        ariaLabel={dict.common.startProjectAria}
+        responseLabel={dict.common.responseTime}
+      />
     </>
   );
 }

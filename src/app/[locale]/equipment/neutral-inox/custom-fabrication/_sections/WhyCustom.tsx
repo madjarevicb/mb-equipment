@@ -1,12 +1,25 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../thermal-processing/_sections/ScrollReveal";
 
-const VALUES: { serial: string; line: string }[] = [
+interface WhyCustomProps {
+  locale?: Locale;
+}
+
+const VALUES_EN: { serial: string; line: string }[] = [
   { serial: "i", line: "Fits the room." },
   { serial: "ii", line: "Matches the workflow." },
   { serial: "iii", line: "Outlasts the lease." },
 ];
 
-export default function WhyCustom() {
+const VALUES_SR: { serial: string; line: string }[] = [
+  { serial: "i", line: "Uklapa se u prostoriju." },
+  { serial: "ii", line: "Prati tok rada." },
+  { serial: "iii", line: "Nadživljava zakup." },
+];
+
+export default function WhyCustom({ locale }: WhyCustomProps = {}) {
+  const isSr = locale === "sr";
+  const VALUES = isSr ? VALUES_SR : VALUES_EN;
   return (
     <section
       aria-hidden="true"
@@ -58,7 +71,7 @@ export default function WhyCustom() {
                 fontWeight: 400,
               }}
             >
-              A catalog stops where the wall is.
+              {isSr ? "Katalog se završava tamo gde je zid." : "A catalog stops where the wall is."}
             </span>
             <span
               className="font-display italic block"
@@ -70,7 +83,7 @@ export default function WhyCustom() {
                 color: "var(--color-gold-text)",
               }}
             >
-              Custom keeps going.
+              {isSr ? "Po meri ide dalje." : "Custom keeps going."}
             </span>
           </ScrollReveal>
         </div>
@@ -91,7 +104,7 @@ export default function WhyCustom() {
                 fontWeight: 500,
               }}
             >
-              MB Equipment — House Note
+              {isSr ? "MB Equipment — Reč kuće" : "MB Equipment — House Note"}
             </span>
           </div>
         </div>

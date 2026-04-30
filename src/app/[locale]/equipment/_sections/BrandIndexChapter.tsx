@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo, useState, useId } from "react";
 import {
   SUPER_CATEGORIES,
+  getSuperCategoryLabels,
   type IndexedBrand,
   type SuperCategory,
 } from "./brandTaxonomy";
@@ -16,14 +17,6 @@ interface BrandIndexChapterProps {
 
 type FilterValue = "all" | SuperCategory;
 
-const FILTERS: { value: FilterValue; label: string }[] = [
-  { value: "all", label: "All" },
-  ...SUPER_CATEGORIES.map((c) => ({
-    value: c.id,
-    label: c.shortLabel,
-  })),
-];
-
 export default function BrandIndexChapter({
   locale,
   brands,
@@ -31,6 +24,15 @@ export default function BrandIndexChapter({
   const [filter, setFilter] = useState<FilterValue>("all");
   const [query, setQuery] = useState("");
   const searchId = useId();
+  const isSr = locale === "sr";
+
+  const FILTERS: { value: FilterValue; label: string }[] = [
+    { value: "all", label: isSr ? "Sve" : "All" },
+    ...SUPER_CATEGORIES.map((c) => ({
+      value: c.id,
+      label: getSuperCategoryLabels(c.id, isSr).shortLabel,
+    })),
+  ];
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -70,7 +72,9 @@ export default function BrandIndexChapter({
                 }}
                 className="text-xs font-medium uppercase"
               >
-                Chapter III — The Brand Index
+                {isSr
+                  ? "Poglavlje III — Indeks brendova"
+                  : "Chapter III — The Brand Index"}
               </span>
             </div>
             <h2
@@ -82,13 +86,13 @@ export default function BrandIndexChapter({
                 letterSpacing: "-0.02em",
               }}
             >
-              Browse the
+              {isSr ? "Pregledajte" : "Browse the"}
               <br />
               <span
                 className="italic font-normal"
                 style={{ color: "var(--color-gold)" }}
               >
-                full house.
+                {isSr ? "kompletan portfolio." : "full house."}
               </span>
             </h2>
           </div>
@@ -101,8 +105,9 @@ export default function BrandIndexChapter({
                 maxWidth: "32ch",
               }}
             >
-              Filter the index by discipline or search by name. Each entry
-              links to the equipment page where that brand is specified.
+              {isSr
+                ? "Filtrirajte indeks po disciplini ili pretražujte po nazivu. Svaka stavka vodi do stranice opreme gde je taj brend specificiran."
+                : "Filter the index by discipline or search by name. Each entry links to the equipment page where that brand is specified."}
             </p>
           </div>
         </div>
@@ -129,7 +134,11 @@ export default function BrandIndexChapter({
             {/* Category pills */}
             <div
               role="group"
-              aria-label="Filter brands by category"
+              aria-label={
+                isSr
+                  ? "Filtriraj brendove po kategoriji"
+                  : "Filter brands by category"
+              }
               className="flex flex-wrap gap-2"
             >
               {FILTERS.map((f) => {
@@ -176,7 +185,7 @@ export default function BrandIndexChapter({
               style={{ minWidth: "240px" }}
             >
               <label htmlFor={searchId} className="sr-only">
-                Search brands by name
+                {isSr ? "Pretražite brendove po nazivu" : "Search brands by name"}
               </label>
               <span
                 aria-hidden="true"
@@ -211,8 +220,12 @@ export default function BrandIndexChapter({
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search brand…"
-                aria-label="Search brands by name"
+                placeholder={
+                  isSr ? "Pretražite brendove\u2026" : "Search brand\u2026"
+                }
+                aria-label={
+                  isSr ? "Pretražite brendove po nazivu" : "Search brands by name"
+                }
                 style={{
                   width: "100%",
                   fontFamily: "inherit",
@@ -243,7 +256,9 @@ export default function BrandIndexChapter({
               letterSpacing: "0.3em",
             }}
           >
-            Showing {showing} of {total} brands
+            {isSr
+              ? `Prikazano ${showing} od ${total} brendova`
+              : `Showing ${showing} of ${total} brands`}
           </p>
         </div>
 
@@ -260,7 +275,9 @@ export default function BrandIndexChapter({
                 textAlign: "center",
               }}
             >
-              No brands match — try clearing filters.
+              {isSr
+                ? "Nema brendova koji odgovaraju \u2014 pokušajte da obrišete filtere."
+                : "No brands match \u2014 try clearing filters."}
             </p>
           ) : (
             <ul
@@ -281,7 +298,7 @@ export default function BrandIndexChapter({
                     borderBottom: "1px solid rgba(201,168,76,0.2)",
                   }}
                 >
-                  <BrandCard brand={brand} locale={locale} />
+                  <BrandCard brand={brand} locale={locale} isSr={isSr} />
                 </li>
               ))}
             </ul>
@@ -305,8 +322,9 @@ export default function BrandIndexChapter({
               className="text-white/60 font-light"
               style={{ fontSize: "13px" }}
             >
-              Authorized partnerships — service, parts, and factory support
-              under one desk in Belgrade.
+              {isSr
+                ? "Ovlašćena partnerstva \u2014 servis, rezervni delovi i fabrička podrška sa jednog mesta u Beogradu."
+                : "Authorized partnerships \u2014 service, parts, and factory support under one desk in Belgrade."}
             </span>
           </div>
           <div className="col-span-12 lg:col-span-6 lg:text-right">
@@ -346,18 +364,24 @@ export default function BrandIndexChapter({
 function BrandCard({
   brand,
   locale,
+  isSr,
 }: {
   brand: IndexedBrand;
   locale: string;
+  isSr: boolean;
 }) {
   const href = `/${locale}/equipment/${brand.hrefSlug}`;
-  const catMeta = SUPER_CATEGORIES.find((c) => c.id === brand.superCategory)!;
+  const catLabels = getSuperCategoryLabels(brand.superCategory, isSr);
 
   return (
     <Link
       href={href}
       className="brand-card group relative block h-full"
-      aria-label={`${brand.name} — ${brand.descriptor}. Visit ${catMeta.label} page.`}
+      aria-label={
+        isSr
+          ? `${brand.name} \u2014 ${brand.descriptor}. Posetite stranicu ${catLabels.label}.`
+          : `${brand.name} \u2014 ${brand.descriptor}. Visit ${catLabels.label} page.`
+      }
       style={{
         padding: "1.5rem 1.25rem",
         display: "flex",
@@ -381,7 +405,7 @@ function BrandCard({
         {brand.logo ? (
           <Image
             src={brand.logo}
-            alt={`${brand.name} logo`}
+            alt={isSr ? `${brand.name} logo` : `${brand.name} logo`}
             width={120}
             height={36}
             loading="lazy"
@@ -452,7 +476,7 @@ function BrandCard({
           paddingTop: "0.5rem",
         }}
       >
-        {catMeta.shortLabel}
+        {catLabels.shortLabel}
       </span>
 
       {/* Hover hairline border */}

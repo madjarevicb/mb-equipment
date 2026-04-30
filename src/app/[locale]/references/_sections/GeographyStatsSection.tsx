@@ -12,7 +12,7 @@ export default function GeographyStatsSection({ commonDict }: Props) {
     >
       <div className="max-w-7xl mx-auto px-6">
         <h2 id="geography-heading" className="sr-only">
-          Global Reach
+          {commonDict.globalReachHeading}
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-center">
           <span className="text-white font-display text-lg font-bold">
@@ -20,7 +20,7 @@ export default function GeographyStatsSection({ commonDict }: Props) {
           </span>
           <span className="text-white/20 mx-4 hidden sm:inline">|</span>
           <span className="text-white font-display text-lg font-bold">
-            Southeast Europe
+            {commonDict.southeastEurope}
           </span>
           <span className="text-white/20 mx-4 hidden sm:inline">|</span>
           <span className="text-white font-display text-lg font-bold">

@@ -11,6 +11,7 @@ interface Props {
 }
 
 export default function CookingLineCta({ locale, dict }: Props) {
+  const isSr = locale === "sr";
   return (
     <>
       <section
@@ -71,7 +72,7 @@ export default function CookingLineCta({ locale, dict }: Props) {
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  § Specify Your Line
+                  {isSr ? "§ Specifikujte Vašu liniju" : "§ Specify Your Line"}
                 </span>
               </div>
 
@@ -89,7 +90,7 @@ export default function CookingLineCta({ locale, dict }: Props) {
                   staggerLines
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Specify</span>
+                  <span style={{ display: "block" }}>{isSr ? "Specifikujte" : "Specify"}</span>
                   <span
                     style={{
                       display: "block",
@@ -99,7 +100,7 @@ export default function CookingLineCta({ locale, dict }: Props) {
                       paddingLeft: "0.4em",
                     }}
                   >
-                    your line.
+                    {isSr ? "Vašu liniju." : "your line."}
                   </span>
                 </ScrollReveal>
               </h2>
@@ -112,7 +113,13 @@ export default function CookingLineCta({ locale, dict }: Props) {
                   maxWidth: "52ch",
                 }}
               >
-                Send a floor plan or menu concept. We return a CAD layout, brand
+                {isSr ? <>Pošaljite plan ili koncept menija. Vraćamo CAD raspored,
+                preporuke brendova i opsege budžeta —
+                <span
+                  className="font-display italic"
+                  style={{ color: "var(--color-gold)" }}
+                >
+                  {" "}bez obaveze</span>.</> : <>Send a floor plan or menu concept. We return a CAD layout, brand
                 recommendations, and budget ranges —
                 <span
                   className="font-display italic"
@@ -121,7 +128,7 @@ export default function CookingLineCta({ locale, dict }: Props) {
                   {" "}
                   no obligation
                 </span>
-                .
+                .</>}
               </p>
 
               <div className="flex flex-wrap gap-4 mt-6 lg:mt-8">
@@ -158,7 +165,7 @@ export default function CookingLineCta({ locale, dict }: Props) {
                       fontWeight: 500,
                     }}
                   >
-                    Colophon
+                    {isSr ? "Kolofon" : "Colophon"}
                   </span>
                   <p
                     className="font-display italic text-white"
@@ -168,12 +175,12 @@ export default function CookingLineCta({ locale, dict }: Props) {
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    Set in Belgrade.
+                    {isSr ? "Ugnežden u Beogradu." : "Set in Belgrade."}
                   </p>
                 </div>
 
                 <Entry
-                  label="Showroom"
+                  label={isSr ? "Salon" : "Showroom"}
                   value={
                     <>
                       {COMPANY.address.street}
@@ -182,12 +189,12 @@ export default function CookingLineCta({ locale, dict }: Props) {
                     </>
                   }
                 />
-                <Entry label="Coverage" value="Southeast Europe & beyond." />
+                <Entry label={isSr ? "Pokriće" : "Coverage"} value={isSr ? "Jugoistočna Evropa i šire." : "Southeast Europe & beyond."} />
                 <Entry
-                  label="Lead times"
-                  value="Specification within 1 business day."
+                  label={isSr ? "Rok isporuke" : "Lead times"}
+                  value={isSr ? "Specifikacija u roku od 1 radnog dana." : "Specification within 1 business day."}
                 />
-                <Entry label="Partner" value="Authorized Middleby Corp." />
+                <Entry label={isSr ? "Partner" : "Partner"} value={isSr ? "Ovlašćeni Middleby Corp." : "Authorized Middleby Corp."} />
               </div>
             </aside>
           </div>
@@ -197,13 +204,13 @@ export default function CookingLineCta({ locale, dict }: Props) {
       {/* Closing running-meta */}
       <RunningMeta
         variant="light"
-        folio="folio 07 / 07"
+        folio={isSr ? "tabak 07 / 07" : "folio 07 / 07"}
         items={[
-          "Vol. II",
-          "End of Ch. 02",
-          "Cooking Line",
+          isSr ? "Tom II" : "Vol. II",
+          isSr ? "Kraj pogl. 02" : "End of Ch. 02",
+          isSr ? "Kuhinjska linija" : "Cooking Line",
           "Silko · Lincat",
-          "Est. MB Equipment",
+          isSr ? "Osn. MB Equipment" : "Est. MB Equipment",
         ]}
       />
     </>

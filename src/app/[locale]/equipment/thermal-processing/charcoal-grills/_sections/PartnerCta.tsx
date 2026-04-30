@@ -11,7 +11,7 @@ interface PartnerCtaProps {
   dict: Dictionary;
 }
 
-const VALUE_PROPS = [
+const VALUE_PROPS_EN = [
   {
     label: "Warranty",
     value: "4 years, honored locally",
@@ -34,7 +34,32 @@ const VALUE_PROPS = [
   },
 ];
 
+const VALUE_PROPS_SR = [
+  {
+    label: "Garancija",
+    value: "4 godine, ostvariva lokalno",
+    note: "Direktno Middleby pokriće preko beogradskog servisa.",
+  },
+  {
+    label: "Servis",
+    value: "Middleby-obučeni inženjeri",
+    note: "Lokalni tehničari, odgovor u zemlji.",
+  },
+  {
+    label: "Delovi",
+    value: "Originalni OEM — Josper / Middleby",
+    note: "Ovlašćeni lanac snabdevanja, bez zamena.",
+  },
+  {
+    label: "Puštanje u rad",
+    value: "Instalirano i podešeno po specifikaciji",
+    note: "Provera dimnjaka, prvo paljenje, obuka šefa.",
+  },
+];
+
 export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
+  const isSr = locale === "sr";
+  const VALUE_PROPS = isSr ? VALUE_PROPS_SR : VALUE_PROPS_EN;
   return (
     <>
       <section
@@ -95,7 +120,7 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  &sect; The Authorized Route
+                  {isSr ? "§ Ovlašćeni put" : <>&sect; The Authorized Route</>}
                 </span>
               </div>
 
@@ -109,7 +134,7 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                 }}
               >
                 <ScrollReveal as="span" staggerLines style={{ display: "block" }}>
-                  <span style={{ display: "block" }}>Specified in Pineda.</span>
+                  <span style={{ display: "block" }}>{isSr ? "Specifikovano u Pineda." : "Specified in Pineda."}</span>
                   <span
                     style={{
                       display: "block",
@@ -119,7 +144,7 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                       paddingLeft: "0.4em",
                     }}
                   >
-                    Supported in Belgrade.
+                    {isSr ? "Podržano u Beogradu." : "Supported in Belgrade."}
                   </span>
                 </ScrollReveal>
               </h2>
@@ -132,10 +157,13 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                   maxWidth: "52ch",
                 }}
               >
-                As an authorized Middleby Corporation partner, MB Equipment
+                {isSr ? <>Kao ovlašćeni partner Middleby Corporation-a, MB Equipment
+                predstavlja Josper u Jugoistočnoj Evropi &mdash; originalni delovi,
+                fabrička garancija, rezidentni servisni inženjeri i
+                savetovanje od šefa do šefa iz Josper mreže.</> : <>As an authorized Middleby Corporation partner, MB Equipment
                 represents Josper in Southeast Europe &mdash; genuine parts,
                 factory-backed warranty, resident service engineers, and
-                chef-to-chef advisory from the Josper network.
+                chef-to-chef advisory from the Josper network.</>}
               </p>
 
               {/* Value props ledger */}
@@ -224,7 +252,7 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                       fontWeight: 500,
                     }}
                   >
-                    Colophon
+                    {isSr ? "Kolofon" : "Colophon"}
                   </span>
                   <p
                     className="font-display italic text-white"
@@ -234,14 +262,14 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    Pineda de Mar,
+                    {isSr ? "Pineda de Mar," : "Pineda de Mar,"}
                     <br />
-                    set in Belgrade.
+                    {isSr ? "ugnežden u Beogradu." : "set in Belgrade."}
                   </p>
                 </div>
 
                 <ColophonEntry
-                  label="Showroom"
+                  label={isSr ? "Salon" : "Showroom"}
                   value={
                     <>
                       {COMPANY.address.street}
@@ -251,11 +279,11 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                   }
                 />
                 <ColophonEntry
-                  label="Partner"
-                  value="Authorized Middleby Corp."
+                  label={isSr ? "Partner" : "Partner"}
+                  value={isSr ? "Ovlašćeni Middleby Corp." : "Authorized Middleby Corp."}
                 />
                 <ColophonEntry
-                  label="Brand"
+                  label={isSr ? "Brend" : "Brand"}
                   value={
                     <>
                       Josper &mdash;{" "}
@@ -263,14 +291,14 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                         className="font-display italic"
                         style={{ color: "var(--color-gold)" }}
                       >
-                        a Middleby company.
+                        {isSr ? "Middleby kompanija." : "a Middleby company."}
                       </span>
                     </>
                   }
                 />
                 <ColophonEntry
-                  label="Response"
-                  value="Within one business day."
+                  label={isSr ? "Odgovor" : "Response"}
+                  value={isSr ? "U roku od jednog radnog dana." : "Within one business day."}
                 />
               </div>
             </aside>
@@ -296,7 +324,7 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                 className="text-white/60 font-light italic font-display"
                 style={{ fontSize: "13px" }}
               >
-                &ldquo;Yesterday&rsquo;s taste with today&rsquo;s pace.&rdquo;
+                {isSr ? <>&ldquo;Jučerašnji ukus sa današnjim tempom.&rdquo;</> : <>&ldquo;Yesterday&rsquo;s taste with today&rsquo;s pace.&rdquo;</>}
               </span>
             </div>
             <div className="col-span-12 lg:col-span-6 lg:text-right">
@@ -304,7 +332,7 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
                 className="uppercase text-white/50"
                 style={{ fontSize: "10px", letterSpacing: "0.32em" }}
               >
-                Folio 08 / 08 &middot; End of Ch. 02
+                {isSr ? <>Tabak 08 / 08 &middot; Kraj pogl. 02</> : <>Folio 08 / 08 &middot; End of Ch. 02</>}
               </span>
             </div>
           </div>
@@ -313,13 +341,13 @@ export default function PartnerCta({ locale, dict }: PartnerCtaProps) {
 
       <RunningMeta
         variant="dark"
-        folio="End of Ch. 02"
+        folio={isSr ? "Kraj pogl. 02" : "End of Ch. 02"}
         items={[
-          "Vol. I",
+          isSr ? "Tom I" : "Vol. I",
           "Josper",
-          "HJX Series",
-          "Middleby Partner",
-          "Est. MB Equipment",
+          isSr ? "HJX serija" : "HJX Series",
+          isSr ? "Middleby partner" : "Middleby Partner",
+          isSr ? "Osn. MB Equipment" : "Est. MB Equipment",
         ]}
       />
     </>

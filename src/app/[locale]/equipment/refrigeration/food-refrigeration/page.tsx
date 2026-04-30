@@ -24,14 +24,14 @@ const HERO_BLUR =
 
 // ---- The four houses ---------------------------------------------------------
 
-const HOUSES = [
+const HOUSES_EN = [
   {
     name: "Dalmec",
     origin: "Istrana, Italy",
     founded: "Est. 2012",
     parent: "Dal Santo Industries",
     note:
-      "Italian artisan house with the deepest format catalogue — saladettes, retarder proofers, pizza counters across 700+ SKUs.",
+      "Italian artisan house with the deepest format catalog — saladettes, retarder proofers, pizza counters across 700+ SKUs.",
     spec: "AISI 304 · 80 mm PU · HFO blowing agent · Climate Class 5",
     badge: "700+ SKU breadth",
   },
@@ -67,6 +67,49 @@ const HOUSES = [
   },
 ];
 
+const HOUSES_SR = [
+  {
+    name: "Dalmec",
+    origin: "Istrana, Italija",
+    founded: "Osn. 2012.",
+    parent: "Dal Santo Industries",
+    note:
+      "Italijanska zanatska kuća sa najdubljim katalogom formata — saladete, komore za nadolazak testa, radni stolovi za picu kroz 700+ SKU-ova.",
+    spec: "AISI 304 · 80 mm PU · HFO sredstvo za ekspandiranje · Klimatska klasa 5",
+    badge: "Širina 700+ SKU-ova",
+  },
+  {
+    name: "Desmon",
+    origin: "Nusco, Italija",
+    founded: "Osn. 1994.",
+    parent: "Middleby Corporation od 22. dec. 2014.",
+    note:
+      "Vertikalni frižideri, horizontalni PTGM, plusne komore i GBF brzi rashlađivač kao vodeći proizvod — ISO 9001 + ISO 14001.",
+    spec: "AISI 304 · ciklopentan pena · UV ciklus na brzim rashlađivačima",
+    badge: "Middleby poreklo",
+  },
+  {
+    name: "Tefcold",
+    origin: "Viborg, Danska",
+    founded: "Osn. 1987.",
+    parent: "Porodica Christensen — nezavisna",
+    note:
+      "Danska porodična kuća — UR vertikalni, UF horizontalni, montažne rashladne komore. Lider održivosti sa R290 propan rashladnim sredstvom.",
+    spec: "R290 (GWP = 3) · sopstvena Viborg laboratorija · CE / EU energetska oznaka",
+    badge: "R290 liderstvo",
+  },
+  {
+    name: "Tecnodom",
+    origin: "Vigodarzere (Padova), Italija",
+    founded: "Osn. 1996.",
+    parent: "Nezavisni italijanski S.p.A.",
+    note:
+      "Italijanska srednje-premium klasa — ARMADIO vertikalni, TAVOLO pultovi, SLV02C6 saladeta sa mermernim vrhom, ATTILA / ALADINO brzi rashlađivači.",
+    spec: "AISI 304 · ventilirano hlađenje · opcioni mermerni / granitni vrh",
+    badge: "Mermerne saladete",
+  },
+];
+
 // ---- Format ledger -----------------------------------------------------------
 
 interface Format {
@@ -76,7 +119,7 @@ interface Format {
   brands: string;
 }
 
-const FORMATS: Format[] = [
+const FORMATS_EN: Format[] = [
   {
     serial: "No. 01",
     name: "Reach-in upright refrigerators",
@@ -138,6 +181,72 @@ const FORMATS: Format[] = [
     name: "Refrigerated drawer units",
     descriptor:
       "Drawer-style chassis for the line — fast access, low profile, GN-compatible.",
+    brands: "Desmon · Dalmec",
+  },
+];
+
+const FORMATS_SR: Format[] = [
+  {
+    serial: "Br. 01",
+    name: "Vertikalni frižideri",
+    descriptor:
+      "Jedno-, dvo- i trovratni ormari — puna GN kompatibilnost, ventilirano hlađenje, magnetne dihtunge.",
+    brands: "Dalmec · Desmon PGM · Tefcold UR · Tecnodom ARMADIO",
+  },
+  {
+    serial: "Br. 02",
+    name: "Vertikalni zamrzivači",
+    descriptor:
+      "Ormari sa minus temperaturom za skladištenje i pripremu zamrznute hrane — grejane dihtunge, automatsko odmrzavanje.",
+    brands: "Dalmec · Desmon · Tefcold UF · Tecnodom ARMADIO",
+  },
+  {
+    serial: "Br. 03",
+    name: "Horizontalni frižideri",
+    descriptor:
+      "Dvo- ili trovratne jedinice koje se uklapaju ispod pripremnih pultova — radna dubina, ventilirano hlađenje.",
+    brands: "Dalmec · Desmon PTGM2 / PTGM3 · Tefcold UD · Tecnodom",
+  },
+  {
+    serial: "Br. 04",
+    name: "Horizontalni zamrzivači",
+    descriptor:
+      "Horizontalne jedinice sa minus temperaturom za sladoled, zamrznutu pripremu i proteine na liniji.",
+    brands: "Dalmec · Desmon · Tefcold UF200s",
+  },
+  {
+    serial: "Br. 05",
+    name: "Saladete",
+    descriptor:
+      "Rashladne baze sa GN 1/1 ili 1/3 nišama ispod inox, granitnih ili mermernih radnih ploča.",
+    brands: "Dalmec · Tecnodom SLV02C6 (2 vrata, 6 GN, mermerni vrh)",
+  },
+  {
+    serial: "Br. 06",
+    name: "Radni stolovi za picu",
+    descriptor:
+      "Mermerne ili granitne radne ploče, rashladne niše za sastojke, fioke za testo — specijalnost Dalmec-a.",
+    brands: "Dalmec · Tecnodom",
+  },
+  {
+    serial: "Br. 07",
+    name: "Brzi rashlađivači / šokeri",
+    descriptor:
+      "Kapaciteti 5, 10, 15 i 20 nivoa — grejana sonda za jezgro, UV ciklus, soft / hard profili hlađenja.",
+    brands: "Desmon GBF (vodeći) · Dalmec · Tecnodom ATTILA / ALADINO",
+  },
+  {
+    serial: "Br. 08",
+    name: "Komore za nadolazak testa",
+    descriptor:
+      "Dvostepeni ormari za kontrolisano usporavanje i nadolazak testa — specijalnost Dalmec-a.",
+    brands: "Dalmec",
+  },
+  {
+    serial: "Br. 09",
+    name: "Rashladne fioke",
+    descriptor:
+      "Šasije sa fiokama za liniju — brz pristup, niski profil, GN kompatibilne.",
     brands: "Desmon · Dalmec",
   },
 ];
@@ -222,6 +331,8 @@ export default async function UprightUndercounterPage({
   const PAGE_TITLE = isSr ? PAGE_TITLE_SR : PAGE_TITLE_EN;
   const PAGE_DESC = isSr ? PAGE_DESC_SR : PAGE_DESC_EN;
   const pageUrl = `${COMPANY.url}/${locale}/equipment/refrigeration/food-refrigeration`;
+  const HOUSES = isSr ? HOUSES_SR : HOUSES_EN;
+  const FORMATS = isSr ? FORMATS_SR : FORMATS_EN;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -368,7 +479,7 @@ export default async function UprightUndercounterPage({
               letterSpacing: "0.18em",
             }}
           >
-            folio 01 / 08
+            {isSr ? "tabak 01 / 08" : "folio 01 / 08"}
           </span>
           <span
             aria-hidden="true"
@@ -397,10 +508,10 @@ export default async function UprightUndercounterPage({
 
         <RunningMeta
           variant="dark"
-          folio="Ed. 2026"
+          folio={isSr ? "Izd. 2026" : "Ed. 2026"}
           items={[
-            "Vol. IV",
-            "Ch. 01 — Refrigeration",
+            isSr ? "Tom IV" : "Vol. IV",
+            isSr ? "Pogl. 01 — Rashladna oprema" : "Ch. 01 — Refrigeration",
             "Dalmec",
             "Desmon",
             "Tefcold",
@@ -496,10 +607,10 @@ export default async function UprightUndercounterPage({
                     delay={40}
                     style={{ display: "block" }}
                   >
-                    <span style={{ display: "block" }}>Upright &amp;</span>
-                    <span style={{ display: "block" }}>undercounter —</span>
+                    <span style={{ display: "block" }}>{isSr ? "Vertikalno i" : <>Upright &amp;</>}</span>
+                    <span style={{ display: "block" }}>{isSr ? "horizontalno —" : "undercounter —"}</span>
                     <span style={{ display: "block" }}>
-                      for{" "}
+                      {isSr ? "za " : "for "}
                       <span
                         style={{
                           fontStyle: "italic",
@@ -507,11 +618,11 @@ export default async function UprightUndercounterPage({
                           color: "var(--color-gold)",
                         }}
                       >
-                        everything
+                        {isSr ? "sve" : "everything"}
                       </span>
                     </span>
                     <span style={{ display: "block" }}>
-                      that has to stay cold
+                      {isSr ? "što mora ostati hladno" : "that has to stay cold"}
                       <span
                         aria-hidden="true"
                         style={{
@@ -544,9 +655,9 @@ export default async function UprightUndercounterPage({
                     letterSpacing: "0.1em",
                   }}
                 >
-                  Plate No. 01 —{" "}
+                  {isSr ? "Tabla br. 01 —" : "Plate No. 01 —"}{" "}
                   <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                    Italy &amp; Denmark &rarr; Belgrade.
+                    {isSr ? "Italija i Danska → Beograd." : <>Italy &amp; Denmark &rarr; Belgrade.</>}
                   </span>
                 </p>
               </div>
@@ -565,7 +676,7 @@ export default async function UprightUndercounterPage({
                 }}
                 className="block uppercase font-medium mb-4"
               >
-                &sect; Editor&rsquo;s Note
+                {isSr ? "§ Beleška urednika" : <>&sect; Editor&rsquo;s Note</>}
               </span>
               <p
                 className="text-white/80 font-light"
@@ -590,12 +701,19 @@ export default async function UprightUndercounterPage({
                     fontWeight: 400,
                   }}
                 >
-                  F
+                  {isSr ? "Č" : "F"}
                 </span>
-                our manufacturers &mdash; three Italian, one Danish &mdash;
+                {isSr ? (
+                  <>etiri proizvođača &mdash; tri italijanska, jedan danski &mdash;
+                  pokrivaju svaki format koji je kuhinji potreban za hlađenje:
+                  vertikalni i horizontalni frižideri, saladete, šokeri za brzo hlađenje. Projektovano
+                  za kuhinje koje ne staju.</>
+                ) : (
+                  <>our manufacturers &mdash; three Italian, one Danish &mdash;
                 covering every form factor a kitchen needs cold: reach-in
                 upright, undercounter prep, saladette, blast chiller. Engineered
-                for kitchens that don&rsquo;t stop.
+                {isSr ? "za kuhinje koje ne staju." : <>for kitchens that don&rsquo;t stop.</>}</>
+                )}
               </p>
             </div>
 
@@ -646,7 +764,7 @@ export default async function UprightUndercounterPage({
                         textTransform: "uppercase",
                       }}
                     >
-                      Desmon PGM14 — Upright reach-in
+                      {isSr ? "Desmon PGM14 — Vertikalni frižider" : "Desmon PGM14 — Upright reach-in"}
                     </span>
                     <span
                       className="font-display italic"
@@ -672,8 +790,8 @@ export default async function UprightUndercounterPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
-          label="Heritage & Standards"
-          caption="Three Italian houses, one Danish — and the standards behind them."
+          label={isSr ? "Nasleđe i standardi" : "Heritage & Standards"}
+          caption={isSr ? "Tri italijanske kuće, jedna danska — i standardi iza njih." : "Three Italian houses, one Danish — and the standards behind them."}
           variant="light"
         />
         <AwardStrip
@@ -681,33 +799,33 @@ export default async function UprightUndercounterPage({
           items={[
             {
               type: "heritage",
-              label: "Tefcold · Since 1987",
-              detail: "Viborg, Denmark",
+              label: isSr ? "Tefcold · Od 1987." : "Tefcold · Since 1987",
+              detail: isSr ? "Viborg, Danska" : "Viborg, Denmark",
             },
             {
               type: "heritage",
-              label: "Desmon · Since 1994",
-              detail: "Nusco, Italy",
+              label: isSr ? "Desmon · Od 1994." : "Desmon · Since 1994",
+              detail: isSr ? "Nusco, Italija" : "Nusco, Italy",
             },
             {
               type: "heritage",
-              label: "Tecnodom · Since 1996",
-              detail: "Vigodarzere, Italy",
+              label: isSr ? "Tecnodom · Od 1996." : "Tecnodom · Since 1996",
+              detail: isSr ? "Vigodarzere, Italija" : "Vigodarzere, Italy",
             },
             {
               type: "heritage",
-              label: "Dalmec · Since 2012",
-              detail: "Istrana, Italy",
+              label: isSr ? "Dalmec · Od 2012." : "Dalmec · Since 2012",
+              detail: isSr ? "Istrana, Italija" : "Istrana, Italy",
             },
             {
               type: "certification",
-              label: "Middleby (Desmon)",
-              detail: "Acquired Dec 2014",
+              label: isSr ? "Middleby (Desmon)" : "Middleby (Desmon)",
+              detail: isSr ? "Pripojen dec. 2014." : "Acquired Dec 2014",
             },
             {
               type: "certification",
-              label: "R290 leadership",
-              detail: "Tefcold natural refrigerant",
+              label: isSr ? "R290 liderstvo" : "R290 leadership",
+              detail: isSr ? "Tefcold prirodno rashladno sredstvo" : "Tefcold natural refrigerant",
             },
           ]}
         />
@@ -719,8 +837,8 @@ export default async function UprightUndercounterPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="III"
-          label="The Four Houses"
-          caption="Three Italian, one Danish — every cold form factor under one authorized partnership."
+          label={isSr ? "Četiri kuće" : "The Four Houses"}
+          caption={isSr ? "Tri italijanske, jedna danska — svaki format hlađenja kroz jedno ovlašćeno partnerstvo." : "Three Italian, one Danish — every cold form factor under one authorized partnership."}
           variant="light"
         />
       </div>
@@ -749,7 +867,7 @@ export default async function UprightUndercounterPage({
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  Four houses — single source
+                  {isSr ? "Četiri kuće — jedan izvor" : "Four houses — single source"}
                 </span>
               </div>
               <ScrollReveal>
@@ -762,12 +880,12 @@ export default async function UprightUndercounterPage({
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  Italian craft,{" "}
+                  {isSr ? "Italijanski zanat, " : "Italian craft, "}
                   <span
                     className="italic font-normal"
                     style={{ color: "var(--color-gold-text)" }}
                   >
-                    Danish discipline.
+                    {isSr ? "danska disciplina." : "Danish discipline."}
                   </span>
                 </h2>
               </ScrollReveal>
@@ -783,8 +901,8 @@ export default async function UprightUndercounterPage({
                   fontFamily: "var(--font-display), serif",
                 }}
               >
-                Single source — all four brands distributed, installed and
-                serviced under MB Equipment&rsquo;s authorized partnership.
+                {isSr ? "Jedan izvor — sva četiri brenda distribuiramo, instaliramo i servisiramo kroz ovlašćeno MB Equipment partnerstvo." : <>Single source — all four brands distributed, installed and
+                serviced under MB Equipment&rsquo;s authorized partnership.</>}
               </p>
             </div>
           </div>
@@ -816,7 +934,7 @@ export default async function UprightUndercounterPage({
                       letterSpacing: "0.12em",
                     }}
                   >
-                    No. 0{i + 1}
+                    {isSr ? "Br." : "No."} 0{i + 1}
                   </span>
                   <span
                     className="uppercase font-medium"
@@ -950,8 +1068,8 @@ export default async function UprightUndercounterPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="IV"
-          label="The Format Ledger"
-          caption="Nine refrigeration form factors — every box, well, drawer and chamber the line needs."
+          label={isSr ? "Pregled formata" : "The Format Ledger"}
+          caption={isSr ? "Devet formata rashladne opreme — svaka kutija, niša, fioka i komora koje su liniji potrebne." : "Nine refrigeration form factors — every box, well, drawer, and chamber the line needs."}
           variant="dark"
         />
       </div>
@@ -981,7 +1099,7 @@ export default async function UprightUndercounterPage({
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  The Format Ledger — Nine Form Factors
+                  {isSr ? "Pregled formata — devet formata" : "The Format Ledger — Nine Form Factors"}
                 </span>
               </div>
               <ScrollReveal>
@@ -994,13 +1112,13 @@ export default async function UprightUndercounterPage({
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  Every cold format,
+                  {isSr ? "Svaki format hlađenja," : "Every cold format,"}
                   <br />
                   <span
                     className="italic font-normal"
                     style={{ color: "var(--color-gold)" }}
                   >
-                    one specification sheet.
+                    {isSr ? "jedna specifikacija." : "one specification sheet."}
                   </span>
                 </h2>
               </ScrollReveal>
@@ -1014,8 +1132,7 @@ export default async function UprightUndercounterPage({
                   maxWidth: "30ch",
                 }}
               >
-                Brand options listed per form factor — each can be specified to
-                volume, ambient class and refrigerant preference.
+                {isSr ? "Brend opcije po formatu — svaki se specifikuje prema obimu, ambijentalnoj klasi i preferenci rashladnog sredstva." : "Brand options listed per form factor — each can be specified to volume, ambient class, and refrigerant preference."}
               </p>
             </div>
           </div>
@@ -1119,11 +1236,7 @@ export default async function UprightUndercounterPage({
                   lineHeight: 1.6,
                 }}
               >
-                Refrigerant lineup is mixed across the four houses: Tefcold
-                leads on R290 (propane, GWP = 3); Tecnodom uses R452A on
-                selected SKUs; Dalmec ships HFO blowing-agent insulation on the
-                cabinet shell. Specify ambient class and refrigerant target with
-                your enquiry.
+                {isSr ? "Rashladna sredstva su mešovita kroz četiri kuće: Tefcold predvodi sa R290 (propan, GWP = 3); Tecnodom koristi R452A na pojedinim SKU-ovima; Dalmec isporučuje izolaciju sa HFO sredstvom za ekspandiranje. Specifikujte ambijentalnu klasu i ciljno rashladno sredstvo prilikom upita." : "Refrigerant lineup is mixed across the four houses: Tefcold leads on R290 (propane, GWP = 3); Tecnodom uses R452A on selected SKUs; Dalmec ships HFO blowing-agent insulation on the cabinet shell. Specify ambient class and refrigerant target with your enquiry."}
               </span>
             </div>
             <div className="col-span-12 lg:col-span-3 lg:text-right flex lg:justify-end items-center">
@@ -1134,7 +1247,7 @@ export default async function UprightUndercounterPage({
                   letterSpacing: "0.32em",
                 }}
               >
-                Folio 05 / 08
+                {isSr ? "Tabak 05 / 08" : "Folio 05 / 08"}
               </span>
             </div>
           </div>
@@ -1147,8 +1260,8 @@ export default async function UprightUndercounterPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="V"
-          label="House Note"
-          caption="On scale, sustainability, and the climate the line has to live in."
+          label={isSr ? "Reč kuće" : "House Note"}
+          caption={isSr ? "O obimu, održivosti i klimi u kojoj linija mora da živi." : "On scale, sustainability, and the climate the line has to live in."}
           variant="light"
         />
       </div>
@@ -1164,10 +1277,31 @@ export default async function UprightUndercounterPage({
         <div className="mx-auto max-w-7xl px-6 relative">
           {/* Scoreboard */}
           <h2 id="numbers" className="sr-only">
-            Refrigeration scoreboard
+            {isSr ? "Pregled rashladne opreme" : "Refrigeration scoreboard"}
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-navy/10">
-            {[
+            {(isSr ? [
+              {
+                k: "300+",
+                l: "Desmon varijanti modela",
+                s: "Frižideri i zamrzivači",
+              },
+              {
+                k: "700+",
+                l: "Dalmec SKU-ova",
+                s: "Najdublji katalog formata",
+              },
+              {
+                k: "R290",
+                l: "Tefcold liderstvo",
+                s: "Prirodno rashladno sredstvo · GWP = 3",
+              },
+              {
+                k: "Klasa 5",
+                l: "+40 °C / 40 % RH",
+                s: "Spreman za tropsku ambijent",
+              },
+            ] : [
               {
                 k: "300+",
                 l: "Desmon model variants",
@@ -1176,7 +1310,7 @@ export default async function UprightUndercounterPage({
               {
                 k: "700+",
                 l: "Dalmec SKUs",
-                s: "Deepest format catalogue",
+                s: "Deepest format catalog",
               },
               {
                 k: "R290",
@@ -1188,7 +1322,7 @@ export default async function UprightUndercounterPage({
                 l: "+40 °C / 40 % RH",
                 s: "Tropical-ready ambient",
               },
-            ].map((stat) => (
+            ]).map((stat) => (
               <div
                 key={stat.l}
                 className="bg-offwhite relative"
@@ -1270,7 +1404,7 @@ export default async function UprightUndercounterPage({
                   fontWeight: 400,
                 }}
               >
-                Cold storage built
+                {isSr ? "Hladno skladištenje napravljeno" : "Cold storage built"}
               </span>
               <span
                 className="font-display italic block"
@@ -1282,7 +1416,7 @@ export default async function UprightUndercounterPage({
                   color: "var(--color-gold-text)",
                 }}
               >
-                for kitchens that don&rsquo;t stop.
+                {isSr ? "za kuhinje koje ne staju." : <>for kitchens that don&rsquo;t stop.</>}
               </span>
             </ScrollReveal>
           </div>
@@ -1303,7 +1437,7 @@ export default async function UprightUndercounterPage({
                   fontWeight: 500,
                 }}
               >
-                MB Equipment — House Note
+                {isSr ? "MB Equipment — Reč kuće" : "MB Equipment — House Note"}
               </span>
             </div>
           </div>
@@ -1313,7 +1447,33 @@ export default async function UprightUndercounterPage({
             className="mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-navy/10"
             aria-label="Representative Desmon equipment"
           >
-            {[
+            {(isSr ? [
+              {
+                src: "/images/upright/desmon-gbf15.png",
+                label: "GBF-15",
+                cap: "Brzi rashlađivač 15 nivoa",
+              },
+              {
+                src: "/images/upright/desmon-gbf5p.png",
+                label: "GBF-5P",
+                cap: "Brzi rashlađivač 5 nivoa",
+              },
+              {
+                src: "/images/upright/desmon-pgm7.png",
+                label: "PGM7",
+                cap: "Vertikalni jednovratni",
+              },
+              {
+                src: "/images/upright/desmon-ptgm2.png",
+                label: "PTGM2",
+                cap: "Horizontalni dvovratni",
+              },
+              {
+                src: "/images/upright/desmon-ptgm3.png",
+                label: "PTGM3",
+                cap: "Horizontalni trovratni",
+              },
+            ] : [
               {
                 src: "/images/upright/desmon-gbf15.png",
                 label: "GBF-15",
@@ -1339,7 +1499,7 @@ export default async function UprightUndercounterPage({
                 label: "PTGM3",
                 cap: "Three-door undercounter",
               },
-            ].map((p) => (
+            ]).map((p) => (
               <figure
                 key={p.label}
                 className="bg-offwhite relative"
@@ -1397,8 +1557,7 @@ export default async function UprightUndercounterPage({
               fontFamily: "var(--font-display), serif",
             }}
           >
-            Representative Desmon equipment shown — full Dalmec, Tefcold and
-            Tecnodom catalogues available on request.
+            {isSr ? "Prikazana reprezentativna Desmon oprema — kompletni Dalmec, Tefcold i Tecnodom katalozi dostupni na zahtev." : "Representative Desmon equipment shown — full Dalmec, Tefcold, and Tecnodom catalogs available on request."}
           </p>
         </div>
       </section>
@@ -1409,8 +1568,8 @@ export default async function UprightUndercounterPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VI"
-          label="Before You Specify"
-          caption="Six engineering questions, settled before quote."
+          label={isSr ? "Pre specifikacije" : "Before You Specify"}
+          caption={isSr ? "Šest inženjerskih pitanja, rešenih pre ponude." : "Six engineering questions, settled before quote."}
           variant="dark"
         />
       </div>
@@ -1418,16 +1577,41 @@ export default async function UprightUndercounterPage({
         variant="dark"
         heading={
           <>
-            Before{" "}
+            {isSr ? "Pre " : "Before "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold)" }}
             >
-              specifying.
+              {isSr ? "specifikacije." : "specifying."}
             </span>
           </>
         }
-        items={[
+        items={isSr ? [
+          {
+            q: "Vertikalni vs horizontalni — kada?",
+            a: "Vertikalni (1/2/3 vrata, 400–1400 L) za skladištenje u back-of-house-u. Horizontalni (Desmon PTGM, Tefcold UD) za pripremu na liniji gde šefovima trebaju hladni sastojci na dohvat ruke.",
+          },
+          {
+            q: "Kada mi je potreban brzi rashlađivač?",
+            a: "Svaka HACCP kuhinja koja obrađuje više od ~50 gostiju/dan ima koristi — hlađenje skuvane hrane sa +90°C na +3°C za <90 min čuva kvalitet i ispunjava zakon o bezbednosti hrane. Desmon GBF-15 je radni konj.",
+          },
+          {
+            q: "Saladeta vs pripremni pult?",
+            a: "Saladeta ima 1/1 ili 1/3 GN niše u radnoj ploči za pristup sastojcima (linije za picu, sendviče, salate). Pripremni pult ima punu radnu ploču. Oba su rashlađena ispod. Dalmec i Tecnodom su specijalizovani za saladete.",
+          },
+          {
+            q: "AISI 304 ili AISI 316?",
+            a: "AISI 304 standardno kod sva četiri brenda — za hranu, otporno na koroziju. AISI 316 samo kada se odnosi hemijsko izlaganje ili pomorski vazduh. Nijedan od četiri brenda ne nudi 316 kao standard za vertikalne; specifikujte ako je potrebno.",
+          },
+          {
+            q: "Šta je sa energetskom klasom?",
+            a: "Tefcold objavljuje EU energetske oznake po SKU; trenutne generacije su tipično klasa B–C. Desmon nadograđuje na rashladna sredstva sa nižim GWP-om za EU. Tecnodom mešovito (R452A na nekim SKU). Potvrda po SKU prilikom ponude.",
+          },
+          {
+            q: "Rok isporuke i garancija?",
+            a: "Stock 2–4 nedelje (Tefcold UR/UF, uobičajeni Desmon SKU). Konfiguracije po meri 6–10 nedelja. Garancija 2 godine na delove i rad standardno; kompresor se često produžava na 5.",
+          },
+        ] : [
           {
             q: "Reach-in vs undercounter — when?",
             a: "Reach-in upright (1/2/3-door, 400–1400 L) for back-of-house bulk storage. Undercounter (Desmon PTGM, Tefcold UD) for line-side prep where chefs need cold ingredients within arm's reach.",
@@ -1450,7 +1634,7 @@ export default async function UprightUndercounterPage({
           },
           {
             q: "Lead times and warranty?",
-            a: "Stock 2–4 weeks (Tefcold UR/UF, common Desmon SKUs). Custom configurations 6–10 weeks. Warranty 2 years parts and labour standard; compressor often extends to 5.",
+            a: "Stock 2–4 weeks (Tefcold UR/UF, common Desmon SKUs). Custom configurations 6–10 weeks. Warranty 2 years parts and labor standard; compressor often extends to 5.",
           },
         ]}
         pageUrl={pageUrl}
@@ -1462,8 +1646,8 @@ export default async function UprightUndercounterPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VII"
-          label="Three Routes In"
-          caption="Quote, showroom, or spec sheet — pick your path."
+          label={isSr ? "Tri puta" : "Three Routes In"}
+          caption={isSr ? "Ponuda, salon ili specifikacija — odaberite put." : "Quote, showroom, or spec sheet — pick your path."}
           variant="dark"
         />
       </div>
@@ -1479,8 +1663,8 @@ export default async function UprightUndercounterPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VIII"
-          label="The Next Step"
-          caption="Send volume, format mix and ambient — we&rsquo;ll spec across the four houses."
+          label={isSr ? "Sledeći korak" : "The Next Step"}
+          caption={isSr ? "Pošaljite obim, mešavinu formata i ambijent — specifikujemo kroz četiri kuće." : "Send volume, format mix, and ambient — we'll spec across the four houses."}
           variant="dark"
         />
       </div>
@@ -1509,7 +1693,7 @@ export default async function UprightUndercounterPage({
                   }}
                   className="text-xs font-medium uppercase"
                 >
-                  Specify your refrigeration
+                  {isSr ? "Specifikujte Vašu rashladnu opremu" : "Specify your refrigeration"}
                 </span>
               </div>
               <ScrollReveal>
@@ -1522,13 +1706,13 @@ export default async function UprightUndercounterPage({
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  Specify your
+                  {isSr ? "Specifikujte Vašu" : "Specify your"}
                   <br />
                   <span
                     className="italic font-normal"
                     style={{ color: "var(--color-gold)" }}
                   >
-                    refrigeration.
+                    {isSr ? "rashladnu opremu." : "refrigeration."}
                   </span>
                 </h2>
               </ScrollReveal>
@@ -1540,9 +1724,11 @@ export default async function UprightUndercounterPage({
                   maxWidth: "52ch",
                 }}
               >
-                Send us your kitchen volume, format mix and ambient conditions
+                {isSr ? <>Pošaljite obim kuhinje, mešavinu formata i ambijentalne uslove
+                &mdash; specifikujemo kroz četiri kuće i isporučujemo
+                jedinstven predlog sa rashladnim sredstvom, energetskom klasom i rokom.</> : <>Send us your kitchen volume, format mix and ambient conditions
                 &mdash; we&rsquo;ll spec across the four houses and deliver a
-                single proposal with refrigerant, energy class, and timeline.
+                single proposal with refrigerant, energy class, and timeline.</>}
               </p>
 
               <div className="flex flex-wrap gap-4 mt-8 lg:mt-10">
@@ -1575,11 +1761,28 @@ export default async function UprightUndercounterPage({
                     letterSpacing: "0.1em",
                   }}
                 >
-                  Colophon
+                  {isSr ? "Kolofon" : "Colophon"}
                 </span>
 
                 <dl className="space-y-4">
-                  {[
+                  {(isSr ? [
+                    {
+                      term: "Salon",
+                      def: `${COMPANY.address.street}, ${COMPANY.address.city}`,
+                    },
+                    {
+                      term: "Pokriće",
+                      def: "Jugoistočna Evropa",
+                    },
+                    {
+                      term: "Brendovi",
+                      def: "Dalmec · Desmon · Tefcold · Tecnodom",
+                    },
+                    {
+                      term: "Rashladna sredstva",
+                      def: "R290 / HFO dostupno",
+                    },
+                  ] : [
                     {
                       term: "Showroom",
                       def: `${COMPANY.address.street}, ${COMPANY.address.city}`,
@@ -1596,7 +1799,7 @@ export default async function UprightUndercounterPage({
                       term: "Refrigerants",
                       def: "R290 / HFO available",
                     },
-                  ].map((row) => (
+                  ]).map((row) => (
                     <div
                       key={row.term}
                       className="grid grid-cols-12 gap-3 items-baseline"
@@ -1634,12 +1837,12 @@ export default async function UprightUndercounterPage({
         <div className="mt-12 lg:mt-16">
           <RunningMeta
             variant="dark"
-            folio="Folio 08 / 08"
+            folio={isSr ? "Tabak 08 / 08" : "Folio 08 / 08"}
             items={[
-              "End of Ch. 01",
-              "Refrigeration",
+              isSr ? "Kraj pogl. 01" : "End of Ch. 01",
+              isSr ? "Rashladna oprema" : "Refrigeration",
               "MB Equipment Solutions",
-              "Belgrade",
+              isSr ? "Beograd" : "Belgrade",
             ]}
           />
         </div>

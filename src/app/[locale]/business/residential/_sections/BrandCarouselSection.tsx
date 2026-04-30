@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { residentialBrands } from "@/data/residential";
 
-export default function BrandCarouselSection() {
+interface Props {
+  srHeading?: string;
+}
+
+export default function BrandCarouselSection({ srHeading }: Props = {}) {
   const mid = Math.ceil(residentialBrands.length / 2);
   const row1 = residentialBrands.slice(0, mid);
   const row2 = residentialBrands.slice(mid);
@@ -12,7 +16,7 @@ export default function BrandCarouselSection() {
       aria-labelledby="brands-carousel-heading"
     >
       <h2 id="brands-carousel-heading" className="sr-only">
-        Our Residential Brands
+        {srHeading ?? "Our Residential Brands"}
       </h2>
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative overflow-hidden">

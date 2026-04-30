@@ -63,6 +63,41 @@ const en: Dictionary = {
     brandsRepresented: "Brands represented",
     regionLabel: "Balkans \u2014 Central Europe \u2014 Southeast Europe",
     responseTime: "Average response time: under 24 hours",
+    callUs: "Call us",
+    mainNavigation: "Main navigation",
+    navigationMenu: "Navigation menu",
+    languageGroup: "Language",
+    breadcrumbAria: "Breadcrumb",
+    business: "Business",
+    serbiaCountry: "Serbia",
+    southeastEurope: "Southeast Europe",
+    fullPortfolio: "Full Portfolio",
+    additionalBrands: "additional brands",
+    filteredBy: "filtered by",
+    filterAll: "All",
+    googleMapsLabel: "[ Google Maps ]",
+    fiftyPercentOutsideUs: "50% outside US",
+    residentialEyebrow: "Residential",
+    ourResidentialBrands: "Our Residential Brands",
+    onePartner: "One Partner.",
+    brandsLabel: "Brands.",
+    centersHeading: "Centers",
+    introHeading: "Introduction",
+    globalReachHeading: "Global Reach",
+    formFailedToSend: "Failed to send message",
+    websiteHoneypot: "Website",
+    languageEnglish: "English",
+    languageSerbian: "Srpski",
+    industrySegmentsAria: "Industry segments we serve",
+    luxuryShowcaseAria: "Luxury residential kitchen showcase",
+    partnerLogosAria: "Partner logos",
+    ourGlobalPartners: "Our Global Partners and Clients",
+    heroAria: "Hero",
+    aboutAria: "About MB Equipment Solutions",
+    startProjectAria: "Start a project",
+    sectorsAria: "Business sectors",
+    statsAria: "Company statistics",
+    faqAria: "Frequently asked questions",
   },
 
   /* ── Footer ── */
@@ -133,6 +168,43 @@ const en: Dictionary = {
       heading1: "Questions",
       heading2: "We Hear Often",
       body: "From equipment selection to installation timelines and ongoing maintenance \u2014 here is what our clients ask most before starting a project.",
+      items: [
+        {
+          question: "What brands does MB Equipment Solutions carry?",
+          answer:
+            "We represent over 110 equipment brands as an authorized partner of Middleby Corporation \u2014 the world\u2019s largest foodservice equipment manufacturer. Our portfolio includes Viking, La Cornue, AGA, TurboChef, Pitco, Blodgett, Southbend, and many more. Each brand is selected for proven reliability in commercial and residential kitchen environments.",
+        },
+        {
+          question: "Which countries do you serve?",
+          answer:
+            "We primarily serve Southeast Europe from our headquarters in Belgrade, Serbia. Our coverage spans the Balkans, Central Europe, and select markets beyond the region. We handle equipment supply, installation, commissioning, and after-sales service in each market.",
+        },
+        {
+          question: "Do you provide kitchen design services?",
+          answer:
+            "Yes. Our team works with architects, operators, and consultants to design complete kitchen layouts \u2014 from initial concept through equipment specification, CAD drawings, and final installation. We design for hotels, restaurant chains, catering facilities, and industrial food processing plants.",
+        },
+        {
+          question: "What is the typical project timeline?",
+          answer:
+            "Timelines vary by scope. A single-unit restaurant kitchen typically takes 4\u20138 weeks from specification to commissioning. Multi-unit rollouts and industrial projects are phased over several months. We provide detailed project schedules during the quotation stage so you can plan accordingly.",
+        },
+        {
+          question: "How does pricing work for commercial kitchen projects?",
+          answer:
+            "Every project is quoted individually based on equipment selection, kitchen size, and installation complexity. We provide detailed, itemized proposals at no cost after an initial consultation. Logistics, installation, and commissioning costs are included in every proposal \u2014 no hidden fees.",
+        },
+        {
+          question: "What warranty and certification standards apply?",
+          answer:
+            "All equipment carries the manufacturer\u2019s original warranty \u2014 typically 1\u20133 years depending on brand and product category. Equipment is CE-marked for the European market and meets relevant NSF and local regulatory standards. We handle all certification documentation as part of the project delivery.",
+        },
+        {
+          question: "Do you offer after-sales service and spare parts?",
+          answer:
+            "Absolutely. We maintain a regional spare parts inventory and a trained service engineering team. We offer preventive maintenance programs, warranty support, and emergency repair services. Our goal is to minimize downtime and keep your kitchen running at full capacity.",
+        },
+      ],
     },
   },
 

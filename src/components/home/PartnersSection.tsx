@@ -22,13 +22,17 @@ const partners: Partner[] = [
 
 export default function PartnersSection({
   dict,
+  ariaLabel,
+  srOnlyHeading,
 }: {
   dict: Dictionary["home"]["partners"];
+  ariaLabel?: string;
+  srOnlyHeading?: string;
 }) {
   return (
-    <section id="partners" aria-label="Partner logos" className="py-16 lg:py-20 bg-white overflow-hidden">
+    <section id="partners" aria-label={ariaLabel ?? "Partner logos"} className="py-16 lg:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-10">
-        <h2 className="sr-only">Our Global Partners and Clients</h2>
+        <h2 className="sr-only">{srOnlyHeading ?? "Our Global Partners and Clients"}</h2>
         <p className="text-xs font-medium uppercase tracking-[0.3em] text-text-secondary">
           {dict.eyebrow}
         </p>

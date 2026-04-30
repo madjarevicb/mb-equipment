@@ -77,8 +77,72 @@ export const INSTRUMENTS: Instrument[] = [
   },
 ];
 
+const INSTRUMENTS_SR: Instrument[] = [
+  {
+    serial: "Br. 01",
+    name: "Šporeti i kuhinjski sklopovi",
+    descriptor:
+      "Gas, indukcija, solid-top — modularni blokovi širine 400–1600 mm, konfigurisani prema vašoj liniji.",
+    brands: "Silko Essence 700/900 · Lincat Opus 800",
+    href: (l) => `/${l}/equipment/thermal-processing/ranges`,
+  },
+  {
+    serial: "Br. 02",
+    name: "Industrijski šporeti",
+    descriptor:
+      "20/10 AISI 304 radne ploče, otvoreni gorionici do 10 kW (Silko Essence 900) — pravljeno za stalan visok obim.",
+    brands: "Silko Essence 900 · Lincat Opus 800",
+    href: (l) => `/${l}/equipment/thermal-processing/ranges`,
+    caveat: true,
+  },
+  {
+    serial: "Br. 03",
+    name: "Friteze",
+    descriptor:
+      "Sa jednom i dve kade, gasne i električne — Lincat Opus 800 podržava opcionu pumpanu filtraciju.",
+    brands: "Silko · Lincat Opus 800 · FriFri",
+    href: (l) => `/${l}/equipment/thermal-processing/fryers`,
+  },
+  {
+    serial: "Br. 04",
+    name: "Kazani",
+    descriptor:
+      "Direktno ili indirektno grejanje, gas i struja — kazani za supe, sosove i vodu za pastu u velikom obimu.",
+    brands: "Silko · Lincat Opus 800",
+    href: (l) => `/${l}/equipment/thermal-processing/bain-marie`,
+    caveat: true,
+  },
+  {
+    serial: "Br. 05",
+    name: "Kiperi / Bratt Pans",
+    descriptor:
+      "Lincat Opus 800 kiper: 70–300 °C sa simmer režimom na –50% snage. Sote, dinstanje, pečenje u jednom posudu.",
+    brands: "Silko · Lincat Opus 800",
+    href: (l) => `/${l}/equipment/thermal-processing/bain-marie`,
+    caveat: true,
+  },
+  {
+    serial: "Br. 06",
+    name: "Kuvala za pastu",
+    descriptor:
+      "Od Silverlink 600 srednjeg obima do Opus 800 visokog obima — namenske korpe, automatsko ispuštanje.",
+    brands: "Silko · Lincat Silverlink 600 / Opus 800",
+    href: (l) => `/${l}/equipment/thermal-processing/pasta-cookers`,
+  },
+  {
+    serial: "Br. 07",
+    name: "Ben mari / Holding",
+    descriptor:
+      "Mokri i suvi moduli za držanje — održavaju temperaturu tanjira i komponenti na pasu.",
+    brands: "Silko · Lincat Silverlink 600",
+    href: (l) => `/${l}/equipment/thermal-processing/bain-marie`,
+  },
+];
+
 export default function InstrumentLedger({ locale }: Props) {
-  const hasCaveat = INSTRUMENTS.some((i) => i.caveat);
+  const isSr = locale === "sr";
+  const ITEMS = isSr ? INSTRUMENTS_SR : INSTRUMENTS;
+  const hasCaveat = ITEMS.some((i) => i.caveat);
 
   return (
     <section
@@ -106,7 +170,7 @@ export default function InstrumentLedger({ locale }: Props) {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                The Equipment Ledger — Seven Instruments
+                {isSr ? "Pregled opreme — sedam instrumenata" : "The Equipment Ledger — Seven Instruments"}
               </span>
             </div>
             <ScrollReveal>
@@ -119,13 +183,13 @@ export default function InstrumentLedger({ locale }: Props) {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Seven disciplines,
+                {isSr ? "Sedam disciplina," : "Seven disciplines,"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold)" }}
                 >
-                  one composed line.
+                  {isSr ? "jedna sastavljena linija." : "one composed line."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -139,8 +203,7 @@ export default function InstrumentLedger({ locale }: Props) {
                 maxWidth: "30ch",
               }}
             >
-              Each entry below opens to a per-equipment page — specifications,
-              brand options, configuration notes.
+              {isSr ? "Svaka stavka ispod otvara stranicu sa konkretnom opremom — specifikacije, brend opcije, beleške o konfiguraciji." : "Each entry below opens to a per-equipment page — specifications, brand options, configuration notes."}
             </p>
           </div>
         </div>
@@ -155,7 +218,7 @@ export default function InstrumentLedger({ locale }: Props) {
 
         {/* Instrument ledger */}
         <ol className="relative">
-          {INSTRUMENTS.map((item) => (
+          {ITEMS.map((item) => (
             <li
               key={item.serial + item.name}
               style={{
@@ -294,10 +357,7 @@ export default function InstrumentLedger({ locale }: Props) {
                   fontFamily: "var(--font-display), serif",
                 }}
               >
-                Sub-categories under construction — full per-equipment pages
-                launching soon. Heavy-Duty Ranges currently link to the Ranges
-                page; Boiling Pans and Tilting Pans link to the closest existing
-                route in the cooking ledger.
+                {isSr ? "Podkategorije u izgradnji — pune stranice za pojedinačne uređaje uskoro. Industrijski šporeti trenutno vode na stranicu Šporeta; Kazani i Kiperi vode na najbliži postojeći put u kuhinjskom katalogu." : "Sub-categories under construction — full per-equipment pages launching soon. Heavy-Duty Ranges currently link to the Ranges page; Boiling Pans and Tilting Pans link to the closest existing route in the cooking ledger."}
               </span>
             </div>
             <div className="col-span-12 lg:col-span-3 lg:text-right flex lg:justify-end items-center">
@@ -308,7 +368,7 @@ export default function InstrumentLedger({ locale }: Props) {
                   letterSpacing: "0.32em",
                 }}
               >
-                Folio 03 / 05
+                {isSr ? "Tabak 03 / 05" : "Folio 03 / 05"}
               </span>
             </div>
           </div>
@@ -336,10 +396,10 @@ export default function InstrumentLedger({ locale }: Props) {
                 lineHeight: 1.6,
               }}
             >
-              Lincat states up to <span className="text-white/80">90%</span>{" "}
+              {isSr ? <>Lincat navodi do <span className="text-white/80">90%</span>{" "}efikasnosti na Opus 800 indukcionom šporetu (4 × 5 kW). Simmer režim kipera smanjuje potrošnju na otprilike pola snage za servis na niskim temperaturama.</> : <>Lincat states up to <span className="text-white/80">90%</span>{" "}
               efficiency on the Opus 800 induction range (4 × 5 kW). Bratt-pan
               simmer mode reduces draw to roughly half power for low-temperature
-              service.
+              service.</>}
             </span>
           </div>
         </div>

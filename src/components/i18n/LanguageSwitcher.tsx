@@ -2,8 +2,14 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { locales, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
 
-export default function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
+interface LanguageSwitcherProps {
+  currentLocale: Locale;
+  common?: Pick<Dictionary["common"], "languageGroup" | "languageEnglish" | "languageSerbian">;
+}
+
+export default function LanguageSwitcher({ currentLocale, common }: LanguageSwitcherProps) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -13,8 +19,12 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: Loc
     router.push(segments.join("/"));
   }
 
+  const groupLabel = common?.languageGroup ?? "Language";
+  const englishLabel = common?.languageEnglish ?? "English";
+  const serbianLabel = common?.languageSerbian ?? "Srpski";
+
   return (
-    <div className="flex items-center gap-0.5" role="group" aria-label="Language">
+    <div className="flex items-center gap-0.5" role="group" aria-label={groupLabel}>
       {locales.map((locale, i) => (
         <span key={locale} className="flex items-center">
           {i > 0 && <span className="text-white/15 mx-1.5 text-[11px]">|</span>}
@@ -26,7 +36,7 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: Loc
                 : "text-white/40 hover:text-white/70"
             }`}
             aria-current={locale === currentLocale ? "page" : undefined}
-            aria-label={locale === "en" ? "English" : "Srpski"}
+            aria-label={locale === "en" ? englishLabel : serbianLabel}
           >
             {locale === "en" ? "EN" : "SR"}
           </button>

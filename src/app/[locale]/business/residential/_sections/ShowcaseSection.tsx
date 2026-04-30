@@ -5,9 +5,10 @@ import type { Dictionary } from "@/i18n/types";
 
 interface Props {
   dict: Dictionary["residential"]["showcase"];
+  residentialLabel?: string;
 }
 
-export default function ShowcaseSection({ dict }: Props) {
+export default function ShowcaseSection({ dict, residentialLabel }: Props) {
   return (
     <section
       className="py-28 lg:py-36 bg-offwhite"
@@ -52,7 +53,7 @@ export default function ShowcaseSection({ dict }: Props) {
                 />
                 <div className="w-10 h-px bg-gold/30 mx-auto mt-8 mb-4" />
                 <p className="text-white/40 text-sm tracking-[0.3em] uppercase">
-                  Residential
+                  {residentialLabel ?? "Residential"}
                 </p>
               </div>
             </div>

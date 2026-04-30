@@ -297,26 +297,26 @@ export default async function WasteStationImcPage({
       <AwardStrip
         variant="light"
         items={[
-          { type: "heritage", label: "IMC · Since 1906", detail: "Lincoln, UK" },
+          { type: "heritage", label: isSr ? "IMC · Od 1906." : "IMC · Since 1906", detail: isSr ? "Linkoln, V. Britanija" : "Lincoln, UK" },
           {
             type: "heritage",
-            label: "Middleby brand",
-            detail: "Foodservice Equipment Group",
+            label: isSr ? "Middleby brend" : "Middleby brand",
+            detail: isSr ? "Foodservice Equipment Group" : "Foodservice Equipment Group",
           },
           {
             type: "certification",
             label: "UKCA + IP55",
-            detail: "Made in UK",
+            detail: isSr ? "Proizvedeno u V. Britaniji" : "Made in UK",
           },
           {
             type: "award",
-            label: "First in Europe",
-            detail: "1956 — food waste disposers",
+            label: isSr ? "Prvi u Evropi" : "First in Europe",
+            detail: isSr ? "1956. — uređaji za otpad" : "1956 — food waste disposers",
           },
           {
             type: "award",
-            label: "Middleby Group",
-            detail: "Authorized partner",
+            label: isSr ? "Middleby grupa" : "Middleby Group",
+            detail: isSr ? "Ovlašćeni partner" : "Authorized partner",
           },
         ]}
       />
@@ -325,61 +325,70 @@ export default async function WasteStationImcPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="II"
-          label="The Mechanism"
-          caption="Four motions — scrape, macerate, dewater, compact."
+          label={isSr ? "Mehanizam" : "The Mechanism"}
+          caption={isSr ? "Četiri pokreta — struganje, usitnjavanje, ceđenje, sabijanje." : "Four motions — scrape, macerate, dewater, compact."}
           variant="light"
         />
       </div>
-      <Mechanism />
+      <Mechanism locale={locale as Locale} />
 
       {/* Chapter III — Model ledger */}
       <div className="bg-navy">
         <ChapterMark
           numeral="III"
-          label="The Model Ledger"
-          caption="Two sizes — sized to volume, supply, and floor."
+          label={isSr ? "Pregled modela" : "The Model Ledger"}
+          caption={isSr ? "Dve veličine — dimenzionisane prema obimu, napajanju i prostoru." : "Two sizes — sized to volume, supply, and floor."}
           variant="dark"
         />
       </div>
-      <ModelLedger />
+      <ModelLedger locale={locale as Locale} />
 
       {/* Chapter IV — Numbers */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="IV"
-          label="Numbers That Matter"
-          caption="Four figures — manufacturer-stated and honestly framed."
+          label={isSr ? "Bitne cifre" : "Numbers That Matter"}
+          caption={isSr ? "Četiri brojke — navedene od strane proizvođača i pošteno predstavljene." : "Four figures — manufacturer-stated and honestly framed."}
           variant="light"
         />
       </div>
-      <Numbers />
+      <Numbers locale={locale as Locale} />
 
       {/* Chapter V — The Math (ROI) */}
       <div className="bg-navy">
         <ChapterMark
           numeral="V"
-          label="The Math"
-          caption="What 80% volume reduction means in your kitchen."
+          label={isSr ? "Računica" : "The Math"}
+          caption={isSr ? "Šta 80% smanjenje zapremine znači u Vašoj kuhinji." : "What 80% volume reduction means in your kitchen."}
           variant="dark"
         />
       </div>
       <WasteROIWrapper
         variant="dark"
-        heading="What it saves you."
+        heading={isSr ? "Koliko vam štedi." : "What it saves you."}
         example={{
-          label: "Example: mid-size hotel kitchen",
-          inputs: [
+          label: isSr ? "Primer: srednja hotelska kuhinja" : "Example: mid-size hotel kitchen",
+          inputs: isSr ? [
+            { label: "Dnevno gostiju", value: "300 (ručak + večera)" },
+            { label: "Dnevno otpada hrane", value: "~120 kg" },
+            { label: "Trenutna preuzimanja", value: "4 nedeljno" },
+          ] : [
             { label: "Daily covers", value: "300 (lunch + dinner)" },
             { label: "Daily food waste", value: "~120 kg" },
             { label: "Current pickups", value: "4 per week" },
           ],
-          output: [
+          output: isSr ? [
+            { label: "Zapremina nakon ceđenja", value: "~24 kg/dan (-80%, IMC navod)" },
+            { label: "Učestalost preuzimanja", value: "Smanjeno na 1–2 nedeljno" },
+            { label: "Godišnje ušteđen rad", value: "~150 sati (ručno iznošenje)" },
+            { label: "Oslobođen prostor za kante", value: "~60% prvobitnog prostora" },
+          ] : [
             { label: "Volume after dewatering", value: "~24 kg/day (-80%, IMC stated)" },
             { label: "Pickup frequency", value: "Down to 1–2 per week" },
             { label: "Annual labor saved", value: "~150 hours (manual hauling)" },
             { label: "Bin storage freed", value: "~60% of original space" },
           ],
-          math: "All figures are typical for a 300-cover hotel using F79/703 Compact (400 kg/hr). 80% volume reduction is IMC's stated figure vs uncompacted waste, not independently audited. Pickup-frequency reductions of 50–75% are typical depending on volume; payback periods are site-specific.",
+          math: isSr ? "Sve cifre su tipične za hotel sa 300 gostiju koji koristi F79/703 Compact (400 kg/h). 80% smanjenje zapremine je IMC navod u poređenju sa nesabijanim otpadom, nije nezavisno provereno. Smanjenja učestalosti preuzimanja od 50–75% su tipična u zavisnosti od obima; period otplate zavisi od lokacije." : "All figures are typical for a 300-cover hotel using F79/703 Compact (400 kg/hr). 80% volume reduction is IMC's stated figure vs uncompacted waste, not independently audited. Pickup-frequency reductions of 50–75% are typical depending on volume; payback periods are site-specific.",
         }}
       />
 
@@ -387,19 +396,19 @@ export default async function WasteStationImcPage({
       <div className="bg-offwhite">
         <ChapterMark
           numeral="VI"
-          label="The House Voice"
-          caption="One brand, one provenance, one supply chain."
+          label={isSr ? "Glas kuće" : "The House Voice"}
+          caption={isSr ? "Jedan brend, jedno poreklo, jedan lanac snabdevanja." : "One brand, one provenance, one supply chain."}
           variant="light"
         />
       </div>
-      <HouseQuote />
+      <HouseQuote locale={locale as Locale} />
 
       {/* Chapter VII — Frequently asked */}
       <div className="bg-offwhite">
         <ChapterMark
           numeral="VII"
-          label="Questions"
-          caption="Six things buyers ask about food waste management."
+          label={isSr ? "Pitanja" : "Questions"}
+          caption={isSr ? "Šest stvari koje kupci pitaju o upravljanju otpadom hrane." : "Six things buyers ask about food waste management."}
           variant="light"
         />
       </div>
@@ -407,17 +416,42 @@ export default async function WasteStationImcPage({
         variant="light"
         heading={
           <>
-            Frequently{" "}
+            {isSr ? "Često postavljana " : "Frequently "}
             <span
               className="italic font-normal"
               style={{ color: "var(--color-gold-text)" }}
             >
-              asked.
+              {isSr ? "pitanja." : "asked."}
             </span>
           </>
         }
         pageUrl={pageUrl}
-        items={[
+        items={isSr ? [
+          {
+            q: "Koji otpad WasteStation može da obradi?",
+            a: "Otpad od pripreme, ostatke sa tanjira, ljušture povrća, kožu ribe, mekane kosti (piletina, riba), pastu, hleb. Dokumentovano od strane IMC-a da obrađuje kosti crvenog mesa, drške karfiola i kožu ribe. NIJE za: tvrda rebra, velike goveđe kosti, tvrde koštice avokada.",
+          },
+          {
+            q: "Koja je razlika između F79/010 i F79/703 Compact?",
+            a: "F79/010 (puna veličina) obrađuje 700 kg/h pri 4,1 kW trofazno, 192 kg mašina. F79/703 Compact obrađuje 400 kg/h pri 2,95 kW trofazno, 165 kg, širina 600 mm — uklapa se u uže prostorije.",
+          },
+          {
+            q: "Da li mi je potrebno trofazno napajanje?",
+            a: "F79/010 i F79/703 zahtevaju trofazno 400V. F79/701 Compact je jednofazna varijanta za lokacije bez trofaznog napajanja. Potvrđujemo prilikom snimanja.",
+          },
+          {
+            q: "Šta je sa mirisom i higijenom?",
+            a: "Potpuno zatvoreno telo, samočišćeni ispirni ciklus, samopražnjivi puž, senzor za napunjenost kante, kante sa poklopcem. Značajno smanjenje rizika od štetočina i unakrsne kontaminacije u poređenju sa tradicionalnim mokrim kantama.",
+          },
+          {
+            q: "Potrošnja vode?",
+            a: "10 l/min samo tokom obrade — radi u ciklusima, ne kontinuirano. Ulaz 3/4\", odvod 2\". Lokacija zahteva minimalni ulazni pritisak od 0,18 bar.",
+          },
+          {
+            q: "Garancija i servis?",
+            a: "Garancija proizvođača prema ugovoru sa Middleby Europe. MB Equipment obezbeđuje fabrički obučene servisne inženjere u Beogradu za instalaciju, puštanje u rad i tekuće održavanje širom Jugoistočne Evrope.",
+          },
+        ] : [
           {
             q: "What waste can the WasteStation handle?",
             a: "Food prep waste, plate scrapings, vegetable peelings, fish skins, soft bones (chicken, fish), pasta, breads. Documented by IMC to handle red-meat bones, cauliflower stalks, and fish skins. NOT for: hard ribs, large beef bones, hard avocado pits.",
@@ -457,8 +491,8 @@ export default async function WasteStationImcPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="VIII"
-          label="The Next Step"
-          caption="Send volume, layout, and supply — we spec the model."
+          label={isSr ? "Sledeći korak" : "The Next Step"}
+          caption={isSr ? "Pošaljite obim, raspored i napajanje — specifikujemo model." : "Send volume, layout, and supply — we spec the model."}
           variant="dark"
         />
       </div>

@@ -60,6 +60,52 @@ export const SUPER_CATEGORIES: SuperCategoryMeta[] = [
 ];
 
 /**
+ * Serbian translations for super-category metadata.
+ * Used at render time when locale === "sr". The base SUPER_CATEGORIES
+ * array stays English so existing callers (JSON-LD, etc.) keep working.
+ */
+export const SUPER_CATEGORIES_SR: Record<
+  SuperCategory,
+  { label: string; shortLabel: string; italicDescriptor: string }
+> = {
+  cooking: {
+    label: "Termička obrada",
+    shortLabel: "Termička obrada",
+    italicDescriptor:
+      "Roštilji na drveni ugalj, parno-konvekcijske peći, kuhinjske linije.",
+  },
+  refrigeration: {
+    label: "Rashladno",
+    shortLabel: "Rashladno",
+    italicDescriptor:
+      "Vertikalna i horizontalna oprema, vitrine, montažne komore.",
+  },
+  "neutral-inox": {
+    label: "Neutralna oprema i Inox",
+    shortLabel: "Neutralna oprema i Inox",
+    italicDescriptor: "Izrada po meri, pranje posuđa.",
+  },
+  "waste-management": {
+    label: "Upravljanje otpadom",
+    shortLabel: "Otpad",
+    italicDescriptor: "IMC WasteStation, tretiranje otpada hrane.",
+  },
+};
+
+export function getSuperCategoryLabels(
+  id: SuperCategory,
+  isSr: boolean,
+): { label: string; shortLabel: string; italicDescriptor: string } {
+  if (isSr) return SUPER_CATEGORIES_SR[id];
+  const meta = SUPER_CATEGORIES.find((c) => c.id === id)!;
+  return {
+    label: meta.label,
+    shortLabel: meta.shortLabel,
+    italicDescriptor: meta.italicDescriptor,
+  };
+}
+
+/**
  * Per-brand override: explicit super-category and target href for the brand
  * card. When a brand is not listed here, we fall back to a heuristic map
  * keyed off the brand's source category string.

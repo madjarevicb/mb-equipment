@@ -12,9 +12,20 @@ const FEATURED_COUNT = 7;
 interface Props {
   brands: Brand[];
   dict: Dictionary["hotelsRestaurants"]["brandsGrid"];
+  fullPortfolioLabel?: string;
+  additionalBrandsLabel?: string;
+  filteredByLabel?: string;
+  filterAllLabel?: string;
 }
 
-export default function BrandsGridSection({ brands, dict }: Props) {
+export default function BrandsGridSection({
+  brands,
+  dict,
+  fullPortfolioLabel,
+  additionalBrandsLabel,
+  filteredByLabel,
+  filterAllLabel,
+}: Props) {
   const [filter, setFilter] = useState<string | null>(null);
 
   const featured = useMemo(() => brands.slice(0, FEATURED_COUNT), [brands]);
@@ -74,11 +85,11 @@ export default function BrandsGridSection({ brands, dict }: Props) {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <p className="text-text-secondary text-xs font-medium uppercase tracking-[0.2em]">
-                Full Portfolio
+                {fullPortfolioLabel ?? "Full Portfolio"}
               </p>
               <p className="text-text-secondary/60 text-xs mt-1" aria-live="polite" role="status">
-                {filteredCatalog.length} additional brands
-                {filter && <> · filtered by <span className="text-text-primary">{filter}</span></>}
+                {filteredCatalog.length} {additionalBrandsLabel ?? "additional brands"}
+                {filter && <> · {filteredByLabel ?? "filtered by"} <span className="text-text-primary">{filter}</span></>}
               </p>
             </div>
             {/* Category filter pills */}
@@ -92,7 +103,7 @@ export default function BrandsGridSection({ brands, dict }: Props) {
                     : "border-gray-200 text-text-secondary hover:border-gray-300"
                 }`}
               >
-                All
+                {filterAllLabel ?? "All"}
               </button>
               {allCategories.slice(0, 8).map((cat) => (
                 <button

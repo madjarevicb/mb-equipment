@@ -22,6 +22,7 @@ export interface ModelsMatrixProps {
   models: Model[];
   specs: SpecRow[];
   footnote?: string;
+  locale?: "en" | "sr";
 }
 
 /**
@@ -35,7 +36,11 @@ export default function ModelsMatrix({
   models,
   specs,
   footnote,
+  locale = "en",
 }: ModelsMatrixProps) {
+  const isSr = locale === "sr";
+  const sectionAriaLabel = isSr ? "Poređenje modela" : "Models comparison";
+  const specSheetLinkLabel = isSr ? "PDF specifikacija" : "PDF spec sheet";
   const isDark = variant === "dark";
   const bg = isDark ? "var(--color-navy)" : "var(--color-offwhite)";
   const goldColor = isDark ? "var(--color-gold)" : "var(--color-gold-text)";
@@ -67,7 +72,7 @@ export default function ModelsMatrix({
 
   return (
     <section
-      aria-label="Models comparison"
+      aria-label={sectionAriaLabel}
       style={{
         backgroundColor: bg,
         paddingTop: "clamp(2.5rem, 5vw, 5rem)",
@@ -239,7 +244,7 @@ export default function ModelsMatrix({
                     borderTop: `1px solid ${ruleColor}`,
                   }}
                 >
-                  <span>PDF spec sheet</span>
+                  <span>{specSheetLinkLabel}</span>
                   <span
                     aria-hidden="true"
                     className="spec-arrow"

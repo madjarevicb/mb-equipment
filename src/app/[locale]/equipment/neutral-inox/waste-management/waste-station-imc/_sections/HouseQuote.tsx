@@ -1,6 +1,12 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../../../thermal-processing/_sections/ScrollReveal";
 
-export default function HouseQuote() {
+interface HouseQuoteProps {
+  locale?: Locale;
+}
+
+export default function HouseQuote({ locale }: HouseQuoteProps = {}) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-hidden="true"
@@ -50,7 +56,7 @@ export default function HouseQuote() {
                 fontWeight: 400,
               }}
             >
-              Engineering catering solutions
+              {isSr ? "Inženjerska rešenja za ugostiteljstvo" : "Engineering catering solutions"}
             </span>
             <span
               className="font-display italic block"
@@ -62,7 +68,7 @@ export default function HouseQuote() {
                 color: "var(--color-gold-text)",
               }}
             >
-              for more than 110 years.
+              {isSr ? "više od 110 godina." : "for more than 110 years."}
             </span>
           </ScrollReveal>
         </div>
@@ -83,7 +89,7 @@ export default function HouseQuote() {
                 fontWeight: 500,
               }}
             >
-              IMC, Lincoln — a Middleby brand since 2018
+              {isSr ? "IMC, Linkoln — Middleby brend od 2018." : "IMC, Lincoln — a Middleby brand since 2018"}
             </span>
           </div>
         </div>
@@ -100,7 +106,7 @@ export default function HouseQuote() {
                 fontWeight: 500,
               }}
             >
-              § Verified References
+              {isSr ? "§ Proverene reference" : "§ Verified References"}
             </span>
             <ul className="space-y-3">
               <li
@@ -114,7 +120,7 @@ export default function HouseQuote() {
                   className="col-span-12 md:col-span-4 font-display italic text-navy"
                   style={{ fontSize: "14px" }}
                 >
-                  Ramada Hotel &amp; Suites, Ajman
+                  {isSr ? <>Ramada Hotel i Suites, Ajman</> : <>Ramada Hotel &amp; Suites, Ajman</>}
                 </span>
                 <span
                   className="col-span-12 md:col-span-8 text-navy/70 font-light"
@@ -125,8 +131,8 @@ export default function HouseQuote() {
                     fontFamily: "var(--font-display), serif",
                   }}
                 >
-                  UAE&rsquo;s first hotel Zero-Landfill project — 90% landfill
-                  diversion sustained over five years.
+                  {isSr ? "Prvi Zero-Landfill hotelski projekat u UAE — 90% preusmeravanje deponovanja održano pet godina." : <>UAE&rsquo;s first hotel Zero-Landfill project — 90% landfill
+                  diversion sustained over five years.</>}
                 </span>
               </li>
               <li
@@ -151,8 +157,8 @@ export default function HouseQuote() {
                     fontFamily: "var(--font-display), serif",
                   }}
                 >
-                  WasteStation case study published by IMC for one of the UK&rsquo;s
-                  largest shopping centres.
+                  {isSr ? "WasteStation studija slučaja objavljena od strane IMC-a za jedan od najvećih britanskih tržnih centara." : <>WasteStation case study published by IMC for one of the UK&rsquo;s
+                  largest shopping centres.</>}
                 </span>
               </li>
             </ul>

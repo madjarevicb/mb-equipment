@@ -14,6 +14,7 @@ const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwYTE2MjgiLz48L3N2Zz4=";
 
 export default function CookingLineHero({ locale, dict }: Props) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="cooking-line-hero"
@@ -32,7 +33,7 @@ export default function CookingLineHero({ locale, dict }: Props) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 07
+          {isSr ? "tabak 01 / 07" : "folio 01 / 07"}
         </span>
         <span
           aria-hidden="true"
@@ -62,13 +63,13 @@ export default function CookingLineHero({ locale, dict }: Props) {
       {/* Running metadata */}
       <RunningMeta
         variant="dark"
-        folio="Ed. 2026"
+        folio={isSr ? "Izd. 2026" : "Ed. 2026"}
         items={[
-          "Vol. II",
-          "Ch. 02 — Cooking Line",
+          isSr ? "Tom II" : "Vol. II",
+          isSr ? "Pogl. 02 — Kuhinjska linija" : "Ch. 02 — Cooking Line",
           "Silko",
           "Lincat",
-          "Middleby Group",
+          isSr ? "Middleby grupa" : "Middleby Group",
         ]}
       />
 
@@ -160,7 +161,7 @@ export default function CookingLineHero({ locale, dict }: Props) {
                   delay={40}
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>The cooking</span>
+                  <span style={{ display: "block" }}>{isSr ? "Kuhinjska" : "The cooking"}</span>
                   <span
                     style={{
                       display: "block",
@@ -170,10 +171,10 @@ export default function CookingLineHero({ locale, dict }: Props) {
                       paddingLeft: "0.6em",
                     }}
                   >
-                    line, composed
+                    {isSr ? "linija, sastavljena" : "line, composed"}
                   </span>
                   <span style={{ display: "block" }}>
-                    in seven instruments
+                    {isSr ? "od sedam instrumenata" : "in seven instruments"}
                     <span
                       aria-hidden="true"
                       style={{
@@ -206,9 +207,9 @@ export default function CookingLineHero({ locale, dict }: Props) {
                   letterSpacing: "0.1em",
                 }}
               >
-                Plate No. 02 —{" "}
+                {isSr ? "Tabla br. 02 —" : "Plate No. 02 —"}{" "}
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Modular cooking, Belgrade.
+                  {isSr ? "Modularno kuvanje, Beograd." : "Modular cooking, Belgrade."}
                 </span>
               </p>
             </div>
@@ -227,7 +228,7 @@ export default function CookingLineHero({ locale, dict }: Props) {
               }}
               className="block uppercase font-medium mb-4"
             >
-              § Editor&rsquo;s Note
+              {isSr ? "§ Beleška urednika" : <>§ Editor&rsquo;s Note</>}
             </span>
             <p
               className="text-white/80 font-light"
@@ -252,11 +253,17 @@ export default function CookingLineHero({ locale, dict }: Props) {
                   fontWeight: 400,
                 }}
               >
-                S
+                {isSr ? "S" : "S"}
               </span>
-              even cooking disciplines, two manufacturers — Silko of Italy and
+              {isSr ? (
+                <>edam disciplina kuvanja, dva proizvođača — Silko iz Italije i
+                Lincat iz Engleske — sklopljeni prema vašem meniju, obimu i
+                liniji.</>
+              ) : (
+                <>even cooking disciplines, two manufacturers — Silko of Italy and
               Lincat of England — assembled to your menu, your volume, your
-              line.
+              line.</>
+              )}
             </p>
           </div>
 

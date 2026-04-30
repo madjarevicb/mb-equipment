@@ -73,7 +73,7 @@ export default function MobileMenu({ navItems, locale, nav, common }: MobileMenu
       style={{ top: "65px", left: 0, right: 0, bottom: 0, zIndex: 60 }}
       role="dialog"
       aria-modal="true"
-      aria-label="Navigation menu"
+      aria-label={common.navigationMenu}
       onKeyDown={handleKeyDown}
     >
       <div className="px-6 py-8">

@@ -1,3 +1,4 @@
+import type { Locale } from "@/i18n/config";
 import ScrollReveal from "../../_sections/ScrollReveal";
 
 interface SpecRow {
@@ -8,7 +9,11 @@ interface SpecRow {
   note: string;
 }
 
-const SPECS: SpecRow[] = [
+interface SpecsThatMatterProps {
+  locale?: Locale;
+}
+
+const SPECS_EN: SpecRow[] = [
   {
     index: "i",
     value: "300",
@@ -39,7 +44,38 @@ const SPECS: SpecRow[] = [
   },
 ];
 
-const MODES = [
+const SPECS_SR: SpecRow[] = [
+  {
+    index: "i",
+    value: "300",
+    unit: "°C",
+    label: "Maks. konvekcija",
+    note: "30–300 °C opseg toplog vazduha; 30–130 °C para.",
+  },
+  {
+    index: "ii",
+    value: "45",
+    unit: "kg",
+    label: "Opterećenje hrane",
+    note: "Tipičan Invoq Combi 10 × 1/1 GN, 19,3 kW.",
+  },
+  {
+    index: "iii",
+    value: "62.2",
+    unit: "kW",
+    label: "Vrh asortimana",
+    note: "Invoq Combi 20-2/1 GN — ENERGY STAR sertifikovan.",
+  },
+  {
+    index: "iv",
+    value: "5 + 7",
+    unit: "režimi / ciklusi",
+    label: "Kuvanje i pranje",
+    note: "Pet režima kuvanja; sedam CombiWash ciklusa, Light do Turbo.",
+  },
+];
+
+const MODES_EN = [
   "Hot Air (convection)",
   "Steam",
   "Combi (steam + convection)",
@@ -47,7 +83,15 @@ const MODES = [
   "Cook & Regen",
 ];
 
-const FEATURES = [
+const MODES_SR = [
+  "Topli vazduh (konvekcija)",
+  "Para",
+  "Combi (para + konvekcija)",
+  "CombiSmart®",
+  "Cook & Regen",
+];
+
+const FEATURES_EN = [
   "SmartTouch® Android touch display",
   "SmartChef® guided 15-step recipes",
   "RackTimer® per-shelf timing",
@@ -58,7 +102,22 @@ const FEATURES = [
   "Integrated hand shower · core probe",
 ];
 
-export default function SpecsThatMatter() {
+const FEATURES_SR = [
+  "SmartTouch® Android dodirni ekran",
+  "SmartChef® vođeni recepti u 15 koraka",
+  "RackTimer® tajmer po polici",
+  "ClimaOptima® 10-nivovska vlažnost",
+  "CombiWash® automatsko čišćenje sa 7 ciklusa",
+  "HACCP logovanje · USB izvoz",
+  "Open Kitchen cloud povezivost",
+  "Integrisani tuš · sonda za jezgro",
+];
+
+export default function SpecsThatMatter({ locale }: SpecsThatMatterProps = {}) {
+  const isSr = locale === "sr";
+  const SPECS = isSr ? SPECS_SR : SPECS_EN;
+  const MODES = isSr ? MODES_SR : MODES_EN;
+  const FEATURES = isSr ? FEATURES_SR : FEATURES_EN;
   return (
     <section
       aria-labelledby="combi-specs"
@@ -100,7 +159,7 @@ export default function SpecsThatMatter() {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                &sect; Specs That Matter
+                {isSr ? "§ Bitne specifikacije" : <>&sect; Specs That Matter</>}
               </span>
             </div>
             <ScrollReveal>
@@ -113,13 +172,13 @@ export default function SpecsThatMatter() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                The numbers
+                {isSr ? "Brojevi" : "The numbers"}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  on the plate.
+                  {isSr ? "na tanjiru." : "on the plate."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -133,9 +192,11 @@ export default function SpecsThatMatter() {
                 maxWidth: "32ch",
               }}
             >
-              Verified Invoq published specifications &mdash; from countertop
+              {isSr ? <>Provereno objavljene Invoq specifikacije &mdash; od stone od 5
+              nivoa do ulazne 20 &times; 2/1 GN, sa zajedničkim softverskim
+              stekom platforme.</> : <>Verified Invoq published specifications &mdash; from countertop
               5-tray to roll-in 20 &times; 2/1 GN, with the platform&rsquo;s
-              shared software stack.
+              shared software stack.</>}
             </p>
           </div>
         </div>
@@ -237,7 +298,7 @@ export default function SpecsThatMatter() {
               }}
               className="block uppercase font-medium mb-4"
             >
-              Cooking Modes — five
+              {isSr ? "Režimi kuvanja — pet" : "Cooking Modes — five"}
             </span>
             <ul
               style={{
@@ -282,8 +343,7 @@ export default function SpecsThatMatter() {
                 lineHeight: 1.55,
               }}
             >
-              ClimaOptima® auto-humidity layered across all modes — up to ten
-              humidity levels.
+              {isSr ? "ClimaOptima® automatska vlažnost u svim režimima — do deset nivoa vlažnosti." : "ClimaOptima® auto-humidity layered across all modes — up to ten humidity levels."}
             </p>
           </div>
 
@@ -298,7 +358,7 @@ export default function SpecsThatMatter() {
               }}
               className="block uppercase font-medium mb-4"
             >
-              Smart features &amp; certifications
+              {isSr ? <>Pametne funkcije i sertifikati</> : <>Smart features &amp; certifications</>}
             </span>
             <ul
               className="grid grid-cols-1 sm:grid-cols-2 gap-x-6"
@@ -357,7 +417,7 @@ export default function SpecsThatMatter() {
                     fontWeight: 500,
                   }}
                 >
-                  Certifications
+                  {isSr ? "Sertifikati" : "Certifications"}
                 </span>
                 <p
                   className="font-display italic text-navy"
@@ -394,7 +454,7 @@ export default function SpecsThatMatter() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Houno states
+              {isSr ? "Houno tvrdi" : "Houno states"}
             </span>
             <p
               className="font-display italic text-navy"
@@ -403,8 +463,8 @@ export default function SpecsThatMatter() {
                 lineHeight: 1.3,
               }}
             >
-              Up to 70% less energy in steam mode &middot; 19% less convection
-              energy*
+              {isSr ? <>Do 70% manje energije u režimu pare &middot; 19% manje konvekcione energije*</> : <>Up to 70% less energy in steam mode &middot; 19% less convection
+              energy*</>}
             </p>
           </div>
           <div className="col-span-12 lg:col-span-4">
@@ -417,7 +477,7 @@ export default function SpecsThatMatter() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Houno states
+              {isSr ? "Houno tvrdi" : "Houno states"}
             </span>
             <p
               className="font-display italic text-navy"
@@ -426,7 +486,7 @@ export default function SpecsThatMatter() {
                 lineHeight: 1.3,
               }}
             >
-              70.7% lower cleaning costs &middot; 27% less water*
+              {isSr ? <>70,7% niži troškovi čišćenja &middot; 27% manje vode*</> : <>70.7% lower cleaning costs &middot; 27% less water*</>}
             </p>
           </div>
           <div className="col-span-12 lg:col-span-4">
@@ -439,7 +499,7 @@ export default function SpecsThatMatter() {
               }}
               className="block uppercase font-medium mb-3"
             >
-              Houno states
+              {isSr ? "Houno tvrdi" : "Houno states"}
             </span>
             <p
               className="font-display italic text-navy"
@@ -448,7 +508,7 @@ export default function SpecsThatMatter() {
                 lineHeight: 1.3,
               }}
             >
-              17% more capacity vs. previous generation*
+              {isSr ? "17% veći kapacitet u odnosu na prethodnu generaciju*" : "17% more capacity vs. previous generation*"}
             </p>
           </div>
           <div className="col-span-12">
@@ -459,9 +519,11 @@ export default function SpecsThatMatter() {
                 lineHeight: 1.55,
               }}
             >
-              * Manufacturer&rsquo;s published claims (Houno) &mdash; not
+              {isSr ? <>* Objavljene tvrdnje proizvođača (Houno) &mdash; nisu nezavisno
+              proverene. ENERGY STAR efikasnost na Invoq Combi
+              20&times;2/1 GN: 81% konvekcija, 78% para, 0,05 gal vode/posuda.</> : <>* Manufacturer&rsquo;s published claims (Houno) &mdash; not
               independently audited. ENERGY STAR efficiency on Invoq Combi
-              20&times;2/1 GN: 81% convection, 78% steam, 0.05 gal water/pan.
+              20&times;2/1 GN: 81% convection, 78% steam, 0.05 gal water/pan.</>}
             </p>
           </div>
         </div>
@@ -502,7 +564,7 @@ export default function SpecsThatMatter() {
                 fontWeight: 400,
               }}
             >
-              Five cooking modes,
+              {isSr ? "Pet režima kuvanja," : "Five cooking modes,"}
             </span>
             <span
               className="font-display italic text-navy block"
@@ -513,7 +575,7 @@ export default function SpecsThatMatter() {
                 fontWeight: 400,
               }}
             >
-              seven wash cycles,
+              {isSr ? "sedam ciklusa pranja," : "seven wash cycles,"}
             </span>
             <span
               className="font-display italic block"
@@ -525,7 +587,7 @@ export default function SpecsThatMatter() {
                 color: "var(--color-gold-text)",
               }}
             >
-              one cloud.
+              {isSr ? "jedan cloud." : "one cloud."}
             </span>
           </ScrollReveal>
         </div>
@@ -546,7 +608,7 @@ export default function SpecsThatMatter() {
                 fontWeight: 500,
               }}
             >
-              Houno &middot; Lincat &middot; Invoq Platform
+              {isSr ? <>Houno &middot; Lincat &middot; Invoq platforma</> : <>Houno &middot; Lincat &middot; Invoq Platform</>}
             </span>
           </div>
         </div>

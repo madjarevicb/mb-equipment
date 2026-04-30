@@ -5,6 +5,7 @@ import ScrollReveal from "../../equipment/thermal-processing/_sections/ScrollRev
 import {
   SUPER_CATEGORIES,
   countByCategory,
+  getSuperCategoryLabels,
   type SuperCategory,
 } from "./brandTaxonomy";
 
@@ -21,40 +22,56 @@ interface TileData {
   alt: string;
   href: string;
   count: number;
+  exploreLabel: string;
+  brandsLabel: string;
 }
 
-const IMAGE_BY_CATEGORY: Record<SuperCategory, { src: string; alt: string }> = {
+const IMAGE_BY_CATEGORY: Record<
+  SuperCategory,
+  { src: string; alt: string; altSr: string }
+> = {
   cooking: {
     src: "/images/whatwedo/chef-cooking.jpg",
     alt: "Professional chef working a commercial cooking line",
+    altSr: "Profesionalni kuvar na profesionalnoj kuhinjskoj liniji",
   },
   refrigeration: {
     src: "/images/whatwedo/elements.jpg",
     alt: "Commercial refrigeration units arranged in a kitchen",
+    altSr: "Profesionalni rashladni uređaji raspoređeni u kuhinji",
   },
   "neutral-inox": {
     src: "/images/whatwedo/training-room.jpg",
     alt: "Stainless steel kitchen worktops and shelving",
+    altSr: "Inox kuhinjske radne ploče i police",
   },
   "waste-management": {
     src: "/images/whatwedo/adhoc-kitchen.jpg",
     alt: "IMC food waste management station in commercial kitchen",
+    altSr: "IMC stanica za upravljanje otpadom hrane u profesionalnoj kuhinji",
   },
 };
 
 export default function CategoriesChapter({ locale }: CategoriesChapterProps) {
   const counts = countByCategory();
+  const isSr = locale === "sr";
 
-  const tiles: TileData[] = SUPER_CATEGORIES.map((c, i) => ({
-    id: c.id,
-    serial: `No. 0${i + 1}`,
-    label: c.label,
-    italicDescriptor: c.italicDescriptor,
-    image: IMAGE_BY_CATEGORY[c.id].src,
-    alt: IMAGE_BY_CATEGORY[c.id].alt,
-    href: c.href(locale),
-    count: counts[c.id],
-  }));
+  const tiles: TileData[] = SUPER_CATEGORIES.map((c, i) => {
+    const labels = getSuperCategoryLabels(c.id, isSr);
+    const img = IMAGE_BY_CATEGORY[c.id];
+    return {
+      id: c.id,
+      serial: `${isSr ? "Br." : "No."} 0${i + 1}`,
+      label: labels.label,
+      italicDescriptor: labels.italicDescriptor,
+      image: img.src,
+      alt: isSr ? img.altSr : img.alt,
+      href: c.href(locale),
+      count: counts[c.id],
+      exploreLabel: isSr ? "Pogledaj \u2192" : "Explore \u2192",
+      brandsLabel: isSr ? "brendova" : "brands",
+    };
+  });
 
   return (
     <section
@@ -94,7 +111,9 @@ export default function CategoriesChapter({ locale }: CategoriesChapterProps) {
                 }}
                 className="text-xs font-medium uppercase"
               >
-                Chapter II — Index of Disciplines
+                {isSr
+                  ? "Poglavlje II — Indeks disciplina"
+                  : "Chapter II — Index of Disciplines"}
               </span>
             </div>
             <ScrollReveal>
@@ -107,13 +126,15 @@ export default function CategoriesChapter({ locale }: CategoriesChapterProps) {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Four disciplines.
+                {isSr ? "Četiri discipline." : "Four disciplines."}
                 <br />
                 <span
                   className="italic font-normal"
                   style={{ color: "var(--color-gold-text)" }}
                 >
-                  one specification desk.
+                  {isSr
+                    ? "jedno mesto za specifikaciju."
+                    : "one specification desk."}
                 </span>
               </h2>
             </ScrollReveal>
@@ -127,9 +148,9 @@ export default function CategoriesChapter({ locale }: CategoriesChapterProps) {
                 maxWidth: "32ch",
               }}
             >
-              The portfolio is organized around how a kitchen actually works —
-              cook, hold, fabricate, dispose. Pick the discipline that leads
-              your project.
+              {isSr
+                ? "Portfolio je organizovan prema načinu na koji kuhinja zaista funkcioniše \u2014 kuvanje, čuvanje, izrada, tretiranje otpada. Izaberite disciplinu koja vodi Vaš projekat."
+                : "The portfolio is organized around how a kitchen actually works \u2014 cook, hold, fabricate, dispose. Pick the discipline that leads your project."}
             </p>
             <div
               style={{
@@ -146,7 +167,7 @@ export default function CategoriesChapter({ locale }: CategoriesChapterProps) {
                   fontSize: "13px",
                 }}
               >
-                iv entries
+                {isSr ? "iv stavke" : "iv entries"}
               </span>
               <span
                 aria-hidden="true"
@@ -225,7 +246,7 @@ export default function CategoriesChapter({ locale }: CategoriesChapterProps) {
             className="uppercase text-navy/60"
             style={{ fontSize: "10px", letterSpacing: "0.32em" }}
           >
-            End of Chapter II
+            {isSr ? "Kraj poglavlja II" : "End of Chapter II"}
           </span>
           <span
             style={{ backgroundColor: "rgba(10,22,40,0.15)" }}
@@ -307,7 +328,7 @@ function CategoryTile({
             letterSpacing: "0.3em",
           }}
         >
-          {tile.count} brands
+          {tile.count} {tile.brandsLabel}
         </span>
       </div>
 
@@ -352,7 +373,7 @@ function CategoryTile({
             }}
             className="text-xs font-medium uppercase"
           >
-            Explore →
+            {tile.exploreLabel}
           </span>
         </div>
       </div>

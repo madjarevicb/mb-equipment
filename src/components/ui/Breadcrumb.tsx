@@ -11,14 +11,16 @@ interface BreadcrumbProps {
   items: BreadcrumbItem[];
   locale?: Locale;
   homeLabel?: string;
+  ariaLabel?: string;
 }
 
-export default function Breadcrumb({ items, locale, homeLabel = "Home" }: BreadcrumbProps) {
+export default function Breadcrumb({ items, locale, homeLabel = "Home", ariaLabel }: BreadcrumbProps) {
   const homeHref = locale ? `/${locale}` : "/";
   const allItems: BreadcrumbItem[] = [{ label: homeLabel, href: homeHref }, ...items];
+  const breadcrumbLabel = ariaLabel ?? (locale === "sr" ? "Navigaciona putanja" : "Breadcrumb");
 
   return (
-    <nav className="max-w-7xl mx-auto px-6 pt-4" aria-label="Breadcrumb">
+    <nav className="max-w-7xl mx-auto px-6 pt-4" aria-label={breadcrumbLabel}>
       <ol className="flex items-center gap-2 text-sm text-text-secondary">
         {allItems.map((item, index) => {
           const isLast = index === allItems.length - 1;

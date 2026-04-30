@@ -14,6 +14,7 @@ const HERO_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwYTE2MjgiLz48L3N2Zz4=";
 
 export default function Hero({ locale, dict }: HeroProps) {
+  const isSr = locale === "sr";
   return (
     <section
       aria-labelledby="custom-fab-hero"
@@ -32,7 +33,7 @@ export default function Hero({ locale, dict }: HeroProps) {
             letterSpacing: "0.18em",
           }}
         >
-          folio 01 / 06
+          {isSr ? "tabak 01 / 06" : "folio 01 / 06"}
         </span>
         <span
           aria-hidden="true"
@@ -62,13 +63,13 @@ export default function Hero({ locale, dict }: HeroProps) {
       {/* Running metadata */}
       <RunningMeta
         variant="dark"
-        folio="Ed. 2026"
+        folio={isSr ? "Izd. 2026" : "Ed. 2026"}
         items={[
-          "Vol. II",
-          "Ch. 01 — Custom Fabrication",
-          "Belgrade workshop",
+          isSr ? "Tom II" : "Vol. II",
+          isSr ? "Pogl. 01 — Izrada po meri" : "Ch. 01 — Custom Fabrication",
+          isSr ? "Beogradska radionica" : "Belgrade workshop",
           "AISI 304 / 316",
-          "CE-marked materials",
+          isSr ? "CE-označeni materijali" : "CE-marked materials",
         ]}
       />
 
@@ -158,7 +159,7 @@ export default function Hero({ locale, dict }: HeroProps) {
                   delay={40}
                   style={{ display: "block" }}
                 >
-                  <span style={{ display: "block" }}>Stainless steel,</span>
+                  <span style={{ display: "block" }}>{isSr ? "Inox," : "Stainless steel,"}</span>
                   <span
                     style={{
                       display: "block",
@@ -168,10 +169,10 @@ export default function Hero({ locale, dict }: HeroProps) {
                       paddingLeft: "0.6em",
                     }}
                   >
-                    made
+                    {isSr ? "izrađen" : "made"}
                   </span>
                   <span style={{ display: "block" }}>
-                    to your line
+                    {isSr ? "po Vašoj liniji" : "to your line"}
                     <span
                       aria-hidden="true"
                       style={{
@@ -204,9 +205,9 @@ export default function Hero({ locale, dict }: HeroProps) {
                   letterSpacing: "0.1em",
                 }}
               >
-                Plate No. 01 —{" "}
+                {isSr ? "Tabla br. 01 —" : "Plate No. 01 —"}{" "}
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  The Workshop, Belgrade.
+                  {isSr ? "Radionica, Beograd." : "The Workshop, Belgrade."}
                 </span>
               </p>
             </div>
@@ -225,7 +226,7 @@ export default function Hero({ locale, dict }: HeroProps) {
               }}
               className="block uppercase font-medium mb-4"
             >
-              § Editor&rsquo;s Note
+              {isSr ? "§ Beleška urednika" : <>§ Editor&rsquo;s Note</>}
             </span>
             <p
               className="text-white/80 font-light"
@@ -250,11 +251,17 @@ export default function Hero({ locale, dict }: HeroProps) {
                   fontWeight: 400,
                 }}
               >
-                M
+                {isSr ? "M" : "M"}
               </span>
-              B Equipment fabricates stainless steel kitchen elements in
+              {isSr ? (
+                <>B Equipment proizvodi inox elemente za kuhinju u Beogradu —
+                prema vašim tačnim dimenzijama, materijalima i obradi.
+                Radionica i instalacioni tim u jednom.</>
+              ) : (
+                <>B Equipment fabricates stainless steel kitchen elements in
               Belgrade — to your exact dimensions, materials, and finish.
-              Workshop and installation team in one.
+              Workshop and installation team in one.</>
+              )}
             </p>
           </div>
 
@@ -313,7 +320,7 @@ export default function Hero({ locale, dict }: HeroProps) {
                       textTransform: "uppercase",
                     }}
                   >
-                    From the workshop, Belgrade
+                    {isSr ? "Iz radionice, Beograd" : "From the workshop, Belgrade"}
                   </span>
                   <span
                     className="font-display italic"

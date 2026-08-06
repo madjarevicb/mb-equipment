@@ -52,7 +52,7 @@ export default function ThemesSection({ dict, data }: Props) {
                   <span className="font-display text-6xl font-bold text-text-primary/8 italic leading-none">
                     {theme.label}
                   </span>
-                  <p className="text-gold/80 text-[11px] font-medium uppercase tracking-[0.2em] mt-3">
+                  <p className="text-gold-text text-[11px] font-medium uppercase tracking-[0.2em] mt-3">
                     {theme.subtitle}
                   </p>
                 </div>

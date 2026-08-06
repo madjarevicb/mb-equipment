@@ -15,7 +15,7 @@ export default function ProcessSection({ dict, data }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           {/* Left — heading */}
           <AnimatedSection className="lg:col-span-4" animation="fade-right">
-            <p className="text-gold/80 text-xs font-medium uppercase tracking-[0.2em] mb-4">{dict.eyebrow}</p>
+            <p className="text-gold-text text-xs font-medium uppercase tracking-[0.2em] mb-4">{dict.eyebrow}</p>
             <h2 id="process-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-[1.1] mb-5">
               {dict.heading1}<br />
               <span className="italic font-normal">{dict.heading2}</span>

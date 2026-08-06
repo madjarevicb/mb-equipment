@@ -1,6 +1,5 @@
 import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { residentialBrands } from "@/data/residential";
 import type { Dictionary } from "@/i18n/types";
 
 interface Props {

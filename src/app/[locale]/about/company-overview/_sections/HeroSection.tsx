@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import type { Dictionary } from "@/i18n/types";
 import type { Locale } from "@/i18n/config";
@@ -10,7 +9,7 @@ interface Props {
   locale: Locale;
 }
 
-export default function HeroSection({ dict, locale }: Props) {
+export default function HeroSection({ dict }: Props) {
   return (
     <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center overflow-hidden" aria-labelledby="hero-heading">
       <Image

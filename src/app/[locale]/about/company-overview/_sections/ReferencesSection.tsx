@@ -36,7 +36,7 @@ export default function ReferencesSection({ dict, data, locale, ctaLabel }: Prop
               <AnimatedSection key={i} delay={i * 0.1} animation="fade-left">
                 <div className={`py-8 ${i < data.length - 1 ? "border-b border-gray-200" : ""}`}>
                   <div className="border-l-2 border-gold/40 pl-6">
-                    <p className="text-gold/80 text-[11px] font-medium uppercase tracking-[0.2em] mb-2">{ref.label}</p>
+                    <p className="text-gold-text text-[11px] font-medium uppercase tracking-[0.2em] mb-2">{ref.label}</p>
                     <h3 className="font-display text-lg lg:text-xl font-bold text-text-primary leading-snug mb-2">{ref.name}</h3>
                     <p className="text-text-secondary text-sm leading-[1.8]">{ref.description}</p>
                   </div>

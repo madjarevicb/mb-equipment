@@ -5,7 +5,6 @@ import type { Dictionary } from "@/i18n/types";
 
 export default function HeroSection({
   dict,
-  locale,
   ariaLabel,
 }: {
   dict: Dictionary["home"]["hero"];

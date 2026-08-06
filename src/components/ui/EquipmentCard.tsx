@@ -11,12 +11,7 @@ interface EquipmentCardProps {
   gradient?: "red-gold" | "gold";
 }
 
-const gradientMap = {
-  "red-gold": "from-red via-gold to-transparent",
-  gold: "from-gold to-transparent",
-} as const;
-
-export default function EquipmentCard({ title, image, alt, description, href, sizes, gradient = "red-gold" }: EquipmentCardProps) {
+export default function EquipmentCard({ title, image, alt, description, href, sizes }: EquipmentCardProps) {
   return (
     <Link href={href} className="group relative bg-navy-light/50 overflow-hidden h-full border border-white/5 hover:border-gold/30 focus-visible:outline-gold focus-visible:outline-offset-[-2px] transition-[border-color,transform] duration-500 block">
       <div className="relative h-44 md:h-52 overflow-hidden">

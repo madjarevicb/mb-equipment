@@ -3,11 +3,6 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { Dictionary } from "@/i18n/types";
 import type { Locale } from "@/i18n/config";
 
-const items = [
-  { slug: "warewashing" },
-  { slug: "waste-management" },
-];
-
 interface Props {
   dict: Dictionary["neutralInoxPage"]["additional"];
   locale: Locale;

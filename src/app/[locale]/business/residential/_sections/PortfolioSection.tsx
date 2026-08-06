@@ -1,5 +1,4 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { residentialBrands } from "@/data/residential";
 import type { Dictionary } from "@/i18n/types";
 
 interface Props {
@@ -7,10 +6,6 @@ interface Props {
 }
 
 export default function PortfolioSection({ dict }: Props) {
-  const indoorCount = residentialBrands.filter((b) => b.category === "Indoor").length;
-  const outdoorCount = residentialBrands.filter((b) => b.category === "Outdoor").length;
-  const beverageCount = residentialBrands.filter((b) => b.category === "Beverage").length;
-
   return (
     <section
       className="py-28 lg:py-36 bg-white"

@@ -1,6 +1,6 @@
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { COMPANY } from "@/lib/constants";
-import { neutralCapabilities, fabricationSteps } from "@/data/neutral-inox";
+import { neutralCapabilities } from "@/data/neutral-inox";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import {

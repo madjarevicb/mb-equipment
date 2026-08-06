@@ -36,12 +36,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ],
     alternates: {
       canonical: `/${locale}/equipment/neutral-inox`,
-      languages: { en: "/en/equipment/neutral-inox", sr: "/sr/equipment/neutral-inox" },
+      languages: { en: "/en/equipment/neutral-inox", sr: "/sr/equipment/neutral-inox", "x-default": "/sr/equipment/neutral-inox" },
     },
     openGraph: {
       title: PAGE_TITLE,
       description: PAGE_DESC,
-      url: `${COMPANY.url}/equipment/neutral-inox`,
+      url: `${COMPANY.url}/${locale}/equipment/neutral-inox`,
       siteName: COMPANY.name,
       locale: locale === "sr" ? "sr_RS" : "en_US",
       type: "website",

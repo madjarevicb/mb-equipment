@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: PAGE_DESC,
     alternates: {
       canonical: `/${locale}/privacy`,
-      languages: { en: "/en/privacy", sr: "/sr/privacy" },
+      languages: { en: "/en/privacy", sr: "/sr/privacy", "x-default": "/sr/privacy" },
     },
     robots: { index: true, follow: true },
     openGraph: {
       title: PAGE_TITLE,
       description: PAGE_DESC,
-      url: `${COMPANY.url}/privacy`,
+      url: `${COMPANY.url}/${locale}/privacy`,
       siteName: COMPANY.name,
       locale: locale === "sr" ? "sr_RS" : "en_US",
       type: "website",

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: ["commercial deep fryer", "high-efficiency fryer", "oil filtration fryer", "restaurant fryer", "commercial frying equipment"],
     alternates: {
       canonical: `/${locale}/equipment/thermal-processing/fryers`,
-      languages: { en: "/en/equipment/thermal-processing/fryers", sr: "/sr/equipment/thermal-processing/fryers" },
+      languages: { en: "/en/equipment/thermal-processing/fryers", sr: "/sr/equipment/thermal-processing/fryers", "x-default": "/sr/equipment/thermal-processing/fryers" },
     },
     openGraph: {
       title: dict.metadata.fryers.title,

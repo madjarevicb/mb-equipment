@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ],
     alternates: {
       canonical: `/${locale}/equipment/neutral-inox/waste-management`,
-      languages: { en: "/en/equipment/neutral-inox/waste-management", sr: "/sr/equipment/neutral-inox/waste-management" },
+      languages: { en: "/en/equipment/neutral-inox/waste-management", sr: "/sr/equipment/neutral-inox/waste-management", "x-default": "/sr/equipment/neutral-inox/waste-management" },
     },
     openGraph: {
       title: dict.metadata.wasteManagement.title,

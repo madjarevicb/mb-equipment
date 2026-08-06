@@ -50,12 +50,13 @@ export async function generateMetadata({
       languages: {
         en: "/en/business/hotels-restaurants",
         sr: "/sr/business/hotels-restaurants",
+        "x-default": "/sr/business/hotels-restaurants",
       },
     },
     openGraph: {
       title,
       description,
-      url: `${COMPANY.url}/business/hotels-restaurants`,
+      url: `${COMPANY.url}/${locale}/business/hotels-restaurants`,
       siteName: COMPANY.name,
       locale: locale === "sr" ? "sr_RS" : "en_US",
       type: "website",

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: ["commercial cooking range", "induction cooking suite", "gas range commercial", "professional cooking suites", "Silko cooking equipment"],
     alternates: {
       canonical: `/${locale}/equipment/thermal-processing/ranges`,
-      languages: { en: "/en/equipment/thermal-processing/ranges", sr: "/sr/equipment/thermal-processing/ranges" },
+      languages: { en: "/en/equipment/thermal-processing/ranges", sr: "/sr/equipment/thermal-processing/ranges", "x-default": "/sr/equipment/thermal-processing/ranges" },
     },
     openGraph: {
       title: dict.metadata.ranges.title,

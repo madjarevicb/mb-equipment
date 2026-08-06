@@ -38,12 +38,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ],
     alternates: {
       canonical: `/${locale}/demo-centers`,
-      languages: { en: "/en/demo-centers", sr: "/sr/demo-centers" },
+      languages: { en: "/en/demo-centers", sr: "/sr/demo-centers", "x-default": "/sr/demo-centers" },
     },
     openGraph: {
       title: PAGE_TITLE,
       description: PAGE_DESC,
-      url: `${COMPANY.url}/demo-centers`,
+      url: `${COMPANY.url}/${locale}/demo-centers`,
       siteName: COMPANY.name,
       locale: locale === "sr" ? "sr_RS" : "en_US",
       type: "website",

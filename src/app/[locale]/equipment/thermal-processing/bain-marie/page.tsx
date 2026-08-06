@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: ["commercial bain marie", "food holding equipment", "buffet equipment commercial", "temperature holding station"],
     alternates: {
       canonical: `/${locale}/equipment/thermal-processing/bain-marie`,
-      languages: { en: "/en/equipment/thermal-processing/bain-marie", sr: "/sr/equipment/thermal-processing/bain-marie" },
+      languages: { en: "/en/equipment/thermal-processing/bain-marie", sr: "/sr/equipment/thermal-processing/bain-marie", "x-default": "/sr/equipment/thermal-processing/bain-marie" },
     },
     openGraph: {
       title: dict.metadata.bainMarie.title,

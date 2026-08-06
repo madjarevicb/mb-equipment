@@ -46,12 +46,12 @@ export async function generateMetadata({
     ],
     alternates: {
       canonical: `/${locale}`,
-      languages: { en: "/en", sr: "/sr" },
+      languages: { en: "/en", sr: "/sr", "x-default": "/sr" },
     },
     openGraph: {
       title,
       description,
-      url: COMPANY.url,
+      url: `${COMPANY.url}/${locale}`,
       siteName: COMPANY.name,
       locale: locale === "sr" ? "sr_RS" : "en_US",
       type: "website",

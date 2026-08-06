@@ -34,12 +34,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ],
     alternates: {
       canonical: `/${locale}/about/innovation`,
-      languages: { en: "/en/about/innovation", sr: "/sr/about/innovation" },
+      languages: { en: "/en/about/innovation", sr: "/sr/about/innovation", "x-default": "/sr/about/innovation" },
     },
     openGraph: {
       title: PAGE_TITLE,
       description: PAGE_DESC,
-      url: `${COMPANY.url}/about/innovation`,
+      url: `${COMPANY.url}/${locale}/about/innovation`,
       siteName: COMPANY.name,
       locale: locale === "sr" ? "sr_RS" : "en_US",
       type: "website",

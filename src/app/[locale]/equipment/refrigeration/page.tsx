@@ -35,12 +35,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ],
     alternates: {
       canonical: `/${locale}/equipment/refrigeration`,
-      languages: { en: "/en/equipment/refrigeration", sr: "/sr/equipment/refrigeration" },
+      languages: { en: "/en/equipment/refrigeration", sr: "/sr/equipment/refrigeration", "x-default": "/sr/equipment/refrigeration" },
     },
     openGraph: {
       title: PAGE_TITLE,
       description: PAGE_DESC,
-      url: `${COMPANY.url}/equipment/refrigeration`,
+      url: `${COMPANY.url}/${locale}/equipment/refrigeration`,
       siteName: COMPANY.name,
       locale: locale === "sr" ? "sr_RS" : "en_US",
       type: "website",

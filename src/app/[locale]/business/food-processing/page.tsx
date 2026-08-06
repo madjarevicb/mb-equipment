@@ -51,12 +51,13 @@ export async function generateMetadata({
       languages: {
         en: "/en/business/food-processing",
         sr: "/sr/business/food-processing",
+        "x-default": "/sr/business/food-processing",
       },
     },
     openGraph: {
       title,
       description,
-      url: `${COMPANY.url}/business/food-processing`,
+      url: `${COMPANY.url}/${locale}/business/food-processing`,
       siteName: COMPANY.name,
       locale: locale === "sr" ? "sr_RS" : "en_US",
       type: "website",

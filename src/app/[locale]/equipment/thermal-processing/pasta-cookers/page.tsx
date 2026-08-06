@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     keywords: ["commercial pasta cooker", "pasta cooking station", "professional pasta equipment", "restaurant pasta cooker"],
     alternates: {
       canonical: `/${locale}/equipment/thermal-processing/pasta-cookers`,
-      languages: { en: "/en/equipment/thermal-processing/pasta-cookers", sr: "/sr/equipment/thermal-processing/pasta-cookers" },
+      languages: { en: "/en/equipment/thermal-processing/pasta-cookers", sr: "/sr/equipment/thermal-processing/pasta-cookers", "x-default": "/sr/equipment/thermal-processing/pasta-cookers" },
     },
     openGraph: {
       title: dict.metadata.pastaCookers.title,

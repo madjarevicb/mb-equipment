@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { COMPANY } from "@/lib/constants";
-import { locales } from "@/i18n/config";
+import { locales, defaultLocale } from "@/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = COMPANY.url;
@@ -45,9 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency,
       priority,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, `${baseUrl}/${l}${path}`]),
-        ),
+        languages: {
+          ...Object.fromEntries(
+            locales.map((l) => [l, `${baseUrl}/${l}${path}`]),
+          ),
+          "x-default": `${baseUrl}/${defaultLocale}${path}`,
+        },
       },
     })),
   );

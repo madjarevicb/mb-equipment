@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ],
     alternates: {
       canonical: `/${locale}/equipment/neutral-inox/warewashing`,
-      languages: { en: "/en/equipment/neutral-inox/warewashing", sr: "/sr/equipment/neutral-inox/warewashing" },
+      languages: { en: "/en/equipment/neutral-inox/warewashing", sr: "/sr/equipment/neutral-inox/warewashing", "x-default": "/sr/equipment/neutral-inox/warewashing" },
     },
     openGraph: {
       title: dict.metadata.warewashing.title,

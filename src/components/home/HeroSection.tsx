@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroVideo from "@/components/ui/HeroVideo";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 
@@ -13,19 +14,8 @@ export default function HeroSection({
 }) {
   return (
     <section aria-label={ariaLabel ?? "Hero"} className="relative min-h-screen flex items-center bg-navy pt-20 overflow-hidden">
-      {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/hero-poster.jpg"
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/hero-web.mp4" type="video/mp4" />
-      </video>
+      {/* Video background — poster-only on mobile, video on desktop */}
+      <HeroVideo poster="/hero-poster.jpg" src="/hero-web.mp4" />
 
       {/* Gradient overlays — lighter on mobile, content-aware on desktop */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/40 to-transparent md:from-navy/70 md:via-navy/30" />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroVideo from "@/components/ui/HeroVideo";
 import type { Dictionary } from "@/i18n/types";
 
 interface Props {
@@ -14,17 +15,7 @@ export default function HeroSection({ dict, common }: Props) {
     >
       <h1 className="sr-only">{dict.srOnly}</h1>
 
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/hero-poster.jpg"
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/residential-hero.mp4" type="video/mp4" />
-      </video>
+      <HeroVideo poster="/hero-poster.jpg" src="/residential-hero.mp4" />
 
       {/* Subtle vignette */}
       <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.1)" }} />

@@ -226,9 +226,12 @@ export default async function CookingHubPage({
       <div className="bg-white">
         <ChapterMark
           numeral="II"
-          label="Index of Categories"
-          caption="Three disciplines. One house. Specified around your menu."
+          label={isSr ? "Indeks kategorija" : "Index of Categories"}
+          caption={isSr
+            ? "Tri discipline. Jedna kuća. Specificirano prema vašem meniju."
+            : "Three disciplines. One house. Specified around your menu."}
           variant="light"
+          locale={locale}
         />
       </div>
       <SubcategoriesSection locale={locale as Locale} dict={dict} />
@@ -240,9 +243,12 @@ export default async function CookingHubPage({
       <div className="bg-navy">
         <ChapterMark
           numeral="III"
-          label="House of Brands"
-          caption="Authorized partnerships — factory support, service, parts."
+          label={isSr ? "Kuća brendova" : "House of Brands"}
+          caption={isSr
+            ? "Ovlašćena partnerstva — fabrička podrška, servis, rezervni delovi."
+            : "Authorized partnerships — factory support, service, parts."}
           variant="dark"
+          locale={locale}
         />
       </div>
       <BrandsSection />

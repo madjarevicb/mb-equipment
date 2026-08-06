@@ -5,7 +5,7 @@ const BLOCKED = [
   "/.git", "/.svn", "/xmlrpc.php", "/phpmyadmin", "/cgi-bin", "/admin",
 ];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (BLOCKED.some((b) => pathname === b || pathname.startsWith(b + "/"))) {

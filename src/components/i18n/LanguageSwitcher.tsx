@@ -16,7 +16,9 @@ export default function LanguageSwitcher({ currentLocale, common }: LanguageSwit
   function switchLocale(target: Locale) {
     const segments = pathname.split("/");
     segments[1] = target;
-    router.push(segments.join("/"));
+    const search = typeof window !== "undefined" ? window.location.search : "";
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+    router.push(segments.join("/") + search + hash);
   }
 
   const groupLabel = common?.languageGroup ?? "Language";

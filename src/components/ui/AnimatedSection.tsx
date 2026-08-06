@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import { useInView } from "@/hooks/useInView";
 
 interface AnimatedSectionProps {
@@ -18,6 +18,26 @@ const transforms: Record<NonNullable<AnimatedSectionProps["animation"]>, string>
   "scale-in": "scale(0.96)",
 };
 
+function subscribeReducedMotion(callback: () => void) {
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mq.addEventListener("change", callback);
+  return () => mq.removeEventListener("change", callback);
+}
+
+/**
+ * Animations run only on the client and only when the user hasn't requested
+ * reduced motion. Read via useSyncExternalStore so the server snapshot is
+ * `false` — content renders visible without JS (progressive enhancement) and
+ * there is no hydration mismatch or setState-in-effect.
+ */
+function useAnimationsEnabled() {
+  return useSyncExternalStore(
+    subscribeReducedMotion,
+    () => !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false,
+  );
+}
+
 export default function AnimatedSection({
   children,
   className = "",
@@ -26,18 +46,12 @@ export default function AnimatedSection({
   stagger = false,
 }: AnimatedSectionProps) {
   const { ref, inView } = useInView(0.15);
-  const [state, setState] = useState<"idle" | "hidden" | "visible">("idle");
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    setState("hidden");
-  }, []);
-
-  useEffect(() => {
-    if (inView && state === "hidden") {
-      setState("visible");
-    }
-  }, [inView, state]);
+  const animationsEnabled = useAnimationsEnabled();
+  const state: "idle" | "hidden" | "visible" = !animationsEnabled
+    ? "idle"
+    : inView
+    ? "visible"
+    : "hidden";
 
   if (stagger) {
     const visibleClass = state === "visible" ? "stagger-children is-visible" : "stagger-children";

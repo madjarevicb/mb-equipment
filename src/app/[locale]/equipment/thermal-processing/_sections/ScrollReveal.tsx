@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -23,6 +23,12 @@ interface ScrollRevealProps {
 type RevealCallback = () => void;
 const subscribers = new Map<Element, RevealCallback>();
 let sharedObserver: IntersectionObserver | null = null;
+
+function subscribeReducedMotion(callback: () => void) {
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mq.addEventListener("change", callback);
+  return () => mq.removeEventListener("change", callback);
+}
 
 function getObserver(): IntersectionObserver {
   if (sharedObserver) return sharedObserver;
@@ -54,18 +60,14 @@ export default function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
-  const [reduced, setReduced] = useState(false);
+  const reduced = useSyncExternalStore(
+    subscribeReducedMotion,
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false,
+  );
 
   useEffect(() => {
-    const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mql.matches);
-  }, []);
-
-  useEffect(() => {
-    if (reduced) {
-      setVisible(true);
-      return;
-    }
+    if (reduced) return;
     const el = ref.current;
     if (!el) return;
     const obs = getObserver();
@@ -76,6 +78,9 @@ export default function ScrollReveal({
       obs.unobserve(el);
     };
   }, [reduced]);
+
+  // Reduced-motion users skip the observer and see content immediately.
+  const isVisible = reduced || visible;
 
   const Tag = as as React.ElementType;
 
@@ -92,8 +97,8 @@ export default function ScrollReveal({
             key={i}
             style={{
               display: "block",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(28px)",
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateY(0)" : "translateY(28px)",
               transition: reduced
                 ? "none"
                 : `opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) ${delay + i * 90}ms, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) ${delay + i * 90}ms`,
@@ -112,8 +117,8 @@ export default function ScrollReveal({
       ref={ref as React.Ref<HTMLElement>}
       className={className}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(24px)",
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0)" : "translateY(24px)",
         transition: reduced
           ? "none"
           : `opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) ${delay}ms, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) ${delay}ms`,

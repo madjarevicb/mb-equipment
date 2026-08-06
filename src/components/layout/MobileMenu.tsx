@@ -35,10 +35,12 @@ export default function MobileMenu({ navItems, locale, nav, common }: MobileMenu
     };
   }, [isOpen]);
 
-  // Reset sub-accordion when parent closes
-  useEffect(() => {
-    if (!openSection) setOpenSubSection(null);
-  }, [openSection]);
+  // Toggle a parent section; always collapse any open sub-accordion so it
+  // never lingers when the parent closes or a different parent opens.
+  const toggleSection = (label: string) => {
+    setOpenSection((prev) => (prev === label ? null : label));
+    setOpenSubSection(null);
+  };
 
   // Focus trap
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
@@ -90,9 +92,7 @@ export default function MobileMenu({ navItems, locale, nav, common }: MobileMenu
             item.children ? (
               <div key={item.label}>
                 <button
-                  onClick={() =>
-                    setOpenSection(openSection === item.label ? null : item.label)
-                  }
+                  onClick={() => toggleSection(item.label)}
                   aria-expanded={openSection === item.label}
                   className="w-full flex items-center justify-between py-3 text-lg font-medium text-text-primary border-b border-gray-100"
                 >

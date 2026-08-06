@@ -71,7 +71,7 @@ export default function ContactForm({ dict, initialMessage, productLabel, failed
   if (status === "success") {
     return (
       <div className="border border-gray-200 p-10">
-        <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-4">
+        <p className="text-gold-text text-xs font-medium uppercase tracking-[0.3em] mb-4">
           {dict.successEyebrow}
         </p>
         <h3 className="font-display text-2xl font-bold text-text-primary leading-[1.1] mb-4">
@@ -97,7 +97,7 @@ export default function ContactForm({ dict, initialMessage, productLabel, failed
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
       {productLabel && (
         <div className="border-l border-gold/60 pl-5 py-1 mb-2">
-          <p className="text-gold text-xs font-medium uppercase tracking-[0.3em] mb-2">
+          <p className="text-gold-text text-xs font-medium uppercase tracking-[0.3em] mb-2">
             &sect; {dict.askingAboutEyebrow}
           </p>
           <p className="font-display italic text-text-primary text-xl sm:text-2xl leading-tight">

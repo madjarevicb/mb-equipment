@@ -13,13 +13,16 @@ export default function SectionHeading({ id, overline, heading, subtext, align =
   const alignClass = align === "center" ? "text-center items-center" : "text-left items-start";
   const headingColor = theme === "dark" ? "text-white" : "text-text-primary";
   const subtextColor = theme === "dark" ? "text-white/90" : "text-text-secondary";
+  // On light backgrounds the bright gold (#C9A84C) fails WCAG AA (~2.3:1);
+  // use the accessible gold token (#85692A, 5.18:1). Keep bright gold on dark.
+  const overlineColor = theme === "dark" ? "text-gold" : "text-gold-text";
 
   return (
     <div className={`flex flex-col gap-4 ${alignClass}`}>
       {overline && (
         <div className={`flex items-center gap-4 ${align === "center" ? "justify-center" : ""}`}>
           <div className="w-12 h-px bg-gold" />
-          <span className="text-xs font-medium uppercase tracking-[0.3em] text-gold">{overline}</span>
+          <span className={`text-xs font-medium uppercase tracking-[0.3em] ${overlineColor}`}>{overline}</span>
           {align === "center" && <div className="w-12 h-px bg-gold" />}
         </div>
       )}

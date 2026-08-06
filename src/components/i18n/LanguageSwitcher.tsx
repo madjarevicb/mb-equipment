@@ -35,7 +35,7 @@ export default function LanguageSwitcher({ currentLocale, common }: LanguageSwit
             className={`text-[11px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 ${
               locale === currentLocale
                 ? "text-white"
-                : "text-white/40 hover:text-white/70"
+                : "text-white/60 hover:text-white/90"
             }`}
             aria-current={locale === currentLocale ? "page" : undefined}
             aria-label={locale === "en" ? englishLabel : serbianLabel}
